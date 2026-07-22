@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Bathroom Emergency Guide v4.1.1.
+"""Build Bathroom Emergency Guide v4.1.2.
 
 The build has one source of truth and no network dependency:
 - chapter YAML is removed during assembly;
@@ -30,7 +30,8 @@ BUILD_DOCX = BUILD / "docx"
 TEMPLATE = SRC / "template.html"
 STYLE = SRC / "style.css"
 STYLE_MONO = SRC / "style-mono.css"
-VERSION = "4.1.1"
+STYLE_A4_HALF = SRC / "style-a4-half.css"
+VERSION = "4.1.2"
 
 CHAPTERS = [
     "00-cover.md",
@@ -117,20 +118,31 @@ def assemble() -> Path:
     return output
 
 
-def combined_css(monochrome: bool) -> Path:
+def variant_stem(*, monochrome: bool, layout: str) -> str:
+    parts = ["guide"]
+    if layout != "a4":
+        parts.append(layout)
+    if monochrome:
+        parts.append("mono")
+    return "_".join(parts)
+
+
+def combined_css(monochrome: bool, *, layout: str = "a4") -> Path:
     content = STYLE.read_text(encoding="utf-8")
-    name = "guide-mono.css" if monochrome else "guide.css"
+    if layout == "a4half":
+        content += "\n\n" + STYLE_A4_HALF.read_text(encoding="utf-8")
     if monochrome:
         content += "\n\n" + STYLE_MONO.read_text(encoding="utf-8")
+    name = variant_stem(monochrome=monochrome, layout=layout).replace("_", "-") + ".css"
     output = BUILD_HTML / name
     output.write_text(content, encoding="utf-8")
     return output
 
 
-def build_html(markdown: Path, *, monochrome: bool = False) -> Path:
+def build_html(markdown: Path, *, monochrome: bool = False, layout: str = "a4") -> Path:
     pandoc = require("pandoc")
-    css = combined_css(monochrome)
-    output = BUILD_HTML / ("guide_mono.html" if monochrome else "guide.html")
+    css = combined_css(monochrome, layout=layout)
+    output = BUILD_HTML / f"{variant_stem(monochrome=monochrome, layout=layout)}.html"
     command = [
         pandoc,
         str(markdown),
@@ -150,6 +162,8 @@ def build_html(markdown: Path, *, monochrome: bool = False) -> Path:
         f"guide-version={VERSION}",
         "--metadata",
         f"print-mode={'mono' if monochrome else 'color'}",
+        "--metadata",
+        f"print-layout={layout}",
         "--output",
         str(output),
     ]
@@ -159,7 +173,10 @@ def build_html(markdown: Path, *, monochrome: bool = False) -> Path:
         raise BuildError("HTML unexpectedly contains a remote MathJax dependency")
     if "<math" not in html:
         raise BuildError("Pandoc emitted no native MathML; formulas would be unverified")
-    note(f"built {'mono' if monochrome else 'color'} HTML → {output.relative_to(ROOT)}")
+    note(
+        f"built {'mono' if monochrome else 'color'} {layout} HTML → "
+        f"{output.relative_to(ROOT)}"
+    )
     return output
 
 
@@ -198,8 +215,14 @@ def build_weasy_pdf(html: Path, output: Path) -> bool:
     return True
 
 
-def build_pdf(html: Path, *, monochrome: bool = False, backend: str = "auto") -> Path:
-    output = BUILD_PDF / ("guide_mono.pdf" if monochrome else "guide.pdf")
+def build_pdf(
+    html: Path,
+    *,
+    monochrome: bool = False,
+    layout: str = "a4",
+    backend: str = "auto",
+) -> Path:
+    output = BUILD_PDF / f"{variant_stem(monochrome=monochrome, layout=layout)}.pdf"
     if backend in {"auto", "chrome"} and build_chrome_pdf(html, output):
         return output
     if backend in {"auto", "weasyprint"} and build_weasy_pdf(html, output):
@@ -243,7 +266,20 @@ def build_docx(markdown: Path) -> None:
 
 def main() -> int:
     target = sys.argv[1] if len(sys.argv) > 1 else "all"
-    valid = {"all", "html", "pdf", "chrome", "weasyprint", "mono", "md", "latex", "docx"}
+    valid = {
+        "all",
+        "html",
+        "pdf",
+        "chrome",
+        "weasyprint",
+        "mono",
+        "a4half",
+        "a4half-html",
+        "a4half-mono",
+        "md",
+        "latex",
+        "docx",
+    }
     if target not in valid:
         print(f"Unknown target {target!r}; choose from: {', '.join(sorted(valid))}", file=sys.stderr)
         return 2
@@ -257,6 +293,17 @@ def main() -> int:
         return 0
     if target == "docx":
         build_docx(markdown)
+        return 0
+
+    if target in {"a4half", "a4half-html", "a4half-mono"}:
+        color_html = build_html(markdown, layout="a4half")
+        mono_html = build_html(markdown, monochrome=True, layout="a4half")
+        if target == "a4half-html":
+            return 0
+        if target == "a4half":
+            build_pdf(color_html, layout="a4half")
+        if target in {"a4half", "a4half-mono"}:
+            build_pdf(mono_html, monochrome=True, layout="a4half")
         return 0
 
     color_html = build_html(markdown)
@@ -276,6 +323,15 @@ def main() -> int:
         return 0
 
     if target == "all":
+        a4half_html = build_html(markdown, layout="a4half")
+        a4half_mono_html = build_html(markdown, monochrome=True, layout="a4half")
+        build_pdf(a4half_html, layout="a4half", backend=backend)
+        build_pdf(
+            a4half_mono_html,
+            monochrome=True,
+            layout="a4half",
+            backend=backend,
+        )
         build_latex(markdown)
         build_docx(markdown)
     return 0

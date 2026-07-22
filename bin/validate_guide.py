@@ -11,12 +11,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CHAPTERS = sorted((ROOT / "src" / "chapters").glob("*.md"))
 STYLE = (ROOT / "src" / "style.css").read_text(encoding="utf-8")
+STYLE_A4_HALF = (ROOT / "src" / "style-a4-half.css").read_text(encoding="utf-8")
 HTML = ROOT / "build" / "html" / "guide.html"
 PDF = ROOT / "build" / "pdf" / "guide.pdf"
+A4_HALF_HTML = ROOT / "build" / "html" / "guide_a4half.html"
+A4_HALF_MONO_HTML = ROOT / "build" / "html" / "guide_a4half_mono.html"
+A4_HALF_CSS = ROOT / "build" / "html" / "guide-a4half.css"
+A4_HALF_MONO_CSS = ROOT / "build" / "html" / "guide-a4half-mono.css"
+A4_HALF_PDF = ROOT / "build" / "pdf" / "guide_a4half.pdf"
+A4_HALF_MONO_PDF = ROOT / "build" / "pdf" / "guide_a4half_mono.pdf"
 PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION = PACKAGE["version"]
 EVIDENCE_PATH = ROOT / "src" / "data" / "evidence_facts.json"
 ROADMAP = ROOT / "ROADMAP.md"
+NEXT_MINOR_PLAN = ROOT / "docs" / "plans" / "4.2.0-content-plan.md"
 errors: list[str] = []
 
 
@@ -56,6 +64,10 @@ check(
 )
 check("column-count: 1 !important" in STYLE, "single-column print invariant missing")
 check("columns: auto !important" in STYLE, "print column reset missing")
+check("size: 105mm 297mm" in STYLE_A4_HALF, "A4/2 page geometry missing from layout CSS")
+check("grid-template-columns: 1fr 1fr" in STYLE_A4_HALF, "A4/2 emergency strip adaptation missing")
+check("table-layout: fixed" in STYLE_A4_HALF, "A4/2 narrow-table protection missing")
+check("LOOK CLOSER" in STYLE_A4_HALF, "A4/2 curiosity figure label missing")
 
 # Evidence registry and figure checks. A chart may be simple; its provenance may not.
 evidence: dict = {}
@@ -139,6 +151,18 @@ if ROADMAP.exists():
         "4.4.0 — Household continuity modules",
     ):
         check(marker.lower() in roadmap.lower(), f"roadmap marker missing: {marker}")
+
+check(NEXT_MINOR_PLAN.exists(), "4.2.0 content plan is missing")
+if NEXT_MINOR_PLAN.exists():
+    next_minor = NEXT_MINOR_PLAN.read_text(encoding="utf-8")
+    for marker in (
+        "Track A — Improvement of existing content",
+        "Track B — Extension of coverage",
+        "Environmental-hazard override gate",
+        "Dependency modifier strip",
+        "Release acceptance",
+    ):
+        check(marker.lower() in next_minor.lower(), f"4.2.0 plan marker missing: {marker}")
 
 # Version and source-shape checks.
 for path in CHAPTERS:
@@ -242,6 +266,53 @@ if PDF.exists():
 else:
     errors.append("build/pdf/guide.pdf is missing")
 
+
+def check_a4_half_pdf(path: Path, label: str) -> None:
+    if not path.exists():
+        errors.append(f"{label} is missing")
+        return
+    result = subprocess.run(["pdfinfo", str(path)], capture_output=True, text=True)
+    check(result.returncode == 0, f"pdfinfo could not read {label}")
+    if result.returncode:
+        return
+    pages_match = re.search(r"Pages:\s+(\d+)", result.stdout)
+    size_match = re.search(r"Page size:\s+([0-9.]+) x ([0-9.]+) pts", result.stdout)
+    check(bool(pages_match and int(pages_match.group(1)) >= 60), f"{label} is suspiciously short")
+    if size_match:
+        width = float(size_match.group(1))
+        height = float(size_match.group(2))
+        check(abs(width - 297.64) <= 1.5, f"{label} width is not 105 mm: {width:.2f} pt")
+        check(abs(height - 841.89) <= 1.5, f"{label} height is not 297 mm: {height:.2f} pt")
+    else:
+        errors.append(f"could not parse page size for {label}")
+    check("Tagged:          yes" in result.stdout, f"{label} is not tagged")
+
+
+for narrow_html, label in (
+    (A4_HALF_HTML, "A4/2 color HTML"),
+    (A4_HALF_MONO_HTML, "A4/2 mono HTML"),
+):
+    if narrow_html.exists():
+        narrow_text = narrow_html.read_text(encoding="utf-8")
+        check(VERSION in narrow_text, f"{label} does not contain version {VERSION}")
+        check("guide-a4half" in narrow_text, f"{label} does not link the A4/2 stylesheet")
+    else:
+        errors.append(f"{label} is missing")
+
+for narrow_css, label in (
+    (A4_HALF_CSS, "A4/2 color CSS"),
+    (A4_HALF_MONO_CSS, "A4/2 mono CSS"),
+):
+    if narrow_css.exists():
+        css_text = narrow_css.read_text(encoding="utf-8")
+        check("size: 105mm 297mm" in css_text, f"{label} lacks A4/2 page geometry")
+        check("LOOK CLOSER" in css_text, f"{label} lacks the narrow figure treatment")
+    else:
+        errors.append(f"{label} is missing")
+
+check_a4_half_pdf(A4_HALF_PDF, "A4/2 color PDF")
+check_a4_half_pdf(A4_HALF_MONO_PDF, "A4/2 mono PDF")
+
 for markdown_path in re.findall(r"\]\((?:build/)?(diagrams/[^)]+)\)", source):
     image = ROOT / "build" / markdown_path
     check(image.exists(), f"referenced image missing: {image.relative_to(ROOT)}")
@@ -256,5 +327,5 @@ print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    "v3.3 breadth markers, roadmap coverage, native MathML, A4 PDF, one-column print."
+    "v3.3 breadth markers, roadmap coverage, native MathML, A4 and A4/2 PDFs, one-column print."
 )

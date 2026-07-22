@@ -1,7 +1,7 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.1.1"
+revision: "4.1.2"
 last_updated: "2026-07-22"
 dependencies: []
 ---
@@ -278,7 +278,7 @@ support, focused help, and specialized treatment complement one another.
 
 ### Limit
 
-Version 4.1.1 does not publish universal response percentages as promises for
+Version 4.1.2 does not publish universal response percentages as promises for
 an individual. Evidence informs shared clinical decisions; method, diagnosis,
 severity, access, fit, and preference matter.
 

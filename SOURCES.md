@@ -16,7 +16,7 @@ For each release:
 5. Remove claims that exceed the source, even when they sound usefully
    scientific.
 6. Keep emergency instructions short enough to execute.
-7. Rebuild and validate color and monochrome A4 outputs.
+7. Rebuild and validate color and monochrome A4 and A4/2 outputs.
 
 ## Evidence order
 

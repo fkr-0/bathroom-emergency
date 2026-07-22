@@ -1,7 +1,7 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.1.1"
+revision: "4.1.2"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/social_connection_associations.png
@@ -28,7 +28,7 @@ remember from a poster in 2009.
 | Immediate self- or other-endangerment | **112** | Rescue service |
 
 Numbers and scope should be rechecked at every release and before local
-printing. Core routes were reviewed for version 4.1.1 on **22 July 2026**.[^numbers]
+printing. Core routes were reviewed for version 4.1.2 on **22 July 2026**.[^numbers]
 
 ## The call script
 
@@ -120,7 +120,7 @@ interpersonal, and other structured approaches can be effective for many
 conditions. Outcomes vary with diagnosis, severity, therapeutic relationship,
 access, method, and individual preference.
 
-The old guide printed attractive response percentages. Version 4.1.1 does not
+The old guide printed attractive response percentages. Version 4.1.2 does not
 promise a personal outcome from a meta-analysis. A better question is:
 
 - Is the method appropriate for the problem?

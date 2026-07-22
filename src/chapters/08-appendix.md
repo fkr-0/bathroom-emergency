@@ -1,7 +1,7 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.1.1"
+revision: "4.1.2"
 last_updated: "2026-07-22"
 dependencies: []
 ---
@@ -9,7 +9,7 @@ dependencies: []
 # Appendix — The Useful Loose Ends
 
 The v3.3 appendix tried to be index, legend, workbook, decision tree, notes page,
-and emergency wallet card simultaneously. Version 4.1.1 accepts the assignment,
+and emergency wallet card simultaneously. Version 4.1.2 accepts the assignment,
 but labels the parts so the notes page does not accidentally become a theorem.
 
 ## Master cross-reference — where everything points
@@ -48,6 +48,31 @@ but labels the parts so the notes page does not accidentally become a theorem.
 Generated images are explanatory aids. The text route remains complete for
 monochrome print, screen readers, low light, and coffee-related diagram loss.
 
+## A4/2 field-strip edition
+
+The narrow edition uses pages measuring **105 × 297 mm**: one A4 sheet divided
+lengthwise into two vertical strips. It is not A5 and it is not a browser window
+that lost an argument.
+
+The format is intended for:
+
+- one-column reading with a stable vertical scan path;
+- printing two physical strips from one A4 sheet when imposed by a print tool;
+- clipping, hanging, binding, or keeping one route visible beside supplies;
+- longer evidence and explanation pages that still feel like a field manual.
+
+The content is identical to the A4 edition. Narrow-specific design choices
+include numbered field-note headings, figure bands, a two-by-two emergency
+number block, fixed-layout tables with aggressive wrapping, smaller but bounded
+formula typography, and shorter line lengths. If a table remains unpleasant,
+the prose around it must still carry the route. CSS is not allowed to become a
+prerequisite for survival.
+
+The build verifies both color and monochrome narrow PDFs after rendering every
+page. It checks the exact physical dimensions, tagged structure, blank pages,
+content touching the physical edge, and representative pages from the cover,
+evidence sections, appendix, sources, and final footnotes.
+
 ## Evidence labels
 
 The guide distinguishes the role of each statement:
@@ -64,7 +89,7 @@ The guide distinguishes the role of each statement:
 | **Conceptual model** | A thinking aid, not a measured prediction | $A_{k+1}=A_k-\delta_k+\varepsilon_k$ |
 | **Mnemonic** | Memorable compression | one action, one backup, one escalation |
 
-The old edition sometimes dressed a metaphor in a lab coat. Version 4.1.1 asks
+The old edition sometimes dressed a metaphor in a lab coat. Version 4.1.2 asks
 the coat for identification, denominator, and visiting hours.
 
 ## Formula and theorem index
@@ -170,7 +195,7 @@ mean anything useful.
 
 ## Reproducible evidence registry
 
-The numeric inputs for v4.1.1 figures live in
+The numeric inputs for v4.1.x figures live in
 `src/data/evidence_facts.json`. Each entry records evidence class, population or
 scope, value and unit, source, and practical limit. Diagram code reads that file
 rather than hiding facts inside plotting coordinates.
@@ -236,7 +261,7 @@ than security engineering recommends.
 ## Complete decision tree — safe text version
 
 ```text
-BATHROOM EMERGENCY GUIDE — MASTER TREE v4.1.1
+BATHROOM EMERGENCY GUIDE — MASTER TREE v4.1.2
 ============================================================
 
 0. OVERRIDE
@@ -371,7 +396,7 @@ At each release:
 2. review first-aid and preparedness guideline updates;
 3. verify every numeric figure against `src/data/evidence_facts.json` and its primary or authoritative source;
 4. run safety-regression and evidence-registry validation;
-5. build colour and monochrome outputs;
+5. build colour and monochrome A4 and A4/2 outputs;
 6. inspect page count, clipped tables, diagrams, and text tree;
 7. verify version strings across source, HTML, PDF, package, and changelog;
 8. record removed claims, changed estimates, and uncertainty as well as added material.

@@ -1,12 +1,36 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.1.1"
+revision: "4.1.2"
 last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Version History
+
+## 4.1.2 — 22 July 2026
+
+### A4/2 vertical field guide
+
+- Added a true 105 × 297 mm color and monochrome edition rather than scaling an
+  A4 page until the type surrendered.
+- Preserved one-column reading while adapting wide tables, equations, evidence
+  figures, emergency cards, footnotes, code blocks, and cover geometry.
+- Added numbered “FIELD NOTE” headings and “LOOK CLOSER” figure bands to make
+  the long narrow pages feel like a browsable field manual rather than a receipt
+  from a very anxious pharmacy.
+
+### Layout verification
+
+- Added full-PDF render checks for geometry, tagging, blank pages, edge
+  collisions, extracted-text markers, and color/mono contact sheets.
+- Kept the standard A4 editions and made both page families part of the same
+  validated build.
+
+### Next-minor preparation
+
+- Prepared separate 4.2.0 improvement and extension tracks with content packets,
+  source gates, flowgraph changes, and definitions of done.
 
 ## 4.1.1 — 22 July 2026
 

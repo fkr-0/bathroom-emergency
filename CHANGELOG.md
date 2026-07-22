@@ -1,5 +1,33 @@
 # Changelog
 
+## 4.1.2 — 2026-07-22
+
+### Added the A4/2 field-strip edition
+
+- Added color and monochrome **105 × 297 mm** outputs, equivalent to cutting an
+  A4 sheet lengthwise into two tall one-column pages.
+- Added a dedicated narrow-layout stylesheet instead of shrinking the A4 design.
+- Reworked headings, emergency-number blocks, figures, tables, formulas,
+  footnotes, code blocks, and cover proportions for the narrow page.
+- Added curiosity-oriented “FIELD NOTE” and “LOOK CLOSER” visual labels while
+  keeping emergency actions visually dominant.
+
+### Verified the rendered result
+
+- Added renderer-based checks for exact page geometry, tagging, missing or blank
+  pages, physical-edge collisions, required content markers, and representative
+  contact sheets.
+- Made the full build produce and validate standard A4 plus A4/2 color and
+  monochrome editions from the same canonical chapters.
+
+### Prepared 4.2.0
+
+- Added a two-track content plan: an **improvement track** for clearer existing
+  routes and a distinct **extension track** for new environmental-hazard,
+  dependency, and “no safe place” branches.
+- Converted the broad roadmap into reviewable content packets with acceptance
+  criteria, source requirements, and flowgraph effects.
+
 ## 4.1.1 — 2026-07-22
 
 ### Restored carefully

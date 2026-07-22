@@ -22,7 +22,7 @@ Every extension must preserve these rules:
 6. **Humour follows safety.** A joke may sit beside explanation, never between a
    danger sign and the action.
 
-## Review findings from 4.1.1
+## Review findings from 4.1.1–4.1.2
 
 ### Strong foundations
 
@@ -33,7 +33,8 @@ Every extension must preserve these rules:
 - The long text tree provides a robust non-visual fallback.
 - Evidence labels and the new fact registry make bounded quantitative material
   reviewable and reproducible.
-- The color and monochrome A4 pipeline supports offline use.
+- The color and monochrome A4 and A4/2 pipelines support offline use and two
+  distinct reading rhythms without duplicating content.
 
 ### Remaining structural gaps
 
@@ -206,6 +207,7 @@ A candidate only graduates into the guide when the exact figure can be defended.
 
 ### 4.2.0 — Routing and hazard architecture
 
+- execute the two-track content plan in `docs/plans/4.2.0-content-plan.md`;
 - implement the two-pass flowgraph;
 - add fire/smoke/CO/gas/chemical/electrical override;
 - add modifier strip and essential-device route;

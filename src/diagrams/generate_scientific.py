@@ -111,7 +111,7 @@ def chart_evidence_classes() -> None:
     ax.text(6, 0.72,
             "A chart without scope is decoration wearing safety goggles.",
             ha="center", fontsize=9.5, color=MUTED, style="italic")
-    evidence_footer(fig, "Bathroom Emergency Guide evidence policy, v4.1.1",
+    evidence_footer(fig, "Bathroom Emergency Guide evidence policy, v4.1.x",
                     "The label describes evidential role, not a universal quality score.")
     finish(fig, "evidence_classes.png")
 

@@ -1,7 +1,7 @@
 ---
 title: "Situations B–G"
 chapter: 3
-revision: "4.1.1"
+revision: "4.1.2"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/gad7_validation_comparison.png

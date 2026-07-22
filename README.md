@@ -3,10 +3,10 @@
 > “You are in a room with a door, water, and one next action.”
 
 A sourced, rebuildable decision guide for panic, pain, responsibility, danger,
-overload, bad smells, missing places, and infrastructure failure. Version 4.1.1
+overload, bad smells, missing places, and infrastructure failure. Version 4.1.2
 combines the red-flag-first v4 safety architecture with the extensive subject
 breadth of v3.3, bounded quantitative evidence, native MathML, and deterministic
-one-column A4 printing.
+one-column A4 plus A4/2 field-strip printing.
 
 ## Quick build
 
@@ -21,7 +21,9 @@ Individual targets:
     ./bin/build_guide.sh weasyprint
     ./bin/build_guide.sh docx
     ./bin/build_guide.sh latex
+    ./bin/build_guide.sh a4half
     python3 bin/validate_guide.py
+    python3 bin/verify_layout.py
 
 Or with npm:
 
@@ -49,9 +51,11 @@ network dependency.
     src/data/              reviewed numeric inputs and evidence limits
     src/template.html      semantic screen shell and small UI controls
     src/style.css          screen + single-column print system
+    src/style-a4-half.css  105 × 297 mm field-strip print adaptations
     src/style-mono.css     monochrome overrides only
     bin/build_guide.py     deterministic document builder
     bin/validate_guide.py  safety, evidence, and rendering invariants
+    bin/verify_layout.py   rendered A4/2 geometry and collision checks
     ROADMAP.md             flowgraph, chapter, research, and release backlog
     build/                 generated deliverables
 
@@ -63,6 +67,8 @@ network dependency.
 | Mono HTML | build/html/guide_mono.html | same structure, grayscale design |
 | Color PDF | build/pdf/guide.pdf | A4, one column |
 | Mono PDF | build/pdf/guide_mono.pdf | A4, one column, ink-conscious |
+| A4/2 color PDF | build/pdf/guide_a4half.pdf | 105 × 297 mm vertical field strip |
+| A4/2 mono PDF | build/pdf/guide_a4half_mono.pdf | narrow grayscale field strip |
 | Markdown | build/md/guide.md | assembled, frontmatter-clean |
 | DOCX | build/docx/guide.docx | editable |
 | LaTeX | build/latex/guide.tex | intermediate |
@@ -73,14 +79,16 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 11 source chapters at revision 4.1.1;
+- 11 source chapters at revision 4.1.2;
 - restored v3.3 breadth markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
 - no known unsafe legacy wording or deprecated scientific chart;
-- a valid 4.1.1 evidence registry with source and limit for every plotted fact;
+- a valid 4.1.2 evidence registry with source and limit for every plotted fact;
 - every referenced image and required evidence figure exists;
 - roadmap coverage for the next routing, locale, and continuity releases;
-- readable A4 PDF with a plausible page count.
+- readable A4 and 105 × 297 mm PDFs with plausible page counts;
+- renderer-based A4/2 checks for blank pages, physical-edge collisions, required
+  content markers, and representative-page contact sheets.
 
 ## Evidence policy
 

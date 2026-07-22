@@ -1,7 +1,7 @@
 ---
 title: "Start Here"
 chapter: 1
-revision: "4.1.1"
+revision: "4.1.2"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/emergency_flowgraph.png
@@ -108,7 +108,7 @@ That would be a very ambitious equation.
 
 ![Evidence labels used by the guide](build/diagrams/evidence_classes.png)
 
-Version 4.1.1 adds numbers back carefully. Every evidence figure states:
+Version 4.1.2 keeps numbers carefully bounded. Every evidence figure states:
 
 - **what kind of evidence it is**—protocol, population estimate, study,
   association, or model;
