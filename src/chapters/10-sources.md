@@ -1,146 +1,514 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.0.0"
-last_updated: "2026-07-17"
+revision: "4.0.1"
+last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Sources and Evidence Notes
 
-Checked **17 July 2026**. Official and primary sources are preferred. A link is
-not evidence by itself; the guide cites what each source actually supports.
+Core emergency routes, German service information, and newly restored medical,
+legal-aid, preparedness, postpartum, fracture, burn, and hypothermia material
+were reviewed for **22 July 2026**. Official and primary sources are preferred.
+A link is not evidence by itself; the guide records what each source supports
+and what it does **not** support.
 
-## Emergency routing and first aid
+## Evidence hierarchy used here
 
-1. **European Resuscitation Council — Guidelines 2025.** Current European
-   resuscitation framework, including adult basic life support, paediatric and
-   newborn life support, and first aid.  
+1. current official emergency and public-health guidance;
+2. current professional guidelines and systematic reviews;
+3. primary research for narrowly described findings;
+4. classic theory and historical texts for background;
+5. conceptual models and mnemonics labelled as such.
+
+No philosophical text, social-science model, screening score, home device, or
+attractive equation overrides emergency symptoms or dispatcher instructions.
+
+## First aid and emergency response
+
+1. **European Resuscitation Council — Guidelines 2025.** Adult basic life
+   support, first aid, paediatric and newborn guidance, AED use, and emergency
+   activation.
    https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/
 
-2. **ERC — Guidelines 2025 for Everyone.** Lay version emphasizing early
-   recognition, emergency activation, high-quality compressions, and AED use.  
+2. **ERC — Guidelines 2025 for Everyone.** Layperson summary emphasizing early
+   recognition, emergency activation, compressions, and AED use.
    https://www.erc.edu/media/p5ymaeej/gl2025_layperson_book_ipdf-v11-e.pdf
 
 3. **German Red Cross — Finding a person in an emergency.** Scene safety,
-   response and breathing checks, recovery position, emergency call, and CPR.  
+   response, breathing, recovery position, emergency call, and CPR.
    https://www.drk.de/hilfe-in-deutschland/erste-hilfe/auffinden-einer-person/
 
-4. **German Red Cross — Severe bleeding.** Direct pressure, pressure dressing,
-   warmth, monitoring, and 112 for life-threatening bleeding.  
+4. **German Red Cross — Severe bleeding.** Direct pressure, wound care, warmth,
+   monitoring, and emergency activation.
    https://www.drk.de/hilfe-in-deutschland/erste-hilfe/blutungen-und-blutstillung/blutungen/
 
-5. **German Red Cross — Public burn first aid.** Local lukewarm cooling, clean
-   covering, avoidance of home remedies, and escalation for severe burns.  
-   https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erste-hilfe-handgriffe-fuer-den-sommer/
+5. **German Red Cross — Burns and scalds.** Current public cooling duration,
+   sterile loose covering, and prevention of hypothermia.
+   https://www.drk.de/hilfe-in-deutschland/erste-hilfe/verbrennungen/
 
-6. **German Red Cross — Chemical burns.** Self-protection, removal of
-   contaminated clothing, and immediate irrigation.  
+6. **German Red Cross — Fractures.** Avoid movement and repositioning, support
+   the limb, cover open injuries, and obtain emergency care.
+   https://www.drk.de/hilfe-in-deutschland/erste-hilfe/knochenbruch/knochenbrueche/
+
+7. **German Red Cross — Chemical burns.** Self-protection, removal of
+   contaminated clothing, and immediate irrigation.
    https://www.drk.de/hilfe-in-deutschland/erste-hilfe/veraetzungen/
 
-7. **gesund.bund.de — Emergency numbers.** Official German distinctions among
-   112, 116 117, poison centres, and crisis lines.  
+8. **German Red Cross — Hypothermia and frostbite.** Slow warming, no rubbing or
+   intense direct heat, protection from further cold, and 112.
+   https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erfrierungen-und-unterkuehlungen/
+
+9. **gesund.bund.de — Emergency numbers.** Official German distinctions among
+   112, 110, 116 117, poison centres, and crisis routes.
    https://gesund.bund.de/notfallnummern
 
-## Psychological crisis and calming
+### Limits
 
-8. **World Health Organization — Doing What Matters in Times of Stress**
-   (2020). Evidence-informed, field-tested grounding, unhooking, values, and
-   small-action exercises.  
-   https://www.who.int/publications/i/item/9789240003927
+- The guide does not reproduce a full first-aid course.
+- “Golden hour” is used as an urgency heuristic, not a 60-minute biological
+  deadline.
+- Home vital signs can inform a call; they cannot safely clear red flags.
 
-9. **gesund.bund.de — Managing psychological crises.** Safety escalation,
-   professional help, social contact, and caution that inward-focused
-   relaxation may intensify some acute crises.  
-   https://gesund.bund.de/mit-psychischen-krisen-umgehen
+## Survival and emergency preparedness
 
-10. **Balban MY et al.** “Brief structured respiration practices enhance mood
-    and reduce physiological arousal.” *Cell Reports Medicine* 4 (2023),
-    100895. The trial studied five minutes of daily practice for 28 days; the
-    guide avoids converting it into a universal one-breath emergency claim.  
-    https://doi.org/10.1016/j.xcrm.2022.100895
+10. **Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK).**
+    *Vorsorgen für Krisen und Katastrophen* and current checklists: warning,
+    water, food, medication, power, evacuation, hygiene, and individual needs.
+    https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html
 
-11. **Spitzer RL et al.** “A Brief Measure for Assessing Generalized Anxiety
+11. **WHO — Technical Notes on Drinking-Water, Sanitation and Hygiene in
+    Emergencies.** Water-treatment principles and limits of household methods.
+    https://www.who.int/publications/m/item/technical-notes-on-drinking-water-sanitation-and-hygiene-in-emergencies
+
+12. **Federal Office of Civil Protection — NINA warning information.** Official
+    warning channels and public preparedness context.
+    https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html
+
+### Limits
+
+- The 2 L/person/day value is a household planning baseline, not an individual
+  medical prescription.
+- The guide does not print universal bleach dosing, wild-food lists, or personal
+  survival probabilities.
+- Shelter guidance must yield to official fire, flood, storm, and chemical
+  instructions.
+
+## Electricity safety and basics
+
+13. **German statutory accident insurance and fire-service public guidance.**
+    General electrical safety, disconnection before contact, and professional
+    repair. The guide uses the conservative rule: do not touch a casualty until
+    power is safely isolated and call 112 for significant exposure.
+
+14. **BBK outage preparedness.** Battery lighting, radio, charging, medication,
+    food-safety, and household continuity guidance.
+
+### Limits
+
+The guide does not teach back-feeding, generator wiring, mains repair, or
+improvised high-voltage work.
+
+## Nutrition and emergency food
+
+15. **BBK preparedness guide.** Familiar shelf-stable foods, individual dietary
+    needs, storage planning, and household stock rotation.
+
+16. **Federal and local food-safety guidance.** Refrigeration failure, flood
+    contamination, and discard decisions should follow current incident-specific
+    instructions.
+
+### Limits
+
+Smell is not a complete food-safety test. Calorie formulas and emergency
+foraging lists from v3.3 were not restored as action guidance.
+
+## Water purification and clearing
+
+17. **WHO WASH technical notes.** Sedimentation, filtration, disinfection, safe
+    storage, and chemical-contamination limits.
+
+18. **Local water supplier and health authority notices.** Boil-water and
+    do-not-use instructions are source- and incident-specific.
+
+### Limits
+
+Cloth filtering removes visible particles but does not reliably disinfect.
+Boiling does not remove fuels, solvents, salts, pesticides, or radioactive
+contamination.
+
+## Child development
+
+19. **WHO Motor Development Study** and pediatric developmental guidance.
+    Milestones occur across broad windows and are interpreted with clinical and
+    social context.
+
+20. **German pediatric preventive-care routes.** Development, hearing, vision,
+    feeding, movement, language, regression, and caregiver concerns belong in
+    pediatric assessment rather than internet deadline tables.
+
+### Limits
+
+The guide does not diagnose development, attachment, autism, language disorder,
+or parenting quality from a single milestone or one stressful interaction.
+
+## Mental health best practices
+
+21. **World Health Organization — Doing What Matters in Times of Stress**
+    (2020). Grounding, unhooking, values, and small practical actions.
+    https://www.who.int/publications/i/item/9789240003927
+
+22. **gesund.bund.de — Managing psychological crises.** Safety escalation,
+    professional support, social connection, and caution around self-help when
+    symptoms are severe.
+    https://gesund.bund.de/mit-psychischen-krisen-umgehen
+
+23. **gesund.bund.de — Social psychiatric service.** Low-threshold public
+    crisis support for affected people and relatives.
+    https://gesund.bund.de/sozialpsychiatrischer-dienst
+
+24. **Inter-Agency Standing Committee — MHPSS Guidelines.** Layered support from
+    basic safety and services through community, focused, and specialized care.
+    https://interagencystandingcommittee.org/iasc-task-force-mental-health-and-psychosocial-support-emergency-settings/iasc-guidelines-mental-health-and-psychosocial-support-emergency-settings-2007
+
+## Anxiety assessment — GAD-7
+
+25. **Spitzer RL et al.** “A Brief Measure for Assessing Generalized Anxiety
     Disorder: The GAD-7.” *Archives of Internal Medicine* 166 (2006):
-    1092–1097. Supports a two-week symptom screen, not acute medical triage.  
+    1092–1097.
     https://doi.org/10.1001/archinte.166.10.1092
 
-12. **Hjermstad MJ et al.** “Studies comparing Numerical Rating Scales, Verbal
-    Rating Scales, and Visual Analogue Scales for assessment of pain intensity
-    in adults.” *Journal of Pain and Symptom Management* 41 (2011): 1073–1093.
-    Supports pain intensity as patient report; not a stand-alone urgency score.  
+The instrument covers the preceding two weeks. It is a screening and
+communication tool, not acute medical triage.
+
+## Pain assessment — NRS
+
+26. **Hjermstad MJ et al.** Comparison of numerical, verbal, and visual analogue
+    pain scales. *Journal of Pain and Symptom Management* 41 (2011): 1073–1093.
     https://pubmed.ncbi.nlm.nih.gov/21110961/
 
-13. **Cowan N.** “The magical number 4 in short-term memory.”
-    *Behavioral and Brain Sciences* 24 (2001): 87–114. Used as a design reason
-    for short instructions, not a fixed capacity diagnosis.  
+Pain intensity is patient report. It does not directly encode tissue damage,
+physiology, or emergency severity.
+
+## Stress and cortisol research
+
+27. **McEwen BS and related allostatic-load literature.** Stress physiology is
+    dynamic and context-dependent.
+
+28. **Arnsten AFT.** Stress-signalling effects on prefrontal function provide
+    background for simplified action queues.
+
+### Limit
+
+The former $C(t)=C_0e^{-\lambda t}$ “cortisol decay” line was fictional as a
+universal personal curve and remains removed. The replacement arousal equation
+is explicitly conceptual.
+
+## Heart-rate variability
+
+29. HRV research describes variation in intervals between heartbeats and is
+    sensitive to measurement conditions, breathing, posture, device quality,
+    age, and health.
+
+### Limit
+
+The guide does not use HRV to diagnose safety, trauma state, vagal function, or
+whether a person may ignore emergency symptoms.
+
+## Physiological sigh and breathing research
+
+30. **Balban MY et al.** “Brief structured respiration practices enhance mood
+    and reduce physiological arousal.” *Cell Reports Medicine* 4 (2023),
+    100895.
+    https://doi.org/10.1016/j.xcrm.2022.100895
+
+The trial studied repeated daily practice. It does not prove that one sigh
+treats every acute panic episode.
+
+## Cognitive-load theory
+
+31. **Cowan N.** “The magical number 4 in short-term memory.” *Behavioral and
+    Brain Sciences* 24 (2001): 87–114.
     https://doi.org/10.1017/S0140525X01003922
+
+32. **Sweller and later cognitive-load literature.** Distinguishes task
+    complexity from avoidable presentation load.
+
+### Limit
+
+Working-memory estimates are design clues, not fixed personal capacities or
+clinical tests.
+
+## Dunbar numbers — social-brain hypothesis
+
+33. **Dunbar RIM.** “Neocortex size as a constraint on group size in primates.”
+    *Journal of Human Evolution* 22 (1992): 469–493.
+
+Nested social-network values are approximate population findings. The guide
+uses them only to explain why larger groups need structures and records.
+
+## Ostrom — commons governance
+
+34. **Ostrom E.** *Governing the Commons* (1990).
+
+35. **Ostrom E.** Nobel lecture, “Beyond Markets and States” (2009).
+    https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/
+
+The eight principles summarize patterns in durable self-governed commons. They
+are not a universal emergency constitution.
+
+## IASC — mental health and psychosocial support
+
+36. **IASC MHPSS Guidelines** (2007), source 24 above.
+
+The pyramid supports a crucial distinction: basic safety, family/community
+support, focused help, and specialized treatment complement one another.
+
+## Therapy effectiveness
+
+37. **Hofmann SG et al.** Review of cognitive behavioural therapy
+    meta-analyses. *Cognitive Therapy and Research* 36 (2012): 427–440.
+
+38. **Shedler J.** Review of psychodynamic psychotherapy evidence.
+    *American Psychologist* 65 (2010): 98–109.
+
+39. Condition-specific guidelines from professional and public-health bodies
+    should guide treatment selection.
+
+### Limit
+
+Version 4.0.1 does not publish universal response percentages as promises for
+an individual. Evidence informs shared clinical decisions; method, diagnosis,
+severity, access, fit, and preference matter.
+
+## Olfactory science
+
+40. Olfaction is strongly connected with emotion and memory, but that does not
+    make scented smoke a safe intervention.
+
+41. Fire, gas, poison, and occupational-safety guidance supports the guide’s
+    conservative unknown-smell route: no flame, no switch, leave exposure, call
+    from outside when danger is possible.
+
+## Caregiver burnout and overload
+
+42. **gesund.bund.de — Overload among family caregivers.** Warning signs,
+    counselling, respite, and crisis routes.
+    https://gesund.bund.de/belastungen-pflegende-angehoerige
+
+43. Caregiver-burden research supports the need for relief, rotation, and
+    structural support; it does not assign one inevitable depression rate to
+    every caregiver.
+
+## Stroke treatment
+
+44. ERC and German emergency guidance support FAST recognition and immediate
+    112 activation. The guide records “last known well” but does not ask a lay
+    reader to calculate treatment windows.
+
+## Burn assessment
+
+45. Clinical tools such as Lund–Browder charts are intended for trained
+    assessment. The lay guide prioritizes stopping the burn, safe cooling,
+    warmth, covering, and emergency escalation.
+
+## Seneca, Tao, and Stoic philosophy
+
+### Seneca and Stoicism
+
+46. Seneca’s letters and Stoic traditions offer historical material on control,
+    adversity, judgement, and action.
+
+### Tao Te Ching and Taoism
+
+47. The *Tao Te Ching* offers philosophical reflection on non-forcing,
+    simplicity, and flexibility.
+
+### I Ching
+
+48. The *I Ching* is included only as cultural and philosophical background.
+
+### Limit
+
+Philosophy can support reflection after immediate safety is secured. It does not
+replace emergency services, treatment, housing, or consent. Randomly opening a
+book is an activity, not evidence-based triage.
+
+## Psychology of masses, group dynamics, and sociology
+
+### Crowd psychology and social identity
+
+49. **Drury, Reicher, Stott and related social-identity disaster research.**
+    Crowds often show cooperation and shared identity, challenging assumptions
+    of automatic panic and disorder.
+
+### Conformity and obedience
+
+50. Classic work by Asch, Milgram, and later researchers provides historical
+    context but requires ethical and methodological interpretation.
+
+### Governance models
+
+51. Ostrom, organizational theory, deliberative-democracy, sociocracy/consent,
+    and emergency-management practice inform the comparison of coordination
+    forms.
+
+### Sociology and power
+
+52. Weber, Arendt, Foucault, and later social theory provide vocabulary for
+    authority, bureaucracy, legitimacy, and power. They are background, not
+    operational protocols.
+
+## Legal and professional standards
+
+53. **Official German Justiz-Services — Beratungshilfe.** Eligibility,
+    application routes, documents, out-of-court scope, and current fee.
+    https://service.justiz.de/beratungshilfe
+
+54. **Official German Justiz-Services — Prozesskostenhilfe.** Financial support
+    for eligible court proceedings.
+    https://service.justiz.de/prozesskostenhilfe
+
+55. **German statutory text — §32 StGB and surrounding law.** Primary legal
+    text must be interpreted in case context by qualified counsel.
+
+### Limit
+
+The guide does not provide case-specific legal advice or guarantee the result of
+self-defence, housing, criminal, family, or civil disputes.
+
+## Affect labelling and emotional regulation
+
+56. Research on affect labelling suggests that putting feelings into words can
+    alter emotional processing for some people. The guide uses plain naming as
+    an optional grounding step, not a guaranteed neural switch.
+
+## Hydration and cognition
+
+57. Hydration can affect wellbeing and cognition, especially with significant
+    deficit, heat, illness, or exertion.
+
+### Limit
+
+“Drink water” is not a universal treatment for panic or illness. Swallowing must
+be safe, and emergency symptoms require assessment.
+
+## Yerkes–Dodson law
+
+58. **Yerkes RM and Dodson JD** (1908) and later performance research support a
+    broad relation among arousal, task difficulty, and performance.
+
+### Limit
+
+There is no single measurable optimum for every person and task. The guide uses
+it to justify simplifying tasks under high arousal.
+
+## Polyvagal theory
+
+59. Polyvagal language is widely used in therapy and popular education, while
+    strong anatomical and evolutionary claims remain debated.
+
+### Limit
+
+The guide uses connected/mobilized/shutdown language descriptively and does not
+present it as a complete diagnosis or settled mechanism.
+
+## Attachment theory
+
+60. **Bowlby J.** *Attachment and Loss* (1969).
+
+61. **Ainsworth MDS et al.** *Patterns of Attachment* (1978).
+
+62. Later rupture-and-repair and developmental research supports the practical
+    value of responsive care and repair.
+
+### Limit
+
+Attachment categories are not assigned from one incident, a quiz, or a bathroom
+conversation.
+
+## Postpartum depression
+
+63. **gesund.bund.de — Wochenbettdepression.** Distinguishes a brief baby blues
+    from persistent depressive symptoms and emphasizes professional support.
+    https://gesund.bund.de/wochenbettdepression
+
+64. Psychiatric emergency guidance supports immediate 112 activation for acute
+    self/baby danger, severe confusion, hallucinations, or delusional states.
+
+## Golden hour and trauma medicine
+
+65. Trauma systems emphasize early recognition and rapid treatment of serious
+    injury. The “golden hour” is retained only as an urgency mnemonic.
+
+## Haemorrhagic shock classification
+
+66. Formal shock classes are clinical teaching tools. The lay guide instead
+    uses severe bleeding, altered state, pallor/clamminess, weakness, collapse,
+    and rapid breathing as reasons for 112 and direct pressure.
+
+## Anaphylaxis
+
+67. ERC and allergy guidelines support immediate intramuscular adrenaline via a
+    prescribed auto-injector, emergency activation, and avoidance of standing
+    or walking during severe reactions.
+
+## Game theory and cooperation
+
+68. **Axelrod R.** *The Evolution of Cooperation* (1984) and repeated-game
+    research provide background for visible rules, proportional response, and
+    repair.
+
+### Limit
+
+Game theory is explanatory. It does not reduce real people to fixed strategies
+or justify coercive resource control.
+
+## Thermoregulation
+
+69. Basic heat-transfer physiology supports staying dry, blocking wind,
+    insulating from ground, reducing heat exposure, and avoiding intense direct
+    rewarming in suspected hypothermia.
+
+70. Current DRK guidance, source 8 above, governs the first-aid actions used.
+
+## Reproductive health and medication
+
+71. **Embryotox.** Evidence-based information and specialist counselling for
+    medication during pregnancy and breastfeeding.
+    https://www.embryotox.de/
+
+72. **familienplanung.de.** Federal pregnancy and counselling information.
+    https://www.familienplanung.de/beratung/beratungsstellensuche/
 
 ## German crisis and support services
 
-14. **TelefonSeelsorge.** Official free and anonymous crisis conversation:
-    116 123 and additional channels.  
-    https://www.telefonseelsorge.de/
+73. **TelefonSeelsorge:** https://www.telefonseelsorge.de/
 
-15. **Violence against Women Helpline.** Official 116 016 service; free,
-    anonymous, multilingual, 24/7.  
-    https://www.hilfetelefon.de/
+74. **Violence against Women Helpline:** https://www.hilfetelefon.de/
 
-16. **116117.de.** Official medical on-call service for urgent,
-    non-life-threatening problems.  
-    https://www.116117.de/
+75. **Medical on-call service:** https://www.116117.de/
 
-17. **gesund.bund.de — Social psychiatric service.** Public low-threshold
-    support for people in crisis and their social environment.  
-    https://gesund.bund.de/sozialpsychiatrischer-dienst
-
-18. **gesund.bund.de — Caregiver overload.** Warning signs, relief, counselling,
-    and acute-crisis options.  
-    https://gesund.bund.de/belastungen-pflegende-angehoerige
-
-19. **Embryotox.** Evidence-based medication information and specialist
-    counselling for pregnancy and breastfeeding.  
-    https://www.embryotox.de/
-
-20. **familienplanung.de.** Federal public information and recognized pregnancy
-    counselling search.  
-    https://www.familienplanung.de/beratung/beratungsstellensuche/
-
-## Preparedness, water, and groups
-
-21. **Bundesamt für Bevölkerungsschutz und Katastrophenhilfe.**
-    *Vorsorgen für Krisen und Katastrophen* (2025). Current German household
-    preparedness, 2 L/person/day water planning value, individual needs,
-    warnings, evacuation supplies, hygiene, and outage advice.  
-    https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/Ratgeber/BBK-Vorsorgen-fuer-Krisen-und-Katastrophen.pdf?__blob=publicationFile&v=44
-
-22. **WHO — Technical Notes on Drinking-Water, Sanitation and Hygiene in
-    Emergencies.** Treatment guidance and the important limits of household
-    methods.  
-    https://www.who.int/publications/m/item/technical-notes-on-drinking-water-sanitation-and-hygiene-in-emergencies
-
-23. **Elinor Ostrom.** “Beyond Markets and States: Polycentric Governance of
-    Complex Economic Systems,” Nobel Prize Lecture (2009). Empirical basis for
-    commons-governance principles.  
-    https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/
-
-24. **Inter-Agency Standing Committee.** *Guidelines on Mental Health and
-    Psychosocial Support in Emergency Settings.* Layered support from basic
-    safety and services through specialized care.  
-    https://interagencystandingcommittee.org/iasc-task-force-mental-health-and-psychosocial-support-emergency-settings/iasc-guidelines-mental-health-and-psychosocial-support-emergency-settings-2007
+76. **Nummer gegen Kummer:** https://www.nummergegenkummer.de/
 
 ## Cyber incident branch
 
-25. **Federal Office for Information Security (BSI).** Citizen and
-    organizational incident information and reporting routes.  
+77. **Federal Office for Information Security (BSI).** Citizen and
+    organizational incident information and reporting routes.
     https://www.bsi.bund.de/
 
 ## Editorial policy
 
-- Do not infer acute medical urgency from a GAD-7 or pain score.
-- Do not print drug or chemical dosing without product- and
-  concentration-specific authority.
-- Distinguish measured clinical relationships from explanatory models.
-- Prefer a short action plus escalation rule to an impressive but unusable
-  lecture.
-- Recheck service numbers and guideline versions at every release.
+- Do not infer acute medical urgency from a GAD-7, pain score, home pulse,
+  oximeter, blood pressure, or apparent calm.
+- Do not print drug, chemical, or water-disinfection dosing without product-
+  and concentration-specific authority.
+- Distinguish measured relationships from explanatory models.
+- Label disputed or approximate theories.
+- Prefer a short action plus escalation rule before deeper explanation.
+- Keep humour away from the gap between a red flag and the action.
+- Recheck service numbers, legal-aid details, and guideline versions at every
+  release.
+- Preserve the breadth of v3.3 without preserving its confidence where the
+  evidence did not earn it.

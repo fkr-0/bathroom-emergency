@@ -3,9 +3,9 @@
 > “You are in a room with a door, water, and one next action.”
 
 A sourced, rebuildable decision guide for panic, pain, responsibility, danger,
-overload, bad smells, missing places, and infrastructure failure. Version 4
-uses a red-flag-first flow, native MathML, and deterministic one-column A4
-printing.
+overload, bad smells, missing places, and infrastructure failure. Version 4.0.1
+combines the red-flag-first v4 safety architecture with the extensive subject
+breadth of v3.3, native MathML, and deterministic one-column A4 printing.
 
 ## Quick build
 
@@ -70,7 +70,8 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 11 source chapters at revision 4.0.0;
+- 11 source chapters at revision 4.0.1;
+- restored v3.3 breadth markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
 - no known unsafe legacy wording;
 - every referenced image exists;
@@ -86,7 +87,8 @@ Statements are labelled by function:
 - **mnemonic** — memorable compression.
 
 The source chapter records the evidence and the limits of what it supports.
-Emergency numbers and links were checked on 17 July 2026.
+Core emergency routes and newly restored source material were reviewed on
+22 July 2026.
 
 ## Safety scope
 

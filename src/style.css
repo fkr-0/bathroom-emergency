@@ -539,14 +539,14 @@ math[display="block"] {
     break-before: page;
   }
 
-  .chapter:first-child { break-before: auto; }
+  .chapter:first-child,
+  .document-cover + .chapter { break-before: auto; }
 
   .document-cover {
     min-height: 257mm;
     padding: 20mm;
     border: 5mm solid #1e5b48;
     background: #fff;
-    break-after: page;
   }
 
   .document-cover h1 { font-size: 46pt; }

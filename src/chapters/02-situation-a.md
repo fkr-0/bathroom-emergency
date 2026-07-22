@@ -1,14 +1,19 @@
 ---
 title: "Responsibility, Harm, and Other Life Forms"
 chapter: 2
-revision: "4.0.0"
-last_updated: "2026-07-17"
+revision: "4.0.1"
+last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Situation A — I Caused Trouble
 
 Guilt wants a trial. Emergencies need a sequence.
+
+This chapter restores the full v3.3 branch structure—before birth, just born,
+days later, childhood, adulthood, ambiguous responsibility, harm, and ongoing
+care—without pretending that a bathroom flowchart can settle medicine, law, or
+ethics by itself.
 
 ## First split: live problem or aftermath?
 
@@ -41,62 +46,310 @@ $$A = (\text{stop},\; \text{stabilize},\; \text{tell},\; \text{repair},\; \text{
 This is not absolution algebra. It is simply harder for shame to sabotage five
 verbs than one enormous moral fog.
 
-## Pregnancy, birth, and reproductive decisions
+## A0 — Biological, social, technical, or unclear?
 
-A pregnancy is not a flowchart puzzle and viability statistics do not decide
-a person’s values.
+The old guide asked whether the life form was biological or silicon-based. That
+question remains, because apparently this bathroom serves a broad clientele.
+Use the closest category:
 
-- **Unexpected active birth, heavy bleeding, seizure, fainting, severe pain,
-  severe breathlessness, or serious concern:** call **112**.
-- **Urgent but not life-threatening symptoms:** contact maternity care, a
-  gynecological service, or **116 117** outside practice hours.
-- **Decision or conflict about a pregnancy:** use a recognized pregnancy
-  counselling service. A calm, confidential appointment is more useful than a
-  milestone table copied into a bathroom.
-- **Medication exposure during pregnancy:** contact a clinician or a specialist
-  service such as Embryotox; do not stop prescribed medication solely because
-  of this guide.
-
-If a baby has just arrived unexpectedly, keep parent and baby warm, do not pull
-on the cord, call **112**, and follow the dispatcher’s instructions. Clever
-improvisation has been officially cancelled.
-
-## Child, dependent adult, animal, or other responsibility
-
-Ask four concrete questions:
-
-| Question | If yes | If no |
+| Category | Examples | First concern |
 |---|---|---|
-| Is anyone unsafe now? | 112 / 110 / veterinary emergency | Continue |
-| Is essential care missing today? | Arrange food, medication, supervision, shelter | Continue |
-| Is this beyond one person’s capacity? | Call family, care service, youth office, vet, or crisis support | Continue |
-| Is exhaustion making aggression feel possible? | Create distance safely and get immediate support | Make a follow-up plan |
+| Biological person | pregnancy, baby, child, adult, injured person | health, consent, safety |
+| Animal | pet, wildlife, livestock | veterinary care, containment, welfare |
+| Social responsibility | dependant, guest, employee, neighbour | immediate needs, duty, boundaries |
+| Technical entity | server, robot, model, autonomous process | containment, logs, owner notification |
+| Unclear | “it is complicated” | describe facts before naming the category |
+
+The category changes whom you call. It does not change the first principle:
+prevent further harm.
+
+## A1 — A life may be developing, but birth has not begun
+
+A possible or confirmed pregnancy can produce medical questions, practical
+questions, relationship conflict, moral pressure, and several people speaking
+as if they personally invented time. Separate the questions.
+
+### Medical urgency
+
+Call **112** for heavy bleeding, collapse, seizure, severe breathlessness,
+severe or rapidly worsening pain, serious injury, or any situation that appears
+life-threatening. For urgent but non-life-threatening symptoms, contact the
+maternity service, gynecological practice, or **116 117** outside normal hours.
+
+Do not use gestational-week tables as self-triage. Outcomes and urgency depend
+on the individual situation and clinical assessment.
+
+### A decision about pregnancy
+
+A decision belongs to the pregnant person, informed by qualified medical and
+recognized counselling support. A useful appointment can cover:
+
+- confirmation and dating;
+- health and medication questions;
+- available choices and legal time limits;
+- financial and practical support;
+- safety or coercion in the relationship;
+- what the person actually wants when the room becomes quieter.
+
+A bathroom guide can help make the call. It should not impersonate the
+appointment.
+
+### Medication or substance exposure
+
+- Do not abruptly stop prescribed medication solely because of this guide.
+- Contact the prescriber, maternity service, pharmacy, or a specialist source
+  such as Embryotox.
+- Record the product, amount, timing, and symptoms.
+- For acute poisoning or serious symptoms use **112** or a poison centre as
+  directed in Ch.5.
+
+## A2 — Birth appears to be happening now
+
+Unexpected active birth is a medical emergency. Call **112** and use
+speakerphone.
+
+While waiting:
+
+- keep the parent in a safe, private, warm place;
+- do not pull on the baby or umbilical cord;
+- support the baby if it arrives, note the time, and keep parent and baby warm;
+- follow the dispatcher’s exact instructions;
+- do not perform dramatic procedures learned from television.
+
+If the baby is not breathing normally, tell the dispatcher immediately and
+follow resuscitation instructions. The dispatcher is now the most qualified
+person in the bathroom.
+
+## A3 — A baby arrived recently: hours, days, or weeks ago
+
+The practical minimum is repetitive because babies are admirably indifferent
+to narrative structure:
+
+- feeding support and weight/health review;
+- warmth and safe sleep arrangements;
+- medical follow-up for parent and baby;
+- sleep and relief for the caregiver;
+- one person who can be called before exhaustion becomes danger.
+
+### Baby blues, depression, and psychiatric emergency
+
+A brief period of tearfulness and emotional volatility can occur after birth.
+Persistent low mood, loss of interest, severe guilt, inability to function, or
+feeling detached from the baby deserves prompt professional assessment,
+especially when symptoms last beyond roughly two weeks or are worsening.[^ppd]
+
+**Call 112 immediately** when there is acute danger, suicidal intent, intent to
+harm the baby, severe confusion, hallucinations, delusional beliefs, or a sudden
+loss of contact with reality. Postpartum psychiatric emergencies are medical
+conditions, not evidence that someone is “a bad parent.”
+
+For urgent support without acute danger, contact the maternity team, GP,
+psychiatric service, **116 117**, or a crisis service. Arrange another adult to
+stay if safety or basic care is uncertain.
+
+### Repair matters more than perfect attunement
+
+The v3.3 attachment section contained a useful relief hidden inside a large
+classification table: caregiving does not require uninterrupted perfection.
+Children need sufficiently responsive care and repeated repair after ordinary
+misattunements.
+
+A repair can be simple:
+
+1. return and regulate yourself;
+2. acknowledge what happened in age-appropriate words;
+3. reconnect through attention, comfort, or play;
+4. change the practical condition that caused the rupture when possible.
+
+Attachment categories describe research patterns; they are not labels to assign
+to a child or verdicts on one difficult afternoon.[^attachment]
+
+## A4 — A child or young dependant relies on you
+
+### Immediate safety inventory
+
+Check:
+
+- supervision;
+- food, fluids, medication, warmth, and sleep;
+- dangerous objects, substances, traffic, water, balconies, or animals;
+- a trusted backup adult;
+- whether the caregiver is too exhausted, intoxicated, panicked, or angry to
+  remain safely in charge.
+
+If basic care cannot be maintained today, call family support, pediatric care,
+the youth welfare office, social services, or **112** when there is immediate
+danger.
+
+### Development without deadline theatre
+
+Development occurs in broad windows. A milestone list can help prepare a
+conversation, but it cannot diagnose a child from a single observation.
+Contact pediatric services when a child loses previously acquired abilities,
+seems acutely ill, or when development, hearing, vision, feeding, movement, or
+communication causes persistent concern.
+
+Useful observations are concrete:
+
+- what the child can do now;
+- what changed and when;
+- whether the skill appears in some settings but not others;
+- sleep, feeding, illness, and language environment;
+- what caregivers or educators have noticed.
+
+Bring those facts to the appointment. Leave “the internet says exactly 200
+words” outside with the shoes.
+
+### After losing your temper
+
+If you shouted, frightened, or handled a child roughly:
+
+1. ensure immediate safety and check for injury;
+2. create distance if anger is still active;
+3. ask another safe adult to take over;
+4. apologize without making the child comfort you;
+5. obtain professional help if this is recurring or escalation feels possible.
+
+An apology is not “I am the worst person alive.” It is: “I shouted. That was not
+okay. You did not cause my behaviour. I am going to make this safer.”
+
+## A5 — The person is an adult, possibly your adult child
+
+Responsibility changes when the other person can decide for themselves. Support
+does not automatically mean control.
+
+Ask:
+
+- Is there immediate danger or impaired capacity requiring emergency help?
+- What help did the person actually request?
+- What can I offer without making promises I cannot keep?
+- What boundary protects both of us?
+- Which professional service belongs in the gap?
+
+A useful sentence is:
+
+> “I care about you. I can help with **[specific action]**. I cannot decide this
+> for you or carry it alone. Let us contact **[service/person]**.”
+
+“Grow up” is not a care plan. Neither is “I will secretly manage every variable
+until one of us explodes.”
+
+## A6 — The responsibility is ambiguous
+
+### I do not want this responsibility but may still have duties
+
+Separate:
+
+1. **today’s safety duty**;
+2. **legal or contractual duty**;
+3. **long-term willingness and capacity**;
+4. **who can take over or share the role**.
+
+Meet today’s essential needs, then get advice. Resentment kept secret tends to
+become architecture.
+
+### I want the responsibility but cannot obtain or sustain it
+
+This may involve infertility, adoption, money, disability, housing, care work,
+or another barrier. The immediate task is not forced optimism. It is to identify
+which problem is medical, legal, financial, relational, or grief-related and
+contact the matching service.
+
+### Nobody agrees on what happened
+
+Write a neutral timeline:
+
+- observable events;
+- exact words or messages;
+- injuries or damage;
+- people present;
+- actions already taken;
+- what remains disputed.
+
+Facts first. Interpretation can have a chair later.
+
+## A7 — I harmed or may have harmed someone
+
+### Accident
+
+- Stop further danger.
+- Call medical help when needed.
+- Preserve facts and relevant objects or messages.
+- Tell the affected person or authority honestly.
+- Do not repair evidence into invisibility.
+
+### Anger, violence, or loss of control
+
+- Create distance and prevent access to weapons or dangerous objects if this can
+  be done safely.
+- Ensure children or dependants are supervised by another safe adult.
+- Call **112 / 110** for immediate danger.
+- Contact crisis and specialist support before returning to the same conditions.
+
+### Self-defence, coercion, or unclear legal exposure
+
+Get safe, obtain medical care, preserve evidence, and seek legal advice. Do not
+rely on a compressed paragraph about German self-defence law to decide what to
+say or do in a specific case. Ch.7 explains how to find legal support without
+turning the guide into a confident but unlicensed barrister.
+
+### Thoughts of harming yourself or another person
+
+Do not stay alone with the means to act. Create distance, involve another adult,
+and call **112** for acute danger. When there is no immediate danger but the
+thoughts are frightening or recurring, contact **116 123**, **116 117**, a local
+crisis service, or a psychiatric emergency department.
+
+## A8 — Ongoing responsibility for a person, animal, or system
 
 Caregiver strain is not a character defect. It is a load problem. Load problems
 need relief, rotation, and services—not more private heroism.[^caregiver]
 
-## Harmed someone
+### Responsibility dashboard
 
-- **Accident:** stabilize, get medical help, preserve facts, and report what
-  happened honestly.
-- **Anger or loss of control:** create distance, remove access to weapons or
-  dangerous objects if safe, and contact crisis or professional support.
-- **Self-defence or coercion:** get safe and obtain legal advice; do not rely on
-  a paragraph summary of German criminal law.
-- **Thoughts of harming yourself or another person:** do not stay alone with the
-  means to act. Call **112** for acute danger, or **116 123 / 116 117** for
-  immediate support when there is no acute danger.
+| Domain | Question | Action when failing |
+|---|---|---|
+| Safety | Can everyone remain safe today? | emergency or backup care |
+| Essentials | Food, medication, hygiene, shelter available? | arrange service or supply |
+| Capacity | Can I continue without becoming unsafe? | respite, rotation, counselling |
+| Knowledge | Do I understand the care task? | clinician, vet, training, written plan |
+| Authority | Am I actually permitted to decide this? | clarify consent, custody, contract |
+| Continuity | What happens if I become ill tonight? | backup person and contact sheet |
+| Repair | What recurring failure needs a system change? | simplify, delegate, document |
 
-## A silicon-based life form escaped
+### Minimum viable care plan
 
-Fine. The guide accepts one science-fiction branch.
+Write:
+
+- daily essentials;
+- medications and allergies;
+- warning signs;
+- emergency contacts;
+- backup caregiver;
+- where documents and supplies live;
+- one source of respite.
+
+If the plan exists only in one exhausted person’s head, it is not yet a plan. It
+is a single point of failure wearing slippers.
+
+### Animals
+
+For acute breathing difficulty, collapse, major trauma, poisoning, uncontrolled
+bleeding, seizures, or severe pain, contact a veterinary emergency service.
+Protect yourself from frightened bites and scratches. Do not give human
+medication unless a veterinarian specifically instructs you.
+
+## A9 — A silicon-based life form escaped
+
+Fine. The guide accepts the science-fiction branch in full.
 
 1. Disconnect or isolate the affected system if authorized and safe.
-2. Do not wipe it, “test one more thing,” or publish credentials.
-3. Preserve logs and timestamps.
-4. Notify the system owner or incident-response contact.
-5. If critical infrastructure or a serious cyber incident is involved, consult
-   BSI guidance.
+2. Stop automated actions, external access, or credential use where possible.
+3. Do not wipe it, “test one more thing,” or publish credentials.
+4. Preserve logs, prompts, model/version information, and timestamps.
+5. Notify the system owner or incident-response contact.
+6. Record affected accounts, data, devices, and observed behaviour.
+7. For a serious cyber incident, follow BSI and organizational reporting routes.
 
 Contain first. Post-mortem later. The server does not need your guilt, only its
 logs.
@@ -107,8 +360,35 @@ Self-punishment and repair are not the same variable:
 
 $$\text{remorse} \neq \text{repair}$$
 
-Useful accountability increases truth, safety, and restitution. If an action
-only increases your suffering while changing nothing for the affected party,
-it may be punishment—but it is not yet repair.
+Useful accountability increases truth, safety, restitution, and changed
+behaviour. If an action only increases your suffering while changing nothing
+for the affected party, it may be punishment—but it is not yet repair.
 
-[^caregiver]: gesund.bund.de, “Überlastung bei pflegenden Angehörigen” (updated 2025), including crisis and relief options: https://gesund.bund.de/belastungen-pflegende-angehoerige
+### The repair worksheet
+
+| Question | Write one sentence |
+|---|---|
+| What happened? | |
+| Who or what was affected? | |
+| What danger remains? | |
+| What have I already stopped? | |
+| Who must be told? | |
+| What repair is possible now? | |
+| What cannot be repaired directly? | |
+| Which system must change to prevent recurrence? | |
+| When will I follow up? | |
+
+## When guilt itself becomes the emergency
+
+Guilt can motivate repair. Shame can also become immobilizing, obsessive, or
+suicidal. If you are stuck in repetitive self-punishment, unable to function, or
+at risk of harming yourself, use Ch.4 and Ch.7. Acute danger means **112**.
+
+You are still responsible for what happened. You are also still a person who
+needs enough stability to do the repair.
+
+[^ppd]: gesund.bund.de, “Wochenbettdepression,” describing persistent symptoms beyond a brief baby blues period and the need for professional assessment: https://gesund.bund.de/wochenbettdepression
+
+[^attachment]: Bowlby J, *Attachment and Loss* (1969); Ainsworth MDS et al., *Patterns of Attachment* (1978); and later work on rupture and repair. Attachment patterns are population-level constructs and should not be used as one-event diagnoses.
+
+[^caregiver]: gesund.bund.de, “Überlastung bei pflegenden Angehörigen,” including warning signs, counselling, relief, and crisis options: https://gesund.bund.de/belastungen-pflegende-angehoerige

@@ -24,4 +24,4 @@ For each release:
 4. high-quality public medical information;
 5. secondary explanation only when clearly labelled.
 
-Access and emergency-number review date: **2026-07-17**.
+Access and core emergency-route review date: **2026-07-22**.

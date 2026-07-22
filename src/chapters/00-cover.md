@@ -1,8 +1,8 @@
 ---
 title: "Bathroom Emergency Guide"
 chapter: 0
-revision: "4.0.0"
-last_updated: "2026-07-17"
+revision: "4.0.1"
+last_updated: "2026-07-22"
 type: cover
 dependencies: []
 ---
@@ -21,13 +21,18 @@ dependencies: []
   <div><strong>110</strong>police / active threat</div>
 </div>
 
-**Version 4.0 · Germany edition · 17 July 2026**
+**Version 4.0.1 · Germany edition · 22 July 2026**
 
-A small decision system for panic, pain, responsibility, danger, overload,
-bad smells, missing places, and the occasional collapse of civilization.
+A large guide disguised as a small decision system for panic, pain,
+responsibility, danger, overload, bad smells, missing places, first aid,
+outages, group governance, and the occasional escaped silicon life form.
+
+Version 4.0.1 restores the full explanatory breadth of v3.3 on top of v4’s
+red-flag-first safety architecture.
 
 The jokes are optional. The red flags are not.
 
 This guide supports decisions; it does not diagnose, replace first-aid
-training, or overrule emergency dispatchers. If life may be in danger or
-lasting harm cannot be excluded, call **112 before reading further**.
+training, provide case-specific legal advice, or overrule emergency dispatchers.
+If life may be in danger or lasting harm cannot be excluded, call **112 before
+reading further**.
