@@ -3,9 +3,10 @@
 > “You are in a room with a door, water, and one next action.”
 
 A sourced, rebuildable decision guide for panic, pain, responsibility, danger,
-overload, bad smells, missing places, and infrastructure failure. Version 4.0.1
+overload, bad smells, missing places, and infrastructure failure. Version 4.1.1
 combines the red-flag-first v4 safety architecture with the extensive subject
-breadth of v3.3, native MathML, and deterministic one-column A4 printing.
+breadth of v3.3, bounded quantitative evidence, native MathML, and deterministic
+one-column A4 printing.
 
 ## Quick build
 
@@ -44,12 +45,14 @@ network dependency.
 ## Source layout
 
     src/chapters/          canonical content, 00–10
-    src/diagrams/          generated orientation and decorative figures
+    src/diagrams/          orientation, safety, and evidence figures
+    src/data/              reviewed numeric inputs and evidence limits
     src/template.html      semantic screen shell and small UI controls
     src/style.css          screen + single-column print system
     src/style-mono.css     monochrome overrides only
     bin/build_guide.py     deterministic document builder
-    bin/validate_guide.py  safety and rendering invariants
+    bin/validate_guide.py  safety, evidence, and rendering invariants
+    ROADMAP.md             flowgraph, chapter, research, and release backlog
     build/                 generated deliverables
 
 ## Output matrix
@@ -70,23 +73,25 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 11 source chapters at revision 4.0.1;
+- 11 source chapters at revision 4.1.1;
 - restored v3.3 breadth markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
-- no known unsafe legacy wording;
-- every referenced image exists;
+- no known unsafe legacy wording or deprecated scientific chart;
+- a valid 4.1.1 evidence registry with source and limit for every plotted fact;
+- every referenced image and required evidence figure exists;
+- roadmap coverage for the next routing, locale, and continuity releases;
 - readable A4 PDF with a plausible page count.
 
 ## Evidence policy
 
-Statements are labelled by function:
+Statements are labelled by function: protocol, population estimate,
+diagnostic-accuracy study, randomized study, observational association,
+descriptive equation, mathematical or conceptual model, and mnemonic.
 
-- **protocol** — guidance from an authoritative body;
-- **descriptive equation** — exact once inputs are known;
-- **conceptual model** — a thinking aid, not a prediction;
-- **mnemonic** — memorable compression.
-
-The source chapter records the evidence and the limits of what it supports.
+Plotted values live in `src/data/evidence_facts.json`. Each record names its
+population or model scope, denominator, source, uncertainty where available,
+and practical limit. The source chapter records the supporting literature and
+what it does **not** establish.
 Core emergency routes and newly restored source material were reviewed on
 22 July 2026.
 

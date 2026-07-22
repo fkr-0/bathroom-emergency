@@ -15,6 +15,8 @@ HTML = ROOT / "build" / "html" / "guide.html"
 PDF = ROOT / "build" / "pdf" / "guide.pdf"
 PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION = PACKAGE["version"]
+EVIDENCE_PATH = ROOT / "src" / "data" / "evidence_facts.json"
+ROADMAP = ROOT / "ROADMAP.md"
 errors: list[str] = []
 
 
@@ -54,6 +56,89 @@ check(
 )
 check("column-count: 1 !important" in STYLE, "single-column print invariant missing")
 check("columns: auto !important" in STYLE, "print column reset missing")
+
+# Evidence registry and figure checks. A chart may be simple; its provenance may not.
+evidence: dict = {}
+if EVIDENCE_PATH.exists():
+    try:
+        evidence = json.loads(EVIDENCE_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        errors.append(f"evidence registry is invalid JSON: {exc}")
+else:
+    errors.append("src/data/evidence_facts.json is missing")
+
+facts = evidence.get("facts", {}) if isinstance(evidence, dict) else {}
+required_fact_keys = {
+    "gad7_original",
+    "gad7_cochrane",
+    "breathwork_trial",
+    "infertility_lifetime",
+    "postpartum_psychosis",
+    "stroke_time_model",
+    "household_water",
+    "sleep_restriction",
+    "social_connection_mortality",
+}
+check(evidence.get("release") == VERSION, "evidence registry release does not match package version")
+check(required_fact_keys <= set(facts), "evidence registry is missing one or more required fact sets")
+for key in sorted(required_fact_keys & set(facts)):
+    fact = facts[key]
+    check(bool(fact.get("class")), f"evidence fact {key} has no evidence class")
+    check(bool(fact.get("source")), f"evidence fact {key} has no source")
+    check(bool(fact.get("limit")), f"evidence fact {key} has no practical limit")
+    context_keys = {
+        "population", "denominator", "scope", "target", "participants",
+        "participants_included", "incidence_per_1000_range",
+        "litres_per_person_per_day", "associations", "estimate",
+    }
+    check(any(name in fact for name in context_keys), f"evidence fact {key} has no scope or denominator field")
+
+if required_fact_keys <= set(facts):
+    check(facts["gad7_cochrane"].get("sensitivity") == 0.64, "pooled GAD-7 sensitivity drifted from reviewed value")
+    check(facts["gad7_cochrane"].get("specificity") == 0.91, "pooled GAD-7 specificity drifted from reviewed value")
+    check(facts["infertility_lifetime"].get("estimate") == 0.175, "WHO infertility estimate drifted from reviewed value")
+    check(facts["stroke_time_model"].get("neurons_million_per_minute") == 1.9, "stroke model value drifted from reviewed value")
+    check(facts["household_water"].get("litres_per_person_per_day") == 2, "BBK household-water value drifted from reviewed value")
+
+required_evidence_figures = {
+    "evidence_classes.png",
+    "gad7_validation_comparison.png",
+    "breathwork_trial_map.png",
+    "reproductive_health_denominators.png",
+    "stroke_time_model.png",
+    "household_water_planner.png",
+    "sleep_restriction_study.png",
+    "social_connection_associations.png",
+}
+for name in sorted(required_evidence_figures):
+    check((ROOT / "build" / "diagrams" / name).exists(), f"required evidence figure missing: {name}")
+    check(name in source, f"required evidence figure is not referenced in chapters: {name}")
+
+deprecated_figures = {
+    "stress_decay_curve.png",
+    "anxiety_severity_spectrum.png",
+    "survival_probability_function.png",
+    "group_complexity_scaling.png",
+    "pain_nrs_correlates.png",
+    "water_requirements_scaling.png",
+    "situation_a_tree.png",
+}
+for name in sorted(deprecated_figures):
+    check(name not in source, f"deprecated figure is still referenced: {name}")
+    check(not (ROOT / "build" / "diagrams" / name).exists(), f"deprecated figure was regenerated: {name}")
+
+check(ROADMAP.exists(), "ROADMAP.md is missing")
+if ROADMAP.exists():
+    roadmap = ROADMAP.read_text(encoding="utf-8")
+    for marker in (
+        "Proposed two-pass topology",
+        "fire, smoke, carbon monoxide",
+        "vulnerable-person modifier",
+        "4.2.0 — Routing and hazard architecture",
+        "4.3.0 — Locale and accessibility",
+        "4.4.0 — Household continuity modules",
+    ):
+        check(marker.lower() in roadmap.lower(), f"roadmap marker missing: {marker}")
 
 # Version and source-shape checks.
 for path in CHAPTERS:
@@ -134,8 +219,16 @@ if HTML.exists():
     check("<main id=\"guide\">" in html, "semantic guide wrapper missing")
     check("class=\"chapter" in html, "chapter wrappers missing")
     check(VERSION in html, f"built HTML does not contain version {VERSION}")
-    for marker in ("IASC support pyramid", "Ostrom", "decision tree — safe text version"):
-        check(marker.lower() in html.lower(), f"built HTML missing parity content: {marker}")
+    normalized_html = re.sub(r"\s+", " ", html).lower()
+    for marker in (
+        "IASC support pyramid",
+        "Ostrom",
+        "decision tree — safe text version",
+        "That is not a contradiction requiring a duel between bar charts",
+        "Time is brain",
+        "Social connection is not decorative trim",
+    ):
+        check(marker.lower() in normalized_html, f"built HTML missing required content: {marker}")
 else:
     errors.append("build/html/guide.html is missing")
 
@@ -162,5 +255,6 @@ if errors:
 print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
-    "v3.3 breadth markers, native MathML, A4 PDF, one-column print."
+    f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
+    "v3.3 breadth markers, roadmap coverage, native MathML, A4 PDF, one-column print."
 )

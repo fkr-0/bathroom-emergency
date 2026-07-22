@@ -1,9 +1,11 @@
 ---
 title: "Situations B–G"
 chapter: 3
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
-dependencies: []
+dependencies:
+  - build/diagrams/gad7_validation_comparison.png
+  - build/diagrams/sleep_restriction_study.png
 ---
 
 # Situations B–G — Pick the Closest Door
@@ -60,6 +62,20 @@ The GAD-7 asks how often seven anxiety symptoms occurred during the previous
 The score is a screening and communication tool. It is **not** an acute panic
 triage score, cannot exclude a physical emergency, and does not turn a person
 into one of four coloured rectangles.[^gad7]
+
+![Original and pooled GAD-7 accuracy estimates](build/diagrams/gad7_validation_comparison.png)
+
+The original 2006 primary-care study reported **89% sensitivity** and **82%
+specificity** at a cut-off of 10. A later Cochrane diagnostic-accuracy review
+found a pooled **64% sensitivity** (95% CI 56–72%) and **91% specificity**
+(95% CI 87–93%) for detecting generalized anxiety disorder at the same
+recommended cut-off or the nearest available one.[^gad7-review]
+
+That is not a contradiction requiring a duel between bar charts. It is what
+happens when one instrument leaves its development sample and meets different
+settings, populations, and reference standards. The practical conclusion is
+modest: a high score supports assessment; a low score does not prove absence;
+neither result handles acute medical triage.
 
 ### What the stress response is doing
 
@@ -210,6 +226,24 @@ close tabs, silence notifications, write the task down, drink normally, eat if
 needed, sit, ask another person to hold one responsibility, or stop trying to
 solve Thursday while it is still Tuesday.[^cowan]
 
+### Sleep debt can hide behind confidence
+
+![Design and bounded result of a 14-day sleep-restriction study](build/diagrams/sleep_restriction_study.png)
+
+A controlled study enrolled 48 healthy adults. The four-, six-, and eight-hour
+time-in-bed groups were followed for 14 days, while a separate zero-hour
+comparison group underwent total sleep deprivation for three days. The four-
+and six-hour chronic-restriction conditions produced cumulative, dose-dependent
+performance deficits. Subjective sleepiness rose early but then changed less
+clearly than objective impairment; people did not become accurate judges merely
+by becoming familiar with feeling tired.[^sleep-loss]
+
+This small laboratory study is not a personal impairment calculator. It does
+support a polite operational rule: after repeated short sleep, reduce complex
+choices, write down handoffs, double-check medication and driving decisions,
+and borrow a second alert brain where possible. Coffee may attend the meeting;
+it does not get voting rights on whether you are fully restored.
+
 ### The three-line triage
 
 Write:
@@ -343,6 +377,10 @@ Tonight is an acceptable unit of planning.
 
 [^gad7]: Spitzer RL et al., “A Brief Measure for Assessing Generalized Anxiety Disorder: The GAD-7,” *Archives of Internal Medicine* 166 (2006): 1092–1097. https://doi.org/10.1001/archinte.166.10.1092
 
+[^gad7-review]: *Generalized Anxiety Disorder 7-item (GAD-7) and 2-item (GAD-2) scales for detecting anxiety disorders in adults*, Cochrane diagnostic-test-accuracy review (2025). At cut-off 10 or nearest available, summary sensitivity was 0.64 (95% CI 0.56–0.72) and specificity 0.91 (0.87–0.93) for generalized anxiety disorder; heterogeneity remained substantial. https://www.cochrane.org/evidence/CD015455_how-accurate-are-gad-7-and-gad-2-questionnaires-detecting-anxiety-disorders
+
 [^violence-help]: Federal Violence against Women Helpline: https://www.hilfetelefon.de/
 
 [^cowan]: Cowan N, “The magical number 4 in short-term memory,” *Behavioral and Brain Sciences* 24 (2001): 87–114. The estimate concerns controlled tasks and is a design clue, not a fixed personal limit. https://doi.org/10.1017/S0140525X01003922
+
+[^sleep-loss]: Van Dongen HPA et al., “The cumulative cost of additional wakefulness: dose-response effects on neurobehavioral functions and sleep physiology from chronic sleep restriction and total sleep deprivation,” *Sleep* 26 (2003): 117–126. https://doi.org/10.1093/sleep/26.2.117

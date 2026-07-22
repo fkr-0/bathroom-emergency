@@ -1,9 +1,10 @@
 ---
 title: "Responsibility, Harm, and Other Life Forms"
 chapter: 2
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
-dependencies: []
+dependencies:
+  - build/diagrams/reproductive_health_denominators.png
 ---
 
 # Situation A — I Caused Trouble
@@ -146,6 +147,22 @@ conditions, not evidence that someone is “a bad parent.”
 For urgent support without acute danger, contact the maternity team, GP,
 psychiatric service, **116 117**, or a crisis service. Arrange another adult to
 stay if safety or basic care is uncertain.
+
+### Two useful numbers, with their denominators attached
+
+![Reproductive-health estimates with deliberately separate denominators](build/diagrams/reproductive_health_denominators.png)
+
+WHO estimates that about **17.5% of adults—roughly one in six—experience
+infertility during their lifetime**.[^infertility] This is a population estimate
+over a long time frame. It is not the chance attached to one person, one month,
+or one treatment.
+
+A systematic review found postpartum-psychosis incidence estimates ranging from
+**0.89 to 2.6 per 1,000** across five population studies. Methods differed too
+much for the authors to calculate one global pooled estimate.[^ppp-incidence]
+The condition is uncommon and still an emergency when severe confusion,
+hallucinations, delusions, or dangerous loss of reality contact appear. Rare is
+a frequency word, not a permission to wait.
 
 ### Repair matters more than perfect attunement
 
@@ -392,3 +409,7 @@ needs enough stability to do the repair.
 [^attachment]: Bowlby J, *Attachment and Loss* (1969); Ainsworth MDS et al., *Patterns of Attachment* (1978); and later work on rupture and repair. Attachment patterns are population-level constructs and should not be used as one-event diagnoses.
 
 [^caregiver]: gesund.bund.de, “Überlastung bei pflegenden Angehörigen,” including warning signs, counselling, relief, and crisis options: https://gesund.bund.de/belastungen-pflegende-angehoerige
+
+[^infertility]: World Health Organization, *Infertility Prevalence Estimates, 1990–2021* and the 2025 infertility fact sheet/guideline: approximately 17.5% of adults, or one in six people of reproductive age, experience infertility in their lifetime. https://www.who.int/news-room/fact-sheets/detail/infertility
+
+[^ppp-incidence]: VanderKruik R et al., “The global prevalence of postpartum psychosis: a systematic review,” *BMC Psychiatry* 17, 272 (2017), doi:10.1186/s12888-017-1427-7. Five incidence studies ranged from 0.89 to 2.6 per 1,000; methodological heterogeneity prevented pooling.

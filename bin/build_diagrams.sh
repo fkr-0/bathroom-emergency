@@ -6,6 +6,5 @@ OUT="$ROOT/build/diagrams"
 mkdir -p "$OUT"
 
 echo "Bathroom Emergency Guide — diagram build"
-python3 "$ROOT/src/diagrams/generate_pixel_art.py" "$OUT"
-python3 "$ROOT/src/diagrams/generate_flowgraph.py" "$OUT"
-echo "  refreshed all referenced diagrams"
+python3 "$ROOT/src/diagrams/generate_all.py" "$OUT"
+echo "  refreshed orientation, safety, and evidence diagrams"

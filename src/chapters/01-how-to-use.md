@@ -1,10 +1,11 @@
 ---
 title: "Start Here"
 chapter: 1
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/emergency_flowgraph.png
+  - build/diagrams/evidence_classes.png
 ---
 
 # Start Here — One Question at a Time
@@ -102,6 +103,22 @@ metaphor cannot sneak into the building dressed as physiology.
 
 No equation in this guide can overrule symptoms, a dispatcher, or common sense.
 That would be a very ambitious equation.
+
+## How to read the evidence figures
+
+![Evidence labels used by the guide](build/diagrams/evidence_classes.png)
+
+Version 4.1.1 adds numbers back carefully. Every evidence figure states:
+
+- **what kind of evidence it is**—protocol, population estimate, study,
+  association, or model;
+- **who or what was measured**;
+- **the denominator and time frame**;
+- **uncertainty**, when the source reports it;
+- **what the result does not permit you to conclude**.
+
+A useful number answers a bounded question. A number without a denominator is a
+rumour with a decimal point.
 
 ## Guide topology — a graph model
 

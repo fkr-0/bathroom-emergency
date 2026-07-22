@@ -1,5 +1,39 @@
 # Changelog
 
+## 4.1.1 — 2026-07-22
+
+### Restored carefully
+
+- Reintroduced useful quantitative context removed with the unsafe v3.3 claims,
+  but only with named evidence class, denominator, scope, source, uncertainty,
+  and practical limit.
+- Added bounded findings on GAD-7 diagnostic accuracy, a 28-day breathwork
+  trial, lifetime infertility prevalence, postpartum-psychosis incidence,
+  stroke urgency modelling, household water planning, repeated sleep
+  restriction, and social-connection associations.
+- Kept emergency protocols dominant over every screen, estimate, association,
+  and model.
+
+### Visualized
+
+- Added eight reproducible evidence diagrams: evidence labels, GAD-7 validation,
+  breathwork design, reproductive-health denominators, stroke time model,
+  household water planner, sleep-restriction design, and social-connection odds.
+- Added `src/data/evidence_facts.json` as the reviewable source of plotted values
+  and figure caveats.
+- Replaced the legacy monolithic diagram generator; deprecated fictional or
+  unsafe charts are removed during the canonical build.
+
+### Extended
+
+- Expanded scientific notation with a bounded stroke model and odds-ratio
+  definition.
+- Added `ROADMAP.md` covering main-flowgraph hazard gates, vulnerability
+  modifiers, chapter extensions, locale/accessibility work, evidence candidates,
+  and release sequencing through 4.4.0.
+- Updated source policy, annotated bibliography, appendix diagram index, and
+  release validation expectations.
+
 ## 4.0.1 — 2026-07-22
 
 ### Restored

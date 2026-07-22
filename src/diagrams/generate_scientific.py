@@ -1,847 +1,378 @@
 #!/usr/bin/env python3
+"""Generate the evidence figures used by Bathroom Emergency Guide 4.1.x.
+
+All numeric inputs live in ``src/data/evidence_facts.json``.  The figures are
+therefore reviewable without reading plotting code, and each chart prints its
+scope and limit directly into the image.
 """
-Bathroom Emergency Guide v3.2 — Scientific Diagram Generator
-Generates 8 new scientific diagrams for the guide with pixel art aesthetic enhancements.
+from __future__ import annotations
 
-Diagrams:
-  1. stress_decay_curve.png         — Ch.4 Calm Guide
-  2. anxiety_severity_spectrum.png  — Ch.3 Situations B-G
-  3. triage_priority_heatmap.png    — Ch.5 Self Ambulance
-  4. survival_probability_function.png — Ch.6 Zombie Guide
-  5. group_complexity_scaling.png   — Ch.6 Zombie Guide
-  6. pain_nrs_correlates.png        — Ch.3/Ch.5 Pain
-  7. decision_flow_graph.png        — Ch.1 How to Use
-  8. water_requirements_scaling.png — Ch.6 Zombie Guide
-
-Usage:
-    python generate_scientific.py [OUTPUT_DIR]
-
-    OUTPUT_DIR: target directory for PNG files (default: ../../build/diagrams)
-"""
-import sys
-import os
 import io
-import math
+import json
+import sys
+import textwrap
+from pathlib import Path
 
 import matplotlib
-matplotlib.use('Agg')
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import matplotlib.colors as mcolors
-from matplotlib.patches import FancyBboxPatch
-from matplotlib.collections import PatchCollection
+import matplotlib.patches as patches
 import numpy as np
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageDraw
 
-# Output directory
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), '..', '..', 'build', 'diagrams')
-os.makedirs(OUT, exist_ok=True)
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "build" / "diagrams"
+OUT.mkdir(parents=True, exist_ok=True)
+DATA_PATH = ROOT / "src" / "data" / "evidence_facts.json"
+DATA = json.loads(DATA_PATH.read_text(encoding="utf-8"))
+F = DATA["facts"]
 
-# ── Color Palette (identical to generate_all.py) ──────────
-MATH_BLUE = '#2563EB'
-LIGHT_BG = '#F8FAFC'
-GRAPH_PAPER = '#FBF7F0'
-GRAPH_PAPER_LINE = '#E8E2D8'
-GRAPH_PAPER_LINE_MAJ = '#D5CEC2'
-GREEN = '#22C55E'
-RED = '#EF4444'
-ORANGE = '#F97316'
-PURPLE = '#A855F7'
-GRAY = '#94A3B8'
-WHITE = '#FFFFFF'
-DARK = '#1E293B'
-CYAN = '#06B6D4'
-
-# ── Pixel Art Enhancement Config (identical to generate_all.py) ──
-SPRITE_DIR = OUT
-SPRITE_NAMES = {
-    'bathroom_icon.png', 'water_drop.png', 'brain.png', 'heart.png',
-    'zombie_hand.png', 'flame.png', 'shield.png', 'book.png',
-    'breath.png', 'first_aid.png', 'compass.png', 'pixel_border.png'
-}
-CORNER_SPRITES = ['shield.png', 'flame.png', 'heart.png', 'compass.png']
-BORDER_COLOR = '#2563EB'
-BORDER_WIDTH = 4
-BORDER_INNER_GAP = 2
-CORNER_SPRITE_SCALE = 2
-CORNER_PADDING = 12
-SCANLINE_ALPHA = 18
-
-# ── Sprite Cache ──────────────────────────────────────────
-_sprite_cache = {}
+BG = "#fbf8f1"
+PAPER = "#fffdf8"
+INK = "#172033"
+MUTED = "#5f6b7a"
+GRID = "#ded8cc"
+BLUE = "#2563eb"
+CYAN = "#0891b2"
+GREEN = "#15803d"
+ORANGE = "#c2410c"
+RED = "#b91c1c"
+PURPLE = "#7e22ce"
+YELLOW = "#a16207"
 
 
-def load_sprite(name):
-    """Load a pixel art sprite from the output directory, with caching."""
-    if name in _sprite_cache:
-        return _sprite_cache[name]
-    path = os.path.join(SPRITE_DIR, name)
-    if not os.path.exists(path):
-        _sprite_cache[name] = None
-        return None
-    try:
-        img = Image.open(path).convert('RGBA')
-        _sprite_cache[name] = img
-        return img
-    except Exception:
-        _sprite_cache[name] = None
-        return None
+def wrapped(value: str, width: int = 105) -> str:
+    return "\n".join(textwrap.wrap(value, width=width))
 
 
-# ── Post-Processing Helpers (identical to generate_all.py) ──
-def apply_scanlines(img):
-    """Add subtle scanline overlay: every other row slightly darker."""
-    w, h = img.size
-    overlay = Image.new('RGBA', (w, h), (0, 0, 0, 0))
-    px = overlay.load()
-    for y in range(0, h, 2):
-        for x in range(w):
-            px[x, y] = (0, 0, 0, SCANLINE_ALPHA)
-    result = Image.alpha_composite(img, overlay)
-    return result
+def evidence_footer(fig: plt.Figure, source: str, limit: str) -> None:
+    fig.text(0.02, 0.045, wrapped(f"SOURCE · {source}", 120), fontsize=7.2,
+             color=MUTED, ha="left", va="bottom")
+    fig.text(0.02, 0.012, wrapped(f"LIMIT · {limit}", 120), fontsize=7.2,
+             color=RED, ha="left", va="bottom", fontweight="bold")
 
 
-def add_pixel_border_frame(img):
-    """Draw a pixel-art style border/frame around the image."""
-    w, h = img.size
-    bw = BORDER_WIDTH
-    gap = BORDER_INNER_GAP
-    total = bw * 2 + gap * 2
-    new_w = w + total
-    new_h = h + total
-    framed = Image.new('RGBA', (new_w, new_h), (0, 0, 0, 0))
-
-    draw = ImageDraw.Draw(framed)
-    bc = BORDER_COLOR.lstrip('#')
-    bc_rgba = (int(bc[:2], 16), int(bc[2:4], 16), int(bc[4:6], 16), 255)
-    bc_dark = (max(0, bc_rgba[0] - 40), max(0, bc_rgba[1] - 40), max(0, bc_rgba[2] - 40), 255)
-    bc_light = (min(255, bc_rgba[0] + 40), min(255, bc_rgba[1] + 40), min(255, bc_rgba[2] + 40), 255)
-
-    # Outer border rectangle
-    draw.rectangle([0, 0, new_w - 1, new_h - 1], outline=bc_dark, width=1)
-    draw.rectangle([1, 1, new_w - 2, new_h - 2], outline=bc_rgba, width=1)
-    draw.rectangle([2, 2, new_w - 3, new_h - 3], outline=bc_light, width=1)
-
-    # Inner border rectangle
-    inner_start = bw + gap
-    draw.rectangle([inner_start - 1, inner_start - 1,
-                     new_w - inner_start, new_h - inner_start],
-                    outline=bc_light, width=1)
-    draw.rectangle([inner_start, inner_start,
-                     new_w - inner_start - 1, new_h - inner_start - 1],
-                    outline=bc_rgba, width=1)
-    draw.rectangle([inner_start + 1, inner_start + 1,
-                     new_w - inner_start - 2, new_h - inner_start - 2],
-                    outline=bc_dark, width=1)
-
-    # Corner decorations
-    corner_size = 3
-    corners = [
-        (bw // 2, bw // 2),
-        (new_w - 1 - bw // 2, bw // 2),
-        (bw // 2, new_h - 1 - bw // 2),
-        (new_w - 1 - bw // 2, new_h - 1 - bw // 2),
-    ]
-    for cx, cy in corners:
-        for dy in range(-corner_size, corner_size + 1):
-            for dx in range(-corner_size, corner_size + 1):
-                if abs(dx) + abs(dy) <= corner_size:
-                    px_x, px_y = cx + dx, cy + dy
-                    if 0 <= px_x < new_w and 0 <= px_y < new_h:
-                        draw.point((px_x, px_y), fill=bc_rgba)
-
-    # Pixel-art notch marks along each edge (every 48px)
-    for x in range(24, new_w, 48):
-        for dy in range(bw):
-            draw.point((x, dy), fill=bc_dark)
-            draw.point((x, new_h - 1 - dy), fill=bc_dark)
-    for y in range(24, new_h, 48):
-        for dx in range(bw):
-            draw.point((dx, y), fill=bc_dark)
-            draw.point((new_w - 1 - dx, y), fill=bc_dark)
-
-    framed.paste(img, (bw + gap, bw + gap), img if img.mode == 'RGBA' else None)
-    return framed
-
-
-def add_corner_sprites(img):
-    """Embed small pixel art sprites in the corners as decorative elements."""
-    w, h = img.size
-    result = img.copy()
-
-    positions = [
-        ('top-left',     CORNER_PADDING, CORNER_PADDING),
-        ('top-right',    w - CORNER_PADDING, CORNER_PADDING),
-        ('bottom-left',  CORNER_PADDING, h - CORNER_PADDING),
-        ('bottom-right', w - CORNER_PADDING, h - CORNER_PADDING),
-    ]
-
-    for i, (corner, cx, cy) in enumerate(positions):
-        sprite_name = CORNER_SPRITES[i % len(CORNER_SPRITES)]
-        sprite = load_sprite(sprite_name)
-        if sprite is None:
-            continue
-
-        sw, sh = sprite.size
-        new_sw = sw * CORNER_SPRITE_SCALE
-        new_sh = sh * CORNER_SPRITE_SCALE
-        sprite_scaled = sprite.resize((new_sw, new_sh), Image.NEAREST)
-
-        if corner == 'top-left':
-            paste_x, paste_y = cx, cy
-        elif corner == 'top-right':
-            paste_x, paste_y = cx - new_sw, cy
-        elif corner == 'bottom-left':
-            paste_x, paste_y = cx, cy - new_sh
-        else:
-            paste_x, paste_y = cx - new_sw, cy - new_sh
-
-        paste_x = max(0, min(paste_x, w - new_sw))
-        paste_y = max(0, min(paste_y, h - new_sh))
-
-        temp = Image.new('RGBA', (w, h), (0, 0, 0, 0))
-        temp.paste(sprite_scaled, (paste_x, paste_y), sprite_scaled)
-        result = Image.alpha_composite(result, temp)
-
-    return result
-
-
-def post_process(img):
-    """Apply all pixel art enhancements to a diagram image."""
-    img = apply_scanlines(img)
-    img = add_corner_sprites(img)
-    img = add_pixel_border_frame(img)
-    return img
-
-
-# ── Helpers (identical to generate_all.py) ────────────────
-def graph_paper_bg(ax, x_max=11, y_max=9):
-    ax.set_facecolor(GRAPH_PAPER)
-    for x in np.arange(0, x_max + 0.5, 0.5):
-        ax.axvline(x, color=GRAPH_PAPER_LINE, linewidth=0.3, zorder=0)
-    for y in np.arange(0, y_max + 0.5, 0.5):
-        ax.axhline(y, color=GRAPH_PAPER_LINE, linewidth=0.3, zorder=0)
-    for x in np.arange(0, x_max + 1, 1):
-        ax.axvline(x, color=GRAPH_PAPER_LINE_MAJ, linewidth=0.5, zorder=0)
-    for y in np.arange(0, y_max + 1, 1):
-        ax.axhline(y, color=GRAPH_PAPER_LINE_MAJ, linewidth=0.5, zorder=0)
-
-
-def draw_box(ax, x, y, w, h, text, color=MATH_BLUE, text_color=WHITE, fontsize=9, bold=True):
-    box = FancyBboxPatch((x - w / 2, y - h / 2), w, h,
-                          boxstyle="round,pad=0.1",
-                          facecolor=color, edgecolor='none',
-                          zorder=3, alpha=0.95)
-    ax.add_patch(box)
-    weight = 'bold' if bold else 'normal'
-    ax.text(x, y, text, ha='center', va='center', fontsize=fontsize,
-            color=text_color, fontweight=weight, zorder=4, fontfamily='sans-serif')
-
-
-def draw_diamond(ax, x, y, w, h, text, color=ORANGE, text_color=WHITE, fontsize=8):
-    diamond = plt.Polygon([(x, y + h / 2), (x + w / 2, y), (x, y - h / 2), (x - w / 2, y)],
-                           facecolor=color, edgecolor='none', alpha=0.95, zorder=3)
-    ax.add_patch(diamond)
-    ax.text(x, y, text, ha='center', va='center', fontsize=fontsize,
-            color=text_color, fontweight='bold', zorder=4, fontfamily='sans-serif')
-
-
-def draw_arrow(ax, x1, y1, x2, y2, color=DARK, label=None, fontsize=7):
-    ax.annotate('', xy=(x2, y2), xytext=(x1, y1),
-                arrowprops=dict(arrowstyle='->', color=color, lw=1.5), zorder=2)
-    if label:
-        mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-        ax.text(mx + 0.1, my + 0.1, label, fontsize=fontsize, color=color,
-                fontweight='bold', fontfamily='sans-serif', zorder=5)
-
-
-def save(fig, name):
-    """Save diagram with pixel art enhancements applied."""
-    path = os.path.join(OUT, name)
-
-    buf = io.BytesIO()
-    fig.savefig(buf, dpi=200, bbox_inches='tight', facecolor=LIGHT_BG, edgecolor='none', format='png')
+def finish(fig: plt.Figure, filename: str) -> None:
+    """Render a high-resolution PNG and add a restrained pixel frame."""
+    buffer = io.BytesIO()
+    fig.savefig(buffer, format="png", dpi=190, bbox_inches="tight",
+                facecolor=BG, edgecolor="none")
     plt.close(fig)
-    buf.seek(0)
-
-    img = Image.open(buf).convert('RGBA')
-    img = post_process(img)
-    img.save(path, 'PNG')
-    print(f"  [OK] {path}")
-
-
-# ════════════════════════════════════════════════════════════════
-# 1. STRESS DECAY CURVE
-# ════════════════════════════════════════════════════════════════
-print("Generating v3.2 scientific diagrams...")
-print("  [1/8] Stress decay curve...")
-fig, ax = plt.subplots(1, 1, figsize=(10, 6))
-ax.set_facecolor(GRAPH_PAPER)
-fig.patch.set_facecolor(LIGHT_BG)
-
-# Cortisol half-life ~90 min => lambda = ln(2)/90 ≈ 0.0077 per minute
-# We plot over 0-60 minutes
-t = np.linspace(0, 60, 300)
-lam = np.log(2) / 90  # per minute
-C0 = 1.0
-C = C0 * np.exp(-lam * t)
-
-# 10-minute reset window shaded region
-ax.axvspan(0, 10, alpha=0.18, color=GREEN, zorder=1, label='10-min reset window')
-
-# Plot the decay curve
-ax.plot(t, C, color=MATH_BLUE, lw=2.5, zorder=3, label='C(t) = C₀·e$^{-\\lambda t}$')
-
-# 50% decay mark — when C = 0.5
-t_half = 90  # minutes (outside our range, so we show the projected value at t=60)
-C_at_60 = C0 * np.exp(-lam * 60)
-ax.axhline(y=0.5, color=GRAY, ls=':', lw=1.5, zorder=2, label='50% decay mark')
-
-# Dotted vertical line at t=10
-ax.axvline(x=10, color=GREEN, ls='--', lw=1, alpha=0.7, zorder=2)
-
-# Annotation: Sympathetic → Parasympathetic transition
-ax.annotate('Sympathetic → Parasympathetic\ntransition zone',
-            xy=(10, C0 * np.exp(-lam * 10)), xytext=(25, 0.75),
-            fontsize=9, color=DARK, fontfamily='sans-serif',
-            arrowprops=dict(arrowstyle='->', color=DARK, lw=1.2),
-            bbox=dict(boxstyle='round,pad=0.3', facecolor=GRAPH_PAPER, edgecolor=GRAY, alpha=0.9),
-            zorder=5)
-
-# Annotation at the 50% mark
-ax.annotate(f'50% at t=90 min\n(cortisol half-life)',
-            xy=(60, 0.5), xytext=(40, 0.35),
-            fontsize=8, color=GRAY, fontfamily='sans-serif',
-            arrowprops=dict(arrowstyle='->', color=GRAY, lw=1),
-            zorder=5)
-
-# Shade the curve area lightly
-ax.fill_between(t, 0, C, alpha=0.08, color=MATH_BLUE, zorder=1)
-
-ax.set_xlim(0, 60)
-ax.set_ylim(0, 1.05)
-ax.set_xlabel('Time (minutes)', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_ylabel('Cortisol / Stress Level (normalized)', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_title('Stress Decay Curve — Your 10-Minute Reset Window',
-             fontsize=13, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif', pad=12)
-
-ax.legend(loc='upper right', fontsize=8, framealpha=0.9, edgecolor=GRAPH_PAPER_LINE_MAJ)
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['left'].set_color(GRAY)
-ax.spines['bottom'].set_color(GRAY)
-ax.tick_params(colors=DARK, labelsize=8)
-ax.yaxis.grid(True, color=GRAPH_PAPER_LINE_MAJ, linewidth=0.5, zorder=0)
-ax.xaxis.grid(True, color=GRAPH_PAPER_LINE, linewidth=0.3, zorder=0)
-
-fig.tight_layout()
-save(fig, 'stress_decay_curve.png')
+    buffer.seek(0)
+    image = Image.open(buffer).convert("RGBA")
+    frame = 8
+    framed = Image.new("RGBA", (image.width + 2 * frame, image.height + 2 * frame), BG)
+    framed.paste(image, (frame, frame), image)
+    draw = ImageDraw.Draw(framed)
+    draw.rectangle((1, 1, framed.width - 2, framed.height - 2), outline=INK, width=2)
+    draw.rectangle((4, 4, framed.width - 5, framed.height - 5), outline=BLUE, width=2)
+    for x, y in ((4, 4), (framed.width - 5, 4), (4, framed.height - 5),
+                 (framed.width - 5, framed.height - 5)):
+        draw.rectangle((x - 2, y - 2, x + 2, y + 2), fill=BLUE)
+    target = OUT / filename
+    framed.convert("RGB").save(target, "PNG", optimize=True)
+    print(f"  [OK] {target}")
 
 
-# ════════════════════════════════════════════════════════════════
-# 2. ANXIETY SEVERITY SPECTRUM
-# ════════════════════════════════════════════════════════════════
-print("  [2/8] Anxiety severity spectrum...")
-fig, ax = plt.subplots(1, 1, figsize=(12, 5))
-ax.set_facecolor(GRAPH_PAPER)
-fig.patch.set_facecolor(LIGHT_BG)
+def clean_axis(ax: plt.Axes) -> None:
+    ax.set_facecolor(PAPER)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.spines[["left", "bottom"]].set_color(MUTED)
+    ax.tick_params(colors=INK, labelsize=9)
+    ax.grid(axis="x", color=GRID, linewidth=0.7, zorder=0)
 
-# GAD-7 segments
-segments = [
-    (0, 4, '#22C55E', 'Minimal\n(0–4)', 'Self-care\n(Breathing, journaling)'),
-    (5, 9, '#EAB308', 'Mild\n(5–9)', 'Calm Guide\n(Ch.4 techniques)'),
-    (10, 14, '#F97316', 'Moderate\n(10–14)', 'Professional\nSupport (Ch.7)'),
-    (15, 21, '#EF4444', 'Severe\n(15–21)', 'Crisis\nIntervention (112)'),
+
+def chart_evidence_classes() -> None:
+    fig, ax = plt.subplots(figsize=(12, 6.2))
+    fig.patch.set_facecolor(BG)
+    ax.set_xlim(0, 12)
+    ax.set_ylim(0, 7)
+    ax.axis("off")
+    ax.set_facecolor(PAPER)
+    ax.text(6, 6.55, "Evidence labels: what the number is allowed to say",
+            ha="center", fontsize=16, fontweight="bold", color=INK)
+    entries = [
+        (1.55, "PROTOCOL", "authoritative action", "Do this when the condition applies", RED),
+        (4.45, "POPULATION", "frequency in a defined group", "Context, not personal prophecy", BLUE),
+        (7.55, "STUDY", "measured comparison", "Result depends on design and sample", GREEN),
+        (10.45, "MODEL", "calculation from assumptions", "Useful only inside its stated scope", PURPLE),
+    ]
+    for x, title, middle, bottom, color in entries:
+        box = patches.FancyBboxPatch((x - 1.25, 2.05), 2.5, 3.25,
+                                     boxstyle="round,pad=0.18", facecolor="white",
+                                     edgecolor=color, linewidth=2.5)
+        ax.add_patch(box)
+        ax.text(x, 4.7, title, ha="center", fontsize=12, color=color, fontweight="bold")
+        ax.text(x, 3.75, wrapped(middle, 24), ha="center", va="center", fontsize=9, color=INK)
+        ax.text(x, 2.75, wrapped(bottom, 25), ha="center", va="center", fontsize=8.5, color=MUTED)
+    ax.text(6, 1.25,
+            "Every figure also names its denominator, source, uncertainty and practical limit.",
+            ha="center", fontsize=10.5, color=INK, fontweight="bold")
+    ax.text(6, 0.72,
+            "A chart without scope is decoration wearing safety goggles.",
+            ha="center", fontsize=9.5, color=MUTED, style="italic")
+    evidence_footer(fig, "Bathroom Emergency Guide evidence policy, v4.1.1",
+                    "The label describes evidential role, not a universal quality score.")
+    finish(fig, "evidence_classes.png")
+
+
+def chart_gad7() -> None:
+    original = F["gad7_original"]
+    pooled = F["gad7_cochrane"]
+    rows = [
+        ("Original study · sensitivity", original["sensitivity"], None, BLUE),
+        ("Pooled review · sensitivity", pooled["sensitivity"], pooled["sensitivity_ci95"], CYAN),
+        ("Original study · specificity", original["specificity"], None, ORANGE),
+        ("Pooled review · specificity", pooled["specificity"], pooled["specificity_ci95"], GREEN),
+    ]
+    fig, ax = plt.subplots(figsize=(11, 6.4))
+    fig.patch.set_facecolor(BG)
+    clean_axis(ax)
+    y = np.arange(len(rows))[::-1]
+    for yi, (label, value, ci, color) in zip(y, rows):
+        if ci:
+            ax.errorbar(value, yi, xerr=[[value - ci[0]], [ci[1] - value]], fmt="o",
+                        markersize=9, capsize=5, color=color, linewidth=2.2, zorder=4)
+        else:
+            ax.scatter([value], [yi], s=90, color=color, marker="s", zorder=4)
+        ax.text(value + 0.018, yi, f"{value:.0%}", va="center", fontsize=10,
+                color=INK, fontweight="bold")
+    ax.set_yticks(y, [r[0] for r in rows])
+    ax.set_xlim(0.4, 1.01)
+    ax.set_xticks(np.arange(0.4, 1.01, 0.1), [f"{x:.0%}" for x in np.arange(0.4, 1.01, 0.1)])
+    ax.set_xlabel("Diagnostic-accuracy estimate at GAD-7 cut-off ≥10", color=INK)
+    ax.set_title("GAD-7: one famous study is not the final calibration",
+                 fontsize=15, fontweight="bold", color=INK, pad=14)
+    ax.text(0.4, -1.0,
+            "Squares: original primary-care validation. Circles: pooled estimate; whiskers: 95% CI.",
+            fontsize=8.5, color=MUTED)
+    evidence_footer(fig, f"{original['source']}  ·  {pooled['source']}", pooled["limit"])
+    fig.subplots_adjust(left=0.29, bottom=0.21, top=0.84, right=0.97)
+    finish(fig, "gad7_validation_comparison.png")
+
+
+def chart_breathwork() -> None:
+    trial = F["breathwork_trial"]
+    fig, ax = plt.subplots(figsize=(12, 7.2))
+    fig.patch.set_facecolor(BG)
+    ax.set_xlim(0, 12)
+    ax.set_ylim(0, 8)
+    ax.axis("off")
+    ax.text(6, 7.55, "Breathwork trial: what was actually tested",
+            ha="center", fontsize=16, fontweight="bold", color=INK)
+    ax.text(6, 6.85,
+            f"{trial['participants_included']} adults included · {trial['minutes_per_day']} min/day · {trial['duration_days']} days · remote randomized design",
+            ha="center", fontsize=10, color=MUTED)
+    labels = [
+        ("Mindfulness\nmeditation", PURPLE),
+        ("Cyclic\nsighing", BLUE),
+        ("Box\nbreathing", GREEN),
+        ("Cyclic hyperventilation\n+ retention", ORANGE),
+    ]
+    xs = [1.65, 4.55, 7.45, 10.35]
+    for x, (label, color) in zip(xs, labels):
+        box = patches.FancyBboxPatch((x - 1.15, 4.3), 2.3, 1.35,
+                                     boxstyle="round,pad=0.15", facecolor="white",
+                                     edgecolor=color, linewidth=2.4)
+        ax.add_patch(box)
+        ax.text(x, 4.98, label, ha="center", va="center", fontsize=9.5,
+                color=color, fontweight="bold")
+        ax.annotate("", xy=(x, 3.55), xytext=(x, 4.27),
+                    arrowprops=dict(arrowstyle="->", color=MUTED, lw=1.5))
+    outcome = patches.FancyBboxPatch((1.15, 1.65), 9.7, 1.85,
+                                     boxstyle="round,pad=0.18", facecolor="#eef6ff",
+                                     edgecolor=BLUE, linewidth=2)
+    ax.add_patch(outcome)
+    ax.text(6, 2.95, "Measured daily mood/anxiety and wearable physiology",
+            ha="center", fontsize=10.5, fontweight="bold", color=INK)
+    ax.text(6, 2.35,
+            wrapped("All four groups improved daily mood measures. Breathwork—especially cyclic sighing—showed greater positive-affect improvement and lower respiratory rate than mindfulness meditation.", 95),
+            ha="center", va="center", fontsize=9.5, color=INK)
+    ax.text(6, 0.95,
+            "Interesting? Yes. Universal emergency cure? The study did not test that sentence.",
+            ha="center", fontsize=10, color=RED, fontweight="bold")
+    evidence_footer(fig, trial["source"], trial["limit"])
+    finish(fig, "breathwork_trial_map.png")
+
+
+def chart_reproductive_context() -> None:
+    infertility = F["infertility_lifetime"]
+    psychosis = F["postpartum_psychosis"]
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6.7))
+    fig.patch.set_facecolor(BG)
+    for ax in axes:
+        ax.set_facecolor(PAPER)
+        ax.spines[["top", "right"]].set_visible(False)
+        ax.grid(axis="y", color=GRID, linewidth=0.6, zorder=0)
+    axes[0].bar(["Lifetime infertility"], [100 * infertility["estimate"]], color=BLUE, width=0.55, zorder=3)
+    axes[0].set_ylim(0, 25)
+    axes[0].set_ylabel("people per 100", color=INK)
+    axes[0].text(0, 100 * infertility["estimate"] + 0.8, "17.5 per 100\n≈ one in six",
+                 ha="center", fontsize=11, fontweight="bold", color=INK)
+    axes[0].set_title("Lifetime population estimate", fontsize=12, color=BLUE, fontweight="bold")
+    lo, hi = psychosis["incidence_per_1000_range"]
+    axes[1].bar(["Postpartum psychosis"], [hi - lo], bottom=[lo], color=ORANGE,
+                width=0.55, zorder=3)
+    axes[1].scatter([0, 0], [lo, hi], color=RED, s=55, zorder=4)
+    axes[1].set_ylim(0, 3.2)
+    axes[1].set_ylabel("incidence estimates per 1,000 women", color=INK)
+    axes[1].text(0, hi + 0.15, f"range {lo:.2f}–{hi:.1f} per 1,000",
+                 ha="center", fontsize=10.5, fontweight="bold", color=INK)
+    axes[1].set_title("Incidence across five studies", fontsize=12, color=ORANGE, fontweight="bold")
+    fig.suptitle("Denominators matter: two reproductive-health facts",
+                 fontsize=15, fontweight="bold", color=INK, y=0.96)
+    fig.text(0.5, 0.105,
+             "These panels deliberately use different denominators and time frames. Do not compare bar heights.",
+             ha="center", fontsize=9, color=RED, fontweight="bold")
+    evidence_footer(fig, f"{infertility['source']}  ·  {psychosis['source']}",
+                    "Population context only. Postpartum psychosis symptoms remain an emergency despite low incidence; infertility prevalence does not predict one person or one attempt.")
+    fig.subplots_adjust(bottom=0.23, top=0.82, left=0.09, right=0.97, wspace=0.35)
+    finish(fig, "reproductive_health_denominators.png")
+
+
+def chart_stroke_model() -> None:
+    stroke = F["stroke_time_model"]
+    minutes = np.arange(0, 61)
+    neurons = stroke["neurons_million_per_minute"] * minutes
+    fig, ax = plt.subplots(figsize=(11, 6.8))
+    fig.patch.set_facecolor(BG)
+    clean_axis(ax)
+    ax.plot(minutes, neurons, color=RED, linewidth=3, zorder=3)
+    ax.fill_between(minutes, 0, neurons, color=RED, alpha=0.12, zorder=2)
+    for minute in (15, 30, 60):
+        value = stroke["neurons_million_per_minute"] * minute
+        ax.scatter([minute], [value], color=INK, s=50, zorder=4)
+        ax.text(minute, value + 4.5, f"{value:.1f} million", ha="center",
+                fontsize=9, color=INK, fontweight="bold")
+    ax.set_xlim(0, 60)
+    ax.set_ylim(0, 125)
+    ax.set_xlabel("minutes in the model", color=INK)
+    ax.set_ylabel("cumulative neurons lost (millions, model estimate)", color=INK)
+    ax.set_title("‘Time is brain’ quantified—an urgency model, not a bedside meter",
+                 fontsize=14.5, fontweight="bold", color=INK, pad=14)
+    ax.text(2, 108,
+            f"Also estimated per minute:\n{stroke['synapses_billion_per_minute']} billion synapses\n{stroke['myelinated_fibre_km_per_minute']} km myelinated fibres",
+            fontsize=9.5, color=INK, va="top",
+            bbox=dict(boxstyle="round,pad=0.45", facecolor="white", edgecolor=BLUE))
+    ax.text(59, 8, "FAST sign → 112 now", ha="right", fontsize=11,
+            color=RED, fontweight="bold")
+    evidence_footer(fig, stroke["source"], stroke["limit"])
+    fig.subplots_adjust(bottom=0.22, top=0.84, left=0.12, right=0.97)
+    finish(fig, "stroke_time_model.png")
+
+
+def chart_water() -> None:
+    water = F["household_water"]
+    people = np.arange(1, 7)
+    short = water["litres_per_person_per_day"] * people * water["minimum_useful_days"]
+    full = water["litres_per_person_per_day"] * people * water["preferred_days"]
+    width = 0.34
+    fig, ax = plt.subplots(figsize=(11, 6.8))
+    fig.patch.set_facecolor(BG)
+    clean_axis(ax)
+    x = np.arange(len(people))
+    ax.bar(x - width / 2, short, width, label=f"{water['minimum_useful_days']} days",
+           color=CYAN, zorder=3)
+    ax.bar(x + width / 2, full, width, label=f"{water['preferred_days']} days",
+           color=BLUE, zorder=3)
+    for xi, value in zip(x + width / 2, full):
+        ax.text(xi, value + 2.4, f"{int(value)} L", ha="center", fontsize=8,
+                color=INK, fontweight="bold")
+    ax.set_xticks(x, [str(n) for n in people])
+    ax.set_xlabel("people in household", color=INK)
+    ax.set_ylabel("stored drinking/cooking water (litres)", color=INK)
+    ax.set_title("Household water planner: start with three days, build toward ten",
+                 fontsize=14.5, fontweight="bold", color=INK, pad=14)
+    ax.legend(frameon=False, loc="upper left")
+    ax.text(5.4, 25, r"$W = 2nd$ litres", fontsize=13, color=BLUE, ha="right",
+            bbox=dict(boxstyle="round,pad=0.35", facecolor="white", edgecolor=BLUE))
+    evidence_footer(fig, water["source"], water["limit"])
+    fig.subplots_adjust(bottom=0.22, top=0.84, left=0.11, right=0.97)
+    finish(fig, "household_water_planner.png")
+
+
+def chart_sleep() -> None:
+    sleep = F["sleep_restriction"]
+    fig, ax = plt.subplots(figsize=(12, 7.1))
+    fig.patch.set_facecolor(BG)
+    ax.set_xlim(0, 15)
+    ax.set_ylim(0, 10)
+    ax.axis("off")
+    ax.text(7.5, 9.55, "Sleep restriction: impairment can accumulate before self-awareness catches up",
+            ha="center", fontsize=15, fontweight="bold", color=INK)
+    ax.text(7.5, 8.9,
+            f"Controlled laboratory study · n={sleep['participants']} enrolled · chronic-restriction arms {sleep['chronic_restriction_days']} days",
+            ha="center", fontsize=10, color=MUTED)
+    rows = [(8, GREEN, "8 h time in bed", "performance comparatively stable"),
+            (6, ORANGE, "6 h time in bed", "cumulative objective deficits"),
+            (4, RED, "4 h time in bed", "larger cumulative objective deficits")]
+    for y, color, label, result in rows:
+        ax.add_patch(patches.FancyBboxPatch((0.7, y - 0.45), 3.0, 0.9,
+                                            boxstyle="round,pad=0.1", facecolor="white",
+                                            edgecolor=color, linewidth=2.2))
+        ax.text(2.2, y, label, ha="center", va="center", fontsize=10,
+                fontweight="bold", color=color)
+        for day in range(1, 15):
+            ax.add_patch(patches.Rectangle((4.1 + (day - 1) * 0.56, y - 0.22),
+                                           0.42, 0.44, facecolor=color, alpha=0.78,
+                                           edgecolor="none"))
+        ax.text(12.45, y, wrapped(result, 26), ha="left", va="center",
+                fontsize=9.2, color=INK)
+    ax.text(7.9, 4.75, "chronic-restriction days 1 → 14", ha="center", fontsize=9, color=MUTED)
+    ax.text(7.5, 4.25,
+            f"A separate 0-hour time-in-bed comparator lasted {sleep['total_deprivation_comparator_days']} days.",
+            ha="center", fontsize=8.7, color=MUTED)
+    ax.text(7.5, 2.95,
+            wrapped("Subjective sleepiness increased early but changed less thereafter and did not clearly distinguish the four- and six-hour conditions. Feeling ‘used to it’ was not the same as performing normally.", 105),
+            ha="center", va="center", fontsize=10, color=INK,
+            bbox=dict(boxstyle="round,pad=0.55", facecolor="#fff7ed", edgecolor=ORANGE))
+    ax.text(7.5, 1.35,
+            "The bathroom translation: after repeated short sleep, simplify decisions and recruit a second brain.",
+            ha="center", fontsize=10.5, color=BLUE, fontweight="bold")
+    evidence_footer(fig, sleep["source"], sleep["limit"])
+    finish(fig, "sleep_restriction_study.png")
+
+
+def chart_social_connection() -> None:
+    social = F["social_connection_mortality"]
+    labels = list(social["associations"].keys())
+    values = list(social["associations"].values())
+    y = np.arange(len(labels))[::-1]
+    fig, ax = plt.subplots(figsize=(10.5, 6.2))
+    fig.patch.set_facecolor(BG)
+    clean_axis(ax)
+    ax.axvline(1.0, color=MUTED, linestyle="--", linewidth=1.5, zorder=1)
+    colors = [BLUE, PURPLE, ORANGE]
+    for yi, label, value, color in zip(y, labels, values, colors):
+        ax.plot([1.0, value], [yi, yi], color=color, linewidth=4, alpha=0.45, zorder=2)
+        ax.scatter([value], [yi], s=120, color=color, zorder=3)
+        ax.text(value + 0.012, yi, f"OR {value:.2f}", va="center", fontsize=10,
+                color=INK, fontweight="bold")
+    ax.set_yticks(y, [label.title() for label in labels])
+    ax.set_xlim(0.95, 1.38)
+    ax.set_xlabel("adjusted odds ratio for mortality across longitudinal studies", color=INK)
+    ax.set_title("Social connection: notable long-term associations, not personal fate",
+                 fontsize=14.5, fontweight="bold", color=INK, pad=14)
+    ax.text(1.005, -0.72, "OR 1.00 = reference", fontsize=8.5, color=MUTED)
+    evidence_footer(fig, social["source"], social["limit"])
+    fig.subplots_adjust(left=0.23, bottom=0.23, top=0.82, right=0.96)
+    finish(fig, "social_connection_associations.png")
+
+
+CHARTS = [
+    chart_evidence_classes,
+    chart_gad7,
+    chart_breathwork,
+    chart_reproductive_context,
+    chart_stroke_model,
+    chart_water,
+    chart_sleep,
+    chart_social_connection,
 ]
 
-for lo, hi, color, label, action in segments:
-    width = hi - lo + 1
-    rect = FancyBboxPatch((lo, 1.5), width, 1.5,
-                           boxstyle="round,pad=0.1",
-                           facecolor=color, edgecolor='none', alpha=0.85, zorder=3)
-    ax.add_patch(rect)
-    mid = (lo + hi) / 2
-    ax.text(mid, 2.25, label, ha='center', va='center', fontsize=10,
-            fontweight='bold', color=WHITE, fontfamily='sans-serif', zorder=4)
-    ax.text(mid, 0.7, action, ha='center', va='center', fontsize=8,
-            color=DARK, fontfamily='sans-serif', zorder=4,
-            bbox=dict(boxstyle='round,pad=0.2', facecolor=GRAPH_PAPER, edgecolor=GRAPH_PAPER_LINE_MAJ, alpha=0.9))
-
-# Tick marks for key scores
-for score in range(0, 22, 5):
-    ax.axvline(x=score, color=GRAPH_PAPER_LINE_MAJ, lw=0.5, zorder=1, ymin=0.35, ymax=0.65)
-
-ax.set_xlim(-1, 23)
-ax.set_ylim(-0.2, 4.0)
-ax.set_xlabel('GAD-7 Score', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_title('GAD-7 Anxiety Severity Spectrum',
-             fontsize=13, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif', pad=12)
-ax.set_xticks(range(0, 22, 3))
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['left'].set_visible(False)
-ax.set_yticks([])
-ax.spines['bottom'].set_color(GRAY)
-ax.tick_params(colors=DARK, labelsize=8)
-ax.yaxis.grid(False)
-ax.xaxis.grid(True, color=GRAPH_PAPER_LINE, linewidth=0.3, zorder=0)
-
-fig.tight_layout()
-save(fig, 'anxiety_severity_spectrum.png')
-
-
-# ════════════════════════════════════════════════════════════════
-# 3. TRIAGE PRIORITY HEATMAP
-# ════════════════════════════════════════════════════════════════
-print("  [3/8] Triage priority heatmap...")
-fig, ax = plt.subplots(1, 1, figsize=(8, 7))
-ax.set_facecolor(GRAPH_PAPER)
-fig.patch.set_facecolor(LIGHT_BG)
-
-severity = np.arange(1, 6)
-urgency = np.arange(1, 6)
-
-# Priority = severity * urgency
-S, U = np.meshgrid(severity, urgency)
-priority = S * U  # 1..25
-
-# Custom colormap: green -> yellow -> orange -> red
-cmap_colors = ['#22C55E', '#84CC16', '#EAB308', '#F97316', '#EF4444', '#DC2626']
-cmap = mcolors.LinearSegmentedColormap.from_list('triage', cmap_colors, N=256)
-
-im = ax.imshow(priority, cmap=cmap, origin='lower', aspect='equal',
-               extent=[0.5, 5.5, 0.5, 5.5], vmin=1, vmax=25, zorder=2)
-
-# Label key cells
-labels = {
-    (1, 1): 'Monitor',
-    (3, 1): 'Schedule',
-    (1, 3): 'Watch',
-    (3, 3): 'Act Soon',
-    (5, 1): 'Urgent\nCare',
-    (1, 5): 'Elevated',
-    (5, 3): 'High\nPriority',
-    (3, 5): 'Escalate',
-    (5, 5): 'Call 112',
-    (4, 4): 'Urgent',
-    (2, 2): 'Low',
-}
-
-for (s, u), text in labels.items():
-    val = s * u
-    text_color = WHITE if val > 10 else DARK
-    ax.text(s, u, text, ha='center', va='center', fontsize=8,
-            fontweight='bold', color=text_color, fontfamily='sans-serif', zorder=4)
-
-# Add numeric priority in smaller text
-for i in range(1, 6):
-    for j in range(1, 6):
-        val = i * j
-        text_color = WHITE if val > 10 else DARK
-        ax.text(i, j - 0.3, f'({val})', ha='center', va='center', fontsize=6,
-                color=text_color, alpha=0.6, fontfamily='sans-serif', zorder=4)
-
-ax.set_xticks(severity)
-ax.set_yticks(urgency)
-ax.set_xlabel('Severity (1–5)', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_ylabel('Urgency (1–5)', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_title('Triage Priority Matrix — Severity × Urgency',
-             fontsize=13, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif', pad=12)
-ax.tick_params(colors=DARK, labelsize=9)
-
-# Colorbar
-cbar = fig.colorbar(im, ax=ax, shrink=0.8, pad=0.02)
-cbar.set_label('Priority Score', fontsize=9, color=DARK, fontfamily='sans-serif')
-cbar.ax.tick_params(colors=DARK, labelsize=8)
-
-fig.tight_layout()
-save(fig, 'triage_priority_heatmap.png')
-
-
-# ════════════════════════════════════════════════════════════════
-# 4. SURVIVAL PROBABILITY FUNCTION
-# ════════════════════════════════════════════════════════════════
-print("  [4/8] Survival probability function...")
-fig, ax = plt.subplots(1, 1, figsize=(10, 6))
-ax.set_facecolor(GRAPH_PAPER)
-fig.patch.set_facecolor(LIGHT_BG)
-
-# Water: steep exponential decay — survival drops to near 0 by day 3
-t_water = np.linspace(0, 7, 300)
-P_water = np.exp(-1.2 * t_water)
-
-# Food: gradual decay — survival over 30 days
-t_food = np.linspace(0, 30, 300)
-P_food = np.exp(-0.08 * t_food)
-
-# Shelter: context-dependent, flatter curve
-t_shelter = np.linspace(0, 30, 300)
-P_shelter = 1.0 / (1.0 + 0.03 * t_shelter**1.5)
-
-ax.plot(t_water, P_water, color=RED, lw=2.5, zorder=3, label='Water (days)')
-ax.plot(t_food, P_food, color=ORANGE, lw=2.5, zorder=3, label='Food (days)')
-ax.plot(t_shelter, P_shelter, color=MATH_BLUE, lw=2.5, ls='--', zorder=3, label='Shelter (context)')
-
-# Fill under curves lightly
-ax.fill_between(t_water, 0, P_water, alpha=0.08, color=RED, zorder=1)
-ax.fill_between(t_food, 0, P_food, alpha=0.06, color=ORANGE, zorder=1)
-
-# Rule of 3s annotations
-rule_of_3s = [
-    (0.0, 0.15, '3 minutes\nwithout air', RED),
-    (3.0, 0.15, '3 days\nwithout water', RED),
-    (21.0, 0.15, '3 weeks\nwithout food', ORANGE),
-]
-for x, y, text, color in rule_of_3s:
-    ax.axvline(x=x, color=color, ls=':', lw=1, alpha=0.5, zorder=2)
-    ax.annotate(text, xy=(x, y), xytext=(x, y + 0.18),
-                fontsize=7, color=color, fontfamily='sans-serif', fontweight='bold',
-                ha='center', zorder=5,
-                bbox=dict(boxstyle='round,pad=0.2', facecolor=GRAPH_PAPER, edgecolor=color, alpha=0.85))
-
-ax.set_xlim(0, 30)
-ax.set_ylim(0, 1.05)
-ax.set_xlabel('Days', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_ylabel('Survival Probability', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_title('Survival Probability — The Rule of 3s',
-             fontsize=13, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif', pad=12)
-ax.legend(loc='upper right', fontsize=9, framealpha=0.9, edgecolor=GRAPH_PAPER_LINE_MAJ)
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['left'].set_color(GRAY)
-ax.spines['bottom'].set_color(GRAY)
-ax.tick_params(colors=DARK, labelsize=8)
-ax.yaxis.grid(True, color=GRAPH_PAPER_LINE_MAJ, linewidth=0.5, zorder=0)
-ax.xaxis.grid(True, color=GRAPH_PAPER_LINE, linewidth=0.3, zorder=0)
-
-fig.tight_layout()
-save(fig, 'survival_probability_function.png')
-
-
-# ════════════════════════════════════════════════════════════════
-# 5. GROUP COMPLEXITY SCALING
-# ════════════════════════════════════════════════════════════════
-print("  [5/8] Group complexity scaling...")
-fig, ax1 = plt.subplots(1, 1, figsize=(10, 6))
-ax1.set_facecolor(GRAPH_PAPER)
-fig.patch.set_facecolor(LIGHT_BG)
-
-# Group sizes
-group_sizes = np.array([1, 2, 3, 5, 8, 10, 15, 20, 30, 50, 75, 100, 150])
-comm_channels = group_sizes * (group_sizes - 1) / 2  # C(n) = n(n-1)/2
-
-# Plot communication channels on left y-axis
-ax1.plot(group_sizes, comm_channels, color=MATH_BLUE, lw=2.5, marker='o',
-         markersize=5, zorder=3, label='Communication channels C(n)')
-ax1.fill_between(group_sizes, 0, comm_channels, alpha=0.08, color=MATH_BLUE, zorder=1)
-
-ax1.set_xlabel('Group Size', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax1.set_ylabel('Communication Channels C(n) = n(n-1)/2', fontsize=10, color=MATH_BLUE, fontfamily='sans-serif')
-ax1.tick_params(axis='y', colors=MATH_BLUE, labelsize=8)
-ax1.tick_params(axis='x', colors=DARK, labelsize=8)
-
-# Mark Dunbar numbers
-dunbar_numbers = {
-    5: ('Support\ncircle', GREEN),
-    15: ('Sympathy\ngroup', ORANGE),
-    50: ('Band', PURPLE),
-    150: ('Community\n(Dunbar #)', RED),
-}
-for n, (label, color) in dunbar_numbers.items():
-    c_val = n * (n - 1) / 2
-    ax1.axvline(x=n, color=color, ls='--', lw=1, alpha=0.6, zorder=2)
-    ax1.plot(n, c_val, 's', color=color, markersize=10, zorder=5)
-    ax1.annotate(f'{label}\nn={n}', xy=(n, c_val), xytext=(n + 8, c_val + 500),
-                 fontsize=7, color=color, fontfamily='sans-serif', fontweight='bold',
-                 arrowprops=dict(arrowstyle='->', color=color, lw=1),
-                 zorder=5)
-
-# Right y-axis: Coordination complexity (qualitative)
-ax2 = ax1.twinx()
-# Qualitative complexity: 1-10 scale based on channels but compressed
-coord_complexity = np.log1p(comm_channels) / np.log1p(comm_channels.max()) * 10
-ax2.plot(group_sizes, coord_complexity, color=ORANGE, lw=2, ls='--',
-         marker='D', markersize=4, zorder=3, label='Coordination complexity')
-ax2.set_ylabel('Coordination Complexity (1–10)', fontsize=10, color=ORANGE, fontfamily='sans-serif')
-ax2.tick_params(axis='y', colors=ORANGE, labelsize=8)
-ax2.set_ylim(0, 11)
-
-ax1.set_title('Group Complexity Scaling — Dunbar Numbers & Communication Overhead',
-              fontsize=12, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif', pad=12)
-ax1.spines['top'].set_visible(False)
-ax1.spines['left'].set_color(MATH_BLUE)
-ax1.spines['right'].set_color(ORANGE)
-ax1.spines['bottom'].set_color(GRAY)
-ax1.yaxis.grid(True, color=GRAPH_PAPER_LINE_MAJ, linewidth=0.5, zorder=0)
-
-# Combined legend
-lines1, labels1 = ax1.get_legend_handles_labels()
-lines2, labels2 = ax2.get_legend_handles_labels()
-ax1.legend(lines1 + lines2, labels1 + labels2, loc='upper left', fontsize=8,
-           framealpha=0.9, edgecolor=GRAPH_PAPER_LINE_MAJ)
-
-fig.tight_layout()
-save(fig, 'group_complexity_scaling.png')
-
-
-# ════════════════════════════════════════════════════════════════
-# 6. PAIN NRS CORRELATES
-# ════════════════════════════════════════════════════════════════
-print("  [6/8] Pain NRS correlates...")
-fig, ax = plt.subplots(1, 1, figsize=(12, 6))
-ax.set_facecolor(GRAPH_PAPER)
-fig.patch.set_facecolor(LIGHT_BG)
-
-nrs_levels = np.arange(0, 11)
-
-# Color gradient: green(0) -> yellow(4) -> orange(7) -> red(10)
-color_stops = [
-    (0, '#22C55E'), (1, '#4ADE47'), (2, '#84CC16'), (3, '#A3E635'),
-    (4, '#EAB308'), (5, '#F59E0B'), (6, '#F59E0B'), (7, '#F97316'),
-    (8, '#EA580C'), (9, '#EF4444'), (10, '#DC2626'),
-]
-
-# Pain descriptors
-descriptors = ['None', 'Barely\nnoticeable', 'Minor', 'Mild', 'Moderate\n(low)',
-               'Moderate', 'Moderate\n(severe)', 'Severe', 'Very\nsevere',
-               'Extreme', 'Worst\npossible']
-
-# Physiological correlates
-physio = [
-    'Baseline',
-    'Slight HR ↑',
-    'HR ↑ 10%',
-    'HR ↑ 15%\nBP ↑',
-    'HR ↑ 20%\nBP ↑\nCortisol ↑',
-    'HR ↑ 25%\nBP ↑↑\nCortisol ↑',
-    'HR ↑ 30%\nBP ↑↑\nCortisol ↑↑',
-    'HR ↑ 40%\nBP ↑↑↑\nSweating',
-    'HR ↑ 50%\nBP crisis\nPale/sweating',
-    'HR ↑ 60%+\nShock risk\nDiaphoresis',
-    'HR max\nShock\nUnconscious risk',
-]
-
-bar_height = 1.2
-for i in range(11):
-    color = color_stops[i][1]
-    rect = FancyBboxPatch((i - 0.45, 3), 0.9, bar_height,
-                           boxstyle="round,pad=0.02",
-                           facecolor=color, edgecolor='none', alpha=0.85, zorder=3)
-    ax.add_patch(rect)
-    ax.text(i, 3 + bar_height / 2, str(i), ha='center', va='center',
-            fontsize=11, fontweight='bold', color=WHITE, fontfamily='sans-serif', zorder=4)
-
-    # Descriptor below
-    ax.text(i, 2.3, descriptors[i], ha='center', va='top', fontsize=6,
-            color=DARK, fontfamily='sans-serif', zorder=4)
-
-    # Physiological correlates below that
-    ax.text(i, 1.0, physio[i], ha='center', va='top', fontsize=5.5,
-            color=GRAY, fontfamily='sans-serif', zorder=4,
-            bbox=dict(boxstyle='round,pad=0.15', facecolor=GRAPH_PAPER,
-                      edgecolor=GRAPH_PAPER_LINE_MAJ, alpha=0.85))
-
-# Category brackets
-brackets = [
-    (0, 3, 'Mild', '#22C55E'),
-    (4, 6, 'Moderate', '#F59E0B'),
-    (7, 10, 'Severe', '#EF4444'),
-]
-for lo, hi, label, color in brackets:
-    mid = (lo + hi) / 2
-    ax.annotate('', xy=(lo - 0.45, 4.5), xytext=(hi + 0.45, 4.5),
-                arrowprops=dict(arrowstyle='|-|', color=color, lw=1.5), zorder=3)
-    ax.text(mid, 4.8, label, ha='center', va='bottom', fontsize=9,
-            fontweight='bold', color=color, fontfamily='sans-serif', zorder=4)
-
-ax.set_xlim(-1, 11)
-ax.set_ylim(-0.2, 5.5)
-ax.set_xlabel('Numeric Rating Scale (NRS)', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_title('Numeric Rating Scale — Pain with Physiological Correlates',
-             fontsize=13, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif', pad=12)
-ax.set_xticks(nrs_levels)
-ax.set_yticks([])
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['left'].set_visible(False)
-ax.spines['bottom'].set_color(GRAY)
-ax.tick_params(colors=DARK, labelsize=8)
-
-fig.tight_layout()
-save(fig, 'pain_nrs_correlates.png')
-
-
-# ════════════════════════════════════════════════════════════════
-# 7. DECISION FLOW GRAPH
-# ════════════════════════════════════════════════════════════════
-print("  [7/8] Decision flow graph...")
-fig, ax = plt.subplots(1, 1, figsize=(14, 9))
-ax.set_xlim(0, 14)
-ax.set_ylim(0, 9)
-ax.set_aspect('equal')
-ax.axis('off')
-graph_paper_bg(ax, 14, 9)
-
-ax.text(7, 8.6, 'Guide Topology — 7 Entry Nodes → 4 Destination Nodes',
-        ha='center', fontsize=13, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif')
-
-# Entry nodes (A-G) at top — sizes proportional to reference frequency
-entry_nodes = [
-    (1.0, 7.2, 'A', 'Caused\nTrouble', MATH_BLUE, 0.40),
-    (3.0, 7.2, 'B', 'Anxious', '#0EA5E9', 0.35),
-    (5.0, 7.2, 'C', 'Pain', '#0EA5E9', 0.30),
-    (7.0, 7.2, 'D', 'Endangered', '#0EA5E9', 0.20),
-    (9.0, 7.2, 'E', 'Congesting', '#0EA5E9', 0.25),
-    (11.0, 7.2, 'F', 'Bad Smell', '#0EA5E9', 0.15),
-    (13.0, 7.2, 'G', 'No Place', '#0EA5E9', 0.20),
-]
-
-# Destination nodes at bottom
-dest_nodes = [
-    (2.5, 1.8, 'Ch.4', 'Calm\nGuide', GREEN, 0.50),
-    (5.5, 1.8, 'Ch.5', 'Self\nAmbulance', RED, 0.30),
-    (8.5, 1.8, 'Ch.6', 'Zombie\nGuide', PURPLE, 0.15),
-    (11.5, 1.8, 'Ch.7', 'Professional\nSupport', MATH_BLUE, 0.25),
-]
-
-# Draw entry nodes with size proportional to frequency
-for x, y, letter, label, color, freq in entry_nodes:
-    size = 0.4 + freq * 0.6  # scale node size
-    draw_box(ax, x, y, size * 2.5, size * 2, f'{letter}\n{label}', color, WHITE, 7)
-    # Frequency label
-    ax.text(x, y - size - 0.1, f'p={freq:.0%}', ha='center', fontsize=6,
-            color=GRAY, fontfamily='sans-serif', zorder=5)
-
-# Draw destination nodes
-for x, y, ch, label, color, freq in dest_nodes:
-    size = 0.4 + freq * 0.6
-    draw_box(ax, x, y, size * 3, size * 2.2, f'{ch}\n{label}', color, WHITE, 8)
-    ax.text(x, y - size - 0.15, f'p={freq:.0%}', ha='center', fontsize=6,
-            color=GRAY, fontfamily='sans-serif', zorder=5)
-
-# Edge connections with weights (entry → destination)
-edges = [
-    # A → destinations
-    ('A', 'Ch.4', 0.40), ('A', 'Ch.5', 0.30), ('A', 'Ch.6', 0.10), ('A', 'Ch.7', 0.20),
-    # B → destinations
-    ('B', 'Ch.4', 0.55), ('B', 'Ch.7', 0.35), ('B', 'Ch.5', 0.10),
-    # C → destinations
-    ('C', 'Ch.5', 0.50), ('C', 'Ch.4', 0.25), ('C', 'Ch.7', 0.25),
-    # D → destinations
-    ('D', 'Ch.5', 0.35), ('D', 'Ch.7', 0.35), ('D', 'Ch.4', 0.20), ('D', 'Ch.6', 0.10),
-    # E → destinations
-    ('E', 'Ch.5', 0.40), ('E', 'Ch.4', 0.30), ('E', 'Ch.6', 0.20), ('E', 'Ch.7', 0.10),
-    # F → destinations
-    ('F', 'Ch.4', 0.45), ('F', 'Ch.7', 0.30), ('F', 'Ch.6', 0.25),
-    # G → destinations
-    ('G', 'Ch.4', 0.35), ('G', 'Ch.7', 0.30), ('G', 'Ch.6', 0.25), ('G', 'Ch.5', 0.10),
-]
-
-# Map node names to positions
-entry_pos = {n[2]: (n[0], n[1]) for n in entry_nodes}
-dest_pos = {n[2]: (n[0], n[1]) for n in dest_nodes}
-
-# Draw edges with varying thickness/alpha based on weight
-for src, dst, weight in edges:
-    sx, sy = entry_pos[src]
-    dx, dy = dest_pos[dst]
-    lw = 0.5 + weight * 4
-    alpha = 0.3 + weight * 0.7
-
-    # Curve the arrows slightly for readability
-    mid_y = (sy + dy) / 2
-    ax.annotate('', xy=(dx, dy + 0.5), xytext=(sx, sy - 0.6),
-                arrowprops=dict(arrowstyle='->', color=MATH_BLUE,
-                                lw=lw, alpha=alpha,
-                                connectionstyle='arc3,rad=0.1'),
-                zorder=2)
-
-    # Edge weight label at midpoint
-    mx = (sx + dx) / 2 + np.random.uniform(-0.3, 0.3)
-    my = mid_y + np.random.uniform(-0.2, 0.2)
-    ax.text(mx, my, f'{weight:.0%}', fontsize=5, color=GRAY,
-            fontfamily='sans-serif', ha='center', alpha=0.7, zorder=5)
-
-# Layer labels
-ax.text(7, 6.2, 'ENTRY SITUATIONS (7 nodes)', ha='center', fontsize=8,
-        color=GRAY, fontfamily='sans-serif', style='italic')
-ax.text(7, 3.0, 'DESTINATION GUIDES (4 nodes)', ha='center', fontsize=8,
-        color=GRAY, fontfamily='sans-serif', style='italic')
-
-save(fig, 'decision_flow_graph.png')
-
-
-# ════════════════════════════════════════════════════════════════
-# 8. WATER REQUIREMENTS SCALING
-# ════════════════════════════════════════════════════════════════
-print("  [8/8] Water requirements scaling...")
-fig, ax = plt.subplots(1, 1, figsize=(10, 6))
-ax.set_facecolor(GRAPH_PAPER)
-fig.patch.set_facecolor(LIGHT_BG)
-
-group_sizes = [1, 5, 10, 25, 50, 100]
-x_pos = np.arange(len(group_sizes))
-
-# Water components per person per day (liters)
-drinking = 3  # L/person/day
-cooking = 2   # L/person/day
-hygiene = 5   # L/person/day
-total_per_person = drinking + cooking + hygiene  # 10 L/person/day
-
-# Calculate totals for each group size
-drinking_totals = [s * drinking for s in group_sizes]
-cooking_totals = [s * cooking for s in group_sizes]
-hygiene_totals = [s * hygiene for s in group_sizes]
-
-# Stacked bar chart
-bar_width = 0.5
-bars1 = ax.bar(x_pos, drinking_totals, bar_width, label=f'Drinking ({drinking}L/person)',
-               color='#06B6D4', edgecolor='none', zorder=3, alpha=0.9)
-bars2 = ax.bar(x_pos, cooking_totals, bar_width, bottom=drinking_totals,
-               label=f'Cooking ({cooking}L/person)',
-               color='#22D3EE', edgecolor='none', zorder=3, alpha=0.9)
-bars3 = ax.bar(x_pos, hygiene_totals, bar_width,
-               bottom=[d + c for d, c in zip(drinking_totals, cooking_totals)],
-               label=f'Hygiene ({hygiene}L/person)',
-               color='#67E8F9', edgecolor='none', zorder=3, alpha=0.9)
-
-# Total labels on top of each bar
-for i, (s, dt, ct, ht) in enumerate(zip(group_sizes, drinking_totals, cooking_totals, hygiene_totals)):
-    total = dt + ct + ht
-    ax.text(i, total + 10, f'{total}L', ha='center', fontsize=8,
-            fontweight='bold', color=DARK, fontfamily='sans-serif', zorder=4)
-    ax.text(i, total + 30, f'({total_per_person}L/person)', ha='center', fontsize=6,
-            color=GRAY, fontfamily='sans-serif', zorder=4)
-
-# WHO minimum line: 15L/person/day
-who_line = [s * 15 for s in group_sizes]
-ax.plot(x_pos, who_line, color=RED, ls='--', lw=2, marker='v', markersize=6,
-        zorder=5, label='WHO minimum (15L/person/day)')
-
-# Annotation for WHO line
-ax.annotate('WHO minimum:\n15L/person/day', xy=(5, who_line[-1]),
-            xytext=(3.5, who_line[-1] + 200),
-            fontsize=8, color=RED, fontfamily='sans-serif', fontweight='bold',
-            arrowprops=dict(arrowstyle='->', color=RED, lw=1.2),
-            zorder=5)
-
-ax.set_xticks(x_pos)
-ax.set_xticklabels([f'{s} person{"s" if s > 1 else ""}' for s in group_sizes],
-                    fontsize=9, color=DARK, fontfamily='sans-serif')
-ax.set_ylabel('Daily Water Requirement (liters)', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_xlabel('Group Size', fontsize=10, color=DARK, fontfamily='sans-serif')
-ax.set_title('Daily Water Requirements by Group Size',
-             fontsize=13, fontweight='bold', color=MATH_BLUE, fontfamily='sans-serif', pad=12)
-ax.legend(loc='upper left', fontsize=8, framealpha=0.9, edgecolor=GRAPH_PAPER_LINE_MAJ)
-ax.spines['top'].set_visible(False)
-ax.spines['right'].set_visible(False)
-ax.spines['left'].set_color(GRAY)
-ax.spines['bottom'].set_color(GRAY)
-ax.tick_params(colors=DARK, labelsize=8)
-ax.yaxis.grid(True, color=GRAPH_PAPER_LINE_MAJ, linewidth=0.5, zorder=0)
-
-fig.tight_layout()
-save(fig, 'water_requirements_scaling.png')
-
-
-print("\nAll 8 v3.2 scientific diagrams generated successfully (with pixel art enhancements).")
+if __name__ == "__main__":
+    print("Generating evidence diagrams...")
+    for index, chart in enumerate(CHARTS, start=1):
+        print(f"  [{index}/{len(CHARTS)}] {chart.__name__.removeprefix('chart_').replace('_', ' ')}...")
+        chart()
+    print(f"Generated {len(CHARTS)} evidence diagrams from {DATA_PATH.relative_to(ROOT)}.")

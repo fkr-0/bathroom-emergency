@@ -1,12 +1,44 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Version History
+
+## 4.1.1 — 22 July 2026
+
+### Bounded facts return
+
+- Added a structured evidence registry containing the values, evidence class,
+  denominator, source, and practical limit for every new quantitative figure.
+- Added eight diagrams covering evidence roles, GAD-7 external validation,
+  breathwork trial design, reproductive-health denominators, the stroke urgency
+  model, household water planning, repeated sleep restriction, and social
+  connection associations.
+- Restored notable numbers only where the source supports their exact wording;
+  emergency protocols remain dominant over all estimates and models.
+
+### Research and writing
+
+- Compared the famous original GAD-7 accuracy estimates with a later pooled
+  diagnostic-accuracy review instead of treating one study as permanent
+  calibration.
+- Distinguished lifetime prevalence, rare-event incidence, randomized results,
+  observational odds ratios, and literature-derived models in both prose and
+  diagrams.
+- Maintained the warm, slightly dry Flo voice while keeping humour outside the
+  red-flag-to-action interval.
+
+### Engineering and roadmap
+
+- Replaced the legacy monolithic scientific generator and removed deprecated
+  generated figures during the canonical build.
+- Added registry and diagram expectations to validation and source policy.
+- Added a roadmap for hazard overrides, vulnerability modifiers, locale data,
+  accessibility, household continuity, and future evidence visualizations.
 
 ## 4.0.1 — 22 July 2026
 
@@ -110,5 +142,7 @@ dependencies: []
 | 1.0 | 2026-04-29 | initial guide |
 
 Version 4.0.0 deliberately removed several “scientific-looking” claims from
-3.x. Version 4.0.1 restores the **breadth**, not the mistakes. More content is
-useful only when its boundaries remain visible.
+3.x. Version 4.0.1 restored the **breadth**, not the mistakes. Version 4.1.1
+restores selected **numbers**, but only with visible scope, denominator,
+uncertainty, and limit. More content is useful only when its boundaries remain
+visible.

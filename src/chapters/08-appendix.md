@@ -1,7 +1,7 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
 dependencies: []
 ---
@@ -9,7 +9,7 @@ dependencies: []
 # Appendix — The Useful Loose Ends
 
 The v3.3 appendix tried to be index, legend, workbook, decision tree, notes page,
-and emergency wallet card simultaneously. Version 4.0.1 accepts the assignment,
+and emergency wallet card simultaneously. Version 4.1.1 accepts the assignment,
 but labels the parts so the notes page does not accidentally become a theorem.
 
 ## Master cross-reference — where everything points
@@ -36,23 +36,36 @@ but labels the parts so the notes page does not accidentally become a theorem.
 | first-aid triage | Ch.5 | response and escalation overview |
 | survival priority pyramid | Ch.6 | infrastructure-failure priorities |
 | group scaling chart | Ch.6 | coordination from one to 100+ |
+| evidence classes | Ch.1 | what protocols, studies, associations, and models may claim |
+| reproductive-health denominators | Ch.2 | lifetime prevalence versus rare-event incidence without denominator tricks |
+| GAD-7 validation comparison | Ch.3 | original study versus pooled diagnostic accuracy |
+| sleep-restriction study | Ch.3 | repeated sleep opportunity and cumulative impairment |
+| breathwork trial map | Ch.4 | trial arms, dose, outcomes, and limits |
+| stroke time model | Ch.5 | order-of-magnitude urgency model |
+| household water planner | Ch.6 | three- and ten-day storage by household size |
+| social-connection associations | Ch.7 | adjusted observational odds ratios with causal limits |
 
 Generated images are explanatory aids. The text route remains complete for
 monochrome print, screen readers, low light, and coffee-related diagram loss.
 
 ## Evidence labels
 
-The guide distinguishes four kinds of statement:
+The guide distinguishes the role of each statement:
 
 | Label | Meaning | Example |
 |---|---|---|
 | **Protocol** | Action aligned with an authoritative guideline | call 112 for unresponsive abnormal breathing |
+| **Population estimate** | Frequency in a named population and time frame | lifetime infertility prevalence |
+| **Diagnostic-accuracy study** | Performance of a screen against a reference standard | GAD-7 sensitivity/specificity |
+| **Randomized study** | Comparison created by allocation to interventions | 28-day breathwork trial |
+| **Observational association** | Variables travelled together after adjustment; causation remains limited | social isolation and mortality odds |
 | **Descriptive equation** | Exact relation once inputs are known | $C(n)=n(n-1)/2$ |
-| **Conceptual model** | A thinking aid, not a clinical prediction | $A_{k+1}=A_k-\delta_k+\varepsilon_k$ |
+| **Mathematical model** | Calculation from assumptions inside a stated scope | stroke tissue-loss estimate |
+| **Conceptual model** | A thinking aid, not a measured prediction | $A_{k+1}=A_k-\delta_k+\varepsilon_k$ |
 | **Mnemonic** | Memorable compression | one action, one backup, one escalation |
 
-The old edition sometimes dressed a metaphor in a lab coat. Version 4 makes the
-coat show its ID.
+The old edition sometimes dressed a metaphor in a lab coat. Version 4.1.1 asks
+the coat for identification, denominator, and visiting hours.
 
 ## Formula and theorem index
 
@@ -134,6 +147,38 @@ $$\text{listen}\rightarrow\text{reflect}\rightarrow\text{respond}$$
 A compact alternative to composing a rebuttal while the other person is still
 talking.
 
+### 13. Stroke time model — literature-derived model
+
+For the scope and assumptions used by Saver (2006), cumulative modelled neuronal
+loss over $t$ untreated minutes is:
+
+$$N(t)=1.9t\;\text{million neurons}$$
+
+This is an order-of-magnitude urgency model for a typical large-vessel
+supratentorial ischemic stroke, not a measurement in one patient. FAST and 112
+remain the action.
+
+### 14. Odds ratio — descriptive study statistic
+
+For odds $o_1$ in one group and $o_0$ in a reference group:
+
+$$OR=\frac{o_1}{o_0}$$
+
+An odds ratio is not the same as a probability ratio, absolute risk, or proof of
+causation. It requires the study population, adjustment set, and follow-up to
+mean anything useful.
+
+## Reproducible evidence registry
+
+The numeric inputs for v4.1.1 figures live in
+`src/data/evidence_facts.json`. Each entry records evidence class, population or
+scope, value and unit, source, and practical limit. Diagram code reads that file
+rather than hiding facts inside plotting coordinates.
+
+A future number change should therefore modify the registry, source annotation,
+chapter prose, and generated figure in one reviewable change. Four copies of a
+number drifting independently is how folklore acquires error bars.
+
 ## Flowchart symbol legend — extended
 
 | Symbol/style | Meaning | Monochrome equivalent |
@@ -191,7 +236,7 @@ than security engineering recommends.
 ## Complete decision tree — safe text version
 
 ```text
-BATHROOM EMERGENCY GUIDE — MASTER TREE v4.0.1
+BATHROOM EMERGENCY GUIDE — MASTER TREE v4.1.1
 ============================================================
 
 0. OVERRIDE
@@ -324,11 +369,12 @@ At each release:
 
 1. recheck emergency numbers and official URLs;
 2. review first-aid and preparedness guideline updates;
-3. run safety-regression validation;
-4. build colour and monochrome outputs;
-5. inspect page count, clipped tables, diagrams, and text tree;
-6. verify version strings across source, HTML, PDF, package, and changelog;
-7. record removed claims as well as added material.
+3. verify every numeric figure against `src/data/evidence_facts.json` and its primary or authoritative source;
+4. run safety-regression and evidence-registry validation;
+5. build colour and monochrome outputs;
+6. inspect page count, clipped tables, diagrams, and text tree;
+7. verify version strings across source, HTML, PDF, package, and changelog;
+8. record removed claims, changed estimates, and uncertainty as well as added material.
 
 ## Notes page
 

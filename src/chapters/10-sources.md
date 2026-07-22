@@ -1,7 +1,7 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
 dependencies: []
 ---
@@ -278,7 +278,7 @@ support, focused help, and specialized treatment complement one another.
 
 ### Limit
 
-Version 4.0.1 does not publish universal response percentages as promises for
+Version 4.1.1 does not publish universal response percentages as promises for
 an individual. Evidence informs shared clinical decisions; method, diagnosis,
 severity, access, fit, and preference matter.
 
@@ -497,6 +497,75 @@ or justify coercive resource control.
 77. **Federal Office for Information Security (BSI).** Citizen and
     organizational incident information and reporting routes.
     https://www.bsi.bund.de/
+
+## Version 4.1.1 evidence figures
+
+The numeric inputs below are also stored in
+`src/data/evidence_facts.json`, together with their evidence class, denominator,
+scope, and practical limit.
+
+78. **Spitzer RL et al.** “A Brief Measure for Assessing Generalized Anxiety
+    Disorder: The GAD-7.” *Archives of Internal Medicine* 166 (2006):
+    1092–1097. Original primary-care validation at cut-off 10 reported 89%
+    sensitivity and 82% specificity.
+    https://doi.org/10.1001/archinte.166.10.1092
+
+79. **Cochrane diagnostic-test-accuracy review (2025).** At cut-off 10 or the
+    nearest available value, pooled sensitivity for generalized anxiety
+    disorder was 0.64 (95% CI 0.56–0.72) and specificity 0.91 (0.87–0.93).
+    Heterogeneity remained substantial.
+    https://www.cochrane.org/evidence/CD015455_how-accurate-are-gad-7-and-gad-2-questionnaires-detecting-anxiety-disorders
+
+80. **Balban MY et al.** “Brief structured respiration practices enhance mood
+    and reduce physiological arousal.” *Cell Reports Medicine* 4 (2023):
+    100895. Remote randomized study; 108 adults included, four conditions, five
+    minutes daily for 28 days.
+    https://doi.org/10.1016/j.xcrm.2022.100895
+
+81. **World Health Organization.** *Infertility Prevalence Estimates,
+    1990–2021*, current fact sheet, and 2025 global guideline. Approximately
+    17.5% of adults—about one in six people of reproductive age—experience
+    infertility during their lifetime.
+    https://www.who.int/news-room/fact-sheets/detail/infertility
+
+82. **VanderKruik R et al.** “The global prevalence of postpartum psychosis: a
+    systematic review.” *BMC Psychiatry* 17 (2017): 272. Five incidence studies
+    ranged from 0.89 to 2.6 per 1,000; methods were too heterogeneous for a
+    pooled global estimate.
+    https://doi.org/10.1186/s12888-017-1427-7
+
+83. **Saver JL.** “Time is brain—quantified.” *Stroke* 37 (2006): 263–266.
+    Literature-derived model estimates for a typical untreated large-vessel
+    supratentorial ischemic stroke: 1.9 million neurons, 14 billion synapses,
+    and 12 km of myelinated fibres per minute.
+    https://doi.org/10.1161/01.STR.0000196957.55928.ab
+
+84. **BBK.** *Vorsorgen für Krisen und Katastrophen*, revised 2025/2026.
+    Household planning value: ideally two litres per person per day for ten
+    days; at least three days already helps and may be expanded gradually.
+    https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html
+
+85. **Van Dongen HPA et al.** “The cumulative cost of additional wakefulness.”
+    *Sleep* 26 (2003): 117–126. Controlled study enrolling 48 healthy adults;
+    four-, six-, and eight-hour time-in-bed groups were followed for 14 days,
+    while a separate zero-hour comparison group underwent three days of total
+    sleep deprivation. The four- and six-hour chronic-restriction conditions
+    produced cumulative, dose-dependent performance deficits.
+    https://doi.org/10.1093/sleep/26.2.117
+
+86. **Holt-Lunstad J et al.** “Loneliness and social isolation as risk factors
+    for mortality: a meta-analytic review.” *Perspectives on Psychological
+    Science* 10 (2015): 227–237. Adjusted observational odds ratios: social
+    isolation 1.29, loneliness 1.26, living alone 1.32.
+    https://doi.org/10.1177/1745691614568352
+
+### Shared limit
+
+These figures restore useful context, not certainty theatre. Screening accuracy
+varies by setting; randomized-study results depend on sample and intervention;
+observational odds ratios do not establish individual causation; population
+frequencies do not predict one person; mathematical models inherit their
+assumptions. Emergency protocols continue to outrank every chart.
 
 ## Editorial policy
 

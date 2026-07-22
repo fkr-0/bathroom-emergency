@@ -1,10 +1,11 @@
 ---
 title: "First Aid While Help Is Coming"
 chapter: 5
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/triage_flow.png
+  - build/diagrams/stroke_time_model.png
 ---
 
 # First Aid — You Are the First Link, Not the Whole Ambulance
@@ -181,6 +182,22 @@ can cause internal harm even when the skin mark is small.
 Do not wait for several signs. One sudden FAST sign is enough to call. Do not
 drive the person yourself when emergency services are available.
 
+### “Time is brain” — quantified, with the word *model* attached
+
+![Literature-derived model of neural loss during a typical untreated large-vessel stroke](build/diagrams/stroke_time_model.png)
+
+A widely cited 2006 calculation combined published estimates for forebrain
+neurons, typical large-vessel stroke volume, and stroke evolution time. For its
+modelled “typical” untreated large-vessel supratentorial ischemic stroke, it
+estimated losses on the order of **1.9 million neurons, 14 billion synapses, and
+12 km of myelinated fibres per minute**.[^time-brain]
+
+Those are order-of-magnitude model estimates, not tissue counts occurring on a
+bathroom display in one individual. Stroke type, vessel, collateral circulation,
+and treatment differ. The reliable lay conclusion is much shorter than the
+calculation: a sudden FAST sign gets **112 now**, not a timer, spreadsheet, or
+request to finish the sentence first.
+
 ## Chest pain or severe breathlessness
 
 Call **112** for strong chest pressure or pain, severe breathlessness, cold
@@ -320,3 +337,5 @@ information. None of them reliably cancel a red flag for a lay reader.
 [^drk-fracture]: German Red Cross, “Knochenbrüche”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/knochenbruch/knochenbrueche/
 
 [^emergency-numbers]: gesund.bund.de, “Nummern für den Notfall”: https://gesund.bund.de/notfallnummern
+
+[^time-brain]: Saver JL, “Time is brain—quantified,” *Stroke* 37 (2006): 263–266. The figures are literature-derived estimates for a modelled typical untreated large-vessel supratentorial ischemic stroke, not direct measurement in an individual patient. https://doi.org/10.1161/01.STR.0000196957.55928.ab

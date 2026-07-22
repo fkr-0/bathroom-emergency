@@ -1,9 +1,10 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
-dependencies: []
+dependencies:
+  - build/diagrams/social_connection_associations.png
 ---
 
 # Professional Support — When the Bathroom Is Too Small
@@ -27,7 +28,7 @@ remember from a poster in 2009.
 | Immediate self- or other-endangerment | **112** | Rescue service |
 
 Numbers and scope should be rechecked at every release and before local
-printing. Core routes were reviewed for version 4.0.1 on **22 July 2026**.[^numbers]
+printing. Core routes were reviewed for version 4.1.1 on **22 July 2026**.[^numbers]
 
 ## The call script
 
@@ -119,7 +120,7 @@ interpersonal, and other structured approaches can be effective for many
 conditions. Outcomes vary with diagnosis, severity, therapeutic relationship,
 access, method, and individual preference.
 
-The old guide printed attractive response percentages. Version 4.0.1 does not
+The old guide printed attractive response percentages. Version 4.1.1 does not
 promise a personal outcome from a meta-analysis. A better question is:
 
 - Is the method appropriate for the problem?
@@ -153,6 +154,21 @@ Useful sentence:
 
 > “I care about you. I can stay for the next hour and help call someone. I
 > cannot safely hold this alone.”
+
+### Social connection is not decorative trim
+
+![Adjusted mortality associations reported in a longitudinal meta-analysis](build/diagrams/social_connection_associations.png)
+
+A 2015 meta-analysis of longitudinal observational studies reported adjusted
+mortality odds ratios of **1.29 for social isolation**, **1.26 for loneliness**,
+and **1.32 for living alone**.[^connection] These are associations across
+populations and follow-up periods—not proof that one feeling directly caused one
+death, and certainly not a personalized forecast.
+
+The finding is still useful at the correct scale: stable contact, practical
+mutual aid, and routes back into community belong alongside medical and
+psychological care. “Call one person” is not a magical treatment. It is a small
+way to stop a crisis from becoming a closed system with one frightened operator.
 
 ## Violence and coercion
 
@@ -383,3 +399,5 @@ left in a shared bathroom. Version 3.3 was optimistic about house guests.
 [^spd]: gesund.bund.de, “Sozialpsychiatrischer Dienst – Hilfe bei psychischen Krisen”: https://gesund.bund.de/sozialpsychiatrischer-dienst
 
 [^legal-aid]: Official German Justiz-Services, Beratungshilfe and Prozesskostenhilfe: https://service.justiz.de/beratungshilfe and https://service.justiz.de/prozesskostenhilfe
+
+[^connection]: Holt-Lunstad J et al., “Loneliness and social isolation as risk factors for mortality: a meta-analytic review,” *Perspectives on Psychological Science* 10 (2015): 227–237. Adjusted observational associations were OR 1.29 for social isolation, 1.26 for loneliness, and 1.32 for living alone; baseline health and other factors influenced findings. https://doi.org/10.1177/1745691614568352

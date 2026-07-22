@@ -1,11 +1,12 @@
 ---
 title: "Outage, Disaster, and Zombie Guide"
 chapter: 6
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/survival_pyramid.png
   - build/diagrams/scaling_chart.png
+  - build/diagrams/household_water_planner.png
 ---
 
 # Zombie Guide — Mostly for Non-Zombie Disasters
@@ -68,8 +69,17 @@ people over $d$ days:
 
 $$W = 2nd\;\text{litres}$$
 
+![Household drinking-and-cooking water for three and ten days](build/diagrams/household_water_planner.png)
+
+The BBK’s current staged advice is pleasantly non-apocalyptic: aim to manage for
+**ten days**, but a stock for **at least three days already helps** and can be
+built gradually. At the two-litre planning value, one person needs 6 L for three
+days or 20 L for ten; a four-person household needs 24 L or 80 L. Containers,
+weight, storage space, and rotation are part of the equation even when algebra
+would prefer not to carry bottles upstairs.[^bbk]
+
 Add pet needs. Heat, illness, pregnancy, breastfeeding, medication, and physical
-work can increase requirements.[^bbk]
+work can increase requirements.
 
 - Store potable water in clean food-safe containers.
 - Rotate stock according to product and container guidance.

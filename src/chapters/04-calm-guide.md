@@ -1,10 +1,11 @@
 ---
 title: "Calm Guide"
 chapter: 4
-revision: "4.0.1"
+revision: "4.1.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/breathing_techniques.png
+  - build/diagrams/breathwork_trial_map.png
 ---
 
 # Calm Guide — Reduce the Volume, Not Your Existence
@@ -117,9 +118,21 @@ pattern as proof that symptoms are harmless.
 ### Technique 4 — physiological sigh
 
 One inhale, a small second top-up inhale, then a long gentle exhale. One to
-three repetitions may feel useful. A 2023 randomized study tested five minutes
-of daily cyclic sighing over 28 days; it did not establish a universal one-sigh
-emergency treatment.[^balban]
+three repetitions may feel useful.
+
+![What the 2023 breathwork trial actually tested](build/diagrams/breathwork_trial_map.png)
+
+A 2023 remote randomized study included 108 adults in four groups: mindfulness
+meditation, cyclic sighing, box breathing, and cyclic hyperventilation with
+retention. Participants practised for five minutes per day over 28 days. All
+four groups improved daily mood measures; breathwork—especially cyclic
+sighing—showed greater improvement in positive affect and lower respiratory
+rate than mindfulness meditation.[^balban]
+
+That is an interesting trial, not a licence to compress it into “one sigh cures
+panic.” The intervention was repeated daily, the sample was limited, and the
+study did not establish that breathing exercises can rule out chest pain,
+asthma, poisoning, or any other medical danger.
 
 ### Technique 5 — no technique
 
