@@ -205,7 +205,7 @@ A candidate only graduates into the guide when the exact figure can be defended.
 
 ## Engineering roadmap
 
-### 4.2.0 — Routing and hazard architecture — implemented candidate
+### 4.2.0 — Routing and hazard architecture — released
 
 - [x] execute the core of the two-track content plan;
 - [x] implement the two-pass flowgraph and structured route registry;
@@ -217,13 +217,21 @@ A candidate only graduates into the guide when the exact figure can be defended.
 - [ ] split “no place” into four fully localized service subroutes—carried into
   4.3.0 because the destinations depend on locale data and accessibility.
 
-### 4.3.0 — Locale, accessibility, and safe-place routing
+### 4.3.0 — Locale, accessibility, and safe-place routing — implemented candidate
 
-- [x] introduce `src/data/locales/de-DE.json` for reviewed national numbers,
-  poison centres, warning channels, and required local fields;
-- add schema validation, source freshness windows, and stale-review warnings;
-- add accessible-language and alternate-grounding variants;
-- test headings, alt text, reading order, contrast, and large-print output.
+- [x] split Situation G into four service-specific routes;
+- [x] extend `src/data/locales/de-DE.json` with scoped national services,
+  access channels, and explicit local-only destinations;
+- [x] add source freshness windows, warnings, failures, and deterministic
+  `GUIDE_AS_OF` validation;
+- [x] add six communication/access profiles, minimal written cards, and
+  alternate non-breath-focused adaptations;
+- [x] add safe-place and communication-access visualizations;
+- [x] add color and monochrome A4 large-print editions;
+- [x] test image alternatives, heading order, tagging, blank pages, geometry,
+  page growth, and color/mono text parity;
+- [ ] add further locales only with a local reviewer and authoritative service
+  sources; translation without route ownership remains out of scope.
 
 ### 4.4.0 — Household continuity modules
 
@@ -231,6 +239,22 @@ A candidate only graduates into the guide when the exact figure can be defended.
 - medication refrigeration and powered-device planning;
 - evacuation versus shelter worksheets;
 - optional household profile pages generated outside the shared default guide.
+
+### 4.5.0 — Graph-oriented subguide editions — specified
+
+Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md`.
+
+- [x] define a proposed nine-subguide family and graph identity;
+- [x] specify cover, page-0 position/version, page-1 introduction/contents, and
+  final handoff page grammar;
+- [x] specify redundant code + pattern + glyph + colour identity;
+- [x] distinguish master-guide and standalone emergency-gate behaviour;
+- [x] define data, CSS, graph, build, validation, and editorial contracts;
+- [ ] prototype the graph and two competing subguide groupings on paper;
+- [ ] test monochrome/pattern recognition in A4 and A4/2;
+- [ ] freeze codes, patterns, and chapter assignments after visual review;
+- [ ] implement registry-driven standalone colour and monochrome outputs;
+- [ ] migrate subguides one at a time without duplicating canonical prose.
 
 ### Continuous quality work
 

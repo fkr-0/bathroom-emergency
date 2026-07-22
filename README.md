@@ -1,13 +1,13 @@
 # Bathroom Emergency Guide
 
-> “You are in a room with a door, water, and one next action.”
+> “Most bathroom crises are not catastrophes. They are short intervals in which the body becomes unusually noticeable and the world unusually small.”
 
-A sourced, rebuildable decision guide for panic, pain, responsibility, danger,
-overload, environmental hazards, missing places, and infrastructure failure.
-Version 4.2.0 adds a real eighth route for fire, smoke, carbon monoxide, gas,
-chemicals, and electricity; a structured two-pass routing registry; reviewed
-de-DE service data; bounded quantitative evidence; and deterministic A4 plus
-A4/2 field-strip printing.
+A sourced, rebuildable field guide for panic, pain, responsibility, strange body
+signals, danger, overload, environmental hazards, missing places, and
+infrastructure failure. The opening is a curiosity-first small-room observatory,
+not a routing manual: interoception, gut–brain effects, bathroom acoustics, time
+perception, working memory, affect labeling, cold-water physiology, fainting,
+and smell are introduced before the first topic branch.
 
 ## Quick build
 
@@ -23,9 +23,13 @@ Individual targets:
     ./bin/build_guide.sh docx
     ./bin/build_guide.sh latex
     ./bin/build_guide.sh a4half
+    ./bin/build_guide.sh largeprint
     python3 bin/validate_routes.py
     python3 bin/validate_guide.py
     python3 bin/verify_layout.py
+    python3 bin/verify_density.py
+    python3 bin/verify_accessibility.py
+    node bin/verify_overflow.mjs
 
 Or with npm:
 
@@ -48,18 +52,23 @@ network dependency.
 
 ## Source layout
 
-    src/chapters/          12 canonical chapters, including Situation H
+    src/chapters/          13 canonical chapters, including Situations G and H
     src/diagrams/          routing, hazard, continuity, and evidence figures
-    src/data/              evidence, route, and locale registries
+    src/data/              evidence, route, locale, and accessibility registries
     src/data/locales/      reviewed locale-specific service foundations
     src/template.html      semantic screen shell and small UI controls
     src/style.css          screen + single-column print system
     src/style-a4-half.css  105 × 297 mm field-strip print adaptations
+    src/style-large-print.css A4 large-print adaptations
     src/style-mono.css     monochrome overrides only
     bin/build_guide.py     deterministic document builder
     bin/validate_routes.py routing, destination, locale, and source invariants
     bin/validate_guide.py  safety, evidence, and rendering invariants
     bin/verify_layout.py   rendered A4/2 geometry and collision checks
+    bin/verify_density.py  standard-A4 blank, edge, density, and parity checks
+    bin/verify_accessibility.py structured access and large-print checks
+    bin/verify_overflow.mjs boxed/table overflow checks in all HTML editions
+    docs/plans/4.5.0-graph-subguide-architecture.md planned graph/subguide system
     ROADMAP.md             flowgraph, chapter, research, and release backlog
     build/                 generated deliverables
 
@@ -73,6 +82,8 @@ network dependency.
 | Mono PDF | build/pdf/guide_mono.pdf | A4, one column, ink-conscious |
 | A4/2 color PDF | build/pdf/guide_a4half.pdf | 105 × 297 mm vertical field strip |
 | A4/2 mono PDF | build/pdf/guide_a4half_mono.pdf | narrow grayscale field strip |
+| Large-print color PDF | build/pdf/guide_largeprint.pdf | A4, materially larger typography |
+| Large-print mono PDF | build/pdf/guide_largeprint_mono.pdf | A4 large print, grayscale |
 | Markdown | build/md/guide.md | assembled, frontmatter-clean |
 | DOCX | build/docx/guide.docx | editable |
 | LaTeX | build/latex/guide.tex | intermediate |
@@ -83,20 +94,24 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 12 source chapters at revision 4.2.0;
-- restored v3.3 breadth markers and a minimum canonical-content size;
+- 13 source chapters at revision 4.3.0;
+- subject-breadth regression markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
 - no known unsafe legacy wording or deprecated scientific chart;
-- a valid 4.2.0 evidence registry with source and limit for every plotted fact;
-- a structured route catalog with seven pass-1 overrides, six pass-2 needs, and
-  nine dependency/access modifiers;
-- reviewed de-DE services, all seven poison-information centres, warning
-  channels, and local-value requirements;
+- a valid 4.3.0 evidence registry with source and limit for every plotted fact;
+- a structured route catalog with seven pass-1 overrides, six pass-2 needs,
+  four safe-place routes, and nine dependency/access modifiers;
+- reviewed de-DE services, all seven poison-information centres, dated source
+  windows, access channels, and local-value requirements;
 - every referenced image, evidence figure, and route figure exists;
 - roadmap coverage for locale, accessibility, and continuity follow-up releases;
-- readable A4 and 105 × 297 mm PDFs with plausible page counts;
+- readable standard A4, 105 × 297 mm, and large-print A4 PDFs;
 - renderer-based A4/2 checks for blank pages, physical-edge collisions, required
-  content markers, and representative-page contact sheets.
+  content markers, and representative-page contact sheets;
+- standard-A4 density checks for blank pages, physical-edge contact, extreme
+  packing, color/mono text parity, and sparse/dense review contact sheets;
+- computed overflow checks for cards, emergency boxes, tables, preformatted text,
+  quotations, and figures across all six HTML editions.
 
 ## Evidence policy
 
@@ -113,7 +128,15 @@ Operational routes live in `src/data/route_catalog.json`. Every route carries an
 action, backup, escalation condition, destination, and reviewed source IDs.
 Locale-dependent services live in `src/data/locales/de-DE.json`; unknown local
 values remain explicit fields rather than plausible-looking inventions.
+Communication adaptations live in `src/data/accessibility_profiles.json`, and
+operational sources carry review windows checked against `GUIDE_AS_OF`.
 Core emergency routes and source material were reviewed on 22 July 2026.
+
+The planned graph-oriented subguide packaging is specified in
+`docs/plans/4.5.0-graph-subguide-architecture.md`. It proposes distinct covers,
+position/version pages, introduction/contents pages, graph handoffs, and
+redundant code + pattern + glyph + colour identities for standalone and master
+outputs.
 
 ## Safety scope
 

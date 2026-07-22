@@ -1,7 +1,7 @@
 ---
 title: "First Aid While Help Is Coming"
 chapter: 5
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/triage_flow.png
@@ -10,15 +10,15 @@ dependencies:
 
 # First Aid — You Are the First Link, Not the Whole Ambulance
 
-This chapter is a prompt, not a first-aid qualification. It restores v3.3’s
-triage, wounds, burns, fractures, vital observations, pain notes, waiting plan,
-and psychological parallels while removing the dangerous idea that a home
-measurement can certify that an emergency is harmless.
+First aid is time management for biology. Keep air moving, limit blood loss,
+reduce heat or chemical injury, prevent a second fall or exposure, and hand the
+person to better-equipped help. Diagnosis is usually not the first job.
 
-Call **112** early and follow the dispatcher. Put the phone on speaker. Unlock
-the door if safe.
+A home measurement may improve the handoff. It cannot certify that a dangerous
+pattern is harmless. When emergency help is involved, speakerphone and safe door
+access free both hands and shorten the route to the person.
 
-## The first minute
+## The first minute: preserve what still works
 
 1. **Safety:** do not enter smoke, gas, traffic, electricity, violence, deep
    water, or chemical contamination.
@@ -32,7 +32,8 @@ the door if safe.
 
 ## Triage priority heatmap
 
-This is a lay routing aid, not a clinical triage system:
+The colours below describe response speed, not the worth of the person or a
+clinical triage category:
 
 | Priority | Examples | Action |
 |---|---|---|

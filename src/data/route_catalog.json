@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.2.0",
+  "release": "4.3.0",
   "reviewed_on": "2026-07-22",
   "policy": {
     "queue": [
@@ -14,7 +14,12 @@
       "Uncertainty about a life-threatening or environmental hazard escalates rather than reassures.",
       "A modifier changes logistics and access; it does not cancel urgency.",
       "Every diagram is a view of this registry, never the only route."
-    ]
+    ],
+    "source_freshness": {
+      "warn_after_days": 120,
+      "fail_after_days": 240,
+      "as_of_environment": "GUIDE_AS_OF"
+    }
   },
   "destinations": {
     "112": {
@@ -65,6 +70,55 @@
     "chapter-support": {
       "kind": "chapter",
       "label": "Ch.7 professional and practical support"
+    },
+    "chapter-safe-place": {
+      "kind": "chapter",
+      "label": "Situation G — no safe place"
+    },
+    "115": {
+      "kind": "service",
+      "label": "115 — public-administration information",
+      "locale_key": "115"
+    },
+    "116016": {
+      "kind": "service",
+      "label": "116 016 — violence against women helpline",
+      "locale_key": "116016"
+    },
+    "men-violence-help": {
+      "kind": "service",
+      "label": "violence against men helpline",
+      "locale_key": "men_violence_help"
+    },
+    "116111": {
+      "kind": "service",
+      "label": "116 111 — child and youth helpline",
+      "locale_key": "116111"
+    },
+    "116123": {
+      "kind": "service",
+      "label": "116 123 — crisis conversation",
+      "locale_key": "116123"
+    },
+    "women-shelter-search": {
+      "kind": "directory",
+      "label": "nationwide women’s refuge search",
+      "locale_key": "women_shelter_search"
+    },
+    "municipal-emergency-housing": {
+      "kind": "local_service",
+      "label": "municipal emergency accommodation",
+      "locale_key": "municipal_emergency_housing"
+    },
+    "accessible-emergency-place": {
+      "kind": "local_service",
+      "label": "accessible emergency accommodation or powered destination",
+      "locale_key": "accessible_emergency_place"
+    },
+    "youth-emergency-service": {
+      "kind": "local_service",
+      "label": "local youth emergency service",
+      "locale_key": "youth_emergency_service"
     }
   },
   "override_order": [
@@ -203,10 +257,10 @@
       "id": "threat",
       "pass": 2,
       "label": "Threat / no safe place",
-      "action": "Secure the next safe hour and contact the matching service.",
-      "backup": "Tell one person where you are and keep essentials with you.",
-      "escalation": "Violence, exposure, medical danger, or acute self-harm risk.",
-      "destination": "chapter-support"
+      "action": "Use the Situation G safe-place classifier and secure the next safe hour.",
+      "backup": "Use a staffed public place and tell one person where you are while contacting the matching service.",
+      "escalation": "Violence, exposure, medical danger, acute self-harm risk, or a failed essential-care bridge.",
+      "destination": "chapter-safe-place"
     },
     {
       "id": "environment",
@@ -287,47 +341,177 @@
     "bbk-112": {
       "title": "BBK — European emergency number 112",
       "url": "https://www.bbk.bund.de/SharedDocs/Kurzmeldungen/DE/2026/02/om-11-tag-notruf.html",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "bbk-fire": {
       "title": "BBK — What to do when it burns",
       "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "bbk-power": {
       "title": "BBK — Preparing for and acting during a power outage",
       "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "bbk-warning": {
       "title": "BBK — Official NINA warning messages",
       "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/Funktion-Inhalt/Warnmeldungen/warnmeldungen_node.html",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "dvgw-gas": {
       "title": "DVGW — What to do when gas is smelled",
       "url": "https://www.dvgw.de/themen/gas/verbraucherinformationen/was-tun-bei-gasgeruch",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "gesund-poison": {
       "title": "gesund.bund.de — First aid for poisoning",
       "url": "https://gesund.bund.de/erste-hilfe-bei-vergiftungen",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "bfr-poison-centres": {
       "title": "BfR — Poison information centres in Germany",
       "url": "https://www.bfr.bund.de/deutsches-produktregister-depro/giftinformationszentren-in-deutschland/",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "bbk-bag": {
       "title": "BBK — Emergency bag",
       "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Notgepaeck/notgepaeck_node.html",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
     },
     "drk-electric": {
       "title": "German Red Cross — First aid for electric shock",
       "url": "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stromschlag/",
-      "reviewed_on": "2026-07-22"
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
+    },
+    "authority-115": {
+      "title": "115 — nationwide public-administration information line",
+      "url": "https://www.115.de/",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 120
+    },
+    "authority-115-sign": {
+      "title": "115 sign-language video service",
+      "url": "https://www.115.de/gebaerdensprache",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 180
+    },
+    "hilfetelefon-women": {
+      "title": "Violence against women helpline",
+      "url": "https://www.hilfetelefon.de/",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 120
+    },
+    "men-violence-help": {
+      "title": "Violence against men helpline",
+      "url": "https://www.maennerhilfetelefon.de/",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 120
+    },
+    "children-help": {
+      "title": "Nummer gegen Kummer — child and youth helpline",
+      "url": "https://www.nummergegenkummer.de/",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 120
+    },
+    "telefonseelsorge": {
+      "title": "TelefonSeelsorge Germany",
+      "url": "https://www.telefonseelsorge.de/",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 120
+    },
+    "women-shelter-search": {
+      "title": "Nationwide women’s refuge search",
+      "url": "https://www.frauenhaus-suche.de/",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 120
+    },
+    "wcag22": {
+      "title": "W3C Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "reviewed_on": "2026-07-22",
+      "review_max_age_days": 365
     }
-  }
+  },
+  "safe_place_routes": [
+    {
+      "id": "violence-coercion",
+      "trigger": "A person, stalker, controller, or active crime makes the current place unsafe",
+      "action": "Move toward a safer place without confrontation; use 110 for active police danger and 112 for medical or life danger.",
+      "backup": "Use 116 016, the violence-against-men helpline, or a specialist refuge route from a safer device or location.",
+      "escalation": "The threat is present, access is blocked, a weapon is involved, a child is endangered, or anyone is injured.",
+      "destination": "chapter-safe-place",
+      "service_destinations": [
+        "110",
+        "112",
+        "116016",
+        "men-violence-help",
+        "women-shelter-search"
+      ],
+      "source_ids": [
+        "hilfetelefon-women",
+        "men-violence-help",
+        "women-shelter-search"
+      ]
+    },
+    {
+      "id": "no-roof-tonight",
+      "trigger": "There is no lawful, weather-safe place to sleep tonight and no immediate violence route",
+      "action": "Contact municipal emergency accommodation, social services, or the local after-hours authority; state tonight’s need and all access or care constraints.",
+      "backup": "During 115 service hours, use 115 to identify the responsible authority; while arranging help, move to a staffed, weather-protected public place when possible.",
+      "escalation": "Exposure, severe weather, illness, pregnancy/postpartum danger, a child without safe care, or inability to maintain essential treatment.",
+      "destination": "municipal-emergency-housing",
+      "service_destinations": [
+        "115",
+        "municipal-emergency-housing",
+        "112"
+      ],
+      "source_ids": [
+        "authority-115"
+      ]
+    },
+    {
+      "id": "access-care-failure",
+      "trigger": "A nominal place exists but cannot safely support mobility, communication, medication, powered equipment, pregnancy, a child, or another essential dependency",
+      "action": "Name the exact barrier and remaining safe runtime; request an accessible place, transport, power, refrigeration, caregiver, or communication support.",
+      "backup": "Contact the care team, supplier, 116 117, municipal service, or accessible destination before the safe reserve is exhausted.",
+      "escalation": "Life-supporting function is interrupted, transfer cannot finish in time, or the person cannot leave or communicate safely.",
+      "destination": "accessible-emergency-place",
+      "service_destinations": [
+        "116117",
+        "accessible-emergency-place",
+        "112"
+      ],
+      "source_ids": [
+        "authority-115",
+        "wcag22"
+      ]
+    },
+    {
+      "id": "social-internal-crisis",
+      "trigger": "The place is physically safe, but social rupture, overload, panic, or internal crisis makes staying unworkable",
+      "action": "Secure one hour: choose one ally, one staffed place or quiet exit, and one concrete next contact.",
+      "backup": "Use 116 123, 116 111 for children and young people, 116 117, or a local crisis service.",
+      "escalation": "Acute self-harm or other danger, severe confusion, loss of reality contact, exposure, or inability to remain safe.",
+      "destination": "chapter-safe-place",
+      "service_destinations": [
+        "116123",
+        "116111",
+        "116117",
+        "112"
+      ],
+      "source_ids": [
+        "telefonseelsorge",
+        "children-help"
+      ]
+    }
+  ]
 }

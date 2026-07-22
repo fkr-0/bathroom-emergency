@@ -6,7 +6,7 @@
 
 @page {
   size: 105mm 297mm;
-  margin: 11mm 8mm 15mm;
+  margin: 10mm 7mm 13mm;
 
   @top-left {
     content: "BATHROOM / FIELD GUIDE";
@@ -42,8 +42,8 @@
 @media print {
   :root {
     --measure: 100%;
-    font-size: 9.25pt;
-    line-height: 1.47;
+    font-size: 8.35pt;
+    line-height: 1.35;
   }
 
   body,
@@ -53,8 +53,8 @@
 
   .document-cover {
     min-height: 283mm;
-    padding: 11mm 7mm;
-    border-width: 3mm;
+    padding: 9mm 6mm;
+    border-width: 2.5mm;
     background-size: 18px 18px;
   }
 
@@ -75,26 +75,26 @@
   .document-cover h2::before { content: none; }
 
   .document-cover h1 {
-    max-width: 8ch;
-    font-size: 30pt;
-    line-height: .9;
+    max-width: 11ch;
+    font-size: 26pt;
+    line-height: .94;
   }
 
-  .document-cover h2 { font-size: 13pt; }
+  .document-cover h2 { font-size: 11.5pt; }
 
   h1 {
-    font-size: 20pt;
-    line-height: 1;
+    font-size: 17.5pt;
+    line-height: 1.03;
   }
 
   h2 {
     counter-increment: field-section;
     position: relative;
-    margin-top: 17pt;
-    padding: 8pt 7pt 7pt;
+    margin-top: 11pt;
+    padding: 5pt 5pt 4pt;
     border: 0;
     background: var(--tile);
-    font-size: 14pt;
+    font-size: 12.6pt;
     line-height: 1.08;
   }
 
@@ -110,14 +110,22 @@
   }
 
   h3 {
-    margin-top: 13pt;
-    padding-left: 6pt;
+    margin-top: 9pt;
+    margin-bottom: 3pt;
+    padding-left: 5pt;
     border-left: 3pt solid var(--green);
-    font-size: 11.2pt;
-    line-height: 1.13;
+    font-size: 9.8pt;
+    line-height: 1.15;
   }
 
-  h4 { font-size: 9.8pt; }
+  h4 { font-size: 8.8pt; }
+
+  p,
+  ul,
+  ol {
+    margin-top: 0;
+    margin-bottom: 4pt;
+  }
 
   p {
     widows: 2;
@@ -136,8 +144,10 @@
   .safety-card,
   .formula-card,
   .checklist {
-    margin: 8pt 0;
-    padding: 7pt;
+    min-width: 0;
+    margin: 4pt 0;
+    padding: 4.5pt;
+    overflow-wrap: anywhere;
     border-radius: 0;
   }
 
@@ -151,23 +161,23 @@
 
   .emergency-strip {
     grid-template-columns: 1fr 1fr;
-    margin: 8pt 0 11pt;
+    margin: 6pt 0 8pt;
   }
 
   .emergency-strip > div {
     padding: 5pt;
-    font-size: 7.6pt;
+    font-size: 6.9pt;
     border-bottom: 1px solid var(--ink);
   }
 
   .emergency-strip > div:nth-child(2n) { border-right: 0; }
   .emergency-strip > div:nth-last-child(-n+2) { border-bottom: 0; }
-  .emergency-strip strong { font-size: 12pt; }
+  .emergency-strip strong { font-size: 10.5pt; }
 
   figure {
     position: relative;
-    margin: 13pt -4mm;
-    padding: 8mm 4mm 4mm;
+    margin: 9pt -3mm;
+    padding: 6mm 3mm 3mm;
     background: color-mix(in srgb, var(--tile) 66%, white);
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
@@ -177,7 +187,7 @@
   figure::before {
     content: "LOOK CLOSER / MAP · EVIDENCE · DIAGRAM";
     position: absolute;
-    inset: 3mm 4mm auto;
+    inset: 2.2mm 3mm auto;
     color: var(--green);
     font-family: ui-monospace, monospace;
     font-size: 5.6pt;
@@ -199,14 +209,14 @@
 
   table {
     table-layout: fixed;
-    margin: 9pt 0 12pt;
-    font-size: 7pt;
-    line-height: 1.25;
+    margin: 6pt 0 8pt;
+    font-size: 6.5pt;
+    line-height: 1.22;
     hyphens: auto;
   }
 
   table:has(tr > :nth-child(4)) {
-    font-size: 6.55pt;
+    font-size: 6.05pt;
   }
 
   th,
@@ -237,13 +247,21 @@
   }
 
   .footnotes {
-    margin-top: 14pt;
-    padding-top: 7pt;
+    margin-top: 10pt;
+    padding-top: 5pt;
     font-size: 6.6pt;
     line-height: 1.3;
   }
 
-  .source-note { font-size: 7pt; }
+  .source-note { font-size: 6.5pt; }
+
+  .emergency-gate {
+    margin: 4pt 0 6pt;
+    padding: 4.5pt 5pt;
+    border-left-width: 3pt;
+    font-size: 7.2pt;
+    line-height: 1.3;
+  }
 
   img[alt*="flowgraph"] { max-height: 145mm; }
 }

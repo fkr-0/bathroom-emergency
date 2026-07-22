@@ -1,7 +1,7 @@
 ---
 title: "Bathroom Emergency Guide"
 chapter: 0
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 type: cover
 dependencies: []
@@ -9,31 +9,31 @@ dependencies: []
 
 # Bathroom Emergency Guide
 
-## In case of too much
+## Field notes for when the body gets loud
 
-> You are in a room with a door, water, and one next action.  
-> That is enough to begin.
+> Most bathroom crises are not catastrophes. They are short intervals in which
+> the body becomes unusually noticeable and the world unusually small.
 
-<div class="emergency-strip">
-  <div><strong>112</strong>life or lasting harm</div>
-  <div><strong>116 117</strong>urgent medical help</div>
-  <div><strong>116 123</strong>a human voice</div>
-  <div><strong>110</strong>police / active threat</div>
+<div class="emergency-gate">
+  <strong>Actual emergency?</strong>
+  Stop reading. Get another person. Give first aid you already know. Put the
+  phone on speaker. Unlock or mark the door if that is safe. Use <strong>112</strong>
+  for life, medical, or fire danger and <strong>110</strong> for an active police
+  threat.
 </div>
 
-**Version 4.2.0 · Germany edition · 22 July 2026**
+Otherwise, stay for a page. You do not have to become calm on command. You only
+need enough curiosity for one observation.
 
-A large guide disguised as a small decision system for panic, pain,
-responsibility, danger, overload, bad smells, missing places, first aid,
-outages, group governance, and the occasional escaped silicon life form.
+A racing heart can be loud without being prophetic. A gut can react to stress
+without holding a committee meeting. A tiled room can make breathing sound more
+dramatic than it did in the hallway. Time can become elastic. Shame can pretend
+to be a diagnosis. None of this proves that everything is fine; it does mean
+there is something useful to investigate before your imagination submits its
+final report.
 
-Version 4.2.0 keeps the full explanatory breadth of v3.3 on top of v4’s
-red-flag-first safety architecture and restores selected quantitative findings
-with their denominator, scope, source, uncertainty, and limit still attached.
+Inside: panic, pain, strange body signals, responsibility, bad smells, awkward
+social aftermaths, first aid, outages, no-place situations, group survival,
+small formulas, serious science, and one or two problems involving silicon life.
 
-The jokes are optional. The red flags are not.
-
-This guide supports decisions; it does not diagnose, replace first-aid
-training, provide case-specific legal advice, or overrule emergency dispatchers.
-If life may be in danger or lasting harm cannot be excluded, call **112 before
-reading further**.
+**Germany edition · July 2026**

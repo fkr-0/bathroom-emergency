@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CHAPTERS = sorted((ROOT / "src" / "chapters").glob("*.md"))
 STYLE = (ROOT / "src" / "style.css").read_text(encoding="utf-8")
 STYLE_A4_HALF = (ROOT / "src" / "style-a4-half.css").read_text(encoding="utf-8")
+STYLE_LARGE_PRINT = (ROOT / "src" / "style-large-print.css").read_text(encoding="utf-8")
 HTML = ROOT / "build" / "html" / "guide.html"
 PDF = ROOT / "build" / "pdf" / "guide.pdf"
 A4_HALF_HTML = ROOT / "build" / "html" / "guide_a4half.html"
@@ -24,7 +25,7 @@ PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION = PACKAGE["version"]
 EVIDENCE_PATH = ROOT / "src" / "data" / "evidence_facts.json"
 ROADMAP = ROOT / "ROADMAP.md"
-NEXT_MINOR_PLAN = ROOT / "docs" / "plans" / "4.2.0-content-plan.md"
+NEXT_MINOR_PLAN = ROOT / "docs" / "plans" / "4.3.0-accessibility-plan.md"
 errors: list[str] = []
 
 
@@ -33,13 +34,46 @@ def check(condition: bool, message: str) -> None:
         errors.append(message)
 
 
-check(len(CHAPTERS) == 12, f"expected 12 chapters, found {len(CHAPTERS)}")
+check(len(CHAPTERS) == 13, f"expected 13 chapters, found {len(CHAPTERS)}")
 source = "\n".join(path.read_text(encoding="utf-8") for path in CHAPTERS)
 action_source = "\n".join(
     path.read_text(encoding="utf-8")
     for path in CHAPTERS
     if path.name not in {"09-version-history.md", "10-sources.md"}
 )
+opening_source = "\n".join(
+    (ROOT / "src" / "chapters" / name).read_text(encoding="utf-8")
+    for name in ("00-cover.md", "01-how-to-use.md")
+)
+
+# The reader-facing guide contains subject matter, not release archaeology.
+for forbidden in (
+    "v3.",
+    "Version 3.",
+    "Version 4.",
+    "old guide",
+    "old edition",
+    "new chapter",
+    "this chapter",
+    "this subguide",
+    "implemented candidate",
+):
+    check(forbidden.lower() not in action_source.lower(), f"reader-facing project meta remains: {forbidden}")
+check(opening_source.count("112") == 1, "opening must contain exactly one 112 emergency gate")
+for marker in (
+    "The Small-Room Observatory",
+    "When the outside gets quiet, the inside gets loud",
+    "The gut votes early",
+    "The room is amplifying you",
+    "Anxiety bends time",
+    "Acute stress makes the mind narrower, not stupider",
+    "Naming a feeling changes the task",
+    "Cold water is interesting, not magical",
+    "Bathroom fainting is a real category",
+    "Smell is a fading sensor",
+    "The three-minute bathroom experiment",
+):
+    check(marker.lower() in opening_source.lower(), f"curiosity-first opening marker missing: {marker}")
 
 # Safety regressions intentionally removed from the v3.x action material.
 # History and evidence notes may quote a removed claim in order to document it.
@@ -64,10 +98,15 @@ check(
 )
 check("column-count: 1 !important" in STYLE, "single-column print invariant missing")
 check("columns: auto !important" in STYLE, "print column reset missing")
+check("font-size: 9.3pt" in STYLE, "standard A4 density typography invariant missing")
+check("font-size: 8.35pt" in STYLE_A4_HALF, "A4/2 density typography invariant missing")
+check(".emergency-gate" in STYLE, "single opening emergency-gate styling missing")
 check("size: 105mm 297mm" in STYLE_A4_HALF, "A4/2 page geometry missing from layout CSS")
 check("grid-template-columns: 1fr 1fr" in STYLE_A4_HALF, "A4/2 emergency strip adaptation missing")
 check("table-layout: fixed" in STYLE_A4_HALF, "A4/2 narrow-table protection missing")
 check("LOOK CLOSER" in STYLE_A4_HALF, "A4/2 curiosity figure label missing")
+check("font-size: 13.25pt" in STYLE_LARGE_PRINT, "large-print typography invariant missing")
+check("LARGE PRINT / TEXT ROUTE FOLLOWS" in STYLE_LARGE_PRINT, "large-print text-route marker missing")
 
 # Evidence registry and figure checks. A chart may be simple; its provenance may not.
 evidence: dict = {}
@@ -130,6 +169,8 @@ required_route_figures = {
     "two_pass_route_map.png",
     "hazard_override_matrix.png",
     "dependency_continuity_map.png",
+    "safe_place_route_map.png",
+    "communication_access_card.png",
 }
 for name in sorted(required_route_figures):
     check((ROOT / "build" / "diagrams" / name).exists(), f"required route figure missing: {name}")
@@ -161,17 +202,17 @@ if ROADMAP.exists():
     ):
         check(marker.lower() in roadmap.lower(), f"roadmap marker missing: {marker}")
 
-check(NEXT_MINOR_PLAN.exists(), "4.2.0 content plan is missing")
+check(NEXT_MINOR_PLAN.exists(), "4.3.0 accessibility plan is missing")
 if NEXT_MINOR_PLAN.exists():
     next_minor = NEXT_MINOR_PLAN.read_text(encoding="utf-8")
     for marker in (
-        "Track A — Improvement of existing content",
-        "Track B — Extension of coverage",
-        "Environmental-hazard override gate",
-        "Dependency modifier strip",
+        "Safe-place route split",
+        "Source freshness",
+        "Communication access profiles",
+        "Large-print edition",
         "Release acceptance",
     ):
-        check(marker.lower() in next_minor.lower(), f"4.2.0 plan marker missing: {marker}")
+        check(marker.lower() in next_minor.lower(), f"4.3.0 plan marker missing: {marker}")
 
 # Version and source-shape checks.
 for path in CHAPTERS:
@@ -193,6 +234,11 @@ parity_markers = [
     "Flowchart legend",
     "Master flowchart",
     "The eight entry points",
+    "Situation G — No Safe Place",
+    "G1 — A person or active threat makes the place unsafe",
+    "G2 — There is no weather-safe place to sleep tonight",
+    "Communication and access card",
+    "Minimal written emergency card",
     "Situation H — The Environment May Be Unsafe",
     "Essential medication and powered-device failure",
     "The hazard handoff",
@@ -231,8 +277,8 @@ parity_markers = [
     "Master cross-reference",
     "Diagram index",
     "Fillable fields",
-    "Complete decision tree",
-    "Notes page",
+    "Master flowchart — complete text version",
+    "Navigation invariant",
     "Therapy effectiveness",
     "Game theory and cooperation",
 ]
@@ -258,12 +304,20 @@ if HTML.exists():
     check(VERSION in html, f"built HTML does not contain version {VERSION}")
     normalized_html = re.sub(r"\s+", " ", html).lower()
     for marker in (
+        "The Small-Room Observatory",
+        "The gut votes early",
+        "Acute stress makes the mind narrower, not stupider",
+        "Bathroom fainting is a real category",
+        "The three-minute bathroom experiment",
         "IASC support pyramid",
         "Ostrom",
-        "decision tree — safe text version",
+        "Master flowchart — complete text version",
         "That is not a contradiction requiring a duel between bar charts",
         "Time is brain",
         "Social connection is not decorative trim",
+        "Situation G — No Safe Place",
+        "G3 — A place exists, but it cannot safely support the person",
+        "Minimal written emergency card",
         "Situation H — The Environment May Be Unsafe",
         "Essential medication and powered-device failure",
         "The hazard handoff",
@@ -343,6 +397,7 @@ print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    f"{len(required_route_figures)} route figures, v3.3 breadth markers, structured routing/locales, "
-    "roadmap coverage, native MathML, A4 and A4/2 PDFs, one-column print."
+    f"{len(required_route_figures)} route/access figures, v3.3 breadth markers, "
+    "structured routing/locales/accessibility, roadmap coverage, native MathML, "
+    "A4, A4/2, and large-print outputs."
 )

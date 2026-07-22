@@ -1,16 +1,16 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Sources and Evidence Notes
 
-Core emergency routes, German service information, and newly restored medical,
-legal-aid, preparedness, postpartum, fracture, burn, and hypothermia material
-were reviewed for **22 July 2026**. Official and primary sources are preferred.
+Emergency routes, German service information, and medical, legal-aid,
+preparedness, postpartum, fracture, burn, and hypothermia material were
+reviewed for **22 July 2026**. Official and primary sources are preferred.
 A link is not evidence by itself; the guide records what each source supports
 and what it does **not** support.
 
@@ -24,6 +24,71 @@ and what it does **not** support.
 
 No philosophical text, social-science model, screening score, home device, or
 attractive equation overrides emergency symptoms or dispatcher instructions.
+
+
+## Bathroom-scale body and perception science
+
+- **Jenkinson PM, Fotopoulou A, Ibañez A.** “Interoception in anxiety,
+     depression, and psychosis: a review.” *eClinicalMedicine* 73 (2024):
+     102673. Interoception includes sensing, interpretation, integration,
+     regulation, and prediction; heartbeat-detection accuracy does not show a
+     simple reliable increase in anxiety.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC11169962/
+
+- **Taché Y, Bonaz B.** “Neuroendocrine control of the gut during stress.”
+     *Annual Review of Physiology* 69. Stress-related signalling can inhibit
+     upper-GI motor function and stimulate colonic propulsive activity.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC2714186/
+
+- **Reinhart PN et al.** “Effects of Reverberation and Compression on
+     Consonant Identification in Individuals with Hearing Impairment.” *Ear and
+     Hearing* 37 (2016). Tiled bathrooms are used as a high-reverberation
+     everyday example; actual rooms vary substantially.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC4767560/
+
+- **Sarigiannidis I et al.** “Anxiety makes time pass quicker while fear has
+     no effect.” *Cognition* 197 (2020): 104116. Three laboratory experiments
+     found anxiety-related underestimation of elapsed duration.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC7033556/
+
+- **Shields GS, Sazma MA, Yonelinas AP.** “The Effects of Acute Stress on
+     Core Executive Functions.” *Neuroscience & Biobehavioral Reviews* 68
+     (2016): 651–668. Meta-analysis of 51 studies and 2,486 participants.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC5003767/
+
+- **Lieberman MD et al.** “Subjective Responses to Emotional Stimuli During
+     Labeling, Reappraisal, and Distraction.” *Emotion* 11 (2011): 468–480.
+     Four experiments on affect labeling and self-reported affect.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/
+
+- **Khurana RK et al.** “The Implications of the Diving Response in Reducing
+     Panic Symptoms.” *Frontiers in Psychiatry* 12 (2021): 798664. Small
+     experimental study of cold facial immersion; not a universal treatment
+     protocol.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/
+
+- **Espeland D et al.** “Health effects of voluntary exposure to cold
+     water—a continuing subject of debate.” *International Journal of
+     Circumpolar Health* 81 (2022). Distinguishes diving and cold-shock
+     responses.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC9518606/
+
+- **da Silva RMFL.** “Syncope: epidemiology, etiology, and prognosis.”
+     *Frontiers in Physiology* 5 (2014): 471. Situational syncope includes
+     episodes associated with urination, defecation, coughing, visceral pain,
+     and straining.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC4258989/
+
+- **Sinding C et al.** “New determinants of olfactory habituation.”
+     *Scientific Reports* 7 (2017): 41047. Repeated or continuous sensory input
+     can produce reduced responsiveness; habituation is not a safety test.
+     https://pmc.ncbi.nlm.nih.gov/articles/PMC5264389/
+
+### Limit
+
+These studies illuminate mechanisms and average effects. They do not diagnose a
+reader, identify a gas, explain every faint, or convert a familiar symptom into
+a harmless one.
 
 ## First aid and emergency response
 
@@ -122,7 +187,7 @@ improvised high-voltage work.
 ### Limits
 
 Smell is not a complete food-safety test. Calorie formulas and emergency
-foraging lists from v3.3 were not restored as action guidance.
+unverified wild-food lists are not used as action guidance.
 
 ## Water purification and clearing
 
@@ -278,9 +343,9 @@ support, focused help, and specialized treatment complement one another.
 
 ### Limit
 
-Version 4.2.0 does not publish universal response percentages as promises for
-an individual. Evidence informs shared clinical decisions; method, diagnosis,
-severity, access, fit, and preference matter.
+Universal therapy response percentages are not personal promises. Evidence
+informs shared clinical decisions; method, diagnosis, severity, access, fit, and
+preference matter.
 
 ## Olfactory science
 
@@ -498,11 +563,10 @@ or justify coercive resource control.
     organizational incident information and reporting routes.
     https://www.bsi.bund.de/
 
-## Version 4.1.1 evidence figures
+## Quantitative evidence figures
 
-The numeric inputs below are also stored in
-`src/data/evidence_facts.json`, together with their evidence class, denominator,
-scope, and practical limit.
+Each figure keeps its evidence class, denominator, scope, and practical
+limit beside the value.
 
 78. **Spitzer RL et al.** “A Brief Measure for Assessing Generalized Anxiety
     Disorder: The GAD-7.” *Archives of Internal Medicine* 166 (2006):
@@ -561,13 +625,13 @@ scope, and practical limit.
 
 ### Shared limit
 
-These figures restore useful context, not certainty theatre. Screening accuracy
+These figures provide bounded context, not certainty theatre. Screening accuracy
 varies by setting; randomized-study results depend on sample and intervention;
 observational odds ratios do not establish individual causation; population
 frequencies do not predict one person; mathematical models inherit their
 assumptions. Emergency protocols continue to outrank every chart.
 
-## Version 4.2.0 routing, hazard, and locale foundations
+## Routing, hazard, and locale foundations
 
 87. **Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK).**
     “European emergency number 112,” current 2026 information. The page names
@@ -628,6 +692,70 @@ individual toxic dose. Scene-specific instructions from dispatchers, fire
 services, poison centres, network operators, warning authorities, clinicians,
 and device emergency plans take precedence.
 
+## Safe-place, access, and freshness foundations
+
+96. **Behördennummer 115.** Nationwide public-administration information line.
+    Current service information states nationwide availability Monday to Friday,
+    08:00–18:00, and describes telephone, easy-language, and sign-language video
+    access. The guide uses 115 only to identify the responsible authority; it is
+    not an emergency number or a guarantee of accommodation.
+    https://www.115.de/
+
+97. **Hilfetelefon “Gewalt gegen Frauen.”** Current service overview for
+    **116 016**: free, confidential, around the clock, multilingual, and
+    available through telephone and online routes. Published access routes also
+    include sign language, written language, and easy language.
+    https://www.hilfetelefon.de/
+
+98. **Hilfetelefon Gewalt an Männern.** Current anonymous telephone support at
+    **0800 1239900** during published service hours, with online counselling.
+    The guide prints the availability limit rather than presenting it as a
+    round-the-clock emergency service.
+    https://www.maennerhilfetelefon.de/
+
+99. **Nummer gegen Kummer.** Current child and youth helpline **116 111** and
+    online counselling. Published service hours apply; acute danger remains a
+    110/112 route.
+    https://www.nummergegenkummer.de/
+
+100. **TelefonSeelsorge Germany.** Current around-the-clock crisis-conversation
+     routes including **116 123**. It is not a substitute for rescue service
+     when a person cannot remain safe.
+     https://www.telefonseelsorge.de/
+
+101. **Zentrale Informationsstelle Autonomer Frauenhäuser.** Nationwide women’s
+     refuge search with availability hints and accessibility filters. The
+     directory warns that it is not complete and that a displayed place is not
+     a confirmed bed or the protected refuge address.
+     https://www.frauenhaus-suche.de/
+
+102. **115 sign-language service.** Current video route for sign-language access
+     to public-administration information; it requires internet and a suitable
+     camera-capable device.
+     https://www.115.de/gebaerdensprache
+
+103. **W3C.** *Web Content Accessibility Guidelines (WCAG) 2.2.* Used as the
+     technical basis for complete image alternatives, logical headings,
+     consistent navigation, and interfaces that do not depend on a single
+     sensory channel.
+     https://www.w3.org/TR/WCAG22/
+
+### Safe-place and accessibility limit
+
+The national registry can identify national services and categories. It cannot
+know a municipality’s current after-hours office, shelter capacity, working
+lift, accessible room, pet policy, transport availability, powered destination,
+or whether a threatened person can safely use a particular device. Those remain
+explicit local fields and require confirmation. Communication adaptations should
+be chosen with the person; diagnosis, speech, eye contact, or movement does not
+reveal a complete access plan.
+
+### Source-freshness rule
+
+Operational services carry a review date and a maximum review interval. A
+recent review does not prove that a remote service is reachable this minute;
+local availability still needs confirmation.
+
 ## Editorial policy
 
 - Do not infer acute medical urgency from a GAD-7, pain score, home pulse,
@@ -638,7 +766,6 @@ and device emergency plans take precedence.
 - Label disputed or approximate theories.
 - Prefer a short action plus escalation rule before deeper explanation.
 - Keep humour away from the gap between a red flag and the action.
-- Recheck service numbers, legal-aid details, and guideline versions at every
-  release.
-- Preserve the breadth of v3.3 without preserving its confidence where the
-  evidence did not earn it.
+- Recheck service numbers, legal-aid details, and guideline versions before
+  printing or deployment.
+- Keep confidence proportional to the evidence.

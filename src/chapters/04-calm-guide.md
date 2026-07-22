@@ -1,7 +1,7 @@
 ---
 title: "Calm Guide"
 chapter: 4
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/breathing_techniques.png
@@ -10,26 +10,19 @@ dependencies:
 
 # Calm Guide — Reduce the Volume, Not Your Existence
 
-You made it here. That counts. It does not count as a clinical intervention,
-but it counts as movement, and movement is useful.
+Calm is not silence inside the body. It is enough bandwidth to notice more than
+one thing and choose among two actions. A heart may still race; the room can
+still become usable.
 
-This chapter restores v3.3’s full calm guide: permission, grounding, breathing,
-stress models, comfort inventory, leaving the bathroom, conversation scripts,
-smalltalk, activities, and professional escalation. The neurochemical fan
-fiction has been removed. The blanket remains.
+An anxious system tends to merge sensation, prediction, memory, and obligation.
+They can be separated through contact, orientation, comfortable breathing,
+environmental adjustments, thought-unhooking, conversation, and an exit plan.
+The blanket remains.
 
-## Before calming: one safety check
+## A pause needs no legal brief
 
-If symptoms are new, severe, physically alarming, or unlike your usual anxiety,
-use Ch.5 and call **112** when life or lasting harm may be at risk. Calming is
-not a test you must pass before deserving medical help.
-
-If violence or coercion is active, calming yourself is secondary to getting
-safe. Use Ch.3D and Ch.7.
-
-## You are allowed to be here
-
-You are allowed to take a pause without producing a legal brief for it.
+You are allowed to take a pause without proving that it is medically,
+philosophically, or economically optimal.
 
 A bathroom can offer:
 
@@ -39,8 +32,8 @@ A bathroom can offer:
 - a mirror that is not currently required to have an opinion;
 - one small interval in which nobody gets a performance.
 
-You do not have to become serene. The first goal is smaller: reduce the number
-of simultaneous demands enough to choose what happens next.
+Serenity is optional. The first target is narrower: reduce simultaneous demands
+until one next action becomes visible.
 
 ## The 90-second landing
 
@@ -80,9 +73,9 @@ number.
 
 ## Stress does not obey a cinematic decay curve
 
-The old guide used a tidy exponential cortisol curve. Human arousal is not a
-bath plug. Stress chemistry, interpretation, pain, safety, sleep, substances,
-and new events interact.
+A tidy exponential cortisol curve would be fiction. Human arousal is not a bath
+plug: stress chemistry, interpretation, pain, safety, sleep, substances, and
+new events interact.
 
 A more honest conceptual model is:
 

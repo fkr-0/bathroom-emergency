@@ -1,7 +1,7 @@
 ---
 title: "Responsibility, Harm, and Other Life Forms"
 chapter: 2
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/reproductive_health_denominators.png
@@ -9,32 +9,29 @@ dependencies:
 
 # Situation A — I Caused Trouble
 
-Guilt wants a trial. Emergencies need a sequence.
+Guilt wants one enormous verdict. Responsibility is usually a sequence of
+smaller questions: **is harm still happening, what needs stabilizing, who needs
+the truth, and what can still be repaired?** Mixing those questions produces
+shame fog; separating them produces work.
 
-This chapter restores the full v3.3 branch structure—before birth, just born,
-days later, childhood, adulthood, ambiguous responsibility, harm, and ongoing
-care—without pretending that a bathroom flowchart can settle medicine, law, or
-ethics by itself.
+Responsibility can concern a pregnancy, a newborn, a child, an adult, an animal,
+a technical system, a single harmful act, or years of care. The category changes
+the duty. The clock changes the next action.
 
-## First split: live problem or aftermath?
+## First split: which clock is running?
 
-### A live problem
+| State | Main question | First useful move |
+|---|---|---|
+| harm is happening now | what stops the next minute from becoming worse? | interrupt, secure the scene, involve people and emergency help |
+| the event is over but effects continue | what needs treatment, shelter, truth, or documentation? | stabilize before explaining |
+| no acute harm remains | what repair or boundary changes the future? | tell, repair, follow up |
+| care is ongoing | where is the single point of failure? | add relief, backup, instructions, and handoff |
 
-If a person is injured, unresponsive, not breathing normally, bleeding heavily,
-giving birth unexpectedly, or at risk of lasting harm:
+A live injury, abnormal breathing, severe bleeding, active violence, unexpected
+birth, or another threat to life belongs to the emergency actions on the cover
+and the First Aid or Safety subguide. Fault can wait; physiology cannot.
 
-1. Call **112**.
-2. Make the scene safe without creating a second casualty.
-3. Follow Ch.5 and the dispatcher.
-4. Do not spend the useful minutes deciding whose fault it is.
-
-If violence is active, leave the immediate danger if you safely can. Call
-**110** for police; call **112** for medical rescue or when immediate danger to
-life exists.
-
-### The aftermath
-
-When nobody is in immediate danger, use the repair sequence:
+When the immediate scene is stable, use the repair sequence:
 
 $$A = (\text{stop},\; \text{stabilize},\; \text{tell},\; \text{repair},\; \text{follow up})$$
 
@@ -44,14 +41,13 @@ $$A = (\text{stop},\; \text{stabilize},\; \text{tell},\; \text{repair},\; \text{
 - **Repair:** replace, compensate, apologize, document, or obtain care.
 - **Follow up:** check whether the repair worked.
 
-This is not absolution algebra. It is simply harder for shame to sabotage five
-verbs than one enormous moral fog.
+The sequence does not produce absolution. It prevents shame from replacing five
+answerable verbs with one enormous moral fog.
 
 ## A0 — Biological, social, technical, or unclear?
 
-The old guide asked whether the life form was biological or silicon-based. That
-question remains, because apparently this bathroom serves a broad clientele.
-Use the closest category:
+First identify what kind of entity is involved. This bathroom apparently serves
+a broad clientele, so use the closest category:
 
 | Category | Examples | First concern |
 |---|---|---|
@@ -61,8 +57,8 @@ Use the closest category:
 | Technical entity | server, robot, model, autonomous process | containment, logs, owner notification |
 | Unclear | “it is complicated” | describe facts before naming the category |
 
-The category changes whom you call. It does not change the first principle:
-prevent further harm.
+The categories are not moral rankings. They identify different forms of
+consent, welfare, authority, ownership, and continuity.
 
 ## A1 — A life may be developing, but birth has not begun
 
@@ -166,8 +162,8 @@ a frequency word, not a permission to wait.
 
 ### Repair matters more than perfect attunement
 
-The v3.3 attachment section contained a useful relief hidden inside a large
-classification table: caregiving does not require uninterrupted perfection.
+Attachment research contains a useful relief: caregiving does not require
+uninterrupted perfection.
 Children need sufficiently responsive care and repeated repair after ordinary
 misattunements.
 

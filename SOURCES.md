@@ -20,7 +20,7 @@ For each release:
 
 ## Operational route sources
 
-Version 4.2.0 separates operational routing from explanatory evidence:
+Version 4.3.0 separates operational routing from explanatory evidence:
 
 - `src/data/route_catalog.json` stores pass-1 overrides, pass-2 needs,
   dependency modifiers, destinations, and reviewed source IDs;
@@ -34,6 +34,30 @@ Operational source order is: current public authority or emergency service;
 current technical safety authority; product- or substance-specific professional
 advice; explanatory literature. A study never outranks a fire brigade, poison
 centre, dispatcher, warning authority, or approved device emergency plan.
+
+### Freshness and locality
+
+Each operational source stores a review date and maximum review age. Validation
+uses the current date by default and accepts `GUIDE_AS_OF=YYYY-MM-DD` for a
+reproducible future-date test. Near-expiry records warn; stale records fail.
+
+National services and local services must not be blurred:
+
+- a published nationwide number may be printed with its scope and availability;
+- municipal accommodation, after-hours offices, accessible rooms, transport,
+  powered destinations, youth emergency services, and pet-compatible places
+  remain empty local fields until confirmed;
+- 115 may identify a responsible authority during its published hours but is
+  not labelled an emergency or guaranteed-accommodation line;
+- a directory entry is not treated as a confirmed place.
+
+### Accessibility sources
+
+`src/data/accessibility_profiles.json` stores barriers, adaptations, handoffs,
+and failure-escalation conditions. WCAG supports document and interface
+structure; service providers support the exact communication channels they
+publish. Neither source permits assumptions about an individual person’s
+capacity or preferred assistance. Ask the person whenever possible.
 
 ## Evidence order
 

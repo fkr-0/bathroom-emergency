@@ -1,7 +1,7 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/social_connection_associations.png
@@ -9,10 +9,10 @@ dependencies:
 
 # Professional Support — When the Bathroom Is Too Small
 
-This chapter restores v3.3’s full psychological, legal, medical, social, and
-friend-support directory while keeping one principle in front: use the service
-that matches the actual urgency, not the service whose number you happen to
-remember from a poster in 2009.
+Professional systems are specialized interfaces, not a ladder from “minor” to
+“serious.” A hospital cannot replace housing; a therapist cannot repair a gas
+line; a friend cannot issue a prescription; an authority finder cannot promise
+a bed. Name the next concrete problem, then choose the system built to alter it.
 
 ## Germany quick reference
 
@@ -21,18 +21,22 @@ remember from a poster in 2009.
 | Life danger / possible lasting harm / fire | **112** | Rescue service and fire brigade |
 | Active crime or threat requiring police | **110** | Police |
 | Urgent medical problem, not life-threatening | **116 117** | Medical on-call service |
-| Psychological crisis conversation | **116 123** | TelefonSeelsorge, free and anonymous |
-| Violence against women | **116 016** | 24/7, free, anonymous, multilingual |
+| Psychological crisis conversation | **116 123** | TelefonSeelsorge, around the clock |
+| Public authority finder | **115** | Identifies responsible authority, Mon–Fri 08:00–18:00; not an emergency or accommodation guarantee |
+| Violence against women | **116 016** | 24/7, free, anonymous, multilingual, online/sign/easy-language access |
+| Violence against men | **0800 1239900** | Anonymous support during published service hours, plus online counselling |
 | Children and young people | **116 111** | Nummer gegen Kummer |
 | Poisoning, no immediate life danger | regional poison centre | Directory via gesund.bund.de |
 | Immediate self- or other-endangerment | **112** | Rescue service |
 
-Numbers and scope should be rechecked at every release and before local
-printing. Core routes were reviewed for version 4.2.0 on **22 July 2026**.[^numbers]
+Numbers and scope should be rechecked before local printing. The listed routes
+were reviewed on **22 July 2026**.[^numbers]
 
-## The call script
+## The call script — location before autobiography
 
-You do not need the right vocabulary. Use this:
+The first useful packet is small: **where, what, when, current state, current
+danger, callback number**. Vocabulary and chronology can expand after contact.
+Use this:
 
 > “I am at **[address, floor, door code]**.  
 > The problem is **[one sentence]**.  
@@ -46,12 +50,30 @@ first sentence was delivered.
 
 ### When words are failing
 
-Say only:
+Say or show only:
 
 > “I need help at **[location]**. Someone may be in danger. My number is
 > **[number]**.”
 
 The call handler will ask the rest. Fluency is not an entrance exam.
+
+### When voice is not the usable channel
+
+Use the shortest reliable channel available: writing, text, sign-language video
+service, relay, pointing, a yes/no card, or a chosen communication partner. Ask
+before involving another person and do not let the helper replace the affected
+person’s answers when they can answer themselves.
+
+The **115** administration service publishes easy-language information and a
+sign-language video service. **116 016** publishes telephone, online,
+multilingual, sign-language, written-language, and easy-language routes. These
+channels require the relevant device, connection, service availability, and a
+safe context; they do not replace **112 / 110** during immediate danger.
+
+Useful instruction:
+
+> “I communicate best by **[writing / text / sign / pointing / yes-no]**. Please
+> use one sentence and one question at a time.”
 
 ## Psychological support
 
@@ -120,8 +142,8 @@ interpersonal, and other structured approaches can be effective for many
 conditions. Outcomes vary with diagnosis, severity, therapeutic relationship,
 access, method, and individual preference.
 
-The old guide printed attractive response percentages. Version 4.2.0 does not
-promise a personal outcome from a meta-analysis. A better question is:
+A therapy response percentage detached from diagnosis, comparator, follow-up,
+and study population is decoration. Better questions are:
 
 - Is the method appropriate for the problem?
 - Is the professional qualified?
@@ -317,16 +339,29 @@ problem**, not the one whose website contains the most inspiring stock photo.
 
 ## Housing and “no place tonight”
 
-Call the local authority’s emergency housing, social service, homeless
-assistance, women’s shelter or other specialist shelter, or an emergency
-accommodation service. Say:
+Use **Situation G — No Safe Place** before choosing a service. It separates:
 
-> “I have no safe place to sleep tonight. I am currently at **[location]**.
-> I have **[children / disability / medication / pet / safety risk]**.
-> Which service is responsible now, and where can I go?”
+1. violence, coercion, or an active threat;
+2. no weather-safe roof tonight;
+3. accommodation that fails access, medication, powered-device, child, or
+   caregiver requirements;
+4. a physically safe place made unworkable by social or internal crisis.
 
-If exposure, violence, acute illness, or self-harm risk exists, use
-**112 / 110**.
+For ordinary municipal routing, contact the local emergency-accommodation,
+homelessness, social, or after-hours authority. During service hours, **115** may
+identify the responsible public office, but it is not an emergency number and
+cannot promise a bed. Specialist violence services, youth emergency services,
+accessible accommodation, transport, powered destinations, and animal-compatible
+places remain local fields that must be confirmed before deployment.
+
+Use the Situation G handoff:
+
+> “I need a safe place for **[tonight / one hour / until treatment resumes]**.
+> The reason is **[route]**. Access and care needs are **[list]**. What can you
+> confirm now, and what is the backup if that fails?”
+
+Use **112 / 110** for exposure, violence, acute illness, self-harm danger, or a
+failed essential-care bridge.
 
 ### Housing evidence pack
 
@@ -351,7 +386,9 @@ Do not delay leaving immediate danger to obtain the perfect folder.
   <p><strong>110</strong> active police threat or crime</p>
   <p><strong>116 117</strong> urgent, non-life-threatening medical help</p>
   <p><strong>116 123</strong> crisis conversation</p>
+  <p><strong>115</strong> responsible public authority, service hours only</p>
   <p><strong>116 016</strong> violence against women</p>
+  <p><strong>0800 1239900</strong> violence against men, published hours</p>
   <p><strong>116 111</strong> children and young people</p>
 </div>
 
@@ -370,13 +407,17 @@ Do not delay leaving immediate danger to obtain the perfect folder.
 | Maternity / gynecology | |
 | Pediatric emergency | |
 | Veterinary emergency | |
-| Safe place / shelter | |
-| Emergency housing / social service | |
+| Safe place / specialist shelter | |
+| Emergency housing — daytime | |
+| Emergency housing — after hours | |
+| Accessible accommodation / transport | |
+| Powered care destination | |
+| Youth emergency service | |
 | Legal advice / tenant support | |
 | Building utility emergency | |
 
 Do not print passwords, PINs, alarm codes, or secret key locations in a guide
-left in a shared bathroom. Version 3.3 was optimistic about house guests.
+left in a shared bathroom. Toothbrush proximity is not a security model.
 
 ## Support-selection matrix
 
@@ -388,7 +429,8 @@ left in a shared bathroom. Version 3.3 was optimistic about house guests.
 | acute psychological danger | 112 | psychiatric emergency service |
 | crisis without acute danger | 116 123 / local service | 116 117 / GP |
 | domestic or gendered violence | 116 016 / specialist shelter | 110 / 112 in danger |
-| no housing tonight | municipal/social/shelter service | 110 / 112 if unsafe/exposed |
+| no housing tonight | Situation G → municipal emergency accommodation; 115 may identify authority during hours | 110 / 112 if unsafe/exposed |
+| accommodation fails access or care | Situation G → accessible local destination / care team / 116 117 | 112 if essential function or transfer fails |
 | legal problem | qualified lawyer / specialist advice | Beratungshilfe if eligible |
 | caregiver overload | care/family/youth/social service | crisis or emergency route if unsafe |
 

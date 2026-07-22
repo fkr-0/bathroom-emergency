@@ -1,12 +1,42 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Version History
+
+## 4.3.0 — 22 July 2026
+
+### Situation G becomes a router, not a shrug
+
+- Split “no safe place” into violence/coercion, no roof tonight, access or
+  essential-care failure, and social/internal crisis.
+- Added national service routes where they genuinely exist and explicit local
+  fields where municipalities, shelters, transport, and after-hours services
+  differ.
+- Added a safe-place handoff that asks for a confirmed destination, access
+  method, backup, and escalation condition rather than accepting “try elsewhere.”
+
+### Communication is part of safety
+
+- Added six structured communication/access profiles and a minimal written
+  emergency card.
+- Added sign-language, text, easy-language, and online access metadata where the
+  relevant German service publishes it.
+- Added generated safe-place and communication-access maps while keeping the
+  prose complete without colour or diagrams.
+
+### Large print and freshness
+
+- Added color and monochrome A4 large-print editions with materially larger
+  typography rather than a browser zoom instruction disguised as a format.
+- Added image-alt, heading-order, tagging, blank-page, geometry, page-growth,
+  and color/mono parity checks.
+- Added dated operational-source windows and deterministic stale-source tests so
+  a once-correct telephone route cannot age invisibly inside the guide.
 
 ## 4.2.0 — 22 July 2026
 

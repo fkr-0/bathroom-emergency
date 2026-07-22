@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Bathroom Emergency Guide v4.2.0.
+"""Build Bathroom Emergency Guide v4.3.0.
 
 The build has one source of truth and no network dependency:
 - chapter YAML is removed during assembly;
@@ -31,13 +31,15 @@ TEMPLATE = SRC / "template.html"
 STYLE = SRC / "style.css"
 STYLE_MONO = SRC / "style-mono.css"
 STYLE_A4_HALF = SRC / "style-a4-half.css"
-VERSION = "4.2.0"
+STYLE_LARGE_PRINT = SRC / "style-large-print.css"
+VERSION = "4.3.0"
 
 CHAPTERS = [
     "00-cover.md",
     "01-how-to-use.md",
     "02-situation-a.md",
     "03-situations-b-g.md",
+    "03g-safe-place-routing.md",
     "03h-environmental-hazards.md",
     "04-calm-guide.md",
     "05-self-ambulance.md",
@@ -132,6 +134,8 @@ def combined_css(monochrome: bool, *, layout: str = "a4") -> Path:
     content = STYLE.read_text(encoding="utf-8")
     if layout == "a4half":
         content += "\n\n" + STYLE_A4_HALF.read_text(encoding="utf-8")
+    if layout == "largeprint":
+        content += "\n\n" + STYLE_LARGE_PRINT.read_text(encoding="utf-8")
     if monochrome:
         content += "\n\n" + STYLE_MONO.read_text(encoding="utf-8")
     name = variant_stem(monochrome=monochrome, layout=layout).replace("_", "-") + ".css"
@@ -277,6 +281,9 @@ def main() -> int:
         "a4half",
         "a4half-html",
         "a4half-mono",
+        "largeprint",
+        "largeprint-html",
+        "largeprint-mono",
         "md",
         "latex",
         "docx",
@@ -307,6 +314,17 @@ def main() -> int:
             build_pdf(mono_html, monochrome=True, layout="a4half")
         return 0
 
+    if target in {"largeprint", "largeprint-html", "largeprint-mono"}:
+        color_html = build_html(markdown, layout="largeprint")
+        mono_html = build_html(markdown, monochrome=True, layout="largeprint")
+        if target == "largeprint-html":
+            return 0
+        if target == "largeprint":
+            build_pdf(color_html, layout="largeprint")
+        if target in {"largeprint", "largeprint-mono"}:
+            build_pdf(mono_html, monochrome=True, layout="largeprint")
+        return 0
+
     color_html = build_html(markdown)
     mono_html = build_html(markdown, monochrome=True)
 
@@ -331,6 +349,15 @@ def main() -> int:
             a4half_mono_html,
             monochrome=True,
             layout="a4half",
+            backend=backend,
+        )
+        large_html = build_html(markdown, layout="largeprint")
+        large_mono_html = build_html(markdown, monochrome=True, layout="largeprint")
+        build_pdf(large_html, layout="largeprint", backend=backend)
+        build_pdf(
+            large_mono_html,
+            monochrome=True,
+            layout="largeprint",
             backend=backend,
         )
         build_latex(markdown)

@@ -1,36 +1,40 @@
 ---
-title: "Situations B–G"
+title: "Situations B–F, with Situation G Router"
 chapter: 3
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/gad7_validation_comparison.png
   - build/diagrams/sleep_restriction_study.png
 ---
 
-# Situations B–G — Pick the Closest Door
+# Situations B–G — Six Different Kinds of “Too Much”
 
-This chapter restores the broad v3.3 routes for anxiety, pain, danger, overload,
-smells, and having nowhere to go. Each route starts with the short emergency
-version, then expands into the science, practical tools, and forms the earlier
-edition was trying to carry—sometimes while wearing too many formulas at once.
+Anxiety, pain, threat, overload, smell, and loss of place all seize attention,
+but they do so for different reasons. Treating them as one generic crisis wastes
+information. Pick the loudest system first; borrow from neighbouring routes when
+reality refuses to respect chapter boundaries.
 
 ## B — I feel anxious
 
-### Do now
+### Split the experience before trying to solve it
 
-First, check the override: new chest pressure, severe breathlessness, fainting,
-one-sided weakness, confusion, a seizure, serious allergic symptoms, or a
-feeling that this may be a medical emergency means **112**, not “probably
-anxiety.”
+Anxiety arrives as a bundle. Separate four layers:
 
-If no red flag is present:
+| Layer | Example | Useful observation |
+|---|---|---|
+| sensation | racing heart, nausea, tingling | where, when, wave or steady? |
+| emotion | fear, shame, dread | one word is enough |
+| prediction | “this will become unbearable” | event, or forecast? |
+| impulse | flee, check, text, hide | what happens if it waits one minute? |
 
-1. Put both feet on the floor or sit safely.
-2. Name five things you can see and three sounds you can hear.
-3. Let the exhale be gentle and slightly longer than the inhale.
-4. Text or call one person: “I am overloaded. Stay with me for ten minutes.”
-5. Continue with Ch.4.
+Then change one variable: sit, loosen clothing pressure, turn down one sound,
+look away from the mirror, or contact one person. Compare after a minute. The
+point is not to win an argument with anxiety; it is to stop four different
+phenomena from impersonating one enormous fact.
+
+New, severe, unusual, or rapidly worsening physical symptoms belong to medical
+assessment rather than an anxiety experiment. Otherwise continue with Ch.4.
 
 ### Panic attack — when anxiety goes supernova
 
@@ -94,21 +98,29 @@ A useful distinction:
 | Action | What helps in five minutes? | water, call, leave, medical help |
 | Pattern | Is this recurring or shrinking life? | arrange professional support |
 
-## C — I feel pain
+## C — Pain is an alarm, not a damage display
 
-### Do now
+Pain is a protective experience, not a transparent window onto tissue. Its
+intensity matters, but so do onset, location, spread, rhythm, function, context,
+and associated signs. “Seven out of ten” is less useful than “sudden pressure,
+new at 14:10, spreading to the jaw, worse with effort.”
 
-Call **112** for sudden severe pain, chest pressure, severe abdominal pain,
-major injury, collapse, severe breathlessness, new neurological symptoms,
-pregnancy-related red flags, or serious uncertainty.
+Before explaining the cause, describe the geometry:
 
-Without a red flag:
+| Property | Useful distinction |
+|---|---|
+| onset | sudden / gradual / after a specific event |
+| shape | point / band / diffuse area / travelling |
+| time | seconds / steady / waves / repeatedly returning |
+| relation | movement / breathing / food / urination / position / touch |
+| function | can walk, speak, breathe, drink, think, or sleep? |
+| companions | fever, weakness, numbness, rash, vomiting, bleeding, collapse |
 
-- stop the activity that worsens the problem;
-- sit or lie safely;
-- note where and when it began;
-- use simple first aid from Ch.5;
-- contact a practice or **116 117** when urgent but not life-threatening.
+Sudden severe pain, chest pressure, severe abdominal pain, major injury,
+collapse, severe breathlessness, new neurological signs, pregnancy-related red
+flags, or serious uncertainty bypass the notebook and use urgent medical help.
+Otherwise stop the aggravating activity, support the body, note the onset, and
+use First Aid or **116 117** when prompt assessment is needed.
 
 ### NRS pain scale — communication, not physiology
 
@@ -156,7 +168,12 @@ being weird, please infer the plot.”
 Do not delay emergency help to complete the table. Paperwork must learn its
 place.
 
-## D — I feel endangered
+## D — Threat has three clocks
+
+A threat can be **present now**, **expected later**, or **over while the body is
+still reacting**. Those clocks require different work. Present danger needs
+distance. Expected danger needs preparation. After-effects need recovery without
+pretending the original event was imaginary.
 
 ### Danger is present now
 
@@ -205,9 +222,12 @@ memo.
 Use Ch.4 after checking actual safety. Seek professional help when symptoms are
 severe, persistent, functionally impairing, or connected to self-harm.
 
-## E — Things are congesting
+## E — Overload is a queueing failure
 
-Overload often feels like every task became urgent at once. They did not.
+Overload often feels like every task became urgent at once. Usually several
+queues have lost their labels: danger, deadline, discomfort, guilt, and
+unfinished trivia all arrive at the same mental counter. The first intervention
+is not motivation. It is traffic control.
 
 ### Cognitive load — why the brain is crashing
 
@@ -278,14 +298,17 @@ If basic care is repeatedly failing, involve professional, social, or practical
 support. Productivity advice is not a substitute for treating depression,
 ADHD, burnout, sleep deprivation, pain, or crisis.
 
-## F — Bad smell, after the hazard gate
+## F — Smell is vivid evidence with poor calibration
 
-### The rule
+Smell is excellent at demanding attention and poor at measuring concentration,
+toxicity, or distance. A weak odour can matter; a strong odour can be ordinary;
+habituation can make a persistent source disappear from awareness. Therefore a
+smell is a clue, not clearance and not permission to investigate from inside the
+plume.
 
-A smell is not permission to investigate from inside the plume. First ask:
-**fire, smoke, CO alarm, gas, electrical burning, unknown fumes, chemical
-exposure, or symptoms?** If yes, maybe, or unclear, use **Situation H** and move
-away before troubleshooting.
+First ask: **fire, smoke, CO alarm, gas, electrical burning, unknown fumes,
+chemical exposure, or symptoms?** If yes, maybe, or unclear, use **Situation H**
+and move away before troubleshooting.
 
 Do **not** light a match to diagnose or “neutralize” an unknown smell. Do not
 operate switches when gas may be present. Do not mix cleaning products.
@@ -323,51 +346,10 @@ not plumbing, even when scented “Alpine Responsibility.”
 
 ## G — No place to go
 
-“No place” can mean several different emergencies. Choose the closest:
-
-### No safe physical place tonight
-
-- move toward a public, staffed, weather-protected place if possible;
-- contact municipal emergency housing, social services, homeless assistance,
-  a shelter, or police when danger is present;
-- keep medication, phone, charger, ID, keys, warm layer, and essential mobility
-  or infant supplies;
-- tell one person where you are.
-
-Use **112 / 110** for exposure, violence, acute illness, or immediate danger.
-
-### No place in the group
-
-You may be excluded, overwhelmed, ashamed, or unable to return to a social
-setting. Secure the next hour first. Then decide whether you need:
-
-- ten minutes alone;
-- one ally;
-- a direct exit;
-- a boundary sentence;
-- a later conversation;
-- a different environment entirely.
-
-Ch.4 includes exit and conversation scripts.
-
-### No internal place where thoughts stop shouting
-
-Orient outward, reduce access to means of self-harm, contact one person, and use
-**116 123 / 116 117** or a local crisis service. Acute self-harm or other danger
-means **112**.
-
-### The one-hour plan
-
-| Question | Answer |
-|---|---|
-| Where can I be safe for one hour? | |
-| Who knows where I am? | |
-| What essential item must stay with me? | |
-| Which service handles tonight? | |
-| What makes this a 112/110 emergency? | |
-
-You do not need to solve housing, belonging, and metaphysics before breakfast.
-Tonight is an acceptable unit of planning.
+Use **Situation G — No Safe Place**. It separates active violence, no roof
+tonight, inaccessible or medically unusable accommodation, and social or
+internal crisis. Secure the next safe hour, then use the matching German or
+local service route.
 
 ## Situations B–G — consolidated routing map
 
@@ -378,7 +360,7 @@ Tonight is an acceptable unit of planning.
 | Danger | move to safety; call police/rescue | safety planning and after-effects | threat current or injury exists |
 | Congestion | externalize; choose one action | cognitive load and delegation | basic care or safety failing |
 | Smell | run the Situation H hazard gate; leave fumes | source-specific troubleshooting only after clearance | fire, gas, chemical exposure, symptoms |
-| No place | secure one hour; contact service | physical/social/internal branches | exposure, violence, medical/self-harm risk |
+| No place | use Situation G; secure one hour | violence / no roof / access-care / social-internal branches | exposure, violence, failed essential care, medical/self-harm risk |
 
 [^gad7]: Spitzer RL et al., “A Brief Measure for Assessing Generalized Anxiety Disorder: The GAD-7,” *Archives of Internal Medicine* 166 (2006): 1092–1097. https://doi.org/10.1001/archinte.166.10.1092
 

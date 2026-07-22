@@ -1,5 +1,99 @@
 # Changelog
 
+## 4.3.0 — 2026-07-22
+
+### Rebuilt the reader-facing opening
+
+- Replaced the former routing and release-architecture preamble with a dense
+  small-room observatory covering interoception, gut–brain motor effects,
+  bathroom acoustics, anxiety and time perception, acute-stress working-memory
+  effects, affect labeling, cold-face physiology, situational syncope, olfactory
+  habituation, and a three-minute observation experiment.
+- Reduced the opening to one compact actual-emergency gate, including another
+  person, first aid, speakerphone, safe door access, and the appropriate German
+  emergency route.
+- Moved notation, topology, flowchart legends, evidence instructions, and the
+  complete decision tree into the appendix.
+- Removed release history, “restoration,” and implementation narration from the
+  reader-facing chapters.
+- Reduced standard and A4/2 typography, tightened spacing, protected card and
+  table wrapping, and added automated overflow checks across all editions.
+
+### Extended the curiosity-first rewrite
+
+- Reframed responsibility around four clocks—live harm, continuing effects,
+  repair, and ongoing care—rather than opening with repeated emergency prose.
+- Reworked the mixed-situations chapter around six distinct forms of “too
+  much”: alarm, pain, threat, overload, smell, and loss of place.
+- Added subject-first models for pain geometry, the three clocks of threat,
+  overload as a queueing failure, and smell as vivid but poorly calibrated
+  evidence.
+- Rewrote the Calm, First Aid, Outage, and Professional Support openings around
+  bandwidth, biological time management, infrastructure dependencies, and
+  specialized service interfaces.
+- Expanded validation so release archaeology and chapter-description filler
+  cannot return to reader-facing chapters unnoticed.
+
+### Increased information density without shrinking body type
+
+- Reduced print margins, paragraph rhythm, heading gaps, card padding, figure
+  bands, table spacing, and footnote spacing while preserving the 9.3 pt A4,
+  8.35 pt A4/2, and 13.25 pt large-print body sizes.
+- Allowed suitable explanatory cards to continue across pages instead of
+  forcing large blank regions; safety-critical boxes remain indivisible.
+- Compacted the local-contact worksheet into paired columns and removed blank
+  shared-master notes sheets that belong more naturally in optional inserts.
+- Reduced the rendered master from 101 to 88 A4 pages, the field strip from 98
+  to 87 pages, and large print from 156 to 139 pages.
+- Added standard-A4 renderer checks for blank pages, physical-edge contact,
+  extreme packing, color/mono text parity, sparse/dense review pages, and
+  contact-sheet generation.
+
+### Specified graph-oriented subguide editions
+
+- Added `docs/plans/4.5.0-graph-subguide-architecture.md` as the tracked design
+  specification for a family of graph-linked standalone guides.
+- Proposed nine subguide identities with redundant code, pattern, glyph, title,
+  and colour channels so meaning never depends on colour alone.
+- Defined cover, graph-position/version page, introduction/contents page,
+  content-page furniture, and final handoff-page grammar.
+- Distinguished master and standalone behaviour so the master keeps one global
+  emergency gate while each detached subguide remains independently usable.
+- Added phased data, pattern, graph, renderer, editorial, and acceptance tasks
+  to the roadmap without prematurely duplicating canonical chapter prose.
+
+### Split “no safe place” into real routes
+
+- Added a dedicated **Situation G** chapter separating active violence, no roof
+  tonight, inaccessible or medically unusable accommodation, and social or
+  internal crisis.
+- Added action, backup, escalation, destination, service keys, and reviewed
+  sources for all four routes instead of sending every case to a generic list.
+- Kept municipal emergency accommodation, accessible shelter, youth emergency,
+  transport, and powered destinations visibly local rather than inventing a
+  national directory that does not exist.
+
+### Added communication and accessibility foundations
+
+- Added six structured access profiles for vision, hearing, speech/language,
+  cognitive load, mobility/fatigue/pain, and sensory/panic/neurodivergent needs.
+- Added a minimal written emergency card, channel-specific handoffs, accessible
+  service metadata, and two data-driven route/access visualizations.
+- Added current de-DE routes for 115, 116 016, 116 111, the violence-against-men
+  helpline, TelefonSeelsorge, and the nationwide women’s refuge search, with
+  scope and availability limits kept attached.
+
+### Added source freshness and large print
+
+- Added per-source review windows plus deterministic `GUIDE_AS_OF` validation,
+  including warning and hard-failure states for stale operational sources.
+- Added color and monochrome A4 large-print editions with 13.25 pt root print
+  type, single-column route cards, larger emergency numbers, and bounded tables,
+  formulas, code, and figures.
+- Added accessibility validation for image alternatives, heading order, blank
+  pages, A4 geometry, tagging, page growth, required route markers, and
+  color/monochrome text parity.
+
 ## 4.2.0 — 2026-07-22
 
 ### Added a real environmental-hazard branch

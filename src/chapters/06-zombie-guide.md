@@ -1,7 +1,7 @@
 ---
 title: "Outage, Disaster, and Zombie Guide"
 chapter: 6
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/dependency_continuity_map.png
@@ -16,9 +16,10 @@ No confirmed zombie outbreak is known. Power cuts, floods, heat, cold,
 contaminated water, smoke, communication failures, and groups improvising a
 constitution before locating the first-aid kit are real enough.
 
-This chapter restores v3.3’s nature-survival, collapsing-society, and
-community-building sections while dropping unsafe foraging lists, tactical
-fantasy, and made-up personal survival percentages.
+Infrastructure is mostly invisible while it works. Failure turns background
+assumptions—water, temperature, medication, charging, sewage, transport, and
+trustworthy information—into a queue. Survival is less about wilderness theatre
+than maintaining those dependencies in the right order.
 
 ## Verify before optimizing
 
@@ -229,8 +230,7 @@ Record these before an outage:
 
 ### Reading traces and observing the environment
 
-The old guide included “reading traces.” The safe, modern use is situational
-awareness rather than wilderness detective theatre:
+“Reading traces” means situational awareness, not wilderness detective theatre:
 
 - note water level, smoke direction, wind, damaged power lines, unstable walls,
   blocked exits, animal behaviour, traffic, and official markings;
@@ -261,7 +261,7 @@ Use energy in this order:
 ### Pareto principle — useful attention, not a literal law
 
 The 80/20 rule is a heuristic: a few actions often produce most immediate
-benefit. In this chapter those are usually:
+benefit. Here those are usually:
 
 - leave the active hazard;
 - call for help;

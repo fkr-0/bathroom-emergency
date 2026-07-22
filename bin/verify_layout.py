@@ -26,12 +26,19 @@ QA = ROOT / "build" / "qa" / "a4half"
 EXPECTED_WIDTH_PT = 105 / 25.4 * 72
 EXPECTED_HEIGHT_PT = 297 / 25.4 * 72
 REQUIRED_MARKERS = (
+    "The Small-Room Observatory",
+    "The gut votes early",
+    "Acute stress makes the mind narrower, not stupider",
+    "Bathroom fainting is a real category",
+    "The three-minute bathroom experiment",
     "How to read the evidence figures",
     "Two useful numbers, with their denominators attached",
     "Sleep debt can hide behind confidence",
     "Time is brain",
     "Social connection is not decorative trim",
-    "Reproducible evidence registry",
+    "Mathematical notation legend",
+    "Situation G — No Safe Place",
+    "Minimal written emergency card",
     "Situation H — The Environment May Be Unsafe",
     "Essential medication and powered-device failure",
     "The hazard handoff",

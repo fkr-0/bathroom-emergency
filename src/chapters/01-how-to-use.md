@@ -1,315 +1,256 @@
 ---
-title: "Start Here"
+title: "The Small-Room Observatory"
 chapter: 1
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
-dependencies:
-  - build/diagrams/emergency_flowgraph.png
-  - build/diagrams/two_pass_route_map.png
-  - build/diagrams/hazard_override_matrix.png
-  - build/diagrams/evidence_classes.png
+dependencies: []
 ---
 
-# Start Here — One Question at a Time
+# The Small-Room Observatory
 
-This guide is intentionally larger than a pocket card and intentionally simpler
-than a medical degree. It contains quick routes for the first minute and deeper
-explanations for the ten minutes after that, when the room has stopped spinning
-quite so theatrically.
+A bathroom is an odd laboratory: small, private, full of hard surfaces, supplied
+with water, and usually equipped with exactly one chair that nobody calls a
+chair. People go there to wash, excrete, hide, cool down, cry, think, avoid a
+conversation, inspect a symptom, or briefly stop being available to the world.
+That makes it a useful place to notice what the nervous system is doing without
+turning every sensation into a verdict.
 
-## The override
+Being able to read this does **not** prove that you are safe. It does establish
+something smaller and still useful: you are observing, following language, and
+choosing what to attend to. An intense state can be reversible. A familiar state
+can still deserve care. The useful question is not “am I allowed to feel this?”
+but “what is the signal, what changed, and where is it going?”
 
-Run three short checks before choosing a topic:
+## 1. When the outside gets quiet, the inside gets loud
 
-1. **Life or medical danger?** Possible death, abnormal breathing,
-   unconsciousness, severe bleeding, stroke sign, major injury, or lasting harm
-   means **112**. “Maybe” and “cannot tell” count.
-2. **Active violence or crime?** Move toward safety and call **110**. Use
-   **112** when medical rescue or life protection is also needed.
-3. **Environmental danger?** Fire, smoke, a CO alarm, gas, unknown fumes,
-   chemical exposure, live electricity, or sparking means leave or isolate the
-   source first and use **Situation H**. Call from a safer place.
+**Interoception** is the nervous system’s processing of signals from inside the
+body: heartbeat, breathing effort, fullness, nausea, temperature, pain, bladder,
+gut movement, muscular tension, and much more. It is not one perfect instrument.
+It includes sensing, attention, interpretation, prediction, and regulation.
 
-You do not have to diagnose the person or the room before asking for help. “I am
-not sure, but this looks serious” is a complete reason to call.
+An important scientific correction: anxious people are not simply proven to be
+better heartbeat detectors. Recent reviews find no reliable general advantage
+in cardiac interoceptive accuracy. The stronger pattern often lies in **what a
+signal is taken to mean**—how much attention it receives, how uncertain it feels,
+and whether it is interpreted as catastrophe.[^interoception-review]
 
-![Red-flag-first emergency decision flowgraph](build/diagrams/emergency_flowgraph.png)
+That distinction is hopeful because interpretation can change before the raw
+signal disappears.
 
-![Two-pass routing architecture with dependency modifiers](build/diagrams/two_pass_route_map.png)
-
-## Purpose
-
-The guide helps with eight observable situations:
-
-1. you caused trouble or someone depends on you;
-2. anxiety, panic, overload, or dissociation;
-3. pain or physical illness;
-4. danger, coercion, or violence;
-5. too many tasks and too little working memory;
-6. a suspicious smell or household hazard;
-7. no safe place, no plan, or disrupted infrastructure;
-8. fire, smoke, gas, chemicals, electricity, or unsafe air.
-
-Its job is to produce a **safe next action**, a **backup action**, and a clear
-**escalation rule**. It is not a diagnosis engine, courtroom, therapist, poison
-centre, obstetric ward, or tiny laminated government.
-
-## Target audience
-
-This is written for a stressed lay reader in Germany, including:
-
-- the person having the problem;
-- a friend trying to help without becoming an improvised professional;
-- a host who wants a useful guide in a bathroom, hallway, shelter, or shared
-  flat;
-- a household preparing for outages and ordinary disasters;
-- anyone whose brain currently has the processing power of a warm toaster.
-
-Children should use it with a trusted adult when possible. Anyone with a known
-medical condition should follow their individual emergency plan first.
-
-## Quick-start procedure
-
-Use two passes before reading deeply:
-
-1. **Pass 1 — override.** Check life/medical danger, active violence/crime, and
-   environmental danger in that order.
-2. **Move first when the environment is unsafe.** Do not troubleshoot gas,
-   smoke, electricity, or fumes from inside the exposure area.
-3. **Pass 2 — choose the need.** Responsibility, alarm, body, threat/no place,
-   household hazard, or outage.
-4. **Apply modifiers.** Alone, child, pregnancy/postpartum, mobility or sensory
-   access, medication, powered device, animal, language, and transport change
-   logistics—not urgency.
-5. **Do one action.** Keep the backup, escalation condition, and destination
-   visible.
-6. **Reassess.** Better, same, worse, or new red flag?
-
-## Your current status
-
-Before continuing, fill this line mentally or on paper:
-
-> I am at **[location]**. I am **[alone / with someone]**. The immediate problem
-> is **[one sentence]**. It began **[time]**. The next safe action is **[action]**.
-
-If you cannot fill the line because someone is unresponsive, breathing
-abnormally, bleeding heavily, or in immediate danger, the missing word is
-**112**.
-
-## Mathematical notation legend
-
-This edition retains v3.3’s formulas, but every formula now wears a label so a
-metaphor cannot sneak into the building dressed as physiology.
-
-| Mark | Meaning | Example |
+| Raw observation | Fast story | Better next question |
 |---|---|---|
-| $\lor$ | logical OR | any red flag activates emergency routing |
-| $\Rightarrow$ | implies | red flag implies 112 |
-| $\Delta$ | change between two observations | pain now minus pain earlier |
-| $n$ | number of people or items | group size |
-| $t$ | time | minutes, hours, or days as stated |
-| **Protocol** | authoritative action rule | call 112 for abnormal breathing |
-| **Descriptive equation** | exact relation once inputs are known | communication channels |
-| **Conceptual model** | teaching aid, not a measured prediction | stepwise arousal model |
-| **Mnemonic** | compact memory aid | action, backup, escalation |
+| heart feels forceful | “something terrible is starting” | fast, irregular, or merely noticeable; steady or changing? |
+| stomach turns | “I am losing control” | upper nausea, lower urgency, hunger, heat, caffeine, or tension? |
+| face feels hot | “everyone can see this” | is anyone here, and does cool air change it? |
+| room feels unreal | “I am disappearing” | can I name five fixed objects and three sounds? |
+| thought repeats | “this must be important” | is it new information or the same alarm in another coat? |
 
-No equation in this guide can overrule symptoms, a dispatcher, or common sense.
-That would be a very ambitious equation.
+The body supplies signals. The brain supplies hypotheses. A hypothesis can be
+urgent, vivid, and wrong.
 
-## How to read the evidence figures
+## 2. The gut votes early
 
-![Evidence labels used by the guide](build/diagrams/evidence_classes.png)
+The gut is not a passive pipe waiting for the brain to finish having emotions.
+It has its own enteric neural network and two-way communication with the central
+and autonomic nervous systems. Stress-related signalling can **delay stomach
+emptying while increasing colonic motor activity**. Nausea above and urgency
+below can therefore appear in the same episode without logical contradiction.[^gut-stress]
 
-Version 4.2.0 keeps numbers and routes carefully bounded. Every evidence figure states:
+This is one reason anxiety so often feels gastrointestinal. It is not “all in
+your head,” and it is not automatically proof of disease. It is a body system
+changing mode.
 
-- **what kind of evidence it is**—protocol, population estimate, study,
-  association, or model;
-- **who or what was measured**;
-- **the denominator and time frame**;
-- **uncertainty**, when the source reports it;
-- **what the result does not permit you to conclude**.
+Useful bathroom-scale observations:
 
-A useful number answers a bounded question. A number without a denominator is a
-rumour with a decimal point.
+- upper-abdominal heaviness and lower-gut urgency are different signals;
+- a wave that rises and falls is different from steadily worsening pain;
+- clenching the abdomen and pelvic floor can make an already noisy system feel
+  even less negotiable;
+- straining is not a character test—stop when dizziness, sweating, dim vision,
+  or nausea increases.
 
-## Guide topology — a graph model
+A gut feeling is real. Its autobiography may still need editing.
 
-The guide can be treated as a directed graph $G=(V,E)$:
+## 3. The room is amplifying you
 
-- each chapter or action is a node $v\in V$;
-- each “go to,” “call,” or “reassess” instruction is an edge $e\in E$;
-- **112** is a dominant emergency destination;
-- every non-emergency route must eventually reach an action, a named support
-  destination, or a safe exit.
+Bathrooms are acoustically strange because tile, glass, porcelain, and painted
+walls absorb little sound. Reverberation research often uses tiled bathrooms as
+an example of a highly reflective everyday room; reported examples can approach
+two seconds of reverberation, depending on geometry and materials.[^bathroom-acoustics]
 
-A route is defective if it ends with “consider your options” while the reader is
-still sitting on cold tiles with no trousers and a rising pulse.
+That means a swallow, exhale, fan click, stomach sound, or spoken sentence may
+seem unusually present. The nervous system can then treat “more audible” as
+“more serious,” even though the body did not change—the room did.
 
-### Navigation invariant
+Try a tiny acoustic experiment:
 
-Every route must contain:
+1. turn off running water and the fan for fifteen seconds;
+2. listen once without checking the body;
+3. turn on exactly one sound source;
+4. notice what became louder, quieter, or masked.
 
-1. **one next action**;
-2. **one backup** if that action fails;
-3. **one escalation condition**;
-4. **one destination** where the reader can continue.
+This is not a relaxation ritual. It is source separation.
 
-## Flowchart legend
+## 4. Anxiety bends time
 
-| Shape or style | Meaning |
-|---|---|
-| Red / emergency block | call 112 or 110 now |
-| Question / diamond | choose the closest true answer |
-| Action / rectangle | do the stated action |
-| Rounded destination | continue in the named chapter or service |
-| Dashed line | optional deeper explanation |
-| Loop arrow | reassess only while no red flag exists |
+Internal time is not a stopwatch. In three experiments using threat of shock,
+induced anxiety led participants to underestimate elapsed durations; the pooled
+effect was substantial ($d=0.68$, 95% CI 0.42–0.94). Other emotional states can
+shift timing differently, which is precisely the point: felt duration is a
+measurement affected by state.[^anxiety-time]
 
-In monochrome print, labels and wording carry the meaning; colour is never the
-only signal.
+Panic attacks, when they are actually panic attacks, characteristically rise
+quickly and reach peak intensity within minutes rather than remaining a flat,
+unchanging plateau.[^panic-course] That does **not** make every chest sensation
+panic, and it does not make unfamiliar symptoms safe. It does mean that “this
+has been at maximum forever” is worth checking against a clock.
 
-## Four routes
+Use an external timer for three minutes. A timer is not more courageous than
+you; it is simply less anxious.
 
-<div class="route-grid">
-  <section class="route-card" data-route="112">
-    <h3>Red flag</h3>
-    <p>Call 112. Then do only what the dispatcher asks and what is safe.</p>
-  </section>
-  <section class="route-card" data-route="medical">
-    <h3>Body / pain</h3>
-    <p>Go to Ch.5. Start with red flags, then simple first aid.</p>
-  </section>
-  <section class="route-card" data-route="calm">
-    <h3>Panic / overload</h3>
-    <p>Go to Ch.4. Orient outward, slow down, choose one action.</p>
-  </section>
-  <section class="route-card" data-route="support">
-    <h3>Threat / responsibility</h3>
-    <p>Go to Ch.2 or Ch.7. Safety first; repair comes after stabilization.</p>
-  </section>
-  <section class="route-card" data-route="survival">
-    <h3>Environment unsafe</h3>
-    <p>Go to Situation H. Leave or isolate the source before symptom sorting.</p>
-  </section>
-  <section class="route-card" data-route="survival">
-    <h3>Outage / collapse</h3>
-    <p>Go to Ch.6. Protect essential care, water, temperature, and information.</p>
-  </section>
-</div>
+## 5. Acute stress makes the mind narrower, not stupider
 
-## The eight entry points
+A meta-analysis of 51 studies with 2,486 participants found that acute stress,
+on average, impaired working memory and cognitive flexibility. The pooled effect
+on working memory was modest ($g=-0.197$), but consistent enough to explain a
+familiar experience: under stress, five ordinary steps can feel like an archive
+written in smoke.[^stress-executive]
 
-| Door | What is happening | First destination |
+This is not a loss of intelligence. It is a temporary shift toward salient,
+reactive information. That is useful when escaping a falling object and less
+useful when deciding whether to text an ex, diagnose a disease, and reorganize
+the household in one sitting.
+
+So use a smaller computational problem:
+
+$$Q=[\text{one observation},\;\text{one change},\;\text{one comparison}]$$
+
+Not “solve the evening.” Observe the nausea. Change posture. Compare after one
+minute. Curiosity uses less working memory than catastrophe because it does not
+need to simulate the entire future.
+
+## 6. Naming a feeling changes the task
+
+Putting a feeling into words—**affect labeling**—has reduced self-reported
+distress in experimental studies. It is not verbal holy water; it is a small
+shift from being inside an undifferentiated alarm to describing its
+parts.[^affect-labeling]
+
+Compare:
+
+> Something is horribly wrong.
+
+with:
+
+> Tight chest. Hot face. Nausea. Embarrassment. A thought that this will become
+> unbearable.
+
+The second sentence does not deny anything. It separates sensation, emotion,
+and forecast. Adjectives are cheaper than prophecy.
+
+## 7. Cold water is interesting, not magical
+
+Cooling the face can activate part of the mammalian diving response through
+trigeminal pathways and may slow heart rate. A small experimental study found
+reduced panic symptoms after cold facial immersion in people with panic
+disorder.[^cold-face]
+
+But cold exposure is not one single “reset.” Whole-body cold-water exposure can
+also trigger a **cold-shock response**—gasping, rapid breathing, increased heart
+rate, and blood-pressure changes.[^cold-water]
+
+The bathroom conclusion is modest:
+
+- a cool wet cloth on the face can be a useful sensory change;
+- an ice bath, prolonged breath hold, or competitive face-plunge is a different
+  physiological experiment and a poor improvisation when dizzy;
+- cold tile under the palms is information, not treatment;
+- if cooling feels worse, stop. The body is allowed to vote.
+
+## 8. Bathroom fainting is a real category
+
+Medicine recognizes **situational syncope**: fainting associated with triggers
+such as urination, defecation, coughing, visceral pain, heat, or straining.
+Possible warning signs include nausea, sweating, pallor, abdominal discomfort,
+dizziness, dimming vision, and a sudden sense that standing has become an
+unconvincing idea.[^situational-syncope]
+
+If that pattern starts:
+
+- stop straining;
+- sit securely or lie down rather than trying to “push through”;
+- lower the chance of a fall;
+- do not stand rapidly just to test whether you can;
+- recurrent, unexplained, injured, or actual loss of consciousness deserves
+  medical assessment.
+
+Bathrooms combine several recognized fainting triggers—heat, standing,
+elimination, pain, and straining—with hard edges. Porcelain is a poor witness.
+
+## 9. Smell is a fading sensor
+
+Olfactory habituation reduces responsiveness to continuous or repeated odours.
+That is useful for preventing the brain from spending the entire day reporting
+the same soap. It also means “I no longer smell it” is weak evidence that a
+source disappeared.[^olfactory-habituation]
+
+A brief exit and return can make an ordinary persistent smell noticeable again.
+It cannot certify the air as safe: some dangerous exposures have little odour,
+and some strong odours are merely strong. The later smell and environmental
+chapters separate sewer traps, mould, cleaning products, gas, smoke, and
+chemical mixtures without asking the nose to become a laboratory.
+
+## 10. The three-minute bathroom experiment
+
+Use this when the state is uncomfortable, familiar enough to observe, and not
+obviously escalating.
+
+| Time | Do | Record mentally or on paper |
 |---|---|---|
-| A | I caused trouble or someone depends on me | Ch.2 Responsibility |
-| B | I feel anxious, panicky, unreal, or flooded | Ch.4 Calm |
-| C | I feel pain or physically unwell | Ch.5 First aid |
-| D | I feel endangered or controlled | Ch.7 Safety and support |
-| E | Everything is congesting | Ch.4 Calm, then one task |
-| F | There is a bad or unknown smell | Ch.3F Safety check |
-| G | I have no safe place or no workable plan | Ch.7 Practical support |
-| H | Fire, smoke, gas, chemical, electrical, or unsafe air | Situation H Environmental hazards |
+| 0:00 | support the body: sit, lean, or place both feet firmly | three sensations, one emotion, one thought |
+| 1:00 | change exactly one variable | posture, fan, light, clothing pressure, cool cloth, or sound |
+| 2:00 | compare rather than judge | better, same, worse; steadier, wave-like, or progressive |
+| 3:00 | choose the next page | body, anxiety, responsibility, smell, safety, no-place, or outage |
 
-Several doors may be open. Red flags outrank all of them.
+For one sensation $S$:
 
-## Master flowchart — text version
+$$\Delta S=S_{after}-S_{before}$$
 
-Use this when the diagram is unavailable, inaccessible, or has acquired coffee:
+You do not need a number. “Less sharp,” “same but less frightening,” “moved from
+stomach to throat,” and “worse when standing” are all data.
 
-```text
-START
- |
- +-- Immediate danger, abnormal breathing, severe bleeding,
- |   unconsciousness, major burn, stroke sign, seizure,
- |   collapse, acute self/other danger?
- |       |
- |       +-- yes / maybe / unsure --> 112
- |       |                           speakerphone
- |       |                           unlock if safe
- |       |                           follow dispatcher
- |       |
- |       +-- no --> continue
- |
- +-- Active violence or crime needing police now?
- |       |
- |       +-- yes --> move to safety --> 110
- |       |          injury/life danger too --> 112
- |       +-- no --> continue
- |
- +-- Fire/smoke/CO/gas/chemical/electrical danger?
- |       |
- |       +-- yes / maybe --> leave or isolate safely
- |       |                 --> Situation H
- |       |                 --> 112 / poison centre / gas service
- |       +-- no --> continue
- |
- +-- Closest door:
-         A responsibility/harm --> Ch.2 --> Ch.7 as needed
-         B anxiety/panic       --> Ch.4
-         C pain/body           --> Ch.5
-         D danger/coercion     --> Ch.7
-         E overload            --> Ch.4 --> one task
-         F smell/fumes         --> Ch.3F --> leave/call if hazardous
-         G no place            --> Ch.7
-         H environment unsafe  --> Situation H
-         outage/disaster       --> Ch.6
+If nothing improves, the experiment did not fail. It replaced three minutes of
+prediction with three minutes of observation.
 
-EVERY NON-EMERGENCY ROUTE:
-  act once --> check better/same/worse --> escalate if worse --> repeat
-```
+## Choose the loudest topic
 
-## Basic theorem 1 — red-flag dominance
+- **Guilt, responsibility, consequences for someone else:** Situation A.
+- **Panic, unreality, dread, racing thoughts, overload:** Calm Guide and B/E.
+- **Pain, dizziness, nausea, injury, physical illness:** Self Ambulance and C.
+- **Coercion, violence, exclusion, nowhere workable to go:** Situation G and
+  Professional Support.
+- **Bad smell, strange air, smoke, gas, chemicals, electricity:** F/H.
+- **Outage, heat, cold, infrastructure failure, or society becoming
+  inconveniently theoretical:** Zombie Guide.
 
-Let each red flag be a Boolean value $r_i \in \{0,1\}$:
+[^interoception-review]: Jenkinson PM, Fotopoulou A, Ibañez A, “Interoception in anxiety, depression, and psychosis: a review,” *eClinicalMedicine* 73 (2024): 102673. The review emphasizes that interoception includes sensing, interpretation, integration, regulation, and prediction; meta-analyses do not show a simple reliable increase in heartbeat-detection accuracy in anxiety. https://pmc.ncbi.nlm.nih.gov/articles/PMC11169962/
 
-$$R = r_1 \lor r_2 \lor \cdots \lor r_n$$
+[^gut-stress]: Taché Y, Bonaz B, “Neuroendocrine control of the gut during stress,” *Annual Review of Physiology* 69 (2007/PMC 2009). Stress-related CRF pathways can inhibit upper-GI motor function and stimulate colonic propulsive activity; individual responses and clinical meanings vary. https://pmc.ncbi.nlm.nih.gov/articles/PMC2714186/
 
-If $R=1$, the route is **112**. No anxiety score, pain score, formula, pulse
-reading, or bathroom philosophy may cancel that result. This is a routing rule,
-not a medical model.
+[^bathroom-acoustics]: Reinhart PN et al., “Effects of Reverberation and Compression on Consonant Identification in Individuals with Hearing Impairment,” *Ear and Hearing* 37 (2016). The article uses tiled bathrooms as an everyday high-reverberation example and notes that actual reverberation depends on the room. https://pmc.ncbi.nlm.nih.gov/articles/PMC4767560/
 
-## Basic theorem 2 — the one-next-action rule
+[^anxiety-time]: Sarigiannidis I et al., “Anxiety makes time pass quicker while fear has no effect,” *Cognition* 197 (2020): 104116. Across three experiments, induced anxiety shifted duration judgments toward underestimation; this laboratory effect is not a personal diagnostic test. https://pmc.ncbi.nlm.nih.gov/articles/PMC7033556/
 
-Acute stress reduces the amount of information people can reliably hold and
-use. The guide therefore keeps a tiny queue:
+[^panic-course]: Gorman JM et al./reviewed in Johnson PL et al., “Etiology, triggers and neurochemical circuits associated with unexpected, expected, and laboratory-induced panic attacks,” *Neuroscience & Biobehavioral Reviews* 46 (2014): 429–454. Typical panic attacks peak rapidly and commonly subside over tens of minutes, but similar symptoms can have non-panic causes. https://pmc.ncbi.nlm.nih.gov/articles/PMC4252820/
 
-$$Q = [\text{one action},\; \text{one backup},\; \text{one escalation rule}]$$
+[^stress-executive]: Shields GS, Sazma MA, Yonelinas AP, “The Effects of Acute Stress on Core Executive Functions,” *Neuroscience & Biobehavioral Reviews* 68 (2016): 651–668. Meta-analysis: 51 studies, 2,486 participants; average effects varied by task and context. https://pmc.ncbi.nlm.nih.gov/articles/PMC5003767/
 
-Example: **sit down → call a friend → if chest pain or fainting appears, call
-112**. A plan with twelve beautiful steps is decorative. A plan with one
-executable step is equipment.[^who-stress]
+[^affect-labeling]: Lieberman MD, Inagaki TK, Tabibnia G, Crockett MJ, “Subjective Responses to Emotional Stimuli During Labeling, Reappraisal, and Distraction,” *Emotion* 11 (2011): 468–480. Across four experiments, affect labeling dampened reported affect relative to passive viewing; the tasks used pictures, not bathroom crises, so the practical inference remains modest. https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/
 
-## Quick-route summary
+[^cold-face]: Khurana RK et al., “The Implications of the Diving Response in Reducing Panic Symptoms,” *Frontiers in Psychiatry* 12 (2021): 798664. Small experimental study; promising, not a universal treatment protocol. https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/
 
-| Problem | First action | Backup | Escalation |
-|---|---|---|---|
-| panic / overload | sit, orient, exhale gently | call one person | 112 for red flags or acute danger |
-| pain / illness | check red flags | 116 117 / practice | 112 for severe or sudden danger signs |
-| responsibility | stop further harm | tell and repair | 112 / 110 when danger is live |
-| violence | move to safety | trusted person / specialist service | 110 / 112 now |
-| smell / fumes | no flame or switch | leave and warn others | 112 from outside if poisoning/fire possible |
-| no place | secure the next hour | municipal/social support | 112 / 110 for exposure or danger |
-| outage | verify official warning | conserve and coordinate | 112 for immediate hazard |
+[^cold-water]: Espeland D et al., “Health effects of voluntary exposure to cold water—a continuing subject of debate,” *International Journal of Circumpolar Health* 81 (2022). Cold-water exposure can evoke both diving and cold-shock responses. https://pmc.ncbi.nlm.nih.gov/articles/PMC9518606/
 
-## Reassessment loop
+[^situational-syncope]: da Silva RMFL, “Syncope: epidemiology, etiology, and prognosis,” *Frontiers in Physiology* 5 (2014): 471. Situational syncope includes episodes associated with urination, defecation, coughing, visceral pain, and other triggers. https://pmc.ncbi.nlm.nih.gov/articles/PMC4258989/
 
-1. **Act:** do the smallest safe action.
-2. **Check:** better, same, or worse?
-3. **Escalate:** if worse, new red flags appear, or uncertainty remains.
-4. **Repeat:** only while the situation remains non-emergent.
-
-This is the guide’s only intentional loop. It prevents both frozen inaction
-and heroic improvisation.
-
-## How to read the long sections
-
-Each later chapter has two speeds:
-
-- **Do now** material comes first and can be followed under stress.
-- **Understand later** material explains why, adds options, and restores the
-  breadth of v3.3 without forcing a lecture into the emergency minute.
-
-Reading everything is not a prerequisite for deserving help. The appendix is
-also not a boss fight.
-
-[^who-stress]: World Health Organization, *Doing What Matters in Times of Stress* (2020), an evidence-informed and field-tested guide to grounding, unhooking from difficult thoughts, and values-based small actions: https://www.who.int/publications/i/item/9789240003927
+[^olfactory-habituation]: Sinding C et al., “New determinants of olfactory habituation,” *Scientific Reports* 7 (2017): 41047. Habituation is reduced responsiveness to continuous or repeated sensory input; it does not establish source safety. https://pmc.ncbi.nlm.nih.gov/articles/PMC5264389/

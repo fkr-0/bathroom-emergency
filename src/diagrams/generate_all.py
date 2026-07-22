@@ -36,6 +36,7 @@ scripts = [
     "generate_pixel_art.py",
     "generate_flowgraph.py",
     "generate_routes.py",
+    "generate_accessibility.py",
     "generate_scientific.py",
 ]
 for script in scripts:

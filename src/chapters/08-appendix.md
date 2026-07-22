@@ -1,19 +1,22 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.2.0"
+revision: "4.3.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/two_pass_route_map.png
+  - build/diagrams/evidence_classes.png
   - build/diagrams/hazard_override_matrix.png
   - build/diagrams/dependency_continuity_map.png
+  - build/diagrams/safe_place_route_map.png
+  - build/diagrams/communication_access_card.png
 ---
 
 # Appendix — The Useful Loose Ends
 
-The v3.3 appendix tried to be index, legend, workbook, decision tree, notes page,
-and emergency wallet card simultaneously. Version 4.2.0 accepts the assignment,
-but labels the parts so the notes page does not accidentally become a theorem.
+Use this appendix when you want the map, notation, formula index, fillable
+fields, pocket card, or full text decision tree. It is reference material, not
+a compulsory corridor before the interesting chapters.
 
 ## Master cross-reference — where everything points
 
@@ -27,22 +30,82 @@ but labels the parts so the notes page does not accidentally become a theorem.
 | task overload | Ch.3E, Ch.4 | congestion board | appropriate care/support |
 | unknown smell | Situation H first, then Ch.3F | post-clearance troubleshooting | 112 / gas service / poison centre |
 | environmental danger | Situation H | fire, CO, gas, chemicals, electricity, warning instructions | 112 / gas service / poison centre |
-| nowhere safe | Ch.3G | one-hour plan | municipal/social/shelter service |
+| nowhere safe | Situation G | violence, no roof, access-care, social/internal branches | matching national/local service; 110/112 override |
 | outage / disaster | Ch.6 | household and community planning | BBK/local authority/112 |
 | need a number or script | Ch.7 | support-selection matrix | named service |
+
+
+## Mathematical notation legend
+
+| Mark | Meaning | Use here |
+|---|---|---|
+| $\lor$ | logical OR | one true danger condition can change the route |
+| $\Rightarrow$ | implies | a stated condition leads to an action inside the model |
+| $\Delta$ | change between observations | sensation after minus sensation before |
+| $n$ | number of people or items | group size, supplies, contacts |
+| $t$ | time | minutes, hours, or days as stated |
+| **Protocol** | authoritative action rule | first aid or public warning instruction |
+| **Study result** | observation from a named design and population | anxiety and time-perception experiment |
+| **Model** | calculation or thinking aid | communication channels in a group |
+| **Mnemonic** | memorable compression | observe, change, compare |
+
+## The eight entry points
+
+| Door | Loudest problem | Main chapter |
+|---|---|---|
+| A | responsibility or harm | Situation A |
+| B | anxiety, panic, or unreality | Situations B and Calm Guide |
+| C | pain or physical illness | Situation C and First Aid |
+| D | danger, coercion, or violence | Situation D and Professional Support |
+| E | overload and task congestion | Situation E and Calm Guide |
+| F | bad or unknown smell | Situation F after the environmental check |
+| G | no safe or workable place | Situation G |
+| H | smoke, gas, chemicals, electricity, or unsafe air | Situation H |
+
+## Guide topology
+
+The chapters form a directed graph: observations lead to actions, actions lead
+to reassessment or another chapter, and every route should end somewhere a
+person can actually continue. This is useful mathematics only because dead ends
+are bad writing.
+
+![Two-pass guide topology with dependency modifiers](build/diagrams/two_pass_route_map.png)
+
+## Flowchart legend
+
+| Shape or style | Meaning |
+|---|---|
+| heavy emergency block | immediate action rather than further reading |
+| diamond | choose the closest true answer |
+| rectangle | do the stated action |
+| rounded destination | continue in the named chapter or service |
+| dashed line | optional explanation |
+| loop | compare better, same, worse, or new information |
+
+## How to read the evidence figures
+
+![Evidence labels used throughout the guide](build/diagrams/evidence_classes.png)
+
+A number is only as useful as its denominator, population, time frame, and
+limit. Protocols tell you what to do. Studies tell you what happened under a
+particular design. Associations describe variables travelling together. Models
+show what follows from assumptions. None of them becomes a personal prophecy by
+being printed in a confident font.
 
 ## Diagram index
 
 | Diagram | Location | Purpose |
 |---|---|---|
-| emergency flowgraph / two-pass route map | Ch.1 | life, violence, and environmental overrides before need routing |
+| two-pass route map | Appendix | guide topology and dependency modifiers |
 | environmental hazard matrix | Situation H | first action and backup for fire, CO, gas, chemicals, electricity |
 | essential-care continuity map | Situation H, Ch.6 | medication, powered-device, transport, and destination handoff |
+| safe-place route map | Situation G | four distinct no-safe-place routes and their escalation |
+| communication-access card | Situation G | six communication and access adaptations |
 | breathing techniques | Ch.4 | optional pacing patterns |
 | first-aid triage | Ch.5 | response and escalation overview |
 | survival priority pyramid | Ch.6 | infrastructure-failure priorities |
 | group scaling chart | Ch.6 | coordination from one to 100+ |
-| evidence classes | Ch.1 | what protocols, studies, associations, and models may claim |
+| evidence classes | Appendix | what protocols, studies, associations, and models may claim |
 | reproductive-health denominators | Ch.2 | lifetime prevalence versus rare-event incidence without denominator tricks |
 | GAD-7 validation comparison | Ch.3 | original study versus pooled diagnostic accuracy |
 | sleep-restriction study | Ch.3 | repeated sleep opportunity and cumulative impairment |
@@ -54,30 +117,6 @@ but labels the parts so the notes page does not accidentally become a theorem.
 Generated images are explanatory aids. The text route remains complete for
 monochrome print, screen readers, low light, and coffee-related diagram loss.
 
-## A4/2 field-strip edition
-
-The narrow edition uses pages measuring **105 × 297 mm**: one A4 sheet divided
-lengthwise into two vertical strips. It is not A5 and it is not a browser window
-that lost an argument.
-
-The format is intended for:
-
-- one-column reading with a stable vertical scan path;
-- printing two physical strips from one A4 sheet when imposed by a print tool;
-- clipping, hanging, binding, or keeping one route visible beside supplies;
-- longer evidence and explanation pages that still feel like a field manual.
-
-The content is identical to the A4 edition. Narrow-specific design choices
-include numbered field-note headings, figure bands, a two-by-two emergency
-number block, fixed-layout tables with aggressive wrapping, smaller but bounded
-formula typography, and shorter line lengths. If a table remains unpleasant,
-the prose around it must still carry the route. CSS is not allowed to become a
-prerequisite for survival.
-
-The build verifies both color and monochrome narrow PDFs after rendering every
-page. It checks the exact physical dimensions, tagged structure, blank pages,
-content touching the physical edge, and representative pages from the cover,
-evidence sections, appendix, sources, and final footnotes.
 
 ## Evidence labels
 
@@ -95,8 +134,8 @@ The guide distinguishes the role of each statement:
 | **Conceptual model** | A thinking aid, not a measured prediction | $A_{k+1}=A_k-\delta_k+\varepsilon_k$ |
 | **Mnemonic** | Memorable compression | one action, one backup, one escalation |
 
-The old edition sometimes dressed a metaphor in a lab coat. Version 4.2.0 asks
-the coat for identification, denominator, and visiting hours.
+A metaphor wearing a lab coat still needs identification, a denominator,
+and visiting hours.
 
 ## Formula and theorem index
 
@@ -199,79 +238,30 @@ An odds ratio is not the same as a probability ratio, absolute risk, or proof of
 causation. It requires the study population, adjustment set, and follow-up to
 mean anything useful.
 
-## Reproducible evidence registry
 
-The numeric inputs for v4.1.x figures live in
-`src/data/evidence_facts.json`. Each entry records evidence class, population or
-scope, value and unit, source, and practical limit. Diagram code reads that file
-rather than hiding facts inside plotting coordinates.
-
-A future number change should therefore modify the registry, source annotation,
-chapter prose, and generated figure in one reviewable change. Four copies of a
-number drifting independently is how folklore acquires error bars.
-
-## Reproducible route and locale registries
-
-Operational routes live in `src/data/route_catalog.json`. Each pass-1 override
-and pass-2 need carries:
-
-$$Q=[	ext{action},	ext{backup},	ext{escalation},	ext{destination}]$$
-
-The same registry also defines dependency modifiers and reviewed source IDs.
-`src/data/locales/de-DE.json` keeps national service numbers, the current seven
-poison-information centres, warning channels, and deliberately blank local
-fields separate from generic prose.
-
-The generated two-pass, hazard, and essential-care diagrams are views of these
-data. `bin/validate_routes.py` checks destinations, source references, phone
-numbers, unsafe-wording regressions, poison-centre coverage, chapter markers,
-and generated figures. A diagram may simplify a route; it may not invent one.
-
-## Flowchart symbol legend — extended
-
-| Symbol/style | Meaning | Monochrome equivalent |
-|---|---|---|
-| red emergency block | call now | EMERGENCY label and heavy border |
-| diamond | question/decision | question mark and branching text |
-| rectangle | action | numbered imperative |
-| rounded box | destination | “Go to…” label |
-| dashed connector | optional explanation | “Understand later” text |
-| loop arrow | reassessment | “better / same / worse?” |
-| table | comparison or fillable plan | row and column headings |
-| formula block | labelled mathematical content | surrounding explanation |
 
 ## Fillable fields
 
 Fill these once, photograph or securely store the page, and update it when
 anything changes.
 
-| Field | Your value |
-|---|---|
-| Home address, floor, access note | |
-| Emergency contact #1 | |
-| Emergency contact #2 | |
-| Trusted nearby person | |
-| GP / practice | |
-| Pharmacy / night service | |
-| Local hospital / emergency department | |
-| Local gas-network emergency number | |
-| Regional poison-information centre | |
-| Accessible powered destination | |
-| Essential device / approved backup / runtime | |
-| Accessible transport or evacuation help | |
-| Psychiatric emergency / crisis service | |
-| Sozialpsychiatrischer Dienst | |
-| Poison centre | |
-| Maternity / gynecology | |
-| Pediatric emergency | |
-| Veterinary emergency | |
-| Emergency housing / shelter | |
-| Building utility emergency | |
-| Medication list location | |
-| First-aid kit location | |
-| Power bank / radio location | |
-| Evacuation meeting point | |
-| Backup caregiver | |
+| Field | Your value | Field | Your value |
+|---|---|---|---|
+| Home address, floor, access note | | Emergency contact #1 | |
+| Emergency contact #2 | | Trusted nearby person | |
+| GP / practice | | Pharmacy / night service | |
+| Local hospital / emergency department | | Local gas-network emergency number | |
+| Regional poison-information centre | | Accessible powered destination | |
+| Essential device / approved backup / runtime | | Accessible transport / evacuation help | |
+| Emergency housing — daytime | | Emergency housing — after hours | |
+| Local youth emergency service | | Violence shelter / counselling | |
+| Preferred communication method | | Written emergency card location | |
+| Psychiatric emergency / crisis service | | Sozialpsychiatrischer Dienst | |
+| Maternity / gynecology | | Pediatric emergency | |
+| Veterinary emergency | | Building utility emergency | |
+| Medication list location | | First-aid kit location | |
+| Power bank / radio location | | Evacuation meeting point | |
+| Backup caregiver | | Additional local route | |
 
 ### Do not put these on a shared printout
 
@@ -283,13 +273,13 @@ anything changes.
 - exact hidden spare-key location;
 - information that would endanger someone fleeing violence.
 
-The v3.3 fillable page included several of these. It trusted the bathroom more
-than security engineering recommends.
+A shared bathroom is not a secure credential vault, however trustworthy the
+toothbrushes appear.
 
-## Complete decision tree — safe text version
+## Master flowchart — complete text version
 
 ```text
-BATHROOM EMERGENCY GUIDE — MASTER TREE v4.2.0
+BATHROOM EMERGENCY GUIDE — MASTER FLOWCHART
 ============================================================
 
 0. OVERRIDE
@@ -360,12 +350,16 @@ F. BAD SMELL --> Situation H gate, then Ch.3F
    +-- damp/mould after negative hazard gate --> moisture repair
    +-- ordinary smell --> ventilation and cleaning, no combustion
 
-G. NO PLACE TO GO --> Ch.3G + Ch.7
+G. NO SAFE PLACE --> Situation G + Ch.7
    |
-   +-- no safe physical place --> municipal/social/shelter service
-   +-- social overload --> pause, ally, exit, later conversation
-   +-- internal crisis --> one person + 116 123 / 116 117
-   +-- exposure/violence/self-harm/medical danger --> 112 / 110
+   +-- person/active threat --> safer place --> 110 / 112
+   |                          116 016 / men's helpline / specialist refuge
+   +-- no roof tonight --> municipal emergency accommodation
+   |                       115 identifies authority during service hours
+   +-- place fails access/care --> name barrier + runtime
+   |                              local accessible destination / 116 117 / 112
+   +-- social/internal crisis --> one safe hour + one ally
+                                  116 123 / 116 111 / 116 117 / 112
 
 H. THE ENVIRONMENT MAY BE UNSAFE --> Situation H
    |
@@ -412,6 +406,9 @@ EVERY NON-EMERGENCY ROUTE
   <section class="route-card" data-route="support">
     <h3>THREAT</h3><p>Exit / safer place · 110 · 116 016 · do not confront</p>
   </section>
+  <section class="route-card" data-route="support">
+    <h3>NO SAFE PLACE</h3><p>Situation G · threat / no roof / access-care / internal crisis</p>
+  </section>
   <section class="route-card" data-route="survival">
     <h3>ENVIRONMENT</h3><p>Leave source · Situation H · call from safety</p>
   </section>
@@ -427,67 +424,12 @@ EVERY NON-EMERGENCY ROUTE
 - Keep the guide near a charged light source.
 - Add a simple first-aid poster from an official provider.
 - Store current medication and emergency plans nearby but privately.
-- Refresh service numbers and medical guidance at each release.
+- Refresh service numbers and medical guidance before relying on an older printout.
 - Test that QR codes or links are not the only access path.
 - Ensure the print remains readable without colour.
 - Replace the guide after water damage. It is not itself waterproof, despite
   strong thematic alignment.
 
-## Update protocol
-
-At each release:
-
-1. recheck emergency numbers and official URLs;
-2. review first-aid and preparedness guideline updates;
-3. verify every numeric figure against `src/data/evidence_facts.json` and its primary or authoritative source;
-4. run safety-regression, evidence-registry, route-registry, and locale validation;
-5. build colour and monochrome A4 and A4/2 outputs;
-6. inspect page count, clipped tables, diagrams, and text tree;
-7. verify version strings across source, HTML, PDF, package, and changelog;
-8. record removed claims, changed estimates, and uncertainty as well as added material.
-
-## Notes page
-
-Use this for local information, personal reminders, the name of a recommended
-service, or simply moving thoughts out of your head.
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-## Second notes page — because v3.3 was extensive
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
-
-___________________________________________________________________________
 
 ## Navigation invariant
 
