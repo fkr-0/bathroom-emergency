@@ -3,7 +3,7 @@ import { chromium } from 'playwright';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-const [, , inputArg, outputArg, version = '4.3.0'] = process.argv;
+const [, , inputArg, outputArg, version = '4.3.1'] = process.argv;
 if (!inputArg || !outputArg) {
   console.error('Usage: chrome_pdf.mjs INPUT.html OUTPUT.pdf [VERSION]');
   process.exit(2);

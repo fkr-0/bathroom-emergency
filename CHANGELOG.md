@@ -1,5 +1,39 @@
 # Changelog
 
+## 4.3.1 — in development
+
+### Navigation and release hygiene
+
+- Corrected the mixed-situations label from B–G to B–F now that Situation G is
+  a dedicated subguide, while retaining an explicit handoff to it.
+- Restored executable modes for command-line validators and added a regression
+  check for script permissions.
+- Replaced the remaining validator phrase “v3.3 breadth markers” with
+  reader-oriented “subject-breadth markers.”
+- Updated the standalone HTML cover language to match the curiosity-first
+  opening instead of the retired routing slogan.
+- Added a tracked 4.3.1 polish plan with bounded patch acceptance criteria.
+
+### Completed density and future-architecture review
+
+- Reviewed the seven sparsest standard-A4 pages and retained each as functional
+  writable space, safety buffer, chapter opener, graph handoff, or reference
+  boundary; documented the decisions in
+  `docs/qa/4.3.1-sparse-page-review.md`.
+- Shortened one crowded B–F pain-escalation label while preserving the 88/87/139
+  page-count envelope across A4, A4/2, and large print.
+- Expanded the 4.5 architecture from a fixed nine-guide list into a nine-node
+  core plus candidate satellite modules for small-room physics, decision
+  science, sensors, sleep, medicines, sanitation, human factors, mutual aid,
+  evidence literacy, locality, and field experiments.
+- Added `docs/plans/visualization-program.md`, targeting approximately 48–60
+  reviewed visuals with question-first chart design, reproducible data/specs,
+  uncertainty, accessible text equivalents, pattern/shape redundancy, and
+  renderer QA.
+- Added `docs/plans/subguide-source-localization.md`, specifying filtered
+  **Sources and limits** at the end of every subguide while citations remain
+  beside claims and one canonical registry generates local and global views.
+
 ## 4.3.0 — 2026-07-22
 
 ### Rebuilt the reader-facing opening

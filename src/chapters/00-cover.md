@@ -1,7 +1,7 @@
 ---
 title: "Bathroom Emergency Guide"
 chapter: 0
-revision: "4.3.0"
+revision: "4.3.1"
 last_updated: "2026-07-22"
 type: cover
 dependencies: []

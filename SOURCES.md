@@ -20,7 +20,7 @@ For each release:
 
 ## Operational route sources
 
-Version 4.3.0 separates operational routing from explanatory evidence:
+Version 4.3.1 separates operational routing from explanatory evidence:
 
 - `src/data/route_catalog.json` stores pass-1 overrides, pass-2 needs,
   dependency modifiers, destinations, and reviewed source IDs;
@@ -58,6 +58,22 @@ and failure-escalation conditions. WCAG supports document and interface
 structure; service providers support the exact communication channels they
 publish. Neither source permits assumptions about an individual person’s
 capacity or preferred assistance. Ask the person whenever possible.
+
+## Planned subguide-local source rendering
+
+The current monolithic source chapter remains canonical through 4.3.1. The
+migration plan in `docs/plans/subguide-source-localization.md` will move toward:
+
+- citation markers beside claims;
+- a generated **Sources and limits** section at the end of each subguide;
+- one canonical structured source registry;
+- explicit source ownership, claim, figure, route, and freshness links;
+- a deduplicated R index and provenance view rather than a second competing
+  bibliography.
+
+The first pilot pairs B, which is research-heavy, with H, which is
+operational-source-heavy. The old source chapter remains until local and global
+parity is proven.
 
 ## Evidence order
 

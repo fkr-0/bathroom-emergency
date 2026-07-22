@@ -1,7 +1,7 @@
 ---
 title: "Outage, Disaster, and Zombie Guide"
 chapter: 6
-revision: "4.3.0"
+revision: "4.3.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/dependency_continuity_map.png

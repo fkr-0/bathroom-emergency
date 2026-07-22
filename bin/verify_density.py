@@ -23,7 +23,7 @@ EXPECTED_HEIGHT_PT = 297 / 25.4 * 72
 MARKERS = (
     "The Small-Room Observatory",
     "Situation A — I Caused Trouble",
-    "Six Different Kinds of “Too Much”",
+    "Five Different Kinds of “Too Much”",
     "Situation G — No Safe Place",
     "Situation H — The Environment May Be Unsafe",
     "Calm Guide — Reduce the Volume",

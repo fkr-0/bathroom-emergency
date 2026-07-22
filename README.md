@@ -69,6 +69,9 @@ network dependency.
     bin/verify_accessibility.py structured access and large-print checks
     bin/verify_overflow.mjs boxed/table overflow checks in all HTML editions
     docs/plans/4.5.0-graph-subguide-architecture.md planned graph/subguide system
+    docs/plans/visualization-program.md 48–60-figure visual evidence program
+    docs/plans/subguide-source-localization.md local Sources and limits migration
+    docs/qa/4.3.1-sparse-page-review.md reviewed intentional whitespace decisions
     ROADMAP.md             flowgraph, chapter, research, and release backlog
     build/                 generated deliverables
 
@@ -94,11 +97,11 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 13 source chapters at revision 4.3.0;
+- 13 source chapters at revision 4.3.1;
 - subject-breadth regression markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
 - no known unsafe legacy wording or deprecated scientific chart;
-- a valid 4.3.0 evidence registry with source and limit for every plotted fact;
+- a valid 4.3.1 evidence registry with source and limit for every plotted fact;
 - a structured route catalog with seven pass-1 overrides, six pass-2 needs,
   four safe-place routes, and nine dependency/access modifiers;
 - reviewed de-DE services, all seven poison-information centres, dated source
@@ -134,9 +137,14 @@ Core emergency routes and source material were reviewed on 22 July 2026.
 
 The planned graph-oriented subguide packaging is specified in
 `docs/plans/4.5.0-graph-subguide-architecture.md`. It proposes distinct covers,
-position/version pages, introduction/contents pages, graph handoffs, and
-redundant code + pattern + glyph + colour identities for standalone and master
-outputs.
+position/version pages, introduction/contents pages, graph handoffs, a
+nine-node core plus candidate satellite modules, and redundant code + pattern +
+glyph + colour identities for standalone and master outputs.
+
+`docs/plans/visualization-program.md` defines a reproducible, accessible
+48–60-figure visual evidence system. `docs/plans/subguide-source-localization.md`
+defines filtered Sources and limits at the end of each subguide, generated from
+one canonical source registry while citations remain beside claims.
 
 ## Safety scope
 

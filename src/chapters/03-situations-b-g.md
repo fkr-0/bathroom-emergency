@@ -1,16 +1,16 @@
 ---
 title: "Situations B–F, with Situation G Router"
 chapter: 3
-revision: "4.3.0"
+revision: "4.3.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/gad7_validation_comparison.png
   - build/diagrams/sleep_restriction_study.png
 ---
 
-# Situations B–G — Six Different Kinds of “Too Much”
+# Situations B–F — Five Different Kinds of “Too Much”
 
-Anxiety, pain, threat, overload, smell, and loss of place all seize attention,
+Anxiety, pain, threat, overload, and smell all seize attention,
 but they do so for different reasons. Treating them as one generic crisis wastes
 information. Pick the loudest system first; borrow from neighbouring routes when
 reality refuses to respect chapter boundaries.
@@ -351,12 +351,12 @@ tonight, inaccessible or medically unusable accommodation, and social or
 internal crisis. Secure the next safe hour, then use the matching German or
 local service route.
 
-## Situations B–G — consolidated routing map
+## Situations B–F, with the Situation G handoff
 
 | Situation | Do now | Understand later | Escalate when |
 |---|---|---|---|
 | Anxiety | orient outward; contact one person | panic, GAD-7, stress response | red flag, self-harm risk, worsening |
-| Pain | check red flags; simple first aid | OPQRST and pain log | sudden/severe/neuro/chest/collapse |
+| Pain | check red flags; simple first aid | OPQRST and pain log | sudden/severe; neuro; chest/collapse |
 | Danger | move to safety; call police/rescue | safety planning and after-effects | threat current or injury exists |
 | Congestion | externalize; choose one action | cognitive load and delegation | basic care or safety failing |
 | Smell | run the Situation H hazard gate; leave fumes | source-specific troubleshooting only after clearance | fire, gas, chemical exposure, symptoms |

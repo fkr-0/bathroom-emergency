@@ -118,7 +118,7 @@ new diagnosis.
   continuity-plan research—only where denominators and intervention scope are
   clear.
 
-### Ch.3 — Situations B–G
+### Ch.3 — Situations B–F and the Situation G handoff
 
 - Separate panic, dissociation, intoxication/withdrawal, delirium, and psychosis
   by observable red flags rather than self-diagnosis.
@@ -233,28 +233,85 @@ A candidate only graduates into the guide when the exact figure can be defended.
 - [ ] add further locales only with a local reviewer and authoritative service
   sources; translation without route ownership remains out of scope.
 
-### 4.4.0 — Household continuity modules
+### 4.3.1 — Navigation and release polish — candidate complete
+
+Tracked in `docs/plans/4.3.1-polish-plan.md`.
+
+- [x] correct the B–F identity and preserve a named Situation G handoff;
+- [x] restore and validate executable command-line script modes;
+- [x] align standalone cover language and validation output with the reader voice;
+- [x] bump current source, registry, and renderer metadata to 4.3.1;
+- [x] review the seven sparsest A4 pages and retain each as functional writable
+  space, safety buffer, opener, handoff, or reference boundary;
+- [x] document the decisions in `docs/qa/4.3.1-sparse-page-review.md`;
+- [x] rerender and approve the six-edition 88/87/139 page-count and density
+  matrix;
+- [ ] commit and tag only after the patch candidate is explicitly approved.
+
+### 4.4.0 — Household continuity and data foundations
 
 - heat/cold/flood/smoke modules;
 - medication refrigeration and powered-device planning;
 - evacuation versus shelter worksheets;
-- optional household profile pages generated outside the shared default guide.
+- optional household profile pages generated outside the shared default guide;
+- introduce the visualization catalog and accessible chart design tokens;
+- begin the first 24-figure visualization expansion, prioritizing O, B, C, H,
+  and Z;
+- inventory and assign stable IDs to current sources;
+- prototype the canonical source registry and claim/figure back-references;
+- pilot subguide-local Sources and limits on B and H.
 
 ### 4.5.0 — Graph-oriented subguide editions — specified
 
 Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md`.
 
-- [x] define a proposed nine-subguide family and graph identity;
+- [x] define a proposed nine-subguide core family and graph identity;
+- [x] define candidate satellite modules for small-room physics, decision
+  science, sensors, sleep, medicines, sanitation, human factors, mutual aid,
+  evidence literacy, locality, and field experiments;
 - [x] specify cover, page-0 position/version, page-1 introduction/contents, and
   final handoff page grammar;
 - [x] specify redundant code + pattern + glyph + colour identity;
 - [x] distinguish master-guide and standalone emergency-gate behaviour;
 - [x] define data, CSS, graph, build, validation, and editorial contracts;
+- [x] specify local end-of-subguide Sources and limits with a deduplicated R
+  index;
+- [x] specify a 48–60-figure visualization program and reproducible chart
+  pipeline;
 - [ ] prototype the graph and two competing subguide groupings on paper;
 - [ ] test monochrome/pattern recognition in A4 and A4/2;
 - [ ] freeze codes, patterns, and chapter assignments after visual review;
 - [ ] implement registry-driven standalone colour and monochrome outputs;
-- [ ] migrate subguides one at a time without duplicating canonical prose.
+- [ ] migrate subguides one at a time without duplicating canonical prose;
+- [ ] generate each subguide's source-complete end matter from one registry;
+- [ ] require orientation, mechanism, evidence, and handoff visuals where the
+  material supports them.
+
+### Cross-release visualization program
+
+Tracked in `docs/plans/visualization-program.md`.
+
+- [x] define figure families, chart-selection rules, accessibility standards,
+  and a per-subguide candidate inventory;
+- [x] set a reviewed target of approximately 48–60 master-guide visuals;
+- [ ] add `src/data/visualization_catalog.json`;
+- [ ] add SVG/PNG generation from Vega-Lite, Graphviz/generated SVG, and
+  matplotlib as appropriate;
+- [ ] add alt text, long descriptions, table fallbacks, contrast checks, and
+  color/mono information-parity tests;
+- [ ] generate figure contact sheets, source coverage, and provenance reports.
+
+### Subguide-local source migration
+
+Tracked in `docs/plans/subguide-source-localization.md`.
+
+- [x] agree on local Sources and limits at the end of every subguide;
+- [x] retain citations beside claims and one canonical source registry;
+- [x] define master versus standalone behavior and a B/H pilot;
+- [ ] inventory current Ch.10 entries and chapter footnotes;
+- [ ] add stable source IDs, ownership, claim, route, and figure links;
+- [ ] migrate subguides incrementally and replace the monolithic bibliography
+  with an R source index only after parity is proven.
 
 ### Continuous quality work
 

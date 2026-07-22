@@ -25,7 +25,12 @@ PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION = PACKAGE["version"]
 EVIDENCE_PATH = ROOT / "src" / "data" / "evidence_facts.json"
 ROADMAP = ROOT / "ROADMAP.md"
-NEXT_MINOR_PLAN = ROOT / "docs" / "plans" / "4.3.0-accessibility-plan.md"
+ACCESSIBILITY_PLAN = ROOT / "docs" / "plans" / "4.3.0-accessibility-plan.md"
+PATCH_PLAN = ROOT / "docs" / "plans" / "4.3.1-polish-plan.md"
+SPARSE_REVIEW = ROOT / "docs" / "qa" / "4.3.1-sparse-page-review.md"
+SUBGUIDE_PLAN = ROOT / "docs" / "plans" / "4.5.0-graph-subguide-architecture.md"
+VISUALIZATION_PLAN = ROOT / "docs" / "plans" / "visualization-program.md"
+SOURCE_LOCALIZATION_PLAN = ROOT / "docs" / "plans" / "subguide-source-localization.md"
 errors: list[str] = []
 
 
@@ -198,13 +203,16 @@ if ROADMAP.exists():
         "vulnerable-person modifier",
         "4.2.0 — Routing and hazard architecture",
         "4.3.0 — Locale, accessibility, and safe-place routing",
-        "4.4.0 — Household continuity modules",
+        "4.3.1 — Navigation and release polish",
+        "4.4.0 — Household continuity and data foundations",
+        "Cross-release visualization program",
+        "Subguide-local source migration",
     ):
         check(marker.lower() in roadmap.lower(), f"roadmap marker missing: {marker}")
 
-check(NEXT_MINOR_PLAN.exists(), "4.3.0 accessibility plan is missing")
-if NEXT_MINOR_PLAN.exists():
-    next_minor = NEXT_MINOR_PLAN.read_text(encoding="utf-8")
+check(ACCESSIBILITY_PLAN.exists(), "4.3.0 accessibility plan is missing")
+if ACCESSIBILITY_PLAN.exists():
+    next_minor = ACCESSIBILITY_PLAN.read_text(encoding="utf-8")
     for marker in (
         "Safe-place route split",
         "Source freshness",
@@ -213,6 +221,69 @@ if NEXT_MINOR_PLAN.exists():
         "Release acceptance",
     ):
         check(marker.lower() in next_minor.lower(), f"4.3.0 plan marker missing: {marker}")
+
+check(PATCH_PLAN.exists(), "4.3.1 polish plan is missing")
+if PATCH_PLAN.exists():
+    patch_plan = PATCH_PLAN.read_text(encoding="utf-8")
+    for marker in (
+        "candidate complete",
+        "Navigation accuracy",
+        "Release and script integrity",
+        "Reader-voice cleanup",
+        "Density review",
+        "Acceptance criteria",
+    ):
+        check(marker.lower() in patch_plan.lower(), f"4.3.1 plan marker missing: {marker}")
+
+for path, label, markers in (
+    (
+        SPARSE_REVIEW,
+        "4.3.1 sparse-page review",
+        ("Reviewed pages", "Pages retained intentionally", "Future subguide role"),
+    ),
+    (
+        SUBGUIDE_PLAN,
+        "4.5.0 subguide plan",
+        ("Core graph versus future modules", "Small-Room Physics", "Sources and limits"),
+    ),
+    (
+        VISUALIZATION_PLAN,
+        "visualization program",
+        ("48–60 reviewed visuals", "Visualization linting and QA", "Vega-Lite"),
+    ),
+    (
+        SOURCE_LOCALIZATION_PLAN,
+        "subguide source-localization plan",
+        ("Sources and limits", "canonical source registry", "two-subguide pilot"),
+    ),
+):
+    check(path.exists(), f"{label} is missing")
+    if path.exists():
+        text = path.read_text(encoding="utf-8")
+        normalized_text = re.sub(r"\s+", " ", text).lower()
+        for marker in markers:
+            check(marker.lower() in normalized_text, f"{label} marker missing: {marker}")
+
+required_cli_scripts = (
+    "bin/build_all.sh",
+    "bin/build_guide.sh",
+    "bin/chrome_pdf.mjs",
+    "bin/validate_guide.py",
+    "bin/validate_routes.py",
+    "bin/verify_accessibility.py",
+    "bin/verify_density.py",
+    "bin/verify_layout.py",
+    "bin/verify_overflow.mjs",
+)
+for relative in required_cli_scripts:
+    script = ROOT / relative
+    check(script.exists(), f"required command-line script is missing: {relative}")
+    if script.exists():
+        check(bool(script.stat().st_mode & 0o111), f"required command-line script is not executable: {relative}")
+
+check("Situations B–F — Five Different Kinds of “Too Much”" in source, "B–F mixed-situations identity missing")
+check("Situations B–G — Six Different Kinds" not in source, "stale B–G mixed-situations identity remains")
+check("Situation G — No Safe Place" in source, "Situation G standalone handoff missing")
 
 # Version and source-shape checks.
 for path in CHAPTERS:
@@ -397,7 +468,7 @@ print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    f"{len(required_route_figures)} route/access figures, v3.3 breadth markers, "
+    f"{len(required_route_figures)} route/access figures, subject-breadth markers, "
     "structured routing/locales/accessibility, roadmap coverage, native MathML, "
     "A4, A4/2, and large-print outputs."
 )
