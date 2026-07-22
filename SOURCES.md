@@ -18,6 +18,23 @@ For each release:
 6. Keep emergency instructions short enough to execute.
 7. Rebuild and validate color and monochrome A4 and A4/2 outputs.
 
+## Operational route sources
+
+Version 4.2.0 separates operational routing from explanatory evidence:
+
+- `src/data/route_catalog.json` stores pass-1 overrides, pass-2 needs,
+  dependency modifiers, destinations, and reviewed source IDs;
+- `src/data/locales/de-DE.json` stores national service scopes, poison centres,
+  warning channels, and values that must be supplied locally;
+- `bin/validate_routes.py` rejects missing destinations, missing or outdated source records,
+  unsafe wording regressions, incomplete poison-centre coverage, and diagrams
+  without chapter routes.
+
+Operational source order is: current public authority or emergency service;
+current technical safety authority; product- or substance-specific professional
+advice; explanatory literature. A study never outranks a fire brigade, poison
+centre, dispatcher, warning authority, or approved device emergency plan.
+
 ## Evidence order
 
 The source choice depends on the question:

@@ -1,7 +1,7 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.1.2"
+revision: "4.2.0"
 last_updated: "2026-07-22"
 dependencies: []
 ---
@@ -278,7 +278,7 @@ support, focused help, and specialized treatment complement one another.
 
 ### Limit
 
-Version 4.1.2 does not publish universal response percentages as promises for
+Version 4.2.0 does not publish universal response percentages as promises for
 an individual. Evidence informs shared clinical decisions; method, diagnosis,
 severity, access, fit, and preference matter.
 
@@ -566,6 +566,67 @@ varies by setting; randomized-study results depend on sample and intervention;
 observational odds ratios do not establish individual causation; population
 frequencies do not predict one person; mathematical models inherit their
 assumptions. Emergency protocols continue to outrank every chart.
+
+## Version 4.2.0 routing, hazard, and locale foundations
+
+87. **Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK).**
+    “European emergency number 112,” current 2026 information. The page names
+    acute or potentially life-threatening situations, fire, smoke, explosion,
+    and suspected gas smell as emergency examples.
+    https://www.bbk.bund.de/SharedDocs/Kurzmeldungen/DE/2026/02/om-11-tag-notruf.html
+
+88. **BBK.** “Was tun, wenn es brennt?” Current public fire-behaviour guidance:
+    warn people, leave by a safe route, close doors when possible, call 112, and
+    do not enter a smoke-filled route.
+    https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html
+
+89. **BBK.** “Vorsorge und Handeln bei Stromausfall.” Current outage guidance,
+    including generator and combustion precautions relevant to carbon monoxide
+    and the possibility that failure of medical equipment becomes
+    life-threatening.
+    https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html
+
+90. **Deutscher Verein des Gas- und Wasserfaches (DVGW).** “Was tun bei
+    Gasgeruch?” Consumer guidance: avoid flames and sparks, do not operate
+    electrical switches or phones in the affected building, warn by knocking,
+    leave, and call the network operator from outside.
+    https://www.dvgw.de/themen/gas/verbraucherinformationen/was-tun-bei-gasgeruch
+
+91. **gesund.bund.de.** “Erste Hilfe bei Vergiftungen.” Current federal health
+    information on stopping exposure, fresh air, rinsing skin and eyes, keeping
+    product information, poison-centre consultation, and 112 escalation for
+    severe symptoms.
+    https://gesund.bund.de/erste-hilfe-bei-vergiftungen
+
+92. **Bundesinstitut für Risikobewertung (BfR).** “Giftinformationszentren in
+    Deutschland,” reviewed 29 April 2026. Current directory of the seven German
+    poison information centres in Berlin, Bonn, Erfurt, Freiburg, Göttingen,
+    Mainz, and München.
+    https://www.bfr.bund.de/deutsches-produktregister-depro/giftinformationszentren-in-deutschland/
+
+93. **BBK.** NINA warning-message documentation. Official warnings can specify
+    whether people should shelter indoors, stop ventilation, avoid an area, or
+    evacuate; event-specific instructions outrank generic movement advice.
+    https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/Funktion-Inhalt/Warnmeldungen/warnmeldungen_node.html
+
+94. **BBK.** “Notgepäck.” Current emergency-bag guidance, used only for
+    immediately reachable essentials and advance preparation—not as a reason to
+    delay escape from an active hazard.
+    https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Notgepaeck/notgepaeck_node.html
+
+95. **German Red Cross (DRK).** “Stromschlag — Erste Hilfe.” Current
+    first-aid guidance emphasizes self-protection, interruption of the circuit,
+    112 activation, resuscitation when required, and rescue by trained personnel
+    only for high-voltage incidents.
+    https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stromschlag/
+
+### Routing limit
+
+The registry describes safe first actions and destinations; it does not measure
+an actual atmosphere, electrical system, fire compartment, device runtime, or
+individual toxic dose. Scene-specific instructions from dispatchers, fire
+services, poison centres, network operators, warning authorities, clinicians,
+and device emergency plans take precedence.
 
 ## Editorial policy
 

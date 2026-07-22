@@ -1,7 +1,7 @@
 ---
 title: "First Aid While Help Is Coming"
 chapter: 5
-revision: "4.1.2"
+revision: "4.2.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/triage_flow.png

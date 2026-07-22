@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Bathroom Emergency Guide v4.1.2.
+"""Build Bathroom Emergency Guide v4.2.0.
 
 The build has one source of truth and no network dependency:
 - chapter YAML is removed during assembly;
@@ -31,13 +31,14 @@ TEMPLATE = SRC / "template.html"
 STYLE = SRC / "style.css"
 STYLE_MONO = SRC / "style-mono.css"
 STYLE_A4_HALF = SRC / "style-a4-half.css"
-VERSION = "4.1.2"
+VERSION = "4.2.0"
 
 CHAPTERS = [
     "00-cover.md",
     "01-how-to-use.md",
     "02-situation-a.md",
     "03-situations-b-g.md",
+    "03h-environmental-hazards.md",
     "04-calm-guide.md",
     "05-self-ambulance.md",
     "06-zombie-guide.md",

@@ -205,19 +205,23 @@ A candidate only graduates into the guide when the exact figure can be defended.
 
 ## Engineering roadmap
 
-### 4.2.0 — Routing and hazard architecture
+### 4.2.0 — Routing and hazard architecture — implemented candidate
 
-- execute the two-track content plan in `docs/plans/4.2.0-content-plan.md`;
-- implement the two-pass flowgraph;
-- add fire/smoke/CO/gas/chemical/electrical override;
-- add modifier strip and essential-device route;
-- split “no place” subroutes;
-- preserve complete text and monochrome parity.
+- [x] execute the core of the two-track content plan;
+- [x] implement the two-pass flowgraph and structured route registry;
+- [x] add fire/smoke/CO/gas/chemical/electrical Situation H override;
+- [x] add modifier strip and essential medication/powered-device route;
+- [x] make the existing smell route subordinate to the hazard gate;
+- [x] add data-driven route, hazard, and continuity visualizations;
+- [x] preserve complete text and A4/A4/2 monochrome parity;
+- [ ] split “no place” into four fully localized service subroutes—carried into
+  4.3.0 because the destinations depend on locale data and accessibility.
 
-### 4.3.0 — Locale and accessibility
+### 4.3.0 — Locale, accessibility, and safe-place routing
 
-- introduce `src/data/locales/de-DE.json` for reviewed numbers and service scope;
-- add schema validation and stale-review warnings;
+- [x] introduce `src/data/locales/de-DE.json` for reviewed national numbers,
+  poison centres, warning channels, and required local fields;
+- add schema validation, source freshness windows, and stale-review warnings;
 - add accessible-language and alternate-grounding variants;
 - test headings, alt text, reading order, contrast, and large-print output.
 

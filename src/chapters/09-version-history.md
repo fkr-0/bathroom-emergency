@@ -1,12 +1,43 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.1.2"
+revision: "4.2.0"
 last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Version History
+
+## 4.2.0 — 22 July 2026
+
+### Eighth door: environmental danger
+
+- Added Situation H for fire, smoke, CO, gas, chemicals, electricity, and the
+  important distinction between an indoor source and an outdoor official
+  shelter warning.
+- Implemented the two-pass route promised in the roadmap: life/medical,
+  violence/crime, and environment overrides first; observable need second;
+  dependency modifiers after the route.
+- Reworked Situation F so ordinary smell troubleshooting begins only after the
+  hazard gate is negative.
+
+### Existing-guide enhancements
+
+- Added a complete essential-medication and powered-device interruption route to
+  the outage guide, including approved backup, early calls, powered destination,
+  transport, access, and a fillable handoff.
+- Added a concise hazard handoff and after-action recovery steps rather than
+  ending the route at “leave.”
+
+### Data and visualization foundations
+
+- Added structured route and de-DE locale registries with reviewed source IDs,
+  destination types, service scopes, seven current poison centres, warning
+  channels, and fields that must be supplied locally.
+- Added three generated views of the data: two-pass architecture, hazard
+  override matrix, and essential-care continuity map.
+- Added route-specific validation so diagrams and chapters cannot quietly drift
+  away from the registry.
 
 ## 4.1.2 — 22 July 2026
 

@@ -32,6 +32,9 @@ REQUIRED_MARKERS = (
     "Time is brain",
     "Social connection is not decorative trim",
     "Reproducible evidence registry",
+    "Situation H — The Environment May Be Unsafe",
+    "Essential medication and powered-device failure",
+    "The hazard handoff",
 )
 
 

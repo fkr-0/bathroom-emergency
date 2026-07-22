@@ -1,5 +1,36 @@
 # Changelog
 
+## 4.2.0 — 2026-07-22
+
+### Added a real environmental-hazard branch
+
+- Added **Situation H** for fire, smoke, carbon monoxide, gas release, chemical
+  exposure, electrical danger, outdoor warning instructions, and safe handoff.
+- Changed the main guide from seven to eight entry doors and implemented the
+  planned two-pass architecture: danger overrides first, need-based routing
+  second, dependency modifiers after the route.
+- Made the existing smell branch explicitly post-override so drain and mould
+  troubleshooting cannot sit above fire, gas, electricity, or fumes.
+
+### Strengthened continuity guidance
+
+- Added an essential-medication and powered-device failure route with action,
+  approved backup, early escalation, powered destination, and handoff fields.
+- Added dependency modifiers for children, pregnancy/postpartum, mobility and
+  sensory access, medication, powered devices, animals, language, being alone,
+  and transport.
+
+### Added structured foundations and visualizations
+
+- Added `src/data/route_catalog.json` as the canonical action/backup/escalation/
+  destination registry and `src/data/locales/de-DE.json` for reviewed German
+  services, poison centres, warning channels, and local fields.
+- Added data-driven two-pass routing, environmental-hazard, and essential-care
+  continuity diagrams.
+- Added route and locale validation covering graph destinations, source IDs,
+  unsafe wording regressions, official service numbers, all seven German poison
+  centres, chapter coverage, and generated figures.
+
 ## 4.1.2 — 2026-07-22
 
 ### Added the A4/2 field-strip edition

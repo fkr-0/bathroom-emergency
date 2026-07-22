@@ -1,9 +1,10 @@
 ---
 title: "Outage, Disaster, and Zombie Guide"
 chapter: 6
-revision: "4.1.2"
+revision: "4.2.0"
 last_updated: "2026-07-22"
 dependencies:
+  - build/diagrams/dependency_continuity_map.png
   - build/diagrams/survival_pyramid.png
   - build/diagrams/scaling_chart.png
   - build/diagrams/household_water_planner.png
@@ -185,6 +186,46 @@ Leave if safe and call from outside.
 - Keep medicines dry, labelled, and away from children.
 - Do not ration or substitute prescription medicines without professional
   advice unless an emergency plan specifically instructs it.
+
+### Essential medication and powered-device failure
+
+![Essential treatment and powered-device continuity map](build/diagrams/dependency_continuity_map.png)
+
+An outage becomes a medical route when a treatment, device, storage condition,
+caregiver, or accessible transport cannot be safely bridged. Do not wait for the
+last battery bar to become emotionally persuasive.
+
+Use this queue:
+
+1. **Action — identify the function.** What treatment or device is essential?
+   What failed? How much approved battery runtime, medication, oxygen, cooling,
+   or caregiver coverage remains?
+2. **Backup — use the personal plan.** Switch only to an approved battery,
+   reserve, alternate administration method, backup caregiver, or powered
+   destination already specified by the care team or manufacturer.
+3. **Escalation — call early.** Contact the supplier, pharmacy, prescriber, care
+   service, or **116 117** while a safe bridge still exists. Call **112** when a
+   life-supporting function is interrupted, breathing or consciousness changes,
+   or transfer cannot be completed before the safe reserve ends.
+4. **Destination — move before exhaustion.** Go to a known staffed, powered,
+   accessible place. Tell them the device, treatment, remaining runtime, power
+   need, mobility/communication needs, and transport constraints.
+
+Do not improvise voltage, connectors, oxygen flow, refrigeration temperature,
+medication dose, or fuel use. A technically creative adapter is not improved by
+being attached to someone’s breathing.
+
+Record these before an outage:
+
+| Field | Household value |
+|---|---|
+| essential device or treatment | |
+| power draw / battery runtime / storage range | |
+| approved backup and where it is | |
+| supplier, pharmacy, prescriber, care service | |
+| accessible powered destination | |
+| transport and who can help | |
+| 112 escalation condition | |
 
 ### Reading traces and observing the environment
 

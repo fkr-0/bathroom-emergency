@@ -1,10 +1,12 @@
 ---
 title: "Start Here"
 chapter: 1
-revision: "4.1.2"
+revision: "4.2.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/emergency_flowgraph.png
+  - build/diagrams/two_pass_route_map.png
+  - build/diagrams/hazard_override_matrix.png
   - build/diagrams/evidence_classes.png
 ---
 
@@ -17,23 +19,27 @@ quite so theatrically.
 
 ## The override
 
-**Could someone die, lose consciousness, stop breathing normally, bleed heavily,
-suffer lasting harm, or be in immediate danger?**
+Run three short checks before choosing a topic:
 
-- **Yes / maybe / cannot tell:** call **112**. Unlock the door if safe, use
-  speakerphone, and follow the dispatcher.
-- **No:** choose the closest route below.
-- **Active violence or a crime requiring police:** get to safety, then call
-  **110**. Use **112** when medical rescue is also needed.
+1. **Life or medical danger?** Possible death, abnormal breathing,
+   unconsciousness, severe bleeding, stroke sign, major injury, or lasting harm
+   means **112**. “Maybe” and “cannot tell” count.
+2. **Active violence or crime?** Move toward safety and call **110**. Use
+   **112** when medical rescue or life protection is also needed.
+3. **Environmental danger?** Fire, smoke, a CO alarm, gas, unknown fumes,
+   chemical exposure, live electricity, or sparking means leave or isolate the
+   source first and use **Situation H**. Call from a safer place.
 
-You do not have to diagnose the situation before asking for help. “I am not
-sure, but this looks serious” is a complete reason to call.
+You do not have to diagnose the person or the room before asking for help. “I am
+not sure, but this looks serious” is a complete reason to call.
 
 ![Red-flag-first emergency decision flowgraph](build/diagrams/emergency_flowgraph.png)
 
+![Two-pass routing architecture with dependency modifiers](build/diagrams/two_pass_route_map.png)
+
 ## Purpose
 
-The guide helps with seven broad situations:
+The guide helps with eight observable situations:
 
 1. you caused trouble or someone depends on you;
 2. anxiety, panic, overload, or dissociation;
@@ -41,7 +47,8 @@ The guide helps with seven broad situations:
 4. danger, coercion, or violence;
 5. too many tasks and too little working memory;
 6. a suspicious smell or household hazard;
-7. no safe place, no plan, or disrupted infrastructure.
+7. no safe place, no plan, or disrupted infrastructure;
+8. fire, smoke, gas, chemicals, electricity, or unsafe air.
 
 Its job is to produce a **safe next action**, a **backup action**, and a clear
 **escalation rule**. It is not a diagnosis engine, courtroom, therapist, poison
@@ -63,15 +70,20 @@ medical condition should follow their individual emergency plan first.
 
 ## Quick-start procedure
 
-Use this sequence before reading deeply:
+Use two passes before reading deeply:
 
-1. **Check danger.** Fire, gas, electricity, traffic, water, chemicals,
-   violence, collapse, abnormal breathing, severe bleeding?
-2. **Choose the service.** 112 for medical/fire/life danger; 110 for active
-   police danger; 116 117 for urgent but non-life-threatening medical help.
-3. **Choose one route.** Body, alarm, threat/responsibility, or outage.
-4. **Do one action.** Not six. The other five may wait in the lobby.
-5. **Reassess.** Better, same, worse, or new red flag?
+1. **Pass 1 — override.** Check life/medical danger, active violence/crime, and
+   environmental danger in that order.
+2. **Move first when the environment is unsafe.** Do not troubleshoot gas,
+   smoke, electricity, or fumes from inside the exposure area.
+3. **Pass 2 — choose the need.** Responsibility, alarm, body, threat/no place,
+   household hazard, or outage.
+4. **Apply modifiers.** Alone, child, pregnancy/postpartum, mobility or sensory
+   access, medication, powered device, animal, language, and transport change
+   logistics—not urgency.
+5. **Do one action.** Keep the backup, escalation condition, and destination
+   visible.
+6. **Reassess.** Better, same, worse, or new red flag?
 
 ## Your current status
 
@@ -108,7 +120,7 @@ That would be a very ambitious equation.
 
 ![Evidence labels used by the guide](build/diagrams/evidence_classes.png)
 
-Version 4.1.2 keeps numbers carefully bounded. Every evidence figure states:
+Version 4.2.0 keeps numbers and routes carefully bounded. Every evidence figure states:
 
 - **what kind of evidence it is**—protocol, population estimate, study,
   association, or model;
@@ -176,12 +188,16 @@ only signal.
     <p>Go to Ch.2 or Ch.7. Safety first; repair comes after stabilization.</p>
   </section>
   <section class="route-card" data-route="survival">
+    <h3>Environment unsafe</h3>
+    <p>Go to Situation H. Leave or isolate the source before symptom sorting.</p>
+  </section>
+  <section class="route-card" data-route="survival">
     <h3>Outage / collapse</h3>
-    <p>Go to Ch.6. Verify the hazard, conserve resources, coordinate.</p>
+    <p>Go to Ch.6. Protect essential care, water, temperature, and information.</p>
   </section>
 </div>
 
-## The seven entry points
+## The eight entry points
 
 | Door | What is happening | First destination |
 |---|---|---|
@@ -192,6 +208,7 @@ only signal.
 | E | Everything is congesting | Ch.4 Calm, then one task |
 | F | There is a bad or unknown smell | Ch.3F Safety check |
 | G | I have no safe place or no workable plan | Ch.7 Practical support |
+| H | Fire, smoke, gas, chemical, electrical, or unsafe air | Situation H Environmental hazards |
 
 Several doors may be open. Red flags outrank all of them.
 
@@ -219,6 +236,13 @@ START
  |       |          injury/life danger too --> 112
  |       +-- no --> continue
  |
+ +-- Fire/smoke/CO/gas/chemical/electrical danger?
+ |       |
+ |       +-- yes / maybe --> leave or isolate safely
+ |       |                 --> Situation H
+ |       |                 --> 112 / poison centre / gas service
+ |       +-- no --> continue
+ |
  +-- Closest door:
          A responsibility/harm --> Ch.2 --> Ch.7 as needed
          B anxiety/panic       --> Ch.4
@@ -227,6 +251,7 @@ START
          E overload            --> Ch.4 --> one task
          F smell/fumes         --> Ch.3F --> leave/call if hazardous
          G no place            --> Ch.7
+         H environment unsafe  --> Situation H
          outage/disaster       --> Ch.6
 
 EVERY NON-EMERGENCY ROUTE:

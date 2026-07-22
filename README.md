@@ -3,10 +3,11 @@
 > “You are in a room with a door, water, and one next action.”
 
 A sourced, rebuildable decision guide for panic, pain, responsibility, danger,
-overload, bad smells, missing places, and infrastructure failure. Version 4.1.2
-combines the red-flag-first v4 safety architecture with the extensive subject
-breadth of v3.3, bounded quantitative evidence, native MathML, and deterministic
-one-column A4 plus A4/2 field-strip printing.
+overload, environmental hazards, missing places, and infrastructure failure.
+Version 4.2.0 adds a real eighth route for fire, smoke, carbon monoxide, gas,
+chemicals, and electricity; a structured two-pass routing registry; reviewed
+de-DE service data; bounded quantitative evidence; and deterministic A4 plus
+A4/2 field-strip printing.
 
 ## Quick build
 
@@ -22,6 +23,7 @@ Individual targets:
     ./bin/build_guide.sh docx
     ./bin/build_guide.sh latex
     ./bin/build_guide.sh a4half
+    python3 bin/validate_routes.py
     python3 bin/validate_guide.py
     python3 bin/verify_layout.py
 
@@ -46,14 +48,16 @@ network dependency.
 
 ## Source layout
 
-    src/chapters/          canonical content, 00–10
-    src/diagrams/          orientation, safety, and evidence figures
-    src/data/              reviewed numeric inputs and evidence limits
+    src/chapters/          12 canonical chapters, including Situation H
+    src/diagrams/          routing, hazard, continuity, and evidence figures
+    src/data/              evidence, route, and locale registries
+    src/data/locales/      reviewed locale-specific service foundations
     src/template.html      semantic screen shell and small UI controls
     src/style.css          screen + single-column print system
     src/style-a4-half.css  105 × 297 mm field-strip print adaptations
     src/style-mono.css     monochrome overrides only
     bin/build_guide.py     deterministic document builder
+    bin/validate_routes.py routing, destination, locale, and source invariants
     bin/validate_guide.py  safety, evidence, and rendering invariants
     bin/verify_layout.py   rendered A4/2 geometry and collision checks
     ROADMAP.md             flowgraph, chapter, research, and release backlog
@@ -79,13 +83,17 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 11 source chapters at revision 4.1.2;
+- 12 source chapters at revision 4.2.0;
 - restored v3.3 breadth markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
 - no known unsafe legacy wording or deprecated scientific chart;
-- a valid 4.1.2 evidence registry with source and limit for every plotted fact;
-- every referenced image and required evidence figure exists;
-- roadmap coverage for the next routing, locale, and continuity releases;
+- a valid 4.2.0 evidence registry with source and limit for every plotted fact;
+- a structured route catalog with seven pass-1 overrides, six pass-2 needs, and
+  nine dependency/access modifiers;
+- reviewed de-DE services, all seven poison-information centres, warning
+  channels, and local-value requirements;
+- every referenced image, evidence figure, and route figure exists;
+- roadmap coverage for locale, accessibility, and continuity follow-up releases;
 - readable A4 and 105 × 297 mm PDFs with plausible page counts;
 - renderer-based A4/2 checks for blank pages, physical-edge collisions, required
   content markers, and representative-page contact sheets.
@@ -100,8 +108,12 @@ Plotted values live in `src/data/evidence_facts.json`. Each record names its
 population or model scope, denominator, source, uncertainty where available,
 and practical limit. The source chapter records the supporting literature and
 what it does **not** establish.
-Core emergency routes and newly restored source material were reviewed on
-22 July 2026.
+
+Operational routes live in `src/data/route_catalog.json`. Every route carries an
+action, backup, escalation condition, destination, and reviewed source IDs.
+Locale-dependent services live in `src/data/locales/de-DE.json`; unknown local
+values remain explicit fields rather than plausible-looking inventions.
+Core emergency routes and source material were reviewed on 22 July 2026.
 
 ## Safety scope
 

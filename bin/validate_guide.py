@@ -33,7 +33,7 @@ def check(condition: bool, message: str) -> None:
         errors.append(message)
 
 
-check(len(CHAPTERS) == 11, f"expected 11 chapters, found {len(CHAPTERS)}")
+check(len(CHAPTERS) == 12, f"expected 12 chapters, found {len(CHAPTERS)}")
 source = "\n".join(path.read_text(encoding="utf-8") for path in CHAPTERS)
 action_source = "\n".join(
     path.read_text(encoding="utf-8")
@@ -126,6 +126,15 @@ for name in sorted(required_evidence_figures):
     check((ROOT / "build" / "diagrams" / name).exists(), f"required evidence figure missing: {name}")
     check(name in source, f"required evidence figure is not referenced in chapters: {name}")
 
+required_route_figures = {
+    "two_pass_route_map.png",
+    "hazard_override_matrix.png",
+    "dependency_continuity_map.png",
+}
+for name in sorted(required_route_figures):
+    check((ROOT / "build" / "diagrams" / name).exists(), f"required route figure missing: {name}")
+    check(name in source, f"required route figure is not referenced in chapters: {name}")
+
 deprecated_figures = {
     "stress_decay_curve.png",
     "anxiety_severity_spectrum.png",
@@ -147,7 +156,7 @@ if ROADMAP.exists():
         "fire, smoke, carbon monoxide",
         "vulnerable-person modifier",
         "4.2.0 — Routing and hazard architecture",
-        "4.3.0 — Locale and accessibility",
+        "4.3.0 — Locale, accessibility, and safe-place routing",
         "4.4.0 — Household continuity modules",
     ):
         check(marker.lower() in roadmap.lower(), f"roadmap marker missing: {marker}")
@@ -183,6 +192,10 @@ parity_markers = [
     "Guide topology",
     "Flowchart legend",
     "Master flowchart",
+    "The eight entry points",
+    "Situation H — The Environment May Be Unsafe",
+    "Essential medication and powered-device failure",
+    "The hazard handoff",
     "A1 — A life may be developing",
     "A2 — Birth appears to be happening now",
     "A3 — A baby arrived recently",
@@ -251,6 +264,9 @@ if HTML.exists():
         "That is not a contradiction requiring a duel between bar charts",
         "Time is brain",
         "Social connection is not decorative trim",
+        "Situation H — The Environment May Be Unsafe",
+        "Essential medication and powered-device failure",
+        "The hazard handoff",
     ):
         check(marker.lower() in normalized_html, f"built HTML missing required content: {marker}")
 else:
@@ -327,5 +343,6 @@ print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    "v3.3 breadth markers, roadmap coverage, native MathML, A4 and A4/2 PDFs, one-column print."
+    f"{len(required_route_figures)} route figures, v3.3 breadth markers, structured routing/locales, "
+    "roadmap coverage, native MathML, A4 and A4/2 PDFs, one-column print."
 )

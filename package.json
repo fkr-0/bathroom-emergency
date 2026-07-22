@@ -1,7 +1,7 @@
 {
   "name": "bathroom-emergency-guide",
   "private": true,
-  "version": "4.1.2",
+  "version": "4.2.0",
   "description": "A sourced, printable decision guide for bathroom-sized emergencies.",
   "type": "module",
   "scripts": {
@@ -10,7 +10,8 @@
     "build:diagrams": "./bin/build_diagrams.sh",
     "build:a4half": "./bin/build_guide.sh a4half",
     "verify:layout": "python3 bin/verify_layout.py",
-    "test": "python3 bin/validate_guide.py"
+    "test": "python3 bin/validate_routes.py && python3 bin/validate_guide.py && python3 bin/verify_layout.py --quiet",
+    "validate:routes": "python3 bin/validate_routes.py"
   },
   "devDependencies": {
     "playwright": "^1.54.0"

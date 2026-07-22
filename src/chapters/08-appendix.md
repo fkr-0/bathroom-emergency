@@ -1,15 +1,18 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.1.2"
+revision: "4.2.0"
 last_updated: "2026-07-22"
-dependencies: []
+dependencies:
+  - build/diagrams/two_pass_route_map.png
+  - build/diagrams/hazard_override_matrix.png
+  - build/diagrams/dependency_continuity_map.png
 ---
 
 # Appendix — The Useful Loose Ends
 
 The v3.3 appendix tried to be index, legend, workbook, decision tree, notes page,
-and emergency wallet card simultaneously. Version 4.1.2 accepts the assignment,
+and emergency wallet card simultaneously. Version 4.2.0 accepts the assignment,
 but labels the parts so the notes page does not accidentally become a theorem.
 
 ## Master cross-reference — where everything points
@@ -22,7 +25,8 @@ but labels the parts so the notes page does not accidentally become a theorem.
 | pain / illness | Ch.5 | Ch.3C pain description | practice / 116 117 / 112 |
 | danger / coercion | Ch.3D | safety plan | 110 / 112 / 116 016 |
 | task overload | Ch.3E, Ch.4 | congestion board | appropriate care/support |
-| unknown smell | Ch.3F | source troubleshooting | 112 / utility / poison centre |
+| unknown smell | Situation H first, then Ch.3F | post-clearance troubleshooting | 112 / gas service / poison centre |
+| environmental danger | Situation H | fire, CO, gas, chemicals, electricity, warning instructions | 112 / gas service / poison centre |
 | nowhere safe | Ch.3G | one-hour plan | municipal/social/shelter service |
 | outage / disaster | Ch.6 | household and community planning | BBK/local authority/112 |
 | need a number or script | Ch.7 | support-selection matrix | named service |
@@ -31,7 +35,9 @@ but labels the parts so the notes page does not accidentally become a theorem.
 
 | Diagram | Location | Purpose |
 |---|---|---|
-| emergency flowgraph | Ch.1 | red-flag-first routing |
+| emergency flowgraph / two-pass route map | Ch.1 | life, violence, and environmental overrides before need routing |
+| environmental hazard matrix | Situation H | first action and backup for fire, CO, gas, chemicals, electricity |
+| essential-care continuity map | Situation H, Ch.6 | medication, powered-device, transport, and destination handoff |
 | breathing techniques | Ch.4 | optional pacing patterns |
 | first-aid triage | Ch.5 | response and escalation overview |
 | survival priority pyramid | Ch.6 | infrastructure-failure priorities |
@@ -89,7 +95,7 @@ The guide distinguishes the role of each statement:
 | **Conceptual model** | A thinking aid, not a measured prediction | $A_{k+1}=A_k-\delta_k+\varepsilon_k$ |
 | **Mnemonic** | Memorable compression | one action, one backup, one escalation |
 
-The old edition sometimes dressed a metaphor in a lab coat. Version 4.1.2 asks
+The old edition sometimes dressed a metaphor in a lab coat. Version 4.2.0 asks
 the coat for identification, denominator, and visiting hours.
 
 ## Formula and theorem index
@@ -204,6 +210,23 @@ A future number change should therefore modify the registry, source annotation,
 chapter prose, and generated figure in one reviewable change. Four copies of a
 number drifting independently is how folklore acquires error bars.
 
+## Reproducible route and locale registries
+
+Operational routes live in `src/data/route_catalog.json`. Each pass-1 override
+and pass-2 need carries:
+
+$$Q=[	ext{action},	ext{backup},	ext{escalation},	ext{destination}]$$
+
+The same registry also defines dependency modifiers and reviewed source IDs.
+`src/data/locales/de-DE.json` keeps national service numbers, the current seven
+poison-information centres, warning channels, and deliberately blank local
+fields separate from generic prose.
+
+The generated two-pass, hazard, and essential-care diagrams are views of these
+data. `bin/validate_routes.py` checks destinations, source references, phone
+numbers, unsafe-wording regressions, poison-centre coverage, chapter markers,
+and generated figures. A diagram may simplify a route; it may not invent one.
+
 ## Flowchart symbol legend — extended
 
 | Symbol/style | Meaning | Monochrome equivalent |
@@ -231,6 +254,11 @@ anything changes.
 | GP / practice | |
 | Pharmacy / night service | |
 | Local hospital / emergency department | |
+| Local gas-network emergency number | |
+| Regional poison-information centre | |
+| Accessible powered destination | |
+| Essential device / approved backup / runtime | |
+| Accessible transport or evacuation help | |
 | Psychiatric emergency / crisis service | |
 | Sozialpsychiatrischer Dienst | |
 | Poison centre | |
@@ -261,7 +289,7 @@ than security engineering recommends.
 ## Complete decision tree — safe text version
 
 ```text
-BATHROOM EMERGENCY GUIDE — MASTER TREE v4.1.2
+BATHROOM EMERGENCY GUIDE — MASTER TREE v4.2.0
 ============================================================
 
 0. OVERRIDE
@@ -276,8 +304,14 @@ BATHROOM EMERGENCY GUIDE — MASTER TREE v4.1.2
    |       +-- NO --> continue
    |
    +-- active crime or immediate violent threat?
-           +-- YES --> safer place --> 110
-           |          injury/life danger --> 112
+   |       +-- YES --> safer place --> 110
+   |       |          injury/life danger --> 112
+   |       +-- NO --> continue
+   |
+   +-- fire/smoke/CO/gas/chemical/electrical danger?
+           +-- YES / MAYBE --> leave or isolate safely
+           |                  Situation H
+           |                  112 / poison centre / gas service
            +-- NO --> choose door
 
 A. I CAUSED TROUBLE / SOMEONE DEPENDS ON ME --> Ch.2
@@ -319,12 +353,11 @@ E. THINGS ARE CONGESTING --> Ch.3E + Ch.4
    +-- choose one physical action under five minutes
    +-- delegate or obtain care when essentials repeatedly fail
 
-F. BAD SMELL --> Ch.3F
+F. BAD SMELL --> Situation H gate, then Ch.3F
    |
-   +-- gas/chemical/burning/symptoms --> no flame/switch --> leave
-   |                                    112 from outside if danger
-   +-- sewage/drain --> water trap + plumber/building management
-   +-- damp/mould --> moisture inspection + professional repair
+   +-- fire/smoke/CO/gas/chemical/electrical/symptoms --> Situation H
+   +-- sewage/drain after negative hazard gate --> water trap + plumber
+   +-- damp/mould after negative hazard gate --> moisture repair
    +-- ordinary smell --> ventilation and cleaning, no combustion
 
 G. NO PLACE TO GO --> Ch.3G + Ch.7
@@ -333,6 +366,15 @@ G. NO PLACE TO GO --> Ch.3G + Ch.7
    +-- social overload --> pause, ally, exit, later conversation
    +-- internal crisis --> one person + 116 123 / 116 117
    +-- exposure/violence/self-harm/medical danger --> 112 / 110
+
+H. THE ENVIRONMENT MAY BE UNSAFE --> Situation H
+   |
+   +-- fire/smoke --> smoke-free exit; smoky route means close door + 112
+   +-- CO alarm/suspected combustion exposure --> fresh air + 112
+   +-- gas --> no flame/switch/bell/phone; knock, leave, call outside
+   +-- chemical --> stop exposure, rinse, keep label, poison centre / 112
+   +-- electrical --> do not touch live source; isolate only if safe; 112
+   +-- official outside warning --> shelter or evacuate exactly as instructed
 
 OUTAGE / DISASTER --> Ch.6
    |
@@ -371,7 +413,10 @@ EVERY NON-EMERGENCY ROUTE
     <h3>THREAT</h3><p>Exit / safer place · 110 · 116 016 · do not confront</p>
   </section>
   <section class="route-card" data-route="survival">
-    <h3>OUTAGE</h3><p>Official warning · air · water · medication · roles</p>
+    <h3>ENVIRONMENT</h3><p>Leave source · Situation H · call from safety</p>
+  </section>
+  <section class="route-card" data-route="survival">
+    <h3>OUTAGE</h3><p>Official warning · essential care · water · temperature · roles</p>
   </section>
 </div>
 
@@ -395,7 +440,7 @@ At each release:
 1. recheck emergency numbers and official URLs;
 2. review first-aid and preparedness guideline updates;
 3. verify every numeric figure against `src/data/evidence_facts.json` and its primary or authoritative source;
-4. run safety-regression and evidence-registry validation;
+4. run safety-regression, evidence-registry, route-registry, and locale validation;
 5. build colour and monochrome A4 and A4/2 outputs;
 6. inspect page count, clipped tables, diagrams, and text tree;
 7. verify version strings across source, HTML, PDF, package, and changelog;

@@ -1,7 +1,7 @@
 ---
 title: "Situations B–G"
 chapter: 3
-revision: "4.1.2"
+revision: "4.2.0"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/gad7_validation_comparison.png
@@ -278,25 +278,30 @@ If basic care is repeatedly failing, involve professional, social, or practical
 support. Productivity advice is not a substitute for treating depression,
 ADHD, burnout, sleep deprivation, pain, or crisis.
 
-## F — Bad smell
+## F — Bad smell, after the hazard gate
 
 ### The rule
+
+A smell is not permission to investigate from inside the plume. First ask:
+**fire, smoke, CO alarm, gas, electrical burning, unknown fumes, chemical
+exposure, or symptoms?** If yes, maybe, or unclear, use **Situation H** and move
+away before troubleshooting.
 
 Do **not** light a match to diagnose or “neutralize” an unknown smell. Do not
 operate switches when gas may be present. Do not mix cleaning products.
 
 ### Smell decision tree
 
-| Smell or sign | Safe first action | Escalate |
+| Smell or sign | Safe first action | Destination |
 |---|---|---|
-| gas / rotten egg, hissing | no flame/switch; leave; warn others | utility/fire service; 112 if symptoms or danger |
-| burning plastic / electrical | cut power only if safely accessible; leave | 112 for smoke/fire; electrician |
-| chlorine / sharp chemical / eye irritation | leave to fresh air; avoid exposure | 112 for breathing symptoms; poison centre |
-| solvent / fuel | ventilate only if safe; leave source area | 112 if symptoms/fire risk; specialist |
-| sewage / drain | run water into unused traps; ventilate | plumber/building management if persistent |
-| damp / musty | ventilate, inspect moisture, avoid disturbing heavy mould | landlord/building specialist; medical advice for symptoms |
+| gas / rotten egg, hissing | no flame, switch, bell, fan, or phone inside; knock, leave | Situation H → gas service / **112** |
+| smoke / burning plastic / electrical | leave; cut power only from a safely reachable control | Situation H → **112** |
+| sharp chemical / mixed cleaner / eye or airway irritation | stop exposure; fresh air; rinse exposed skin/eyes | Situation H → poison centre / **112** |
+| solvent / fuel | leave source area; prevent ignition | Situation H → specialist / **112** if danger |
+| sewage / drain, no acute symptoms | run water into an unused trap; ventilate normally | plumber/building management if persistent |
+| damp / musty | inspect moisture without disturbing heavy mould | landlord/building specialist; medical advice for symptoms |
 | ordinary toilet smell | flush, close lid, ventilate, clean | no combustion-based innovation required |
-| unexplained body or breath odour with illness | assess symptoms, hygiene, hydration, medical context | practice/116 117; 112 for severe illness signs |
+| unexplained body or breath odour with illness | assess the person, not merely the smell | practice/116 117; **112** for severe signs |
 
 ### Cleaning chemistry: the minimal doctrine
 
@@ -372,7 +377,7 @@ Tonight is an acceptable unit of planning.
 | Pain | check red flags; simple first aid | OPQRST and pain log | sudden/severe/neuro/chest/collapse |
 | Danger | move to safety; call police/rescue | safety planning and after-effects | threat current or injury exists |
 | Congestion | externalize; choose one action | cognitive load and delegation | basic care or safety failing |
-| Smell | no flame/switch; leave fumes | source-specific troubleshooting | fire, gas, chemical exposure, symptoms |
+| Smell | run the Situation H hazard gate; leave fumes | source-specific troubleshooting only after clearance | fire, gas, chemical exposure, symptoms |
 | No place | secure one hour; contact service | physical/social/internal branches | exposure, violence, medical/self-harm risk |
 
 [^gad7]: Spitzer RL et al., “A Brief Measure for Assessing Generalized Anxiety Disorder: The GAD-7,” *Archives of Internal Medicine* 166 (2006): 1092–1097. https://doi.org/10.1001/archinte.166.10.1092
