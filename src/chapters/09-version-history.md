@@ -1,12 +1,45 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.3.1"
+revision: "4.4.1"
 last_updated: "2026-07-22"
 dependencies: []
 ---
 
 # Version History
+
+## 4.4.1 — 22 July 2026
+
+### Common continuity synthesis
+
+- Preserved the 4.3.1 observatory, safety routing, evidence limits, accessibility,
+  source freshness, and six-edition print architecture while reviewing the
+  alternate source tree section by section.
+- Accepted compatible ownership, handoff, access, and human-factors material;
+  rejected unsupported medical, survival, legal, and developmental claims.
+- Added eight structured household-continuity systems, five first-meeting roles,
+  two generated figures, and validation for dependencies, sources, owners,
+  backups, text equivalents, and denied claims.
+- Expanded the outage guide with capability inventory, visible task ownership,
+  review times, failure routes, and a route for dissent.
+
+## 4.3.1 — 22 July 2026
+
+### Navigation and release hygiene
+
+- Corrected the mixed situations identity to B–F while preserving a named
+  handoff to the dedicated Situation G guide.
+- Restored executable validator modes and made script permissions part of the
+  release contract.
+- Aligned source, renderer, registry, and cover metadata at 4.3.1.
+
+### Reviewed space instead of merely filling it
+
+- Reviewed the seven sparsest A4 pages and retained each as writable space,
+  safety buffer, chapter opener, handoff, or reference boundary.
+- Preserved the 88-page A4, 87-page A4/2, and 139-page large-print envelope.
+- Added plans for graph-linked subguides, 48–60 reviewed visuals, and generated
+  Sources and limits at the end of each future subguide.
 
 ## 4.3.0 — 22 July 2026
 

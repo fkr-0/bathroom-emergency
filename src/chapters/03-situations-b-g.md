@@ -1,7 +1,7 @@
 ---
 title: "Situations B–F, with Situation G Router"
 chapter: 3
-revision: "4.3.1"
+revision: "4.4.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/gad7_validation_comparison.png
@@ -97,6 +97,10 @@ A useful distinction:
 | Thought | What prediction is looping? | “I notice the thought that…” |
 | Action | What helps in five minutes? | water, call, leave, medical help |
 | Pattern | Is this recurring or shrinking life? | arrange professional support |
+
+A single alarm during a strange event is an episode. An alarm that predictably
+returns, cancels plans, or narrows daily life is a pattern. Patterns often
+respond better to structured help than to another argument with willpower.
 
 ## C — Pain is an alarm, not a damage display
 
@@ -287,11 +291,11 @@ practice,” “put the keys in the bag.” “Fix life” is not yet an action.
 
 ### Five-minute reboot
 
-1. Put every task on paper.
+1. Put every task on paper. The paper can hold more than working memory can.
 2. Circle anything involving safety, shelter, medication, children, animals, or
    a deadline today.
 3. Pick one circle.
-4. Do only the first visible action.
+4. Do only the first visible action inside it.
 5. Reassess after five minutes.
 
 If basic care is repeatedly failing, involve professional, social, or practical

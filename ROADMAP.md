@@ -233,7 +233,7 @@ A candidate only graduates into the guide when the exact figure can be defended.
 - [ ] add further locales only with a local reviewer and authoritative service
   sources; translation without route ownership remains out of scope.
 
-### 4.3.1 — Navigation and release polish — candidate complete
+### 4.3.1 — Navigation and release polish — released
 
 Tracked in `docs/plans/4.3.1-polish-plan.md`.
 
@@ -246,20 +246,31 @@ Tracked in `docs/plans/4.3.1-polish-plan.md`.
 - [x] document the decisions in `docs/qa/4.3.1-sparse-page-review.md`;
 - [x] rerender and approve the six-edition 88/87/139 page-count and density
   matrix;
-- [ ] commit and tag only after the patch candidate is explicitly approved.
+- [x] commit and tag `v4.3.1` after patch approval.
 
-### 4.4.0 — Household continuity and data foundations
+### 4.4.1 — Household continuity and common-source synthesis — released
 
-- heat/cold/flood/smoke modules;
-- medication refrigeration and powered-device planning;
-- evacuation versus shelter worksheets;
-- optional household profile pages generated outside the shared default guide;
-- introduce the visualization catalog and accessible chart design tokens;
-- begin the first 24-figure visualization expansion, prioritizing O, B, C, H,
-  and Z;
-- inventory and assign stable IDs to current sources;
-- prototype the canonical source registry and claim/figure back-references;
-- pilot subguide-local Sources and limits on B and H.
+Tracked in `docs/plans/4.4.1-common-synthesis.md`.
+
+- [x] compare the canonical and alternate source trees section by section;
+- [x] preserve the canonical safety, evidence, accessibility, and print system;
+- [x] reject unsupported alternate medical, survival, legal, and developmental
+  claims;
+- [x] add an eight-system household-continuity registry;
+- [x] add five explicit first-meeting roles and an assignment invariant;
+- [x] generate household-continuity and first-meeting-role visualizations;
+- [x] add continuity validation and build integration;
+- [x] integrate selected non-stigmatizing and human-factors prose;
+- [x] render and review all six editions at 93 A4, 93 A4/2, and 144 large-print pages;
+- [x] confirm the sparsest new page is functional writable/handoff space;
+- [x] commit and tag `v4.4.1` after explicit approval.
+
+Deferred to later releases:
+
+- full heat/cold/flood/smoke standalone modules;
+- optional household profile pages outside the shared default guide;
+- the first 24-figure visualization expansion;
+- canonical source-registry migration and B/H local-source pilot.
 
 ### 4.5.0 — Graph-oriented subguide editions — specified
 

@@ -1,6 +1,36 @@
 # Changelog
 
-## 4.3.1 — in development
+## 4.4.1 — 2026-07-22
+
+### Synthesized canonical and alternate source trees
+
+- Kept the 4.3.1 Small-Room Observatory, safety routing, evidence limits,
+  accessibility, source freshness, and six-edition print architecture.
+- Reviewed the untracked `src-alt/` tree section by section and accepted only
+  compatible continuity, ownership, handoff, and human-factors material.
+- Documented accepted, rejected, and deferred alternate material in
+  `docs/plans/4.4.1-common-synthesis.md`.
+
+### Added structured household continuity
+
+- Added `src/data/continuity_catalog.json` with eight household systems and five
+  first-meeting coordination roles.
+- Added generated household-continuity and first-meeting-role figures.
+- Added continuity validation for system ownership, dependencies, source IDs,
+  text equivalents, figures, and denied alternate-source claims.
+- Expanded the outage guide with a continuity board, capability inventory,
+  named roles, task ownership, review times, backups, and dissent routes.
+
+### Integrated compatible voice and access improvements
+
+- Added pattern-versus-episode framing to anxiety and a working-memory-oriented
+  overload reboot.
+- Added non-stigmatizing language for loss of shelter and inaccessible
+  destinations, plus a calm-time local preparation note.
+- Clarified that an emergency hazard call needs useful fields, not polished
+  prose.
+
+## 4.3.1 — 2026-07-22
 
 ### Navigation and release hygiene
 
@@ -217,7 +247,7 @@
   definition.
 - Added `ROADMAP.md` covering main-flowgraph hazard gates, vulnerability
   modifiers, chapter extensions, locale/accessibility work, evidence candidates,
-  and release sequencing through 4.4.0.
+  and release sequencing through 4.4.1.
 - Updated source policy, annotated bibliography, appendix diagram index, and
   release validation expectations.
 

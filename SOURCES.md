@@ -20,7 +20,7 @@ For each release:
 
 ## Operational route sources
 
-Version 4.3.1 separates operational routing from explanatory evidence:
+Version 4.4.1 separates operational routing from explanatory evidence:
 
 - `src/data/route_catalog.json` stores pass-1 overrides, pass-2 needs,
   dependency modifiers, destinations, and reviewed source IDs;
@@ -51,6 +51,16 @@ National services and local services must not be blurred:
   not labelled an emergency or guaranteed-accommodation line;
 - a directory entry is not treated as a confirmed place.
 
+
+### Household continuity sources
+
+`src/data/continuity_catalog.json` is a structured view of existing operational
+sources, not a new evidence hierarchy. It links household functions to current
+warning, fire, outage, emergency, gas, accessibility, and preparedness records
+already owned by the route registry. `bin/validate_continuity.py` rejects unknown
+source IDs, missing owners/backups, broken dependencies, absent text equivalents,
+and denied alternate-source claims.
+
 ### Accessibility sources
 
 `src/data/accessibility_profiles.json` stores barriers, adaptations, handoffs,
@@ -61,7 +71,7 @@ capacity or preferred assistance. Ask the person whenever possible.
 
 ## Planned subguide-local source rendering
 
-The current monolithic source chapter remains canonical through 4.3.1. The
+The current monolithic source chapter remains canonical through 4.4.1. The
 migration plan in `docs/plans/subguide-source-localization.md` will move toward:
 
 - citation markers beside claims;

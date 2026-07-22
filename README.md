@@ -54,7 +54,7 @@ network dependency.
 
     src/chapters/          13 canonical chapters, including Situations G and H
     src/diagrams/          routing, hazard, continuity, and evidence figures
-    src/data/              evidence, route, locale, and accessibility registries
+    src/data/              evidence, route, locale, accessibility, and continuity registries
     src/data/locales/      reviewed locale-specific service foundations
     src/template.html      semantic screen shell and small UI controls
     src/style.css          screen + single-column print system
@@ -63,11 +63,13 @@ network dependency.
     src/style-mono.css     monochrome overrides only
     bin/build_guide.py     deterministic document builder
     bin/validate_routes.py routing, destination, locale, and source invariants
+    bin/validate_continuity.py household systems, roles, dependencies, and figures
     bin/validate_guide.py  safety, evidence, and rendering invariants
     bin/verify_layout.py   rendered A4/2 geometry and collision checks
     bin/verify_density.py  standard-A4 blank, edge, density, and parity checks
     bin/verify_accessibility.py structured access and large-print checks
     bin/verify_overflow.mjs boxed/table overflow checks in all HTML editions
+    docs/plans/4.4.1-common-synthesis.md canonical/alternate synthesis record
     docs/plans/4.5.0-graph-subguide-architecture.md planned graph/subguide system
     docs/plans/visualization-program.md 48–60-figure visual evidence program
     docs/plans/subguide-source-localization.md local Sources and limits migration
@@ -97,13 +99,15 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 13 source chapters at revision 4.3.1;
+- 13 source chapters at revision 4.4.1;
 - subject-breadth regression markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
 - no known unsafe legacy wording or deprecated scientific chart;
-- a valid 4.3.1 evidence registry with source and limit for every plotted fact;
+- valid 4.4.1 evidence and continuity registries with source and limit fields;
 - a structured route catalog with seven pass-1 overrides, six pass-2 needs,
   four safe-place routes, and nine dependency/access modifiers;
+- eight household-continuity systems, five first-meeting roles, and two
+  data-driven continuity figures;
 - reviewed de-DE services, all seven poison-information centres, dated source
   windows, access channels, and local-value requirements;
 - every referenced image, evidence figure, and route figure exists;
@@ -131,8 +135,10 @@ Operational routes live in `src/data/route_catalog.json`. Every route carries an
 action, backup, escalation condition, destination, and reviewed source IDs.
 Locale-dependent services live in `src/data/locales/de-DE.json`; unknown local
 values remain explicit fields rather than plausible-looking inventions.
-Communication adaptations live in `src/data/accessibility_profiles.json`, and
-operational sources carry review windows checked against `GUIDE_AS_OF`.
+Communication adaptations live in `src/data/accessibility_profiles.json`.
+Household functions, ownership, backups, dependencies, and failure routes live
+in `src/data/continuity_catalog.json`. Operational sources carry review windows
+checked against `GUIDE_AS_OF`.
 Core emergency routes and source material were reviewed on 22 July 2026.
 
 The planned graph-oriented subguide packaging is specified in

@@ -1,7 +1,7 @@
 ---
 title: "The Small-Room Observatory"
 chapter: 1
-revision: "4.3.1"
+revision: "4.4.1"
 last_updated: "2026-07-22"
 dependencies: []
 ---

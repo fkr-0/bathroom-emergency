@@ -1,7 +1,7 @@
 ---
 title: "Situation H — Environmental Hazards"
 chapter: "3H"
-revision: "4.3.1"
+revision: "4.4.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/hazard_override_matrix.png
@@ -196,7 +196,9 @@ From a safe place, say:
 > mobility need, powered device, animal, or other dependency is **[state]**. We
 > are waiting at **[safe location]**.”
 
-Then answer questions. Do not return to improve the report.
+Then answer questions. Do not return to improve the report. The call does not
+need polished prose; location, hazard, people, symptoms, and access are enough
+to begin.
 
 ## After the immediate hazard
 

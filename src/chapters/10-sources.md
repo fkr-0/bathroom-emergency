@@ -1,7 +1,7 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.3.1"
+revision: "4.4.1"
 last_updated: "2026-07-22"
 dependencies: []
 ---
@@ -691,6 +691,27 @@ an actual atmosphere, electrical system, fire compartment, device runtime, or
 individual toxic dose. Scene-specific instructions from dispatchers, fire
 services, poison centres, network operators, warning authorities, clinicians,
 and device emergency plans take precedence.
+
+## Household continuity synthesis
+
+`src/data/continuity_catalog.json` reorganizes existing operational material
+around eight household functions: information, air/hazard, care/power, water,
+temperature/shelter, food, sanitation, and access/transport. It does not add new
+exposure thresholds, treatment rules, or survival estimates.
+
+The continuity view draws primarily on sources 87, 89, 93, and 94 above, plus
+the accessibility foundation below. Its contribution is human-factors
+structure: status, remaining safe window or stock, named owner, backup, next
+action, review time, and failure escalation. The generated figures are views of
+that registry and have complete text equivalents in Ch.6.
+
+### Continuity limit
+
+A generic household board cannot know the actual device runtime, food safety,
+water quality, building condition, transport availability, municipal response,
+or a person’s access requirements. Official warnings, dispatchers, clinicians,
+network operators, product instructions, and personal emergency plans continue
+to outrank it.
 
 ## Safe-place, access, and freshness foundations
 

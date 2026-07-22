@@ -27,6 +27,7 @@ EVIDENCE_PATH = ROOT / "src" / "data" / "evidence_facts.json"
 ROADMAP = ROOT / "ROADMAP.md"
 ACCESSIBILITY_PLAN = ROOT / "docs" / "plans" / "4.3.0-accessibility-plan.md"
 PATCH_PLAN = ROOT / "docs" / "plans" / "4.3.1-polish-plan.md"
+COMMON_SYNTHESIS_PLAN = ROOT / "docs" / "plans" / "4.4.1-common-synthesis.md"
 SPARSE_REVIEW = ROOT / "docs" / "qa" / "4.3.1-sparse-page-review.md"
 SUBGUIDE_PLAN = ROOT / "docs" / "plans" / "4.5.0-graph-subguide-architecture.md"
 VISUALIZATION_PLAN = ROOT / "docs" / "plans" / "visualization-program.md"
@@ -181,6 +182,14 @@ for name in sorted(required_route_figures):
     check((ROOT / "build" / "diagrams" / name).exists(), f"required route figure missing: {name}")
     check(name in source, f"required route figure is not referenced in chapters: {name}")
 
+required_continuity_figures = {
+    "household_continuity_board.png",
+    "first_meeting_roles.png",
+}
+for name in sorted(required_continuity_figures):
+    check((ROOT / "build" / "diagrams" / name).exists(), f"required continuity figure missing: {name}")
+    check(name in source, f"required continuity figure is not referenced in chapters: {name}")
+
 deprecated_figures = {
     "stress_decay_curve.png",
     "anxiety_severity_spectrum.png",
@@ -204,7 +213,7 @@ if ROADMAP.exists():
         "4.2.0 — Routing and hazard architecture",
         "4.3.0 — Locale, accessibility, and safe-place routing",
         "4.3.1 — Navigation and release polish",
-        "4.4.0 — Household continuity and data foundations",
+        "4.4.1 — Household continuity and common-source synthesis",
         "Cross-release visualization program",
         "Subguide-local source migration",
     ):
@@ -234,6 +243,18 @@ if PATCH_PLAN.exists():
         "Acceptance criteria",
     ):
         check(marker.lower() in patch_plan.lower(), f"4.3.1 plan marker missing: {marker}")
+
+check(COMMON_SYNTHESIS_PLAN.exists(), "4.4.1 common synthesis plan is missing")
+if COMMON_SYNTHESIS_PLAN.exists():
+    common_plan = re.sub(r"\s+", " ", COMMON_SYNTHESIS_PLAN.read_text(encoding="utf-8")).lower()
+    for marker in (
+        "Canonical material retained",
+        "Alternate material accepted",
+        "Alternate material rejected or deferred",
+        "Structured continuity layer",
+        "Acceptance criteria",
+    ):
+        check(marker.lower() in common_plan, f"4.4.1 synthesis marker missing: {marker}")
 
 for path, label, markers in (
     (
@@ -270,6 +291,7 @@ required_cli_scripts = (
     "bin/chrome_pdf.mjs",
     "bin/validate_guide.py",
     "bin/validate_routes.py",
+    "bin/validate_continuity.py",
     "bin/verify_accessibility.py",
     "bin/verify_density.py",
     "bin/verify_layout.py",
@@ -468,7 +490,7 @@ print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    f"{len(required_route_figures)} route/access figures, subject-breadth markers, "
+    f"{len(required_route_figures)} route/access figures, {len(required_continuity_figures)} continuity figures, subject-breadth markers, "
     "structured routing/locales/accessibility, roadmap coverage, native MathML, "
     "A4, A4/2, and large-print outputs."
 )

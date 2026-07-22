@@ -1,13 +1,15 @@
 ---
 title: "Outage, Disaster, and Zombie Guide"
 chapter: 6
-revision: "4.3.1"
+revision: "4.4.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/dependency_continuity_map.png
   - build/diagrams/survival_pyramid.png
   - build/diagrams/scaling_chart.png
   - build/diagrams/household_water_planner.png
+  - build/diagrams/household_continuity_board.png
+  - build/diagrams/first_meeting_roles.png
 ---
 
 # Zombie Guide — Mostly for Non-Zombie Disasters
@@ -22,6 +24,9 @@ trustworthy information—into a queue. Survival is less about wilderness theatr
 than maintaining those dependencies in the right order.
 
 ## Verify before optimizing
+
+Before rationing toothpaste or founding a perimeter committee, verify that the
+crisis exists and identify what kind of failure is actually occurring.
 
 1. Check official warnings: **NINA**, Cell Broadcast, local radio, municipality,
    police, fire service, or BBK.
@@ -62,6 +67,29 @@ The exact order depends on the hazard, but a useful default is:
 
 Food is important. It is rarely the first ten-minute problem unless someone has
 a condition requiring immediate intake.
+
+### Household continuity board
+
+![Household continuity systems and ownership fields](build/diagrams/household_continuity_board.png)
+
+A disrupted household is easier to reason about as eight functions rather than a
+pile of objects:
+
+| Function | Status question | Record now |
+|---|---|---|
+| information | what is confirmed and when is the next update? | source, owner, next check |
+| air and hazard | is the place safe to occupy? | safe area, re-entry authority |
+| care and power | what treatment, device, medicine, or caregiver cannot pause? | runtime, approved backup, destination |
+| water | what is safe and how much remains? | stock, rate of use, refill route |
+| temperature and shelter | can everyone stay dry, ventilated, warm or cool enough? | vulnerable people, room status, move trigger |
+| food and cooking | what can be prepared safely with current water and power? | refrigeration, allergies, next meal |
+| sanitation | how are hands, toilets, waste, and clean zones separated? | toilet status, waste route, supplies |
+| access and transport | who cannot receive a warning, leave, enter, or travel without help? | person, helper, route, keys, communication |
+
+For every active function, write **status, remaining safe window or stock, named
+owner, backup, next action, review time, and failure escalation**. “Someone is
+handling water” is not continuity. “Mara checks the sealed-water count at 18:00;
+Deniz is backup; below twelve litres we call the distribution point” is.
 
 ### Water — priority zero after air and immediate safety
 
@@ -310,6 +338,24 @@ A simple stock table:
 | batteries | | | | |
 | hygiene | | | | |
 
+### Capability inventory
+
+Supplies are only one kind of capacity. Record useful human and infrastructural
+capabilities too:
+
+| Capability | Person / place | Available until | Backup |
+|---|---|---|---|
+| first aid or clinical knowledge | | | |
+| medication, device, or care knowledge | | | |
+| translation or communication access | | | |
+| repair, electrical, plumbing, or building knowledge | | | |
+| transport, lifting, or accessible transfer | | | |
+| cooking, sanitation, childcare, or animal care | | | |
+| radio, printing, mapping, or record keeping | | | |
+
+Do not turn a skilled person into an inexhaustible public utility. Name relief,
+backup, and a handoff route for them as well.
+
 ### Securing friends and people in need
 
 Check people who may have difficulty receiving warnings, evacuating, obtaining
@@ -413,14 +459,30 @@ Keep it short:
 
 1. What happened and what is confirmed?
 2. Is anyone missing, injured, unsafe, or without essential care?
-3. What resources exist?
+3. Which continuity systems are okay, limited, failed, or unknown?
 4. What must happen in the next 2 hours?
-5. Who owns each task?
+5. Who owns each task, and who is backup?
 6. When is the next briefing?
-7. How can a person raise an urgent concern?
+7. How can a person raise an urgent concern or disagreement?
 
-Minutes should record decisions, owners, and review times—not every sentence
-spoken while the biscuits were still available.
+Minutes should record decisions, owners, backups, and review times—not every
+sentence spoken while the biscuits were still available.
+
+### Five functions for the first meeting
+
+![Five operational functions for a short crisis meeting](build/diagrams/first_meeting_roles.png)
+
+| Function | Owns |
+|---|---|
+| coordination | task board, owners, deadlines, next briefing |
+| care | injury, medication, devices, children, dependants, animals |
+| supplies | water, food, batteries, hygiene, stock and use rate |
+| information | official sources, confirmed facts, uncertainty, update time |
+| access and logistics | exits, transport, entry, mobility, communication, destination |
+
+One person may hold two functions in a small household. No function may exist
+only in somebody’s memory. Every role needs a visible log or handoff that another
+person can understand.
 
 ### Ostrom’s eight commons principles, adapted
 
@@ -474,6 +536,22 @@ Countermeasures:
 - include affected minorities and vulnerable groups;
 - schedule rest;
 - preserve ordinary rituals such as meals and check-ins.
+
+### The assignment invariant
+
+A task is not assigned until it has:
+
+1. a named owner;
+2. a visible next physical action;
+3. a deadline or review time;
+4. a named backup or failure route.
+
+“Someone check the batteries” is a wish. “Sam counts charged batteries by 19:00;
+Lee records the result; no lighting reserve means we move the charging schedule
+forward” is an assignment.
+
+Confidence is not a credential. Build a route for dissent: a second check,
+written uncertainty, or a person who can stop a plan when they see a hazard.
 
 Crowds are not automatically irrational. People often cooperate strongly in
 real disasters. Governance should support that capacity rather than begin by

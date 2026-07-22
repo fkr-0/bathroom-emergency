@@ -1,7 +1,7 @@
 ---
 title: "Situation G — No Safe Place"
 chapter: "3G"
-revision: "4.3.1"
+revision: "4.4.1"
 last_updated: "2026-07-22"
 dependencies:
   - build/diagrams/safe_place_route_map.png
@@ -74,7 +74,7 @@ immunity.
 
 This route is for homelessness, eviction, being locked out without a safe
 alternative, or another loss of lawful shelter **without an active violence or
-medical override**.
+medical override**. These words describe tonight’s failure, not the person.
 
 ### Action
 
@@ -108,7 +108,9 @@ making the place unsafe.
 
 A nominal bed is not a safe destination when the person cannot enter, transfer,
 communicate, refrigerate medication, power essential equipment, remain with a
-necessary caregiver, or protect a child.
+necessary caregiver, or protect a child. A destination that was designed
+without the person’s body, equipment, communication, or care needs is a system
+mismatch—not proof that the person is “too difficult.”
 
 ### Action
 
@@ -248,6 +250,11 @@ backup, and escalation condition. “Try somewhere else” is not yet a route.
 | pet-compatible emergency accommodation | |
 | trusted person and meeting point | |
 | communication method / emergency card location | |
+
+Filling this in during a calm afternoon is a small kindness to the version of
+you who may need it at 02:17. National prose cannot know which municipal office
+answers then, whether a lift works, or whether an accessible room is actually
+available, so review the fields locally.
 
 
 [^women-help]: Hilfetelefon “Gewalt gegen Frauen,” 116 016, current service overview: https://www.hilfetelefon.de/das-hilfetelefon/angebot-im-ueberblick/
