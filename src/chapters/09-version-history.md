@@ -1,14 +1,55 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.5.0"
-last_updated: "2026-07-23"
+revision: "4.6.0"
+last_updated: "2026-07-26"
 dependencies: []
 ---
 
 # Version History
 
-## 4.5.0 — 23 July 2026 release candidate
+## 4.6.0 — 26 July 2026
+
+### The Blue Book externalizes useful facts
+
+- Added T — Templates as a standalone family with detachable location, call,
+  contact, comfort, observation, safe-place, continuity, feedback, remarks, and
+  activity sheets.
+- Split author, deployer, reader, and helper responsibilities so the person
+  using the guide is not silently assigned maintenance of the installation.
+- Added privacy-aware deployment fields and a full installation/maintenance
+  manual.
+
+### Reference becomes an addressable system
+
+- Added stable typed IDs for sections, forms, figures, contacts, deployment
+  fields, and glossary terms.
+- Added a generated global index, diagram index, contact collection,
+  deployment-field index, glossary, and form index to R — Reference.
+- Released R as a standalone A4, A4/2, and large-print color/mono family.
+- Expanded the graph to ten identities while keeping page and hierarchical
+  numbers as non-canonical navigation aids.
+
+### First aid explains the mechanism without inventing one
+
+- Separated the 112 call from later actions in the first-minute flowgraph.
+- Added chest-location, AED-action, and recovery-position diagrams and wrote out
+  CPR and AED.
+- Replaced the “reboot” metaphor with the accurate rhythm-analysis/shock model,
+  explained rescuer switching and 30:2, and added short reasons beside wound,
+  shock, burn, fracture, and spine actions.
+- Made effective coughing the first choking principle and declined to publish
+  unreviewed self-manoeuvres.
+
+### Project and release packaging become complete
+
+- Added a project landing page, deployment instructions, stable revision
+  footers, reproducible build metadata, and a hashed release manifest.
+- Added CI for every master and B/H/T/R layout/mode/format combination.
+- Added validators for the stable reference registry, landing package, complete
+  build matrix, and false publication/deployment claims.
+
+## 4.5.0 — 26 July 2026
 
 ### Graph-linked subguides become real objects
 

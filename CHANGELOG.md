@@ -1,5 +1,113 @@
 # Changelog
 
+## 4.6.0 — 2026-07-26
+
+### Added the Blue Book template subguide
+
+- Added **T — Templates: The Blue Book** as a canonical chapter and released
+  standalone A4, A4/2, and large-print color/monochrome family.
+- Added detachable deployment, location, emergency-call, local-contact,
+  comfort, five-minute-values, observation, safe-place, care-continuity,
+  household, feedback, remarks, and quiet-activity sheets.
+- Clarified responsibilities: authors maintain generic truth; deployers verify
+  and maintain local facts; readers choose useful resources; helpers support
+  without silently taking over agency.
+- Resolved comfort-inventory ownership by separating deployer preparation from
+  reader choice.
+- Added explicit privacy classes so customization does not publish medical,
+  credential, hidden-key, shelter, or violence-safety information by accident.
+- Added the field-feedback route `bathroom_emergency@fkr.dev` and a restrained
+  Badger box explaining that forms are handles rather than obedience tests.
+
+### Added stable global references and a complete Reference edition
+
+- Expanded the graph from nine to ten identities by adding T with a redundant
+  code, blue blueprint-corners pattern, glyph, color, title, and reciprocal
+  handoffs.
+- Added stable typed public addresses such as `[BEG:T:F:003]` and matching HTML
+  anchors; hierarchical/page numbers remain non-canonical navigation aids.
+- Added append-only ID allocation with retired-key preservation so insertions
+  do not silently rename later resources and removed IDs cannot be recycled for
+  a different meaning.
+- Added machine-readable indexes for sections, forms, diagrams, contacts,
+  deployment fields, and glossary terms.
+- Released **R — Reference and Appendix** as a standalone family containing the
+  generated global index, diagram/figure index, professional contact index,
+  deployment customization index, glossary, source notes, and version history.
+- Added validators for ID format, uniqueness, stability, active/retired
+  separation, generated-fragment freshness, and six-kind coverage.
+
+### Added deployment and project-facing documentation
+
+- Added `DEPLOYMENT.md` with role boundaries, minimum installation gate,
+  customizable-field index, safe-destination tests, privacy guidance, mounting
+  concepts, additional physical supplies, source-build instructions,
+  maintenance cadence, feedback, and upstream participation.
+- Added machine-readable `forms.json`, `deployment_fields.json`, and
+  `glossary.json` registries.
+- Added a generated landing package with purpose, design ideas, feedback and
+  participation, deployment summary, build instructions, sources,
+  disclaimers, domain roles, and links to the complete HTML guide and graph hub.
+- Packaged README, deployment instructions, and changelog beside the landing
+  page so the artifact remains useful outside a repository checkout.
+- Documented `bathroom-emergency.fkr.dev` as the intended project landing
+  domain and `be.fkr.dev` as the intended enhanced guide/download domain without
+  falsely claiming either was deployed.
+
+### Hardened first-aid explanations and orientation
+
+- Reworked the first-aid first-minute diagram so **Call 112** is a distinct
+  action box rather than one instruction bundled with later tasks.
+- Added mini-whys for scene safety, response, speakerphone, breathing, direct
+  pressure, wound cleaning, shock support, cooling, fracture support, and
+  spine/neck/pelvic immobility.
+- Wrote out **cardiopulmonary resuscitation (CPR)** and **automated external
+  defibrillator (AED)** and removed the inaccurate “reboot” metaphor.
+- Added adult chest-location, AED-action, and recovery-position orientation
+  diagrams with complete nearby text routes and monochrome encodings.
+- Explained why rescuers switch, what 30 compressions and two breaths support,
+  why an AED shocks only selected rhythms, and why the recovery position keeps
+  the airway open and allows drainage.
+- Clarified that effective coughing is useful airway clearance and deliberately
+  declined to ship unreviewed self-thrust/furniture choking manoeuvres.
+- Linked vital-sign observation to the detachable Blue Book log while retaining
+  the rule that reassuring devices do not clear emergency red flags.
+- Added an operational comparison of 112 and 116 117, including their distinct
+  purposes and infrastructures.
+
+### Improved navigation, voice, and page identity
+
+- Added a ten-guide picker explaining which node to choose and preserving the
+  invariant: one guide, one action, one reassessment.
+- Added mini contents to released standalone editions and stable heading
+  anchors to the master and standalone HTML.
+- Strengthened selected high-value sentences without turning every paragraph
+  into typographic shouting.
+- Added heading accents, subguide-specific patterns in the complete guide, and
+  revision furniture carrying project/subguide version, layout, mode, commit,
+  build date, and `be.fkr.dev`.
+- Rasterized the visible print revision strip while retaining equivalent HTML
+  metadata and manifest provenance, preventing repeated footer text from being
+  injected between wrapped headings in tagged-PDF reading order.
+- Preserved one-column print, color/monochrome information parity, and text
+  fallbacks for every new figure.
+
+### Completed build, CI, and release provenance
+
+- Added shared package-derived release metadata and deterministic
+  `SOURCE_DATE_EPOCH` / `GUIDE_REVISION` handling.
+- Added a release manifest with toolchain information, artifact sizes and
+  SHA-256 hashes, and explicit false publish/deploy flags.
+- Expanded the build to six master HTML/PDF editions, Markdown, DOCX, LaTeX,
+  graph hub, 24 B/H/T/R standalone editions, landing package, generated
+  indexes, and release manifest.
+- Added build-matrix and landing/deployment validators.
+- Added GitHub Actions CI that installs the locked document/browser toolchain,
+  builds and independently validates the complete matrix, verifies generated
+  registries, and uploads release artifacts without deploying them.
+- Added a detailed 4.6 release architecture record and updated README, roadmap,
+  in-guide history, and changelog contracts.
+
 ## 4.5.0 — 2026-07-26
 
 ### Shipped the first graph-oriented subguide family

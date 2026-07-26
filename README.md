@@ -1,184 +1,324 @@
 # Bathroom Emergency Guide
 
-> “Most bathroom crises are not catastrophes. They are short intervals in which the body becomes unusually noticeable and the world unusually small.”
+> Most bathroom crises are short intervals in which the body becomes unusually
+> noticeable and the world unusually small.
 
-A sourced, rebuildable field guide for panic, pain, responsibility, strange body
-signals, danger, overload, environmental hazards, missing places, and
-infrastructure failure. The opening is a curiosity-first small-room observatory,
-not a routing manual: interoception, gut–brain effects, bathroom acoustics, time
-perception, working memory, affect labeling, cold-water physiology, fainting,
-and smell are introduced before the first topic branch.
+A sourced, rebuildable, print-first field guide for panic, pain, responsibility,
+strange body signals, immediate danger, overload, environmental hazards, loss of
+safe place, and infrastructure failure.
 
-## Quick build
+The project is not one long emergency leaflet. It is a maintained family of:
 
-    ./bin/build_all.sh
+- one complete master guide;
+- ten graph-linked content identities;
+- four released standalone subguide families;
+- detachable forms and deployment fields;
+- a stable global reference registry;
+- a project landing page and enhanced HTML guide;
+- A4, A4/2, large-print, color, monochrome, Markdown, DOCX, and LaTeX outputs;
+- source, route, figure, accessibility, layout, density, and release validators.
 
-Individual targets:
+## Roles
+
+| Role | Responsibility |
+|---|---|
+| **Authors** | maintain generic content, evidence, references, rendering, and release history |
+| **Deployer** | adapt one copy to one place, verify local routes, install supplies, protect private data, and maintain the installation |
+| **Reader** | use the guide in the moment; the reader is not silently made responsible for maintaining the project |
+| **Helper** | support calls, writing, observation, transport, or handoff without replacing the affected person’s agency where they can decide |
+
+## Safety scope
+
+The guide supports observation, routing, first actions, preparation, and
+handoff. It does not diagnose, replace first-aid training, guarantee service
+availability, or overrule emergency dispatchers and qualified professionals.
+
+In Germany, use **112** for acute or potentially life-threatening emergencies,
+fire, smoke, severe breathing difficulty, unresponsiveness, major bleeding, or
+another rapidly escalating danger. Use **116 117** for an urgent medical problem
+that cannot wait for ordinary practice hours but is not life-threatening.
+
+## Quick start
+
+### Local build
+
+    npm ci
+    npx playwright install chromium
+    npm run build
+    npm test
+
+`npm run build` regenerates diagrams, inventories, stable references, every
+master edition, every released standalone edition, the landing page, the release
+manifest, and all release gates.
+
+### Reproducible metadata
+
+    export SOURCE_DATE_EPOCH="$(git show -s --format=%ct HEAD)"
+    export GUIDE_REVISION="$(git rev-parse --short=12 HEAD)"
+    npm run build
+
+`SOURCE_DATE_EPOCH` controls the recorded build date. `GUIDE_REVISION` controls
+the revision displayed in metadata and footers. Build outputs remain ignored by
+Git and are reproducible from tracked sources.
+
+### Selected targets
 
     ./bin/build_guide.sh html
     ./bin/build_guide.sh pdf
     ./bin/build_guide.sh mono
-    ./bin/build_guide.sh chrome
-    ./bin/build_guide.sh weasyprint
     ./bin/build_guide.sh docx
     ./bin/build_guide.sh latex
     ./bin/build_guide.sh a4half
     ./bin/build_guide.sh largeprint
-    python3 bin/validate_routes.py
-    python3 bin/validate_guide.py
-    python3 bin/verify_layout.py
-    python3 bin/verify_density.py
-    python3 bin/verify_accessibility.py
-    node bin/verify_overflow.mjs
-
-Or with npm:
-
-    npm run build
-    npm test
+    python3 bin/build_subguides.py --node all
+    python3 bin/build_site.py
+    python3 bin/build_release_manifest.py
 
 ## Requirements
 
 | Tool | Purpose |
 |---|---|
-| Python 3.10+ | build orchestration and validation |
-| Pandoc 3+ | Markdown to semantic HTML, LaTeX, and DOCX |
-| matplotlib + Pillow | diagrams and pixel sprites |
-| Node.js + Playwright | preferred tagged Chrome PDF |
+| Python 3.10+ | deterministic orchestration, data derivation, diagrams, and validation |
+| Pandoc 3+ | semantic HTML, Markdown assembly, DOCX, and LaTeX |
+| matplotlib + Pillow | generated operational and educational figures |
+| Node.js 24+ + npm | locked frontend/rendering dependencies and build scripts |
+| Playwright Chromium | preferred tagged PDF renderer and browser layout checks |
 | WeasyPrint | fallback PDF backend |
-| Poppler tools | PDF validation and preview rendering |
+| Poppler tools | PDF metadata, text, geometry, and page-render validation |
 
-The HTML route uses native MathML and system fonts. It has no CDN or runtime
+The HTML guide uses native MathML and system fonts. It has no CDN or runtime
 network dependency.
+
+## Information architecture
+
+### Ten graph identities
+
+| Code | Title | Current packaging |
+|---|---|---|
+| O | Orientation | master guide |
+| A | Reproductive Health and Responsibility | master guide |
+| B | Alarm and Calm | master + standalone |
+| C | Body and First Aid | master guide |
+| D | Threat and Safe Place | master guide |
+| H | Air, Smell, and Environment | master + standalone |
+| Z | Disruption and Continuity | master guide |
+| P | Professional Support | master guide |
+| T | Templates — The Blue Book | master + standalone |
+| R | Reference and Appendix | master + standalone |
+
+Detaching a node is not a copy operation. A standalone node must pass source,
+visual, color/mono, geometry, tagged-PDF, semantic-text, handoff, and
+accessibility gates. B, H, T, and R currently meet that release contract.
+
+### Stable public references
+
+Canonical references use:
+
+    [BEG:<owner>:<kind>:<sequence>]
+
+Examples:
+
+    [BEG:C:S:004]   section in Body and First Aid
+    [BEG:T:F:003]   detachable Blue Book form
+    [BEG:R:W:005]   glossary term
+
+Kinds:
+
+| Code | Resource |
+|---|---|
+| S | section |
+| F | form or detachable template |
+| G | figure, chart, map, or diagram |
+| C | professional contact or service |
+| D | deployment field |
+| W | glossary word or term |
+
+The corresponding HTML anchor is `#beg-c-s-004`. Page numbers and hierarchical
+chapter numbers remain useful navigation aids, but they are not canonical IDs:
+an insertion must not silently rename every later resource.
+
+Source files:
+
+- `src/data/reference_ids.json` — stable ID allocation and retired keys;
+- `src/data/content_index.json` — complete active resource index;
+- `bin/build_reference_index.py` — deterministic generator;
+- `bin/validate_reference_index.py` — immutability, uniqueness, coverage, and
+  fragment validation.
+
+### Blue Book forms
+
+`src/chapters/07a-templates.md` and `src/data/forms.json` define detachable,
+fillable resources, including:
+
+- deployment ownership and revision card;
+- factual location and access card;
+- emergency call card;
+- local professional contacts;
+- comfort inventory;
+- five-minute values bridge;
+- observation and vital-sign log;
+- nice-place and safe-place maps;
+- medication, power, and care continuity card;
+- household continuity board;
+- feedback, remarks, and quiet-activity sheets.
+
+`src/data/deployment_fields.json` is the machine-readable index of local facts a
+deployer should consider. Each field records whether it is required, its privacy
+class, and an example. Shared wall copies must not expose hidden-key locations,
+credentials, private medical details, or violence-related safe locations.
 
 ## Source layout
 
-    src/chapters/          13 canonical chapters, including Situations G and H
-    src/diagrams/          custom routing, hazard, continuity, and evidence figures
-    src/visualizations/     reviewed data, Vega-Lite specifications, and shared chart theme
-    src/data/              evidence, route, locale, accessibility, continuity, subguide, visualization, and illustration registries
-    src/data/locales/      reviewed locale-specific service foundations
-    src/template.html      semantic screen shell and small UI controls
-    src/style.css          screen + single-column print system
-    src/style-subguides.css graph identities, hub cards, and standalone page grammar
-    src/style-a4-half.css  105 × 297 mm field-strip print adaptations
-    src/style-large-print.css A4 large-print adaptations
-    src/style-mono.css     monochrome overrides only
-    bin/build_guide.py     deterministic document builder
-    bin/validate_routes.py routing, destination, locale, and source invariants
-    bin/validate_continuity.py household systems, roles, dependencies, and figures
-    bin/validate_subguides.py graph nodes, chapter coverage, identities, and gate policy
-    bin/validate_visualizations.py chart provenance, fallbacks, outputs, and mono encodings
-    bin/validate_illustrations.py figure-family coverage and redesign-priority audit
-    bin/build_visualizations.mjs offline Vega-Lite SVG/PNG renderer
-    bin/validate_guide.py  safety, evidence, and rendering invariants
-    bin/verify_layout.py   rendered A4/2 geometry and collision checks
-    bin/verify_density.py  standard-A4 blank, edge, density, and parity checks
-    bin/verify_accessibility.py structured access and large-print checks
-    bin/verify_overflow.mjs boxed/table overflow checks in all HTML editions
-    docs/plans/4.4.1-common-synthesis.md canonical/alternate synthesis record
-    docs/plans/4.4.2-alt-spec-feasibility-and-vega.md implementation decisions
-    docs/plans/4.5.0-roadmap-milestones.md gated 4.5 delivery sequence
-    docs/plans/4.5.0-graph-subguide-architecture.md implemented B/H graph/subguide architecture
-    docs/plans/visualization-program.md 48–60-figure visual evidence program
-    docs/plans/visual-design-system.md chart, illustration, and page-composition rules
-    docs/plans/subguide-source-localization.md local Sources and limits migration
-    docs/qa/4.3.1-sparse-page-review.md reviewed intentional whitespace decisions
-    docs/qa/4.5.0-prototype-review.md graph, identity, hub, and B/H print review
-    ROADMAP.md             flowgraph, chapter, research, and release backlog
-    build/                 generated deliverables
+```text
+.
+├── src/
+│   ├── chapters/                 14 canonical source chapters
+│   ├── data/                     routes, sources, forms, references, locale,
+│   │                             accessibility, continuity, and figure catalogs
+│   ├── data/locales/             reviewed locale-specific service foundations
+│   ├── diagrams/                 generated route, first-aid, continuity,
+│   │                             accessibility, scientific, and graph figures
+│   ├── visualizations/           Vega-Lite specs, reviewed data, and shared theme
+│   ├── template.html             semantic shell and revision furniture
+│   ├── style.css                 screen and single-column print system
+│   ├── style-subguides.css       graph identities and subguide grammar
+│   ├── style-a4-half.css         105 × 297 mm field-strip adaptations
+│   ├── style-large-print.css     materially larger A4 typography
+│   └── style-mono.css            monochrome overrides
+├── bin/
+│   ├── build_all.sh              complete build-and-validation pipeline
+│   ├── build_guide.py            master document builder
+│   ├── build_subguides.py        graph hub and standalone families
+│   ├── build_reference_index.py  stable reference/index generator
+│   ├── build_site.py             project landing package
+│   ├── build_release_manifest.py artifact hashes and build provenance
+│   └── validate_*.py             content and release gates
+├── .github/workflows/ci.yml      complete release-matrix CI
+├── DEPLOYMENT.md                 local installation and maintenance manual
+├── CHANGELOG.md                  detailed release history
+└── ROADMAP.md                    completed and future work
+```
 
 ## Output matrix
 
-| Output | Path | Notes |
+### Master guide
+
+| Output | Path |
+|---|---|
+| A4 color HTML/PDF | `build/html/guide.html`, `build/pdf/guide.pdf` |
+| A4 monochrome HTML/PDF | `build/html/guide_mono.html`, `build/pdf/guide_mono.pdf` |
+| A4/2 color HTML/PDF | `build/html/guide_a4half.html`, `build/pdf/guide_a4half.pdf` |
+| A4/2 monochrome HTML/PDF | `build/html/guide_a4half_mono.html`, `build/pdf/guide_a4half_mono.pdf` |
+| large-print color HTML/PDF | `build/html/guide_largeprint.html`, `build/pdf/guide_largeprint.pdf` |
+| large-print mono HTML/PDF | `build/html/guide_largeprint_mono.html`, `build/pdf/guide_largeprint_mono.pdf` |
+| assembled Markdown | `build/md/guide.md` |
+| editable DOCX | `build/docx/guide.docx` |
+| LaTeX intermediate | `build/latex/guide.tex` |
+
+### Standalone and project outputs
+
+| Output | Path | Contract |
 |---|---|---|
-| Color HTML | build/html/guide.html | responsive TOC, theme and print controls |
-| Mono HTML | build/html/guide_mono.html | same structure, grayscale design |
-| Color PDF | build/pdf/guide.pdf | A4, one column |
-| Mono PDF | build/pdf/guide_mono.pdf | A4, one column, ink-conscious |
-| A4/2 color PDF | build/pdf/guide_a4half.pdf | 105 × 297 mm vertical field strip |
-| A4/2 mono PDF | build/pdf/guide_a4half_mono.pdf | narrow grayscale field strip |
-| Large-print color PDF | build/pdf/guide_largeprint.pdf | A4, materially larger typography |
-| Large-print mono PDF | build/pdf/guide_largeprint_mono.pdf | A4 large print, grayscale |
-| Graph hub | build/subguides/index.html | nine-node identity directory; B/H links |
-| B standalone family | build/subguides/B/ | A4, A4/2, and large-print color/mono |
-| H standalone family | build/subguides/H/ | A4, A4/2, and large-print color/mono |
-| Markdown | build/md/guide.md | assembled, frontmatter-clean |
-| DOCX | build/docx/guide.docx | editable |
-| LaTeX | build/latex/guide.tex | intermediate |
+| graph hub | `build/subguides/index.html` | ten-node directory and handoffs |
+| B family | `build/subguides/B/` | six HTML/PDF/Markdown layout-mode editions |
+| H family | `build/subguides/H/` | six HTML/PDF/Markdown layout-mode editions |
+| T family | `build/subguides/T/` | six detachable-template editions |
+| R family | `build/subguides/R/` | six reference/index editions |
+| project landing page | `build/site/index.html` | purpose, participation, deployment, sources, disclaimers, guide links |
+| self-contained project docs | `build/site/{README,DEPLOYMENT,CHANGELOG}.md` | packaged with landing artifact |
+| release manifest | `build/release/manifest.json` | version, revision, toolchain, hashes, no false publish/deploy claim |
 
-## Print invariant
+## Print and release invariants
 
-The guide is single column in print even though the screen UI has a navigation
-rail and some two-up route cards. The Chrome exporter verifies computed
-column-count before producing a PDF. The validator also checks:
+The validators enforce, among other things:
 
-- 13 source chapters at revision 4.5.0;
-- subject-breadth regression markers and a minimum canonical-content size;
+- 14 canonical chapters at the package version and release date;
+- one-column print output despite the responsive screen navigation;
+- six master layout/mode editions and 24 standalone B/H/T/R editions;
+- valid A4, 105 × 297 mm A4/2, and large-print geometry;
+- tagged PDFs, semantic text parity, page-count parity, and no blank/colliding
+  pages;
 - native MathML and no remote MathJax;
+- one source-backed route registry with escalation, destination, backup, and
+  reviewed-source contracts;
+- ten reciprocal graph identities with unique code, pattern, glyph, color, and
+  title channels;
+- 298+ stable indexed resources across sections, forms, figures, contacts,
+  deployment fields, and glossary terms;
+- eight offline Vega-Lite figures and twenty current non-Vega illustrations,
+  each with reader question, fallback, source basis, and monochrome strategy;
 - no known unsafe legacy wording or deprecated scientific chart;
-- valid 4.5.0 evidence, route, continuity, subguide, illustration, and visualization registries with source and limit fields;
-- a structured route catalog with seven pass-1 overrides, six pass-2 needs,
-  four safe-place routes, and nine dependency/access modifiers;
-- eight household-continuity systems, five first-meeting roles, and two
-  data-driven continuity figures;
-- a frozen nine-node subguide graph with reciprocal edges, unique code/pattern/glyph/colour identities, a screen hub, and local position maps;
-- eight offline Vega-Lite charts with reviewed derived data, canonical SVG, PNG
-  fallbacks, one shared theme, catalog-driven captions/limits, SVG metadata,
-  text/table equivalents, source scope, and practical limits;
-- seventeen current non-Vega figures classified by reader question, visual family,
-  renderer, text fallback, monochrome strategy, and redesign priority;
-- reviewed de-DE services, all seven poison-information centres, dated source
-  windows, access channels, and local-value requirements;
-- every referenced image, evidence figure, and route figure exists;
-- roadmap coverage for locale, accessibility, and continuity follow-up releases;
-- readable standard A4, 105 × 297 mm, and large-print A4 PDFs, including 12 tagged standalone B/H editions with color/mono text and page-count parity;
-- renderer-based A4/2 checks for blank pages, physical-edge collisions, required
-  content markers, and representative-page contact sheets;
-- standard-A4 density checks for blank pages, physical-edge contact, extreme
-  packing, color/mono text parity, and sparse/dense review contact sheets;
-- computed overflow checks for cards, emergency boxes, tables, preformatted text,
-  quotations, and figures across all six HTML editions.
+- layout-density, physical-edge, overflow, accessibility, and color/mono checks;
+- a self-contained landing artifact and hashed release manifest;
+- no claim that a local build was published or deployed.
+
+Run the complete gate with:
+
+    npm run build
+    npm test
+    git diff --check
+
+## CI
+
+`.github/workflows/ci.yml` runs on pushes to `main`, version tags, pull requests,
+and manual dispatch. It:
+
+1. installs the document and browser toolchain;
+2. builds the complete release matrix;
+3. reruns validation independently;
+4. verifies that tracked generated registries are current;
+5. uploads the master, standalone, site, and release-manifest artifacts.
+
+CI builds artifacts; it does not deploy either intended domain.
+
+## Deployment
+
+Read `DEPLOYMENT.md` before placing a copy. A deployer should at minimum:
+
+1. select a readable layout and print mode;
+2. fill and verify required local fields;
+3. separate shared-safe from private/context-sensitive pages;
+4. add a pencil, writing surface, light, charger, maintained power bank, and
+   appropriate first-aid supplies;
+5. test one emergency/support route;
+6. record the guide version, build commit, local revision, last check, and next
+   review date.
+
+Intended domain roles:
+
+- `bathroom-emergency.fkr.dev` — project representation, participation,
+  deployment, sources, disclaimers, and release links;
+- `be.fkr.dev` — enhanced HTML guide and downloads.
+
+These are deployment contracts, not evidence that hosting has already occurred.
 
 ## Evidence policy
 
 Statements are labelled by function: protocol, population estimate,
 diagnostic-accuracy study, randomized study, observational association,
-descriptive equation, mathematical or conceptual model, and mnemonic.
+descriptive equation, mathematical/conceptual model, or mnemonic.
 
-Plotted values live in `src/data/evidence_facts.json`. Each record names its
-population or model scope, denominator, source, uncertainty where available,
-and practical limit. The source chapter records the supporting literature and
-what it does **not** establish.
+- plotted values: `src/data/evidence_facts.json`;
+- operational routes: `src/data/route_catalog.json`;
+- local service foundations: `src/data/locales/de-DE.json`;
+- communication/access adaptations: `src/data/accessibility_profiles.json`;
+- household continuity: `src/data/continuity_catalog.json`;
+- graph ownership: `src/data/subguides.json`;
+- visualization provenance: `src/data/visualization_catalog.json`;
+- illustration provenance: `src/data/illustration_catalog.json`;
+- canonical source view: `src/data/source_inventory.json`.
 
-Operational routes live in `src/data/route_catalog.json`. Every route carries an
-action, backup, escalation condition, destination, and reviewed source IDs.
-Locale-dependent services live in `src/data/locales/de-DE.json`; unknown local
-values remain explicit fields rather than plausible-looking inventions.
-Communication adaptations live in `src/data/accessibility_profiles.json`.
-Household functions, ownership, backups, dependencies, and failure routes live
-in `src/data/continuity_catalog.json`. Prototype graph ownership lives in
-`src/data/subguides.json`; visualization provenance and output contracts live in
-`src/data/visualization_catalog.json`. Operational sources carry review windows
-checked against `GUIDE_AS_OF`.
-Core emergency routes and source material were reviewed on 23 July 2026.
+Operational sources carry review windows checked against `GUIDE_AS_OF`. Unknown
+local values stay explicit fields rather than plausible-looking inventions.
 
-The graph-oriented subguide packaging specified in
-`docs/plans/4.5.0-graph-subguide-architecture.md` now has its first
-release-candidate vertical slices: distinct covers, page-0 graph position/version information,
-introductions, handoffs, local Sources and limits, a nine-node core, and
-redundant code + pattern + glyph + colour identities. B and H are detached;
-the remaining nodes stay in the master until they pass the same gates.
+## Feedback and participation
 
-`docs/plans/visualization-program.md` defines a reproducible, accessible
-48–60-figure visual evidence system. `docs/plans/visual-design-system.md`
-defines why Vega-Lite is used for quantitative charts, where it should not be
-used, and the shared graph, illustration, typography, and page-layout rules.
-`docs/plans/subguide-source-localization.md`
-defines filtered Sources and limits at the end of each subguide, generated from
-one canonical source registry while citations remain beside claims.
+Send factual corrections, failed routes, useful local adaptations, accessible
+alternatives, print defects, diagrams that helped or failed, and tested
+installation ideas to:
 
-## Safety scope
+    bathroom_emergency@fkr.dev
 
-This guide supports decisions. It does not diagnose, replace first-aid
-training, or overrule emergency dispatchers. In Germany, call **112** when life
-may be in danger or lasting harm cannot be excluded.
+Include the guide version, build revision, layout, and stable reference where
+possible. Do not send private medical records, credentials, hidden safe-place
+locations, or identifying information about another person without permission.

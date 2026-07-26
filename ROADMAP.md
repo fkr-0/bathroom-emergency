@@ -306,9 +306,9 @@ Tracked in `docs/plans/4.4.2-alt-spec-feasibility-and-vega.md`.
 - [x] complete the six-edition build, visual review, and page-growth audit;
 - [x] send the reviewed A4/2 candidate through the configured Dockerroutes
   Telegram delivery path;
-- [ ] commit and tag only after explicit release approval.
+- [x] commit and tag the validated release locally without pushing or deploying.
 
-### 4.5.0 — Graph-oriented subguide editions — release candidate
+### 4.5.0 — Graph-oriented subguide editions — released
 
 Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md` and
 `docs/plans/4.5.0-roadmap-milestones.md`.
@@ -340,6 +340,38 @@ Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md` and
 - [x] require orientation, mechanism/evidence, and handoff coverage in the B/H release gate;
 - [ ] detach the remaining seven nodes one at a time after equivalent visual,
   source, layout, and accessibility review.
+
+### 4.6.0 — Templates, stable references, and deployment — release candidate
+
+Tracked in `docs/plans/4.6.0-release-architecture.md`.
+
+- [x] add T — Templates / The Blue Book as the tenth graph identity;
+- [x] add detachable forms for local facts, observations, safe places,
+  continuity, feedback, remarks, and low-demand activities;
+- [x] define author, deployer, reader, and helper responsibilities;
+- [x] add a privacy-aware machine-readable deployment-field index;
+- [x] add stable typed public reference IDs and matching HTML anchors;
+- [x] retain retired IDs and reject collisions/reuse;
+- [x] generate the global content, form, deployment, contact, diagram, and
+  glossary indexes into R — Reference;
+- [x] release T and R in A4, A4/2, and large-print color/mono families;
+- [x] add project landing and deployment documentation artifacts;
+- [x] add revision metadata to HTML and print furniture;
+- [x] harden CPR/AED/recovery-position/choking explanations and orientation;
+- [x] add a complete CI/build/release-manifest matrix;
+- [ ] usability-test the new first-aid diagrams with trained instructors and
+  people who have not practised CPR;
+- [ ] replace the provisional recovery-position figures with reviewed human-body
+  illustrations after testing;
+- [ ] add a tested, illustrated bird-folding insert rather than shipping an
+  unverified text-only origami sequence;
+- [ ] add separate printable graffiti, crossword, sudoku, and logic inserts
+  only after licensing, difficulty, and accessibility review;
+- [ ] prototype real bathroom installations and document water, mounting,
+  reach, glare, page-turning, privacy, and replacement findings;
+- [ ] detach C and P next, because their action/contact structure now has the
+  strongest supporting indexes, but only after equivalent visual and source
+  review.
 
 ### Cross-release visualization program
 
