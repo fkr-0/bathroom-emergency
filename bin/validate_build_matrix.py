@@ -50,7 +50,7 @@ if manifest_path.exists():
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     released = manifest.get("standalone_nodes", [])
     by_id = {item["id"]: item for item in manifest.get("nodes", [])}
-    check(set(released) == {"B", "H", "T", "R"}, "released standalone set drifted")
+    check(set(released) == {"B", "C", "H", "P", "T", "R"}, "released standalone set drifted")
     for node_id in released:
         node = by_id[node_id]
         for layout in ("a4", "a4half", "largeprint"):
@@ -75,4 +75,4 @@ if release_path.exists():
 
 if errors:
     raise SystemExit("Build-matrix validation failed:\n- " + "\n- ".join(errors))
-print("Build-matrix validation passed: six master editions, editable formats, landing, release manifest, and 24 standalone B/H/T/R editions are present.")
+print("Build-matrix validation passed: six master editions, editable formats, landing, release manifest, and 36 standalone B/C/H/P/T/R editions are present.")

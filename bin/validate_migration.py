@@ -124,6 +124,16 @@ if figure_path.exists():
         len(h_reader) >= 4,
         f"H pilot needs four useful canonical visuals, found {len(h_reader)}",
     )
+    for node_id, minimum in (("C", 5), ("P", 4)):
+        reader = [
+            item
+            for item in records
+            if item.get("owner") == node_id and item.get("reader_facing", True)
+        ]
+        check(
+            len(reader) >= minimum,
+            f"{node_id} standalone needs {minimum} useful canonical visuals, found {len(reader)}",
+        )
     for item in records:
         check(
             item.get("owner") in {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"},
@@ -150,7 +160,9 @@ if source_path.exists():
     check(len(records) >= 50, f"source registry unexpectedly small: {len(records)}")
     check(len(ids) == len(set(ids)), "duplicate source IDs")
     check(any("B" in item.get("subguides", []) for item in records), "B has no sources")
+    check(any("C" in item.get("subguides", []) for item in records), "C has no sources")
     check(any("H" in item.get("subguides", []) for item in records), "H has no sources")
+    check(any("P" in item.get("subguides", []) for item in records), "P has no sources")
 
 layout_geometry = {
     "a4": ("594", "841"),
@@ -166,6 +178,37 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
         4,
         ("B — I feel anxious", "E — Overload", "Calm Guide", "Sources and limits"),
         ("C — Pain", "D — Threat", "F — Smell"),
+    ),
+    (
+        "P",
+        "professional-support",
+        5,
+        4,
+        (
+            "Professional Support — When the Bathroom Is Too Small",
+            "Germany quick reference",
+            "The call script — location before autobiography",
+            "IASC support pyramid — start with foundations",
+            "Support-selection matrix",
+            "Sources and limits",
+        ),
+        (),
+    ),
+    (
+        "C",
+        "body-first-aid",
+        7,
+        5,
+        (
+            "C — Pain",
+            "First Aid — You Are the First Link, Not the Whole Ambulance",
+            "112 — one action box",
+            "Unresponsive and not breathing normally",
+            "AED — what it actually does",
+            "Vital signs — observe, record, never self-clear",
+            "Sources and limits",
+        ),
+        ("B — I feel anxious", "D — Threat", "E — Overload", "F — Smell"),
     ),
     (
         "H",
@@ -331,16 +374,16 @@ if hub_manifest_path.exists():
     hub = json.loads(hub_manifest_path.read_text(encoding="utf-8"))
     check(hub.get("release") == VERSION, "hub release drifted")
     check(
-        set(hub.get("standalone_nodes", [])) == {"B", "H", "T", "R"},
+        set(hub.get("standalone_nodes", [])) == {"B", "C", "H", "P", "T", "R"},
         "hub standalone set drifted",
     )
-    check(len(hub.get("master_only_nodes", [])) == 6, "hub master-only set drifted")
+    check(len(hub.get("master_only_nodes", [])) == 4, "hub master-only set drifted")
 
 if errors:
     raise SystemExit("Migration validation failed:\n- " + "\n- ".join(errors))
 
 print(
     "Migration validation passed: canonical section/figure/source ownership, "
-    "released visual minimums, graph hub, and 24 tagged standalone PDF editions "
+    "released visual minimums, graph hub, and 36 tagged standalone PDF editions "
     "with A4/A4/2/large-print color-mono parity."
 )

@@ -33,13 +33,13 @@ if PATH.exists():
     ids = [item.get("id") for item in nodes]
     check(data.get("release") == VERSION, f"subguide release is not {VERSION}")
     check(
-        data.get("status") == "core-graph-with-bhtr-standalone",
+        data.get("status") == "core-graph-with-six-standalone",
         "released graph status marker missing",
     )
     check(data.get("identity_frozen_on") == "2026-07-26", "identity freeze date missing")
     check(
-        set(data.get("standalone_nodes", [])) == {"B", "H", "T", "R"},
-        "B/H/T/R standalone release set drifted",
+        set(data.get("standalone_nodes", [])) == {"B", "C", "H", "P", "T", "R"},
+        "B/C/H/P/T/R standalone release set drifted",
     )
     check(
         data.get("master_emergency_gate") == "once-on-master-cover",
@@ -174,5 +174,5 @@ if errors:
 print(
     "Subguide validation passed: 10 frozen code/pattern/glyph identities, "
     "reciprocal graph declarations, generated hub/local maps, print-safe pattern "
-    f"prototypes, and B/H/T/R standalone scope at {VERSION}."
+    f"prototypes, and B/C/H/P/T/R standalone scope at {VERSION}."
 )

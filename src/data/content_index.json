@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.1",
+  "release": "4.7.0",
   "status": "global-content-index",
   "reference_scheme": "stable typed IDs; page and hierarchical numbers are non-canonical navigation aids",
   "records": [
@@ -1548,12 +1548,53 @@
       "html_id": "beg-p-g-001"
     },
     {
+      "resource_key": "figure:professional-call-packet",
+      "owner": "P",
+      "kind": "G",
+      "title": "professional-call-packet",
+      "file": "build/diagrams/professional_call_packet.png",
+      "question": "Which six facts form a useful first packet for a professional or emergency call?",
+      "source_basis": [
+        "07-professional-support--numbers"
+      ],
+      "public_ref": "[BEG:P:G:002]",
+      "html_id": "beg-p-g-002"
+    },
+    {
+      "resource_key": "figure:professional-route-selector",
+      "owner": "P",
+      "kind": "G",
+      "title": "professional-route-selector",
+      "file": "build/diagrams/professional_route_selector.png",
+      "question": "Which professional system can change the named problem, and what backup or escalation route remains?",
+      "source_basis": [
+        "07-professional-support--numbers",
+        "07-professional-support--spd",
+        "07-professional-support--legal-aid"
+      ],
+      "public_ref": "[BEG:P:G:003]",
+      "html_id": "beg-p-g-003"
+    },
+    {
+      "resource_key": "figure:support-system-layers",
+      "owner": "P",
+      "kind": "G",
+      "title": "support-system-layers",
+      "file": "build/diagrams/support_system_layers.png",
+      "question": "How do basic services, community support, focused general support, and specialist services relate?",
+      "source_basis": [
+        "07-professional-support--iasc"
+      ],
+      "public_ref": "[BEG:P:G:004]",
+      "html_id": "beg-p-g-004"
+    },
+    {
       "resource_key": "section:07-professional-support:children-dependants-and-caregiving",
       "owner": "P",
       "kind": "S",
       "title": "Children, dependants, and caregiving",
       "chapter": "07-professional-support.md",
-      "line": 324,
+      "line": 339,
       "level": 2,
       "public_ref": "[BEG:P:S:001]",
       "html_id": "beg-p-s-001"
@@ -1564,7 +1605,7 @@
       "kind": "S",
       "title": "Fill these before deployment",
       "chapter": "07-professional-support.md",
-      "line": 407,
+      "line": 422,
       "level": 2,
       "public_ref": "[BEG:P:S:002]",
       "html_id": "beg-p-s-002"
@@ -1575,7 +1616,7 @@
       "kind": "S",
       "title": "Germany quick reference",
       "chapter": "07-professional-support.md",
-      "line": 17,
+      "line": 20,
       "level": 2,
       "public_ref": "[BEG:P:S:003]",
       "html_id": "beg-p-s-003"
@@ -1586,7 +1627,7 @@
       "kind": "S",
       "title": "Housing and “no place tonight”",
       "chapter": "07-professional-support.md",
-      "line": 352,
+      "line": 367,
       "level": 2,
       "public_ref": "[BEG:P:S:004]",
       "html_id": "beg-p-s-004"
@@ -1597,7 +1638,7 @@
       "kind": "S",
       "title": "Legal support",
       "chapter": "07-professional-support.md",
-      "line": 234,
+      "line": 249,
       "level": 2,
       "public_ref": "[BEG:P:S:005]",
       "html_id": "beg-p-s-005"
@@ -1608,7 +1649,7 @@
       "kind": "S",
       "title": "Medical support",
       "chapter": "07-professional-support.md",
-      "line": 288,
+      "line": 303,
       "level": 2,
       "public_ref": "[BEG:P:S:006]",
       "html_id": "beg-p-s-006"
@@ -1619,7 +1660,7 @@
       "kind": "S",
       "title": "Professional Support — When the Bathroom Is Too Small",
       "chapter": "07-professional-support.md",
-      "line": 10,
+      "line": 13,
       "level": 1,
       "public_ref": "[BEG:P:S:007]",
       "html_id": "beg-p-s-007"
@@ -1630,7 +1671,7 @@
       "kind": "S",
       "title": "Psychological support",
       "chapter": "07-professional-support.md",
-      "line": 90,
+      "line": 99,
       "level": 2,
       "public_ref": "[BEG:P:S:008]",
       "html_id": "beg-p-s-008"
@@ -1641,7 +1682,7 @@
       "kind": "S",
       "title": "Quick reference card",
       "chapter": "07-professional-support.md",
-      "line": 393,
+      "line": 408,
       "level": 2,
       "public_ref": "[BEG:P:S:009]",
       "html_id": "beg-p-s-009"
@@ -1652,7 +1693,7 @@
       "kind": "S",
       "title": "Support-selection matrix",
       "chapter": "07-professional-support.md",
-      "line": 434,
+      "line": 449,
       "level": 2,
       "public_ref": "[BEG:P:S:010]",
       "html_id": "beg-p-s-010"
@@ -1663,7 +1704,7 @@
       "kind": "S",
       "title": "The call script — location before autobiography",
       "chapter": "07-professional-support.md",
-      "line": 47,
+      "line": 50,
       "level": 2,
       "public_ref": "[BEG:P:S:011]",
       "html_id": "beg-p-s-011"
@@ -1674,7 +1715,7 @@
       "kind": "S",
       "title": "Violence and coercion",
       "chapter": "07-professional-support.md",
-      "line": 207,
+      "line": 222,
       "level": 2,
       "public_ref": "[BEG:P:S:012]",
       "html_id": "beg-p-s-012"
@@ -1887,7 +1928,7 @@
       "kind": "S",
       "title": "4.0.0 — 17 July 2026",
       "chapter": "09-version-history.md",
-      "line": 306,
+      "line": 328,
       "level": 2,
       "public_ref": "[BEG:R:S:017]",
       "html_id": "beg-r-s-017"
@@ -1898,7 +1939,7 @@
       "kind": "S",
       "title": "4.0.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 252,
+      "line": 274,
       "level": 2,
       "public_ref": "[BEG:R:S:018]",
       "html_id": "beg-r-s-018"
@@ -1909,7 +1950,7 @@
       "kind": "S",
       "title": "4.1.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 220,
+      "line": 242,
       "level": 2,
       "public_ref": "[BEG:R:S:019]",
       "html_id": "beg-r-s-019"
@@ -1920,7 +1961,7 @@
       "kind": "S",
       "title": "4.1.2 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 196,
+      "line": 218,
       "level": 2,
       "public_ref": "[BEG:R:S:020]",
       "html_id": "beg-r-s-020"
@@ -1931,7 +1972,7 @@
       "kind": "S",
       "title": "4.2.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 165,
+      "line": 187,
       "level": 2,
       "public_ref": "[BEG:R:S:021]",
       "html_id": "beg-r-s-021"
@@ -1942,7 +1983,7 @@
       "kind": "S",
       "title": "4.3.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 135,
+      "line": 157,
       "level": 2,
       "public_ref": "[BEG:R:S:022]",
       "html_id": "beg-r-s-022"
@@ -1953,7 +1994,7 @@
       "kind": "S",
       "title": "4.3.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 117,
+      "line": 139,
       "level": 2,
       "public_ref": "[BEG:R:S:023]",
       "html_id": "beg-r-s-023"
@@ -1964,7 +2005,7 @@
       "kind": "S",
       "title": "4.4.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 102,
+      "line": 124,
       "level": 2,
       "public_ref": "[BEG:R:S:024]",
       "html_id": "beg-r-s-024"
@@ -1975,7 +2016,7 @@
       "kind": "S",
       "title": "Earlier versions",
       "chapter": "09-version-history.md",
-      "line": 342,
+      "line": 364,
       "level": 2,
       "public_ref": "[BEG:R:S:026]",
       "html_id": "beg-r-s-026"
@@ -2503,7 +2544,7 @@
       "kind": "S",
       "title": "4.5.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 69,
+      "line": 91,
       "level": 2,
       "public_ref": "[BEG:R:S:074]",
       "html_id": "beg-r-s-074"
@@ -2514,7 +2555,7 @@
       "kind": "S",
       "title": "4.6.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 28,
+      "line": 50,
       "level": 2,
       "public_ref": "[BEG:R:S:075]",
       "html_id": "beg-r-s-075"
@@ -2525,10 +2566,21 @@
       "kind": "S",
       "title": "4.6.1 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 11,
+      "line": 33,
       "level": 2,
       "public_ref": "[BEG:R:S:076]",
       "html_id": "beg-r-s-076"
+    },
+    {
+      "resource_key": "section:09-version-history:4-7-0-26-july-2026",
+      "owner": "R",
+      "kind": "S",
+      "title": "4.7.0 — 26 July 2026",
+      "chapter": "09-version-history.md",
+      "line": 11,
+      "level": 2,
+      "public_ref": "[BEG:R:S:077]",
+      "html_id": "beg-r-s-077"
     },
     {
       "resource_key": "glossary:aed",

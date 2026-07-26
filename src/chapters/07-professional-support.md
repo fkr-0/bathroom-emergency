@@ -1,10 +1,13 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.6.1"
+revision: "4.7.0"
 last_updated: "2026-07-26"
 dependencies:
   - build/diagrams/vega_social_connection.png
+  - build/diagrams/professional_call_packet.png
+  - build/diagrams/support_system_layers.png
+  - build/diagrams/professional_route_selector.png
 ---
 
 # Professional Support — When the Bathroom Is Too Small
@@ -49,6 +52,12 @@ than task can add delay.**[^numbers]
 The first useful packet is small: **where, what, when, current state, current
 danger, callback number**. Vocabulary and chronology can expand after contact.
 Use this:
+
+![Six-field professional call packet: where, what, when, current state, danger, and callback number](build/diagrams/professional_call_packet.png)
+
+The figure is only a memory offload. The complete packet is the six labelled
+fields above and the script below; the call handler may change the order and ask
+for details required by that service.
 
 > “I am at **[address, floor, door code]**.  
 > The problem is **[one sentence]**.  
@@ -105,6 +114,12 @@ psychosocial support in emergencies:[^iasc]
 
 The layers are not a ranking of deservingness. They show why therapy cannot
 replace housing and why housing does not replace treatment.
+
+![Four support-system layers: basic services and security, community and family, focused non-specialized support, and specialized services](build/diagrams/support_system_layers.png)
+
+Read the image from the foundation upward, but do not treat it as a queue. A
+person may need shelter, community help, a trained general service, and
+specialist treatment at the same time.
 
 ### Acute danger
 
@@ -432,6 +447,12 @@ Do not print passwords, PINs, alarm codes, or secret key locations in a guide
 left in a shared bathroom. Toothbrush proximity is not a security model.
 
 ## Support-selection matrix
+
+![Professional route selector linking a named problem to the system able to change it and a backup or escalation route](build/diagrams/professional_route_selector.png)
+
+The diagram compresses the same rule as the table: name the problem, choose the
+system that can alter it, and keep one backup. Immediate danger overrides the
+ordinary sequence.
 
 | Situation | First professional route | Backup route |
 |---|---|---|

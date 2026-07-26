@@ -57,7 +57,7 @@ def build() -> Path:
 <main>
   <section class="actions" aria-label="Primary project links">
     <a class="action primary" href="../html/guide.html"><strong>Open the HTML guide</strong>Responsive complete edition, printable and usable offline after download.</a>
-    <a class="action" href="../subguides/index.html"><strong>Choose a subguide</strong>Graph hub with released Alarm, Environment, Blue Book, and Reference editions.</a>
+    <a class="action" href="../subguides/index.html"><strong>Choose a subguide</strong>Graph hub with released Alarm, First Aid, Environment, Professional Support, Blue Book, and Reference editions.</a>
     <a class="action" href="DEPLOYMENT.md"><strong>Deploy a local copy</strong>Fields, privacy boundaries, mounting concepts, maintenance, and build instructions.</a>
     <a class="action" href="mailto:bathroom_emergency@fkr.dev"><strong>Send feedback</strong>Corrections, failed routes, local adaptations, accessibility findings, and participation.</a>
   </section>
@@ -93,7 +93,7 @@ def build() -> Path:
 npx playwright install chromium
 npm run build
 npm test</code></pre>
-  <p>The build creates the master HTML/PDF families, editable formats, four standalone subguide families, the graph hub, generated indexes, landing page, and release manifest. See <a href="README.md">README.md</a> for the toolchain and <a href="CHANGELOG.md">CHANGELOG.md</a> for release history.</p>
+  <p>The build creates the master HTML/PDF families, editable formats, six standalone subguide families, the graph hub, generated indexes, landing page, and release manifest. See <a href="README.md">README.md</a> for the toolchain and <a href="CHANGELOG.md">CHANGELOG.md</a> for release history.</p>
 
   <h2>Sources and disclaimers</h2>
   <p>Operational and scientific sources are kept in the guide beside claims, in local Sources and limits blocks, and in the Reference edition. Local service availability and procedures can change; a deployed copy needs dated verification.</p>

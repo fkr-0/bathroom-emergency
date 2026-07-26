@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.1",
+  "release": "4.7.0",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -9,10 +9,10 @@
   },
   "totals": {
     "nodes": 10,
-    "sections": 213,
+    "sections": 214,
     "sources": 53,
-    "reader_visuals": 28,
-    "standalone_nodes": 4
+    "reader_visuals": 31,
+    "standalone_nodes": 6
   },
   "nodes": [
     {
@@ -129,7 +129,7 @@
     {
       "node": "C",
       "title": "Body and First Aid",
-      "standalone": false,
+      "standalone": true,
       "chapters": [
         "03-situations-b-g.md",
         "05-self-ambulance.md"
@@ -165,7 +165,7 @@
       "visual_review_priorities": {
         "high": 4
       },
-      "readiness": "standalone-candidate"
+      "readiness": "released-standalone"
     },
     {
       "node": "D",
@@ -291,7 +291,7 @@
     {
       "node": "P",
       "title": "Professional Support",
-      "standalone": false,
+      "standalone": true,
       "chapters": [
         "07-professional-support.md"
       ],
@@ -310,15 +310,20 @@
         "07-professional-support--numbers",
         "07-professional-support--spd"
       ],
-      "owned_visual_count": 1,
+      "owned_visual_count": 4,
       "shared_visual_count": 0,
       "visual_ids": [
+        "professional-call-packet",
+        "professional-route-selector",
+        "support-system-layers",
         "vega-social-connection"
       ],
       "shared_visual_ids": [],
-      "visuals_with_source_basis": 1,
-      "visual_review_priorities": {},
-      "readiness": "needs-visuals"
+      "visuals_with_source_basis": 4,
+      "visual_review_priorities": {
+        "high": 3
+      },
+      "readiness": "released-standalone"
     },
     {
       "node": "T",
@@ -354,7 +359,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 75,
+      "section_count": 76,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

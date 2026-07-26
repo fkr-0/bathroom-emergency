@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.1",
+  "release": "4.7.0",
   "generated_by": "bin/build_inventories.py",
   "figures": [
     {
@@ -340,6 +340,53 @@
       "reader_facing": true,
       "replacement_id": null,
       "renderer": "generated-raster"
+    },
+    {
+      "id": "professional-call-packet",
+      "kind": "illustration",
+      "file": "build/diagrams/professional_call_packet.png",
+      "owner": "P",
+      "secondary_subguides": [],
+      "question": "Which six facts form a useful first packet for a professional or emergency call?",
+      "source_basis": [
+        "07-professional-support--numbers"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "professional-route-selector",
+      "kind": "illustration",
+      "file": "build/diagrams/professional_route_selector.png",
+      "owner": "P",
+      "secondary_subguides": [],
+      "question": "Which professional system can change the named problem, and what backup or escalation route remains?",
+      "source_basis": [
+        "07-professional-support--numbers",
+        "07-professional-support--spd",
+        "07-professional-support--legal-aid"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "support-system-layers",
+      "kind": "illustration",
+      "file": "build/diagrams/support_system_layers.png",
+      "owner": "P",
+      "secondary_subguides": [],
+      "question": "How do basic services, community support, focused general support, and specialist services relate?",
+      "source_basis": [
+        "07-professional-support--iasc"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
     },
     {
       "id": "vega-social-connection",

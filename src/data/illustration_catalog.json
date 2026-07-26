@@ -1,5 +1,5 @@
 {
-  "release": "4.6.1",
+  "release": "4.7.0",
   "status": "initial audited inventory",
   "families": [
     "quantitative-evidence",
@@ -383,6 +383,58 @@
       "reader_facing": true
     },
     {
+      "id": "professional-call-packet",
+      "file": "build/diagrams/professional_call_packet.png",
+      "chapters": [
+        "07-professional-support.md"
+      ],
+      "family": "handoff",
+      "question": "Which six facts form a useful first packet for a professional or emergency call?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent text names where, what, when, current state, current danger, and callback number, followed by a complete example script.",
+      "mono_strategy": [
+        "numbered cards",
+        "fixed reading order",
+        "direct field labels"
+      ],
+      "status": "current",
+      "next_action": "Test with voice, writing, sign, and yes/no communication routes; revise only when a field consistently causes delay or confusion.",
+      "priority": "high",
+      "owner": "P",
+      "secondary_subguides": [],
+      "sources": [
+        "07-professional-support--numbers"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "professional-route-selector",
+      "file": "build/diagrams/professional_route_selector.png",
+      "chapters": [
+        "07-professional-support.md"
+      ],
+      "family": "routing",
+      "question": "Which professional system can change the named problem, and what backup or escalation route remains?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent support-selection matrix repeats every situation, first professional route, and backup route.",
+      "mono_strategy": [
+        "numbered rows",
+        "three fixed columns",
+        "direct route labels"
+      ],
+      "status": "current",
+      "next_action": "Recheck whenever national route scope or local deployment contracts change.",
+      "priority": "high",
+      "owner": "P",
+      "secondary_subguides": [],
+      "sources": [
+        "07-professional-support--numbers",
+        "07-professional-support--spd",
+        "07-professional-support--legal-aid"
+      ],
+      "reader_facing": true
+    },
+    {
       "id": "recovery-position-steps",
       "file": "build/diagrams/recovery_position_steps.png",
       "chapters": [
@@ -540,6 +592,31 @@
       ],
       "reader_facing": false,
       "replacement_id": "vega-stroke-time-model"
+    },
+    {
+      "id": "support-system-layers",
+      "file": "build/diagrams/support_system_layers.png",
+      "chapters": [
+        "07-professional-support.md"
+      ],
+      "family": "priority-hierarchy",
+      "question": "How do basic services, community support, focused general support, and specialist services relate?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent numbered list defines all four IASC support layers and explicitly says they may operate together rather than rank deservingness.",
+      "mono_strategy": [
+        "numbered layers",
+        "different widths",
+        "direct layer labels"
+      ],
+      "status": "current",
+      "next_action": "Retain the anti-ranking note and review terminology when the IASC framework changes.",
+      "priority": "high",
+      "owner": "P",
+      "secondary_subguides": [],
+      "sources": [
+        "07-professional-support--iasc"
+      ],
+      "reader_facing": true
     },
     {
       "id": "survival-pyramid",

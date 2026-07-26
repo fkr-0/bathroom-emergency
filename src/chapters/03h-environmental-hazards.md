@@ -1,7 +1,7 @@
 ---
 title: "Situation H — Environmental Hazards"
 chapter: "3H"
-revision: "4.6.1"
+revision: "4.7.0"
 last_updated: "2026-07-26"
 dependencies:
   - build/diagrams/hazard_override_matrix.png

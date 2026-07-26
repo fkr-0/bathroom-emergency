@@ -1,7 +1,7 @@
 ---
 title: "Templates: The Blue Book"
 chapter: "T"
-revision: "4.6.1"
+revision: "4.7.0"
 last_updated: "2026-07-26"
 dependencies: []
 ---
@@ -73,7 +73,7 @@ which copy this is, who maintains it, and when local facts expire.
 | Copy / site name | |
 | Exact placement | |
 | Deployer or maintainer | |
-| Guide version | 4.6.1 |
+| Guide version | 4.7.0 |
 | Local customization revision | |
 | Build commit | |
 | Built on | |

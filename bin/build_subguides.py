@@ -370,6 +370,15 @@ def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
             ("03-situations-b-g.md", mixed_sections("B")),
             ("04-calm-guide.md", chapter_without_definitions("04-calm-guide.md")),
         ]
+    if node_id == "P":
+        return [
+            ("07-professional-support.md", chapter_without_definitions("07-professional-support.md")),
+        ]
+    if node_id == "C":
+        return [
+            ("03-situations-b-g.md", mixed_sections("C")),
+            ("05-self-ambulance.md", chapter_without_definitions("05-self-ambulance.md")),
+        ]
     if node_id == "H":
         return [
             ("03-situations-b-g.md", mixed_sections("H")),
@@ -419,6 +428,9 @@ def build_node(node_id: str) -> dict:
             )
         )
     canonical_content = "\n\n".join(content_parts).strip()
+    canonical_content = BG.expand_visualization_macros(
+        canonical_content, BG.visualization_lookup()
+    )
     contents = mini_toc(canonical_content)
     visual_files = sorted(set(IMAGE_RE.findall(canonical_content)))
 
@@ -596,17 +608,19 @@ breathing difficulty, unconsciousness, or major bleeding goes directly to
 The image shows the orientation spine. The directory below is the complete text
 fallback; each released standalone page lists all of its neighbours.
 
-<div class="hub-directory" aria-label="Nine subguide routes">
+<div class="hub-directory" aria-label="Ten subguide routes">
 {chr(10).join(cards)}
 </div>
 
-## Why only B and H are detached in this release
+## Why six nodes are detached in this release
 
-They are deliberately different vertical slices: **B** is research-heavy and
-**H** is operational-source-heavy. Proving both prevents the build system from
-being accidentally optimized for only one kind of evidence.
+The standalone set now covers alarm and calm (**B**), body and first aid (**C**),
+environmental hazards (**H**), professional systems (**P**), writable templates
+(**T**), and reference material (**R**). The set deliberately mixes research,
+operational protocols, action sequences, forms, and indexes so the build cannot
+quietly optimize for one content type.
 
-The remaining six nodes continue to work inside the complete master guide
+The remaining four nodes continue to work inside the complete master guide
 until their source ownership, page grammar, and visual set pass the same gates.
 
 :::

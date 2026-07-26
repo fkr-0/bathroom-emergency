@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.1",
+  "release": "4.7.0",
   "generated_by": "bin/build_inventories.py",
   "granularity": "all level-1 and level-2 headings",
   "sections": [
@@ -839,7 +839,7 @@
     {
       "key": "07-professional-support:professional-support-when-the-bathroom-is-too-small",
       "chapter": "07-professional-support.md",
-      "line": 10,
+      "line": 13,
       "level": 1,
       "heading": "Professional Support — When the Bathroom Is Too Small",
       "owner": "P"
@@ -847,7 +847,7 @@
     {
       "key": "07-professional-support:germany-quick-reference",
       "chapter": "07-professional-support.md",
-      "line": 17,
+      "line": 20,
       "level": 2,
       "heading": "Germany quick reference",
       "owner": "P"
@@ -855,7 +855,7 @@
     {
       "key": "07-professional-support:the-call-script-location-before-autobiography",
       "chapter": "07-professional-support.md",
-      "line": 47,
+      "line": 50,
       "level": 2,
       "heading": "The call script — location before autobiography",
       "owner": "P"
@@ -863,7 +863,7 @@
     {
       "key": "07-professional-support:psychological-support",
       "chapter": "07-professional-support.md",
-      "line": 90,
+      "line": 99,
       "level": 2,
       "heading": "Psychological support",
       "owner": "P"
@@ -871,7 +871,7 @@
     {
       "key": "07-professional-support:violence-and-coercion",
       "chapter": "07-professional-support.md",
-      "line": 207,
+      "line": 222,
       "level": 2,
       "heading": "Violence and coercion",
       "owner": "P"
@@ -879,7 +879,7 @@
     {
       "key": "07-professional-support:legal-support",
       "chapter": "07-professional-support.md",
-      "line": 234,
+      "line": 249,
       "level": 2,
       "heading": "Legal support",
       "owner": "P"
@@ -887,7 +887,7 @@
     {
       "key": "07-professional-support:medical-support",
       "chapter": "07-professional-support.md",
-      "line": 288,
+      "line": 303,
       "level": 2,
       "heading": "Medical support",
       "owner": "P"
@@ -895,7 +895,7 @@
     {
       "key": "07-professional-support:children-dependants-and-caregiving",
       "chapter": "07-professional-support.md",
-      "line": 324,
+      "line": 339,
       "level": 2,
       "heading": "Children, dependants, and caregiving",
       "owner": "P"
@@ -903,7 +903,7 @@
     {
       "key": "07-professional-support:housing-and-no-place-tonight",
       "chapter": "07-professional-support.md",
-      "line": 352,
+      "line": 367,
       "level": 2,
       "heading": "Housing and “no place tonight”",
       "owner": "P"
@@ -911,7 +911,7 @@
     {
       "key": "07-professional-support:quick-reference-card",
       "chapter": "07-professional-support.md",
-      "line": 393,
+      "line": 408,
       "level": 2,
       "heading": "Quick reference card",
       "owner": "P"
@@ -919,7 +919,7 @@
     {
       "key": "07-professional-support:fill-these-before-deployment",
       "chapter": "07-professional-support.md",
-      "line": 407,
+      "line": 422,
       "level": 2,
       "heading": "Fill these before deployment",
       "owner": "P"
@@ -927,7 +927,7 @@
     {
       "key": "07-professional-support:support-selection-matrix",
       "chapter": "07-professional-support.md",
-      "line": 434,
+      "line": 449,
       "level": 2,
       "heading": "Support-selection matrix",
       "owner": "P"
@@ -1245,9 +1245,17 @@
       "owner": "R"
     },
     {
-      "key": "09-version-history:4-6-1-26-july-2026",
+      "key": "09-version-history:4-7-0-26-july-2026",
       "chapter": "09-version-history.md",
       "line": 11,
+      "level": 2,
+      "heading": "4.7.0 — 26 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-6-1-26-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 33,
       "level": 2,
       "heading": "4.6.1 — 26 July 2026",
       "owner": "R"
@@ -1255,7 +1263,7 @@
     {
       "key": "09-version-history:4-6-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 28,
+      "line": 50,
       "level": 2,
       "heading": "4.6.0 — 26 July 2026",
       "owner": "R"
@@ -1263,7 +1271,7 @@
     {
       "key": "09-version-history:4-5-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 69,
+      "line": 91,
       "level": 2,
       "heading": "4.5.0 — 26 July 2026",
       "owner": "R"
@@ -1271,7 +1279,7 @@
     {
       "key": "09-version-history:4-4-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 102,
+      "line": 124,
       "level": 2,
       "heading": "4.4.1 — 22 July 2026",
       "owner": "R"
@@ -1279,7 +1287,7 @@
     {
       "key": "09-version-history:4-3-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 117,
+      "line": 139,
       "level": 2,
       "heading": "4.3.1 — 22 July 2026",
       "owner": "R"
@@ -1287,7 +1295,7 @@
     {
       "key": "09-version-history:4-3-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 135,
+      "line": 157,
       "level": 2,
       "heading": "4.3.0 — 22 July 2026",
       "owner": "R"
@@ -1295,7 +1303,7 @@
     {
       "key": "09-version-history:4-2-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 165,
+      "line": 187,
       "level": 2,
       "heading": "4.2.0 — 22 July 2026",
       "owner": "R"
@@ -1303,7 +1311,7 @@
     {
       "key": "09-version-history:4-1-2-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 196,
+      "line": 218,
       "level": 2,
       "heading": "4.1.2 — 22 July 2026",
       "owner": "R"
@@ -1311,7 +1319,7 @@
     {
       "key": "09-version-history:4-1-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 220,
+      "line": 242,
       "level": 2,
       "heading": "4.1.1 — 22 July 2026",
       "owner": "R"
@@ -1319,7 +1327,7 @@
     {
       "key": "09-version-history:4-0-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 252,
+      "line": 274,
       "level": 2,
       "heading": "4.0.1 — 22 July 2026",
       "owner": "R"
@@ -1327,7 +1335,7 @@
     {
       "key": "09-version-history:4-0-0-17-july-2026",
       "chapter": "09-version-history.md",
-      "line": 306,
+      "line": 328,
       "level": 2,
       "heading": "4.0.0 — 17 July 2026",
       "owner": "R"
@@ -1335,7 +1343,7 @@
     {
       "key": "09-version-history:earlier-versions",
       "chapter": "09-version-history.md",
-      "line": 342,
+      "line": 364,
       "level": 2,
       "heading": "Earlier versions",
       "owner": "R"

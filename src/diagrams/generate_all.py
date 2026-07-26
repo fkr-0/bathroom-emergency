@@ -46,6 +46,7 @@ scripts = [
     "generate_accessibility.py",
     "generate_scientific.py",
     "generate_first_aid.py",
+    "generate_professional_support.py",
     "generate_subguides.py",
 ]
 for script in scripts:

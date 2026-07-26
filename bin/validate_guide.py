@@ -568,7 +568,7 @@ print(
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
     f"{len(required_route_figures)} route/access figures, {len(required_continuity_figures)} continuity figures, "
-    "8 cataloged Vega-Lite figures, 20 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
+    "8 cataloged Vega-Lite figures, 23 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
     "structured routing/locales/accessibility, roadmap coverage, native MathML, "
     "A4, A4/2, and large-print outputs."
 )
