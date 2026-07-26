@@ -194,7 +194,7 @@ ignored by Git and should be regenerated from tracked sources.
 
 - `build/html/guide.html` — complete interactive HTML guide;
 - `build/pdf/` — master PDF variants;
-- `build/subguides/` — graph hub and standalone B, H, T, and R families;
+- `build/subguides/` — graph hub and standalone B, C, H, P, T, and R families;
 - `build/site/index.html` — project landing page;
 - `build/generated/` — generated indexes and appendix fragments;
 - `src/data/coverage_matrix.json` and `build/generated/coverage-matrix.md` —

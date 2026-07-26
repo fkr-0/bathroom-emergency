@@ -338,7 +338,7 @@ Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md` and
 - [x] migrate B and H as bounded slices without duplicating canonical prose;
 - [x] generate each released subguide's source-complete end matter from one registry;
 - [x] require orientation, mechanism/evidence, and handoff coverage in the B/H release gate;
-- [ ] detach the remaining six nodes one at a time after equivalent visual,
+- [ ] detach the remaining four nodes one at a time after equivalent visual,
   source, layout, and accessibility review.
 
 ### 4.6.0 — Templates, stable references, and deployment — released
@@ -373,7 +373,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   only after licensing, difficulty, and accessibility review;
 - [ ] prototype real bathroom installations and document water, mounting,
   reach, glare, page-turning, privacy, and replacement findings;
-- [ ] detach C and P next, because their action/contact structure now has the
+- [x] detach C and P next, because their action/contact structure now has the
   strongest supporting indexes, but only after equivalent visual and source
   review.
 
@@ -386,6 +386,18 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] add the new forms and coverage gate to CI and the complete build pipeline;
 - [x] complete the full render/test matrix and record release evidence;
 - [x] tag `v4.6.1` locally without pushing, publishing, or deploying.
+
+### 4.7.0 — First-aid and professional-support standalone editions — release candidate
+
+- [x] add three source-backed P visuals for call handoff, layered support, and
+  system selection, each with complete adjacent text fallback;
+- [x] detach C from its owned mixed-section route plus the full first-aid
+  chapter without duplicating canonical prose;
+- [x] detach P from the canonical professional-support chapter;
+- [x] require C/P source, visual, tagging, semantic-parity, geometry, and
+  color/monochrome gates across all six editions per node;
+- [ ] complete the full render/test matrix and record release evidence;
+- [ ] tag `v4.7.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 

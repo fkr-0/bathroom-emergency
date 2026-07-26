@@ -1,5 +1,39 @@
 # Changelog
 
+## 4.7.0 — 2026-07-26
+
+### Released Body and First Aid as a standalone family
+
+- Detached C from its owned pain route in the mixed situations chapter plus the
+  complete canonical first-aid chapter; no reader prose was copied into a
+  parallel source file.
+- Released A4, A4/2, and large-print color/monochrome C editions with local
+  Sources and limits, graph handoffs, one emergency gate, tagged PDFs, and
+  cross-edition semantic parity.
+- Required seven local sources and five owned reader visuals for the C release
+  slice, including CPR, AED, recovery-position, triage, and stroke-time models.
+
+### Released Professional Support as a standalone family
+
+- Added a six-field professional call packet, a four-layer support-system map,
+  and a named-problem-to-service route selector.
+- Kept every new visual redundant with complete adjacent prose or tables and
+  registered exact operational source IDs, monochrome encodings, questions,
+  review actions, and text fallbacks.
+- Released A4, A4/2, and large-print color/monochrome P editions with five local
+  operational sources and four owned reader visuals.
+
+### Expanded the release matrix
+
+- Expanded the standalone set from B/H/T/R to B/C/H/P/T/R and the tagged PDF
+  matrix from 24 to 36 editions.
+- Updated the graph hub, landing page, deployment documentation, coverage
+  matrix, migration gates, illustration inventory, and complete build-matrix
+  validator for the six-family release.
+- Kept actual instructor/novice first-aid testing and real wet-room deployment
+  testing as outstanding evidence rather than silently equating build success
+  with field validation.
+
 ## 4.6.1 — 2026-07-26
 
 ### Added field-test forms

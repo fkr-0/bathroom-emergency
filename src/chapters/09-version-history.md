@@ -1,12 +1,34 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.6.1"
+revision: "4.7.0"
 last_updated: "2026-07-26"
 dependencies: []
 ---
 
 # Version History
+
+## 4.7.0 — 26 July 2026
+
+### First aid becomes a detachable field guide
+
+- C now builds from its owned pain route and the canonical first-aid chapter in
+  six standalone layout/mode editions.
+- The release gate requires seven local sources, five owned reader visuals,
+  local end matter, graph handoffs, tagging, geometry, and semantic parity.
+
+### Professional support gains an operational visual set
+
+- Added a six-field call packet, layered-support map, and professional-route
+  selector beside complete text and table fallbacks.
+- P now builds independently with five operational sources and four reader
+  visuals across A4, A4/2, and large-print color/mono editions.
+
+### Six standalone families share one source tree
+
+- The graph hub and release matrix now cover B, C, H, P, T, and R.
+- The remaining O, A, D, and Z nodes stay in the complete guide until they pass
+  equivalent source, visual, layout, accessibility, and usability review.
 
 ## 4.6.1 — 26 July 2026
 
