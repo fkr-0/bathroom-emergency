@@ -1,5 +1,5 @@
 {
-  "release": "4.5.0",
+  "release": "4.6.0",
   "status": "initial audited inventory",
   "families": [
     "quantitative-evidence",
@@ -16,6 +16,57 @@
     "priority-hierarchy"
   ],
   "illustrations": [
+    {
+      "id": "aed-action-sequence",
+      "file": "build/diagrams/aed_action_sequence.png",
+      "chapters": [
+        "05-self-ambulance.md"
+      ],
+      "family": "mechanism-sequence",
+      "question": "What should a lay rescuer do when an AED arrives?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent text says turn on, expose and dry chest, attach pads, clear for analysis/shock, and resume CPR.",
+      "mono_strategy": [
+        "numbered panels",
+        "direct labels",
+        "action verbs"
+      ],
+      "status": "current",
+      "next_action": "Review wording against the next ERC/DRK public algorithm update.",
+      "priority": "high",
+      "owner": "C",
+      "secondary_subguides": [],
+      "sources": [
+        "erc2025"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "alarm-channels-map",
+      "file": "build/diagrams/alarm_channels_map.png",
+      "chapters": [
+        "03-situations-b-g.md"
+      ],
+      "family": "mechanism-sequence",
+      "question": "How can an anxiety bundle be separated into observable sensation, emotion, prediction, and urge channels?",
+      "renderer": "generated-raster",
+      "text_fallback": "The adjacent four-row table names every channel, example, and observation question.",
+      "mono_strategy": [
+        "letter-coded channels",
+        "fixed card order",
+        "direct labels"
+      ],
+      "status": "canonical-graph-grammar",
+      "next_action": "Retain as the B orientation visual and keep the physical-red-flag limit adjacent.",
+      "priority": "high",
+      "owner": "B",
+      "secondary_subguides": [],
+      "sources": [
+        "source-note:affect-labelling-and-emotional-regulation",
+        "route-catalog"
+      ],
+      "reader_facing": true
+    },
     {
       "id": "breathing-techniques",
       "file": "build/diagrams/breathing_techniques.png",
@@ -91,6 +142,31 @@
         "hilfetelefon-women",
         "children-help",
         "wcag22"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "cpr-body-orientation",
+      "file": "build/diagrams/cpr_body_orientation.png",
+      "chapters": [
+        "05-self-ambulance.md"
+      ],
+      "family": "orientation",
+      "question": "Where is the centre of an adult chest relative to the head, hips, and feet?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent CPR section says centre of the adult chest, with hands together and shoulders above hands.",
+      "mono_strategy": [
+        "body outline",
+        "landmark labels",
+        "direct arrow"
+      ],
+      "status": "current",
+      "next_action": "Test with first-aid instructors and readers who have never practised CPR.",
+      "priority": "high",
+      "owner": "C",
+      "secondary_subguides": [],
+      "sources": [
+        "erc2025"
       ],
       "reader_facing": true
     },
@@ -174,6 +250,32 @@
       "reader_facing": true
     },
     {
+      "id": "hazard-handoff-card",
+      "file": "build/diagrams/hazard_handoff_card.png",
+      "chapters": [
+        "03h-environmental-hazards.md"
+      ],
+      "family": "handoff",
+      "question": "Which five fields make an environmental-hazard handoff usable from a safe place?",
+      "renderer": "generated-raster",
+      "text_fallback": "The complete location, hazard, people, symptoms, and access script follows immediately below the card.",
+      "mono_strategy": [
+        "numbered fields",
+        "direct labels",
+        "fixed left-to-right order"
+      ],
+      "status": "canonical-graph-grammar",
+      "next_action": "Retain as the H handoff visual and test the narrow-format stack at every release.",
+      "priority": "high",
+      "owner": "H",
+      "secondary_subguides": [],
+      "sources": [
+        "chapter-footnote:bbk-112",
+        "chapter-footnote:bfr"
+      ],
+      "reader_facing": true
+    },
+    {
       "id": "hazard-override-matrix",
       "file": "build/diagrams/hazard_override_matrix.png",
       "chapters": [
@@ -204,6 +306,32 @@
       "reader_facing": true
     },
     {
+      "id": "hazard-source-location-map",
+      "file": "build/diagrams/hazard_source_location_map.png",
+      "chapters": [
+        "03h-environmental-hazards.md"
+      ],
+      "family": "routing",
+      "question": "How does indoor, outdoor, or uncertain source location change the safe movement decision?",
+      "renderer": "generated-raster",
+      "text_fallback": "The adjacent three-item list gives the full indoor-source, outside-warning, and uncertain-source actions.",
+      "mono_strategy": [
+        "numbered panels",
+        "direct action labels",
+        "distinct card positions"
+      ],
+      "status": "canonical-graph-grammar",
+      "next_action": "Retain as an operational-source-location model and review whenever official warning routes change.",
+      "priority": "high",
+      "owner": "H",
+      "secondary_subguides": [],
+      "sources": [
+        "chapter-footnote:warning",
+        "route-catalog"
+      ],
+      "reader_facing": true
+    },
+    {
       "id": "household-continuity-board",
       "file": "build/diagrams/household_continuity_board.png",
       "chapters": [
@@ -225,6 +353,57 @@
       "secondary_subguides": [],
       "sources": [
         "continuity-catalog"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "overload-control-map",
+      "file": "build/diagrams/overload_control_map.png",
+      "chapters": [
+        "03-situations-b-g.md"
+      ],
+      "family": "quantitative-model",
+      "question": "Which load terms can be reduced, supported, or offloaded when conceptual load exceeds current capacity?",
+      "renderer": "generated-raster",
+      "text_fallback": "The adjacent equation defines I, E, S, capacity K, headroom H, and the same three control levers.",
+      "mono_strategy": [
+        "symbol-coded terms",
+        "direct lever labels",
+        "fixed equation panel"
+      ],
+      "status": "canonical-graph-grammar",
+      "next_action": "Retain as a conceptual model; never present its symbols as measured clinical units.",
+      "priority": "high",
+      "owner": "B",
+      "secondary_subguides": [],
+      "sources": [
+        "chapter-footnote:cowan",
+        "source-note:cognitive-load-theory"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "recovery-position-steps",
+      "file": "build/diagrams/recovery_position_steps.png",
+      "chapters": [
+        "05-self-ambulance.md"
+      ],
+      "family": "mechanism-sequence",
+      "question": "How do the five recovery-position movements relate spatially?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent text gives all five steps and the breathing recheck.",
+      "mono_strategy": [
+        "numbered panels",
+        "direct labels",
+        "body geometry"
+      ],
+      "status": "current",
+      "next_action": "Replace abstract figures with reviewed human-body drawings after usability testing.",
+      "priority": "high",
+      "owner": "C",
+      "secondary_subguides": [],
+      "sources": [
+        "drk-recovery"
       ],
       "reader_facing": true
     },
@@ -435,110 +614,6 @@
       "secondary_subguides": [],
       "sources": [
         "route-catalog"
-      ],
-      "reader_facing": true
-    },
-    {
-      "id": "alarm-channels-map",
-      "file": "build/diagrams/alarm_channels_map.png",
-      "chapters": [
-        "03-situations-b-g.md"
-      ],
-      "family": "mechanism-sequence",
-      "question": "How can an anxiety bundle be separated into observable sensation, emotion, prediction, and urge channels?",
-      "renderer": "generated-raster",
-      "text_fallback": "The adjacent four-row table names every channel, example, and observation question.",
-      "mono_strategy": [
-        "letter-coded channels",
-        "fixed card order",
-        "direct labels"
-      ],
-      "status": "canonical-graph-grammar",
-      "next_action": "Retain as the B orientation visual and keep the physical-red-flag limit adjacent.",
-      "priority": "high",
-      "owner": "B",
-      "secondary_subguides": [],
-      "sources": [
-        "source-note:affect-labelling-and-emotional-regulation",
-        "route-catalog"
-      ],
-      "reader_facing": true
-    },
-    {
-      "id": "overload-control-map",
-      "file": "build/diagrams/overload_control_map.png",
-      "chapters": [
-        "03-situations-b-g.md"
-      ],
-      "family": "quantitative-model",
-      "question": "Which load terms can be reduced, supported, or offloaded when conceptual load exceeds current capacity?",
-      "renderer": "generated-raster",
-      "text_fallback": "The adjacent equation defines I, E, S, capacity K, headroom H, and the same three control levers.",
-      "mono_strategy": [
-        "symbol-coded terms",
-        "direct lever labels",
-        "fixed equation panel"
-      ],
-      "status": "canonical-graph-grammar",
-      "next_action": "Retain as a conceptual model; never present its symbols as measured clinical units.",
-      "priority": "high",
-      "owner": "B",
-      "secondary_subguides": [],
-      "sources": [
-        "chapter-footnote:cowan",
-        "source-note:cognitive-load-theory"
-      ],
-      "reader_facing": true
-    },
-    {
-      "id": "hazard-source-location-map",
-      "file": "build/diagrams/hazard_source_location_map.png",
-      "chapters": [
-        "03h-environmental-hazards.md"
-      ],
-      "family": "routing",
-      "question": "How does indoor, outdoor, or uncertain source location change the safe movement decision?",
-      "renderer": "generated-raster",
-      "text_fallback": "The adjacent three-item list gives the full indoor-source, outside-warning, and uncertain-source actions.",
-      "mono_strategy": [
-        "numbered panels",
-        "direct action labels",
-        "distinct card positions"
-      ],
-      "status": "canonical-graph-grammar",
-      "next_action": "Retain as an operational-source-location model and review whenever official warning routes change.",
-      "priority": "high",
-      "owner": "H",
-      "secondary_subguides": [],
-      "sources": [
-        "chapter-footnote:warning",
-        "route-catalog"
-      ],
-      "reader_facing": true
-    },
-    {
-      "id": "hazard-handoff-card",
-      "file": "build/diagrams/hazard_handoff_card.png",
-      "chapters": [
-        "03h-environmental-hazards.md"
-      ],
-      "family": "handoff",
-      "question": "Which five fields make an environmental-hazard handoff usable from a safe place?",
-      "renderer": "generated-raster",
-      "text_fallback": "The complete location, hazard, people, symptoms, and access script follows immediately below the card.",
-      "mono_strategy": [
-        "numbered fields",
-        "direct labels",
-        "fixed left-to-right order"
-      ],
-      "status": "canonical-graph-grammar",
-      "next_action": "Retain as the H handoff visual and test the narrow-format stack at every release.",
-      "priority": "high",
-      "owner": "H",
-      "secondary_subguides": [],
-      "sources": [
-        "chapter-footnote:bbk-112",
-        "chapter-footnote:bfr"
       ],
       "reader_facing": true
     }

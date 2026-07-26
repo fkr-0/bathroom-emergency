@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build section and figure ownership inventories for the 4.5 migration."""
+"""Build section and figure ownership inventories for the current release."""
 from __future__ import annotations
 
 import argparse
@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTER_DIR = ROOT / "src" / "chapters"
 DATA_DIR = ROOT / "src" / "data"
-VERSION = "4.5.0"
+from project_meta import VERSION
 
 DEFAULT_OWNER = {
     "00-cover.md": "O",
@@ -22,6 +22,7 @@ DEFAULT_OWNER = {
     "05-self-ambulance.md": "C",
     "06-zombie-guide.md": "Z",
     "07-professional-support.md": "P",
+    "07a-templates.md": "T",
     "08-appendix.md": "R",
     "09-version-history.md": "R",
     "10-sources.md": "R",

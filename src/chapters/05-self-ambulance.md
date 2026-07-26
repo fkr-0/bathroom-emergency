@@ -1,10 +1,13 @@
 ---
 title: "First Aid While Help Is Coming"
 chapter: 5
-revision: "4.5.0"
-last_updated: "2026-07-23"
+revision: "4.6.0"
+last_updated: "2026-07-26"
 dependencies:
   - build/diagrams/triage_flow.png
+  - build/diagrams/cpr_body_orientation.png
+  - build/diagrams/recovery_position_steps.png
+  - build/diagrams/aed_action_sequence.png
   - build/diagrams/vega_stroke_time_model.png
 ---
 
@@ -20,13 +23,26 @@ access free both hands and shorten the route to the person.
 
 ## The first minute: preserve what still works
 
-1. **Safety:** do not enter smoke, gas, traffic, electricity, violence, deep
-   water, or chemical contamination.
-2. **Response:** speak loudly and gently tap the shoulders.
-3. **Call:** unresponsive, abnormal breathing, severe bleeding, or another red
-   flag means **112**.
-4. **Breathing:** look for normal breathing. Gasping is not normal breathing.
-5. **Act:** use the matching section below.
+1. **Safety — do not create patient number two.** Do not enter smoke, gas,
+   traffic, live electricity, violence, deep water, or chemical contamination.
+2. **Response — find out what still works.** Speak loudly and gently tap the
+   shoulders.
+3. **Call — externalize and parallelize.** Unresponsive, abnormal breathing,
+   severe bleeding, or another red flag means **112**. Put the phone on
+   speaker. If another person is present, point at them and assign the call.
+4. **Breathing — normal is the decision point.** Look for normal breathing.
+   Gasping is not normal breathing.
+5. **Act — support the failing function.** Use the matching section below while
+   the dispatcher guides you.
+
+::: {.safety-card}
+### 112 — one action box
+
+**Call. Speakerphone. State location. Answer questions. Follow instructions.**
+Do not combine this with “finish reading,” “find the perfect diagnosis,” or
+“drive first.” The call handler can dispatch help while coaching immediate
+actions.[^emergency-numbers]
+:::
 
 ![First-aid triage overview](build/diagrams/triage_flow.png)
 
@@ -55,41 +71,98 @@ It is not a biological cliff at minute 60. The practical rule is simpler:
 
 ## Unresponsive and not breathing normally
 
-- Call **112** and send someone for an AED if available.
-- Begin chest compressions in the centre of the adult chest:
-  **100–120 per minute**, **5–6 cm** deep, allowing full recoil.
-- If trained and willing, use **30 compressions to 2 breaths**. If not, keep
-  doing continuous chest compressions.
-- Switch rescuers when possible and use the AED as soon as it arrives.
+**Principle: call for help, then temporarily support circulation and oxygen
+delivery until normal breathing or professional help takes over.**
 
-The dispatcher can coach you. Imperfect compressions are better than elegant
-inaction.[^erc2025]
+1. Call **112** on speaker. If another person is present, send them for an
+   **automated external defibrillator (AED)**. A lone rescuer should not stop
+   compressions to search for a distant device.
+2. Begin **cardiopulmonary resuscitation (CPR)** with chest compressions in the
+   centre of the adult chest: **100–120 per minute**, **5–6 cm** deep, allowing
+   the chest to rise fully after each push.
+3. If trained and willing, use **30 compressions to 2 breaths**. The
+   compressions move some blood; the breaths add oxygen. This is support, not a
+   perfect imitation of a working heart and lungs.
+4. If you are not giving breaths, continue chest compressions. Do not turn a
+   difficult technique choice into no technique at all.
+5. Switch rescuers when another person is ready. **Why:** fatigue quietly makes
+   compressions shallower and slower; sharing also prevents one person becoming
+   the entire rescue system.
+
+![Adult chest-compression location using head, chest, hips, and feet as landmarks](build/diagrams/cpr_body_orientation.png)
+
+**The dispatcher can guide you. Keep the phone on speaker.** Imperfect
+compressions are better than elegant inaction.[^erc2025]
+
+### AED — what it actually does
+
+**AED means automated external defibrillator.** It analyzes the heart rhythm
+through adhesive pads. It advises or delivers a shock only when its algorithm
+identifies a shockable rhythm. The shock may interrupt a dangerous electrical
+rhythm so an organized rhythm can resume; it is not a universal “reboot,” and
+it does not replace CPR.
+
+1. Turn it on and follow the spoken or visual prompts.
+2. Bare and dry the chest; attach pads exactly as pictured.
+3. Make sure nobody touches the person during analysis.
+4. If told to shock, say **clear**, look, and ensure nobody is touching them.
+5. Resume CPR immediately after the prompt; follow the next instruction.
+
+![AED action sequence: turn on, attach pads, clear for analysis or shock, resume CPR](build/diagrams/aed_action_sequence.png)
 
 ## Unresponsive but breathing normally
 
-Call **112**, place the person in the recovery position if no major trauma
-prevents safe movement, and keep checking breathing. Do not give food or drink.
-If breathing becomes abnormal, start CPR.
+**Principle: create a stable, drainable airway position while help comes.**
+
+Call **112**. If no major trauma prevents safe movement:
+
+1. kneel beside the person; straighten the legs;
+2. place the near arm bent upward, palm facing up;
+3. bring the far hand across the chest and hold its back against the near cheek;
+4. bend the far knee and pull the person toward you;
+5. place the top leg at roughly a right angle, tilt the head back to keep the
+   airway open, and position the mouth downward so fluid can drain.
+
+Keep checking normal breathing. Do not give food or drink. If breathing becomes
+abnormal, roll them onto their back and start CPR.[^drk-recovery]
+
+![Five-step recovery-position orientation](build/diagrams/recovery_position_steps.png)
 
 ## Choking
 
-If the person can cough effectively, encourage coughing. If they cannot speak,
-breathe, or cough effectively, call **112** and follow the dispatcher’s choking
-instructions. If they become unresponsive, begin CPR. Do not blindly sweep a
-finger inside the mouth.
+**Principle: effective coughing is active airway clearance—do not replace it
+with improvised force.**
+
+If the person can cough effectively, encourage coughing and watch for change.
+Do not begin back blows, abdominal thrusts, or a blind finger sweep while the
+cough remains effective. If they cannot speak, breathe, or cough effectively,
+call **112** and follow the dispatcher’s choking instructions. If they become
+unresponsive, begin CPR.
+
+For **your own** choking episode, this page does not prescribe self-thrusts or
+furniture manoeuvres. Call 112 on speaker if possible, unlock access, make
+noise, and keep coughing while it remains effective.
 
 ## Wounds and bleeding
 
+**Principle: do not add harm. Reduce contamination or blood loss, protect what
+the body is already repairing, and escalate when the wound exceeds ordinary
+self-care.**
+
 ### Minor wound
 
-- wash or sanitize your hands;
-- rinse visible dirt with clean water;
-- cover with a clean dressing;
+- wash or sanitize your hands — **why:** do not add a second contamination;
+- rinse visible dirt with clean water — **why:** remove debris without grinding
+  it deeper or adding harsh chemicals;
+- cover with a clean dressing — **why:** protect the repair surface from
+  friction and new dirt;
 - seek medical advice for bites, punctures, contaminated wounds, retained
   objects, impaired movement or sensation, or infection signs;
 - check whether tetanus protection needs review.
 
 ### Severe bleeding
+
+**Principle: stop blood loss while making the fewest additional injuries.**
 
 1. Call **112**.
 2. Press firmly and continuously on the wound with a dressing or clean cloth.
@@ -103,12 +176,18 @@ when appropriate. Do not abandon direct pressure to search for perfect gear.[^dr
 
 ### Shock warning signs
 
+**Principle: reduce demand, support temperature and circulation, and keep the
+handoff moving while professional help approaches.**
+
 Pale or clammy skin, weakness, restlessness, confusion, rapid breathing,
 collapse, or severe thirst after injury or bleeding can indicate shock. Call
 **112**, keep the person warm and still, and follow the dispatcher. Do not wait
 for low blood pressure; you are not conducting a trauma conference.
 
 ## Burns and scalds
+
+**Principle: stop the source, assess severity, cool the burn without cooling the
+whole person, then protect the surface.**
 
 - Stop the burning process and remove the person from danger.
 - Cool a limited burn promptly with cool or cold running water for about
@@ -127,6 +206,9 @@ guidance uses at least 20 minutes and strongly warns against hypothermia.[^drk-b
 
 ## Suspected fractures and joint injuries
 
+**Principle: the body has usually chosen the least-worst position already.
+Support it; do not audition alternative geometry.**
+
 Signs may include pain, swelling, deformity, inability to use the limb, or an
 open wound.
 
@@ -144,6 +226,9 @@ comfortable padding and stillness are often more useful than constructing a
 medieval orthopaedic device from magazines.[^drk-fracture]
 
 ## Suspected spine, neck, or pelvic injury
+
+**Principle: recognize that this rule applies. Unless immediate danger makes
+movement unavoidable, do not move, sit up, or test the person—support and call.**
 
 After a major fall, collision, crush, diving injury, or trauma with neck/back
 pain, weakness, numbness, or altered consciousness:
@@ -252,6 +337,10 @@ size, poor circulation, battery, or user technique. A reassuring display is not
 a permission slip to ignore collapse, stroke signs, severe breathlessness, or
 chest pain.
 
+The detachable **Observation and vital-sign log** in the Blue Book keeps time,
+change, actions, and readings together. Use it to improve the handoff, not to
+award yourself a green discharge badge.
+
 ### Observation log
 
 | Time | Response | Breathing | Pulse/device | Symptoms/actions |
@@ -330,6 +419,8 @@ Vital signs, pain scores, internet searches, and apparent calm can add
 information. None of them reliably cancel a red flag for a lay reader.
 
 [^erc2025]: European Resuscitation Council, *Guidelines 2025* and layperson guidance: https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/
+
+[^drk-recovery]: German Red Cross, “Stabile Seitenlage”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stabile-seitenlage/
 
 [^drk-bleeding]: German Red Cross, “Starke Blutungen”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/blutungen-und-blutstillung/blutungen/
 

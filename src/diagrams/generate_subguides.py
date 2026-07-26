@@ -43,6 +43,7 @@ HATCHES = {
     "diagonal-stripes": "///",
     "staggered-brick": "++",
     "node-lattice": "o-",
+    "blueprint-corners": "+.",
     "square-grid": "++",
 }
 
@@ -66,6 +67,7 @@ def pattern_svg(pattern: str, title: str) -> str:
         "diagonal-stripes": f'<g {common}><path d="M-36 96 L36 0 M-6 96 L66 0 M24 96 L96 0 M54 96 L126 0"/></g>',
         "staggered-brick": f'<g {common}><path d="M0 24 H96 M0 48 H96 M0 72 H96 M24 0 V24 M72 0 V24 M0 24 V48 M48 24 V48 M96 24 V48 M24 48 V72 M72 48 V72 M0 72 V96 M48 72 V96 M96 72 V96"/></g>',
         "node-lattice": f'<g {common}><path d="M14 18 L48 48 L82 18 M48 48 L14 78 M48 48 L82 78"/></g><g fill="#111"><circle cx="14" cy="18" r="4"/><circle cx="82" cy="18" r="4"/><circle cx="48" cy="48" r="4"/><circle cx="14" cy="78" r="4"/><circle cx="82" cy="78" r="4"/></g>',
+        "blueprint-corners": f'<g {common}><path d="M4 28 V4 H28 M68 4 H92 V28 M92 68 V92 H68 M28 92 H4 V68 M18 18 H78 V78 H18 Z"/><path d="M48 18 V78 M18 48 H78" stroke-dasharray="4 4"/></g>',
         "square-grid": f'<g {common}><path d="M0 24 H96 M0 48 H96 M0 72 H96 M24 0 V96 M48 0 V96 M72 0 V96"/></g>',
     }
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title"><title id="title">{title}</title><rect width="96" height="96" fill="#fff"/>{shapes[pattern]}</svg>\n'''
@@ -80,9 +82,12 @@ for node in nodes.values():
 
 
 # M1 contact sheet: color plus a monochrome-identical hatch channel.
-fig, axes = plt.subplots(3, 3, figsize=(10.8, 8.2))
+columns = 5
+rows = math.ceil(len(nodes) / columns)
+fig, axes = plt.subplots(rows, columns, figsize=(15.5, 3.0 * rows))
 fig.suptitle("Subguide identity system — code + pattern + title", fontsize=20, fontweight="bold", color=INK)
-for ax, node in zip(axes.flat, nodes.values()):
+flat_axes = list(axes.flat)
+for ax, node in zip(flat_axes, nodes.values()):
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
@@ -92,6 +97,8 @@ for ax, node in zip(axes.flat, nodes.values()):
     ax.text(.08, .82, node["id"], color="white", fontsize=24, fontweight="black", ha="left", va="center")
     ax.text(.08, .57, textwrap.fill(node["title"], 25), color=INK, fontsize=10.5, fontweight="bold", ha="left", va="top")
     ax.text(.08, .13, node["pattern"].replace("-", " "), color=MUTED, fontsize=8, ha="left")
+for ax in flat_axes[len(nodes):]:
+    ax.axis("off")
 fig.tight_layout(rect=(0, 0, 1, .94))
 finish(fig, "subguide_identity_contact_sheet", qa=True)
 
@@ -102,12 +109,12 @@ overview_pos = {
     "O": (0, 2.6),
     "B": (-2.4, 1.2), "C": (0, 1.2), "H": (2.4, 1.2),
     "A": (-2.4, -.4), "D": (0, -.4), "Z": (2.4, -.4),
-    "P": (-1.2, -2.0), "R": (1.2, -2.0),
+    "P": (-2.0, -2.0), "T": (0, -2.0), "R": (2.0, -2.0),
 }
 primary_edges = [
     ("O", "B"), ("O", "C"), ("O", "H"), ("O", "A"), ("O", "D"),
     ("O", "Z"), ("B", "C"), ("C", "H"), ("A", "D"), ("D", "P"),
-    ("H", "Z"), ("Z", "P"), ("P", "R"),
+    ("H", "Z"), ("Z", "P"), ("P", "T"), ("T", "R"), ("P", "R"),
 ]
 for source, target in primary_edges:
     if target not in nodes[source]["outgoing"]:
@@ -163,7 +170,7 @@ fig, axes = plt.subplots(1, 2, figsize=(11.4, 6.6))
 fig.suptitle("Grouping prototype review", fontsize=20, fontweight="bold", color=INK)
 panels = [
     (
-        "A — nine-node core (selected)",
+        "A — ten-node core (selected)",
         [
             ("B", "alarm + overload + calm"),
             ("C", "pain + first aid"),

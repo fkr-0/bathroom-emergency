@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "src" / "data" / "illustration_catalog.json"
 CHAPTER_DIR = ROOT / "src" / "chapters"
-VERSION = "4.5.0"
+from project_meta import VERSION
 errors: list[str] = []
 
 
@@ -27,7 +27,7 @@ if CATALOG_PATH.exists():
     files = [item.get("file") for item in records]
 
     check(catalog.get("release") == VERSION, f"illustration catalog release is not {VERSION}")
-    check(len(records) == 20, f"expected 17 current plus three migrated illustration records, found {len(records)}")
+    check(len(records) == 23, f"expected 20 current plus three migrated illustration records, found {len(records)}")
     check(len(ids) == len(set(ids)), "duplicate illustration IDs")
     check(len(files) == len(set(files)), "duplicate illustration files")
 
@@ -65,7 +65,7 @@ if CATALOG_PATH.exists():
     check(referenced == cataloged, f"illustration coverage drift: missing={sorted(referenced - cataloged)}, unused={sorted(cataloged - referenced)}")
     current = [item for item in records if item.get("reader_facing", True)]
     migrated = [item for item in records if not item.get("reader_facing", True)]
-    check(len(current) == 17, f"expected 17 current non-Vega figures after three Vega migrations, found {len(current)}")
+    check(len(current) == 20, f"expected 20 current non-Vega figures after three Vega migrations, found {len(current)}")
     check(len(migrated) == 3, f"expected three migrated illustration records, found {len(migrated)}")
     check(all(item.get("replacement_id") for item in migrated), "migrated illustration lacks replacement_id")
     check(sum(1 for item in current if item.get("priority") == "high") >= 7, "illustration inventory lacks a meaningful high-priority redesign queue")

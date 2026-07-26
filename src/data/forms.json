@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "release": "4.6.0",
+  "status": "canonical-printable-form-registry",
+  "forms": [
+    {
+      "key": "deployment-cover",
+      "title": "Deployment cover and ownership card",
+      "purpose": "Identify this copy, its location, maintainer, revision, and next review.",
+      "responsibility": "deployer",
+      "privacy": "shared-safe"
+    },
+    {
+      "key": "location-access",
+      "title": "Location and access card",
+      "purpose": "Give callers and helpers a factual route to the room.",
+      "responsibility": "deployer",
+      "privacy": "shared-safe"
+    },
+    {
+      "key": "emergency-call",
+      "title": "Emergency call card",
+      "purpose": "Externalize the first useful facts while the dispatcher asks questions.",
+      "responsibility": "deployer-and-reader",
+      "privacy": "shared-safe"
+    },
+    {
+      "key": "local-support",
+      "title": "Local professional contacts",
+      "purpose": "Replace generic service categories with verified local names, numbers, hours, access channels, and backups.",
+      "responsibility": "deployer",
+      "privacy": "shared-safe"
+    },
+    {
+      "key": "comfort-inventory",
+      "title": "Comfort inventory",
+      "purpose": "Make ordinary regulation resources visible before alarm narrows attention.",
+      "responsibility": "reader-with-deployer-support",
+      "privacy": "shared-safe"
+    },
+    {
+      "key": "five-minute-values",
+      "title": "Five-minute values bridge",
+      "purpose": "Turn one value into one bounded action rather than one heroic life overhaul.",
+      "responsibility": "reader",
+      "privacy": "private-or-shared"
+    },
+    {
+      "key": "observation-log",
+      "title": "Observation and vital-sign log",
+      "purpose": "Record change and actions for a clinician or dispatcher without treating devices as clearance.",
+      "responsibility": "reader-or-helper",
+      "privacy": "private"
+    },
+    {
+      "key": "nice-place-map",
+      "title": "Nice-place and low-demand activity map",
+      "purpose": "Precompute safe, reversible destinations and activities.",
+      "responsibility": "reader-with-deployer-support",
+      "privacy": "private-or-shared"
+    },
+    {
+      "key": "safe-place-map",
+      "title": "Safe-place and exit map",
+      "purpose": "Name exits, meeting points, barriers, transport, and confirmed backups.",
+      "responsibility": "deployer",
+      "privacy": "context-sensitive"
+    },
+    {
+      "key": "essential-care",
+      "title": "Medication, power, and care continuity card",
+      "purpose": "Keep essential dependencies, runtime, approved backups, and escalation routes visible.",
+      "responsibility": "deployer-with-affected-person",
+      "privacy": "private"
+    },
+    {
+      "key": "household-board",
+      "title": "Household continuity board",
+      "purpose": "Assign one owner, backup, next check, and escalation for each essential function.",
+      "responsibility": "deployer-or-household",
+      "privacy": "shared-safe"
+    },
+    {
+      "key": "feedback",
+      "title": "Feedback and field-note sheet",
+      "purpose": "Return corrections, local adaptations, failed routes, and useful inventions upstream.",
+      "responsibility": "reader-or-deployer",
+      "privacy": "do-not-send-private-medical-data"
+    },
+    {
+      "key": "remarks",
+      "title": "Blank remarks and handoff sheet",
+      "purpose": "Provide writable space without hiding it inside a content page.",
+      "responsibility": "reader",
+      "privacy": "private-or-shared"
+    },
+    {
+      "key": "quiet-activity",
+      "title": "Quiet activity sheet",
+      "purpose": "Offer dot-grid drawing, a card-house challenge, and a simple paper-folding practice without pretending they are treatment.",
+      "responsibility": "reader",
+      "privacy": "shared-safe"
+    }
+  ]
+}

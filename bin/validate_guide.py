@@ -42,7 +42,7 @@ def check(condition: bool, message: str) -> None:
         errors.append(message)
 
 
-check(len(CHAPTERS) == 13, f"expected 13 chapters, found {len(CHAPTERS)}")
+check(len(CHAPTERS) == 14, f"expected 14 chapters, found {len(CHAPTERS)}")
 source = "\n".join(path.read_text(encoding="utf-8") for path in CHAPTERS)
 action_source = "\n".join(
     path.read_text(encoding="utf-8")
@@ -115,6 +115,8 @@ check("table-layout: fixed" in STYLE_A4_HALF, "A4/2 narrow-table protection miss
 check("LOOK CLOSER" in STYLE_A4_HALF, "A4/2 curiosity figure label missing")
 check("font-size: 13.25pt" in STYLE_LARGE_PRINT, "large-print typography invariant missing")
 check("LARGE PRINT / TEXT ROUTE FOLLOWS" in STYLE_LARGE_PRINT, "large-print text-route marker missing")
+check(".revision-footer" in STYLE, "revision footer styling missing")
+check("h2::before" in STYLE, "prominent heading accent marker missing")
 
 # Evidence registry and figure checks. A chart may be simple; its provenance may not.
 evidence: dict = {}
@@ -332,8 +334,15 @@ required_cli_scripts = (
     "bin/build_visualizations.mjs",
     "bin/build_inventories.py",
     "bin/build_source_inventory.py",
+    "bin/build_reference_index.py",
     "bin/build_subguides.py",
+    "bin/build_site.py",
+    "bin/build_release_manifest.py",
     "bin/validate_migration.py",
+    "bin/validate_reference_index.py",
+    "bin/validate_site.py",
+    "bin/validate_build_matrix.py",
+    "bin/project_meta.py",
     "src/visualizations/derive_data.py",
     "bin/verify_accessibility.py",
     "bin/verify_density.py",
@@ -349,6 +358,9 @@ for relative in required_cli_scripts:
 check("Situations B–F — Five Different Kinds of “Too Much”" in source, "B–F mixed-situations identity missing")
 check("Situations B–G — Six Different Kinds" not in source, "stale B–G mixed-situations identity remains")
 check("Situation G — No Safe Place" in source, "Situation G standalone handoff missing")
+check("Templates — The Blue Book" in source, "Blue Book template subguide missing")
+check("Stable references — addresses that survive editing" in source, "stable reference explanation missing")
+check("bathroom_emergency@fkr.dev" in source, "reader feedback route missing")
 
 # Version and source-shape checks.
 for path in CHAPTERS:
@@ -359,8 +371,8 @@ for path in CHAPTERS:
         f"{path.name}: revision is not {VERSION}",
     )
     check(
-        re.search(r"last_updated:\s*[\"']2026-07-23[\"']", text) is not None,
-        f"{path.name}: release date is not 2026-07-23",
+        re.search(r"last_updated:\s*[\"']2026-07-26[\"']", text) is not None,
+        f"{path.name}: release date is not 2026-07-26",
     )
 
 # v3.3 breadth must remain represented even though unsafe claims were rewritten.
@@ -394,6 +406,9 @@ parity_markers = [
     "Yerkes–Dodson",
     "Polyvagal",
     "Comfort inventory",
+    "Five-minute values bridge",
+    "Observation and vital-sign log",
+    "Feedback and field-note sheet",
     "Conversation strategies",
     "Smalltalk toolkit",
     "Triage priority heatmap",
@@ -412,6 +427,7 @@ parity_markers = [
     "Housing and “no place tonight”",
     "Master cross-reference",
     "Diagram index",
+    "Stable references — addresses that survive editing",
     "Fillable fields",
     "Master flowchart — complete text version",
     "Navigation invariant",
@@ -423,7 +439,7 @@ for marker in parity_markers:
 
 # A content-volume floor catches accidental replacement by the former lean edition.
 check(
-    len(source) >= 120_000,
+    len(source) >= 130_000,
     f"canonical chapter source is too small for full-content edition: {len(source):,} chars",
 )
 
@@ -437,6 +453,8 @@ if HTML.exists():
     )
     check("<main id=\"guide\">" in html, "semantic guide wrapper missing")
     check("class=\"chapter" in html, "chapter wrappers missing")
+    check("class=\"revision-footer\"" in html, "built HTML revision footer missing")
+    check("build-revision" in html and "build-date" in html, "built HTML provenance metadata missing")
     check(VERSION in html, f"built HTML does not contain version {VERSION}")
     normalized_html = re.sub(r"\s+", " ", html).lower()
     for marker in (
@@ -457,6 +475,13 @@ if HTML.exists():
         "Situation H — The Environment May Be Unsafe",
         "Essential medication and powered-device failure",
         "The hazard handoff",
+        "Templates — The Blue Book",
+        "Deployment cover and ownership card",
+        "Feedback and field-note sheet",
+        "Stable references — addresses that survive editing",
+        "Professional contact and service index",
+        "Diagram, chart, map, and figure index",
+        "Global content index",
     ):
         check(marker.lower() in normalized_html, f"built HTML missing required content: {marker}")
 else:
@@ -534,7 +559,7 @@ print(
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
     f"{len(required_route_figures)} route/access figures, {len(required_continuity_figures)} continuity figures, "
-    "8 cataloged Vega-Lite figures, 17 current illustrations, 9 frozen subguide nodes, subject-breadth markers, "
+    "8 cataloged Vega-Lite figures, 20 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
     "structured routing/locales/accessibility, roadmap coverage, native MathML, "
     "A4, A4/2, and large-print outputs."
 )

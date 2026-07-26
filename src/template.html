@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <meta name="guide-version" content="$guide-version$">
+  <meta name="build-revision" content="$build-revision$">
+  <meta name="build-date" content="$build-date$">
+  <link rel="canonical" href="$canonical-url$">
   <title>$title$</title>
   $for(css)$<link rel="stylesheet" href="$css$">$endfor$
 </head>
@@ -30,6 +33,10 @@
       $body$
     </main>
   </div>
+  <footer class="revision-footer" aria-hidden="true">
+    <span class="revision-mark" aria-hidden="true"></span>
+    <span><strong>Bathroom Emergency $guide-version$</strong> · $subguide-title$ · $print-layout$ / $print-mode$ · $build-revision$ · $build-date$ · <span class="revision-url">$canonical-url$</span></span>
+  </footer>
   <script>
   (() => {
     const root = document.documentElement;

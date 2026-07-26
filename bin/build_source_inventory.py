@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTER_DIR = ROOT / "src" / "chapters"
 DATA_DIR = ROOT / "src" / "data"
-VERSION = "4.5.0"
+from project_meta import VERSION
 URL_RE = re.compile(r"https?://[^\s)>]+")
 REF_RE = re.compile(r"\[\^([A-Za-z0-9_-]+)\]")
 DEF_RE = re.compile(r"^\[\^([A-Za-z0-9_-]+)\]:\s*(.*)$")

@@ -1,7 +1,7 @@
 {
   "name": "bathroom-emergency-guide",
   "private": true,
-  "version": "4.5.0",
+  "version": "4.6.0",
   "description": "A sourced, printable decision guide for bathroom-sized emergencies.",
   "type": "module",
   "scripts": {
@@ -10,7 +10,7 @@
     "build:diagrams": "./bin/build_diagrams.sh",
     "build:a4half": "./bin/build_guide.sh a4half",
     "verify:layout": "python3 bin/verify_layout.py",
-    "test": "python3 bin/validate_routes.py && python3 bin/validate_continuity.py && python3 bin/validate_subguides.py && python3 bin/validate_visualizations.py && python3 bin/validate_illustrations.py && python3 bin/validate_migration.py && python3 bin/validate_guide.py && python3 bin/verify_layout.py --quiet && python3 bin/verify_density.py && python3 bin/verify_accessibility.py && node bin/verify_overflow.mjs",
+    "test": "python3 bin/validate_routes.py && python3 bin/validate_continuity.py && python3 bin/validate_reference_index.py && python3 bin/validate_subguides.py && python3 bin/validate_visualizations.py && python3 bin/validate_illustrations.py && python3 bin/validate_migration.py && python3 bin/validate_guide.py && python3 bin/verify_layout.py --quiet && python3 bin/verify_density.py && python3 bin/verify_accessibility.py && node bin/verify_overflow.mjs && python3 bin/validate_site.py && python3 bin/validate_build_matrix.py",
     "validate:routes": "python3 bin/validate_routes.py",
     "build:largeprint": "./bin/build_guide.sh largeprint",
     "verify:accessibility": "python3 bin/verify_accessibility.py",
@@ -21,8 +21,13 @@
     "validate:subguides": "python3 bin/validate_subguides.py",
     "validate:visualizations": "python3 bin/validate_visualizations.py",
     "validate:illustrations": "python3 bin/validate_illustrations.py",
-    "build:inventories": "python3 bin/build_inventories.py && python3 bin/build_source_inventory.py",
+    "build:inventories": "python3 bin/build_inventories.py && python3 bin/build_source_inventory.py && python3 bin/build_reference_index.py",
     "build:subguides": "python3 bin/build_subguides.py --node all",
+    "build:site": "python3 bin/build_site.py",
+    "build:manifest": "python3 bin/build_release_manifest.py",
+    "validate:references": "python3 bin/validate_reference_index.py",
+    "validate:site": "python3 bin/validate_site.py",
+    "validate:matrix": "python3 bin/validate_build_matrix.py",
     "validate:migration": "python3 bin/validate_migration.py"
   },
   "devDependencies": {

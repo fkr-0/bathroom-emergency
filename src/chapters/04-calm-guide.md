@@ -1,8 +1,8 @@
 ---
 title: "Calm Guide"
 chapter: 4
-revision: "4.5.0"
-last_updated: "2026-07-23"
+revision: "4.6.0"
+last_updated: "2026-07-26"
 dependencies:
   - build/diagrams/breathing_techniques.png
   - build/diagrams/breathwork_trial_map.png
@@ -57,7 +57,7 @@ to give the alarm system something ordinary to process.[^who-stress]
 
 ### 3. Breathe comfortably
 
-Try a quiet inhale and a slightly longer, unforced exhale. No giant gulps, no
+**Try a quiet inhale and a slightly longer, unforced exhale.** No giant gulps, no
 competition, no heroic breath-holding. Stop deliberate breathing if it makes
 you dizzy, tingly, or more frightened and return to normal breathing.
 
@@ -129,7 +129,7 @@ asthma, poisoning, or any other medical danger.
 
 ### Technique 5 — no technique
 
-Normal breathing while noticing external objects is a valid choice. The best
+**Normal breathing while noticing external objects is a valid choice.** The best
 breathing exercise is the one that does not turn breathing into another exam.
 
 ## Yerkes–Dodson — some arousal can help, too much can jam the controls

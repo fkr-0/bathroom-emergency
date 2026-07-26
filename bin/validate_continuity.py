@@ -86,7 +86,7 @@ for forbidden in (
     "minimum 30 m",
     "bulging cans are bacterial",
 ):
-    check(forbidden not in serialized and forbidden not in chapter.lower(), f"rejected alternate guidance entered 4.5.0: {forbidden}")
+    check(forbidden not in serialized and forbidden not in chapter.lower(), f"rejected alternate guidance entered the current release: {forbidden}")
 
 if errors:
     print("Continuity validation failed:")

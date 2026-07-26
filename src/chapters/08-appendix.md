@@ -1,8 +1,8 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.5.0"
-last_updated: "2026-07-23"
+revision: "4.6.0"
+last_updated: "2026-07-26"
 dependencies:
   - build/diagrams/two_pass_route_map.png
   - build/diagrams/evidence_classes.png
@@ -12,11 +12,47 @@ dependencies:
   - build/diagrams/communication_access_card.png
 ---
 
-# Appendix — The Useful Loose Ends
+# Reference and Appendix — The Useful Loose Ends
 
 Use this appendix when you want the map, notation, formula index, fillable
 fields, pocket card, or full text decision tree. It is reference material, not
 a compulsory corridor before the interesting chapters.
+
+## Stable references — addresses that survive editing
+
+Canonical references use the form **`[BEG:<guide>:<kind>:<sequence>]`**. For
+example, `[BEG:C:S:004]` names a Body and First Aid section while
+`[BEG:T:F:003]` names a detachable Blue Book form. The corresponding HTML
+anchor is `#beg-c-s-004` or `#beg-t-f-003`.
+
+Page numbers and labels such as “calm 1.1.3” remain useful navigation aids, but
+they are not canonical addresses: inserting a section would silently rename
+everything after it. Stable IDs stay attached to the resource; retired IDs are
+kept in the registry rather than recycled for a different thing.
+
+| Kind | Resource |
+|---|---|
+| S | section |
+| F | form or detachable template |
+| G | figure, chart, map, or diagram |
+| C | professional contact or service |
+| D | deployment field |
+| W | glossary word or term |
+
+The source of truth is `src/data/reference_ids.json`; the generated complete
+view is `src/data/content_index.json`.
+
+{{detachable-form-index}}
+
+{{deployment-field-index}}
+
+{{professional-contact-index}}
+
+{{diagram-index-generated}}
+
+{{glossary-index}}
+
+{{global-content-index}}
 
 ## Master cross-reference — where everything points
 

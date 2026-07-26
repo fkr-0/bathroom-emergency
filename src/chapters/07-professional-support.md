@@ -1,8 +1,8 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.5.0"
-last_updated: "2026-07-23"
+revision: "4.6.0"
+last_updated: "2026-07-26"
 dependencies:
   - build/diagrams/vega_social_connection.png
 ---
@@ -30,7 +30,19 @@ a bed. Name the next concrete problem, then choose the system built to alter it.
 | Immediate self- or other-endangerment | **112** | Rescue service |
 
 Numbers and scope should be rechecked before local printing. The listed routes
-were reviewed on **22 July 2026**.[^numbers]
+were reviewed on **26 July 2026**.[^numbers]
+
+### 112 and 116 117 — similar-looking numbers, different infrastructure
+
+| Route | Purpose | What happens behind it | Useful consequence |
+|---|---|---|---|
+| **112** | acute or potentially life-threatening emergency; fire and rescue | the responsible local emergency control centre receives the call, gathers location/state/danger, dispatches suitable fire/rescue resources, and may coach immediate actions | call early, use speakerphone, answer questions, and do not hang up until told |
+| **116 117** | urgent medical problem that is not life-threatening and cannot reasonably wait for ordinary practice hours | the medical on-call service organized through the Kassenärztliche Vereinigungen advises, identifies an appropriate on-call practice, and can arrange a home visit when indicated | use it for urgent routing, not as a slower preliminary examination before an emergency call |
+
+Both telephone routes are available without a fee. Their effect is not merely
+“someone gives advice”: they connect the caller to different operational
+systems. **The mini-why matters because choosing by number familiarity rather
+than task can add delay.**[^numbers]
 
 ## The call script — location before autobiography
 

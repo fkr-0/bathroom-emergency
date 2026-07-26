@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.5.0",
+  "release": "4.6.0",
   "generated_by": "bin/build_inventories.py",
   "figures": [
     {
@@ -142,6 +142,51 @@
       "reader_facing": true,
       "replacement_id": null,
       "renderer": "Vega-Lite"
+    },
+    {
+      "id": "aed-action-sequence",
+      "kind": "illustration",
+      "file": "build/diagrams/aed_action_sequence.png",
+      "owner": "C",
+      "secondary_subguides": [],
+      "question": "What should a lay rescuer do when an AED arrives?",
+      "source_basis": [
+        "erc2025"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "cpr-body-orientation",
+      "kind": "illustration",
+      "file": "build/diagrams/cpr_body_orientation.png",
+      "owner": "C",
+      "secondary_subguides": [],
+      "question": "Where is the centre of an adult chest relative to the head, hips, and feet?",
+      "source_basis": [
+        "erc2025"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "recovery-position-steps",
+      "kind": "illustration",
+      "file": "build/diagrams/recovery_position_steps.png",
+      "owner": "C",
+      "secondary_subguides": [],
+      "question": "How do the five recovery-position movements relate spatially?",
+      "source_basis": [
+        "drk-recovery"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
     },
     {
       "id": "stroke-time-model",

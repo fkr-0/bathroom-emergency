@@ -31,6 +31,38 @@
   color: var(--ink);
 }
 
+.badger-box {
+  position: relative;
+  margin: 1.35rem 0;
+  padding: 1rem 1rem 1rem 1.15rem;
+  background: color-mix(in srgb, var(--sg-accent, var(--green)) 7%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--sg-accent, var(--green)) 45%, var(--line));
+  border-left: .55rem solid var(--sg-accent, var(--green));
+}
+
+.badger-box::after {
+  content: "///";
+  position: absolute;
+  top: .35rem;
+  right: .55rem;
+  color: var(--sg-accent, var(--green));
+  font: 900 .8rem ui-monospace, monospace;
+  letter-spacing: -.08em;
+}
+
+.badger-box > :first-child { margin-top: 0; }
+.badger-box > :last-child { margin-bottom: 0; }
+
+h2::before {
+  content: "#";
+  display: inline-block;
+  margin-right: .45em;
+  color: var(--sg-accent, var(--green));
+  font-family: ui-monospace, monospace;
+  font-size: .76em;
+  font-weight: 900;
+}
+
 /*
  * Quantitative figures use an editorial chart treatment rather than the
  * heavier map/illustration card. The document owns the title and interpretive
@@ -576,6 +608,31 @@ math[display="block"] {
 
 #toc-toggle { display: none; }
 
+.revision-footer {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  width: min(100% - 2rem, 1120px);
+  margin: 2rem auto .8rem;
+  padding-top: .55rem;
+  color: var(--muted);
+  border-top: 3px solid var(--sg-accent, var(--green));
+  font-family: ui-monospace, monospace;
+  font-size: .68rem;
+  line-height: 1.35;
+}
+
+.revision-mark {
+  flex: 0 0 1.35rem;
+  width: 1.35rem;
+  height: 1.35rem;
+  color: var(--sg-accent, var(--green));
+  background-color: color-mix(in srgb, currentColor 12%, white);
+  background-image: var(--sg-pattern, repeating-linear-gradient(135deg, transparent 0 4px, currentColor 4px 5px));
+  background-size: var(--sg-pattern-size, 9px 9px);
+  border: 1px solid currentColor;
+}
+
 @media (max-width: 900px) {
   .app-shell {
     display: block;
@@ -650,6 +707,31 @@ math[display="block"] {
   }
 
   .app-bar, #TOC, .reading-progress { display: none !important; }
+
+  .revision-footer {
+    position: fixed;
+    right: 0;
+    bottom: -11mm;
+    left: 0;
+    z-index: 20;
+    width: auto;
+    height: 8mm;
+    margin: 0;
+    padding: 1.2mm 0 0;
+    gap: 2mm;
+    background: #fff;
+    border-top-width: .8mm;
+    font-size: 5.8pt;
+    line-height: 1.2;
+  }
+
+  .revision-mark {
+    flex-basis: 5mm;
+    width: 5mm;
+    height: 5mm;
+  }
+
+  .revision-url { white-space: nowrap; }
 
   .app-shell, main {
     display: block;

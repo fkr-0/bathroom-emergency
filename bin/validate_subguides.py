@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the released v4.5 core graph and B/H standalone identity contract."""
+"""Validate the current graph and released standalone identity contract."""
 from __future__ import annotations
 
 import hashlib
@@ -13,7 +13,7 @@ STYLE_PATH = ROOT / "src" / "style-subguides.css"
 PATTERN_DIR = ROOT / "build" / "subguides" / "assets" / "patterns"
 DIAGRAM_DIR = ROOT / "build" / "diagrams"
 HUB_PATH = ROOT / "build" / "subguides" / "index.html"
-VERSION = "4.5.0"
+from project_meta import VERSION
 errors: list[str] = []
 
 
@@ -29,15 +29,18 @@ check(STYLE_PATH.exists(), "subguide identity stylesheet missing")
 if PATH.exists():
     data = json.loads(PATH.read_text(encoding="utf-8"))
     nodes = data.get("nodes", [])
-    expected = {"O", "A", "B", "C", "D", "H", "Z", "P", "R"}
+    expected = {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"}
     ids = [item.get("id") for item in nodes]
     check(data.get("release") == VERSION, f"subguide release is not {VERSION}")
     check(
-        data.get("status") == "core-graph-with-bh-standalone",
+        data.get("status") == "core-graph-with-bhtr-standalone",
         "released graph status marker missing",
     )
-    check(data.get("identity_frozen_on") == "2026-07-23", "identity freeze date missing")
-    check(set(data.get("standalone_nodes", [])) == {"B", "H"}, "B/H standalone release set drifted")
+    check(data.get("identity_frozen_on") == "2026-07-26", "identity freeze date missing")
+    check(
+        set(data.get("standalone_nodes", [])) == {"B", "H", "T", "R"},
+        "B/H/T/R standalone release set drifted",
+    )
     check(
         data.get("master_emergency_gate") == "once-on-master-cover",
         "master emergency-gate rule drifted",
@@ -50,7 +53,7 @@ if PATH.exists():
         data.get("source_strategy") == "generated-filtered-sources-and-limits",
         "generated source strategy missing",
     )
-    check(len(nodes) == 9, f"expected 9 core nodes, found {len(nodes)}")
+    check(len(nodes) == 10, f"expected 10 core nodes, found {len(nodes)}")
     check(set(ids) == expected, f"core node IDs drifted: {ids}")
     check(len(ids) == len(set(ids)), "duplicate subguide IDs")
 
@@ -67,7 +70,7 @@ if PATH.exists():
             "glyph", "chapters", "sections", "incoming", "outgoing", "questions",
         ):
             check(bool(item.get(field)), f"{node_id}: missing {field}")
-        check(item.get("reviewed_on") == "2026-07-23", f"{node_id}: review date drifted")
+        check(item.get("reviewed_on") == "2026-07-26", f"{node_id}: review date drifted")
         pattern = item.get("pattern")
         check(pattern not in patterns, f"{node_id}: duplicate pattern {pattern}")
         patterns.add(pattern)
@@ -114,7 +117,7 @@ if PATH.exists():
         section_data = json.loads(SECTION_PATH.read_text(encoding="utf-8"))
         section_records = section_data.get("sections", [])
         check(section_data.get("release") == VERSION, "section ownership release drifted")
-        check(len(section_records) >= 180, f"section ownership inventory too small: {len(section_records)}")
+        check(len(section_records) >= 200, f"section ownership inventory too small: {len(section_records)}")
         check(
             all(item.get("owner") in expected for item in section_records),
             "section ownership contains unknown node",
@@ -149,7 +152,7 @@ if PATH.exists():
         hashlib.sha256(path.read_bytes()).hexdigest()
         for path in pattern_files if path.exists()
     }
-    check(len(hashes) == 9, "pattern prototype files are not visually/file-distinct")
+    check(len(hashes) == 10, "pattern prototype files are not visually/file-distinct")
 
     for name in (
         "subguide_graph_overview.png",
@@ -169,7 +172,7 @@ if errors:
     raise SystemExit("Subguide validation failed:\n- " + "\n- ".join(errors))
 
 print(
-    "Subguide validation passed: 9 frozen code/pattern/glyph identities, "
+    "Subguide validation passed: 10 frozen code/pattern/glyph identities, "
     "reciprocal graph declarations, generated hub/local maps, print-safe pattern "
-    "prototypes, and B/H standalone scope at 4.5.0."
+    f"prototypes, and B/H/T/R standalone scope at {VERSION}."
 )

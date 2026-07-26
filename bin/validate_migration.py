@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate v4.5 ownership, source registry, hub, and B/H standalone editions."""
+"""Validate ownership, source registry, hub, and released standalone editions."""
 from __future__ import annotations
 
 import hashlib
@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "src" / "data"
 BUILD = ROOT / "build" / "subguides"
-VERSION = "4.5.0"
+from project_meta import VERSION
 errors: list[str] = []
 
 
@@ -102,7 +102,7 @@ if section_path.exists():
     check(len(keys) == len(set(keys)), "duplicate section inventory keys")
     check(
         all(
-            item.get("owner") in {"O", "A", "B", "C", "D", "H", "Z", "P", "R"}
+            item.get("owner") in {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"}
             for item in records
         ),
         "unknown section owner",
@@ -126,7 +126,7 @@ if figure_path.exists():
     )
     for item in records:
         check(
-            item.get("owner") in {"O", "A", "B", "C", "D", "H", "Z", "P", "R"},
+            item.get("owner") in {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"},
             f"{item.get('id')}: missing exact owner",
         )
         check(bool(item.get("question")), f"{item.get('id')}: missing question")
@@ -180,6 +180,37 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
             "Sources and limits",
         ),
         ("B — I feel anxious", "C — Pain", "D — Threat", "E — Overload"),
+    ),
+    (
+        "T",
+        "templates-blue-book",
+        0,
+        0,
+        (
+            "Templates — The Blue Book",
+            "Deployment cover and ownership card",
+            "Observation and vital-sign log",
+            "Feedback and field-note sheet",
+            "Sources and limits",
+        ),
+        (),
+    ),
+    (
+        "R",
+        "reference",
+        0,
+        2,
+        (
+            "Reference and Appendix — The Useful Loose Ends",
+            "Stable references — addresses that survive editing",
+            "Professional contact and service index",
+            "Diagram, chart, map, and figure index",
+            "Glossary",
+            "Global content index",
+            "Version History",
+            "Sources and Evidence Notes",
+        ),
+        (),
     ),
 ):
     out = BUILD / node
@@ -296,14 +327,17 @@ check(hub_manifest_path.exists(), "graph hub manifest missing")
 if hub_manifest_path.exists():
     hub = json.loads(hub_manifest_path.read_text(encoding="utf-8"))
     check(hub.get("release") == VERSION, "hub release drifted")
-    check(set(hub.get("standalone_nodes", [])) == {"B", "H"}, "hub standalone set drifted")
-    check(len(hub.get("master_only_nodes", [])) == 7, "hub master-only set drifted")
+    check(
+        set(hub.get("standalone_nodes", [])) == {"B", "H", "T", "R"},
+        "hub standalone set drifted",
+    )
+    check(len(hub.get("master_only_nodes", [])) == 6, "hub master-only set drifted")
 
 if errors:
     raise SystemExit("Migration validation failed:\n- " + "\n- ".join(errors))
 
 print(
     "Migration validation passed: canonical section/figure/source ownership, "
-    "four-plus B/H visuals, graph hub, and 12 tagged standalone PDF editions "
+    "released visual minimums, graph hub, and 24 tagged standalone PDF editions "
     "with A4/A4/2/large-print color-mono parity."
 )

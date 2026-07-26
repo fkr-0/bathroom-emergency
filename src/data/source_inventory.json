@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.5.0",
+  "release": "4.6.0",
   "status": "canonical-source-registry",
   "generated_by": "bin/build_source_inventory.py",
   "footnote_sources": [
@@ -14,7 +14,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/"
       ],
       "used_at_lines": [
-        137
+        159
       ],
       "subguides": [
         "O"
@@ -30,7 +30,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC7033556/"
       ],
       "used_at_lines": [
-        100
+        122
       ],
       "subguides": [
         "O"
@@ -46,7 +46,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC4767560/"
       ],
       "used_at_lines": [
-        79
+        101
       ],
       "subguides": [
         "O"
@@ -62,7 +62,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/"
       ],
       "used_at_lines": [
-        156
+        178
       ],
       "subguides": [
         "O"
@@ -78,7 +78,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518606/"
       ],
       "used_at_lines": [
-        160
+        182
       ],
       "subguides": [
         "O"
@@ -94,7 +94,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC2714186/"
       ],
       "used_at_lines": [
-        57
+        79
       ],
       "subguides": [
         "O"
@@ -110,7 +110,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC11169962/"
       ],
       "used_at_lines": [
-        35
+        57
       ],
       "subguides": [
         "O"
@@ -126,7 +126,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC5264389/"
       ],
       "used_at_lines": [
-        195
+        217
       ],
       "subguides": [
         "O"
@@ -142,7 +142,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC4252820/"
       ],
       "used_at_lines": [
-        104
+        126
       ],
       "subguides": [
         "O"
@@ -158,7 +158,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC4258989/"
       ],
       "used_at_lines": [
-        176
+        198
       ],
       "subguides": [
         "O"
@@ -174,7 +174,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC5003767/"
       ],
       "used_at_lines": [
-        117
+        139
       ],
       "subguides": [
         "O"
@@ -618,7 +618,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/blutungen-und-blutstillung/blutungen/"
       ],
       "used_at_lines": [
-        102
+        175
       ],
       "subguides": [
         "C"
@@ -634,7 +634,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/verbrennungen/"
       ],
       "used_at_lines": [
-        126
+        205
       ],
       "subguides": [
         "C"
@@ -650,7 +650,23 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/knochenbruch/knochenbrueche/"
       ],
       "used_at_lines": [
-        144
+        226
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
+      "id": "05-self-ambulance--drk-recovery",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "drk-recovery",
+      "kind": "explanatory",
+      "text": "German Red Cross, “Stabile Seitenlage”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stabile-seitenlage/",
+      "urls": [
+        "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stabile-seitenlage/"
+      ],
+      "used_at_lines": [
+        127
       ],
       "subguides": [
         "C"
@@ -666,7 +682,8 @@
         "https://gesund.bund.de/notfallnummern"
       ],
       "used_at_lines": [
-        267
+        44,
+        356
       ],
       "subguides": [
         "C"
@@ -682,7 +699,7 @@
         "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/"
       ],
       "used_at_lines": [
-        66
+        95
       ],
       "subguides": [
         "C"
@@ -698,7 +715,7 @@
         "https://doi.org/10.1161/01.STR.0000196957.55928.ab"
       ],
       "used_at_lines": [
-        194
+        279
       ],
       "subguides": [
         "C"
@@ -762,7 +779,7 @@
         "https://doi.org/10.1177/1745691614568352"
       ],
       "used_at_lines": [
-        186
+        198
       ],
       "subguides": [
         "P"
@@ -778,7 +795,7 @@
         "https://interagencystandingcommittee.org/iasc-task-force-mental-health-and-psychosocial-support-emergency-settings/iasc-guidelines-mental-health-and-psychosocial-support-emergency-settings-2007"
       ],
       "used_at_lines": [
-        83
+        95
       ],
       "subguides": [
         "P"
@@ -795,7 +812,7 @@
         "https://service.justiz.de/prozesskostenhilfe"
       ],
       "used_at_lines": [
-        259
+        271
       ],
       "subguides": [
         "P"
@@ -813,7 +830,8 @@
         "https://www.hilfetelefon.de/"
       ],
       "used_at_lines": [
-        33
+        33,
+        45
       ],
       "subguides": [
         "P"
@@ -829,7 +847,7 @@
         "https://gesund.bund.de/sozialpsychiatrischer-dienst"
       ],
       "used_at_lines": [
-        120
+        132
       ],
       "subguides": [
         "P"

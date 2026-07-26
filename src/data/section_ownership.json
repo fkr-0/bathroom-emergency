@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.5.0",
+  "release": "4.6.0",
   "generated_by": "bin/build_inventories.py",
   "granularity": "all level-1 and level-2 headings",
   "sections": [
@@ -29,9 +29,17 @@
       "owner": "O"
     },
     {
-      "key": "01-how-to-use:1-when-the-outside-gets-quiet-the-inside-gets-loud",
+      "key": "01-how-to-use:which-guide-should-i-pick",
       "chapter": "01-how-to-use.md",
       "line": 24,
+      "level": 2,
+      "heading": "Which guide should I pick?",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:1-when-the-outside-gets-quiet-the-inside-gets-loud",
+      "chapter": "01-how-to-use.md",
+      "line": 46,
       "level": 2,
       "heading": "1. When the outside gets quiet, the inside gets loud",
       "owner": "O"
@@ -39,7 +47,7 @@
     {
       "key": "01-how-to-use:2-the-gut-votes-early",
       "chapter": "01-how-to-use.md",
-      "line": 51,
+      "line": 73,
       "level": 2,
       "heading": "2. The gut votes early",
       "owner": "O"
@@ -47,7 +55,7 @@
     {
       "key": "01-how-to-use:3-the-room-is-amplifying-you",
       "chapter": "01-how-to-use.md",
-      "line": 74,
+      "line": 96,
       "level": 2,
       "heading": "3. The room is amplifying you",
       "owner": "O"
@@ -55,7 +63,7 @@
     {
       "key": "01-how-to-use:4-anxiety-bends-time",
       "chapter": "01-how-to-use.md",
-      "line": 94,
+      "line": 116,
       "level": 2,
       "heading": "4. Anxiety bends time",
       "owner": "O"
@@ -63,7 +71,7 @@
     {
       "key": "01-how-to-use:5-acute-stress-makes-the-mind-narrower-not-stupider",
       "chapter": "01-how-to-use.md",
-      "line": 111,
+      "line": 133,
       "level": 2,
       "heading": "5. Acute stress makes the mind narrower, not stupider",
       "owner": "O"
@@ -71,7 +79,7 @@
     {
       "key": "01-how-to-use:6-naming-a-feeling-changes-the-task",
       "chapter": "01-how-to-use.md",
-      "line": 132,
+      "line": 154,
       "level": 2,
       "heading": "6. Naming a feeling changes the task",
       "owner": "O"
@@ -79,7 +87,7 @@
     {
       "key": "01-how-to-use:7-cold-water-is-interesting-not-magical",
       "chapter": "01-how-to-use.md",
-      "line": 151,
+      "line": 173,
       "level": 2,
       "heading": "7. Cold water is interesting, not magical",
       "owner": "O"
@@ -87,7 +95,7 @@
     {
       "key": "01-how-to-use:8-bathroom-fainting-is-a-real-category",
       "chapter": "01-how-to-use.md",
-      "line": 170,
+      "line": 192,
       "level": 2,
       "heading": "8. Bathroom fainting is a real category",
       "owner": "O"
@@ -95,7 +103,7 @@
     {
       "key": "01-how-to-use:9-smell-is-a-fading-sensor",
       "chapter": "01-how-to-use.md",
-      "line": 190,
+      "line": 212,
       "level": 2,
       "heading": "9. Smell is a fading sensor",
       "owner": "O"
@@ -103,7 +111,7 @@
     {
       "key": "01-how-to-use:10-the-three-minute-bathroom-experiment",
       "chapter": "01-how-to-use.md",
-      "line": 203,
+      "line": 225,
       "level": 2,
       "heading": "10. The three-minute bathroom experiment",
       "owner": "O"
@@ -111,7 +119,7 @@
     {
       "key": "01-how-to-use:choose-the-loudest-topic",
       "chapter": "01-how-to-use.md",
-      "line": 225,
+      "line": 247,
       "level": 2,
       "heading": "Choose the loudest topic",
       "owner": "O"
@@ -583,7 +591,7 @@
     {
       "key": "05-self-ambulance:first-aid-you-are-the-first-link-not-the-whole-ambulance",
       "chapter": "05-self-ambulance.md",
-      "line": 11,
+      "line": 14,
       "level": 1,
       "heading": "First Aid — You Are the First Link, Not the Whole Ambulance",
       "owner": "C"
@@ -591,7 +599,7 @@
     {
       "key": "05-self-ambulance:the-first-minute-preserve-what-still-works",
       "chapter": "05-self-ambulance.md",
-      "line": 21,
+      "line": 24,
       "level": 2,
       "heading": "The first minute: preserve what still works",
       "owner": "C"
@@ -599,7 +607,7 @@
     {
       "key": "05-self-ambulance:triage-priority-heatmap",
       "chapter": "05-self-ambulance.md",
-      "line": 33,
+      "line": 49,
       "level": 2,
       "heading": "Triage priority heatmap",
       "owner": "C"
@@ -607,7 +615,7 @@
     {
       "key": "05-self-ambulance:the-golden-hour-useful-urgency-not-a-stopwatch",
       "chapter": "05-self-ambulance.md",
-      "line": 47,
+      "line": 63,
       "level": 2,
       "heading": "The “golden hour” — useful urgency, not a stopwatch",
       "owner": "C"
@@ -615,7 +623,7 @@
     {
       "key": "05-self-ambulance:unresponsive-and-not-breathing-normally",
       "chapter": "05-self-ambulance.md",
-      "line": 56,
+      "line": 72,
       "level": 2,
       "heading": "Unresponsive and not breathing normally",
       "owner": "C"
@@ -623,7 +631,7 @@
     {
       "key": "05-self-ambulance:unresponsive-but-breathing-normally",
       "chapter": "05-self-ambulance.md",
-      "line": 68,
+      "line": 113,
       "level": 2,
       "heading": "Unresponsive but breathing normally",
       "owner": "C"
@@ -631,7 +639,7 @@
     {
       "key": "05-self-ambulance:choking",
       "chapter": "05-self-ambulance.md",
-      "line": 74,
+      "line": 131,
       "level": 2,
       "heading": "Choking",
       "owner": "C"
@@ -639,7 +647,7 @@
     {
       "key": "05-self-ambulance:wounds-and-bleeding",
       "chapter": "05-self-ambulance.md",
-      "line": 81,
+      "line": 146,
       "level": 2,
       "heading": "Wounds and bleeding",
       "owner": "C"
@@ -647,7 +655,7 @@
     {
       "key": "05-self-ambulance:burns-and-scalds",
       "chapter": "05-self-ambulance.md",
-      "line": 111,
+      "line": 187,
       "level": 2,
       "heading": "Burns and scalds",
       "owner": "C"
@@ -655,7 +663,7 @@
     {
       "key": "05-self-ambulance:suspected-fractures-and-joint-injuries",
       "chapter": "05-self-ambulance.md",
-      "line": 128,
+      "line": 207,
       "level": 2,
       "heading": "Suspected fractures and joint injuries",
       "owner": "C"
@@ -663,7 +671,7 @@
     {
       "key": "05-self-ambulance:suspected-spine-neck-or-pelvic-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 146,
+      "line": 228,
       "level": 2,
       "heading": "Suspected spine, neck, or pelvic injury",
       "owner": "C"
@@ -671,7 +679,7 @@
     {
       "key": "05-self-ambulance:chemical-in-eye-or-on-skin",
       "chapter": "05-self-ambulance.md",
-      "line": 157,
+      "line": 242,
       "level": 2,
       "heading": "Chemical in eye or on skin",
       "owner": "C"
@@ -679,7 +687,7 @@
     {
       "key": "05-self-ambulance:electrical-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 168,
+      "line": 253,
       "level": 2,
       "heading": "Electrical injury",
       "owner": "C"
@@ -687,7 +695,7 @@
     {
       "key": "05-self-ambulance:stroke-fast",
       "chapter": "05-self-ambulance.md",
-      "line": 175,
+      "line": 260,
       "level": 2,
       "heading": "Stroke — FAST",
       "owner": "C"
@@ -695,7 +703,7 @@
     {
       "key": "05-self-ambulance:chest-pain-or-severe-breathlessness",
       "chapter": "05-self-ambulance.md",
-      "line": 202,
+      "line": 287,
       "level": 2,
       "heading": "Chest pain or severe breathlessness",
       "owner": "C"
@@ -703,7 +711,7 @@
     {
       "key": "05-self-ambulance:anaphylaxis",
       "chapter": "05-self-ambulance.md",
-      "line": 209,
+      "line": 294,
       "level": 2,
       "heading": "Anaphylaxis",
       "owner": "C"
@@ -711,7 +719,7 @@
     {
       "key": "05-self-ambulance:poisoning",
       "chapter": "05-self-ambulance.md",
-      "line": 223,
+      "line": 308,
       "level": 2,
       "heading": "Poisoning",
       "owner": "C"
@@ -719,7 +727,7 @@
     {
       "key": "05-self-ambulance:vital-signs-observe-record-never-self-clear",
       "chapter": "05-self-ambulance.md",
-      "line": 235,
+      "line": 320,
       "level": 2,
       "heading": "Vital signs — observe, record, never self-clear",
       "owner": "C"
@@ -727,7 +735,7 @@
     {
       "key": "05-self-ambulance:pain-without-a-red-flag",
       "chapter": "05-self-ambulance.md",
-      "line": 262,
+      "line": 351,
       "level": 2,
       "heading": "Pain without a red flag",
       "owner": "C"
@@ -735,7 +743,7 @@
     {
       "key": "05-self-ambulance:self-care-while-waiting",
       "chapter": "05-self-ambulance.md",
-      "line": 273,
+      "line": 362,
       "level": 2,
       "heading": "Self-care while waiting",
       "owner": "C"
@@ -743,7 +751,7 @@
     {
       "key": "05-self-ambulance:first-aid-kit-for-an-ordinary-household",
       "chapter": "05-self-ambulance.md",
-      "line": 290,
+      "line": 379,
       "level": 2,
       "heading": "First-aid kit for an ordinary household",
       "owner": "C"
@@ -751,7 +759,7 @@
     {
       "key": "05-self-ambulance:self-ambulance-for-non-physical-emergencies",
       "chapter": "05-self-ambulance.md",
-      "line": 308,
+      "line": 397,
       "level": 2,
       "heading": "Self ambulance for non-physical emergencies",
       "owner": "C"
@@ -759,7 +767,7 @@
     {
       "key": "05-self-ambulance:red-flag-theorem-again",
       "chapter": "05-self-ambulance.md",
-      "line": 325,
+      "line": 414,
       "level": 2,
       "heading": "Red-flag theorem, again",
       "owner": "C"
@@ -847,7 +855,7 @@
     {
       "key": "07-professional-support:the-call-script-location-before-autobiography",
       "chapter": "07-professional-support.md",
-      "line": 35,
+      "line": 47,
       "level": 2,
       "heading": "The call script — location before autobiography",
       "owner": "P"
@@ -855,7 +863,7 @@
     {
       "key": "07-professional-support:psychological-support",
       "chapter": "07-professional-support.md",
-      "line": 78,
+      "line": 90,
       "level": 2,
       "heading": "Psychological support",
       "owner": "P"
@@ -863,7 +871,7 @@
     {
       "key": "07-professional-support:violence-and-coercion",
       "chapter": "07-professional-support.md",
-      "line": 195,
+      "line": 207,
       "level": 2,
       "heading": "Violence and coercion",
       "owner": "P"
@@ -871,7 +879,7 @@
     {
       "key": "07-professional-support:legal-support",
       "chapter": "07-professional-support.md",
-      "line": 222,
+      "line": 234,
       "level": 2,
       "heading": "Legal support",
       "owner": "P"
@@ -879,7 +887,7 @@
     {
       "key": "07-professional-support:medical-support",
       "chapter": "07-professional-support.md",
-      "line": 276,
+      "line": 288,
       "level": 2,
       "heading": "Medical support",
       "owner": "P"
@@ -887,7 +895,7 @@
     {
       "key": "07-professional-support:children-dependants-and-caregiving",
       "chapter": "07-professional-support.md",
-      "line": 312,
+      "line": 324,
       "level": 2,
       "heading": "Children, dependants, and caregiving",
       "owner": "P"
@@ -895,7 +903,7 @@
     {
       "key": "07-professional-support:housing-and-no-place-tonight",
       "chapter": "07-professional-support.md",
-      "line": 340,
+      "line": 352,
       "level": 2,
       "heading": "Housing and “no place tonight”",
       "owner": "P"
@@ -903,7 +911,7 @@
     {
       "key": "07-professional-support:quick-reference-card",
       "chapter": "07-professional-support.md",
-      "line": 381,
+      "line": 393,
       "level": 2,
       "heading": "Quick reference card",
       "owner": "P"
@@ -911,7 +919,7 @@
     {
       "key": "07-professional-support:fill-these-before-deployment",
       "chapter": "07-professional-support.md",
-      "line": 395,
+      "line": 407,
       "level": 2,
       "heading": "Fill these before deployment",
       "owner": "P"
@@ -919,23 +927,175 @@
     {
       "key": "07-professional-support:support-selection-matrix",
       "chapter": "07-professional-support.md",
-      "line": 422,
+      "line": 434,
       "level": 2,
       "heading": "Support-selection matrix",
       "owner": "P"
     },
     {
-      "key": "08-appendix:appendix-the-useful-loose-ends",
+      "key": "07a-templates:templates-the-blue-book",
+      "chapter": "07a-templates.md",
+      "line": 9,
+      "level": 1,
+      "heading": "Templates — The Blue Book",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:mini-contents",
+      "chapter": "07a-templates.md",
+      "line": 21,
+      "level": 2,
+      "heading": "Mini contents",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:who-fills-what",
+      "chapter": "07a-templates.md",
+      "line": 47,
+      "level": 2,
+      "heading": "Who fills what?",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:deployment-cover-and-ownership-card",
+      "chapter": "07a-templates.md",
+      "line": 62,
+      "level": 2,
+      "heading": "Deployment cover and ownership card",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:location-and-access-card",
+      "chapter": "07a-templates.md",
+      "line": 83,
+      "level": 2,
+      "heading": "Location and access card",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:emergency-call-card",
+      "chapter": "07a-templates.md",
+      "line": 119,
+      "level": 2,
+      "heading": "Emergency call card",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:local-professional-contacts",
+      "chapter": "07a-templates.md",
+      "line": 137,
+      "level": 2,
+      "heading": "Local professional contacts",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:comfort-inventory",
+      "chapter": "07a-templates.md",
+      "line": 160,
+      "level": 2,
+      "heading": "Comfort inventory",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:five-minute-values-bridge",
+      "chapter": "07a-templates.md",
+      "line": 184,
+      "level": 2,
+      "heading": "Five-minute values bridge",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:observation-and-vital-sign-log",
+      "chapter": "07a-templates.md",
+      "line": 209,
+      "level": 2,
+      "heading": "Observation and vital-sign log",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:nice-place-and-low-demand-activity-map",
+      "chapter": "07a-templates.md",
+      "line": 230,
+      "level": 2,
+      "heading": "Nice-place and low-demand activity map",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:safe-place-and-exit-map",
+      "chapter": "07a-templates.md",
+      "line": 253,
+      "level": 2,
+      "heading": "Safe-place and exit map",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:medication-power-and-care-continuity-card",
+      "chapter": "07a-templates.md",
+      "line": 267,
+      "level": 2,
+      "heading": "Medication, power, and care continuity card",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:household-continuity-board",
+      "chapter": "07a-templates.md",
+      "line": 286,
+      "level": 2,
+      "heading": "Household continuity board",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:feedback-and-field-note-sheet",
+      "chapter": "07a-templates.md",
+      "line": 302,
+      "level": 2,
+      "heading": "Feedback and field-note sheet",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:remarks-and-handoff-sheet",
+      "chapter": "07a-templates.md",
+      "line": 323,
+      "level": 2,
+      "heading": "Remarks and handoff sheet",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:quiet-activity-sheet",
+      "chapter": "07a-templates.md",
+      "line": 344,
+      "level": 2,
+      "heading": "Quiet activity sheet",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:take-replace-improve",
+      "chapter": "07a-templates.md",
+      "line": 378,
+      "level": 2,
+      "heading": "Take, replace, improve",
+      "owner": "T"
+    },
+    {
+      "key": "08-appendix:reference-and-appendix-the-useful-loose-ends",
       "chapter": "08-appendix.md",
       "line": 15,
       "level": 1,
-      "heading": "Appendix — The Useful Loose Ends",
+      "heading": "Reference and Appendix — The Useful Loose Ends",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:stable-references-addresses-that-survive-editing",
+      "chapter": "08-appendix.md",
+      "line": 21,
+      "level": 2,
+      "heading": "Stable references — addresses that survive editing",
       "owner": "R"
     },
     {
       "key": "08-appendix:master-cross-reference-where-everything-points",
       "chapter": "08-appendix.md",
-      "line": 21,
+      "line": 57,
       "level": 2,
       "heading": "Master cross-reference — where everything points",
       "owner": "R"
@@ -943,7 +1103,7 @@
     {
       "key": "08-appendix:mathematical-notation-legend",
       "chapter": "08-appendix.md",
-      "line": 38,
+      "line": 74,
       "level": 2,
       "heading": "Mathematical notation legend",
       "owner": "R"
@@ -951,7 +1111,7 @@
     {
       "key": "08-appendix:the-eight-entry-points",
       "chapter": "08-appendix.md",
-      "line": 52,
+      "line": 88,
       "level": 2,
       "heading": "The eight entry points",
       "owner": "R"
@@ -959,7 +1119,7 @@
     {
       "key": "08-appendix:guide-topology",
       "chapter": "08-appendix.md",
-      "line": 65,
+      "line": 101,
       "level": 2,
       "heading": "Guide topology",
       "owner": "R"
@@ -967,7 +1127,7 @@
     {
       "key": "08-appendix:flowchart-legend",
       "chapter": "08-appendix.md",
-      "line": 74,
+      "line": 110,
       "level": 2,
       "heading": "Flowchart legend",
       "owner": "R"
@@ -975,7 +1135,7 @@
     {
       "key": "08-appendix:how-to-read-the-evidence-figures",
       "chapter": "08-appendix.md",
-      "line": 85,
+      "line": 121,
       "level": 2,
       "heading": "How to read the evidence figures",
       "owner": "R"
@@ -983,7 +1143,7 @@
     {
       "key": "08-appendix:diagram-index",
       "chapter": "08-appendix.md",
-      "line": 95,
+      "line": 131,
       "level": 2,
       "heading": "Diagram index",
       "owner": "R"
@@ -991,7 +1151,7 @@
     {
       "key": "08-appendix:evidence-labels",
       "chapter": "08-appendix.md",
-      "line": 121,
+      "line": 157,
       "level": 2,
       "heading": "Evidence labels",
       "owner": "R"
@@ -999,7 +1159,7 @@
     {
       "key": "08-appendix:formula-and-theorem-index",
       "chapter": "08-appendix.md",
-      "line": 140,
+      "line": 176,
       "level": 2,
       "heading": "Formula and theorem index",
       "owner": "R"
@@ -1007,7 +1167,7 @@
     {
       "key": "08-appendix:fillable-fields",
       "chapter": "08-appendix.md",
-      "line": 243,
+      "line": 279,
       "level": 2,
       "heading": "Fillable fields",
       "owner": "R"
@@ -1015,7 +1175,7 @@
     {
       "key": "08-appendix:master-flowchart-complete-text-version",
       "chapter": "08-appendix.md",
-      "line": 279,
+      "line": 315,
       "level": 2,
       "heading": "Master flowchart — complete text version",
       "owner": "R"
@@ -1023,7 +1183,7 @@
     {
       "key": "08-appendix:pocket-print-card",
       "chapter": "08-appendix.md",
-      "line": 389,
+      "line": 425,
       "level": 2,
       "heading": "Pocket print card",
       "owner": "R"
@@ -1031,7 +1191,7 @@
     {
       "key": "08-appendix:offline-deployment-checklist",
       "chapter": "08-appendix.md",
-      "line": 420,
+      "line": 456,
       "level": 2,
       "heading": "Offline deployment checklist",
       "owner": "R"
@@ -1039,7 +1199,7 @@
     {
       "key": "08-appendix:navigation-invariant",
       "chapter": "08-appendix.md",
-      "line": 434,
+      "line": 470,
       "level": 2,
       "heading": "Navigation invariant",
       "owner": "R"
@@ -1053,17 +1213,25 @@
       "owner": "R"
     },
     {
-      "key": "09-version-history:4-5-0-23-july-2026-release-candidate",
+      "key": "09-version-history:4-6-0-26-july-2026",
       "chapter": "09-version-history.md",
       "line": 11,
       "level": 2,
-      "heading": "4.5.0 — 23 July 2026 release candidate",
+      "heading": "4.6.0 — 26 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-5-0-26-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 52,
+      "level": 2,
+      "heading": "4.5.0 — 26 July 2026",
       "owner": "R"
     },
     {
       "key": "09-version-history:4-4-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 44,
+      "line": 85,
       "level": 2,
       "heading": "4.4.1 — 22 July 2026",
       "owner": "R"
@@ -1071,7 +1239,7 @@
     {
       "key": "09-version-history:4-3-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 59,
+      "line": 100,
       "level": 2,
       "heading": "4.3.1 — 22 July 2026",
       "owner": "R"
@@ -1079,7 +1247,7 @@
     {
       "key": "09-version-history:4-3-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 77,
+      "line": 118,
       "level": 2,
       "heading": "4.3.0 — 22 July 2026",
       "owner": "R"
@@ -1087,7 +1255,7 @@
     {
       "key": "09-version-history:4-2-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 107,
+      "line": 148,
       "level": 2,
       "heading": "4.2.0 — 22 July 2026",
       "owner": "R"
@@ -1095,7 +1263,7 @@
     {
       "key": "09-version-history:4-1-2-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 138,
+      "line": 179,
       "level": 2,
       "heading": "4.1.2 — 22 July 2026",
       "owner": "R"
@@ -1103,7 +1271,7 @@
     {
       "key": "09-version-history:4-1-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 162,
+      "line": 203,
       "level": 2,
       "heading": "4.1.1 — 22 July 2026",
       "owner": "R"
@@ -1111,7 +1279,7 @@
     {
       "key": "09-version-history:4-0-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 194,
+      "line": 235,
       "level": 2,
       "heading": "4.0.1 — 22 July 2026",
       "owner": "R"
@@ -1119,7 +1287,7 @@
     {
       "key": "09-version-history:4-0-0-17-july-2026",
       "chapter": "09-version-history.md",
-      "line": 248,
+      "line": 289,
       "level": 2,
       "heading": "4.0.0 — 17 July 2026",
       "owner": "R"
@@ -1127,7 +1295,7 @@
     {
       "key": "09-version-history:earlier-versions",
       "chapter": "09-version-history.md",
-      "line": 284,
+      "line": 325,
       "level": 2,
       "heading": "Earlier versions",
       "owner": "R"

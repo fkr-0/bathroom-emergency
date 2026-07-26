@@ -14,7 +14,7 @@ SUBGUIDES_PATH = ROOT / "src" / "data" / "subguides.json"
 THEME_PATH = ROOT / "src" / "visualizations" / "theme.json"
 DESIGN_SYSTEM_PATH = ROOT / "docs" / "plans" / "visual-design-system.md"
 HTML_PATH = ROOT / "build" / "html" / "guide.html"
-VERSION = "4.5.0"
+from project_meta import VERSION
 errors: list[str] = []
 
 

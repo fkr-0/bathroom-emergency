@@ -1,5 +1,5 @@
 /*
- * Graph-subguide identity layer for v4.5.
+ * Graph-subguide identity layer for v4.6.
  * Colour is supplementary: every identity also exposes code, title, pattern,
  * and a generated geometric graph node.
  */
@@ -88,6 +88,16 @@
     radial-gradient(circle, currentColor 0 2.4px, transparent 2.7px),
     linear-gradient(28deg, transparent 47%, currentColor 48% 52%, transparent 53%);
   --sg-pattern-size: 28px 28px;
+}
+
+[data-subguide="T"] {
+  --sg-pattern-name: "blueprint-corners";
+  --sg-accent: #2457a6;
+  --sg-soft: #e8f0ff;
+  --sg-pattern:
+    linear-gradient(90deg, currentColor 0 2px, transparent 2px 16px, currentColor 16px 18px, transparent 18px),
+    linear-gradient(currentColor 0 2px, transparent 2px 16px, currentColor 16px 18px, transparent 18px);
+  --sg-pattern-size: 36px 36px;
 }
 
 [data-subguide="R"] {

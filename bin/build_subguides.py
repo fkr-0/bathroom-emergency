@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the v4.5 graph hub and B/H standalone vertical slices.
+"""Build the graph hub and released standalone vertical slices.
 
 Canonical prose remains in src/chapters. This builder extracts owned sections,
 adds generated orientation/source wrappers, and renders the same content into
@@ -17,13 +17,21 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from build_reference_index import inject_heading_ids, mini_toc
+from project_meta import (
+    SOURCE_REVIEW_DATE,
+    VERSION,
+    build_date,
+    git_revision,
+    revision_footer_css,
+)
+
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 CHAPTER_DIR = SRC / "chapters"
 DATA_DIR = SRC / "data"
 BUILD = ROOT / "build" / "subguides"
-VERSION = "4.5.0"
-REVIEWED_ON = "2026-07-23"
+REVIEWED_ON = SOURCE_REVIEW_DATE
 REF_RE = re.compile(r"\[\^([A-Za-z0-9_-]+)\]")
 DEF_RE = re.compile(r"^\[\^([A-Za-z0-9_-]+)\]:")
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\((build/diagrams/[^)]+)\)")
@@ -201,6 +209,13 @@ def identity_css(node: dict, *, layout: str, monochrome: bool) -> str:
         parts.append(LAYOUTS[layout].read_text(encoding="utf-8"))
     if monochrome:
         parts.append((SRC / "style-mono.css").read_text(encoding="utf-8"))
+    parts.append(
+        revision_footer_css(
+            title=f'{node["id"]} — {node["title"]}',
+            layout=layout,
+            mode="mono" if monochrome else "color",
+        )
+    )
     layout_label = {"a4": "A4", "a4half": "A4/2", "largeprint": "LARGE PRINT"}[layout]
     parts.append(
         "\n".join(
@@ -245,6 +260,7 @@ def build_markdown(
     ordered_sources: list[dict],
     *,
     layout: str,
+    contents: str,
 ) -> str:
     node_id = node["id"]
     titles = {
@@ -314,8 +330,12 @@ Questions in this edition:
 
 {questions}
 
-A complete contents list with page links is available in the HTML navigation and
-PDF outline. The graph above and the handoff page below remain complete in text.
+## Mini contents
+
+{contents or '- The canonical content follows on the next page.'}
+
+The HTML navigation and PDF outline contain the same route. The graph above and
+the handoff page below remain complete in text.
 
 :::
 '''
@@ -358,7 +378,17 @@ def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
                 chapter_without_definitions("03h-environmental-hazards.md"),
             ),
         ]
-    raise RuntimeError("v4.5 standalone release supports B and H only")
+    if node_id == "T":
+        return [
+            ("07a-templates.md", chapter_without_definitions("07a-templates.md")),
+        ]
+    if node_id == "R":
+        return [
+            ("08-appendix.md", chapter_without_definitions("08-appendix.md")),
+            ("09-version-history.md", chapter_without_definitions("09-version-history.md")),
+            ("10-sources.md", chapter_without_definitions("10-sources.md")),
+        ]
+    raise RuntimeError(f"node {node_id} is not a released standalone edition")
 
 
 def build_node(node_id: str) -> dict:
@@ -378,6 +408,8 @@ def build_node(node_id: str) -> dict:
     ordered_sources: list[dict] = []
     content_parts: list[str] = []
     for chapter, block in canonical_blocks(node_id):
+        block = BG.expand_reference_macros(block)
+        block = inject_heading_ids(block, chapter)
         content_parts.append(
             replace_refs(
                 remove_footnote_definitions(block),
@@ -387,6 +419,7 @@ def build_node(node_id: str) -> dict:
             )
         )
     canonical_content = "\n\n".join(content_parts).strip()
+    contents = mini_toc(canonical_content)
     visual_files = sorted(set(IMAGE_RE.findall(canonical_content)))
 
     out_dir = BUILD / node_id
@@ -398,7 +431,11 @@ def build_node(node_id: str) -> dict:
             mode = "mono" if monochrome else "color"
             stem = variant_stem(node["slug"], layout, monochrome)
             markdown = build_markdown(
-                node, canonical_content, ordered_sources, layout=layout
+                node,
+                canonical_content,
+                ordered_sources,
+                layout=layout,
+                contents=contents,
             )
             markdown = BG.expand_visualization_macros(
                 markdown, BG.visualization_lookup()
@@ -445,6 +482,14 @@ def build_node(node_id: str) -> dict:
                     f"print-layout={layout}",
                     "--metadata",
                     "home-anchor=top",
+                    "--metadata",
+                    f"build-revision={git_revision()}",
+                    "--metadata",
+                    f"build-date={build_date()}",
+                    "--metadata",
+                    f'subguide-title={node["id"]} — {node["title"]}',
+                    "--metadata",
+                    "canonical-url=https://be.fkr.dev",
                     "--output",
                     str(html_path),
                 ]
@@ -561,7 +606,7 @@ They are deliberately different vertical slices: **B** is research-heavy and
 **H** is operational-source-heavy. Proving both prevents the build system from
 being accidentally optimized for only one kind of evidence.
 
-The remaining seven nodes continue to work inside the complete master guide
+The remaining six nodes continue to work inside the complete master guide
 until their source ownership, page grammar, and visual set pass the same gates.
 
 :::
@@ -620,9 +665,11 @@ until their source ownership, page grammar, and visual set pass the same gates.
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--node", choices=["B", "H", "all"], default="all")
+    manifest = json.loads((DATA_DIR / "subguides.json").read_text(encoding="utf-8"))
+    released = manifest["standalone_nodes"]
+    parser.add_argument("--node", choices=[*released, "all"], default="all")
     args = parser.parse_args()
-    node_ids = ["B", "H"] if args.node == "all" else [args.node]
+    node_ids = released if args.node == "all" else [args.node]
     results = {node_id: build_node(node_id) for node_id in node_ids}
     if args.node == "all":
         build_hub(results)

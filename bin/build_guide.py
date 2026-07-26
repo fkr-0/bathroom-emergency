@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Bathroom Emergency Guide v4.5.0.
+"""Build the current Bathroom Emergency Guide release.
 
 The build has one source of truth and no network dependency:
 - chapter YAML is removed during assembly;
@@ -18,6 +18,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+from project_meta import VERSION, build_date, git_revision, revision_footer_css
+from build_reference_index import inject_heading_ids
+
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 CHAPTER_DIR = SRC / "chapters"
@@ -29,12 +32,13 @@ BUILD_LATEX = BUILD / "latex"
 BUILD_DOCX = BUILD / "docx"
 TEMPLATE = SRC / "template.html"
 STYLE = SRC / "style.css"
+STYLE_SUBGUIDES = SRC / "style-subguides.css"
 STYLE_MONO = SRC / "style-mono.css"
 STYLE_A4_HALF = SRC / "style-a4-half.css"
 STYLE_LARGE_PRINT = SRC / "style-large-print.css"
 VISUALIZATION_CATALOG = SRC / "data" / "visualization_catalog.json"
 SOURCE_INVENTORY = SRC / "data" / "source_inventory.json"
-VERSION = "4.5.0"
+GENERATED = BUILD / "generated"
 
 CHAPTERS = [
     "00-cover.md",
@@ -47,10 +51,28 @@ CHAPTERS = [
     "05-self-ambulance.md",
     "06-zombie-guide.md",
     "07-professional-support.md",
+    "07a-templates.md",
     "08-appendix.md",
     "09-version-history.md",
     "10-sources.md",
 ]
+
+CHAPTER_OWNERS = {
+    "00-cover.md": "O",
+    "01-how-to-use.md": "O",
+    "02-situation-a.md": "A",
+    "03-situations-b-g.md": "D",
+    "03g-safe-place-routing.md": "D",
+    "03h-environmental-hazards.md": "H",
+    "04-calm-guide.md": "B",
+    "05-self-ambulance.md": "C",
+    "06-zombie-guide.md": "Z",
+    "07-professional-support.md": "P",
+    "07a-templates.md": "T",
+    "08-appendix.md": "R",
+    "09-version-history.md": "R",
+    "10-sources.md": "R",
+}
 
 
 class BuildError(RuntimeError):
@@ -134,6 +156,29 @@ def expand_visualization_macros(text: str, lookup: dict[str, dict]) -> str:
     return expanded
 
 
+def expand_reference_macros(text: str) -> str:
+    """Insert generated, source-backed indexes into the final reference guide."""
+    mapping = {
+        "global-content-index": "global-content-index.md",
+        "diagram-index-generated": "diagram-index.md",
+        "professional-contact-index": "contact-index.md",
+        "deployment-field-index": "deployment-index.md",
+        "glossary-index": "glossary-index.md",
+        "detachable-form-index": "form-index.md",
+    }
+    for macro, filename in mapping.items():
+        token = "{{" + macro + "}}"
+        if token not in text:
+            continue
+        path = GENERATED / filename
+        if not path.exists():
+            raise BuildError(f"Generated reference fragment missing: {path}")
+        text = text.replace(token, path.read_text(encoding="utf-8").strip())
+    if re.search(r"\{\{(?:global-content-index|diagram-index-generated|professional-contact-index|deployment-field-index|glossary-index|detachable-form-index)\}\}", text):
+        raise BuildError("Unexpanded reference-index macro remains")
+    return text
+
+
 def source_inventory_records() -> list[dict]:
     import json
 
@@ -157,7 +202,15 @@ def expand_subguide_source_macros(text: str, records: list[dict]) -> str:
         selected = [item for item in records if node in item.get("subguides", [])]
         selected.sort(key=lambda item: (chapter_order.get(item["chapter"], 999), min(item.get("used_at_lines", [9999])), item["id"]))
         if not selected:
-            raise BuildError(f"No inventoried sources for subguide {node}")
+            return "\n".join((
+                f'::: {{.sources-and-limits data-subguide="{node}"}}',
+                "",
+                f"## Sources and limits — {node}",
+                "",
+                "This subguide contains organizational templates rather than independent medical claims. Clinical and operational claims remain sourced beside the corresponding master-guide sections and in Reference.",
+                "",
+                ":::"
+            ))
         groups = (("Operational routes", "operational"), ("Research and evidence", "research"), ("Models and explanatory sources", "explanatory"))
         parts = [f'::: {{.sources-and-limits data-subguide="{node}"}}', "", f"## Sources and limits — {node}", "", "Generated from the current chapter-footnote inventory. Stable IDs come from the canonical source registry used by master and standalone editions.", ""]
         for title, kind in groups:
@@ -193,11 +246,13 @@ def assemble() -> Path:
             raise BuildError(f"Missing chapter: {path}")
         body = strip_frontmatter(path.read_text(encoding="utf-8"))
         body = expand_visualization_macros(body, visualizations)
-        body = expand_subguide_source_macros(body, source_records).strip()
+        body = expand_subguide_source_macros(body, source_records)
+        body = expand_reference_macros(body)
+        body = inject_heading_ids(body, filename).strip()
         slug = path.stem
         classes = "chapter document-cover" if index == 0 else "chapter"
         parts.extend([
-            f"::: {{#{slug} .{classes.replace(' ', ' .')}}}",
+            f'::: {{#{slug} .{classes.replace(" ", " .")} data-subguide="{CHAPTER_OWNERS[filename]}"}}',
             "",
             body,
             "",
@@ -222,12 +277,18 @@ def variant_stem(*, monochrome: bool, layout: str) -> str:
 
 def combined_css(monochrome: bool, *, layout: str = "a4") -> Path:
     content = STYLE.read_text(encoding="utf-8")
+    content += "\n\n" + STYLE_SUBGUIDES.read_text(encoding="utf-8")
     if layout == "a4half":
         content += "\n\n" + STYLE_A4_HALF.read_text(encoding="utf-8")
     if layout == "largeprint":
         content += "\n\n" + STYLE_LARGE_PRINT.read_text(encoding="utf-8")
     if monochrome:
         content += "\n\n" + STYLE_MONO.read_text(encoding="utf-8")
+    content += "\n\n" + revision_footer_css(
+        title="Complete guide",
+        layout=layout,
+        mode="mono" if monochrome else "color",
+    )
     name = variant_stem(monochrome=monochrome, layout=layout).replace("_", "-") + ".css"
     output = BUILD_HTML / name
     output.write_text(content, encoding="utf-8")
@@ -259,6 +320,14 @@ def build_html(markdown: Path, *, monochrome: bool = False, layout: str = "a4") 
         f"print-mode={'mono' if monochrome else 'color'}",
         "--metadata",
         f"print-layout={layout}",
+        "--metadata",
+        f"build-revision={git_revision()}",
+        "--metadata",
+        f"build-date={build_date()}",
+        "--metadata",
+        "subguide-title=Complete guide",
+        "--metadata",
+        "canonical-url=https://be.fkr.dev",
         "--output",
         str(output),
     ]

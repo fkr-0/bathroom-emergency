@@ -1,9 +1,14 @@
 {
   "schema_version": 1,
-  "release": "4.5.0",
-  "status": "core-graph-with-bh-standalone",
-  "identity_frozen_on": "2026-07-23",
-  "standalone_nodes": ["B", "H"],
+  "release": "4.6.0",
+  "status": "core-graph-with-bhtr-standalone",
+  "identity_frozen_on": "2026-07-26",
+  "standalone_nodes": [
+    "B",
+    "H",
+    "T",
+    "R"
+  ],
   "master_emergency_gate": "once-on-master-cover",
   "standalone_emergency_gate": "once-on-page-zero",
   "source_strategy": "generated-filtered-sources-and-limits",
@@ -13,7 +18,7 @@
       "slug": "small-room-observatory",
       "title": "Small-Room Observatory",
       "promise": "Observe body, room, and attention before choosing the route that owns the loudest problem.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "00-cover.md",
         "01-how-to-use.md"
@@ -33,7 +38,8 @@
         "H",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "outgoing": [
         "A",
@@ -43,7 +49,8 @@
         "H",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "questions": [
         "What is happening in body, room, and attention?",
@@ -55,7 +62,7 @@
       "slug": "responsibility-care",
       "title": "Responsibility and Care",
       "promise": "Separate live harm, repair, and continuing care so responsibility becomes actionable.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "02-situation-a.md"
       ],
@@ -71,7 +78,8 @@
         "D",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "outgoing": [
         "O",
@@ -79,7 +87,8 @@
         "D",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "questions": [
         "Who may depend on this action?",
@@ -91,7 +100,7 @@
       "slug": "alarm-calm",
       "title": "Alarm and Calm",
       "promise": "Investigate alarm, attention, overload, and small actions without hiding bodily red flags.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "03-situations-b-g.md",
         "04-calm-guide.md"
@@ -108,14 +117,16 @@
         "C",
         "D",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "outgoing": [
         "O",
         "C",
         "D",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "questions": [
         "Is alarm the primary problem?",
@@ -127,7 +138,7 @@
       "slug": "body-first-aid",
       "title": "Body and First Aid",
       "promise": "Route injury and illness, then support the body safely while professional help is arranged.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "03-situations-b-g.md",
         "05-self-ambulance.md"
@@ -145,7 +156,8 @@
         "H",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "outgoing": [
         "O",
@@ -154,7 +166,8 @@
         "H",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "questions": [
         "Is body injury or illness primary?",
@@ -166,7 +179,7 @@
       "slug": "threat-safe-place",
       "title": "Threat and Safe Place",
       "promise": "Name the unsafe person or place and move toward a confirmed destination with a backup.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "03-situations-b-g.md",
         "03g-safe-place-routing.md"
@@ -185,7 +198,8 @@
         "H",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "outgoing": [
         "O",
@@ -194,7 +208,8 @@
         "H",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "questions": [
         "Is a person or place unsafe?",
@@ -206,7 +221,7 @@
       "slug": "air-smell-environment",
       "title": "Air, Smell, and Environment",
       "promise": "Distinguish room, building, air, wiring, and substance hazards before ordinary troubleshooting.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "03-situations-b-g.md",
         "03h-environmental-hazards.md"
@@ -224,7 +239,8 @@
         "D",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "outgoing": [
         "O",
@@ -232,7 +248,8 @@
         "D",
         "Z",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "questions": [
         "Is the environment unsafe now?",
@@ -244,7 +261,7 @@
       "slug": "outage-continuity",
       "title": "Outage and Continuity",
       "promise": "Keep essential household functions visible, assigned, backed up, and reviewed.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "06-zombie-guide.md"
       ],
@@ -261,7 +278,8 @@
         "D",
         "H",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "outgoing": [
         "O",
@@ -270,7 +288,8 @@
         "D",
         "H",
         "P",
-        "R"
+        "R",
+        "T"
       ],
       "questions": [
         "Which household function is failing?",
@@ -282,7 +301,7 @@
       "slug": "professional-support",
       "title": "Professional Support",
       "promise": "Match a named problem to the service able to change it, with one backup route.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "07-professional-support.md"
       ],
@@ -300,6 +319,49 @@
         "D",
         "H",
         "Z",
+        "R",
+        "T"
+      ],
+      "outgoing": [
+        "O",
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "R",
+        "T"
+      ],
+      "questions": [
+        "Which system can change the named problem?",
+        "What is the first route and backup route?"
+      ]
+    },
+    {
+      "id": "T",
+      "slug": "templates-blue-book",
+      "title": "Templates — The Blue Book",
+      "promise": "Take, complete, detach, replace, and maintain the forms that move facts out of a crowded head.",
+      "reviewed_on": "2026-07-26",
+      "chapters": [
+        "07a-templates.md"
+      ],
+      "sections": [
+        "T"
+      ],
+      "colour": "#2457a6",
+      "pattern": "blueprint-corners",
+      "glyph": "folded-sheet",
+      "incoming": [
+        "O",
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "P",
         "R"
       ],
       "outgoing": [
@@ -310,11 +372,12 @@
         "D",
         "H",
         "Z",
+        "P",
         "R"
       ],
       "questions": [
-        "Which system can change the named problem?",
-        "What is the first route and backup route?"
+        "Which fact, list, map, log, or handoff should leave working memory?",
+        "Who completes, protects, checks, and replaces this page?"
       ]
     },
     {
@@ -322,7 +385,7 @@
       "slug": "reference",
       "title": "Reference",
       "promise": "Check the complete graph, formulas, fields, sources, limits, and reproducible evidence trail.",
-      "reviewed_on": "2026-07-23",
+      "reviewed_on": "2026-07-26",
       "chapters": [
         "08-appendix.md",
         "09-version-history.md",
@@ -342,7 +405,8 @@
         "D",
         "H",
         "Z",
-        "P"
+        "P",
+        "T"
       ],
       "outgoing": [
         "O",
@@ -352,7 +416,8 @@
         "D",
         "H",
         "Z",
-        "P"
+        "P",
+        "T"
       ],
       "questions": [
         "Which formula, source, field, or complete route is needed?",

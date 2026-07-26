@@ -1,0 +1,384 @@
+---
+title: "Templates: The Blue Book"
+chapter: "T"
+revision: "4.6.0"
+last_updated: "2026-07-26"
+dependencies: []
+---
+
+# Templates — The Blue Book
+
+**Take pages. Write on them. Replace them when the world changes.**
+
+The rest of the guide explains. This part externalizes. It contains the things a
+reader, helper, household, or deployer should not have to reconstruct from
+memory while frightened, tired, hurt, overloaded, or holding a phone with one
+hand.
+
+A blank form is not proof of preparation. A completed form is not proof of
+safety. These pages are small interfaces between attention and action.
+
+## Mini contents
+
+1. deployment cover and ownership card;
+2. location and access card;
+3. emergency call card;
+4. local professional contacts;
+5. comfort inventory;
+6. five-minute values bridge;
+7. observation and vital-sign log;
+8. nice-place and low-demand activity map;
+9. safe-place and exit map;
+10. medication, power, and care continuity card;
+11. household continuity board;
+12. feedback and field-note sheet;
+13. remarks sheet;
+14. quiet activity sheet.
+
+::: {.badger-box}
+### Badger box — forms are handles, not homework
+
+A useful form shortens the distance between “I should remember that” and “the
+fact is available when needed.” Leave irrelevant fields blank, cross out a bad
+prompt, and send the correction upstream. The paper works for the person; the
+person does not work for the paper.
+:::
+
+## Who fills what?
+
+| Role | Owns | May support | Must not assume |
+|---|---|---|---|
+| **Author** | generic structure, evidence, build, revision | examples and defaults | local numbers, rooms, relationships, consent |
+| **Deployer** | local facts, placement, supplies, maintenance | calm-time completion with readers | permission to publish private medical or safety data |
+| **Reader** | moment-to-moment observations and choices | feedback and personal plans | responsibility for maintaining the whole installation |
+| **Helper** | factual observations and agreed actions | calls, writing, transport, handoff | authority over the affected person when they can decide |
+
+**Comfort inventory belongs to both reader and deployer.** The deployer makes
+resources findable; the reader decides what is useful. A blanket can be stocked
+without being compulsory. This resolves the false choice between “the reader
+should know themselves” and “the deployer should prepare the room.” Preparation
+and agency are different jobs.
+
+## Deployment cover and ownership card
+
+**Why:** An unlabeled guide slowly becomes archaeology. Someone needs to know
+which copy this is, who maintains it, and when local facts expire.
+
+| Field | Local value |
+|---|---|
+| Copy / site name | |
+| Exact placement | |
+| Deployer or maintainer | |
+| Guide version | 4.6.0 |
+| Local customization revision | |
+| Build commit | |
+| Built on | |
+| Last local check | |
+| Next local check | |
+| Replacement copy location | |
+| Online guide | https://be.fkr.dev |
+| Project and participation | https://bathroom-emergency.fkr.dev |
+| Feedback | bathroom_emergency@fkr.dev |
+
+## Location and access card
+
+**Why:** Dispatchers can work with imperfect prose. They cannot send help to an
+emotionally accurate but geographically unspecified bathroom.
+
+| Location fact | Fill before deployment |
+|---|---|
+| Street, number, postal code, city, country | |
+| Coordinates | |
+| Height above sea level, when locally useful | |
+| Building / entrance / rear building | |
+| Floor / room | |
+| Bell / name on entrance | |
+| Lift, stairs, locked doors, access barriers | |
+| Safe instruction for unlocking or meeting help | |
+| Nearest visible landmark | |
+| Evacuation exit | |
+| Outdoor meeting point | |
+
+### Optional floor sketch
+
+```text
+NORTH / STREET / LANDMARK: _________________________________________________
+
++--------------------------------------------------------------------------+
+|                                                                          |
+|                                                                          |
+|     mark: YOU ARE HERE · exits · stairs/lift · meeting point             |
+|                                                                          |
+|                                                                          |
++--------------------------------------------------------------------------+
+
+Do not publish hidden-key locations, alarm codes, escape-shelter addresses,
+or details that increase danger for someone facing violence.
+```
+
+## Emergency call card
+
+**Why:** Externalizing the first facts frees working memory. The call handler
+will ask the questions in the order needed; this card is a launch pad, not a
+script to read over them.
+
+> **I am at:** ________________________________________________<br>
+> **What happened:** _________________________________________<br>
+> **The person is:** awake / unresponsive / unsure<br>
+> **Breathing:** normal / abnormal / unsure<br>
+> **Immediate danger at the scene:** __________________________<br>
+> **Started / last known well:** ______________________________<br>
+> **People affected:** ________________________________________<br>
+> **Callback number:** ________________________________________
+
+**Put the phone on speaker when safe. Do not hang up until the dispatcher says
+to.** The dispatcher may coach first aid while help is being sent.
+
+## Local professional contacts
+
+**Why:** “Find local help” is not a route. A usable entry has a verified name,
+number, scope, hours, access channel, and backup.
+
+| Need | First route | Hours / access | Backup / escalation | Checked |
+|---|---|---|---|---|
+| GP / regular practice | | | 116 117 / 112 as appropriate | |
+| Pharmacy / night service | | | | |
+| Emergency department | | | 112 | |
+| Regional poison centre | | | 112 for severe symptoms | |
+| Psychiatric crisis service | | | 116 117 / 112 | |
+| Sozialpsychiatrischer Dienst | | | | |
+| Violence support / shelter | | safe-device notes: | 110 / 112 | |
+| Municipal emergency housing — day | | | | |
+| Municipal emergency housing — night | | | 110 / 112 if unsafe | |
+| Accessible / powered safe place | | barriers confirmed: | 112 if care bridge fails | |
+| Youth emergency service | | | 110 / 112 | |
+| Gas-network emergency service | | call from outside | 112 | |
+| Building utility / caretaker | | | | |
+| Veterinary emergency service | | | | |
+| Other local route | | | | |
+
+## Comfort inventory
+
+**Principle: make useful ordinary things visible; do not turn them into a test.**
+
+| Resource | Present and findable? | Reader says it helps? | Location / note |
+|---|---:|---:|---|
+| phone and working charger | ☐ | ☐ | |
+| power bank | ☐ | ☐ | |
+| charged light | ☐ | ☐ | |
+| drinking water | ☐ | ☐ | |
+| warm layer / blanket | ☐ | ☐ | |
+| cool cloth / fresh-air route | ☐ | ☐ | |
+| stable seat or support | ☐ | ☐ | |
+| familiar music / quiet | ☐ | ☐ | |
+| visual book / comic / simple game | ☐ | ☐ | |
+| notebook / pencil | ☐ | ☐ | |
+| safe person / agreed contact | ☐ | ☐ | |
+| prescribed plan | ☐ | ☐ | private location: |
+| safer next room / outdoor place | ☐ | ☐ | |
+
+No score proves safety. Zero checked boxes means “obtain one useful resource,”
+not “you failed comfort.” Avoid candles, smoke, incense, and strong scents when
+air safety, asthma, migraine, sensory sensitivity, or judgement is uncertain.
+
+## Five-minute values bridge
+
+**Why:** A value is a direction. A five-minute action is small enough to start
+without demanding that one bathroom visit solve the republic.
+
+| Prompt | Your answer |
+|---|---|
+| Value I want to express | |
+| One action under five minutes | |
+| What makes it small enough | |
+| Person or resource involved | |
+| Stop condition | |
+| What I will check afterward | better / same / worse / different problem |
+
+### Filled example
+
+| Prompt | Example |
+|---|---|
+| Value I want to express | responsibility |
+| One action under five minutes | text Mara: “I left abruptly because I was overloaded. I am safe. I will call tomorrow.” |
+| What makes it small enough | one factual message; no full conflict analysis tonight |
+| Person or resource involved | Mara; phone charger |
+| Stop condition | send once; do not begin a ten-message trial |
+| What I will check afterward | whether the next need is rest, repair, or professional help |
+
+## Observation and vital-sign log
+
+**Principle: observe change and improve the handoff; never use one device value
+to cancel a red flag.**
+
+| Date/time | Response / orientation | Breathing | Pulse / device reading | Symptoms and location | Action taken | Better / same / worse |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
+
+Device / cuff / oximeter notes: _____________________________________________
+
+Medication or substance already taken, with dose/time: ______________________
+
+New confusion, unresponsiveness, abnormal breathing, severe breathlessness,
+stroke signs, collapse, severe bleeding, or another red flag → **112**.
+
+## Nice-place and low-demand activity map
+
+**Why:** Alarm makes every destination look equally unavailable. Precomputing a
+few reversible options gives the exit somewhere to go.
+
+| Need | Place / item | Access barriers | Backup |
+|---|---|---|---|
+| quiet | | | |
+| another person nearby | | | |
+| fresh air | | | |
+| warmth | | | |
+| low light | | | |
+| charger | | | |
+| simple food | | | |
+| safe exit | | | |
+| short walk / sit outside | | | |
+| drawing / folding / puzzle | | | |
+| familiar sound | | | |
+
+Optional public collection of low-demand activities: `artifacts.fkr.dev`.
+Check the destination before printing it as a promise; websites are not load-
+bearing walls.
+
+## Safe-place and exit map
+
+**Principle: a safe place is a confirmed destination plus a backup—not the
+phrase “go somewhere safe” wearing sensible shoes.**
+
+| Route | Confirmed destination | Transport / access | Contact | Backup | Escalation |
+|---|---|---|---|---|---|
+| person or active threat | | | | | 110 / 112 |
+| no weather-safe roof tonight | | | | | exposure / danger → 112 |
+| place fails mobility, power, medication, child, caregiver, or animal needs | | | | | care bridge fails → 112 |
+| physically safe but socially/internal crisis | | | | | acute self/other danger → 112 |
+
+Code word / check-in plan, only where safe to record: ________________________
+
+## Medication, power, and care continuity card
+
+**Why:** Essential care should not depend on remembering runtime and backup
+instructions after the power has already failed.
+
+| Essential need | Current resource | Remaining runtime / quantity | Approved backup | Destination / contact | Escalate when |
+|---|---|---|---|---|---|
+| medication | | | | | |
+| powered device | | | | | |
+| refrigeration | | | | | |
+| communication | | | | | |
+| mobility / transfer | | | | | |
+| caregiver / dependant | | | | | |
+| other | | | | | |
+
+Use the affected person’s clinical, manufacturer, utility, or care plan. Do not
+invent battery bridging, oxygen changes, medication substitutions, or transport
+techniques from first principles during an outage.
+
+## Household continuity board
+
+| Function | Owner now | Backup person | Next physical action | Next check | Failure route |
+|---|---|---|---|---|---|
+| air / hazard check | | | | | |
+| essential medical care | | | | | |
+| temperature / shelter | | | | | |
+| water | | | | | |
+| communication / warnings | | | | | |
+| food | | | | | |
+| sanitation | | | | | |
+| dependants / animals | | | | | |
+
+A role is an assignment, not a personality. Reassign it when the owner is
+exhausted, absent, unsafe, or becoming the single point of failure.
+
+## Feedback and field-note sheet
+
+**Send to:** `bathroom_emergency@fkr.dev`
+
+Please do not send private medical records, credentials, hidden safe-place
+locations, or identifying details about another person without permission.
+
+| Prompt | Field note |
+|---|---|
+| Guide version / commit | |
+| Layout and mode | A4 / A4/2 / large print · color / mono / HTML |
+| Page or stable reference ID | |
+| What happened | |
+| What the guide made easier | |
+| What caused delay or confusion | |
+| Local fact that was missing or wrong | |
+| Diagram / form that helped or failed | |
+| Proposed correction | |
+| Can this be quoted anonymously? | yes / no |
+| Reply address, optional | |
+
+## Remarks and handoff sheet
+
+Date/time: ____________________  Stable reference: ___________________________
+
+```text
+OBSERVATION
+____________________________________________________________________________
+____________________________________________________________________________
+
+ACTION
+____________________________________________________________________________
+____________________________________________________________________________
+
+RESULT:  better / same / worse / different problem
+____________________________________________________________________________
+
+BACKUP / NEXT ROUTE / REVIEW TIME
+____________________________________________________________________________
+____________________________________________________________________________
+```
+
+## Quiet activity sheet
+
+**These are activities, not treatment and not a test of calmness.** Stop when an
+activity increases strain, dizziness, frustration, danger, or paper-based
+hostility.
+
+### Dot-grid graffiti warm-up
+
+```text
+·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·
+
+·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·
+
+·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·
+
+·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·
+
+Prompt: draw one letter three ways—block, bubble, impossible architecture.
+```
+
+### Card-house challenge
+
+1. Make one stable triangle from two cards.
+2. Add a flat card as a floor.
+3. Stop at one storey or continue while it remains amusing.
+4. Record which failure mode appeared: sliding, bending, table vibration, cat.
+
+### Paper-folding practice
+
+Use a square scrap. Fold corner to corner, reopen, fold the other diagonal, then
+bring all four corners toward the centre. This produces a small layered square,
+not yet a bird. A proper bird-folding tutorial needs tested diagrams and is
+therefore a future illustrated insert rather than confident origami fan fiction.
+
+## Take, replace, improve
+
+Templates may be copied independently. Keep the stable reference, guide version,
+and local review date with each detached page. A page without provenance can be
+useful today and dangerous after three phone-number changes.
+
+{{subguide-sources:T}}

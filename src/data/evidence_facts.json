@@ -1,9 +1,16 @@
 {
   "schema_version": 1,
-  "release": "4.5.0",
+  "release": "4.6.0",
   "reviewed_on": "2026-07-22",
   "policy": {
-    "classes": ["protocol", "population estimate", "diagnostic-accuracy study", "randomized study", "observational association", "mathematical model"],
+    "classes": [
+      "protocol",
+      "population estimate",
+      "diagnostic-accuracy study",
+      "randomized study",
+      "observational association",
+      "mathematical model"
+    ],
     "rule": "Every numeric figure must carry a denominator, scope, evidence class, source, and practical limit."
   },
   "facts": {
@@ -22,9 +29,15 @@
       "target": "generalised anxiety disorder",
       "cutoff": 10,
       "sensitivity": 0.64,
-      "sensitivity_ci95": [0.56, 0.72],
+      "sensitivity_ci95": [
+        0.56,
+        0.72
+      ],
       "specificity": 0.91,
-      "specificity_ci95": [0.87, 0.93],
+      "specificity_ci95": [
+        0.87,
+        0.93
+      ],
       "source": "Generalized Anxiety Disorder 7-item and 2-item scales for detecting anxiety disorders in adults. Cochrane Database of Systematic Reviews. 2025.",
       "url": "https://www.cochrane.org/evidence/CD015455_how-accurate-are-gad-7-and-gad-2-questionnaires-detecting-anxiety-disorders",
       "limit": "Accuracy varied across settings; a screen is not a diagnosis and cannot exclude a medical emergency."
@@ -34,7 +47,12 @@
       "participants_included": 108,
       "duration_days": 28,
       "minutes_per_day": 5,
-      "arms": ["mindfulness meditation", "cyclic sighing", "box breathing", "cyclic hyperventilation with retention"],
+      "arms": [
+        "mindfulness meditation",
+        "cyclic sighing",
+        "box breathing",
+        "cyclic hyperventilation with retention"
+      ],
       "result": "All groups improved daily mood measures; breathwork, especially cyclic sighing, showed greater improvement in positive affect and reduced respiratory rate versus mindfulness meditation.",
       "source": "Balban MY et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Reports Medicine. 2023;4:100895.",
       "doi": "10.1016/j.xcrm.2022.100895",
@@ -50,7 +68,10 @@
     },
     "postpartum_psychosis": {
       "class": "systematic review of population studies",
-      "incidence_per_1000_range": [0.89, 2.6],
+      "incidence_per_1000_range": [
+        0.89,
+        2.6
+      ],
       "studies_reporting_incidence": 5,
       "source": "VanderKruik R et al. The global prevalence of postpartum psychosis: a systematic review. BMC Psychiatry. 2017;17:272.",
       "doi": "10.1186/s12888-017-1427-7",
@@ -81,7 +102,12 @@
       "participants": 48,
       "chronic_restriction_days": 14,
       "total_deprivation_comparator_days": 3,
-      "time_in_bed_hours": [0, 4, 6, 8],
+      "time_in_bed_hours": [
+        0,
+        4,
+        6,
+        8
+      ],
       "result": "The four- and six-hour chronic-restriction conditions produced cumulative, dose-dependent cognitive-performance deficits; subjective sleepiness rose less clearly than objective impairment.",
       "source": "Van Dongen HPA et al. The cumulative cost of additional wakefulness. Sleep. 2003;26:117-126.",
       "doi": "10.1093/sleep/26.2.117",

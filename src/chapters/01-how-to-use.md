@@ -1,8 +1,8 @@
 ---
 title: "The Small-Room Observatory"
 chapter: 1
-revision: "4.5.0"
-last_updated: "2026-07-23"
+revision: "4.6.0"
+last_updated: "2026-07-26"
 dependencies: []
 ---
 
@@ -20,6 +20,28 @@ something smaller and still useful: you are observing, following language, and
 choosing what to attend to. An intense state can be reversible. A familiar state
 can still deserve care. The useful question is not “am I allowed to feel this?”
 but “what is the signal, what changed, and where is it going?”
+
+## Which guide should I pick?
+
+The graph is a map of handoffs, not a personality test. Start with the smallest
+question that matches the present problem; after one action, reassess and move
+only when the next question changes.
+
+| Code | Pick it when… | It gives you… |
+|---|---|---|
+| **O — Orientation** | you are unsure what kind of problem this is | the emergency override and one first route |
+| **A — Reproductive health** | pregnancy, birth, postpartum, or reproductive responsibility is central | bounded reproductive-health routes and escalation |
+| **B — Alarm and calm** | the body alarm is loud and no emergency override is present | observation, breathing menu, grounding, and reassessment |
+| **C — Body and first aid** | injury, pain, unresponsiveness, bleeding, breathing, poisoning, or another physical problem is central | first actions, red flags, observations, and handoff |
+| **D — Threat and safe place** | a person, conflict, housing failure, or accessibility barrier makes the place unsafe | threat separation, confirmed destination, and backup route |
+| **H — Air, smell, environment** | smoke, gas, chemical, heat, cold, power, water, or another environmental hazard may dominate | source–path–action routing and continuity checks |
+| **Z — Disruption and continuity** | several ordinary systems are failing at once | priorities, roles, records, supplies, and review cadence |
+| **P — Professional support** | you know the problem class but need the right service or communication route | service scope, call scripts, access channels, and local placeholders |
+| **T — Templates / Blue Book** | the useful fact should leave working memory and become writable | detachable forms, logs, maps, inventories, and feedback sheets |
+| **R — Reference and appendix** | you need the index, glossary, diagram, source, formula, contact class, or stable address | the project’s complete lookup and provenance layer |
+
+**One guide, one action, one reassessment.** “Read the entire project before
+acting” is not a hidden eleventh route.
 
 ## 1. When the outside gets quiet, the inside gets loud
 
