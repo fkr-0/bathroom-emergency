@@ -338,10 +338,10 @@ Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md` and
 - [x] migrate B and H as bounded slices without duplicating canonical prose;
 - [x] generate each released subguide's source-complete end matter from one registry;
 - [x] require orientation, mechanism/evidence, and handoff coverage in the B/H release gate;
-- [ ] detach the remaining seven nodes one at a time after equivalent visual,
+- [ ] detach the remaining six nodes one at a time after equivalent visual,
   source, layout, and accessibility review.
 
-### 4.6.0 — Templates, stable references, and deployment — release candidate
+### 4.6.0 — Templates, stable references, and deployment — released
 
 Tracked in `docs/plans/4.6.0-release-architecture.md`.
 
@@ -359,6 +359,10 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] add revision metadata to HTML and print furniture;
 - [x] harden CPR/AED/recovery-position/choking explanations and orientation;
 - [x] add a complete CI/build/release-manifest matrix;
+- [x] complete the deterministic release build and independent test pass at
+  source revision `5f60f73cf1ff`;
+- [x] record release evidence and tag `v4.6.0` locally without pushing,
+  publishing, or deploying;
 - [ ] usability-test the new first-aid diagrams with trained instructors and
   people who have not practised CPR;
 - [ ] replace the provisional recovery-position figures with reviewed human-body
