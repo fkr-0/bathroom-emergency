@@ -387,7 +387,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete the full render/test matrix and record release evidence;
 - [x] tag `v4.6.1` locally without pushing, publishing, or deploying.
 
-### 4.7.0 — First-aid and professional-support standalone editions — release candidate
+### 4.7.0 — First-aid and professional-support standalone editions — released
 
 - [x] add three source-backed P visuals for call handoff, layered support, and
   system selection, each with complete adjacent text fallback;
@@ -396,8 +396,8 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] detach P from the canonical professional-support chapter;
 - [x] require C/P source, visual, tagging, semantic-parity, geometry, and
   color/monochrome gates across all six editions per node;
-- [ ] complete the full render/test matrix and record release evidence;
-- [ ] tag `v4.7.0` locally without pushing, publishing, or deploying.
+- [x] complete the full render/test matrix and record release evidence;
+- [x] tag `v4.7.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 
