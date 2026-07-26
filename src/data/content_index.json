@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.0",
+  "release": "4.6.1",
   "status": "global-content-index",
   "reference_scheme": "stable typed IDs; page and hierarchical numbers are non-canonical navigation aids",
   "records": [
@@ -1711,7 +1711,7 @@
       "kind": "S",
       "title": "Diagram index",
       "chapter": "08-appendix.md",
-      "line": 131,
+      "line": 133,
       "level": 2,
       "public_ref": "[BEG:R:S:001]",
       "html_id": "beg-r-s-001"
@@ -1722,7 +1722,7 @@
       "kind": "S",
       "title": "Evidence labels",
       "chapter": "08-appendix.md",
-      "line": 157,
+      "line": 159,
       "level": 2,
       "public_ref": "[BEG:R:S:002]",
       "html_id": "beg-r-s-002"
@@ -1733,7 +1733,7 @@
       "kind": "S",
       "title": "Fillable fields",
       "chapter": "08-appendix.md",
-      "line": 279,
+      "line": 281,
       "level": 2,
       "public_ref": "[BEG:R:S:003]",
       "html_id": "beg-r-s-003"
@@ -1744,7 +1744,7 @@
       "kind": "S",
       "title": "Flowchart legend",
       "chapter": "08-appendix.md",
-      "line": 110,
+      "line": 112,
       "level": 2,
       "public_ref": "[BEG:R:S:004]",
       "html_id": "beg-r-s-004"
@@ -1755,7 +1755,7 @@
       "kind": "S",
       "title": "Formula and theorem index",
       "chapter": "08-appendix.md",
-      "line": 176,
+      "line": 178,
       "level": 2,
       "public_ref": "[BEG:R:S:005]",
       "html_id": "beg-r-s-005"
@@ -1766,7 +1766,7 @@
       "kind": "S",
       "title": "Guide topology",
       "chapter": "08-appendix.md",
-      "line": 101,
+      "line": 103,
       "level": 2,
       "public_ref": "[BEG:R:S:006]",
       "html_id": "beg-r-s-006"
@@ -1777,7 +1777,7 @@
       "kind": "S",
       "title": "How to read the evidence figures",
       "chapter": "08-appendix.md",
-      "line": 121,
+      "line": 123,
       "level": 2,
       "public_ref": "[BEG:R:S:007]",
       "html_id": "beg-r-s-007"
@@ -1788,7 +1788,7 @@
       "kind": "S",
       "title": "Master cross-reference — where everything points",
       "chapter": "08-appendix.md",
-      "line": 57,
+      "line": 59,
       "level": 2,
       "public_ref": "[BEG:R:S:008]",
       "html_id": "beg-r-s-008"
@@ -1799,7 +1799,7 @@
       "kind": "S",
       "title": "Master flowchart — complete text version",
       "chapter": "08-appendix.md",
-      "line": 315,
+      "line": 317,
       "level": 2,
       "public_ref": "[BEG:R:S:009]",
       "html_id": "beg-r-s-009"
@@ -1810,7 +1810,7 @@
       "kind": "S",
       "title": "Mathematical notation legend",
       "chapter": "08-appendix.md",
-      "line": 74,
+      "line": 76,
       "level": 2,
       "public_ref": "[BEG:R:S:010]",
       "html_id": "beg-r-s-010"
@@ -1821,7 +1821,7 @@
       "kind": "S",
       "title": "Navigation invariant",
       "chapter": "08-appendix.md",
-      "line": 470,
+      "line": 472,
       "level": 2,
       "public_ref": "[BEG:R:S:011]",
       "html_id": "beg-r-s-011"
@@ -1832,7 +1832,7 @@
       "kind": "S",
       "title": "Offline deployment checklist",
       "chapter": "08-appendix.md",
-      "line": 456,
+      "line": 458,
       "level": 2,
       "public_ref": "[BEG:R:S:012]",
       "html_id": "beg-r-s-012"
@@ -1843,7 +1843,7 @@
       "kind": "S",
       "title": "Pocket print card",
       "chapter": "08-appendix.md",
-      "line": 425,
+      "line": 427,
       "level": 2,
       "public_ref": "[BEG:R:S:013]",
       "html_id": "beg-r-s-013"
@@ -1876,7 +1876,7 @@
       "kind": "S",
       "title": "The eight entry points",
       "chapter": "08-appendix.md",
-      "line": 88,
+      "line": 90,
       "level": 2,
       "public_ref": "[BEG:R:S:016]",
       "html_id": "beg-r-s-016"
@@ -1887,7 +1887,7 @@
       "kind": "S",
       "title": "4.0.0 — 17 July 2026",
       "chapter": "09-version-history.md",
-      "line": 289,
+      "line": 306,
       "level": 2,
       "public_ref": "[BEG:R:S:017]",
       "html_id": "beg-r-s-017"
@@ -1898,7 +1898,7 @@
       "kind": "S",
       "title": "4.0.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 235,
+      "line": 252,
       "level": 2,
       "public_ref": "[BEG:R:S:018]",
       "html_id": "beg-r-s-018"
@@ -1909,7 +1909,7 @@
       "kind": "S",
       "title": "4.1.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 203,
+      "line": 220,
       "level": 2,
       "public_ref": "[BEG:R:S:019]",
       "html_id": "beg-r-s-019"
@@ -1920,7 +1920,7 @@
       "kind": "S",
       "title": "4.1.2 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 179,
+      "line": 196,
       "level": 2,
       "public_ref": "[BEG:R:S:020]",
       "html_id": "beg-r-s-020"
@@ -1931,7 +1931,7 @@
       "kind": "S",
       "title": "4.2.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 148,
+      "line": 165,
       "level": 2,
       "public_ref": "[BEG:R:S:021]",
       "html_id": "beg-r-s-021"
@@ -1942,7 +1942,7 @@
       "kind": "S",
       "title": "4.3.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 118,
+      "line": 135,
       "level": 2,
       "public_ref": "[BEG:R:S:022]",
       "html_id": "beg-r-s-022"
@@ -1953,7 +1953,7 @@
       "kind": "S",
       "title": "4.3.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 100,
+      "line": 117,
       "level": 2,
       "public_ref": "[BEG:R:S:023]",
       "html_id": "beg-r-s-023"
@@ -1964,7 +1964,7 @@
       "kind": "S",
       "title": "4.4.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 85,
+      "line": 102,
       "level": 2,
       "public_ref": "[BEG:R:S:024]",
       "html_id": "beg-r-s-024"
@@ -1975,7 +1975,7 @@
       "kind": "S",
       "title": "Earlier versions",
       "chapter": "09-version-history.md",
-      "line": 325,
+      "line": 342,
       "level": 2,
       "public_ref": "[BEG:R:S:026]",
       "html_id": "beg-r-s-026"
@@ -2503,7 +2503,7 @@
       "kind": "S",
       "title": "4.5.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 52,
+      "line": 69,
       "level": 2,
       "public_ref": "[BEG:R:S:074]",
       "html_id": "beg-r-s-074"
@@ -2514,10 +2514,21 @@
       "kind": "S",
       "title": "4.6.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 11,
+      "line": 28,
       "level": 2,
       "public_ref": "[BEG:R:S:075]",
       "html_id": "beg-r-s-075"
+    },
+    {
+      "resource_key": "section:09-version-history:4-6-1-26-july-2026",
+      "owner": "R",
+      "kind": "S",
+      "title": "4.6.1 — 26 July 2026",
+      "chapter": "09-version-history.md",
+      "line": 11,
+      "level": 2,
+      "public_ref": "[BEG:R:S:076]",
+      "html_id": "beg-r-s-076"
     },
     {
       "resource_key": "glossary:aed",
@@ -3038,7 +3049,7 @@
       "kind": "F",
       "title": "Comfort inventory",
       "chapter": "07a-templates.md",
-      "line": 160,
+      "line": 164,
       "level": 2,
       "public_ref": "[BEG:T:F:001]",
       "html_id": "beg-t-f-001"
@@ -3049,7 +3060,7 @@
       "kind": "F",
       "title": "Deployment cover and ownership card",
       "chapter": "07a-templates.md",
-      "line": 62,
+      "line": 66,
       "level": 2,
       "public_ref": "[BEG:T:F:002]",
       "html_id": "beg-t-f-002"
@@ -3060,7 +3071,7 @@
       "kind": "F",
       "title": "Emergency call card",
       "chapter": "07a-templates.md",
-      "line": 119,
+      "line": 123,
       "level": 2,
       "public_ref": "[BEG:T:F:003]",
       "html_id": "beg-t-f-003"
@@ -3071,7 +3082,7 @@
       "kind": "F",
       "title": "Medication, power, and care continuity card",
       "chapter": "07a-templates.md",
-      "line": 267,
+      "line": 271,
       "level": 2,
       "public_ref": "[BEG:T:F:004]",
       "html_id": "beg-t-f-004"
@@ -3082,7 +3093,7 @@
       "kind": "F",
       "title": "Feedback and field-note sheet",
       "chapter": "07a-templates.md",
-      "line": 302,
+      "line": 306,
       "level": 2,
       "public_ref": "[BEG:T:F:005]",
       "html_id": "beg-t-f-005"
@@ -3093,7 +3104,7 @@
       "kind": "F",
       "title": "Five-minute values bridge",
       "chapter": "07a-templates.md",
-      "line": 184,
+      "line": 188,
       "level": 2,
       "public_ref": "[BEG:T:F:006]",
       "html_id": "beg-t-f-006"
@@ -3104,7 +3115,7 @@
       "kind": "F",
       "title": "Household continuity board",
       "chapter": "07a-templates.md",
-      "line": 286,
+      "line": 290,
       "level": 2,
       "public_ref": "[BEG:T:F:007]",
       "html_id": "beg-t-f-007"
@@ -3115,7 +3126,7 @@
       "kind": "F",
       "title": "Local professional contacts",
       "chapter": "07a-templates.md",
-      "line": 137,
+      "line": 141,
       "level": 2,
       "public_ref": "[BEG:T:F:008]",
       "html_id": "beg-t-f-008"
@@ -3126,7 +3137,7 @@
       "kind": "F",
       "title": "Location and access card",
       "chapter": "07a-templates.md",
-      "line": 83,
+      "line": 87,
       "level": 2,
       "public_ref": "[BEG:T:F:009]",
       "html_id": "beg-t-f-009"
@@ -3137,7 +3148,7 @@
       "kind": "F",
       "title": "Nice-place and low-demand activity map",
       "chapter": "07a-templates.md",
-      "line": 230,
+      "line": 234,
       "level": 2,
       "public_ref": "[BEG:T:F:010]",
       "html_id": "beg-t-f-010"
@@ -3148,7 +3159,7 @@
       "kind": "F",
       "title": "Observation and vital-sign log",
       "chapter": "07a-templates.md",
-      "line": 209,
+      "line": 213,
       "level": 2,
       "public_ref": "[BEG:T:F:011]",
       "html_id": "beg-t-f-011"
@@ -3159,7 +3170,7 @@
       "kind": "F",
       "title": "Quiet activity sheet",
       "chapter": "07a-templates.md",
-      "line": 344,
+      "line": 445,
       "level": 2,
       "public_ref": "[BEG:T:F:012]",
       "html_id": "beg-t-f-012"
@@ -3179,10 +3190,54 @@
       "kind": "F",
       "title": "Safe-place and exit map",
       "chapter": "07a-templates.md",
-      "line": 253,
+      "line": 257,
       "level": 2,
       "public_ref": "[BEG:T:F:014]",
       "html_id": "beg-t-f-014"
+    },
+    {
+      "resource_key": "form:first-aid-figure-review",
+      "owner": "T",
+      "kind": "F",
+      "title": "First-aid figure usability review",
+      "chapter": "07a-templates.md",
+      "line": 375,
+      "level": 2,
+      "public_ref": "[BEG:T:F:015]",
+      "html_id": "beg-t-f-015"
+    },
+    {
+      "resource_key": "form:installation-audit",
+      "owner": "T",
+      "kind": "F",
+      "title": "Installation and wet-room audit",
+      "chapter": "07a-templates.md",
+      "line": 327,
+      "level": 2,
+      "public_ref": "[BEG:T:F:016]",
+      "html_id": "beg-t-f-016"
+    },
+    {
+      "resource_key": "form:maintenance-inspection",
+      "owner": "T",
+      "kind": "F",
+      "title": "Maintenance and replacement inspection",
+      "chapter": "07a-templates.md",
+      "line": 404,
+      "level": 2,
+      "public_ref": "[BEG:T:F:017]",
+      "html_id": "beg-t-f-017"
+    },
+    {
+      "resource_key": "form:route-drill-log",
+      "owner": "T",
+      "kind": "F",
+      "title": "Route drill and timing log",
+      "chapter": "07a-templates.md",
+      "line": 351,
+      "level": 2,
+      "public_ref": "[BEG:T:F:018]",
+      "html_id": "beg-t-f-018"
     },
     {
       "resource_key": "section:07a-templates:mini-contents",
@@ -3201,7 +3256,7 @@
       "kind": "S",
       "title": "Remarks and handoff sheet",
       "chapter": "07a-templates.md",
-      "line": 323,
+      "line": 424,
       "level": 2,
       "public_ref": "[BEG:T:S:002]",
       "html_id": "beg-t-s-002"
@@ -3212,7 +3267,7 @@
       "kind": "S",
       "title": "Take, replace, improve",
       "chapter": "07a-templates.md",
-      "line": 378,
+      "line": 479,
       "level": 2,
       "public_ref": "[BEG:T:S:003]",
       "html_id": "beg-t-s-003"
@@ -3234,7 +3289,7 @@
       "kind": "S",
       "title": "Who fills what?",
       "chapter": "07a-templates.md",
-      "line": 47,
+      "line": 51,
       "level": 2,
       "public_ref": "[BEG:T:S:005]",
       "html_id": "beg-t-s-005"

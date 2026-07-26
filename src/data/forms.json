@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.0",
+  "release": "4.6.1",
   "status": "canonical-printable-form-registry",
   "forms": [
     {
@@ -86,6 +86,34 @@
       "purpose": "Return corrections, local adaptations, failed routes, and useful inventions upstream.",
       "responsibility": "reader-or-deployer",
       "privacy": "do-not-send-private-medical-data"
+    },
+    {
+      "key": "installation-audit",
+      "title": "Installation and wet-room audit",
+      "purpose": "Test water, glare, reach, page turning, privacy, stability, and visibility in the actual room.",
+      "responsibility": "deployer",
+      "privacy": "shared-safe"
+    },
+    {
+      "key": "route-drill-log",
+      "title": "Route drill and timing log",
+      "purpose": "Run a calm-time scenario and record where finding, choosing, writing, calling, or handing off becomes slow or ambiguous.",
+      "responsibility": "deployer-with-willing-reader",
+      "privacy": "do-not-use-real-private-crisis-details"
+    },
+    {
+      "key": "first-aid-figure-review",
+      "title": "First-aid figure usability review",
+      "purpose": "Test whether CPR, AED, recovery-position, and triage figures produce the intended action without coaching from the author.",
+      "responsibility": "reviewer-or-instructor",
+      "privacy": "anonymous-or-consented"
+    },
+    {
+      "key": "maintenance-inspection",
+      "title": "Maintenance and replacement inspection",
+      "purpose": "Record physical damage, stale local facts, missing supplies, used forms, and the next replacement action.",
+      "responsibility": "deployer",
+      "privacy": "shared-safe"
     },
     {
       "key": "remarks",

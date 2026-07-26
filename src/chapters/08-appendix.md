@@ -1,7 +1,7 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.6.0"
+revision: "4.6.1"
 last_updated: "2026-07-26"
 dependencies:
   - build/diagrams/two_pass_route_map.png
@@ -53,6 +53,8 @@ view is `src/data/content_index.json`.
 {{glossary-index}}
 
 {{global-content-index}}
+
+{{coverage-matrix}}
 
 ## Master cross-reference — where everything points
 

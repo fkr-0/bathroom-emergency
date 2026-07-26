@@ -56,6 +56,7 @@ jobs:
           python3 bin/build_inventories.py --check
           python3 bin/build_source_inventory.py --check
           python3 bin/build_reference_index.py --check
+          python3 bin/build_coverage_matrix.py --check
           git diff --check
 
       - name: Upload complete release matrix

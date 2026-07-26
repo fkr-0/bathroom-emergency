@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.0",
+  "release": "4.6.1",
   "status": "core-graph-with-bhtr-standalone",
   "identity_frozen_on": "2026-07-26",
   "standalone_nodes": [

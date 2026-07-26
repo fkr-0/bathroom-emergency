@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "release": "4.6.1",
+  "status": "canonical-cross-guide-coverage-matrix",
+  "standalone_candidate_rule": {
+    "minimum_local_sources": 4,
+    "minimum_owned_reader_visuals": 4,
+    "note": "Passing the numeric screen does not replace content, source, layout, accessibility, or usability review."
+  },
+  "totals": {
+    "nodes": 10,
+    "sections": 213,
+    "sources": 53,
+    "reader_visuals": 28,
+    "standalone_nodes": 4
+  },
+  "nodes": [
+    {
+      "node": "O",
+      "title": "Small-Room Observatory",
+      "standalone": false,
+      "chapters": [
+        "00-cover.md",
+        "01-how-to-use.md"
+      ],
+      "chapter_count": 2,
+      "section_count": 15,
+      "source_count": 11,
+      "source_counts": {
+        "operational": 0,
+        "research": 9,
+        "explanatory": 2
+      },
+      "source_ids": [
+        "01-how-to-use--affect-labeling",
+        "01-how-to-use--anxiety-time",
+        "01-how-to-use--bathroom-acoustics",
+        "01-how-to-use--cold-face",
+        "01-how-to-use--cold-water",
+        "01-how-to-use--gut-stress",
+        "01-how-to-use--interoception-review",
+        "01-how-to-use--olfactory-habituation",
+        "01-how-to-use--panic-course",
+        "01-how-to-use--situational-syncope",
+        "01-how-to-use--stress-executive"
+      ],
+      "owned_visual_count": 0,
+      "shared_visual_count": 0,
+      "visual_ids": [],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 0,
+      "visual_review_priorities": {},
+      "readiness": "needs-visuals"
+    },
+    {
+      "node": "A",
+      "title": "Responsibility and Care",
+      "standalone": false,
+      "chapters": [
+        "02-situation-a.md"
+      ],
+      "chapter_count": 1,
+      "section_count": 14,
+      "source_count": 5,
+      "source_counts": {
+        "operational": 0,
+        "research": 2,
+        "explanatory": 3
+      },
+      "source_ids": [
+        "02-situation-a--attachment",
+        "02-situation-a--caregiver",
+        "02-situation-a--infertility",
+        "02-situation-a--ppd",
+        "02-situation-a--ppp-incidence"
+      ],
+      "owned_visual_count": 1,
+      "shared_visual_count": 0,
+      "visual_ids": [
+        "vega-reproductive-denominators"
+      ],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 1,
+      "visual_review_priorities": {},
+      "readiness": "needs-visuals"
+    },
+    {
+      "node": "B",
+      "title": "Alarm and Calm",
+      "standalone": true,
+      "chapters": [
+        "03-situations-b-g.md",
+        "04-calm-guide.md"
+      ],
+      "chapter_count": 2,
+      "section_count": 18,
+      "source_count": 6,
+      "source_counts": {
+        "operational": 0,
+        "research": 5,
+        "explanatory": 1
+      },
+      "source_ids": [
+        "03-situations-b-g--cowan",
+        "03-situations-b-g--gad7",
+        "03-situations-b-g--gad7-review",
+        "03-situations-b-g--sleep-loss",
+        "04-calm-guide--balban",
+        "04-calm-guide--who-stress"
+      ],
+      "owned_visual_count": 6,
+      "shared_visual_count": 0,
+      "visual_ids": [
+        "alarm-channels-map",
+        "breathing-techniques",
+        "breathwork-trial-map",
+        "overload-control-map",
+        "vega-gad7-accuracy",
+        "vega-sleep-study-design"
+      ],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 6,
+      "visual_review_priorities": {
+        "high": 3,
+        "medium": 1
+      },
+      "readiness": "released-standalone"
+    },
+    {
+      "node": "C",
+      "title": "Body and First Aid",
+      "standalone": false,
+      "chapters": [
+        "03-situations-b-g.md",
+        "05-self-ambulance.md"
+      ],
+      "chapter_count": 2,
+      "section_count": 24,
+      "source_count": 7,
+      "source_counts": {
+        "operational": 1,
+        "research": 1,
+        "explanatory": 5
+      },
+      "source_ids": [
+        "05-self-ambulance--drk-bleeding",
+        "05-self-ambulance--drk-burns",
+        "05-self-ambulance--drk-fracture",
+        "05-self-ambulance--drk-recovery",
+        "05-self-ambulance--emergency-numbers",
+        "05-self-ambulance--erc2025",
+        "05-self-ambulance--time-brain"
+      ],
+      "owned_visual_count": 5,
+      "shared_visual_count": 0,
+      "visual_ids": [
+        "aed-action-sequence",
+        "cpr-body-orientation",
+        "recovery-position-steps",
+        "triage-flow",
+        "vega-stroke-time-model"
+      ],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 5,
+      "visual_review_priorities": {
+        "high": 4
+      },
+      "readiness": "standalone-candidate"
+    },
+    {
+      "node": "D",
+      "title": "Threat and Safe Place",
+      "standalone": false,
+      "chapters": [
+        "03-situations-b-g.md",
+        "03g-safe-place-routing.md"
+      ],
+      "chapter_count": 2,
+      "section_count": 13,
+      "source_count": 8,
+      "source_counts": {
+        "operational": 8,
+        "research": 0,
+        "explanatory": 0
+      },
+      "source_ids": [
+        "03g-safe-place-routing--authority-115",
+        "03g-safe-place-routing--authority-sign",
+        "03g-safe-place-routing--children-help",
+        "03g-safe-place-routing--men-help",
+        "03g-safe-place-routing--shelter-search",
+        "03g-safe-place-routing--telefonseelsorge",
+        "03g-safe-place-routing--women-help",
+        "03g-safe-place-routing--women-sign"
+      ],
+      "owned_visual_count": 2,
+      "shared_visual_count": 0,
+      "visual_ids": [
+        "communication-access-card",
+        "safe-place-route-map"
+      ],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 2,
+      "visual_review_priorities": {
+        "high": 2
+      },
+      "readiness": "needs-visuals"
+    },
+    {
+      "node": "H",
+      "title": "Air, Smell, and Environment",
+      "standalone": true,
+      "chapters": [
+        "03-situations-b-g.md",
+        "03h-environmental-hazards.md"
+      ],
+      "chapter_count": 2,
+      "section_count": 12,
+      "source_count": 8,
+      "source_counts": {
+        "operational": 8,
+        "research": 0,
+        "explanatory": 0
+      },
+      "source_ids": [
+        "03h-environmental-hazards--bbk-112",
+        "03h-environmental-hazards--bbk-fire",
+        "03h-environmental-hazards--bbk-power",
+        "03h-environmental-hazards--bfr",
+        "03h-environmental-hazards--dvgw",
+        "03h-environmental-hazards--electric",
+        "03h-environmental-hazards--poison",
+        "03h-environmental-hazards--warning"
+      ],
+      "owned_visual_count": 4,
+      "shared_visual_count": 0,
+      "visual_ids": [
+        "dependency-continuity-map",
+        "hazard-handoff-card",
+        "hazard-override-matrix",
+        "hazard-source-location-map"
+      ],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 4,
+      "visual_review_priorities": {
+        "high": 4
+      },
+      "readiness": "released-standalone"
+    },
+    {
+      "node": "Z",
+      "title": "Outage and Continuity",
+      "standalone": false,
+      "chapters": [
+        "06-zombie-guide.md"
+      ],
+      "chapter_count": 1,
+      "section_count": 8,
+      "source_count": 3,
+      "source_counts": {
+        "operational": 1,
+        "research": 0,
+        "explanatory": 2
+      },
+      "source_ids": [
+        "06-zombie-guide--bbk",
+        "06-zombie-guide--drk-cold",
+        "06-zombie-guide--ostrom"
+      ],
+      "owned_visual_count": 7,
+      "shared_visual_count": 1,
+      "visual_ids": [
+        "first-meeting-roles",
+        "household-continuity-board",
+        "scaling-chart",
+        "survival-pyramid",
+        "vega-communication-channels",
+        "vega-continuity-dependencies",
+        "vega-household-water-stock"
+      ],
+      "shared_visual_ids": [
+        "dependency-continuity-map"
+      ],
+      "visuals_with_source_basis": 7,
+      "visual_review_priorities": {
+        "high": 1,
+        "medium": 3
+      },
+      "readiness": "needs-sources"
+    },
+    {
+      "node": "P",
+      "title": "Professional Support",
+      "standalone": false,
+      "chapters": [
+        "07-professional-support.md"
+      ],
+      "chapter_count": 1,
+      "section_count": 12,
+      "source_count": 5,
+      "source_counts": {
+        "operational": 5,
+        "research": 0,
+        "explanatory": 0
+      },
+      "source_ids": [
+        "07-professional-support--connection",
+        "07-professional-support--iasc",
+        "07-professional-support--legal-aid",
+        "07-professional-support--numbers",
+        "07-professional-support--spd"
+      ],
+      "owned_visual_count": 1,
+      "shared_visual_count": 0,
+      "visual_ids": [
+        "vega-social-connection"
+      ],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 1,
+      "visual_review_priorities": {},
+      "readiness": "needs-visuals"
+    },
+    {
+      "node": "T",
+      "title": "Templates — The Blue Book",
+      "standalone": true,
+      "chapters": [
+        "07a-templates.md"
+      ],
+      "chapter_count": 1,
+      "section_count": 22,
+      "source_count": 0,
+      "source_counts": {
+        "operational": 0,
+        "research": 0,
+        "explanatory": 0
+      },
+      "source_ids": [],
+      "owned_visual_count": 0,
+      "shared_visual_count": 0,
+      "visual_ids": [],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 0,
+      "visual_review_priorities": {},
+      "readiness": "released-standalone"
+    },
+    {
+      "node": "R",
+      "title": "Reference",
+      "standalone": true,
+      "chapters": [
+        "08-appendix.md",
+        "09-version-history.md",
+        "10-sources.md"
+      ],
+      "chapter_count": 3,
+      "section_count": 75,
+      "source_count": 0,
+      "source_counts": {
+        "operational": 0,
+        "research": 0,
+        "explanatory": 0
+      },
+      "source_ids": [],
+      "owned_visual_count": 2,
+      "shared_visual_count": 0,
+      "visual_ids": [
+        "evidence-classes",
+        "two-pass-route-map"
+      ],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 2,
+      "visual_review_priorities": {
+        "high": 1,
+        "medium": 1
+      },
+      "readiness": "released-standalone"
+    }
+  ]
+}

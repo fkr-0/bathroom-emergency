@@ -165,6 +165,7 @@ def expand_reference_macros(text: str) -> str:
         "deployment-field-index": "deployment-index.md",
         "glossary-index": "glossary-index.md",
         "detachable-form-index": "form-index.md",
+        "coverage-matrix": "coverage-matrix.md",
     }
     for macro, filename in mapping.items():
         token = "{{" + macro + "}}"
@@ -174,7 +175,7 @@ def expand_reference_macros(text: str) -> str:
         if not path.exists():
             raise BuildError(f"Generated reference fragment missing: {path}")
         text = text.replace(token, path.read_text(encoding="utf-8").strip())
-    if re.search(r"\{\{(?:global-content-index|diagram-index-generated|professional-contact-index|deployment-field-index|glossary-index|detachable-form-index)\}\}", text):
+    if re.search(r"\{\{(?:global-content-index|diagram-index-generated|professional-contact-index|deployment-field-index|glossary-index|detachable-form-index|coverage-matrix)\}\}", text):
         raise BuildError("Unexpanded reference-index macro remains")
     return text
 

@@ -70,6 +70,11 @@ for name in (
     if path.exists():
         check("[BEG:" in path.read_text(encoding="utf-8"), f"{name}: no stable references")
 
+check(
+    (ROOT / "build/generated/coverage-matrix.md").exists(),
+    "generated coverage fragment missing: coverage-matrix.md",
+)
+
 if errors:
     raise SystemExit("Reference-index validation failed:\n- " + "\n- ".join(errors))
 

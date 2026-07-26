@@ -1,7 +1,7 @@
 ---
 title: "Templates: The Blue Book"
 chapter: "T"
-revision: "4.6.0"
+revision: "4.6.1"
 last_updated: "2026-07-26"
 dependencies: []
 ---
@@ -32,8 +32,12 @@ safety. These pages are small interfaces between attention and action.
 10. medication, power, and care continuity card;
 11. household continuity board;
 12. feedback and field-note sheet;
-13. remarks sheet;
-14. quiet activity sheet.
+13. installation and wet-room audit;
+14. route drill and timing log;
+15. first-aid figure usability review;
+16. maintenance and replacement inspection;
+17. remarks sheet;
+18. quiet activity sheet.
 
 ::: {.badger-box}
 ### Badger box — forms are handles, not homework
@@ -69,7 +73,7 @@ which copy this is, who maintains it, and when local facts expire.
 | Copy / site name | |
 | Exact placement | |
 | Deployer or maintainer | |
-| Guide version | 4.6.0 |
+| Guide version | 4.6.1 |
 | Local customization revision | |
 | Build commit | |
 | Built on | |
@@ -319,6 +323,103 @@ locations, or identifying details about another person without permission.
 | Proposed correction | |
 | Can this be quoted anonymously? | yes / no |
 | Reply address, optional | |
+
+## Installation and wet-room audit
+
+**Why:** A layout can pass a renderer and still fail beside a reflective tile,
+behind a door, below a leaking pipe, or beyond the reach of the person expected
+to use it. Test the installation, not the concept art in your head.
+
+| Check | Observation | Pass / change | Owner and date |
+|---|---|---|---|
+| readable from the intended position | | | |
+| glare in daylight and artificial light | | | |
+| readable during low light / power loss | | | |
+| reachable while seated, standing, or mobility-limited | | | |
+| pages turn with one hand | | | |
+| sleeve, clip, folder, or box stays stable | | | |
+| water, steam, cleaning spray, and condensation route | | | |
+| door, window, heater, flame, and ventilation clearance | | | |
+| shared pages reveal no private or dangerous information | | | |
+| private pages can be found without being publicly exposed | | | |
+| pencil, writing surface, light, charger, and forms are present | | | |
+| version and next review date are visible | | | |
+
+Photograph the installation only when the image does not expose private fields,
+keys, security details, or another person without permission.
+
+## Route drill and timing log
+
+**Principle: test finding and handoff, not theatrical panic.** Use invented or
+sanitized facts. Stop the drill immediately when someone becomes distressed or
+a real event interrupts it.
+
+| Stage | Target | Observed time | Friction / wrong turn | Change before next drill |
+|---|---:|---:|---|---|
+| notice the guide | 10 s | | | |
+| choose the correct subguide | 20 s | | | |
+| find the first action | 20 s | | | |
+| locate factual address/access card | 20 s | | | |
+| choose 112 / 110 / 116 117 / local route | 30 s | | | |
+| find a verified backup | 30 s | | | |
+| complete a five-field handoff | 60 s | | | |
+
+Scenario used: _____________________________________________________________
+
+Layout / mode / stable reference: __________________________________________
+
+One thing that worked without explanation: _________________________________
+
+One thing that required coaching: __________________________________________
+
+## First-aid figure usability review
+
+**Why:** “The diagram is technically correct” is weaker than “a reader who has
+not seen it before can point to the intended action and explain the limit.” This
+sheet reviews the picture; it does not certify first-aid competence.
+
+Reviewer role: instructor / trained layperson / no prior CPR practice / other
+
+Figure: CPR location / AED sequence / recovery position / triage overview
+
+| Prompt | Observation |
+|---|---|
+| What do you think this figure asks you to do? | |
+| Where would your hands / pads / body position go? | |
+| What action comes first? | |
+| What would make you call 112? | |
+| What part is unclear, misleading, or too small? | |
+| Did labels, sequence, and arrows agree? | |
+| Could you use it in monochrome? | |
+| Could you use it without the image, from nearby text? | |
+| What did you infer that the figure did not intend? | |
+
+Result: retain / revise wording / revise geometry / replace / instructor review
+required
+
+Do not practise compressions, rolling, shocks, or airway manoeuvres on an
+unconsenting person. Use approved training equipment and qualified supervision
+for physical practice.
+
+## Maintenance and replacement inspection
+
+| Item | Current state | Action | Due / completed |
+|---|---|---|---|
+| guide version and build revision | | | |
+| local contact verification dates | | | |
+| address, access, and meeting point | | | |
+| safe-place and care-continuity fields | | | |
+| water, tearing, fading, mould, or dirt | | | |
+| page order and missing sheets | | | |
+| pencils and writing surface | | | |
+| light, charger, cable, and power bank | | | |
+| first-aid supplies and expiry dates | | | |
+| privacy boundary still appropriate | | | |
+| one tabletop route completed | | | |
+
+Immediate replacement trigger: incorrect emergency route, exposed private
+information, unreadable damage, missing required local facts, or a failed route
+with no safe workaround.
 
 ## Remarks and handoff sheet
 

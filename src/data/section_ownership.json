@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.6.0",
+  "release": "4.6.1",
   "generated_by": "bin/build_inventories.py",
   "granularity": "all level-1 and level-2 headings",
   "sections": [
@@ -951,7 +951,7 @@
     {
       "key": "07a-templates:who-fills-what",
       "chapter": "07a-templates.md",
-      "line": 47,
+      "line": 51,
       "level": 2,
       "heading": "Who fills what?",
       "owner": "T"
@@ -959,7 +959,7 @@
     {
       "key": "07a-templates:deployment-cover-and-ownership-card",
       "chapter": "07a-templates.md",
-      "line": 62,
+      "line": 66,
       "level": 2,
       "heading": "Deployment cover and ownership card",
       "owner": "T"
@@ -967,7 +967,7 @@
     {
       "key": "07a-templates:location-and-access-card",
       "chapter": "07a-templates.md",
-      "line": 83,
+      "line": 87,
       "level": 2,
       "heading": "Location and access card",
       "owner": "T"
@@ -975,7 +975,7 @@
     {
       "key": "07a-templates:emergency-call-card",
       "chapter": "07a-templates.md",
-      "line": 119,
+      "line": 123,
       "level": 2,
       "heading": "Emergency call card",
       "owner": "T"
@@ -983,7 +983,7 @@
     {
       "key": "07a-templates:local-professional-contacts",
       "chapter": "07a-templates.md",
-      "line": 137,
+      "line": 141,
       "level": 2,
       "heading": "Local professional contacts",
       "owner": "T"
@@ -991,7 +991,7 @@
     {
       "key": "07a-templates:comfort-inventory",
       "chapter": "07a-templates.md",
-      "line": 160,
+      "line": 164,
       "level": 2,
       "heading": "Comfort inventory",
       "owner": "T"
@@ -999,7 +999,7 @@
     {
       "key": "07a-templates:five-minute-values-bridge",
       "chapter": "07a-templates.md",
-      "line": 184,
+      "line": 188,
       "level": 2,
       "heading": "Five-minute values bridge",
       "owner": "T"
@@ -1007,7 +1007,7 @@
     {
       "key": "07a-templates:observation-and-vital-sign-log",
       "chapter": "07a-templates.md",
-      "line": 209,
+      "line": 213,
       "level": 2,
       "heading": "Observation and vital-sign log",
       "owner": "T"
@@ -1015,7 +1015,7 @@
     {
       "key": "07a-templates:nice-place-and-low-demand-activity-map",
       "chapter": "07a-templates.md",
-      "line": 230,
+      "line": 234,
       "level": 2,
       "heading": "Nice-place and low-demand activity map",
       "owner": "T"
@@ -1023,7 +1023,7 @@
     {
       "key": "07a-templates:safe-place-and-exit-map",
       "chapter": "07a-templates.md",
-      "line": 253,
+      "line": 257,
       "level": 2,
       "heading": "Safe-place and exit map",
       "owner": "T"
@@ -1031,7 +1031,7 @@
     {
       "key": "07a-templates:medication-power-and-care-continuity-card",
       "chapter": "07a-templates.md",
-      "line": 267,
+      "line": 271,
       "level": 2,
       "heading": "Medication, power, and care continuity card",
       "owner": "T"
@@ -1039,7 +1039,7 @@
     {
       "key": "07a-templates:household-continuity-board",
       "chapter": "07a-templates.md",
-      "line": 286,
+      "line": 290,
       "level": 2,
       "heading": "Household continuity board",
       "owner": "T"
@@ -1047,15 +1047,47 @@
     {
       "key": "07a-templates:feedback-and-field-note-sheet",
       "chapter": "07a-templates.md",
-      "line": 302,
+      "line": 306,
       "level": 2,
       "heading": "Feedback and field-note sheet",
       "owner": "T"
     },
     {
+      "key": "07a-templates:installation-and-wet-room-audit",
+      "chapter": "07a-templates.md",
+      "line": 327,
+      "level": 2,
+      "heading": "Installation and wet-room audit",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:route-drill-and-timing-log",
+      "chapter": "07a-templates.md",
+      "line": 351,
+      "level": 2,
+      "heading": "Route drill and timing log",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:first-aid-figure-usability-review",
+      "chapter": "07a-templates.md",
+      "line": 375,
+      "level": 2,
+      "heading": "First-aid figure usability review",
+      "owner": "T"
+    },
+    {
+      "key": "07a-templates:maintenance-and-replacement-inspection",
+      "chapter": "07a-templates.md",
+      "line": 404,
+      "level": 2,
+      "heading": "Maintenance and replacement inspection",
+      "owner": "T"
+    },
+    {
       "key": "07a-templates:remarks-and-handoff-sheet",
       "chapter": "07a-templates.md",
-      "line": 323,
+      "line": 424,
       "level": 2,
       "heading": "Remarks and handoff sheet",
       "owner": "T"
@@ -1063,7 +1095,7 @@
     {
       "key": "07a-templates:quiet-activity-sheet",
       "chapter": "07a-templates.md",
-      "line": 344,
+      "line": 445,
       "level": 2,
       "heading": "Quiet activity sheet",
       "owner": "T"
@@ -1071,7 +1103,7 @@
     {
       "key": "07a-templates:take-replace-improve",
       "chapter": "07a-templates.md",
-      "line": 378,
+      "line": 479,
       "level": 2,
       "heading": "Take, replace, improve",
       "owner": "T"
@@ -1095,7 +1127,7 @@
     {
       "key": "08-appendix:master-cross-reference-where-everything-points",
       "chapter": "08-appendix.md",
-      "line": 57,
+      "line": 59,
       "level": 2,
       "heading": "Master cross-reference — where everything points",
       "owner": "R"
@@ -1103,7 +1135,7 @@
     {
       "key": "08-appendix:mathematical-notation-legend",
       "chapter": "08-appendix.md",
-      "line": 74,
+      "line": 76,
       "level": 2,
       "heading": "Mathematical notation legend",
       "owner": "R"
@@ -1111,7 +1143,7 @@
     {
       "key": "08-appendix:the-eight-entry-points",
       "chapter": "08-appendix.md",
-      "line": 88,
+      "line": 90,
       "level": 2,
       "heading": "The eight entry points",
       "owner": "R"
@@ -1119,7 +1151,7 @@
     {
       "key": "08-appendix:guide-topology",
       "chapter": "08-appendix.md",
-      "line": 101,
+      "line": 103,
       "level": 2,
       "heading": "Guide topology",
       "owner": "R"
@@ -1127,7 +1159,7 @@
     {
       "key": "08-appendix:flowchart-legend",
       "chapter": "08-appendix.md",
-      "line": 110,
+      "line": 112,
       "level": 2,
       "heading": "Flowchart legend",
       "owner": "R"
@@ -1135,7 +1167,7 @@
     {
       "key": "08-appendix:how-to-read-the-evidence-figures",
       "chapter": "08-appendix.md",
-      "line": 121,
+      "line": 123,
       "level": 2,
       "heading": "How to read the evidence figures",
       "owner": "R"
@@ -1143,7 +1175,7 @@
     {
       "key": "08-appendix:diagram-index",
       "chapter": "08-appendix.md",
-      "line": 131,
+      "line": 133,
       "level": 2,
       "heading": "Diagram index",
       "owner": "R"
@@ -1151,7 +1183,7 @@
     {
       "key": "08-appendix:evidence-labels",
       "chapter": "08-appendix.md",
-      "line": 157,
+      "line": 159,
       "level": 2,
       "heading": "Evidence labels",
       "owner": "R"
@@ -1159,7 +1191,7 @@
     {
       "key": "08-appendix:formula-and-theorem-index",
       "chapter": "08-appendix.md",
-      "line": 176,
+      "line": 178,
       "level": 2,
       "heading": "Formula and theorem index",
       "owner": "R"
@@ -1167,7 +1199,7 @@
     {
       "key": "08-appendix:fillable-fields",
       "chapter": "08-appendix.md",
-      "line": 279,
+      "line": 281,
       "level": 2,
       "heading": "Fillable fields",
       "owner": "R"
@@ -1175,7 +1207,7 @@
     {
       "key": "08-appendix:master-flowchart-complete-text-version",
       "chapter": "08-appendix.md",
-      "line": 315,
+      "line": 317,
       "level": 2,
       "heading": "Master flowchart — complete text version",
       "owner": "R"
@@ -1183,7 +1215,7 @@
     {
       "key": "08-appendix:pocket-print-card",
       "chapter": "08-appendix.md",
-      "line": 425,
+      "line": 427,
       "level": 2,
       "heading": "Pocket print card",
       "owner": "R"
@@ -1191,7 +1223,7 @@
     {
       "key": "08-appendix:offline-deployment-checklist",
       "chapter": "08-appendix.md",
-      "line": 456,
+      "line": 458,
       "level": 2,
       "heading": "Offline deployment checklist",
       "owner": "R"
@@ -1199,7 +1231,7 @@
     {
       "key": "08-appendix:navigation-invariant",
       "chapter": "08-appendix.md",
-      "line": 470,
+      "line": 472,
       "level": 2,
       "heading": "Navigation invariant",
       "owner": "R"
@@ -1213,9 +1245,17 @@
       "owner": "R"
     },
     {
-      "key": "09-version-history:4-6-0-26-july-2026",
+      "key": "09-version-history:4-6-1-26-july-2026",
       "chapter": "09-version-history.md",
       "line": 11,
+      "level": 2,
+      "heading": "4.6.1 — 26 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-6-0-26-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 28,
       "level": 2,
       "heading": "4.6.0 — 26 July 2026",
       "owner": "R"
@@ -1223,7 +1263,7 @@
     {
       "key": "09-version-history:4-5-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 52,
+      "line": 69,
       "level": 2,
       "heading": "4.5.0 — 26 July 2026",
       "owner": "R"
@@ -1231,7 +1271,7 @@
     {
       "key": "09-version-history:4-4-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 85,
+      "line": 102,
       "level": 2,
       "heading": "4.4.1 — 22 July 2026",
       "owner": "R"
@@ -1239,7 +1279,7 @@
     {
       "key": "09-version-history:4-3-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 100,
+      "line": 117,
       "level": 2,
       "heading": "4.3.1 — 22 July 2026",
       "owner": "R"
@@ -1247,7 +1287,7 @@
     {
       "key": "09-version-history:4-3-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 118,
+      "line": 135,
       "level": 2,
       "heading": "4.3.0 — 22 July 2026",
       "owner": "R"
@@ -1255,7 +1295,7 @@
     {
       "key": "09-version-history:4-2-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 148,
+      "line": 165,
       "level": 2,
       "heading": "4.2.0 — 22 July 2026",
       "owner": "R"
@@ -1263,7 +1303,7 @@
     {
       "key": "09-version-history:4-1-2-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 179,
+      "line": 196,
       "level": 2,
       "heading": "4.1.2 — 22 July 2026",
       "owner": "R"
@@ -1271,7 +1311,7 @@
     {
       "key": "09-version-history:4-1-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 203,
+      "line": 220,
       "level": 2,
       "heading": "4.1.1 — 22 July 2026",
       "owner": "R"
@@ -1279,7 +1319,7 @@
     {
       "key": "09-version-history:4-0-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 235,
+      "line": 252,
       "level": 2,
       "heading": "4.0.1 — 22 July 2026",
       "owner": "R"
@@ -1287,7 +1327,7 @@
     {
       "key": "09-version-history:4-0-0-17-july-2026",
       "chapter": "09-version-history.md",
-      "line": 289,
+      "line": 306,
       "level": 2,
       "heading": "4.0.0 — 17 July 2026",
       "owner": "R"
@@ -1295,7 +1335,7 @@
     {
       "key": "09-version-history:earlier-versions",
       "chapter": "09-version-history.md",
-      "line": 325,
+      "line": 342,
       "level": 2,
       "heading": "Earlier versions",
       "owner": "R"

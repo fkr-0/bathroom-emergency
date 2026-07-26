@@ -66,6 +66,7 @@ def build() -> Path:
   <div class="grid">
     <article class="card"><h3>Mini-why, then action</h3><p>A compact reason reduces resistance and myth-making without turning urgent pages into lectures.</p></article>
     <article class="card"><h3>Externalize the load</h3><p>Forms, maps, logs, local contacts, and handoff cards move facts out of working memory.</p></article>
+    <article class="card"><h3>Test the room</h3><p>Installation, route-drill, figure-review, and maintenance sheets turn deployment assumptions into observations.</p></article>
     <article class="card"><h3>Stable addresses</h3><p>Typed references such as <code>[BEG:T:F:003]</code> survive page and chapter movement.</p></article>
     <article class="card"><h3>Local truth stays local</h3><p>Unknown service numbers, safe places, access barriers, care dependencies, and building facts remain visible deployment fields rather than plausible inventions.</p></article>
     <article class="card"><h3>Print is a first-class interface</h3><p>A4, A4/2, large print, color, and monochrome outputs are built and checked from one source tree.</p></article>
@@ -83,7 +84,7 @@ def build() -> Path:
     <li>Verify time-sensitive contacts with the responsible official or service.</li>
     <li>Separate shared-safe pages from private or context-sensitive material.</li>
     <li>Add a pencil, writing surface, light, charger, maintained power bank, and relevant first-aid supplies.</li>
-    <li>Test one route and record the next review date.</li>
+    <li>Test one route, complete the wet-room installation audit, and record the next review date.</li>
   </ol>
   <p>The complete procedure, field index, installation concepts, and maintenance cycle are in <a href="DEPLOYMENT.md">DEPLOYMENT.md</a>.</p>
 
