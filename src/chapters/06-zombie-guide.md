@@ -1,13 +1,15 @@
 ---
 title: "Outage, Disaster, and Zombie Guide"
 chapter: 6
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies:
   - build/diagrams/dependency_continuity_map.png
   - build/diagrams/survival_pyramid.png
   - build/diagrams/scaling_chart.png
-  - build/diagrams/household_water_planner.png
+  - build/diagrams/vega_household_water_stock.png
+  - build/diagrams/vega_communication_channels.png
+  - build/diagrams/vega_continuity_dependencies.png
   - build/diagrams/household_continuity_board.png
   - build/diagrams/first_meeting_roles.png
 ---
@@ -72,6 +74,13 @@ a condition requiring immediate intake.
 
 ![Household continuity systems and ownership fields](build/diagrams/household_continuity_board.png)
 
+{{visualization:vega-continuity-dependencies}}
+
+The second figure is an architecture audit, not a danger score. **Depends on**
+counts the prerequisites named by one system; **supports** counts how many other
+systems name it. A high count means “expect handoffs and cascading effects,” not
+“this will fail first.”
+
 A disrupted household is easier to reason about as eight functions rather than a
 pile of objects:
 
@@ -99,7 +108,7 @@ people over $d$ days:
 
 $$W = 2nd\;\text{litres}$$
 
-![Household drinking-and-cooking water for three and ten days](build/diagrams/household_water_planner.png)
+{{visualization:vega-household-water-stock}}
 
 The BBK’s current staged advice is pleasantly non-apocalyptic: aim to manage for
 **ten days**, but a stock for **at least three days already helps** and can be
@@ -380,6 +389,12 @@ A fully connected group of $n$ people has
 $$C(n)=\frac{n(n-1)}{2}$$
 
 possible pairwise channels:
+
+{{visualization:vega-communication-channels}}
+
+The chart uses logarithmic axes so groups from two to one hundred fit in one
+view; the labels and table give the exact integer values. The curve describes
+possible connections, not message volume, trust, or competence.
 
 | Group size | Pairwise channels | Practical implication |
 |---:|---:|---|

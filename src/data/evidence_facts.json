@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.4.1",
+  "release": "4.5.0",
   "reviewed_on": "2026-07-22",
   "policy": {
     "classes": ["protocol", "population estimate", "diagnostic-accuracy study", "randomized study", "observational association", "mathematical model"],

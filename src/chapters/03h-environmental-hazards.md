@@ -1,11 +1,13 @@
 ---
 title: "Situation H — Environmental Hazards"
 chapter: "3H"
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies:
   - build/diagrams/hazard_override_matrix.png
   - build/diagrams/dependency_continuity_map.png
+  - build/diagrams/hazard_source_location_map.png
+  - build/diagrams/hazard_handoff_card.png
 ---
 
 # Situation H — The Environment May Be Unsafe
@@ -167,6 +169,14 @@ NINA, warnung.bund.de, radio, police, and fire-service instructions describe the
 actual event. This guide supplies the decision shape; it does not have a live
 sensor network hidden in the binding.[^warning]
 
+![Source-location decision map for indoor, outdoor, and uncertain environmental hazards](build/diagrams/hazard_source_location_map.png)
+
+The diagram is a **source-location model**, not a live instruction. Its complete
+text fallback is the three-item list above: leave an indoor source; follow the
+current official shelter or evacuation instruction for an outside event; and
+increase distance while verifying when the source is unclear. Immediate danger
+still goes directly to **112**.
+
 ## Dependency modifiers during a hazard
 
 A safe route may need adaptation for a child, mobility limitation, sensory or
@@ -187,6 +197,11 @@ Apply the modifier **after** recognizing urgency:
   uncertain.
 
 ## The hazard handoff
+
+![Five-field hazard handoff card: location, hazard, people, symptoms, and access](build/diagrams/hazard_handoff_card.png)
+
+The card compresses the same five fields written below. It is a memory aid, not
+a reason to remain near the source or delay the call.
 
 From a safe place, say:
 
@@ -212,6 +227,9 @@ Once the scene is officially safe:
   destination in the household plan;
 - check the person who was calmest. Competence can postpone shaking; it does not
   abolish it.
+
+
+{{subguide-sources:H}}
 
 [^bbk-fire]: Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK), “Was tun, wenn es brennt?”: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html
 

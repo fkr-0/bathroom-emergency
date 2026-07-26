@@ -1,8 +1,8 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies: []
 ---
 

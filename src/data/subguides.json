@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "release": "4.5.0",
+  "status": "core-graph-with-bh-standalone",
+  "identity_frozen_on": "2026-07-23",
+  "standalone_nodes": ["B", "H"],
+  "master_emergency_gate": "once-on-master-cover",
+  "standalone_emergency_gate": "once-on-page-zero",
+  "source_strategy": "generated-filtered-sources-and-limits",
+  "nodes": [
+    {
+      "id": "O",
+      "slug": "small-room-observatory",
+      "title": "Small-Room Observatory",
+      "promise": "Observe body, room, and attention before choosing the route that owns the loudest problem.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "00-cover.md",
+        "01-how-to-use.md"
+      ],
+      "sections": [
+        "orientation",
+        "observatory"
+      ],
+      "colour": "#126e67",
+      "pattern": "dot-field",
+      "glyph": "open-eye",
+      "incoming": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "P",
+        "R"
+      ],
+      "outgoing": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "P",
+        "R"
+      ],
+      "questions": [
+        "What is happening in body, room, and attention?",
+        "Which route owns the loudest problem?"
+      ]
+    },
+    {
+      "id": "A",
+      "slug": "responsibility-care",
+      "title": "Responsibility and Care",
+      "promise": "Separate live harm, repair, and continuing care so responsibility becomes actionable.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "02-situation-a.md"
+      ],
+      "sections": [
+        "A"
+      ],
+      "colour": "#9a6700",
+      "pattern": "concentric-rings",
+      "glyph": "nested-circle",
+      "incoming": [
+        "O",
+        "C",
+        "D",
+        "Z",
+        "P",
+        "R"
+      ],
+      "outgoing": [
+        "O",
+        "C",
+        "D",
+        "Z",
+        "P",
+        "R"
+      ],
+      "questions": [
+        "Who may depend on this action?",
+        "What repair and continuing care are required?"
+      ]
+    },
+    {
+      "id": "B",
+      "slug": "alarm-calm",
+      "title": "Alarm and Calm",
+      "promise": "Investigate alarm, attention, overload, and small actions without hiding bodily red flags.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "03-situations-b-g.md",
+        "04-calm-guide.md"
+      ],
+      "sections": [
+        "B",
+        "E"
+      ],
+      "colour": "#175cd3",
+      "pattern": "horizontal-waves",
+      "glyph": "breath-wave",
+      "incoming": [
+        "O",
+        "C",
+        "D",
+        "P",
+        "R"
+      ],
+      "outgoing": [
+        "O",
+        "C",
+        "D",
+        "P",
+        "R"
+      ],
+      "questions": [
+        "Is alarm the primary problem?",
+        "What reduces load without hiding a red flag?"
+      ]
+    },
+    {
+      "id": "C",
+      "slug": "body-first-aid",
+      "title": "Body and First Aid",
+      "promise": "Route injury and illness, then support the body safely while professional help is arranged.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "03-situations-b-g.md",
+        "05-self-ambulance.md"
+      ],
+      "sections": [
+        "C"
+      ],
+      "colour": "#b42318",
+      "pattern": "diagonal-crosshatch",
+      "glyph": "pulse-cross",
+      "incoming": [
+        "O",
+        "A",
+        "B",
+        "H",
+        "Z",
+        "P",
+        "R"
+      ],
+      "outgoing": [
+        "O",
+        "A",
+        "B",
+        "H",
+        "Z",
+        "P",
+        "R"
+      ],
+      "questions": [
+        "Is body injury or illness primary?",
+        "What can safely happen while help is arranged?"
+      ]
+    },
+    {
+      "id": "D",
+      "slug": "threat-safe-place",
+      "title": "Threat and Safe Place",
+      "promise": "Name the unsafe person or place and move toward a confirmed destination with a backup.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "03-situations-b-g.md",
+        "03g-safe-place-routing.md"
+      ],
+      "sections": [
+        "D",
+        "G"
+      ],
+      "colour": "#6f3ab2",
+      "pattern": "vertical-bars",
+      "glyph": "shield-door",
+      "incoming": [
+        "O",
+        "A",
+        "B",
+        "H",
+        "Z",
+        "P",
+        "R"
+      ],
+      "outgoing": [
+        "O",
+        "A",
+        "B",
+        "H",
+        "Z",
+        "P",
+        "R"
+      ],
+      "questions": [
+        "Is a person or place unsafe?",
+        "Which confirmed destination and backup exist?"
+      ]
+    },
+    {
+      "id": "H",
+      "slug": "air-smell-environment",
+      "title": "Air, Smell, and Environment",
+      "promise": "Distinguish room, building, air, wiring, and substance hazards before ordinary troubleshooting.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "03-situations-b-g.md",
+        "03h-environmental-hazards.md"
+      ],
+      "sections": [
+        "F",
+        "H"
+      ],
+      "colour": "#b54708",
+      "pattern": "diagonal-stripes",
+      "glyph": "air-triangle",
+      "incoming": [
+        "O",
+        "C",
+        "D",
+        "Z",
+        "P",
+        "R"
+      ],
+      "outgoing": [
+        "O",
+        "C",
+        "D",
+        "Z",
+        "P",
+        "R"
+      ],
+      "questions": [
+        "Is the environment unsafe now?",
+        "Is the source indoors or an official outside warning?"
+      ]
+    },
+    {
+      "id": "Z",
+      "slug": "outage-continuity",
+      "title": "Outage and Continuity",
+      "promise": "Keep essential household functions visible, assigned, backed up, and reviewed.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "06-zombie-guide.md"
+      ],
+      "sections": [
+        "Z"
+      ],
+      "colour": "#16794a",
+      "pattern": "staggered-brick",
+      "glyph": "linked-blocks",
+      "incoming": [
+        "O",
+        "A",
+        "C",
+        "D",
+        "H",
+        "P",
+        "R"
+      ],
+      "outgoing": [
+        "O",
+        "A",
+        "C",
+        "D",
+        "H",
+        "P",
+        "R"
+      ],
+      "questions": [
+        "Which household function is failing?",
+        "Who owns the next action, backup, and review time?"
+      ]
+    },
+    {
+      "id": "P",
+      "slug": "professional-support",
+      "title": "Professional Support",
+      "promise": "Match a named problem to the service able to change it, with one backup route.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "07-professional-support.md"
+      ],
+      "sections": [
+        "P"
+      ],
+      "colour": "#0e7490",
+      "pattern": "node-lattice",
+      "glyph": "connected-nodes",
+      "incoming": [
+        "O",
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "R"
+      ],
+      "outgoing": [
+        "O",
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "R"
+      ],
+      "questions": [
+        "Which system can change the named problem?",
+        "What is the first route and backup route?"
+      ]
+    },
+    {
+      "id": "R",
+      "slug": "reference",
+      "title": "Reference",
+      "promise": "Check the complete graph, formulas, fields, sources, limits, and reproducible evidence trail.",
+      "reviewed_on": "2026-07-23",
+      "chapters": [
+        "08-appendix.md",
+        "09-version-history.md",
+        "10-sources.md"
+      ],
+      "sections": [
+        "R"
+      ],
+      "colour": "#344054",
+      "pattern": "square-grid",
+      "glyph": "index-grid",
+      "incoming": [
+        "O",
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "P"
+      ],
+      "outgoing": [
+        "O",
+        "A",
+        "B",
+        "C",
+        "D",
+        "H",
+        "Z",
+        "P"
+      ],
+      "questions": [
+        "Which formula, source, field, or complete route is needed?",
+        "How can the result be checked and reproduced?"
+      ]
+    }
+  ]
+}

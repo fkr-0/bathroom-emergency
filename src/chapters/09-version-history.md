@@ -1,12 +1,45 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies: []
 ---
 
 # Version History
+
+## 4.5.0 — 23 July 2026 release candidate
+
+### Graph-linked subguides become real objects
+
+- Froze nine graph identities with unique code, pattern, glyph, title, and colour
+  channels, plus reciprocal edge validation and a complete text directory.
+- Added a responsive graph hub and local “you are here” maps that preserve direct
+  emergency routes instead of making the graph a queue before help.
+- Built B — Alarm and Calm and H — Air, Smell, and Environment as standalone
+  A4, A4/2, and large-print color/monochrome families from the same canonical
+  prose used by the master.
+- Added per-subguide covers, position/version metadata, introductions, handoffs,
+  and source-complete local end matter generated from the canonical registry.
+
+### Better models and operational pictures
+
+- Added B’s four-channel alarm map and conceptual load/headroom model, with
+  explicit limits against treating either as a diagnostic score.
+- Added H’s indoor/outdoor/uncertain source-location map and five-field hazard
+  handoff card.
+- B and H now each carry four canonical visuals with adjacent text fallbacks and
+  non-colour encodings.
+- Added identity/grouping contact sheets and selected the quieter nine-node core
+  over a noisier split-route prototype.
+
+### Release engineering
+
+- Added validators for source/section/figure ownership, graph reciprocity,
+  identity uniqueness, A4/A4/2/large-print parity, PDF tagging and geometry,
+  source blocks, semantic text, and reproducible hashes.
+- Fixed the screen shell so standalone pages without a contents rail use the
+  full reading measure rather than reserving an empty navigation column.
 
 ## 4.4.1 — 22 July 2026
 

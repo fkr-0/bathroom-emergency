@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the evidence figures used by Bathroom Emergency Guide 4.1.x.
+"""Generate custom scientific figures used by Bathroom Emergency Guide.
 
 All numeric inputs live in ``src/data/evidence_facts.json``.  The figures are
 therefore reviewable without reading plotting code, and each chart prints its
@@ -361,13 +361,7 @@ def chart_social_connection() -> None:
 
 CHARTS = [
     chart_evidence_classes,
-    chart_gad7,
     chart_breathwork,
-    chart_reproductive_context,
-    chart_stroke_model,
-    chart_water,
-    chart_sleep,
-    chart_social_connection,
 ]
 
 if __name__ == "__main__":

@@ -1,0 +1,1504 @@
+{
+  "schema_version": 1,
+  "release": "4.5.0",
+  "generated_by": "bin/build_inventories.py",
+  "granularity": "all level-1 and level-2 headings",
+  "sections": [
+    {
+      "key": "00-cover:bathroom-emergency-guide",
+      "chapter": "00-cover.md",
+      "line": 10,
+      "level": 1,
+      "heading": "Bathroom Emergency Guide",
+      "owner": "O"
+    },
+    {
+      "key": "00-cover:field-notes-for-when-the-body-gets-loud",
+      "chapter": "00-cover.md",
+      "line": 12,
+      "level": 2,
+      "heading": "Field notes for when the body gets loud",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:the-small-room-observatory",
+      "chapter": "01-how-to-use.md",
+      "line": 9,
+      "level": 1,
+      "heading": "The Small-Room Observatory",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:1-when-the-outside-gets-quiet-the-inside-gets-loud",
+      "chapter": "01-how-to-use.md",
+      "line": 24,
+      "level": 2,
+      "heading": "1. When the outside gets quiet, the inside gets loud",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:2-the-gut-votes-early",
+      "chapter": "01-how-to-use.md",
+      "line": 51,
+      "level": 2,
+      "heading": "2. The gut votes early",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:3-the-room-is-amplifying-you",
+      "chapter": "01-how-to-use.md",
+      "line": 74,
+      "level": 2,
+      "heading": "3. The room is amplifying you",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:4-anxiety-bends-time",
+      "chapter": "01-how-to-use.md",
+      "line": 94,
+      "level": 2,
+      "heading": "4. Anxiety bends time",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:5-acute-stress-makes-the-mind-narrower-not-stupider",
+      "chapter": "01-how-to-use.md",
+      "line": 111,
+      "level": 2,
+      "heading": "5. Acute stress makes the mind narrower, not stupider",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:6-naming-a-feeling-changes-the-task",
+      "chapter": "01-how-to-use.md",
+      "line": 132,
+      "level": 2,
+      "heading": "6. Naming a feeling changes the task",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:7-cold-water-is-interesting-not-magical",
+      "chapter": "01-how-to-use.md",
+      "line": 151,
+      "level": 2,
+      "heading": "7. Cold water is interesting, not magical",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:8-bathroom-fainting-is-a-real-category",
+      "chapter": "01-how-to-use.md",
+      "line": 170,
+      "level": 2,
+      "heading": "8. Bathroom fainting is a real category",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:9-smell-is-a-fading-sensor",
+      "chapter": "01-how-to-use.md",
+      "line": 190,
+      "level": 2,
+      "heading": "9. Smell is a fading sensor",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:10-the-three-minute-bathroom-experiment",
+      "chapter": "01-how-to-use.md",
+      "line": 203,
+      "level": 2,
+      "heading": "10. The three-minute bathroom experiment",
+      "owner": "O"
+    },
+    {
+      "key": "01-how-to-use:choose-the-loudest-topic",
+      "chapter": "01-how-to-use.md",
+      "line": 225,
+      "level": 2,
+      "heading": "Choose the loudest topic",
+      "owner": "O"
+    },
+    {
+      "key": "02-situation-a:situation-a-i-caused-trouble",
+      "chapter": "02-situation-a.md",
+      "line": 10,
+      "level": 1,
+      "heading": "Situation A — I Caused Trouble",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:first-split-which-clock-is-running",
+      "chapter": "02-situation-a.md",
+      "line": 21,
+      "level": 2,
+      "heading": "First split: which clock is running?",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a0-biological-social-technical-or-unclear",
+      "chapter": "02-situation-a.md",
+      "line": 47,
+      "level": 2,
+      "heading": "A0 — Biological, social, technical, or unclear?",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a1-a-life-may-be-developing-but-birth-has-not-begun",
+      "chapter": "02-situation-a.md",
+      "line": 63,
+      "level": 2,
+      "heading": "A1 — A life may be developing, but birth has not begun",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a2-birth-appears-to-be-happening-now",
+      "chapter": "02-situation-a.md",
+      "line": 103,
+      "level": 2,
+      "heading": "A2 — Birth appears to be happening now",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a3-a-baby-arrived-recently-hours-days-or-weeks-ago",
+      "chapter": "02-situation-a.md",
+      "line": 120,
+      "level": 2,
+      "heading": "A3 — A baby arrived recently: hours, days, or weeks ago",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a4-a-child-or-young-dependant-relies-on-you",
+      "chapter": "02-situation-a.md",
+      "line": 180,
+      "level": 2,
+      "heading": "A4 — A child or young dependant relies on you",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a5-the-person-is-an-adult-possibly-your-adult-child",
+      "chapter": "02-situation-a.md",
+      "line": 229,
+      "level": 2,
+      "heading": "A5 — The person is an adult, possibly your adult child",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a6-the-responsibility-is-ambiguous",
+      "chapter": "02-situation-a.md",
+      "line": 250,
+      "level": 2,
+      "heading": "A6 — The responsibility is ambiguous",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a7-i-harmed-or-may-have-harmed-someone",
+      "chapter": "02-situation-a.md",
+      "line": 284,
+      "level": 2,
+      "heading": "A7 — I harmed or may have harmed someone",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a8-ongoing-responsibility-for-a-person-animal-or-system",
+      "chapter": "02-situation-a.md",
+      "line": 316,
+      "level": 2,
+      "heading": "A8 — Ongoing responsibility for a person, animal, or system",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a9-a-silicon-based-life-form-escaped",
+      "chapter": "02-situation-a.md",
+      "line": 355,
+      "level": 2,
+      "heading": "A9 — A silicon-based life form escaped",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:accountability-theorem",
+      "chapter": "02-situation-a.md",
+      "line": 370,
+      "level": 2,
+      "heading": "Accountability theorem",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:when-guilt-itself-becomes-the-emergency",
+      "chapter": "02-situation-a.md",
+      "line": 394,
+      "level": 2,
+      "heading": "When guilt itself becomes the emergency",
+      "owner": "A"
+    },
+    {
+      "key": "03-situations-b-g:situations-b-f-five-different-kinds-of-too-much",
+      "chapter": "03-situations-b-g.md",
+      "line": 13,
+      "level": 1,
+      "heading": "Situations B–F — Five Different Kinds of “Too Much”",
+      "owner": "B"
+    },
+    {
+      "key": "03-situations-b-g:b-i-feel-anxious",
+      "chapter": "03-situations-b-g.md",
+      "line": 20,
+      "level": 2,
+      "heading": "B — I feel anxious",
+      "owner": "B"
+    },
+    {
+      "key": "03-situations-b-g:c-pain-is-an-alarm-not-a-damage-display",
+      "chapter": "03-situations-b-g.md",
+      "line": 113,
+      "level": 2,
+      "heading": "C — Pain is an alarm, not a damage display",
+      "owner": "C"
+    },
+    {
+      "key": "03-situations-b-g:d-threat-has-three-clocks",
+      "chapter": "03-situations-b-g.md",
+      "line": 183,
+      "level": 2,
+      "heading": "D — Threat has three clocks",
+      "owner": "D"
+    },
+    {
+      "key": "03-situations-b-g:e-overload-is-a-queueing-failure",
+      "chapter": "03-situations-b-g.md",
+      "line": 237,
+      "level": 2,
+      "heading": "E — Overload is a queueing failure",
+      "owner": "B"
+    },
+    {
+      "key": "03-situations-b-g:f-smell-is-vivid-evidence-with-poor-calibration",
+      "chapter": "03-situations-b-g.md",
+      "line": 326,
+      "level": 2,
+      "heading": "F — Smell is vivid evidence with poor calibration",
+      "owner": "H"
+    },
+    {
+      "key": "03-situations-b-g:g-no-place-to-go",
+      "chapter": "03-situations-b-g.md",
+      "line": 372,
+      "level": 2,
+      "heading": "G — No place to go",
+      "owner": "D"
+    },
+    {
+      "key": "03-situations-b-g:situations-b-f-with-the-situation-g-handoff",
+      "chapter": "03-situations-b-g.md",
+      "line": 379,
+      "level": 2,
+      "heading": "Situations B–F, with the Situation G handoff",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:situation-g-no-safe-place",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 11,
+      "level": 1,
+      "heading": "Situation G — No Safe Place",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:first-minute-choose-the-actual-failure",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 21,
+      "level": 2,
+      "heading": "First minute — choose the actual failure",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:g1-a-person-or-active-threat-makes-the-place-unsafe",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 35,
+      "level": 2,
+      "heading": "G1 — A person or active threat makes the place unsafe",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:g2-there-is-no-weather-safe-place-to-sleep-tonight",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 73,
+      "level": 2,
+      "heading": "G2 — There is no weather-safe place to sleep tonight",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:g3-a-place-exists-but-it-cannot-safely-support-the-person",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 107,
+      "level": 2,
+      "heading": "G3 — A place exists, but it cannot safely support the person",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:g4-the-place-is-physically-safe-but-staying-is-psychologically-or-socially-unworkable",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 143,
+      "level": 2,
+      "heading": "G4 — The place is physically safe, but staying is psychologically or socially unworkable",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:children-and-young-people-without-a-safe-adult",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 173,
+      "level": 2,
+      "heading": "Children and young people without a safe adult",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:communication-and-access-card",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 187,
+      "level": 2,
+      "heading": "Communication and access card",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:the-safe-place-handoff",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 225,
+      "level": 2,
+      "heading": "The safe-place handoff",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:fill-before-it-is-needed",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 239,
+      "level": 2,
+      "heading": "Fill before it is needed",
+      "owner": "D"
+    },
+    {
+      "key": "03h-environmental-hazards:situation-h-the-environment-may-be-unsafe",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 13,
+      "level": 1,
+      "heading": "Situation H — The Environment May Be Unsafe",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:the-five-second-hazard-gate",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 26,
+      "level": 2,
+      "heading": "The five-second hazard gate",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:fire-or-smoke",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 42,
+      "level": 2,
+      "heading": "Fire or smoke",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:carbon-monoxide",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 65,
+      "level": 2,
+      "heading": "Carbon monoxide",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:gas-smell-or-hissing",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 87,
+      "level": 2,
+      "heading": "Gas smell or hissing",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:chemical-fumes-splash-or-swallowed-product",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 108,
+      "level": 2,
+      "heading": "Chemical fumes, splash, or swallowed product",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:electrical-danger",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 139,
+      "level": 2,
+      "heading": "Electrical danger",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:outdoor-warning-versus-indoor-source",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 158,
+      "level": 2,
+      "heading": "Outdoor warning versus indoor source",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:dependency-modifiers-during-a-hazard",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 180,
+      "level": 2,
+      "heading": "Dependency modifiers during a hazard",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:the-hazard-handoff",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 199,
+      "level": 2,
+      "heading": "The hazard handoff",
+      "owner": "H"
+    },
+    {
+      "key": "03h-environmental-hazards:after-the-immediate-hazard",
+      "chapter": "03h-environmental-hazards.md",
+      "line": 218,
+      "level": 2,
+      "heading": "After the immediate hazard",
+      "owner": "H"
+    },
+    {
+      "key": "04-calm-guide:calm-guide-reduce-the-volume-not-your-existence",
+      "chapter": "04-calm-guide.md",
+      "line": 11,
+      "level": 1,
+      "heading": "Calm Guide — Reduce the Volume, Not Your Existence",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:a-pause-needs-no-legal-brief",
+      "chapter": "04-calm-guide.md",
+      "line": 22,
+      "level": 2,
+      "heading": "A pause needs no legal brief",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:the-90-second-landing",
+      "chapter": "04-calm-guide.md",
+      "line": 38,
+      "level": 2,
+      "heading": "The 90-second landing",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:stress-does-not-obey-a-cinematic-decay-curve",
+      "chapter": "04-calm-guide.md",
+      "line": 74,
+      "level": 2,
+      "heading": "Stress does not obey a cinematic decay curve",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:breathing-exercises",
+      "chapter": "04-calm-guide.md",
+      "line": 92,
+      "level": 2,
+      "heading": "Breathing exercises",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:yerkes-dodson-some-arousal-can-help-too-much-can-jam-the-controls",
+      "chapter": "04-calm-guide.md",
+      "line": 135,
+      "level": 2,
+      "heading": "Yerkes–Dodson — some arousal can help, too much can jam the controls",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:polyvagal-language-useful-metaphor-limited-certainty",
+      "chapter": "04-calm-guide.md",
+      "line": 152,
+      "level": 2,
+      "heading": "Polyvagal language — useful metaphor, limited certainty",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:the-bathroom-control-panel",
+      "chapter": "04-calm-guide.md",
+      "line": 165,
+      "level": 2,
+      "heading": "The bathroom control panel",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:comfort-inventory",
+      "chapter": "04-calm-guide.md",
+      "line": 181,
+      "level": 2,
+      "heading": "Comfort inventory",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:unhook-from-the-thought",
+      "chapter": "04-calm-guide.md",
+      "line": 209,
+      "level": 2,
+      "heading": "Unhook from the thought",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:the-five-minute-values-bridge",
+      "chapter": "04-calm-guide.md",
+      "line": 228,
+      "level": 2,
+      "heading": "The five-minute values bridge",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:eventually-leaving-the-bathroom",
+      "chapter": "04-calm-guide.md",
+      "line": 238,
+      "level": 2,
+      "heading": "Eventually: leaving the bathroom",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:nice-place-map",
+      "chapter": "04-calm-guide.md",
+      "line": 340,
+      "level": 2,
+      "heading": "Nice-place map",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:when-calm-is-not-enough",
+      "chapter": "04-calm-guide.md",
+      "line": 355,
+      "level": 2,
+      "heading": "When calm is not enough",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:a-calm-plan-for-another-person",
+      "chapter": "04-calm-guide.md",
+      "line": 373,
+      "level": 2,
+      "heading": "A calm plan for another person",
+      "owner": "B"
+    },
+    {
+      "key": "05-self-ambulance:first-aid-you-are-the-first-link-not-the-whole-ambulance",
+      "chapter": "05-self-ambulance.md",
+      "line": 11,
+      "level": 1,
+      "heading": "First Aid — You Are the First Link, Not the Whole Ambulance",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:the-first-minute-preserve-what-still-works",
+      "chapter": "05-self-ambulance.md",
+      "line": 21,
+      "level": 2,
+      "heading": "The first minute: preserve what still works",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:triage-priority-heatmap",
+      "chapter": "05-self-ambulance.md",
+      "line": 33,
+      "level": 2,
+      "heading": "Triage priority heatmap",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:the-golden-hour-useful-urgency-not-a-stopwatch",
+      "chapter": "05-self-ambulance.md",
+      "line": 47,
+      "level": 2,
+      "heading": "The “golden hour” — useful urgency, not a stopwatch",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:unresponsive-and-not-breathing-normally",
+      "chapter": "05-self-ambulance.md",
+      "line": 56,
+      "level": 2,
+      "heading": "Unresponsive and not breathing normally",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:unresponsive-but-breathing-normally",
+      "chapter": "05-self-ambulance.md",
+      "line": 68,
+      "level": 2,
+      "heading": "Unresponsive but breathing normally",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:choking",
+      "chapter": "05-self-ambulance.md",
+      "line": 74,
+      "level": 2,
+      "heading": "Choking",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:wounds-and-bleeding",
+      "chapter": "05-self-ambulance.md",
+      "line": 81,
+      "level": 2,
+      "heading": "Wounds and bleeding",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:burns-and-scalds",
+      "chapter": "05-self-ambulance.md",
+      "line": 111,
+      "level": 2,
+      "heading": "Burns and scalds",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:suspected-fractures-and-joint-injuries",
+      "chapter": "05-self-ambulance.md",
+      "line": 128,
+      "level": 2,
+      "heading": "Suspected fractures and joint injuries",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:suspected-spine-neck-or-pelvic-injury",
+      "chapter": "05-self-ambulance.md",
+      "line": 146,
+      "level": 2,
+      "heading": "Suspected spine, neck, or pelvic injury",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:chemical-in-eye-or-on-skin",
+      "chapter": "05-self-ambulance.md",
+      "line": 157,
+      "level": 2,
+      "heading": "Chemical in eye or on skin",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:electrical-injury",
+      "chapter": "05-self-ambulance.md",
+      "line": 168,
+      "level": 2,
+      "heading": "Electrical injury",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:stroke-fast",
+      "chapter": "05-self-ambulance.md",
+      "line": 175,
+      "level": 2,
+      "heading": "Stroke — FAST",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:chest-pain-or-severe-breathlessness",
+      "chapter": "05-self-ambulance.md",
+      "line": 202,
+      "level": 2,
+      "heading": "Chest pain or severe breathlessness",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:anaphylaxis",
+      "chapter": "05-self-ambulance.md",
+      "line": 209,
+      "level": 2,
+      "heading": "Anaphylaxis",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:poisoning",
+      "chapter": "05-self-ambulance.md",
+      "line": 223,
+      "level": 2,
+      "heading": "Poisoning",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:vital-signs-observe-record-never-self-clear",
+      "chapter": "05-self-ambulance.md",
+      "line": 235,
+      "level": 2,
+      "heading": "Vital signs — observe, record, never self-clear",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:pain-without-a-red-flag",
+      "chapter": "05-self-ambulance.md",
+      "line": 262,
+      "level": 2,
+      "heading": "Pain without a red flag",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:self-care-while-waiting",
+      "chapter": "05-self-ambulance.md",
+      "line": 273,
+      "level": 2,
+      "heading": "Self-care while waiting",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:first-aid-kit-for-an-ordinary-household",
+      "chapter": "05-self-ambulance.md",
+      "line": 290,
+      "level": 2,
+      "heading": "First-aid kit for an ordinary household",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:self-ambulance-for-non-physical-emergencies",
+      "chapter": "05-self-ambulance.md",
+      "line": 308,
+      "level": 2,
+      "heading": "Self ambulance for non-physical emergencies",
+      "owner": "C"
+    },
+    {
+      "key": "05-self-ambulance:red-flag-theorem-again",
+      "chapter": "05-self-ambulance.md",
+      "line": 325,
+      "level": 2,
+      "heading": "Red-flag theorem, again",
+      "owner": "C"
+    },
+    {
+      "key": "06-zombie-guide:zombie-guide-mostly-for-non-zombie-disasters",
+      "chapter": "06-zombie-guide.md",
+      "line": 17,
+      "level": 1,
+      "heading": "Zombie Guide — Mostly for Non-Zombie Disasters",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:verify-before-optimizing",
+      "chapter": "06-zombie-guide.md",
+      "line": 28,
+      "level": 2,
+      "heading": "Verify before optimizing",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:survival-probability-valid-mathematics-unusable-prophecy",
+      "chapter": "06-zombie-guide.md",
+      "line": 43,
+      "level": 2,
+      "heading": "Survival probability — valid mathematics, unusable prophecy",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:mini-survival-guide-in-nature-or-infrastructure-failure",
+      "chapter": "06-zombie-guide.md",
+      "line": 56,
+      "level": 2,
+      "heading": "Mini survival guide — in nature or infrastructure failure",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:mini-collapsing-society-guide",
+      "chapter": "06-zombie-guide.md",
+      "line": 323,
+      "level": 2,
+      "heading": "Mini collapsing-society guide",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:mini-building-society-guide",
+      "chapter": "06-zombie-guide.md",
+      "line": 469,
+      "level": 2,
+      "heading": "Mini building-society guide",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:evacuation-pocket-list",
+      "chapter": "06-zombie-guide.md",
+      "line": 593,
+      "level": 2,
+      "heading": "Evacuation pocket list",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:preparedness-checklist-before-anything-happens",
+      "chapter": "06-zombie-guide.md",
+      "line": 609,
+      "level": 2,
+      "heading": "Preparedness checklist before anything happens",
+      "owner": "Z"
+    },
+    {
+      "key": "07-professional-support:professional-support-when-the-bathroom-is-too-small",
+      "chapter": "07-professional-support.md",
+      "line": 10,
+      "level": 1,
+      "heading": "Professional Support — When the Bathroom Is Too Small",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:germany-quick-reference",
+      "chapter": "07-professional-support.md",
+      "line": 17,
+      "level": 2,
+      "heading": "Germany quick reference",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:the-call-script-location-before-autobiography",
+      "chapter": "07-professional-support.md",
+      "line": 35,
+      "level": 2,
+      "heading": "The call script — location before autobiography",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:psychological-support",
+      "chapter": "07-professional-support.md",
+      "line": 78,
+      "level": 2,
+      "heading": "Psychological support",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:violence-and-coercion",
+      "chapter": "07-professional-support.md",
+      "line": 195,
+      "level": 2,
+      "heading": "Violence and coercion",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:legal-support",
+      "chapter": "07-professional-support.md",
+      "line": 222,
+      "level": 2,
+      "heading": "Legal support",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:medical-support",
+      "chapter": "07-professional-support.md",
+      "line": 276,
+      "level": 2,
+      "heading": "Medical support",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:children-dependants-and-caregiving",
+      "chapter": "07-professional-support.md",
+      "line": 312,
+      "level": 2,
+      "heading": "Children, dependants, and caregiving",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:housing-and-no-place-tonight",
+      "chapter": "07-professional-support.md",
+      "line": 340,
+      "level": 2,
+      "heading": "Housing and “no place tonight”",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:quick-reference-card",
+      "chapter": "07-professional-support.md",
+      "line": 381,
+      "level": 2,
+      "heading": "Quick reference card",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:fill-these-before-deployment",
+      "chapter": "07-professional-support.md",
+      "line": 395,
+      "level": 2,
+      "heading": "Fill these before deployment",
+      "owner": "P"
+    },
+    {
+      "key": "07-professional-support:support-selection-matrix",
+      "chapter": "07-professional-support.md",
+      "line": 422,
+      "level": 2,
+      "heading": "Support-selection matrix",
+      "owner": "P"
+    },
+    {
+      "key": "08-appendix:appendix-the-useful-loose-ends",
+      "chapter": "08-appendix.md",
+      "line": 15,
+      "level": 1,
+      "heading": "Appendix — The Useful Loose Ends",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:master-cross-reference-where-everything-points",
+      "chapter": "08-appendix.md",
+      "line": 21,
+      "level": 2,
+      "heading": "Master cross-reference — where everything points",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:mathematical-notation-legend",
+      "chapter": "08-appendix.md",
+      "line": 38,
+      "level": 2,
+      "heading": "Mathematical notation legend",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:the-eight-entry-points",
+      "chapter": "08-appendix.md",
+      "line": 52,
+      "level": 2,
+      "heading": "The eight entry points",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:guide-topology",
+      "chapter": "08-appendix.md",
+      "line": 65,
+      "level": 2,
+      "heading": "Guide topology",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:flowchart-legend",
+      "chapter": "08-appendix.md",
+      "line": 74,
+      "level": 2,
+      "heading": "Flowchart legend",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:how-to-read-the-evidence-figures",
+      "chapter": "08-appendix.md",
+      "line": 85,
+      "level": 2,
+      "heading": "How to read the evidence figures",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:diagram-index",
+      "chapter": "08-appendix.md",
+      "line": 95,
+      "level": 2,
+      "heading": "Diagram index",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:evidence-labels",
+      "chapter": "08-appendix.md",
+      "line": 121,
+      "level": 2,
+      "heading": "Evidence labels",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:formula-and-theorem-index",
+      "chapter": "08-appendix.md",
+      "line": 140,
+      "level": 2,
+      "heading": "Formula and theorem index",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:fillable-fields",
+      "chapter": "08-appendix.md",
+      "line": 243,
+      "level": 2,
+      "heading": "Fillable fields",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:master-flowchart-complete-text-version",
+      "chapter": "08-appendix.md",
+      "line": 279,
+      "level": 2,
+      "heading": "Master flowchart — complete text version",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:pocket-print-card",
+      "chapter": "08-appendix.md",
+      "line": 389,
+      "level": 2,
+      "heading": "Pocket print card",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:offline-deployment-checklist",
+      "chapter": "08-appendix.md",
+      "line": 420,
+      "level": 2,
+      "heading": "Offline deployment checklist",
+      "owner": "R"
+    },
+    {
+      "key": "08-appendix:navigation-invariant",
+      "chapter": "08-appendix.md",
+      "line": 434,
+      "level": 2,
+      "heading": "Navigation invariant",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:version-history",
+      "chapter": "09-version-history.md",
+      "line": 9,
+      "level": 1,
+      "heading": "Version History",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-5-0-23-july-2026-release-candidate",
+      "chapter": "09-version-history.md",
+      "line": 11,
+      "level": 2,
+      "heading": "4.5.0 — 23 July 2026 release candidate",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-4-1-22-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 44,
+      "level": 2,
+      "heading": "4.4.1 — 22 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-3-1-22-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 59,
+      "level": 2,
+      "heading": "4.3.1 — 22 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-3-0-22-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 77,
+      "level": 2,
+      "heading": "4.3.0 — 22 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-2-0-22-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 107,
+      "level": 2,
+      "heading": "4.2.0 — 22 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-1-2-22-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 138,
+      "level": 2,
+      "heading": "4.1.2 — 22 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-1-1-22-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 162,
+      "level": 2,
+      "heading": "4.1.1 — 22 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-0-1-22-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 194,
+      "level": 2,
+      "heading": "4.0.1 — 22 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-0-0-17-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 248,
+      "level": 2,
+      "heading": "4.0.0 — 17 July 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:earlier-versions",
+      "chapter": "09-version-history.md",
+      "line": 284,
+      "level": 2,
+      "heading": "Earlier versions",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:sources-and-evidence-notes",
+      "chapter": "10-sources.md",
+      "line": 9,
+      "level": 1,
+      "heading": "Sources and Evidence Notes",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:evidence-hierarchy-used-here",
+      "chapter": "10-sources.md",
+      "line": 17,
+      "level": 2,
+      "heading": "Evidence hierarchy used here",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:bathroom-scale-body-and-perception-science",
+      "chapter": "10-sources.md",
+      "line": 29,
+      "level": 2,
+      "heading": "Bathroom-scale body and perception science",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:first-aid-and-emergency-response",
+      "chapter": "10-sources.md",
+      "line": 93,
+      "level": 2,
+      "heading": "First aid and emergency response",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:survival-and-emergency-preparedness",
+      "chapter": "10-sources.md",
+      "line": 139,
+      "level": 2,
+      "heading": "Survival and emergency preparedness",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:electricity-safety-and-basics",
+      "chapter": "10-sources.md",
+      "line": 163,
+      "level": 2,
+      "heading": "Electricity safety and basics",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:nutrition-and-emergency-food",
+      "chapter": "10-sources.md",
+      "line": 178,
+      "level": 2,
+      "heading": "Nutrition and emergency food",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:water-purification-and-clearing",
+      "chapter": "10-sources.md",
+      "line": 192,
+      "level": 2,
+      "heading": "Water purification and clearing",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:child-development",
+      "chapter": "10-sources.md",
+      "line": 206,
+      "level": 2,
+      "heading": "Child development",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:mental-health-best-practices",
+      "chapter": "10-sources.md",
+      "line": 221,
+      "level": 2,
+      "heading": "Mental health best practices",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:anxiety-assessment-gad-7",
+      "chapter": "10-sources.md",
+      "line": 240,
+      "level": 2,
+      "heading": "Anxiety assessment — GAD-7",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:pain-assessment-nrs",
+      "chapter": "10-sources.md",
+      "line": 250,
+      "level": 2,
+      "heading": "Pain assessment — NRS",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:stress-and-cortisol-research",
+      "chapter": "10-sources.md",
+      "line": 259,
+      "level": 2,
+      "heading": "Stress and cortisol research",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:heart-rate-variability",
+      "chapter": "10-sources.md",
+      "line": 273,
+      "level": 2,
+      "heading": "Heart-rate variability",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:physiological-sigh-and-breathing-research",
+      "chapter": "10-sources.md",
+      "line": 284,
+      "level": 2,
+      "heading": "Physiological sigh and breathing research",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:cognitive-load-theory",
+      "chapter": "10-sources.md",
+      "line": 294,
+      "level": 2,
+      "heading": "Cognitive-load theory",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:dunbar-numbers-social-brain-hypothesis",
+      "chapter": "10-sources.md",
+      "line": 308,
+      "level": 2,
+      "heading": "Dunbar numbers — social-brain hypothesis",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:ostrom-commons-governance",
+      "chapter": "10-sources.md",
+      "line": 316,
+      "level": 2,
+      "heading": "Ostrom — commons governance",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:iasc-mental-health-and-psychosocial-support",
+      "chapter": "10-sources.md",
+      "line": 326,
+      "level": 2,
+      "heading": "IASC — mental health and psychosocial support",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:therapy-effectiveness",
+      "chapter": "10-sources.md",
+      "line": 333,
+      "level": 2,
+      "heading": "Therapy effectiveness",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:olfactory-science",
+      "chapter": "10-sources.md",
+      "line": 350,
+      "level": 2,
+      "heading": "Olfactory science",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:caregiver-burnout-and-overload",
+      "chapter": "10-sources.md",
+      "line": 359,
+      "level": 2,
+      "heading": "Caregiver burnout and overload",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:stroke-treatment",
+      "chapter": "10-sources.md",
+      "line": 369,
+      "level": 2,
+      "heading": "Stroke treatment",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:burn-assessment",
+      "chapter": "10-sources.md",
+      "line": 375,
+      "level": 2,
+      "heading": "Burn assessment",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:seneca-tao-and-stoic-philosophy",
+      "chapter": "10-sources.md",
+      "line": 381,
+      "level": 2,
+      "heading": "Seneca, Tao, and Stoic philosophy",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:psychology-of-masses-group-dynamics-and-sociology",
+      "chapter": "10-sources.md",
+      "line": 403,
+      "level": 2,
+      "heading": "Psychology of masses, group dynamics, and sociology",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:legal-and-professional-standards",
+      "chapter": "10-sources.md",
+      "line": 428,
+      "level": 2,
+      "heading": "Legal and professional standards",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:affect-labelling-and-emotional-regulation",
+      "chapter": "10-sources.md",
+      "line": 446,
+      "level": 2,
+      "heading": "Affect labelling and emotional regulation",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:hydration-and-cognition",
+      "chapter": "10-sources.md",
+      "line": 452,
+      "level": 2,
+      "heading": "Hydration and cognition",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:yerkes-dodson-law",
+      "chapter": "10-sources.md",
+      "line": 462,
+      "level": 2,
+      "heading": "Yerkes–Dodson law",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:polyvagal-theory",
+      "chapter": "10-sources.md",
+      "line": 472,
+      "level": 2,
+      "heading": "Polyvagal theory",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:attachment-theory",
+      "chapter": "10-sources.md",
+      "line": 482,
+      "level": 2,
+      "heading": "Attachment theory",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:postpartum-depression",
+      "chapter": "10-sources.md",
+      "line": 496,
+      "level": 2,
+      "heading": "Postpartum depression",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:golden-hour-and-trauma-medicine",
+      "chapter": "10-sources.md",
+      "line": 505,
+      "level": 2,
+      "heading": "Golden hour and trauma medicine",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:haemorrhagic-shock-classification",
+      "chapter": "10-sources.md",
+      "line": 510,
+      "level": 2,
+      "heading": "Haemorrhagic shock classification",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:anaphylaxis",
+      "chapter": "10-sources.md",
+      "line": 516,
+      "level": 2,
+      "heading": "Anaphylaxis",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:game-theory-and-cooperation",
+      "chapter": "10-sources.md",
+      "line": 522,
+      "level": 2,
+      "heading": "Game theory and cooperation",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:thermoregulation",
+      "chapter": "10-sources.md",
+      "line": 533,
+      "level": 2,
+      "heading": "Thermoregulation",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:reproductive-health-and-medication",
+      "chapter": "10-sources.md",
+      "line": 541,
+      "level": 2,
+      "heading": "Reproductive health and medication",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:german-crisis-and-support-services",
+      "chapter": "10-sources.md",
+      "line": 550,
+      "level": 2,
+      "heading": "German crisis and support services",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:cyber-incident-branch",
+      "chapter": "10-sources.md",
+      "line": 560,
+      "level": 2,
+      "heading": "Cyber incident branch",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:quantitative-evidence-figures",
+      "chapter": "10-sources.md",
+      "line": 566,
+      "level": 2,
+      "heading": "Quantitative evidence figures",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:routing-hazard-and-locale-foundations",
+      "chapter": "10-sources.md",
+      "line": 634,
+      "level": 2,
+      "heading": "Routing, hazard, and locale foundations",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:household-continuity-synthesis",
+      "chapter": "10-sources.md",
+      "line": 695,
+      "level": 2,
+      "heading": "Household continuity synthesis",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:safe-place-access-and-freshness-foundations",
+      "chapter": "10-sources.md",
+      "line": 716,
+      "level": 2,
+      "heading": "Safe-place, access, and freshness foundations",
+      "owner": "R"
+    },
+    {
+      "key": "10-sources:editorial-policy",
+      "chapter": "10-sources.md",
+      "line": 780,
+      "level": 2,
+      "heading": "Editorial policy",
+      "owner": "R"
+    }
+  ]
+}

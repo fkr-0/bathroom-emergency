@@ -1,0 +1,451 @@
+{
+  "schema_version": 1,
+  "release": "4.5.0",
+  "generated_by": "bin/build_inventories.py",
+  "figures": [
+    {
+      "id": "reproductive-health-denominators",
+      "kind": "illustration",
+      "file": "build/diagrams/reproductive_health_denominators.png",
+      "owner": "A",
+      "secondary_subguides": [],
+      "question": "How do reproductive-health estimates differ when their denominators differ?",
+      "source_basis": [
+        "infertility_lifetime",
+        "postpartum_psychosis"
+      ],
+      "replacement_status": "migrated-to-vega",
+      "reader_facing": false,
+      "replacement_id": "vega-reproductive-denominators",
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "vega-reproductive-denominators",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_reproductive_denominators.png",
+      "owner": "A",
+      "secondary_subguides": [],
+      "question": "How can lifetime infertility prevalence and postpartum-psychosis incidence be shown without pretending they share a denominator?",
+      "source_basis": [
+        "infertility_lifetime",
+        "postpartum_psychosis"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    },
+    {
+      "id": "alarm-channels-map",
+      "kind": "illustration",
+      "file": "build/diagrams/alarm_channels_map.png",
+      "owner": "B",
+      "secondary_subguides": [],
+      "question": "How can an anxiety bundle be separated into observable sensation, emotion, prediction, and urge channels?",
+      "source_basis": [
+        "source-note:affect-labelling-and-emotional-regulation",
+        "route-catalog"
+      ],
+      "replacement_status": "canonical-graph-grammar",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "breathing-techniques",
+      "kind": "illustration",
+      "file": "build/diagrams/breathing_techniques.png",
+      "owner": "B",
+      "secondary_subguides": [],
+      "question": "How do the three optional breathing patterns differ in timing?",
+      "source_basis": [
+        "conceptual-breath-patterns"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "breathwork-trial-map",
+      "kind": "illustration",
+      "file": "build/diagrams/breathwork_trial_map.png",
+      "owner": "B",
+      "secondary_subguides": [],
+      "question": "What did the breathwork trial actually compare and measure?",
+      "source_basis": [
+        "breathwork_trial"
+      ],
+      "replacement_status": "candidate-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "overload-control-map",
+      "kind": "illustration",
+      "file": "build/diagrams/overload_control_map.png",
+      "owner": "B",
+      "secondary_subguides": [],
+      "question": "Which load terms can be reduced, supported, or offloaded when conceptual load exceeds current capacity?",
+      "source_basis": [
+        "chapter-footnote:cowan",
+        "source-note:cognitive-load-theory"
+      ],
+      "replacement_status": "canonical-graph-grammar",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "sleep-restriction-study",
+      "kind": "illustration",
+      "file": "build/diagrams/sleep_restriction_study.png",
+      "owner": "B",
+      "secondary_subguides": [],
+      "question": "What did the 14-day sleep-restriction study show and what was its scope?",
+      "source_basis": [
+        "sleep_restriction"
+      ],
+      "replacement_status": "migrated-to-vega",
+      "reader_facing": false,
+      "replacement_id": "vega-sleep-study-design",
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "vega-gad7-accuracy",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_gad7_accuracy.png",
+      "owner": "B",
+      "secondary_subguides": [],
+      "question": "How did GAD-7 accuracy at cut-off 10 differ between its original study and a pooled diagnostic review?",
+      "source_basis": [
+        "gad7_original",
+        "gad7_cochrane"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    },
+    {
+      "id": "vega-sleep-study-design",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_sleep_study_design.png",
+      "owner": "B",
+      "secondary_subguides": [],
+      "question": "What time-in-bed conditions and exposure durations did the controlled sleep study compare?",
+      "source_basis": [
+        "sleep_restriction"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    },
+    {
+      "id": "stroke-time-model",
+      "kind": "illustration",
+      "file": "build/diagrams/stroke_time_model.png",
+      "owner": "C",
+      "secondary_subguides": [],
+      "question": "How does the literature-derived untreated stroke model accumulate loss over time?",
+      "source_basis": [
+        "stroke_time_model"
+      ],
+      "replacement_status": "migrated-to-vega",
+      "reader_facing": false,
+      "replacement_id": "vega-stroke-time-model",
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "triage-flow",
+      "kind": "illustration",
+      "file": "build/diagrams/triage_flow.png",
+      "owner": "C",
+      "secondary_subguides": [],
+      "question": "What is the first-aid sequence from scene safety through escalation and monitoring?",
+      "source_basis": [
+        "chapter-footnote:erc2025"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "vega-stroke-time-model",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_stroke_time_model.png",
+      "owner": "C",
+      "secondary_subguides": [],
+      "question": "How does the literature-derived untreated-stroke model accumulate estimated neural loss over sixty minutes?",
+      "source_basis": [
+        "stroke_time_model"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    },
+    {
+      "id": "communication-access-card",
+      "kind": "illustration",
+      "file": "build/diagrams/communication_access_card.png",
+      "owner": "D",
+      "secondary_subguides": [],
+      "question": "Which communication adaptation helps with which barrier?",
+      "source_basis": [
+        "authority-115-sign",
+        "hilfetelefon-women",
+        "children-help",
+        "wcag22"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "safe-place-route-map",
+      "kind": "illustration",
+      "file": "build/diagrams/safe_place_route_map.png",
+      "owner": "D",
+      "secondary_subguides": [],
+      "question": "Which of four safe-place routes fits the immediate barrier?",
+      "source_basis": [
+        "authority-115",
+        "hilfetelefon-women",
+        "men-violence-help",
+        "children-help",
+        "telefonseelsorge",
+        "women-shelter-search"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "dependency-continuity-map",
+      "kind": "illustration",
+      "file": "build/diagrams/dependency_continuity_map.png",
+      "owner": "H",
+      "secondary_subguides": [
+        "Z"
+      ],
+      "question": "What treatment or powered-device dependencies require an early backup route?",
+      "source_basis": [
+        "continuity-catalog",
+        "bbk-power"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "hazard-handoff-card",
+      "kind": "illustration",
+      "file": "build/diagrams/hazard_handoff_card.png",
+      "owner": "H",
+      "secondary_subguides": [],
+      "question": "Which five fields make an environmental-hazard handoff usable from a safe place?",
+      "source_basis": [
+        "chapter-footnote:bbk-112",
+        "chapter-footnote:bfr"
+      ],
+      "replacement_status": "canonical-graph-grammar",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "hazard-override-matrix",
+      "kind": "illustration",
+      "file": "build/diagrams/hazard_override_matrix.png",
+      "owner": "H",
+      "secondary_subguides": [],
+      "question": "Which environmental signs override ordinary symptom routing?",
+      "source_basis": [
+        "bbk-fire",
+        "bbk-power",
+        "dvgw-gas",
+        "gesund-poison",
+        "drk-electric",
+        "bbk-warning"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "hazard-source-location-map",
+      "kind": "illustration",
+      "file": "build/diagrams/hazard_source_location_map.png",
+      "owner": "H",
+      "secondary_subguides": [],
+      "question": "How does indoor, outdoor, or uncertain source location change the safe movement decision?",
+      "source_basis": [
+        "chapter-footnote:warning",
+        "route-catalog"
+      ],
+      "replacement_status": "canonical-graph-grammar",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "vega-social-connection",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_social_connection.png",
+      "owner": "P",
+      "secondary_subguides": [],
+      "question": "What adjusted mortality associations did a 2015 longitudinal meta-analysis report for isolation, loneliness, and living alone?",
+      "source_basis": [
+        "social_connection_mortality"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    },
+    {
+      "id": "evidence-classes",
+      "kind": "illustration",
+      "file": "build/diagrams/evidence_classes.png",
+      "owner": "R",
+      "secondary_subguides": [],
+      "question": "How do the guide’s evidence labels differ in what they can support?",
+      "source_basis": [
+        "evidence-policy"
+      ],
+      "replacement_status": "candidate-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "two-pass-route-map",
+      "kind": "illustration",
+      "file": "build/diagrams/two_pass_route_map.png",
+      "owner": "R",
+      "secondary_subguides": [],
+      "question": "How do pass-one hazards, pass-two needs, and modifiers combine?",
+      "source_basis": [
+        "route-catalog"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "first-meeting-roles",
+      "kind": "illustration",
+      "file": "build/diagrams/first_meeting_roles.png",
+      "owner": "Z",
+      "secondary_subguides": [],
+      "question": "Which five functions should a short crisis meeting assign?",
+      "source_basis": [
+        "continuity-catalog"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "household-continuity-board",
+      "kind": "illustration",
+      "file": "build/diagrams/household_continuity_board.png",
+      "owner": "Z",
+      "secondary_subguides": [],
+      "question": "What must be recorded for each household continuity function?",
+      "source_basis": [
+        "continuity-catalog"
+      ],
+      "replacement_status": "retain-and-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "scaling-chart",
+      "kind": "illustration",
+      "file": "build/diagrams/scaling_chart.png",
+      "owner": "Z",
+      "secondary_subguides": [],
+      "question": "How does coordination change as a group grows?",
+      "source_basis": [
+        "math-pairwise-channels"
+      ],
+      "replacement_status": "candidate-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "survival-pyramid",
+      "kind": "illustration",
+      "file": "build/diagrams/survival_pyramid.png",
+      "owner": "Z",
+      "secondary_subguides": [],
+      "question": "Which continuity needs should be stabilized before later comforts?",
+      "source_basis": [
+        "bbk-bag",
+        "conceptual-priority-order"
+      ],
+      "replacement_status": "candidate-redesign",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "generated-raster"
+    },
+    {
+      "id": "vega-communication-channels",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_communication_channels.png",
+      "owner": "Z",
+      "secondary_subguides": [],
+      "question": "How quickly do possible pairwise communication channels grow as a group grows?",
+      "source_basis": [
+        "math-pairwise-channels"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    },
+    {
+      "id": "vega-continuity-dependencies",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_continuity_dependencies.png",
+      "owner": "Z",
+      "secondary_subguides": [],
+      "question": "Which household-continuity systems name the most dependencies and support the most other systems in the current guide model?",
+      "source_basis": [
+        "continuity-catalog"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    },
+    {
+      "id": "vega-household-water-stock",
+      "kind": "vega-lite",
+      "file": "build/diagrams/vega_household_water_stock.png",
+      "owner": "Z",
+      "secondary_subguides": [],
+      "question": "How much drinking and cooking water does the BBK planning value imply for one to six people over three and ten days?",
+      "source_basis": [
+        "household_water"
+      ],
+      "replacement_status": "canonical-vega",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "Vega-Lite"
+    }
+  ]
+}

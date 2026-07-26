@@ -20,7 +20,7 @@ For each release:
 
 ## Operational route sources
 
-Version 4.4.1 separates operational routing from explanatory evidence:
+Version 4.5.0 separates operational routing from explanatory evidence:
 
 - `src/data/route_catalog.json` stores pass-1 overrides, pass-2 needs,
   dependency modifiers, destinations, and reviewed source IDs;
@@ -61,6 +61,19 @@ already owned by the route registry. `bin/validate_continuity.py` rejects unknow
 source IDs, missing owners/backups, broken dependencies, absent text equivalents,
 and denied alternate-source claims.
 
+### Visualization provenance
+
+`src/data/visualization_catalog.json` binds each Vega-Lite figure to a reviewed
+question, derived table, specification, source IDs, evidence class, denominator
+or scope, uncertainty policy, practical limit, alt text, long description, and
+non-colour encoding. Derived tables are rebuilt from the evidence or continuity
+registries; the renderer consumes no remote data. SVG is canonical and PNG is
+the print/document fallback.
+
+The first eight-chart batch re-expresses six reviewed evidence figures and adds
+two deterministic structural models. It introduces no new medical threshold or
+personal risk estimate.
+
 ### Accessibility sources
 
 `src/data/accessibility_profiles.json` stores barriers, adaptations, handoffs,
@@ -69,10 +82,15 @@ structure; service providers support the exact communication channels they
 publish. Neither source permits assumptions about an individual person’s
 capacity or preferred assistance. Ask the person whenever possible.
 
-## Planned subguide-local source rendering
+## Subguide-local source rendering
 
-The current monolithic source chapter remains canonical through 4.4.1. The
-migration plan in `docs/plans/subguide-source-localization.md` will move toward:
+The global source chapter remains the complete R-node reference for 4.5.0. The
+canonical registry view in `src/data/source_inventory.json` resolves 52 chapter
+footnotes, inventories 75 global source-note sections, and reports no unresolved
+references. The B and H vertical slices generate local **Sources and limits**
+blocks in their standalone editions and the master while the global reference
+remains available for parity checking. The migration plan in
+`docs/plans/subguide-source-localization.md` continues toward:
 
 - citation markers beside claims;
 - a generated **Sources and limits** section at the end of each subguide;
@@ -81,9 +99,10 @@ migration plan in `docs/plans/subguide-source-localization.md` will move toward:
 - a deduplicated R index and provenance view rather than a second competing
   bibliography.
 
-The first pilot pairs B, which is research-heavy, with H, which is
-operational-source-heavy. The old source chapter remains until local and global
-parity is proven.
+The first released pair combines B, which is research-heavy, with H, which is
+operational-source-heavy. Their generated end matter is source-ID-stable across
+A4, A4/2, large-print, color, and monochrome editions. The global source chapter
+remains until every node has equivalent local coverage and parity is proven.
 
 ## Evidence order
 
@@ -98,4 +117,4 @@ The source choice depends on the question:
 A newer synthesis may legitimately differ from a famous development study. Both
 may be shown when the difference teaches calibration rather than confusion.
 
-Access and core emergency-route review date: **2026-07-22**.
+Access and core emergency-route review date: **2026-07-23**.

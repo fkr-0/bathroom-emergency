@@ -1,5 +1,90 @@
 # Changelog
 
+## 4.5.0 — 2026-07-26
+
+### Shipped the first graph-oriented subguide family
+
+- Froze nine reciprocal graph nodes with distinct code, title, colour, pattern,
+  and glyph identities generated from one manifest.
+- Added a responsive graph hub with an orientation overview, nine identity-rich
+  route cards, and direct links to the released B and H vertical slices.
+- Added local position maps, version/source metadata, handoffs, and generated
+  source-complete end matter without duplicating canonical chapter prose.
+- Built B and H in A4, 105 × 297 mm A4/2, and A4 large-print layouts, each in
+  color and monochrome: 12 tagged PDFs with semantic text, page-count, geometry,
+  and hash validation.
+- Fixed the shared screen shell so a document without a generated contents rail
+  uses the full reading measure and hides the inactive Contents control.
+
+### Extended the scientific and operational visual set
+
+- B now has four canonical visuals, adding a four-channel alarm decomposition and
+  a clearly labelled conceptual load/headroom model alongside the breathwork
+  mechanism and study-design figures.
+- H now has four operational visuals, adding source-location routing and a
+  five-field dispatcher/poison-centre handoff card.
+- Added text-complete fallbacks, non-colour encodings, source ownership, and
+  review metadata for every new visual.
+- Generated identity and grouping contact sheets and selected the quieter
+  nine-node grouping over a noisier split-route prototype.
+
+### Canonicalized source and migration contracts
+
+- Promoted the 52-footnote/75-source-note inventory to the canonical source
+  registry view used by local B/H Sources and limits.
+- Added exact section/figure ownership, reciprocal-edge, pattern, print-layout,
+  source-parity, semantic-text, PDF-tagging, and reproducible-hash gates.
+
+### Adapted the alternate modular specification
+
+- Reviewed `src-alt/expansion-design.md` as an implementation proposal rather
+  than a source of trusted claims.
+- Accepted a manifest-driven graph, redundant code/pattern/glyph identity,
+  staged standalone outputs, generated local sources, and offline visual builds.
+- Deferred immediate source-tree relocation, ten simultaneous output families,
+  duplicated source files, mascot requirements, and unsourced new medical or
+  disaster modules.
+- Added a detailed feasibility record and a gated 4.5 roadmap with measurable
+  entry and exit criteria.
+
+### Began the Vega-Lite visual evidence layer
+
+- Added an offline Vega/Vega-Lite toolchain, canonical visualization catalog,
+  deterministic derived datasets, SVG and PNG rendering, and validation.
+- Added eight Vega-Lite figures: GAD-7 accuracy, household water stock,
+  social-connection associations, communication-channel growth, continuity
+  dependency structure, stroke urgency model, sleep-study design, and
+  reproductive-health denominators.
+- Replaced three matplotlib evidence figures with Vega-Lite equivalents and
+  added two new reader-facing charts with complete prose/table fallbacks.
+- Added a shared chart theme and removed duplicated title/theme blocks from
+  individual specifications.
+- Made the document own chart captions, takeaways, and practical limits through
+  catalog macros, while Vega-Lite owns marks, scales, labels, and encodings.
+- Embedded accessible title and description metadata in canonical SVG output.
+- Introduced a quieter editorial layout for quantitative figures, distinct from
+  the stronger card treatment used by route maps and operational illustrations.
+- Added `docs/plans/visual-design-system.md` with renderer-selection, chart,
+  illustration, typography, page-composition, and QA rules.
+- Added `src/data/illustration_catalog.json` and validation for the seventeen
+  current reader-facing non-Vega figures, creating a concrete redesign queue
+  after six quantitative charts migrated away from matplotlib.
+- Constrained quantitative axes to two through eight intentional major ticks
+  and added automated minimum chart-label-size and contrast checks.
+
+### Began graph-subguide implementation
+
+- Added a validated nine-node prototype subguide manifest without moving the
+  canonical chapter files, plus generated ownership inventories for 186
+  level-1/2 sections and 28 current or migrated figure records.
+- Added the canonical source-registry view covering 52 chapter footnotes and 75
+  global source-note sections with no unresolved references.
+- Built standalone B and H vertical slices with one emergency gate, canonical
+  section extraction, handoffs, and generated local Sources and limits; final
+  A4 color/mono editions render at 17 and 12 pages respectively.
+- Added generated B/H Sources and limits sections to the master guide while
+  retaining the global source chapter during parity review.
+
 ## 4.4.1 — 2026-07-22
 
 ### Synthesized canonical and alternate source trees

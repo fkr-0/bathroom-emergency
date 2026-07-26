@@ -53,27 +53,37 @@ network dependency.
 ## Source layout
 
     src/chapters/          13 canonical chapters, including Situations G and H
-    src/diagrams/          routing, hazard, continuity, and evidence figures
-    src/data/              evidence, route, locale, accessibility, and continuity registries
+    src/diagrams/          custom routing, hazard, continuity, and evidence figures
+    src/visualizations/     reviewed data, Vega-Lite specifications, and shared chart theme
+    src/data/              evidence, route, locale, accessibility, continuity, subguide, visualization, and illustration registries
     src/data/locales/      reviewed locale-specific service foundations
     src/template.html      semantic screen shell and small UI controls
     src/style.css          screen + single-column print system
+    src/style-subguides.css graph identities, hub cards, and standalone page grammar
     src/style-a4-half.css  105 × 297 mm field-strip print adaptations
     src/style-large-print.css A4 large-print adaptations
     src/style-mono.css     monochrome overrides only
     bin/build_guide.py     deterministic document builder
     bin/validate_routes.py routing, destination, locale, and source invariants
     bin/validate_continuity.py household systems, roles, dependencies, and figures
+    bin/validate_subguides.py graph nodes, chapter coverage, identities, and gate policy
+    bin/validate_visualizations.py chart provenance, fallbacks, outputs, and mono encodings
+    bin/validate_illustrations.py figure-family coverage and redesign-priority audit
+    bin/build_visualizations.mjs offline Vega-Lite SVG/PNG renderer
     bin/validate_guide.py  safety, evidence, and rendering invariants
     bin/verify_layout.py   rendered A4/2 geometry and collision checks
     bin/verify_density.py  standard-A4 blank, edge, density, and parity checks
     bin/verify_accessibility.py structured access and large-print checks
     bin/verify_overflow.mjs boxed/table overflow checks in all HTML editions
     docs/plans/4.4.1-common-synthesis.md canonical/alternate synthesis record
-    docs/plans/4.5.0-graph-subguide-architecture.md planned graph/subguide system
+    docs/plans/4.4.2-alt-spec-feasibility-and-vega.md implementation decisions
+    docs/plans/4.5.0-roadmap-milestones.md gated 4.5 delivery sequence
+    docs/plans/4.5.0-graph-subguide-architecture.md implemented B/H graph/subguide architecture
     docs/plans/visualization-program.md 48–60-figure visual evidence program
+    docs/plans/visual-design-system.md chart, illustration, and page-composition rules
     docs/plans/subguide-source-localization.md local Sources and limits migration
     docs/qa/4.3.1-sparse-page-review.md reviewed intentional whitespace decisions
+    docs/qa/4.5.0-prototype-review.md graph, identity, hub, and B/H print review
     ROADMAP.md             flowgraph, chapter, research, and release backlog
     build/                 generated deliverables
 
@@ -89,6 +99,9 @@ network dependency.
 | A4/2 mono PDF | build/pdf/guide_a4half_mono.pdf | narrow grayscale field strip |
 | Large-print color PDF | build/pdf/guide_largeprint.pdf | A4, materially larger typography |
 | Large-print mono PDF | build/pdf/guide_largeprint_mono.pdf | A4 large print, grayscale |
+| Graph hub | build/subguides/index.html | nine-node identity directory; B/H links |
+| B standalone family | build/subguides/B/ | A4, A4/2, and large-print color/mono |
+| H standalone family | build/subguides/H/ | A4, A4/2, and large-print color/mono |
 | Markdown | build/md/guide.md | assembled, frontmatter-clean |
 | DOCX | build/docx/guide.docx | editable |
 | LaTeX | build/latex/guide.tex | intermediate |
@@ -99,20 +112,26 @@ The guide is single column in print even though the screen UI has a navigation
 rail and some two-up route cards. The Chrome exporter verifies computed
 column-count before producing a PDF. The validator also checks:
 
-- 13 source chapters at revision 4.4.1;
+- 13 source chapters at revision 4.5.0;
 - subject-breadth regression markers and a minimum canonical-content size;
 - native MathML and no remote MathJax;
 - no known unsafe legacy wording or deprecated scientific chart;
-- valid 4.4.1 evidence and continuity registries with source and limit fields;
+- valid 4.5.0 evidence, route, continuity, subguide, illustration, and visualization registries with source and limit fields;
 - a structured route catalog with seven pass-1 overrides, six pass-2 needs,
   four safe-place routes, and nine dependency/access modifiers;
 - eight household-continuity systems, five first-meeting roles, and two
   data-driven continuity figures;
+- a frozen nine-node subguide graph with reciprocal edges, unique code/pattern/glyph/colour identities, a screen hub, and local position maps;
+- eight offline Vega-Lite charts with reviewed derived data, canonical SVG, PNG
+  fallbacks, one shared theme, catalog-driven captions/limits, SVG metadata,
+  text/table equivalents, source scope, and practical limits;
+- seventeen current non-Vega figures classified by reader question, visual family,
+  renderer, text fallback, monochrome strategy, and redesign priority;
 - reviewed de-DE services, all seven poison-information centres, dated source
   windows, access channels, and local-value requirements;
 - every referenced image, evidence figure, and route figure exists;
 - roadmap coverage for locale, accessibility, and continuity follow-up releases;
-- readable standard A4, 105 × 297 mm, and large-print A4 PDFs;
+- readable standard A4, 105 × 297 mm, and large-print A4 PDFs, including 12 tagged standalone B/H editions with color/mono text and page-count parity;
 - renderer-based A4/2 checks for blank pages, physical-edge collisions, required
   content markers, and representative-page contact sheets;
 - standard-A4 density checks for blank pages, physical-edge contact, extreme
@@ -137,18 +156,24 @@ Locale-dependent services live in `src/data/locales/de-DE.json`; unknown local
 values remain explicit fields rather than plausible-looking inventions.
 Communication adaptations live in `src/data/accessibility_profiles.json`.
 Household functions, ownership, backups, dependencies, and failure routes live
-in `src/data/continuity_catalog.json`. Operational sources carry review windows
+in `src/data/continuity_catalog.json`. Prototype graph ownership lives in
+`src/data/subguides.json`; visualization provenance and output contracts live in
+`src/data/visualization_catalog.json`. Operational sources carry review windows
 checked against `GUIDE_AS_OF`.
-Core emergency routes and source material were reviewed on 22 July 2026.
+Core emergency routes and source material were reviewed on 23 July 2026.
 
-The planned graph-oriented subguide packaging is specified in
-`docs/plans/4.5.0-graph-subguide-architecture.md`. It proposes distinct covers,
-position/version pages, introduction/contents pages, graph handoffs, a
-nine-node core plus candidate satellite modules, and redundant code + pattern +
-glyph + colour identities for standalone and master outputs.
+The graph-oriented subguide packaging specified in
+`docs/plans/4.5.0-graph-subguide-architecture.md` now has its first
+release-candidate vertical slices: distinct covers, page-0 graph position/version information,
+introductions, handoffs, local Sources and limits, a nine-node core, and
+redundant code + pattern + glyph + colour identities. B and H are detached;
+the remaining nodes stay in the master until they pass the same gates.
 
 `docs/plans/visualization-program.md` defines a reproducible, accessible
-48–60-figure visual evidence system. `docs/plans/subguide-source-localization.md`
+48–60-figure visual evidence system. `docs/plans/visual-design-system.md`
+defines why Vega-Lite is used for quantitative charts, where it should not be
+used, and the shared graph, illustration, typography, and page-layout rules.
+`docs/plans/subguide-source-localization.md`
 defines filtered Sources and limits at the end of each subguide, generated from
 one canonical source registry while citations remain beside claims.
 

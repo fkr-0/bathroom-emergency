@@ -1,11 +1,13 @@
 ---
 title: "Situations B–F, with Situation G Router"
 chapter: 3
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies:
-  - build/diagrams/gad7_validation_comparison.png
-  - build/diagrams/sleep_restriction_study.png
+  - build/diagrams/vega_gad7_accuracy.png
+  - build/diagrams/vega_sleep_study_design.png
+  - build/diagrams/alarm_channels_map.png
+  - build/diagrams/overload_control_map.png
 ---
 
 # Situations B–F — Five Different Kinds of “Too Much”
@@ -27,6 +29,12 @@ Anxiety arrives as a bundle. Separate four layers:
 | emotion | fear, shame, dread | one word is enough |
 | prediction | “this will become unbearable” | event, or forecast? |
 | impulse | flee, check, text, hide | what happens if it waits one minute? |
+
+![Four-channel alarm map separating sensation, emotion, prediction, and urge](build/diagrams/alarm_channels_map.png)
+
+The image and table express the same decomposition. Nothing here asks you to
+*deny* a sensation. It asks which channel you can observe and alter without
+pretending that the other three vanished. This is a control panel, not a verdict.
 
 Then change one variable: sit, loosen clothing pressure, turn down one sound,
 look away from the mirror, or contact one person. Compare after a minute. The
@@ -67,7 +75,7 @@ The score is a screening and communication tool. It is **not** an acute panic
 triage score, cannot exclude a physical emergency, and does not turn a person
 into one of four coloured rectangles.[^gad7]
 
-![Original and pooled GAD-7 accuracy estimates](build/diagrams/gad7_validation_comparison.png)
+{{visualization:vega-gad7-accuracy}}
 
 The original 2006 primary-care study reported **89% sensitivity** and **82%
 specificity** at a cut-off of 10. A later Cochrane diagnostic-accuracy review
@@ -245,6 +253,19 @@ where:
 - $E$ = avoidable clutter, interruptions, and ambiguity;
 - $S$ = stress, pain, fatigue, hunger, or emotional load.
 
+Let $K$ denote the capacity available *right now*, and define conceptual
+headroom as $H = K - L$. If $L > K$, headroom is negative. This is not a
+measurement scale or clinical law; it is a bookkeeping theorem for the page:
+reliable control requires reducing, supporting, or offloading at least one term
+before demanding more performance. Adding an unlabeled task cannot improve the
+inequality.
+
+![Overload control map showing intrinsic, avoidable, and stress loads with the headroom inequality](build/diagrams/overload_control_map.png)
+
+The complete text fallback is the equation and three levers above: split or
+offload intrinsic difficulty, remove avoidable clutter, and support stress,
+pain, fatigue, hunger, or emotional load. Safety-critical work stays first.
+
 You may not be able to reduce $I$ immediately. You can often reduce $E$ or $S$:
 close tabs, silence notifications, write the task down, drink normally, eat if
 needed, sit, ask another person to hold one responsibility, or stop trying to
@@ -252,7 +273,7 @@ solve Thursday while it is still Tuesday.[^cowan]
 
 ### Sleep debt can hide behind confidence
 
-![Design and bounded result of a 14-day sleep-restriction study](build/diagrams/sleep_restriction_study.png)
+{{visualization:vega-sleep-study-design}}
 
 A controlled study enrolled 48 healthy adults. The four-, six-, and eight-hour
 time-in-bed groups were followed for 14 days, while a separate zero-hour

@@ -1,11 +1,11 @@
 ---
 title: "First Aid While Help Is Coming"
 chapter: 5
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies:
   - build/diagrams/triage_flow.png
-  - build/diagrams/stroke_time_model.png
+  - build/diagrams/vega_stroke_time_model.png
 ---
 
 # First Aid — You Are the First Link, Not the Whole Ambulance
@@ -185,7 +185,7 @@ drive the person yourself when emergency services are available.
 
 ### “Time is brain” — quantified, with the word *model* attached
 
-![Literature-derived model of neural loss during a typical untreated large-vessel stroke](build/diagrams/stroke_time_model.png)
+{{visualization:vega-stroke-time-model}}
 
 A widely cited 2006 calculation combined published estimates for forebrain
 neurons, typical large-vessel stroke volume, and stroke evolution time. For its

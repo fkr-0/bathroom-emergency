@@ -44,6 +44,12 @@ distribution, timeline, or denominator can be shown.
 
 ## 3. Visual grammar
 
+The implementation-level renderer and page-composition rules live in
+`docs/plans/visual-design-system.md`. The central rationale is deliberately
+bounded: Vega-Lite is preferred for ordinary quantitative comparison because a
+declarative specification can be reviewed and validated as data, transforms,
+scales, marks, and encodings. It is not a universal illustration engine.
+
 ### 3.1 Figure families
 
 | Family | Use | Typical forms |
@@ -293,6 +299,9 @@ Use different tools for different visual questions:
 
 Render canonical SVG plus robust PNG fallbacks. Keep chart specifications and
 derived-data scripts outside the reader document; never print source code blocks.
+Use `src/visualizations/theme.json` for chart-wide typography and axis defaults.
+Individual specifications must not duplicate the shared theme or bake the
+document title and interpretive note into the image.
 
 ### 9.3 Source tree
 
@@ -358,8 +367,9 @@ Generate:
 - [x] define the visual grammar and candidate inventory;
 - [ ] inventory every current figure and every prose passage that would benefit
   from visual explanation;
-- [ ] create the visualization catalog schema;
-- [ ] assign each planned visual a subguide, question, source class, and priority.
+- [x] create the visualization catalog schema and initial eight-entry catalog;
+- [ ] assign every planned visual a subguide, question, source class, and priority;
+- [x] implement the first eight offline Vega-Lite figures with derived data and fallbacks.
 
 ### V1 — accessible design system
 
@@ -368,7 +378,8 @@ Generate:
 - [ ] define colour, pattern, shape, and line-style scales;
 - [ ] add contrast and monochrome tests;
 - [ ] define title, subtitle, annotation, source, and limit templates;
-- [ ] prototype one chart from each figure family.
+- [ ] prototype one chart from each figure family;
+- [x] prototype quantitative-evidence, planning-model, mathematical-model, and architecture-explanation families.
 
 ### V2 — first 24-figure expansion
 

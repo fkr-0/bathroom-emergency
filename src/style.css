@@ -31,6 +31,109 @@
   color: var(--ink);
 }
 
+/*
+ * Quantitative figures use an editorial chart treatment rather than the
+ * heavier map/illustration card. The document owns the title and interpretive
+ * note; the generated chart owns marks, scales, and labels.
+ */
+.quantitative-figure {
+  max-width: 940px;
+  margin: 1.15rem auto 1.5rem;
+  break-inside: avoid;
+}
+
+.quantitative-figure > figure {
+  display: flex;
+  flex-direction: column;
+  max-width: none;
+  margin: 0;
+  padding: .72rem .78rem .58rem;
+  border: 1px solid color-mix(in srgb, var(--blue) 24%, var(--line));
+  border-top: 4px solid var(--blue);
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.quantitative-figure > figure img {
+  order: 2;
+  width: 100%;
+  max-height: none;
+  margin: .35rem auto 0;
+  object-fit: contain;
+}
+
+.quantitative-figure > figure figcaption {
+  order: 1;
+  margin: 0;
+  padding: 0 0 .52rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--blue) 18%, var(--line));
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: left;
+}
+
+.chart-note {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem 1rem;
+  margin: 0;
+  padding: .55rem .75rem .65rem;
+  border: 1px solid color-mix(in srgb, var(--blue) 18%, var(--line));
+  border-top: 0;
+  background: color-mix(in srgb, var(--blue-soft) 34%, white);
+  color: #334155;
+  font-size: .84rem;
+  line-height: 1.4;
+}
+
+.chart-note p { margin: 0; }
+.chart-note strong { color: var(--ink); }
+
+@media (max-width: 720px) {
+  .chart-note { grid-template-columns: 1fr; }
+}
+
+@media print {
+  .quantitative-figure {
+    margin: 7pt 0 9pt;
+  }
+
+  .quantitative-figure > figure {
+    margin: 0;
+    padding: 5pt 6pt 4pt;
+    border: .6pt solid #9ba6af;
+    border-top: 2.2pt solid var(--blue);
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .quantitative-figure > figure img {
+    max-height: 139mm;
+    margin: 2pt auto 0;
+  }
+
+  .quantitative-figure > figure figcaption {
+    padding-bottom: 3.5pt;
+    font-size: 8.5pt;
+    line-height: 1.25;
+  }
+
+  .chart-note {
+    gap: 4pt 8pt;
+    padding: 4pt 6pt 5pt;
+    border: .6pt solid #aab3bb;
+    border-top: 0;
+    background: #f7f9fa;
+    font-size: 7.2pt;
+    line-height: 1.32;
+  }
+}
+
 :root[data-theme="dark"] {
   --ink: #e7f1ed;
   --muted: #a9bbb4;
@@ -142,6 +245,14 @@ button:hover, button:focus-visible {
   align-items: start;
   width: min(1240px, calc(100% - 2rem));
   margin: 2rem auto 6rem;
+}
+
+.no-toc .app-shell {
+  grid-template-columns: minmax(0, min(100%, 62rem));
+}
+
+.no-toc #toc-toggle {
+  display: none;
 }
 
 #TOC {

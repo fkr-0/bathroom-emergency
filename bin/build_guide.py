@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build Bathroom Emergency Guide v4.4.1.
+"""Build Bathroom Emergency Guide v4.5.0.
 
 The build has one source of truth and no network dependency:
 - chapter YAML is removed during assembly;
@@ -32,7 +32,9 @@ STYLE = SRC / "style.css"
 STYLE_MONO = SRC / "style-mono.css"
 STYLE_A4_HALF = SRC / "style-a4-half.css"
 STYLE_LARGE_PRINT = SRC / "style-large-print.css"
-VERSION = "4.4.1"
+VISUALIZATION_CATALOG = SRC / "data" / "visualization_catalog.json"
+SOURCE_INVENTORY = SRC / "data" / "source_inventory.json"
+VERSION = "4.5.0"
 
 CHAPTERS = [
     "00-cover.md",
@@ -90,7 +92,93 @@ def strip_frontmatter(text: str) -> str:
     return re.sub(r"\A---\s*\n.*?\n---\s*\n", "", text, count=1, flags=re.DOTALL)
 
 
+def visualization_lookup() -> dict[str, dict]:
+    import json
+
+    try:
+        catalog = json.loads(VISUALIZATION_CATALOG.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise BuildError(f"Could not read visualization catalog: {exc}") from exc
+    return {item["id"]: item for item in catalog.get("visualizations", [])}
+
+
+def expand_visualization_macros(text: str, lookup: dict[str, dict]) -> str:
+    """Expand one catalog entry into consistent cross-format figure markup."""
+
+    pattern = re.compile(r"\{\{visualization:([a-z0-9-]+)\}\}")
+
+    def replace(match: re.Match[str]) -> str:
+        item_id = match.group(1)
+        item = lookup.get(item_id)
+        if item is None:
+            raise BuildError(f"Unknown visualization macro: {item_id}")
+        return "\n".join(
+            (
+                f'::: {{.quantitative-figure data-visualization-id="{item_id}"}}',
+                "",
+                f'![{item["title"]}]({item["png"]})',
+                "",
+                "::: {.chart-note}",
+                f'**What to notice:** {item["takeaway"]}',
+                "",
+                f'**Limit:** {item["limit"]}',
+                ":::",
+                "",
+                ":::",
+            )
+        )
+
+    expanded = pattern.sub(replace, text)
+    if "{{visualization:" in expanded:
+        raise BuildError("Unexpanded visualization macro remains")
+    return expanded
+
+
+def source_inventory_records() -> list[dict]:
+    import json
+
+    try:
+        inventory = json.loads(SOURCE_INVENTORY.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise BuildError(f"Could not read source inventory: {exc}") from exc
+    if inventory.get("status") != "canonical-source-registry":
+        raise BuildError("Canonical source-registry status drifted")
+    return inventory.get("footnote_sources", [])
+
+
+def expand_subguide_source_macros(text: str, records: list[dict]) -> str:
+    """Render compact local source blocks from the generated migration inventory."""
+
+    pattern = re.compile(r"\{\{subguide-sources:([A-Z])\}\}")
+    chapter_order = {name: index for index, name in enumerate(CHAPTERS)}
+
+    def replace(match: re.Match[str]) -> str:
+        node = match.group(1)
+        selected = [item for item in records if node in item.get("subguides", [])]
+        selected.sort(key=lambda item: (chapter_order.get(item["chapter"], 999), min(item.get("used_at_lines", [9999])), item["id"]))
+        if not selected:
+            raise BuildError(f"No inventoried sources for subguide {node}")
+        groups = (("Operational routes", "operational"), ("Research and evidence", "research"), ("Models and explanatory sources", "explanatory"))
+        parts = [f'::: {{.sources-and-limits data-subguide="{node}"}}', "", f"## Sources and limits — {node}", "", "Generated from the current chapter-footnote inventory. Stable IDs come from the canonical source registry used by master and standalone editions.", ""]
+        for title, kind in groups:
+            subset = [item for item in selected if item["kind"] == kind]
+            if not subset:
+                continue
+            parts.extend([f"### {title}", ""])
+            for item in subset:
+                parts.extend([f"- **`{item['id']}`** — {item['text']}", ""])
+        parts.append(":::")
+        return "\n".join(parts)
+
+    expanded = pattern.sub(replace, text)
+    if "{{subguide-sources:" in expanded:
+        raise BuildError("Unexpanded subguide source macro remains")
+    return expanded
+
+
 def assemble() -> Path:
+    visualizations = visualization_lookup()
+    source_records = source_inventory_records()
     parts = [
         "---",
         'title: "Bathroom Emergency Guide"',
@@ -103,7 +191,9 @@ def assemble() -> Path:
         path = CHAPTER_DIR / filename
         if not path.exists():
             raise BuildError(f"Missing chapter: {path}")
-        body = strip_frontmatter(path.read_text(encoding="utf-8")).strip()
+        body = strip_frontmatter(path.read_text(encoding="utf-8"))
+        body = expand_visualization_macros(body, visualizations)
+        body = expand_subguide_source_macros(body, source_records).strip()
         slug = path.stem
         classes = "chapter document-cover" if index == 0 else "chapter"
         parts.extend([

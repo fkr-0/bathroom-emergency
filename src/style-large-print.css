@@ -174,4 +174,27 @@
     text-decoration-thickness: 1pt;
     text-underline-offset: 2pt;
   }
+
+  .quantitative-figure > figure {
+    padding: 8pt 9pt 6pt;
+  }
+
+  .quantitative-figure > figure::before { content: none; }
+
+  .quantitative-figure > figure img {
+    max-height: 150mm;
+  }
+
+  .quantitative-figure > figure figcaption {
+    font-size: 12pt;
+    line-height: 1.32;
+  }
+
+  .chart-note {
+    grid-template-columns: 1fr;
+    gap: 5pt;
+    padding: 7pt 9pt 8pt;
+    font-size: 10.5pt;
+    line-height: 1.42;
+  }
 }

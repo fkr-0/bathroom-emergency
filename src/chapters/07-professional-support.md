@@ -1,10 +1,10 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies:
-  - build/diagrams/social_connection_associations.png
+  - build/diagrams/vega_social_connection.png
 ---
 
 # Professional Support — When the Bathroom Is Too Small
@@ -179,7 +179,7 @@ Useful sentence:
 
 ### Social connection is not decorative trim
 
-![Adjusted mortality associations reported in a longitudinal meta-analysis](build/diagrams/social_connection_associations.png)
+{{visualization:vega-social-connection}}
 
 A 2015 meta-analysis of longitudinal observational studies reported adjusted
 mortality odds ratios of **1.29 for social isolation**, **1.26 for loneliness**,

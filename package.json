@@ -1,7 +1,7 @@
 {
   "name": "bathroom-emergency-guide",
   "private": true,
-  "version": "4.4.1",
+  "version": "4.5.0",
   "description": "A sourced, printable decision guide for bathroom-sized emergencies.",
   "type": "module",
   "scripts": {
@@ -10,15 +10,25 @@
     "build:diagrams": "./bin/build_diagrams.sh",
     "build:a4half": "./bin/build_guide.sh a4half",
     "verify:layout": "python3 bin/verify_layout.py",
-    "test": "python3 bin/validate_routes.py && python3 bin/validate_continuity.py && python3 bin/validate_guide.py && python3 bin/verify_layout.py --quiet && python3 bin/verify_density.py && python3 bin/verify_accessibility.py && node bin/verify_overflow.mjs",
+    "test": "python3 bin/validate_routes.py && python3 bin/validate_continuity.py && python3 bin/validate_subguides.py && python3 bin/validate_visualizations.py && python3 bin/validate_illustrations.py && python3 bin/validate_migration.py && python3 bin/validate_guide.py && python3 bin/verify_layout.py --quiet && python3 bin/verify_density.py && python3 bin/verify_accessibility.py && node bin/verify_overflow.mjs",
     "validate:routes": "python3 bin/validate_routes.py",
     "build:largeprint": "./bin/build_guide.sh largeprint",
     "verify:accessibility": "python3 bin/verify_accessibility.py",
     "verify:overflow": "node bin/verify_overflow.mjs",
     "verify:density": "python3 bin/verify_density.py",
-    "validate:continuity": "python3 bin/validate_continuity.py"
+    "validate:continuity": "python3 bin/validate_continuity.py",
+    "build:vega": "python3 src/visualizations/derive_data.py && node bin/build_visualizations.mjs build/diagrams",
+    "validate:subguides": "python3 bin/validate_subguides.py",
+    "validate:visualizations": "python3 bin/validate_visualizations.py",
+    "validate:illustrations": "python3 bin/validate_illustrations.py",
+    "build:inventories": "python3 bin/build_inventories.py && python3 bin/build_source_inventory.py",
+    "build:subguides": "python3 bin/build_subguides.py --node all",
+    "validate:migration": "python3 bin/validate_migration.py"
   },
   "devDependencies": {
-    "playwright": "^1.54.0"
+    "playwright": "^1.54.0",
+    "vega": "^6.2.0",
+    "vega-cli": "^6.2.0",
+    "vega-lite": "^6.4.3"
   }
 }

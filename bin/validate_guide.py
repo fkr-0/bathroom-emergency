@@ -28,6 +28,8 @@ ROADMAP = ROOT / "ROADMAP.md"
 ACCESSIBILITY_PLAN = ROOT / "docs" / "plans" / "4.3.0-accessibility-plan.md"
 PATCH_PLAN = ROOT / "docs" / "plans" / "4.3.1-polish-plan.md"
 COMMON_SYNTHESIS_PLAN = ROOT / "docs" / "plans" / "4.4.1-common-synthesis.md"
+ALT_SPEC_PLAN = ROOT / "docs" / "plans" / "4.4.2-alt-spec-feasibility-and-vega.md"
+MILESTONE_PLAN = ROOT / "docs" / "plans" / "4.5.0-roadmap-milestones.md"
 SPARSE_REVIEW = ROOT / "docs" / "qa" / "4.3.1-sparse-page-review.md"
 SUBGUIDE_PLAN = ROOT / "docs" / "plans" / "4.5.0-graph-subguide-architecture.md"
 VISUALIZATION_PLAN = ROOT / "docs" / "plans" / "visualization-program.md"
@@ -159,13 +161,14 @@ if required_fact_keys <= set(facts):
 
 required_evidence_figures = {
     "evidence_classes.png",
-    "gad7_validation_comparison.png",
+    "vega_gad7_accuracy.png",
     "breathwork_trial_map.png",
-    "reproductive_health_denominators.png",
-    "stroke_time_model.png",
-    "household_water_planner.png",
-    "sleep_restriction_study.png",
-    "social_connection_associations.png",
+    "vega_reproductive_denominators.png",
+    "vega_stroke_time_model.png",
+    "vega_household_water_stock.png",
+    "vega_sleep_study_design.png",
+    "vega_social_connection.png",
+    "vega_communication_channels.png",
 }
 for name in sorted(required_evidence_figures):
     check((ROOT / "build" / "diagrams" / name).exists(), f"required evidence figure missing: {name}")
@@ -185,6 +188,7 @@ for name in sorted(required_route_figures):
 required_continuity_figures = {
     "household_continuity_board.png",
     "first_meeting_roles.png",
+    "vega_continuity_dependencies.png",
 }
 for name in sorted(required_continuity_figures):
     check((ROOT / "build" / "diagrams" / name).exists(), f"required continuity figure missing: {name}")
@@ -198,10 +202,17 @@ deprecated_figures = {
     "pain_nrs_correlates.png",
     "water_requirements_scaling.png",
     "situation_a_tree.png",
+    "gad7_validation_comparison.png",
+    "household_water_planner.png",
+    "social_connection_associations.png",
+    "reproductive_health_denominators.png",
+    "stroke_time_model.png",
+    "sleep_restriction_study.png",
 }
 for name in sorted(deprecated_figures):
-    check(name not in source, f"deprecated figure is still referenced: {name}")
-    check(not (ROOT / "build" / "diagrams" / name).exists(), f"deprecated figure was regenerated: {name}")
+    deprecated_path = f"build/diagrams/{name}"
+    check(deprecated_path not in source, f"deprecated figure is still referenced: {name}")
+    check(not (ROOT / deprecated_path).exists(), f"deprecated figure was regenerated: {name}")
 
 check(ROADMAP.exists(), "ROADMAP.md is missing")
 if ROADMAP.exists():
@@ -214,6 +225,8 @@ if ROADMAP.exists():
         "4.3.0 — Locale, accessibility, and safe-place routing",
         "4.3.1 — Navigation and release polish",
         "4.4.1 — Household continuity and common-source synthesis",
+        "4.4.2 — Manifest and Vega foundation",
+        "4.5.0-roadmap-milestones.md",
         "Cross-release visualization program",
         "Subguide-local source migration",
     ):
@@ -256,6 +269,28 @@ if COMMON_SYNTHESIS_PLAN.exists():
     ):
         check(marker.lower() in common_plan, f"4.4.1 synthesis marker missing: {marker}")
 
+check(ALT_SPEC_PLAN.exists(), "4.4.2 alternate-spec feasibility plan is missing")
+if ALT_SPEC_PLAN.exists():
+    alt_plan = re.sub(r"\s+", " ", ALT_SPEC_PLAN.read_text(encoding="utf-8")).lower()
+    for marker in (
+        "Decision matrix",
+        "Material explicitly not imported",
+        "Initial Vega batch",
+        "4.4.2 acceptance boundary",
+    ):
+        check(marker.lower() in alt_plan, f"4.4.2 feasibility marker missing: {marker}")
+
+check(MILESTONE_PLAN.exists(), "4.5.0 milestone plan is missing")
+if MILESTONE_PLAN.exists():
+    milestone_plan = re.sub(r"\s+", " ", MILESTONE_PLAN.read_text(encoding="utf-8")).lower()
+    for marker in (
+        "M0 — Foundation inventory",
+        "M3 — Two vertical-slice standalone pilots",
+        "M6 — Visualization expansion",
+        "Milestone stop rules",
+    ):
+        check(marker.lower() in milestone_plan, f"4.5.0 milestone marker missing: {marker}")
+
 for path, label, markers in (
     (
         SPARSE_REVIEW,
@@ -292,6 +327,14 @@ required_cli_scripts = (
     "bin/validate_guide.py",
     "bin/validate_routes.py",
     "bin/validate_continuity.py",
+    "bin/validate_subguides.py",
+    "bin/validate_visualizations.py",
+    "bin/build_visualizations.mjs",
+    "bin/build_inventories.py",
+    "bin/build_source_inventory.py",
+    "bin/build_subguides.py",
+    "bin/validate_migration.py",
+    "src/visualizations/derive_data.py",
     "bin/verify_accessibility.py",
     "bin/verify_density.py",
     "bin/verify_layout.py",
@@ -316,8 +359,8 @@ for path in CHAPTERS:
         f"{path.name}: revision is not {VERSION}",
     )
     check(
-        re.search(r"last_updated:\s*[\"']2026-07-22[\"']", text) is not None,
-        f"{path.name}: release date is not 2026-07-22",
+        re.search(r"last_updated:\s*[\"']2026-07-23[\"']", text) is not None,
+        f"{path.name}: release date is not 2026-07-23",
     )
 
 # v3.3 breadth must remain represented even though unsafe claims were rewritten.
@@ -490,7 +533,8 @@ print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    f"{len(required_route_figures)} route/access figures, {len(required_continuity_figures)} continuity figures, subject-breadth markers, "
+    f"{len(required_route_figures)} route/access figures, {len(required_continuity_figures)} continuity figures, "
+    "8 cataloged Vega-Lite figures, 17 current illustrations, 9 frozen subguide nodes, subject-breadth markers, "
     "structured routing/locales/accessibility, roadmap coverage, native MathML, "
     "A4, A4/2, and large-print outputs."
 )

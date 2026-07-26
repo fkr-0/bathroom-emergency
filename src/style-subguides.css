@@ -1,0 +1,498 @@
+/*
+ * Graph-subguide identity layer for v4.5.
+ * Colour is supplementary: every identity also exposes code, title, pattern,
+ * and a generated geometric graph node.
+ */
+
+.standalone-subguide {
+  --sg-accent: #344054;
+  --sg-soft: #eef1f4;
+  --sg-pattern:
+    linear-gradient(90deg, transparent 23px, currentColor 24px, transparent 25px),
+    linear-gradient(transparent 23px, currentColor 24px, transparent 25px);
+  --sg-pattern-size: 24px 24px;
+  position: relative;
+  min-width: 0;
+}
+
+[data-subguide="O"] {
+  --sg-pattern-name: "dot-field";
+  --sg-accent: #126e67;
+  --sg-soft: #e3f3f1;
+  --sg-pattern: radial-gradient(circle, currentColor 0 1.6px, transparent 1.8px);
+  --sg-pattern-size: 18px 18px;
+}
+
+[data-subguide="A"] {
+  --sg-pattern-name: "concentric-rings";
+  --sg-accent: #9a6700;
+  --sg-soft: #fff3d5;
+  --sg-pattern:
+    radial-gradient(circle, transparent 0 6px, currentColor 6.5px 7.5px, transparent 8px 13px, currentColor 13.5px 14.5px, transparent 15px);
+  --sg-pattern-size: 34px 34px;
+}
+
+[data-subguide="B"] {
+  --sg-pattern-name: "horizontal-waves";
+  --sg-accent: #175cd3;
+  --sg-soft: #eaf2ff;
+  --sg-pattern:
+    repeating-linear-gradient(0deg, transparent 0 8px, currentColor 8.5px 10px, transparent 10.5px 18px);
+  --sg-pattern-size: 100% 36px;
+}
+
+[data-subguide="C"] {
+  --sg-pattern-name: "diagonal-crosshatch";
+  --sg-accent: #b42318;
+  --sg-soft: #fff0ed;
+  --sg-pattern:
+    repeating-linear-gradient(45deg, transparent 0 10px, currentColor 10.5px 12px, transparent 12.5px 22px),
+    repeating-linear-gradient(-45deg, transparent 0 10px, currentColor 10.5px 12px, transparent 12.5px 22px);
+  --sg-pattern-size: 31px 31px;
+}
+
+[data-subguide="D"] {
+  --sg-pattern-name: "vertical-bars";
+  --sg-accent: #6f3ab2;
+  --sg-soft: #f1eaff;
+  --sg-pattern:
+    repeating-linear-gradient(90deg, transparent 0 8px, currentColor 8.5px 11px, transparent 11.5px 21px);
+  --sg-pattern-size: 42px 100%;
+}
+
+[data-subguide="H"] {
+  --sg-pattern-name: "diagonal-stripes";
+  --sg-accent: #b54708;
+  --sg-soft: #fff0e7;
+  --sg-pattern:
+    repeating-linear-gradient(135deg, transparent 0 10px, currentColor 10.5px 12.5px, transparent 13px 24px);
+  --sg-pattern-size: 34px 34px;
+}
+
+[data-subguide="Z"] {
+  --sg-pattern-name: "staggered-brick";
+  --sg-accent: #16794a;
+  --sg-soft: #e8f7ef;
+  --sg-pattern:
+    linear-gradient(currentColor 2px, transparent 2px),
+    linear-gradient(90deg, currentColor 2px, transparent 2px),
+    linear-gradient(90deg, transparent 50%, currentColor 50% 52%, transparent 52%);
+  --sg-pattern-size: 36px 18px, 36px 18px, 72px 36px;
+}
+
+[data-subguide="P"] {
+  --sg-pattern-name: "node-lattice";
+  --sg-accent: #0e7490;
+  --sg-soft: #e4f6fa;
+  --sg-pattern:
+    radial-gradient(circle, currentColor 0 2.4px, transparent 2.7px),
+    linear-gradient(28deg, transparent 47%, currentColor 48% 52%, transparent 53%);
+  --sg-pattern-size: 28px 28px;
+}
+
+[data-subguide="R"] {
+  --sg-pattern-name: "square-grid";
+  --sg-accent: #344054;
+  --sg-soft: #eef1f4;
+  --sg-pattern:
+    linear-gradient(90deg, transparent 23px, currentColor 24px, transparent 25px),
+    linear-gradient(transparent 23px, currentColor 24px, transparent 25px);
+  --sg-pattern-size: 24px 24px;
+}
+
+.subguide-cover {
+  position: relative;
+  display: grid;
+  align-content: end;
+  min-height: min(720px, calc(100vh - 8rem));
+  margin-bottom: 1.5rem;
+  padding: clamp(1.4rem, 5vw, 3.4rem);
+  overflow: hidden;
+  color: var(--ink);
+  background: var(--surface);
+  border: 8px solid var(--sg-accent);
+}
+
+.subguide-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 31%;
+  color: var(--sg-accent);
+  opacity: .35;
+  background-image: var(--sg-pattern);
+  background-size: var(--sg-pattern-size);
+  border-bottom: 2px solid var(--sg-accent);
+}
+
+.subguide-cover > * {
+  position: relative;
+  z-index: 1;
+}
+
+.subguide-family-mark {
+  width: fit-content;
+  margin-bottom: .8rem;
+  padding: .3rem .55rem;
+  color: white;
+  background: var(--sg-accent);
+  font-family: ui-monospace, monospace;
+  font-size: .75rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.subguide-code {
+  margin: 0;
+  color: var(--sg-accent);
+  font-family: ui-monospace, monospace;
+  font-size: clamp(3.8rem, 13vw, 7.4rem);
+  font-weight: 950;
+  line-height: .82;
+}
+
+.subguide-cover h1 {
+  max-width: 14ch;
+  margin: .8rem 0;
+  font-size: clamp(2.4rem, 7vw, 4.6rem);
+  line-height: .94;
+}
+
+.subguide-promise {
+  max-width: 49ch;
+  margin: .4rem 0 0;
+  font-size: clamp(1.02rem, 2.1vw, 1.3rem);
+  font-weight: 700;
+}
+
+.subguide-position,
+.subguide-intro,
+.subguide-handoff,
+.sources-and-limits {
+  position: relative;
+  min-width: 0;
+  margin: 1.3rem 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--sg-accent);
+  background: var(--surface);
+}
+
+.subguide-position {
+  background: color-mix(in srgb, var(--sg-soft) 52%, var(--surface));
+}
+
+.subguide-position::after,
+.subguide-handoff::after {
+  content: attr(data-subguide);
+  position: absolute;
+  inset: .7rem .7rem auto auto;
+  min-width: 2rem;
+  padding: .2rem .36rem;
+  color: white;
+  background: var(--sg-accent);
+  border: 1px solid var(--ink);
+  font-family: ui-monospace, monospace;
+  font-size: .86rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.subguide-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .45rem;
+  margin: .8rem 0 1.1rem;
+}
+
+.subguide-meta > div {
+  min-width: 0;
+  padding: .5rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: .78rem;
+}
+
+.subguide-meta strong {
+  display: block;
+  color: var(--sg-accent);
+  font-family: ui-monospace, monospace;
+  font-size: .67rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.subguide-neighbours {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .5rem;
+  margin: .8rem 0;
+}
+
+.subguide-neighbours > div {
+  min-width: 0;
+  padding: .55rem .65rem;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--sg-accent);
+  background: var(--surface);
+}
+
+.subguide-identity-key {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin: .75rem 0;
+  font-size: .82rem;
+}
+
+.subguide-pattern-swatch {
+  width: 5.2rem;
+  height: 2.1rem;
+  flex: 0 0 auto;
+  color: var(--sg-accent);
+  background-image: var(--sg-pattern);
+  background-size: var(--sg-pattern-size);
+  border: 1px solid var(--ink);
+}
+
+.subguide-handoff {
+  background: color-mix(in srgb, var(--sg-soft) 60%, white);
+}
+
+.standalone-subguide .sources-and-limits h3 {
+  padding-left: .6rem;
+  border-left: 5px solid var(--sg-accent);
+}
+
+.standalone-subguide img[alt*="subguide graph"],
+.standalone-subguide img[alt*="Subguide graph"] {
+  max-height: 150mm;
+}
+
+.hub-directory {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.hub-node {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--sg-accent);
+  background: var(--surface);
+  box-shadow: 0 8px 20px rgba(20, 32, 29, .08);
+}
+
+.hub-node-pattern {
+  width: 100%;
+  height: 4.8rem;
+  margin: 0;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+
+.hub-node-heading {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .85rem .85rem 0;
+}
+
+.hub-node-heading > span {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  place-items: center;
+  color: white;
+  background: var(--sg-accent);
+  border: 1px solid var(--ink);
+  font-family: ui-monospace, monospace;
+  font-size: 1.05rem;
+  font-weight: 950;
+}
+
+.hub-node-heading h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1.06rem;
+  line-height: 1.12;
+}
+
+.hub-node > p {
+  flex: 1 1 auto;
+  margin: .65rem .85rem;
+  color: var(--muted);
+  font-size: .84rem;
+  line-height: 1.42;
+}
+
+.hub-node dl {
+  margin: 0 .85rem .75rem;
+  font-size: .72rem;
+}
+
+.hub-node dl > div {
+  display: grid;
+  grid-template-columns: 4.1rem minmax(0, 1fr);
+  gap: .4rem;
+  padding: .18rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--line) 62%, transparent);
+}
+
+.hub-node dt {
+  color: var(--sg-accent);
+  font-family: ui-monospace, monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.hub-node dd { margin: 0; }
+
+.hub-open,
+.hub-master {
+  display: block;
+  margin-top: auto;
+  padding: .72rem .85rem;
+  border-top: 1px solid var(--line);
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.hub-open {
+  color: white;
+  background: var(--sg-accent);
+  text-decoration: none;
+}
+
+.hub-open:hover,
+.hub-open:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--sg-accent) 34%, transparent);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+.hub-master {
+  color: var(--muted);
+  background: var(--sg-soft);
+}
+
+@media (max-width: 860px) {
+  .hub-directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .subguide-meta,
+  .subguide-neighbours,
+  .hub-directory {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .standalone-subguide {
+    --sg-soft: #f5f5f2;
+  }
+
+  .hub-directory { grid-template-columns: 1fr; }
+
+  .hub-node { break-inside: avoid; box-shadow: none; }
+
+  .subguide-cover {
+    min-height: 257mm;
+    margin: 0;
+    padding: 15mm;
+    border-width: 4mm;
+    break-after: page;
+  }
+
+  .subguide-cover::before {
+    height: 33%;
+    opacity: .62;
+  }
+
+  .subguide-code { font-size: 62pt; }
+  .subguide-cover h1 { font-size: 34pt; }
+  .subguide-promise { font-size: 13pt; }
+
+  .subguide-position,
+  .subguide-handoff,
+  .sources-and-limits {
+    margin: 0;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    background: #fff;
+  }
+
+  .subguide-position,
+  .subguide-handoff,
+  .sources-and-limits {
+    break-before: page;
+  }
+
+  .subguide-intro {
+    padding: 5pt 6pt;
+    border-top-width: 3pt;
+  }
+
+  .subguide-meta {
+    gap: 4pt;
+    margin: 5pt 0 7pt;
+  }
+
+  .subguide-meta > div {
+    padding: 4pt;
+    font-size: 7pt;
+  }
+
+  .subguide-neighbours {
+    grid-template-columns: 1fr 1fr;
+    gap: 4pt;
+  }
+
+  .subguide-neighbours > div {
+    padding: 3pt 4pt;
+    border-left-width: 3pt;
+    font-size: 7.3pt;
+  }
+
+  .subguide-pattern-swatch {
+    width: 34mm;
+    height: 10mm;
+  }
+
+  html[data-print-layout="a4half"] .subguide-cover {
+    min-height: 283mm;
+    padding: 8mm 6mm;
+    border-width: 2.5mm;
+  }
+
+  html[data-print-layout="a4half"] .subguide-code { font-size: 42pt; }
+  html[data-print-layout="a4half"] .subguide-cover h1 { font-size: 24pt; }
+  html[data-print-layout="a4half"] .subguide-promise { font-size: 9.5pt; }
+
+  html[data-print-layout="a4half"] .subguide-meta,
+  html[data-print-layout="a4half"] .subguide-neighbours {
+    grid-template-columns: 1fr;
+  }
+
+  html[data-print-layout="a4half"] .subguide-meta > div,
+  html[data-print-layout="a4half"] .subguide-neighbours > div {
+    font-size: 6.3pt;
+  }
+
+  html[data-print-layout="largeprint"] .subguide-cover h1 { font-size: 39pt; }
+  html[data-print-layout="largeprint"] .subguide-promise { font-size: 16pt; }
+  html[data-print-layout="largeprint"] .subguide-meta > div,
+  html[data-print-layout="largeprint"] .subguide-neighbours > div {
+    font-size: 10.5pt;
+  }
+}

@@ -264,4 +264,42 @@
   }
 
   img[alt*="flowgraph"] { max-height: 145mm; }
+
+  .quantitative-figure {
+    margin: 7pt -3mm 9pt;
+  }
+
+  .quantitative-figure > figure {
+    margin: 0;
+    padding: 4pt 3mm 3pt;
+    border-left: 0;
+    border-right: 0;
+    border-top-width: 2pt;
+    border-bottom: .5pt solid var(--line);
+    background: #fff;
+  }
+
+  .quantitative-figure > figure::before { content: none; }
+
+  .quantitative-figure > figure img {
+    max-height: 116mm;
+    margin: 2pt auto 0;
+  }
+
+  .quantitative-figure > figure figcaption {
+    margin: 0;
+    padding: 0 0 3pt;
+    font-size: 7.2pt;
+    line-height: 1.25;
+  }
+
+  .chart-note {
+    grid-template-columns: 1fr;
+    gap: 2pt;
+    padding: 3.5pt 3mm 4pt;
+    border-left: 0;
+    border-right: 0;
+    font-size: 6.25pt;
+    line-height: 1.28;
+  }
 }

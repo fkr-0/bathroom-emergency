@@ -1,10 +1,10 @@
 ---
 title: "Responsibility, Harm, and Other Life Forms"
 chapter: 2
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies:
-  - build/diagrams/reproductive_health_denominators.png
+  - build/diagrams/vega_reproductive_denominators.png
 ---
 
 # Situation A — I Caused Trouble
@@ -146,7 +146,7 @@ stay if safety or basic care is uncertain.
 
 ### Two useful numbers, with their denominators attached
 
-![Reproductive-health estimates with deliberately separate denominators](build/diagrams/reproductive_health_denominators.png)
+{{visualization:vega-reproductive-denominators}}
 
 WHO estimates that about **17.5% of adults—roughly one in six—experience
 infertility during their lifetime**.[^infertility] This is a population estimate

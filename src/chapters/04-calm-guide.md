@@ -1,8 +1,8 @@
 ---
 title: "Calm Guide"
 chapter: 4
-revision: "4.4.1"
-last_updated: "2026-07-22"
+revision: "4.5.0"
+last_updated: "2026-07-23"
 dependencies:
   - build/diagrams/breathing_techniques.png
   - build/diagrams/breathwork_trial_map.png
@@ -384,6 +384,9 @@ When supporting someone else:
 
 The goal is not to become their entire nervous system. That position has poor
 hours and no pension.
+
+
+{{subguide-sources:B}}
 
 [^who-stress]: World Health Organization, *Doing What Matters in Times of Stress* (2020): https://www.who.int/publications/i/item/9789240003927
 

@@ -270,11 +270,48 @@ Deferred to later releases:
 - full heat/cold/flood/smoke standalone modules;
 - optional household profile pages outside the shared default guide;
 - the first 24-figure visualization expansion;
-- canonical source-registry migration and B/H local-source pilot.
+- remaining-node source migration beyond the B/H release-candidate pilot.
 
-### 4.5.0 — Graph-oriented subguide editions — specified
+### 4.4.2 — Manifest and Vega foundation — completed into 4.5.0 candidate
 
-Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md`.
+Tracked in `docs/plans/4.4.2-alt-spec-feasibility-and-vega.md`.
+
+- [x] review the alternate modular expansion specification as an architectural
+  proposal and record accepted, modified, deferred, and rejected approaches;
+- [x] add `docs/plans/4.5.0-roadmap-milestones.md` with M0–M7 entry/exit gates
+  and explicit stop rules;
+- [x] add a nine-node prototype subguide manifest without moving canonical prose;
+- [x] add offline Vega/Vega-Lite dependencies, deterministic derivation, SVG/PNG
+  rendering, and catalog validation;
+- [x] add an eight-chart Vega-Lite batch and retire six superseded
+  matplotlib outputs;
+- [x] add two new reader-facing structure/model charts with adjacent prose or
+  table fallbacks;
+- [x] generate ownership inventories for 186 level-1/2 sections and 28 current
+  or migrated figure records;
+- [x] inventory 52 chapter footnotes and 75 global source-note sections with no
+  unresolved references;
+- [x] build B and H standalone color/mono pilots with canonical extraction,
+  one emergency gate, handoffs, and generated local Sources and limits;
+- [x] generate B/H Sources and limits sections inside the master guide while
+  retaining the global source chapter for parity review;
+- [x] add a shared Vega-Lite theme, catalog-driven figure macros, accessible SVG
+  metadata, and a clean quantitative-chart page treatment;
+- [x] document renderer boundaries and state-of-the-art chart, illustration,
+  typography, and page-composition rules in `docs/plans/visual-design-system.md`;
+- [x] inventory the seventeen current non-Vega figures by family, reader question,
+  renderer, fallback, monochrome strategy, and redesign priority;
+- [x] enforce intentional major-tick density, minimum rendered chart text, and
+  text/essential-mark contrast in the visualization validator;
+- [x] complete the six-edition build, visual review, and page-growth audit;
+- [x] send the reviewed A4/2 candidate through the configured Dockerroutes
+  Telegram delivery path;
+- [ ] commit and tag only after explicit release approval.
+
+### 4.5.0 — Graph-oriented subguide editions — release candidate
+
+Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md` and
+`docs/plans/4.5.0-roadmap-milestones.md`.
 
 - [x] define a proposed nine-subguide core family and graph identity;
 - [x] define candidate satellite modules for small-room physics, decision
@@ -289,14 +326,20 @@ Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md`.
   index;
 - [x] specify a 48–60-figure visualization program and reproducible chart
   pipeline;
-- [ ] prototype the graph and two competing subguide groupings on paper;
-- [ ] test monochrome/pattern recognition in A4 and A4/2;
-- [ ] freeze codes, patterns, and chapter assignments after visual review;
-- [ ] implement registry-driven standalone colour and monochrome outputs;
-- [ ] migrate subguides one at a time without duplicating canonical prose;
-- [ ] generate each subguide's source-complete end matter from one registry;
-- [ ] require orientation, mechanism, evidence, and handoff visuals where the
-  material supports them.
+- [x] add a validated nine-node prototype manifest over the current canonical chapters;
+- [x] generate exact section and figure ownership inventories for migration;
+- [x] build the B and H standalone pilots in color and monochrome;
+- [x] pilot generated local Sources and limits in B/H standalone and master outputs;
+- [x] bring both B and H to the planned minimum of four high-value canonical visuals;
+- [x] prototype the graph and two competing subguide groupings on paper;
+- [x] test monochrome/pattern recognition in A4 and A4/2;
+- [x] freeze codes, patterns, and chapter assignments after visual review;
+- [x] implement registry-driven A4, A4/2, and large-print colour/monochrome outputs;
+- [x] migrate B and H as bounded slices without duplicating canonical prose;
+- [x] generate each released subguide's source-complete end matter from one registry;
+- [x] require orientation, mechanism/evidence, and handoff coverage in the B/H release gate;
+- [ ] detach the remaining seven nodes one at a time after equivalent visual,
+  source, layout, and accessibility review.
 
 ### Cross-release visualization program
 
@@ -305,12 +348,12 @@ Tracked in `docs/plans/visualization-program.md`.
 - [x] define figure families, chart-selection rules, accessibility standards,
   and a per-subguide candidate inventory;
 - [x] set a reviewed target of approximately 48–60 master-guide visuals;
-- [ ] add `src/data/visualization_catalog.json`;
-- [ ] add SVG/PNG generation from Vega-Lite, Graphviz/generated SVG, and
-  matplotlib as appropriate;
-- [ ] add alt text, long descriptions, table fallbacks, contrast checks, and
+- [x] add `src/data/visualization_catalog.json` and the first eight offline Vega-Lite figures;
+- [x] add SVG/PNG generation from Vega-Lite, generated SVG, and matplotlib as appropriate;
+- [x] add alt text, long descriptions, table fallbacks, contrast checks, and
   color/mono information-parity tests;
-- [ ] generate figure contact sheets, source coverage, and provenance reports.
+- [x] generate figure contact sheets and colour/mono parity reports;
+- [ ] publish the consolidated full-program source-coverage and provenance matrix.
 
 ### Subguide-local source migration
 
@@ -319,8 +362,9 @@ Tracked in `docs/plans/subguide-source-localization.md`.
 - [x] agree on local Sources and limits at the end of every subguide;
 - [x] retain citations beside claims and one canonical source registry;
 - [x] define master versus standalone behavior and a B/H pilot;
-- [ ] inventory current Ch.10 entries and chapter footnotes;
-- [ ] add stable source IDs, ownership, claim, route, and figure links;
+- [x] inventory current Ch.10 entries and chapter footnotes;
+- [x] add stable source IDs and B/H subguide ownership;
+- [ ] enrich claim, route, and figure links across the remaining nodes;
 - [ ] migrate subguides incrementally and replace the monolithic bibliography
   with an R source index only after parity is proven.
 

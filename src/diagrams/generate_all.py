@@ -24,6 +24,12 @@ DEPRECATED = {
     "pain_nrs_correlates.png",
     "water_requirements_scaling.png",
     "situation_a_tree.png",
+    "gad7_validation_comparison.png",
+    "household_water_planner.png",
+    "social_connection_associations.png",
+    "sleep_restriction_study.png",
+    "stroke_time_model.png",
+    "reproductive_health_denominators.png",
 }
 
 for name in sorted(DEPRECATED):
@@ -39,11 +45,15 @@ scripts = [
     "generate_continuity.py",
     "generate_accessibility.py",
     "generate_scientific.py",
+    "generate_subguides.py",
 ]
 for script in scripts:
     subprocess.run(
         [sys.executable, str(Path(__file__).with_name(script)), str(OUT)],
         check=True,
     )
+
+subprocess.run([sys.executable, str(ROOT / "src" / "visualizations" / "derive_data.py")], check=True)
+subprocess.run(["node", str(ROOT / "bin" / "build_visualizations.mjs"), str(OUT)], check=True)
 
 print(f"Diagram build complete: {OUT}")
