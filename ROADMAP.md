@@ -377,6 +377,16 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   strongest supporting indexes, but only after equivalent visual and source
   review.
 
+### 4.6.1 — Field-test and provenance hardening — release candidate
+
+- [x] add installation, route-drill, first-aid-figure-review, and maintenance
+  sheets to the Blue Book;
+- [x] add a deterministic ten-node source/section/visual/readiness matrix;
+- [x] embed that matrix in R — Reference and validate generated-file freshness;
+- [x] add the new forms and coverage gate to CI and the complete build pipeline;
+- [ ] complete the full render/test matrix and record release evidence;
+- [ ] tag `v4.6.1` locally without pushing, publishing, or deploying.
+
 ### Cross-release visualization program
 
 Tracked in `docs/plans/visualization-program.md`.
@@ -389,7 +399,8 @@ Tracked in `docs/plans/visualization-program.md`.
 - [x] add alt text, long descriptions, table fallbacks, contrast checks, and
   color/mono information-parity tests;
 - [x] generate figure contact sheets and colour/mono parity reports;
-- [ ] publish the consolidated full-program source-coverage and provenance matrix.
+- [x] publish the consolidated full-program source-coverage and provenance matrix
+  inside the generated Reference edition and tracked JSON registry.
 
 ### Subguide-local source migration
 

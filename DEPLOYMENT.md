@@ -33,9 +33,11 @@ when the copy must be replaced.
 6. Add writing tools, light, and charging support.
 7. Test one route: find the address, choose 112 versus 116 117, find a local
    backup, and open the online guide without relying on a QR code alone.
-8. Record the guide version, build commit, local customization revision, last
+8. Complete the **Installation and wet-room audit** in the Blue Book under the
+   actual light, reach, moisture, privacy, and page-turning conditions.
+9. Record the guide version, build commit, local customization revision, last
    check, and next check.
-9. Replace the copy when a local route, household need, or release changes.
+10. Replace the copy when a local route, household need, or release changes.
 
 ## Canonical deployment-field index
 
@@ -134,6 +136,10 @@ project announces itself instead of resembling archived appliance warranties.
 Use dividers for master guide, Blue Book templates, local cards, and replacement
 blanks.
 
+Whichever installation method is used, test it with the Blue Book’s
+**Installation and wet-room audit**. A sleeve that looks excellent on a desk may
+be unreadable under bathroom glare or impossible to turn with one hand.
+
 ### Wall panel plus takeaways
 
 Keep only shared-safe orientation and contact cards visible. Put private forms in
@@ -191,6 +197,8 @@ ignored by Git and should be regenerated from tracked sources.
 - `build/subguides/` — graph hub and standalone B, H, T, and R families;
 - `build/site/index.html` — project landing page;
 - `build/generated/` — generated indexes and appendix fragments;
+- `src/data/coverage_matrix.json` and `build/generated/coverage-matrix.md` —
+  source, visual, and standalone-readiness provenance;
 - `build/release/manifest.json` — release/build metadata and artifact hashes.
 
 ## Deployment targets and domain roles
@@ -215,7 +223,10 @@ At each check:
 5. replace used forms and dry pens with functioning pencils;
 6. compare local version with the latest approved release;
 7. run one tabletop route with a willing household member;
-8. record the check and next review date.
+8. use the route-drill log to record delay, wrong turns, and author coaching;
+9. use the first-aid figure review only with sanitized scenarios and approved
+   training practice;
+10. record the check and next review date.
 
 Review immediately after moving, access changes, household-care changes, a failed
 route, a new local service, a relevant incident, or a safety/privacy concern.

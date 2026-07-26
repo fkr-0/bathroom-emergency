@@ -1,12 +1,29 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.6.0"
+revision: "4.6.1"
 last_updated: "2026-07-26"
 dependencies: []
 ---
 
 # Version History
+
+## 4.6.1 — 26 July 2026
+
+### The installation becomes testable
+
+- Added wet-room installation, route-drill, first-aid-figure-review, and
+  maintenance sheets to the Blue Book.
+- Made glare, reach, one-handed page turning, moisture, privacy, and physical
+  replacement observable deployment checks rather than prose reminders.
+
+### Coverage becomes generated evidence
+
+- Added a ten-node source, section, visual, provenance, and standalone-readiness
+  matrix generated from canonical registries.
+- Embedded the report in Reference and made stale coverage fail local builds and
+  CI.
+- Added four stable form references while preserving the retired-ID boundary.
 
 ## 4.6.0 — 26 July 2026
 

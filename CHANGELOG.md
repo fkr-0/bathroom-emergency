@@ -1,5 +1,38 @@
 # Changelog
 
+## 4.6.1 — 2026-07-26
+
+### Added field-test forms
+
+- Added an installation and wet-room audit for glare, reach, moisture, page
+  turning, stability, privacy, supplies, and revision visibility.
+- Added a calm-time route-drill log that records finding, routing, factual-card,
+  backup, and handoff friction without using private crisis details.
+- Added a first-aid figure review sheet for CPR, AED, recovery-position, and
+  triage comprehension, including unintended inferences and monochrome/text
+  fallback checks.
+- Added a maintenance and replacement inspection with immediate triggers for
+  stale routes, exposed private information, unreadable damage, or failed
+  workflows.
+
+### Added cross-guide provenance
+
+- Added `src/data/coverage_matrix.json` and a generated Reference-edition report
+  covering all ten nodes, owned sections, local sources by class, owned/shared
+  visuals, source-basis coverage, standalone state, and candidate readiness.
+- Added deterministic generator and validator commands and wired them into the
+  full build, independent test command, and CI generated-file check.
+- Expanded the stable reference registry from 303 to 308 active resources for
+  the four new detachable forms and the new release-history section without
+  reusing the retired key.
+
+### Hardened deployment documentation
+
+- Made the actual-room installation audit part of the minimum deployment gate.
+- Added explicit route-drill and figure-review steps to the maintenance cycle.
+- Kept field testing separate from certification: forms capture observations;
+  they do not claim that usability testing has already happened.
+
 ## 4.6.0 — 2026-07-26
 
 ### Added the Blue Book template subguide

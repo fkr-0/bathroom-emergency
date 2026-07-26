@@ -144,6 +144,10 @@ Source files:
 - `bin/build_reference_index.py` — deterministic generator;
 - `bin/validate_reference_index.py` — immutability, uniqueness, coverage, and
   fragment validation.
+- `src/data/coverage_matrix.json` — per-node section, source, visual, and
+  standalone readiness;
+- `bin/build_coverage_matrix.py` / `bin/validate_coverage_matrix.py` — generated
+  provenance report and drift gate.
 
 ### Blue Book forms
 
@@ -160,7 +164,8 @@ fillable resources, including:
 - nice-place and safe-place maps;
 - medication, power, and care continuity card;
 - household continuity board;
-- feedback, remarks, and quiet-activity sheets.
+- feedback, installation audit, route-drill, first-aid-figure review,
+  maintenance, remarks, and quiet-activity sheets.
 
 `src/data/deployment_fields.json` is the machine-readable index of local facts a
 deployer should consider. Each field records whether it is required, its privacy
@@ -243,7 +248,7 @@ The validators enforce, among other things:
   reviewed-source contracts;
 - ten reciprocal graph identities with unique code, pattern, glyph, color, and
   title channels;
-- 298+ stable indexed resources across sections, forms, figures, contacts,
+- 300+ stable indexed resources across sections, forms, figures, contacts,
   deployment fields, and glossary terms;
 - eight offline Vega-Lite figures and twenty current non-Vega illustrations,
   each with reader question, fallback, source basis, and monochrome strategy;
@@ -281,7 +286,8 @@ Read `DEPLOYMENT.md` before placing a copy. A deployer should at minimum:
 4. add a pencil, writing surface, light, charger, maintained power bank, and
    appropriate first-aid supplies;
 5. test one emergency/support route;
-6. record the guide version, build commit, local revision, last check, and next
+6. complete the installation audit on the actual wall, folder, sleeve, or box;
+7. record the guide version, build commit, local revision, last check, and next
    review date.
 
 Intended domain roles:
@@ -307,6 +313,7 @@ descriptive equation, mathematical/conceptual model, or mnemonic.
 - visualization provenance: `src/data/visualization_catalog.json`;
 - illustration provenance: `src/data/illustration_catalog.json`;
 - canonical source view: `src/data/source_inventory.json`.
+- cross-guide coverage and readiness: `src/data/coverage_matrix.json`.
 
 Operational sources carry review windows checked against `GUIDE_AS_OF`. Unknown
 local values stay explicit fields rather than plausible-looking inventions.
