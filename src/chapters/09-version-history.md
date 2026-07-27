@@ -1,12 +1,35 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.7.0"
-last_updated: "2026-07-26"
+revision: "4.8.0"
+last_updated: "2026-07-27"
 dependencies: []
 ---
 
 # Version History
+
+## 4.8.0 — 27 July 2026
+
+### The project becomes a usable web surface
+
+- Replaced the single landing document with responsive project, deployment,
+  download, and 404 pages built entirely from local assets.
+- Added route-aware navigation, release metrics, evidence boundaries, themes,
+  mobile navigation, and a self-contained guide/route package.
+
+### Deployment becomes interactive without becoming a database
+
+- Added a local-only six-step checklist, progress display, reset, and copied
+  summary beside privacy, format, mounting, maintenance, and operator guidance.
+- Stored only generic completion keys and explicitly prohibited sensitive local
+  facts in the browser interface.
+
+### Publication remains an explicit operation
+
+- Added browser QA for desktop/mobile layout, overflow, console errors, remote
+  requests, theme changes, planner persistence, and download filtering.
+- Added a GitHub Pages workflow and optional reviewed custom-domain variable;
+  ordinary builds and local releases still do not publish or deploy anything.
 
 ## 4.7.0 — 26 July 2026
 

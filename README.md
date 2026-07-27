@@ -11,10 +11,11 @@ The project is not one long emergency leaflet. It is a maintained family of:
 
 - one complete master guide;
 - ten graph-linked content identities;
-- four released standalone subguide families;
+- six released standalone subguide families;
 - detachable forms and deployment fields;
 - a stable global reference registry;
-- a project landing page and enhanced HTML guide;
+- a modern project landing page, deployment planner, download catalogue, route
+  hub, and enhanced HTML guide;
 - A4, A4/2, large-print, color, monochrome, Markdown, DOCX, and LaTeX outputs;
 - source, route, figure, accessibility, layout, density, and release validators.
 
@@ -72,6 +73,7 @@ Git and are reproducible from tracked sources.
     ./bin/build_guide.sh largeprint
     python3 bin/build_subguides.py --node all
     python3 bin/build_site.py
+    node bin/verify_site.mjs
     python3 bin/build_release_manifest.py
 
 ## Requirements
@@ -195,10 +197,12 @@ credentials, private medical details, or violence-related safe locations.
 │   ├── build_guide.py            master document builder
 │   ├── build_subguides.py        graph hub and standalone families
 │   ├── build_reference_index.py  stable reference/index generator
-│   ├── build_site.py             project landing package
+│   ├── build_site.py             self-contained Pages-ready project site
+│   ├── verify_site.mjs           responsive browser and interaction QA
 │   ├── build_release_manifest.py artifact hashes and build provenance
 │   └── validate_*.py             content and release gates
 ├── .github/workflows/ci.yml      complete release-matrix CI
+├── .github/workflows/pages.yml   explicit GitHub Pages build/deploy workflow
 ├── DEPLOYMENT.md                 local installation and maintenance manual
 ├── CHANGELOG.md                  detailed release history
 └── ROADMAP.md                    completed and future work
@@ -226,11 +230,17 @@ credentials, private medical details, or violence-related safe locations.
 |---|---|---|
 | graph hub | `build/subguides/index.html` | ten-node directory and handoffs |
 | B family | `build/subguides/B/` | six HTML/PDF/Markdown layout-mode editions |
+| C family | `build/subguides/C/` | six first-aid layout-mode editions |
 | H family | `build/subguides/H/` | six HTML/PDF/Markdown layout-mode editions |
+| P family | `build/subguides/P/` | six professional-support editions |
 | T family | `build/subguides/T/` | six detachable-template editions |
 | R family | `build/subguides/R/` | six reference/index editions |
-| project landing page | `build/site/index.html` | purpose, participation, deployment, sources, disclaimers, guide links |
-| self-contained project docs | `build/site/{README,DEPLOYMENT,CHANGELOG}.md` | packaged with landing artifact |
+| project landing page | `build/site/index.html` | modern project representation and route entry points |
+| deployment planner | `build/site/deploy/index.html` | local-only checklist, privacy, format, mounting, and operator guidance |
+| download catalogue | `build/site/downloads/index.html` | master and standalone release selection |
+| Pages guide and routes | `build/site/guide/`, `build/site/routes/` | self-contained online reading package |
+| packaged project docs | `build/site/docs/` | README, deployment manual, and changelog |
+| site release metadata | `build/site/meta/release.json` | version, revision, metrics, and explicit no-publish/no-deploy flags |
 | release manifest | `build/release/manifest.json` | version, revision, toolchain, hashes, no false publish/deploy claim |
 
 ## Print and release invariants
@@ -250,11 +260,12 @@ The validators enforce, among other things:
   title channels;
 - 300+ stable indexed resources across sections, forms, figures, contacts,
   deployment fields, and glossary terms;
-- eight offline Vega-Lite figures and twenty current non-Vega illustrations,
+- eight offline Vega-Lite figures and twenty-three current non-Vega illustrations,
   each with reader question, fallback, source basis, and monochrome strategy;
 - no known unsafe legacy wording or deprecated scientific chart;
 - layout-density, physical-edge, overflow, accessibility, and color/mono checks;
-- a self-contained landing artifact and hashed release manifest;
+- a self-contained landing/deployment/download package, responsive browser QA,
+  and hashed release manifest;
 - no claim that a local build was published or deployed.
 
 Run the complete gate with:
@@ -275,6 +286,12 @@ and manual dispatch. It:
 5. uploads the master, standalone, site, and release-manifest artifacts.
 
 CI builds artifacts; it does not deploy either intended domain.
+
+`.github/workflows/pages.yml` is the separate, explicit publication path. It
+rebuilds and validates the same source tree, uploads only `build/site`, and then
+uses GitHub's Pages deployment action. A local build never invokes that workflow.
+Set the optional repository variable `PAGES_CUSTOM_DOMAIN` only after DNS and
+the intended public domain are ready.
 
 ## Deployment
 
@@ -297,6 +314,14 @@ Intended domain roles:
 - `be.fkr.dev` — enhanced HTML guide and downloads.
 
 These are deployment contracts, not evidence that hosting has already occurred.
+For a local preview of the exact Pages package, run:
+
+    python -m http.server 8080 -d build/site
+
+Then open `http://localhost:8080`. The project UI uses local assets and makes no
+runtime analytics, font, CDN, or API request. The deployment checklist persists
+only in that browser's local storage and is deliberately unsuitable for storing
+sensitive local facts.
 
 ## Evidence policy
 

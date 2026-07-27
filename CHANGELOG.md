@@ -1,5 +1,41 @@
 # Changelog
 
+## 4.8.0 — 2026-07-27
+
+### Rebuilt the project landing experience
+
+- Replaced the compact inline landing document with a responsive project site
+  built from local CSS, JavaScript, SVG, route metadata, and release registries.
+- Added a high-contrast field-instrument interface with editorial typography,
+  emergency separation, ten route cards, release metrics, evidence boundaries,
+  participation guidance, dark/light/automatic themes, and mobile navigation.
+- Added a complete download catalogue for master A4, A4/2, large-print, colour,
+  monochrome, and six standalone route families.
+
+### Added a deployment planner rather than another prose link
+
+- Added a six-step local-only deployment checklist with progress, reset,
+  clipboard summary, and browser-local persistence.
+- Added format-selection, privacy-classification, physical mounting, maintenance,
+  operator, local-preview, and GitHub Pages guidance in the UI.
+- Kept sensitive facts out of the web form contract: only generic completion
+  keys are stored, and the page explicitly rejects addresses, codes, medical
+  details, and safe-place locations.
+
+### Prepared an explicit Pages publication path
+
+- Packaged landing, planner, downloads, guide, route hub, standalone families,
+  PDFs, documentation, offline assets, 404 handling, web manifest, and release
+  metadata under `build/site`.
+- Added a dedicated GitHub Pages workflow that rebuilds and validates the entire
+  project before uploading the static package; custom-domain output is generated
+  only from the optional reviewed `PAGES_CUSTOM_DOMAIN` variable.
+- Added structural and browser-level site gates, six desktop/mobile review
+  captures, interaction tests, no-horizontal-overflow checks, and a zero-external-
+  runtime-request contract.
+- Kept workflow availability separate from deployment evidence: local build and
+  release metadata continue to report publication and deployment as false.
+
 ## 4.7.0 — 2026-07-26
 
 ### Released Body and First Aid as a standalone family

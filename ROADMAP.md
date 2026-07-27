@@ -399,6 +399,23 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete the full render/test matrix and record release evidence;
 - [x] tag `v4.7.0` locally without pushing, publishing, or deploying.
 
+### 4.8.0 — Modern project and deployment site — release candidate
+
+- [x] replace the single inline landing document with a responsive shared design
+  system using local assets, system fonts, route colours, and dark/light modes;
+- [x] add project, deployment-planner, download-catalogue, and 404 pages;
+- [x] package the complete guide, route hub, standalone families, master PDFs,
+  project docs, release metadata, manifest, and offline web assets under
+  `build/site`;
+- [x] keep the deployment planner local-only and explicitly prohibit sensitive
+  facts in browser storage;
+- [x] add browser verification for desktop/mobile overflow, console errors,
+  external runtime requests, themes, planner persistence, and filters;
+- [x] add a GitHub Pages workflow with an optional reviewed custom-domain
+  variable while keeping local builds non-publishing;
+- [ ] complete the full build/test matrix and record 4.8.0 release evidence;
+- [ ] tag `v4.8.0` locally without pushing, publishing, or deploying.
+
 ### Cross-release visualization program
 
 Tracked in `docs/plans/visualization-program.md`.

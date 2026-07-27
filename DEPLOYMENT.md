@@ -195,7 +195,13 @@ ignored by Git and should be regenerated from tracked sources.
 - `build/html/guide.html` — complete interactive HTML guide;
 - `build/pdf/` — master PDF variants;
 - `build/subguides/` — graph hub and standalone B, C, H, P, T, and R families;
-- `build/site/index.html` — project landing page;
+- `build/site/index.html` — modern project landing page;
+- `build/site/deploy/index.html` — local-only deployment planner;
+- `build/site/downloads/index.html` — master and standalone download catalogue;
+- `build/site/guide/` and `build/site/routes/` — self-contained reading package;
+- `build/site/assets/` — local stylesheet, interaction script, and project mark;
+- `build/site/meta/release.json` — site version, revision, metrics, and explicit
+  no-publication/no-deployment state;
 - `build/generated/` — generated indexes and appendix fragments;
 - `src/data/coverage_matrix.json` and `build/generated/coverage-matrix.md` —
   source, visual, and standalone-readiness provenance;
@@ -211,6 +217,51 @@ The intended split is:
 
 These are build/deployment contracts, not evidence that hosting has occurred.
 Deployment is intentionally not performed by the local release process.
+
+## Preview the Pages package locally
+
+After a complete build:
+
+    python -m http.server 8080 -d build/site
+
+Open `http://localhost:8080`. Check at least:
+
+1. landing-page navigation and the immediate-emergency strip;
+2. complete guide and route-hub links;
+3. master and standalone downloads;
+4. deployment checklist progress, reset, and local persistence;
+5. light/dark/automatic theme behavior;
+6. mobile navigation and a narrow viewport;
+7. the 404 page and one deliberately missing route.
+
+The site has no remote font, analytics, CDN, API, or image dependency. The
+interactive deployment checklist writes only completion keys to browser local
+storage. It must not be used to enter addresses, codes, medical information,
+safe-place locations, or other sensitive deployment facts.
+
+## GitHub Pages deployment
+
+The repository includes `.github/workflows/pages.yml`. It is the explicit
+publication path and is separate from ordinary CI and local release creation.
+
+1. In the GitHub repository, open **Settings → Pages**.
+2. Choose **GitHub Actions** as the source.
+3. Review branch protection and the workflow permissions before enabling a
+   public deployment.
+4. Push the workflow to `main` or run **deploy-github-pages** manually.
+5. Verify the deployed landing, guide, route hub, planner, downloads, PDFs, and
+   404 behavior.
+6. Confirm the published footer/version and `meta/release.json` revision match
+   the intended source commit.
+
+For a custom domain, set the repository variable `PAGES_CUSTOM_DOMAIN` to the
+hostname only after its DNS records and ownership checks are ready. The site
+builder writes `CNAME` only when this value is present. Do not commit a guessed
+domain or imply that either intended domain is live before verification.
+
+The workflow rebuilds the complete release and runs all content, PDF, browser,
+site, accessibility, and matrix gates before uploading `build/site`. A workflow
+file in the repository is not proof that a deployment has occurred.
 
 ## Maintenance cycle
 
