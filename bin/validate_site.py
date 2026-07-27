@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
-"""Validate the generated landing page and deployment-document contract."""
+"""Validate the self-contained landing, deployment, download, and Pages contract."""
 from __future__ import annotations
 
+import json
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 from project_meta import VERSION
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = ROOT / "build/site/index.html"
+SITE = ROOT / "build" / "site"
 DEPLOYMENT = ROOT / "DEPLOYMENT.md"
+SUBGUIDES = ROOT / "src" / "data" / "subguides.json"
 errors: list[str] = []
 
 
@@ -17,46 +21,186 @@ def check(condition: bool, message: str) -> None:
         errors.append(message)
 
 
-check(SITE.exists(), "landing page missing")
+class LinkParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.references: list[tuple[str, str]] = []
+
+    def handle_starttag(self, tag: str, attrs) -> None:
+        values = dict(attrs)
+        for attr in ("href", "src"):
+            value = values.get(attr)
+            if value:
+                self.references.append((attr, value))
+
+
+def local_target(page: Path, reference: str) -> Path | None:
+    if reference.startswith(("mailto:", "tel:", "data:", "javascript:")):
+        return None
+    parsed = urlsplit(reference)
+    if parsed.scheme or parsed.netloc or not parsed.path:
+        return None
+    path = unquote(parsed.path)
+    target = (page.parent / path).resolve()
+    if path.endswith("/"):
+        target = target / "index.html"
+    return target
+
+
+core_pages = {
+    "landing": SITE / "index.html",
+    "deployment": SITE / "deploy" / "index.html",
+    "downloads": SITE / "downloads" / "index.html",
+    "not-found": SITE / "404.html",
+}
+for label, page in core_pages.items():
+    check(page.exists() and page.stat().st_size > 0, f"{label} page missing or empty")
+
+for path in (
+    SITE / ".nojekyll",
+    SITE / "assets" / "site.css",
+    SITE / "assets" / "site.js",
+    SITE / "assets" / "mark.svg",
+    SITE / "site.webmanifest",
+    SITE / "robots.txt",
+    SITE / "guide" / "index.html",
+    SITE / "routes" / "index.html",
+    SITE / "files" / "guide.pdf",
+    SITE / "files" / "guide_mono.pdf",
+    SITE / "files" / "guide_a4half.pdf",
+    SITE / "files" / "guide_a4half_mono.pdf",
+    SITE / "files" / "guide_largeprint.pdf",
+    SITE / "files" / "guide_largeprint_mono.pdf",
+    SITE / "docs" / "README.md",
+    SITE / "docs" / "DEPLOYMENT.md",
+    SITE / "docs" / "CHANGELOG.md",
+    SITE / "meta" / "release.json",
+):
+    check(path.exists(), f"Pages package artifact missing: {path.relative_to(ROOT)}")
+
+landing_markers = (
+    f"Release {VERSION}",
+    "Useful before heroic.",
+    "Choose your next move.",
+    "A graph, not a diagnostic maze.",
+    "A PDF on a shelf is not resilience.",
+    "The source trail stays attached.",
+    "data-theme-toggle",
+    "No tracking",
+    "href=\"guide/\"",
+    "href=\"routes/\"",
+    "href=\"downloads/\"",
+    "href=\"deploy/\"",
+    "bathroom_emergency@fkr.dev",
+)
+deployment_markers = (
+    "Minimum viable deployment",
+    "data-deployment-planner",
+    "Local-only by design",
+    "Classify before you print.",
+    "GitHub Pages deployment is prepared, not presumed.",
+    "data-copy-plan",
+    "data-reset-plan",
+    "../files/guide.pdf",
+    "../docs/DEPLOYMENT.md",
+)
+download_markers = (
+    f"Release {VERSION} download catalogue",
+    "Master editions",
+    "Standalone routes",
+    "Source, evidence, and maintenance",
+    "data-download-filter=\"master\"",
+    "../files/guide.pdf",
+    "../routes/C/body-first-aid.pdf",
+    "../routes/P/professional-support.pdf",
+    "../meta/release.json",
+)
+for page, markers in (
+    (core_pages["landing"], landing_markers),
+    (core_pages["deployment"], deployment_markers),
+    (core_pages["downloads"], download_markers),
+):
+    if not page.exists():
+        continue
+    text = page.read_text(encoding="utf-8")
+    for marker in markers:
+        check(marker in text, f"{page.relative_to(ROOT)} marker missing: {marker}")
+    check("<main id=\"main\">" in text, f"{page.relative_to(ROOT)} lacks main landmark")
+    check("class=\"skip-link\"" in text, f"{page.relative_to(ROOT)} lacks skip link")
+    check("aria-label=\"Primary\"" in text, f"{page.relative_to(ROOT)} lacks primary navigation label")
+
+# Core pages must be internally navigable without network assets.
+for label, page in core_pages.items():
+    if not page.exists():
+        continue
+    parser = LinkParser()
+    parser.feed(page.read_text(encoding="utf-8"))
+    for attr, reference in parser.references:
+        target = local_target(page, reference)
+        if target is None:
+            continue
+        check(
+            target == SITE or SITE in target.parents,
+            f"{label} {attr} escapes Pages package: {reference}",
+        )
+        check(target.exists(), f"{label} broken local {attr}: {reference}")
+
+if SUBGUIDES.exists():
+    subguides = json.loads(SUBGUIDES.read_text(encoding="utf-8"))
+    by_id = {node["id"]: node for node in subguides["nodes"]}
+    for node_id in subguides["standalone_nodes"]:
+        node = by_id[node_id]
+        base = SITE / "routes" / node_id
+        for suffix in (".html", ".pdf", "_a4half.pdf", "_largeprint.pdf"):
+            check(
+                (base / f'{node["slug"]}{suffix}').exists(),
+                f"Pages package missing {node_id} route artifact: {node['slug']}{suffix}",
+            )
+
+meta_path = SITE / "meta" / "release.json"
+if meta_path.exists():
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    check(meta.get("release") == VERSION, "site release metadata version drifted")
+    check(meta.get("published_by_this_build") is False, "site metadata falsely claims publication")
+    check(meta.get("deployment_performed_by_this_build") is False, "site metadata falsely claims deployment")
+    metrics = meta.get("metrics", {})
+    check(metrics.get("chapters") == 14, "site chapter metric drifted")
+    check(metrics.get("standalone") == 6, "site standalone metric drifted")
+    check(metrics.get("references", 0) >= 300, "site stable-reference metric unexpectedly small")
+    check(metrics.get("visuals", 0) >= 30, "site reader-visual metric unexpectedly small")
+    check(metrics.get("standalone_pdf_editions") == 36, "site standalone PDF metric drifted")
+
+css = SITE / "assets" / "site.css"
+js = SITE / "assets" / "site.js"
+if css.exists():
+    text = css.read_text(encoding="utf-8")
+    for marker in ("prefers-reduced-motion", "prefers-color-scheme", "@media print", ".route-grid", ".planner-layout"):
+        check(marker in text, f"site stylesheet marker missing: {marker}")
+if js.exists():
+    text = js.read_text(encoding="utf-8")
+    for marker in ("localStorage", "data-deployment-planner", "data-download-filter", "navigator.clipboard"):
+        check(marker in text, f"site script marker missing: {marker}")
+    check("fetch(" not in text and "XMLHttpRequest" not in text, "site script introduces a network request")
+
 check(DEPLOYMENT.exists(), "deployment instructions missing")
-if SITE.exists():
-    text = SITE.read_text(encoding="utf-8")
-    for marker in (
-        f"release {VERSION}",
-        "Purpose and design ideas",
-        "Participation and feedback",
-        "Deployment in one screen",
-        "Build and development",
-        "Sources and disclaimers",
-        "../html/guide.html",
-        "../subguides/index.html",
-        "href=\"DEPLOYMENT.md\"",
-        "href=\"README.md\"",
-        "href=\"CHANGELOG.md\"",
-        "bathroom_emergency@fkr.dev",
-        "bathroom-emergency.fkr.dev",
-        "be.fkr.dev",
-        "does not claim that hosting has already occurred",
-    ):
-        check(marker in text, f"landing page marker missing: {marker}")
 if DEPLOYMENT.exists():
-    text = DEPLOYMENT.read_text(encoding="utf-8")
+    text = DEPLOYMENT.read_text(encoding="utf-8").lower()
     for marker in (
-        "Minimum viable deployment",
-        "Canonical deployment-field index",
-        "Object- and person-specific safe places",
-        "Physical installation concepts",
-        "Additional deployables",
-        "Build from source",
-        "Maintenance cycle",
-        "Privacy",
+        "minimum viable deployment",
+        "canonical deployment-field index",
+        "object- and person-specific safe places",
+        "physical installation concepts",
+        "additional deployables",
+        "build from source",
+        "maintenance cycle",
+        "privacy",
         "bathroom_emergency@fkr.dev",
     ):
-        check(marker.lower() in text.lower(), f"deployment marker missing: {marker}")
-for name in ("README.md", "DEPLOYMENT.md", "CHANGELOG.md"):
-    copied = ROOT / "build/site" / name
-    check(copied.exists() and copied.stat().st_size > 0, f"landing package document missing: {name}")
+        check(marker in text, f"deployment marker missing: {marker}")
 
 if errors:
     raise SystemExit("Landing/deployment validation failed:\n- " + "\n- ".join(errors))
-print("Landing/deployment validation passed: project purpose, participation, build, deployment, sources, disclaimers, and guide links are present.")
+print(
+    "Landing/deployment validation passed: responsive project, deployment, "
+    "downloads, guide, route, offline-asset, privacy, and Pages-package contracts are present."
+)

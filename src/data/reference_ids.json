@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.7.0",
+  "release": "4.8.0",
   "status": "stable-public-reference-registry",
   "format": "[BEG:<owner>:<kind>:<sequence>]",
   "kind_legend": {
@@ -277,6 +277,7 @@
     "section:09-version-history:4-6-0-26-july-2026": "[BEG:R:S:075]",
     "section:09-version-history:4-6-1-26-july-2026": "[BEG:R:S:076]",
     "section:09-version-history:4-7-0-26-july-2026": "[BEG:R:S:077]",
+    "section:09-version-history:4-8-0-27-july-2026": "[BEG:R:S:078]",
     "section:09-version-history:earlier-versions": "[BEG:R:S:026]",
     "section:09-version-history:version-history": "[BEG:R:S:027]",
     "section:10-sources:affect-labelling-and-emotional-regulation": "[BEG:R:S:028]",

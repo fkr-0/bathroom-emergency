@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.7.0",
+  "release": "4.8.0",
   "status": "canonical-source-registry",
   "generated_by": "bin/build_source_inventory.py",
   "footnote_sources": [

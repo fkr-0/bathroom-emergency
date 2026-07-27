@@ -1,8 +1,8 @@
 ---
 title: "Situation G — No Safe Place"
 chapter: "3G"
-revision: "4.7.0"
-last_updated: "2026-07-26"
+revision: "4.8.0"
+last_updated: "2026-07-27"
 dependencies:
   - build/diagrams/safe_place_route_map.png
   - build/diagrams/communication_access_card.png

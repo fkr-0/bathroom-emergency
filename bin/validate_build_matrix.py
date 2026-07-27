@@ -40,6 +40,14 @@ for path in (
     "build/subguides/index.html",
     "build/subguides/manifest.json",
     "build/site/index.html",
+    "build/site/deploy/index.html",
+    "build/site/downloads/index.html",
+    "build/site/404.html",
+    "build/site/assets/site.css",
+    "build/site/assets/site.js",
+    "build/site/guide/index.html",
+    "build/site/routes/index.html",
+    "build/site/meta/release.json",
     "build/release/manifest.json",
 ):
     need(path)

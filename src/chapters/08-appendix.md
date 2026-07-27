@@ -1,8 +1,8 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.7.0"
-last_updated: "2026-07-26"
+revision: "4.8.0"
+last_updated: "2026-07-27"
 dependencies:
   - build/diagrams/two_pass_route_map.png
   - build/diagrams/evidence_classes.png

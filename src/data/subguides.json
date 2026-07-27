@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.7.0",
+  "release": "4.8.0",
   "status": "core-graph-with-six-standalone",
   "identity_frozen_on": "2026-07-26",
   "standalone_nodes": [

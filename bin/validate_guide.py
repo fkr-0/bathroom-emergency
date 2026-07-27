@@ -8,6 +8,8 @@ import re
 import subprocess
 from pathlib import Path
 
+from project_meta import RELEASE_DATE
+
 ROOT = Path(__file__).resolve().parent.parent
 CHAPTERS = sorted((ROOT / "src" / "chapters").glob("*.md"))
 STYLE = (ROOT / "src" / "style.css").read_text(encoding="utf-8")
@@ -373,8 +375,8 @@ for path in CHAPTERS:
         f"{path.name}: revision is not {VERSION}",
     )
     check(
-        re.search(r"last_updated:\s*[\"']2026-07-26[\"']", text) is not None,
-        f"{path.name}: release date is not 2026-07-26",
+        re.search(rf"last_updated:\s*[\"']{re.escape(RELEASE_DATE)}[\"']", text) is not None,
+        f"{path.name}: release date is not {RELEASE_DATE}",
     )
 
 # v3.3 breadth must remain represented even though unsafe claims were rewritten.
