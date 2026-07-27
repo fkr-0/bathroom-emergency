@@ -160,13 +160,22 @@ if SUBGUIDES.exists():
 meta_path = SITE / "meta" / "release.json"
 if meta_path.exists():
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    reference_registry = json.loads(
+        (ROOT / "src" / "data" / "reference_ids.json").read_text(encoding="utf-8")
+    )
+    expected_active_references = len(reference_registry.get("ids", {})) - len(
+        reference_registry.get("retired_resource_keys", [])
+    )
     check(meta.get("release") == VERSION, "site release metadata version drifted")
     check(meta.get("published_by_this_build") is False, "site metadata falsely claims publication")
     check(meta.get("deployment_performed_by_this_build") is False, "site metadata falsely claims deployment")
     metrics = meta.get("metrics", {})
     check(metrics.get("chapters") == 14, "site chapter metric drifted")
     check(metrics.get("standalone") == 6, "site standalone metric drifted")
-    check(metrics.get("references", 0) >= 300, "site stable-reference metric unexpectedly small")
+    check(
+        metrics.get("references") == expected_active_references,
+        "site active stable-reference metric drifted",
+    )
     check(metrics.get("visuals", 0) >= 30, "site reader-visual metric unexpectedly small")
     check(metrics.get("standalone_pdf_editions") == 36, "site standalone PDF metric drifted")
 

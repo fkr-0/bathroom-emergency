@@ -617,7 +617,8 @@ def build() -> Path:
     metrics = {
         "chapters": len(list((ROOT / "src" / "chapters").glob("*.md"))),
         "standalone": len(released),
-        "references": len(references.get("ids", {})),
+        "references": len(references.get("ids", {}))
+        - len(references.get("retired_resource_keys", [])),
         "visuals": coverage["totals"]["reader_visuals"],
     }
 
