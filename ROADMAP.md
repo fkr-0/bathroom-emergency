@@ -461,7 +461,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete the exact-source build/test matrix and record 4.11.0 evidence;
 - [x] tag `v4.11.0` locally without pushing, publishing, or deploying.
 
-### 4.12.0 — Encapsulation and cross-reference grammar — release candidate
+### 4.12.0 — Encapsulation and cross-reference grammar — released
 
 - [x] add scope, boundary, aliases, exit rule, and resource map to every
   released standalone family;
@@ -473,8 +473,8 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   references;
 - [x] preserve public reference IDs across planned heading rewrites;
 - [x] retain the nine-family, 54-standalone-PDF release matrix;
-- [ ] complete exact-revision build/test evidence for 4.12.0;
-- [ ] tag `v4.12.0` locally without pushing, publishing, or deploying.
+- [x] complete exact-revision build/test evidence for 4.12.0;
+- [x] tag `v4.12.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 
