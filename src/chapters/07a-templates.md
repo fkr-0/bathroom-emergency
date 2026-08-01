@@ -1,22 +1,27 @@
 ---
 title: "Templates: The Blue Book"
 chapter: "T"
-revision: "4.11.0"
+revision: "4.12.0"
 last_updated: "2026-08-02"
 dependencies: []
 ---
 
 # Templates — The Blue Book
 
-**Take pages. Write on them. Replace them when the world changes.**
+**Take a page. Put the needed fact on it. Replace it when the world changes.**
 
-The rest of the guide explains. This part externalizes. It contains the things a
-reader, helper, household, or deployer should not have to reconstruct from
-memory while frightened, tired, hurt, overloaded, or holding a phone with one
-hand.
+The other routes explain, decide, and escalate. **T — Templates** externalizes:
+it gives facts, plans, observations, and handoffs a stable place outside a
+reader’s working memory. That matters when someone is frightened, tired, hurt,
+overloaded, or holding a phone with one hand.
 
 A blank form is not proof of preparation. A completed form is not proof of
 safety. These pages are small interfaces between attention and action.
+
+The Blue Book’s blueprint-corner pattern and blue accent identify the template
+family. The smaller route chips on each form identify the operational routes
+that use that page. A form may therefore be **owned by T** and still support C,
+D, P, or Z without becoming four competing copies.
 
 ## Mini contents
 
@@ -48,6 +53,37 @@ prompt, and send the correction upstream. The paper works for the person; the
 person does not work for the paper.
 :::
 
+## How to read the route band
+
+Every canonical form begins with a generated identity band:
+
+- **Stable reference:** the `[BEG:T:F:...]` address remains attached when page
+  numbers or headings move.
+- **Route chips:** code and title are primary; colour speeds scanning; the
+  printed pattern and written pattern name preserve identity in monochrome and
+  spoken handoffs.
+- **Privacy class:** decide whether the completed page may remain visible,
+  requires local review, or belongs in protected storage.
+- **Figures:** stable figure references point to the diagram that explains or
+  tests the same operation.
+- **Support:** service references point to the professional route that can
+  receive the completed packet.
+
+Multiple route chips do not mean multiple owners. They mean one form is a
+shared handoff object. Write once, protect once, update once, and let several
+routes use the same current facts.
+
+## Use, update, replace
+
+1. **Use** only the fields relevant to the current action.
+2. **Update** facts after a move, service change, failed route, care change, or
+   privacy change.
+3. **Replace** a detached page when its version, review date, physical condition,
+   or local truth no longer matches the installation.
+
+The stable address travels with the page. Sensitive content does not become
+safe merely because the form has excellent typography.
+
 ## Who fills what?
 
 | Role | Owns | May support | Must not assume |
@@ -73,7 +109,7 @@ which copy this is, who maintains it, and when local facts expire.
 | Copy / site name | |
 | Exact placement | |
 | Deployer or maintainer | |
-| Guide version | 4.11.0 |
+| Guide version | 4.12.0 |
 | Local customization revision | |
 | Build commit | |
 | Built on | |
@@ -478,8 +514,9 @@ therefore a future illustrated insert rather than confident origami fan fiction.
 
 ## Take, replace, improve
 
-Templates may be copied independently. Keep the stable reference, guide version,
-and local review date with each detached page. A page without provenance can be
-useful today and dangerous after three phone-number changes.
+Templates may be copied independently. Keep the route band, stable reference,
+guide version, privacy class, and local review date with each detached page. A
+page without provenance can be useful today and dangerous after three phone-
+number changes.
 
 {{subguide-sources:T}}

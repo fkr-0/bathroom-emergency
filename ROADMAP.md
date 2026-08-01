@@ -461,6 +461,21 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete the exact-source build/test matrix and record 4.11.0 evidence;
 - [x] tag `v4.11.0` locally without pushing, publishing, or deploying.
 
+### 4.12.0 — Encapsulation and cross-reference grammar — release candidate
+
+- [x] add scope, boundary, aliases, exit rule, and resource map to every
+  released standalone family;
+- [x] add stable figure cards joining illustrations to route identity, reader
+  question, and paired Blue Book forms;
+- [x] add privacy-aware route bands to all eighteen canonical forms;
+- [x] add generated support-to-form-to-figure handoff mapping;
+- [x] replace duplicate support and appendix tables with canonical form/index
+  references;
+- [x] preserve public reference IDs across planned heading rewrites;
+- [x] retain the nine-family, 54-standalone-PDF release matrix;
+- [ ] complete exact-revision build/test evidence for 4.12.0;
+- [ ] tag `v4.12.0` locally without pushing, publishing, or deploying.
+
 ### Cross-release visualization program
 
 Tracked in `docs/plans/visualization-program.md`.

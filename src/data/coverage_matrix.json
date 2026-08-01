@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.11.0",
+  "release": "4.12.0",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -9,7 +9,7 @@
   },
   "totals": {
     "nodes": 10,
-    "sections": 220,
+    "sections": 224,
     "sources": 54,
     "reader_visuals": 37,
     "standalone_nodes": 9
@@ -307,7 +307,7 @@
         "07-professional-support.md"
       ],
       "chapter_count": 1,
-      "section_count": 12,
+      "section_count": 13,
       "source_count": 5,
       "source_counts": {
         "operational": 5,
@@ -344,7 +344,7 @@
         "07a-templates.md"
       ],
       "chapter_count": 1,
-      "section_count": 22,
+      "section_count": 24,
       "source_count": 0,
       "source_counts": {
         "operational": 0,
@@ -370,7 +370,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 80,
+      "section_count": 81,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

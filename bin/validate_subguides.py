@@ -68,6 +68,7 @@ if PATH.exists():
         for field in (
             "slug", "title", "promise", "reviewed_on", "colour", "pattern",
             "glyph", "chapters", "sections", "incoming", "outgoing", "questions",
+            "aliases", "scope", "outside_scope",
         ):
             check(bool(item.get(field)), f"{node_id}: missing {field}")
         check(item.get("reviewed_on") == "2026-07-26", f"{node_id}: review date drifted")
@@ -136,7 +137,8 @@ if PATH.exists():
             )
         for marker in (
             "--sg-pattern", "subguide-pattern-swatch", "data-print-layout",
-            "a4half", "largeprint",
+            "a4half", "largeprint", "route-chip", "template-route-band",
+            "figure-reference", "subguide-scope-grid", "edition-resource-map",
         ):
             check(marker in style, f"subguide CSS marker missing: {marker}")
 

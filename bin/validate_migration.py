@@ -212,6 +212,8 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
             "Professional Support — When the Bathroom Is Too Small",
             "Germany quick reference",
             "The call script — location before autobiography",
+            "Make the contact operational — ask, confirm, record",
+            "Support handoff map — service, form, figure, and route",
             "IASC support pyramid — start with foundations",
             "Support-selection matrix",
             "Sources and limits",
@@ -291,6 +293,8 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
         0,
         (
             "Templates — The Blue Book",
+            "How to read the route band",
+            "Use, update, replace",
             "Deployment cover and ownership card",
             "Observation and vital-sign log",
             "Feedback and field-note sheet",
@@ -308,8 +312,10 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
         (
             "Reference and Appendix — The Useful Loose Ends",
             "Stable references — addresses that survive editing",
+            "Route identity key — code, colour, pattern, and glyph",
             "Professional contact and service index",
-            "Diagram, chart, map, and figure index",
+            "Illustration cross-reference — figures, routes, and forms",
+            "Fillable fields live in T — Templates",
             "Glossary",
             "Global content index",
             "Source, visual, and standalone coverage matrix",
@@ -341,6 +347,23 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
     )
     outputs = manifest.get("outputs", {})
     check(set(outputs) == {"a4", "a4half", "largeprint"}, f"{node}: layout set drifted")
+    encapsulation = manifest.get("encapsulation", {})
+    for field in ("scope", "outside_scope", "aliases", "figure_refs", "form_refs", "support_refs"):
+        check(field in encapsulation, f"{node}: encapsulation lacks {field}")
+    check(bool(encapsulation.get("scope")), f"{node}: empty standalone scope")
+    check(bool(encapsulation.get("outside_scope")), f"{node}: empty standalone boundary")
+    check(bool(encapsulation.get("aliases")), f"{node}: no canonical aliases")
+    check(
+        len(encapsulation.get("figure_refs", [])) == manifest.get("canonical_visual_count", 0),
+        f"{node}: figure reference set differs from canonical visual count",
+    )
+    if node == "P":
+        check(bool(encapsulation.get("form_refs")), "P: no linked Blue Book forms")
+        check(bool(encapsulation.get("support_refs")), "P: no linked support services")
+    if node == "T":
+        check(len(encapsulation.get("form_refs", [])) == 18, "T: not all canonical forms are indexed")
+    if node == "R":
+        check(bool(encapsulation.get("form_refs")), "R: no linked review/reference forms")
 
     reference_text: str | None = None
     for layout in ("a4", "a4half", "largeprint"):
@@ -365,6 +388,8 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
                 content_region = text.split("# Handoff", 1)[0]
                 for marker in required:
                     check(marker in text, f"{node}: canonical marker missing: {marker}")
+                for marker in ("Edition contract", "Edition resource map", "Deliberate boundary", "Canonical names"):
+                    check(marker in text, f"{node}: encapsulation marker missing: {marker}")
                 for marker in forbidden:
                     check(
                         f"\n## {marker}" not in content_region,
@@ -397,6 +422,24 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
                     f'data-subguide="{node}"' in html_text,
                     f"{node}/{stem}: identity wrapper missing",
                 )
+                check(
+                    'class="subguide-scope-grid"' in html_text,
+                    f"{node}/{stem}: edition contract grid missing",
+                )
+                check(
+                    'class="edition-resource-map"' in html_text,
+                    f"{node}/{stem}: edition resource map missing",
+                )
+                if manifest.get("canonical_visual_count", 0):
+                    check(
+                        'class="figure-reference"' in html_text,
+                        f"{node}/{stem}: figure cross-reference cards missing",
+                    )
+                if node == "T":
+                    check(
+                        html_text.count('class="template-route-band"') >= 18,
+                        f"{node}/{stem}: canonical template route bands incomplete",
+                    )
                 current_text = semantic_text(html)
                 if reference_text is None:
                     reference_text = current_text

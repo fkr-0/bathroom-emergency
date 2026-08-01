@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 from project_meta import VERSION, build_date, git_revision, revision_footer_css
-from build_reference_index import inject_heading_ids
+from build_reference_index import decorate_figure_references, inject_heading_ids
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
@@ -165,6 +165,8 @@ def expand_reference_macros(text: str) -> str:
         "deployment-field-index": "deployment-index.md",
         "glossary-index": "glossary-index.md",
         "detachable-form-index": "form-index.md",
+        "route-identity-index": "route-identity-index.md",
+        "support-form-map": "support-form-map.md",
         "coverage-matrix": "coverage-matrix.md",
     }
     for macro, filename in mapping.items():
@@ -175,7 +177,7 @@ def expand_reference_macros(text: str) -> str:
         if not path.exists():
             raise BuildError(f"Generated reference fragment missing: {path}")
         text = text.replace(token, path.read_text(encoding="utf-8").strip())
-    if re.search(r"\{\{(?:global-content-index|diagram-index-generated|professional-contact-index|deployment-field-index|glossary-index|detachable-form-index|coverage-matrix)\}\}", text):
+    if re.search(r"\{\{(?:global-content-index|diagram-index-generated|professional-contact-index|deployment-field-index|glossary-index|detachable-form-index|route-identity-index|support-form-map|coverage-matrix)\}\}", text):
         raise BuildError("Unexpanded reference-index macro remains")
     return text
 
@@ -233,6 +235,7 @@ def expand_subguide_source_macros(text: str, records: list[dict]) -> str:
 def assemble() -> Path:
     visualizations = visualization_lookup()
     source_records = source_inventory_records()
+    seen_figure_refs: set[str] = set()
     parts = [
         "---",
         'title: "Bathroom Emergency Guide"',
@@ -249,7 +252,8 @@ def assemble() -> Path:
         body = expand_visualization_macros(body, visualizations)
         body = expand_subguide_source_macros(body, source_records)
         body = expand_reference_macros(body)
-        body = inject_heading_ids(body, filename).strip()
+        body = inject_heading_ids(body, filename)
+        body = decorate_figure_references(body, seen_figure_refs).strip()
         slug = path.stem
         classes = "chapter document-cover" if index == 0 else "chapter"
         parts.extend([

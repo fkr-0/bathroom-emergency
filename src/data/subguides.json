@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.11.0",
+  "release": "4.12.0",
   "status": "core-graph-with-nine-standalone",
   "identity_frozen_on": "2026-07-26",
   "standalone_nodes": [
@@ -60,7 +60,14 @@
       "questions": [
         "What is happening in body, room, and attention?",
         "Which route owns the loudest problem?"
-      ]
+      ],
+      "aliases": [
+        "Ch.1",
+        "Observatory",
+        "orientation"
+      ],
+      "scope": "Observe body, room, and attention, then choose the route that owns the next useful action.",
+      "outside_scope": "Does not diagnose symptoms or replace the route that owns an identified danger."
     },
     {
       "id": "A",
@@ -98,7 +105,14 @@
       "questions": [
         "Who may depend on this action?",
         "What repair and continuing care are required?"
-      ]
+      ],
+      "aliases": [
+        "Ch.2",
+        "Situation A",
+        "responsibility"
+      ],
+      "scope": "Separate immediate harm, repair, consent, dependency, and continuing care.",
+      "outside_scope": "Does not decide legal liability or replace medical, safety, or social-service routes."
     },
     {
       "id": "B",
@@ -136,7 +150,15 @@
       "questions": [
         "Is alarm the primary problem?",
         "What reduces load without hiding a red flag?"
-      ]
+      ],
+      "aliases": [
+        "Ch.3B",
+        "Ch.3E",
+        "Ch.4",
+        "Calm Guide"
+      ],
+      "scope": "Reduce alarm and overload enough to notice, choose, and complete one safe action.",
+      "outside_scope": "Does not explain away bodily red flags, active threats, or unsafe environments."
     },
     {
       "id": "C",
@@ -177,7 +199,14 @@
       "questions": [
         "Is body injury or illness primary?",
         "What can safely happen while help is arranged?"
-      ]
+      ],
+      "aliases": [
+        "Ch.3C",
+        "Ch.5",
+        "First Aid"
+      ],
+      "scope": "Route injury and illness and support the body while professional help is arranged.",
+      "outside_scope": "Does not replace dispatch instructions, clinical diagnosis, or hands-on training."
     },
     {
       "id": "D",
@@ -219,7 +248,14 @@
       "questions": [
         "Is a person or place unsafe?",
         "Which confirmed destination and backup exist?"
-      ]
+      ],
+      "aliases": [
+        "Ch.3D",
+        "Situation G",
+        "safe place"
+      ],
+      "scope": "Name the unsafe person or place and move toward a confirmed destination with a backup.",
+      "outside_scope": "Does not provide tactical confrontation advice or treat a suggested destination as confirmed."
     },
     {
       "id": "H",
@@ -259,7 +295,14 @@
       "questions": [
         "Is the environment unsafe now?",
         "Is the source indoors or an official outside warning?"
-      ]
+      ],
+      "aliases": [
+        "Ch.3F",
+        "Situation H",
+        "environmental gate"
+      ],
+      "scope": "Identify room, building, air, wiring, and substance hazards before ordinary troubleshooting.",
+      "outside_scope": "Does not authorize re-entry, improvised chemical treatment, or work on live systems."
     },
     {
       "id": "Z",
@@ -299,7 +342,14 @@
       "questions": [
         "Which household function is failing?",
         "Who owns the next action, backup, and review time?"
-      ]
+      ],
+      "aliases": [
+        "Ch.6",
+        "Outage Guide",
+        "continuity"
+      ],
+      "scope": "Keep essential household functions visible, assigned, backed up, and reviewed during disruption.",
+      "outside_scope": "Does not replace official warnings, clinical device plans, or local evacuation instructions."
     },
     {
       "id": "P",
@@ -341,7 +391,14 @@
       "questions": [
         "Which system can change the named problem?",
         "What is the first route and backup route?"
-      ]
+      ],
+      "aliases": [
+        "Ch.7",
+        "Support Directory",
+        "professional help"
+      ],
+      "scope": "Match a named problem to the service able to change it, then prepare a usable handoff and backup.",
+      "outside_scope": "Does not guarantee service availability, accommodation, treatment, legal outcome, or response time."
     },
     {
       "id": "T",
@@ -383,7 +440,14 @@
       "questions": [
         "Which fact, list, map, log, or handoff should leave working memory?",
         "Who completes, protects, checks, and replaces this page?"
-      ]
+      ],
+      "aliases": [
+        "Ch.7A",
+        "Blue Book",
+        "templates"
+      ],
+      "scope": "Externalize facts, plans, logs, and handoffs that should not depend on working memory.",
+      "outside_scope": "A completed form does not prove safety, competence, consent, or current local accuracy."
     },
     {
       "id": "R",
@@ -427,7 +491,14 @@
       "questions": [
         "Which formula, source, field, or complete route is needed?",
         "How can the result be checked and reproduced?"
-      ]
+      ],
+      "aliases": [
+        "Ch.8",
+        "Appendix",
+        "Reference"
+      ],
+      "scope": "Locate stable references, figures, forms, services, fields, formulas, sources, and build evidence.",
+      "outside_scope": "Reference material supports a route; it is not an emergency reading queue or a substitute for action."
     }
   ]
 }

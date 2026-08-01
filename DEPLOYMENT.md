@@ -27,6 +27,12 @@ when the copy must be replaced.
      legible on the actual printer.
 3. Fill the required fields in `src/data/deployment_fields.json` or the Blue Book
    forms.
+   - keep each detached form’s stable reference, route band, privacy class, and
+     local review date attached;
+   - do not crop away route codes or patterns merely because the colour looks
+     sufficient on one printer;
+   - when a form names figures or support services, keep those references with
+     the deployed packet or confirm that they remain immediately findable.
 4. Verify every local number from an official or directly responsible source.
 5. Mark private and context-sensitive fields; do not expose hidden-key, medical,
    violence-shelter, credential, or safety-plan data on a shared wall copy.

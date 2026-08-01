@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.11.0",
+  "release": "4.12.0",
   "status": "canonical-source-registry",
   "generated_by": "bin/build_source_inventory.py",
   "footnote_sources": [
@@ -796,7 +796,7 @@
         "https://doi.org/10.1177/1745691614568352"
       ],
       "used_at_lines": [
-        213
+        240
       ],
       "subguides": [
         "P"
@@ -812,7 +812,7 @@
         "https://interagencystandingcommittee.org/iasc-task-force-mental-health-and-psychosocial-support-emergency-settings/iasc-guidelines-mental-health-and-psychosocial-support-emergency-settings-2007"
       ],
       "used_at_lines": [
-        104
+        131
       ],
       "subguides": [
         "P"
@@ -829,7 +829,7 @@
         "https://service.justiz.de/prozesskostenhilfe"
       ],
       "used_at_lines": [
-        286
+        313
       ],
       "subguides": [
         "P"
@@ -847,8 +847,8 @@
         "https://www.hilfetelefon.de/"
       ],
       "used_at_lines": [
-        36,
-        48
+        39,
+        51
       ],
       "subguides": [
         "P"
@@ -864,7 +864,7 @@
         "https://gesund.bund.de/sozialpsychiatrischer-dienst"
       ],
       "used_at_lines": [
-        147
+        174
       ],
       "subguides": [
         "P"

@@ -1,7 +1,7 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.11.0"
+revision: "4.12.0"
 last_updated: "2026-08-02"
 dependencies:
   - build/diagrams/vega_social_connection.png
@@ -12,10 +12,13 @@ dependencies:
 
 # Professional Support — When the Bathroom Is Too Small
 
-Professional systems are specialized interfaces, not a ladder from “minor” to
-“serious.” A hospital cannot replace housing; a therapist cannot repair a gas
-line; a friend cannot issue a prescription; an authority finder cannot promise
-a bed. Name the next concrete problem, then choose the system built to alter it.
+Professional systems are different kinds of leverage, not rungs on a ladder
+from “minor” to “serious.” A hospital can treat an acute illness but cannot
+create housing. A therapist can provide treatment but cannot repair a gas line.
+A friend can stay, write, drive, and call but cannot issue a prescription. An
+authority finder can identify an office but cannot promise that the office has a
+bed. **P — Professional Support** begins by naming the change required, then
+chooses the system that has the power to make that change.
 
 ## Germany quick reference
 
@@ -95,6 +98,30 @@ Useful instruction:
 
 > “I communicate best by **[writing / text / sign / pointing / yes-no]**. Please
 > use one sentence and one question at a time.”
+
+## Make the contact operational — ask, confirm, record
+
+Reaching a number, directory, waiting room, or inbox is not yet a completed
+handoff. Before ending contact, obtain the smallest workable packet:
+
+1. **Ask for the concrete outcome.** Advice, assessment, transport, an
+   appointment, accommodation, a home visit, a document, or another named
+   action are different requests.
+2. **Give the minimum facts.** Location, access, current state, immediate
+   danger, relevant time, and a callback route usually matter before a complete
+   history.
+3. **Confirm what exists now.** Record who accepted the handoff, what they will
+   do, where and when it happens, and what the reader must do next.
+4. **Name the backup.** Ask what to do if no reply arrives, access fails, the
+   state worsens, or the promised resource is unavailable.
+5. **Assign the next check.** A person and a time prevent “someone should follow
+   up” from becoming a quiet dead end.
+
+Use **T — Templates** to carry the facts rather than rebuilding them during
+each call. The generated map below joins services to the relevant forms,
+figures, and route identities.
+
+{{support-form-map}}
 
 ## Psychological support
 
@@ -366,7 +393,8 @@ problem**, not the one whose website contains the most inspiring stock photo.
 
 ## Housing and “no place tonight”
 
-Use **Situation G — No Safe Place** before choosing a service. It separates:
+Use **D — Threat and Safe Place**, especially its **Situation G — No Safe
+Place** branch, before choosing a service. It separates:
 
 1. violence, coercion, or an active threat;
 2. no weather-safe roof tonight;
@@ -381,7 +409,7 @@ cannot promise a bed. Specialist violence services, youth emergency services,
 accessible accommodation, transport, powered destinations, and animal-compatible
 places remain local fields that must be confirmed before deployment.
 
-Use the Situation G handoff:
+Use the D / Situation G handoff:
 
 > “I need a safe place for **[tonight / one hour / until treatment resumes]**.
 > The reason is **[route]**. Access and care needs are **[list]**. What can you
@@ -419,32 +447,19 @@ Do not delay leaving immediate danger to obtain the perfect folder.
   <p><strong>116 111</strong> children and young people</p>
 </div>
 
-## Fill these before deployment
+## Pair support with a maintained Blue Book page
 
-| Local resource | Name / number / route |
-|---|---|
-| Trusted person | |
-| Emergency contact | |
-| GP / practice | |
-| Pharmacy / night service | |
-| Local crisis service | |
-| Sozialpsychiatrischer Dienst | |
-| Psychiatric emergency department | |
-| Poison centre | |
-| Maternity / gynecology | |
-| Pediatric emergency | |
-| Veterinary emergency | |
-| Safe place / specialist shelter | |
-| Emergency housing — daytime | |
-| Emergency housing — after hours | |
-| Accessible accommodation / transport | |
-| Powered care destination | |
-| Youth emergency service | |
-| Legal advice / tenant support | |
-| Building utility emergency | |
+Complete **[BEG:T:F:008] Local professional contacts** before deployment and
+keep **[BEG:T:F:003] Emergency call card**, **[BEG:T:F:009] Location and access
+card**, and any route-specific form beside it. The contact page owns names,
+numbers, hours, access channels, verification dates, and backups; **P —
+Professional Support** owns the selection logic and limits. Keeping those jobs
+separate prevents a long explanatory route from becoming a second, stale
+contact database.
 
-Do not print passwords, PINs, alarm codes, or secret key locations in a guide
-left in a shared bathroom. Toothbrush proximity is not a security model.
+Do not print passwords, PINs, alarm codes, hidden safe-place locations, or
+secret key locations in a guide left in a shared bathroom. Toothbrush proximity
+is not a security model.
 
 ## Support-selection matrix
 
@@ -462,8 +477,8 @@ ordinary sequence.
 | acute psychological danger | 112 | psychiatric emergency service |
 | crisis without acute danger | 116 123 / local service | 116 117 / GP |
 | domestic or gendered violence | 116 016 / specialist shelter | 110 / 112 in danger |
-| no housing tonight | Situation G → municipal emergency accommodation; 115 may identify authority during hours | 110 / 112 if unsafe/exposed |
-| accommodation fails access or care | Situation G → accessible local destination / care team / 116 117 | 112 if essential function or transfer fails |
+| no housing tonight | D / Situation G → municipal emergency accommodation; 115 may identify authority during hours | 110 / 112 if unsafe/exposed |
+| accommodation fails access or care | D / Situation G → accessible local destination / care team / 116 117 | 112 if essential function or transfer fails |
 | legal problem | qualified lawyer / specialist advice | Beratungshilfe if eligible |
 | caregiver overload | care/family/youth/social service | crisis or emergency route if unsafe |
 

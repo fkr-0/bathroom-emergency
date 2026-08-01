@@ -12,7 +12,7 @@ The project is not one long emergency leaflet. It is a maintained family of:
 - one complete master guide;
 - ten graph-linked content identities;
 - nine released standalone subguide families;
-- detachable forms and deployment fields;
+- detachable forms with route, figure, support, privacy, and pattern metadata;
 - a stable global reference registry;
 - a modern project landing page, deployment planner, download catalogue, route
   hub, and enhanced HTML guide;
@@ -114,6 +114,12 @@ accessibility gates. O, B, C, D, H, Z, P, T, and R currently meet that release
 contract. A remains master-only while its visual and standalone review work is
 incomplete.
 
+Each released edition also declares an **encapsulation contract**: what belongs
+inside, what remains outside scope, which canonical/legacy names it answers to,
+how to exit to another route, and which figures, Blue Book forms, support
+services, and route identities travel with it. Those relationships are stored
+in the standalone manifest and validated across every layout/mode edition.
+
 ### Stable public references
 
 Canonical references use:
@@ -140,6 +146,19 @@ Kinds:
 The corresponding HTML anchor is `#beg-c-s-004`. Page numbers and hierarchical
 chapter numbers remain useful navigation aids, but they are not canonical IDs:
 an insertion must not silently rename every later resource.
+
+### Route identity and cross-reference grammar
+
+Every route has a code, title, colour, print-safe pattern, and glyph name. Code
+and title are primary. Colour accelerates scanning; pattern and written glyph
+name preserve identity in monochrome, low-colour printing, screen-reader
+context, and spoken handoffs.
+
+Every canonical figure occurrence carries its stable figure reference, owning
+route, reader question, and paired forms. Every canonical form carries its
+stable form reference, privacy class, operational route chips, related figures,
+and relevant support services. The generated Reference and Professional Support
+indexes expose the same relationships without maintaining parallel copies.
 
 Source files:
 

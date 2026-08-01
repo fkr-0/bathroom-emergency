@@ -1,12 +1,39 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.11.0"
+revision: "4.12.0"
 last_updated: "2026-08-02"
 dependencies: []
 ---
 
 # Version History
+
+## 4.12.0 — 2 August 2026
+
+### Every detached route states its contract
+
+- Each released standalone family now states its inside scope, deliberate
+  boundary, canonical aliases, exit rule, and local resource map.
+- Standalone manifests record linked figure, form, support, and route references
+  so completeness is checked across A4, A4/2, large print, colour, and mono.
+
+### Figures and forms carry their context
+
+- Figure cards now carry stable addresses, owning route identity, pattern,
+  glyph, reader question, and paired Blue Book forms.
+- All eighteen canonical forms carry a generated route band with privacy class,
+  route chips, related figures, and support-service references.
+- Reference and Professional Support expose generated relationship maps instead
+  of maintaining duplicate contact, diagram, and fillable-field tables.
+
+### Clearer language keeps the same address
+
+- Professional Support now distinguishes reaching a service from confirming a
+  usable outcome, backup, owner, and review time.
+- The appendix maps eight legacy situation doors into ten maintained route
+  identities and keeps writable facts in T — Templates.
+- Five rewritten headings retain their previous stable public references; a
+  wording improvement does not retire a resource that still exists.
 
 ## 4.11.0 — 2 August 2026
 

@@ -1,5 +1,38 @@
 # Changelog
 
+## 4.12.0 — 2026-08-02
+
+### Made standalone editions explicit field objects
+
+- Added an edition contract to every released route: inside scope, deliberate
+  boundary, canonical aliases, exit rule, and a local resource map.
+- Added figure, form, support, and route references to standalone manifests so
+  encapsulation is validated rather than inferred from a cover.
+- Kept all nine released families on one canonical source tree and retained the
+  existing 54-PDF layout/mode matrix.
+
+### Joined figures, forms, support, and route identities
+
+- Added generated figure cards carrying stable addresses, owning route,
+  pattern, glyph, reader question, and paired Blue Book forms.
+- Added an eighteen-form route-band system with privacy class, operational route
+  chips, related figures, and professional-support references.
+- Rebuilt Reference indexes around route identity, illustration/form pairing,
+  and service-to-handoff relationships instead of duplicated prose tables.
+- Added a support handoff map that distinguishes reaching a service from
+  confirming an outcome, backup, owner, and review time.
+
+### Improved writing without breaking public addresses
+
+- Rewrote Professional Support around the concrete change each system can make
+  and clarified the minimum operational handoff.
+- Clarified how eight legacy situation doors map into ten maintained route
+  identities and moved writable local facts back to their canonical T forms.
+- Preserved the prior stable references for five rewritten headings; no active
+  resource was retired merely because its wording improved.
+- Preserved the publication boundary: no push, publication, deployment, or
+  Pages workflow is performed by the local release build.
+
 ## 4.11.0 — 2026-08-02
 
 ### Released Outage and Continuity as a standalone family

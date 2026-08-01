@@ -13,6 +13,7 @@ from project_meta import RELEASE_DATE
 ROOT = Path(__file__).resolve().parent.parent
 CHAPTERS = sorted((ROOT / "src" / "chapters").glob("*.md"))
 STYLE = (ROOT / "src" / "style.css").read_text(encoding="utf-8")
+STYLE_SUBGUIDES = (ROOT / "src" / "style-subguides.css").read_text(encoding="utf-8")
 STYLE_A4_HALF = (ROOT / "src" / "style-a4-half.css").read_text(encoding="utf-8")
 STYLE_LARGE_PRINT = (ROOT / "src" / "style-large-print.css").read_text(encoding="utf-8")
 HTML = ROOT / "build" / "html" / "guide.html"
@@ -38,6 +39,7 @@ VISUALIZATION_PLAN = ROOT / "docs" / "plans" / "visualization-program.md"
 SOURCE_LOCALIZATION_PLAN = ROOT / "docs" / "plans" / "subguide-source-localization.md"
 OD_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.10.0-od-standalone-release.md"
 Z_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.11.0-z-standalone-release.md"
+ENCAPSULATION_PLAN = ROOT / "docs" / "plans" / "4.12.0-encapsulation-cross-reference-release.md"
 errors: list[str] = []
 
 
@@ -121,6 +123,11 @@ check("font-size: 13.25pt" in STYLE_LARGE_PRINT, "large-print typography invaria
 check("LARGE PRINT / TEXT ROUTE FOLLOWS" in STYLE_LARGE_PRINT, "large-print text-route marker missing")
 check(".revision-footer" in STYLE, "revision footer styling missing")
 check("h2::before" in STYLE, "prominent heading accent marker missing")
+for marker in (
+    ".route-chip", ".template-route-band", ".figure-reference",
+    ".subguide-scope-grid", ".edition-resource-map",
+):
+    check(marker in STYLE_SUBGUIDES, f"subguide cross-reference styling missing: {marker}")
 
 # Evidence registry and figure checks. A chart may be simple; its provenance may not.
 evidence: dict = {}
@@ -340,6 +347,11 @@ for path, label, markers in (
         "4.11.0 Z standalone plan",
         ("Canonical extraction", "Outage and Continuity", "54", "NINA", "Do not push"),
     ),
+    (
+        ENCAPSULATION_PLAN,
+        "4.12.0 encapsulation plan",
+        ("Standalone encapsulation", "Route identity grammar", "Figure cross-references", "54", "Do not push"),
+    ),
 ):
     check(path.exists(), f"{label} is missing")
     if path.exists():
@@ -412,7 +424,7 @@ parity_markers = [
     "Guide topology",
     "Flowchart legend",
     "Master flowchart",
-    "The eight entry points",
+    "Eight situation doors inside ten route identities",
     "Situation G — No Safe Place",
     "G1 — A person or active threat makes the place unsafe",
     "G2 — There is no weather-safe place to sleep tonight",
@@ -461,9 +473,9 @@ parity_markers = [
     "Legal support",
     "Housing and “no place tonight”",
     "Master cross-reference",
-    "Diagram index",
+    "Illustration cross-reference",
     "Stable references — addresses that survive editing",
-    "Fillable fields",
+    "Fillable fields live in T — Templates",
     "Master flowchart — complete text version",
     "Navigation invariant",
     "Therapy effectiveness",
@@ -515,9 +527,13 @@ if HTML.exists():
         "Feedback and field-note sheet",
         "Installation and wet-room audit",
         "First-aid figure usability review",
+        "How to read the route band",
+        "Make the contact operational — ask, confirm, record",
+        "Route identity key — code, colour, pattern, and glyph",
+        "Support handoff map — service, form, figure, and route",
         "Stable references — addresses that survive editing",
         "Professional contact and service index",
-        "Diagram, chart, map, and figure index",
+        "Illustration cross-reference — figures, routes, and forms",
         "Global content index",
         "Source, visual, and standalone coverage matrix",
     ):

@@ -17,7 +17,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from build_reference_index import inject_heading_ids, mini_toc
+from build_reference_index import decorate_figure_references, inject_heading_ids, mini_toc
 from project_meta import (
     SOURCE_REVIEW_DATE,
     VERSION,
@@ -254,6 +254,92 @@ def neighbour_grid(node: dict, titles: dict[str, str]) -> str:
     return f'<div class="subguide-neighbours">{blocks}</div>'
 
 
+def route_chip(route: str, nodes: dict[str, dict]) -> str:
+    node = nodes[route]
+    return (
+        f'<span class="route-chip" data-subguide="{route}">'
+        f'<strong>{route}</strong><span>{node["title"]}</span>'
+        f'<small>{node["pattern"].replace("-", " ")}</small></span>'
+    )
+
+
+def edition_resource_map(node: dict, visual_files: list[str]) -> tuple[str, dict]:
+    index = json.loads((DATA_DIR / "content_index.json").read_text(encoding="utf-8"))
+    records = index["records"]
+    nodes = {
+        item["id"]: item
+        for item in json.loads((DATA_DIR / "subguides.json").read_text(encoding="utf-8"))["nodes"]
+    }
+    visual_records = [
+        item for item in records
+        if item.get("kind") == "G" and item.get("file") in visual_files
+    ]
+    form_records = [
+        item for item in records
+        if item.get("kind") == "F"
+        and (node["id"] == "T" or node["id"] in item.get("routes", []))
+    ]
+    support_keys = {
+        key for form in form_records for key in form.get("support_keys", [])
+    }
+    support_records = [
+        item for item in records
+        if item.get("kind") == "C" and item.get("service_key") in support_keys
+    ]
+
+    if visual_records:
+        figures = "".join(
+            f'<li><strong>{item["public_ref"]}</strong> {item["title"]}<br>'
+            f'<span>{item.get("question", "")}</span></li>'
+            for item in visual_records
+        )
+    else:
+        figures = "<li>No figure is required to use the text route.</li>"
+
+    if node["id"] == "T":
+        forms = (
+            f'<p><strong>{len(form_records)} canonical forms.</strong> Each heading below '
+            'carries its stable form address, privacy class, route chips, paired figures, '
+            'and support links.</p>'
+        )
+    elif form_records:
+        forms = "<ul>" + "".join(
+            f'<li><strong>{item["public_ref"]}</strong> {item["title"]} '
+            f'<span class="resource-privacy">{item.get("privacy", "review locally")}</span></li>'
+            for item in form_records
+        ) + "</ul>"
+    else:
+        forms = "<p>No dedicated Blue Book form is required.</p>"
+
+    if support_records:
+        support = "<ul>" + "".join(
+            f'<li><strong>{item["public_ref"]}</strong> {item["title"]} — '
+            f'{item.get("scope", "verify locally")}</li>'
+            for item in support_records
+        ) + "</ul>"
+    else:
+        support = "<p>Use the named local or emergency route when the text calls for it.</p>"
+
+    related_routes = [node["id"]]
+    for form in form_records:
+        related_routes.extend(form.get("routes", []))
+    related_routes.extend(item["owner"] for item in visual_records)
+    related_routes = list(dict.fromkeys(related_routes))
+    route_chips = "".join(route_chip(route, nodes) for route in related_routes)
+    html = f'''<div class="edition-resource-map">
+<section><h3>Figures inside this edition</h3><ul>{figures}</ul></section>
+<section><h3>Blue Book forms paired with this route</h3>{forms}</section>
+<section><h3>Support routes named by those forms</h3>{support}</section>
+<section class="edition-route-key"><h3>Route key</h3><div class="route-chip-row">{route_chips}</div></section>
+</div>'''
+    metadata = {
+        "figure_refs": [item["public_ref"] for item in visual_records],
+        "form_refs": [item["public_ref"] for item in form_records],
+        "support_refs": [item["public_ref"] for item in support_records],
+    }
+    return html, metadata
+
+
 def build_markdown(
     node: dict,
     canonical_content: str,
@@ -261,6 +347,7 @@ def build_markdown(
     *,
     layout: str,
     contents: str,
+    resource_map: str,
 ) -> str:
     node_id = node["id"]
     titles = {
@@ -301,6 +388,15 @@ def build_markdown(
 
 {questions}
 
+## Edition contract
+
+<div class="subguide-scope-grid">
+<section><strong>Inside</strong><p>{node["scope"]}</p></section>
+<section><strong>Deliberate boundary</strong><p>{node["outside_scope"]}</p></section>
+<section><strong>Canonical names</strong><p>{" · ".join(node["aliases"])}</p></section>
+<section><strong>Exit rule</strong><p>Move to a named neighbouring route when its problem becomes primary; immediate danger bypasses the graph.</p></section>
+</div>
+
 ## Neighbouring routes
 
 {neighbour_grid(node, titles)}
@@ -333,6 +429,10 @@ Questions in this edition:
 ## Mini contents
 
 {contents or '- The canonical content follows on the next page.'}
+
+## Edition resource map
+
+{resource_map}
 
 The HTML navigation and PDF outline contain the same route. The graph above and
 the handoff page below remain complete in text.
@@ -447,8 +547,10 @@ def build_node(node_id: str) -> dict:
     canonical_content = BG.expand_visualization_macros(
         canonical_content, BG.visualization_lookup()
     )
+    canonical_content = decorate_figure_references(canonical_content, set())
     contents = mini_toc(canonical_content)
     visual_files = sorted(set(IMAGE_RE.findall(canonical_content)))
+    resource_map, resource_metadata = edition_resource_map(node, visual_files)
 
     out_dir = BUILD / node_id
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -464,6 +566,7 @@ def build_node(node_id: str) -> dict:
                 ordered_sources,
                 layout=layout,
                 contents=contents,
+                resource_map=resource_map,
             )
             markdown = BG.expand_visualization_macros(
                 markdown, BG.visualization_lookup()
@@ -551,6 +654,12 @@ def build_node(node_id: str) -> dict:
         "source_count": len(ordered_sources),
         "canonical_visuals": visual_files,
         "canonical_visual_count": len(visual_files),
+        "encapsulation": {
+            "scope": node["scope"],
+            "outside_scope": node["outside_scope"],
+            "aliases": node["aliases"],
+            **resource_metadata,
+        },
         "outputs": outputs,
     }
     (out_dir / "manifest.json").write_text(

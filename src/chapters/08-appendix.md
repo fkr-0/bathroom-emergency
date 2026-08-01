@@ -1,7 +1,7 @@
 ---
 title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
 chapter: 8
-revision: "4.11.0"
+revision: "4.12.0"
 last_updated: "2026-08-02"
 dependencies:
   - build/diagrams/two_pass_route_map.png
@@ -14,9 +14,11 @@ dependencies:
 
 # Reference and Appendix — The Useful Loose Ends
 
-Use this appendix when you want the map, notation, formula index, fillable
-fields, pocket card, or full text decision tree. It is reference material, not
-a compulsory corridor before the interesting chapters.
+Use **R — Reference** when you need an address, map, formula, figure, form,
+service, field, source, or complete text route. R should shorten retrieval, not
+become a compulsory corridor before action. In an emergency, use the owning
+route or service first; return here when you need to locate, compare, cite, or
+verify something.
 
 ## Stable references — addresses that survive editing
 
@@ -42,6 +44,8 @@ kept in the registry rather than recycled for a different thing.
 The source of truth is `src/data/reference_ids.json`; the generated complete
 view is `src/data/content_index.json`.
 
+{{route-identity-index}}
+
 {{detachable-form-index}}
 
 {{deployment-field-index}}
@@ -56,21 +60,20 @@ view is `src/data/content_index.json`.
 
 {{coverage-matrix}}
 
-## Master cross-reference — where everything points
+## Master cross-reference — where problems, routes, forms, and support meet
 
-| Starting problem | Immediate destination | Deeper material | Professional route |
+| Starting problem | Owning route | Useful Blue Book form | Professional route |
 |---|---|---|---|
-| red flag / life danger | 112, Ch.5 | first-aid sections | emergency dispatcher |
-| caused harm / responsibility | Ch.2 | repair, care, postpartum, dependants | Ch.7 medical/legal/social |
-| anxiety / panic | Ch.4 | Ch.3B screening and stress context | 116 123 / 116 117 / local service |
-| pain / illness | Ch.5 | Ch.3C pain description | practice / 116 117 / 112 |
-| danger / coercion | Ch.3D | safety plan | 110 / 112 / 116 016 |
-| task overload | Ch.3E, Ch.4 | congestion board | appropriate care/support |
-| unknown smell | Situation H first, then Ch.3F | post-clearance troubleshooting | 112 / gas service / poison centre |
-| environmental danger | Situation H | fire, CO, gas, chemicals, electricity, warning instructions | 112 / gas service / poison centre |
-| nowhere safe | Situation G | violence, no roof, access-care, social/internal branches | matching national/local service; 110/112 override |
-| outage / disaster | Ch.6 | household and community planning | BBK/local authority/112 |
-| need a number or script | Ch.7 | support-selection matrix | named service |
+| red flag / life danger | **C — Body and First Aid** | emergency call; location and access | 112 / dispatcher |
+| caused harm / responsibility | **A — Responsibility and Care** | five-minute values; remarks and handoff | P medical/legal/social route as needed |
+| anxiety / panic / overload | **B — Alarm and Calm** | comfort inventory; observation log; nice-place map | 116 123 / 116 117 / local service |
+| pain / illness | **C — Body and First Aid** | observation log; emergency call | practice / 116 117 / 112 |
+| danger / coercion / nowhere safe | **D — Threat and Safe Place** | safe-place map; location and access; local contacts | 110 / 112 / specialist service |
+| unknown smell or environmental danger | **H — Air, Smell, and Environment** | emergency call; essential-care continuity | 112 / gas service / poison centre |
+| outage / disaster / failing household function | **Z — Outage and Continuity** | essential-care card; household board | BBK / local authority / 112 |
+| need a number, appointment, bed, document, or handoff | **P — Professional Support** | local contacts; emergency call; location and access | named service plus backup |
+| need a writable packet | **T — Templates** | choose by route band and privacy class | receiving route named on form |
+| need a stable address, figure, formula, or source | **R — Reference** | feedback or review form when correcting | owning route remains primary |
 
 
 ## Mathematical notation legend
@@ -87,18 +90,22 @@ view is `src/data/content_index.json`.
 | **Model** | calculation or thinking aid | communication channels in a group |
 | **Mnemonic** | memorable compression | observe, change, compare |
 
-## The eight entry points
+## Eight situation doors inside ten route identities
 
-| Door | Loudest problem | Main chapter |
-|---|---|---|
-| A | responsibility or harm | Situation A |
-| B | anxiety, panic, or unreality | Situations B and Calm Guide |
-| C | pain or physical illness | Situation C and First Aid |
-| D | danger, coercion, or violence | Situation D and Professional Support |
-| E | overload and task congestion | Situation E and Calm Guide |
-| F | bad or unknown smell | Situation F after the environmental check |
-| G | no safe or workable place | Situation G |
-| H | smoke, gas, chemicals, electricity, or unsafe air | Situation H |
+| Door | Loudest problem | Owning route | Canonical names retained |
+|---|---|---|---|
+| A | responsibility or harm | **A — Responsibility and Care** | Situation A, Ch.2 |
+| B | anxiety, panic, or unreality | **B — Alarm and Calm** | Situation B, Calm Guide, Ch.4 |
+| C | pain or physical illness | **C — Body and First Aid** | Situation C, First Aid, Ch.5 |
+| D | danger, coercion, or violence | **D — Threat and Safe Place** | Situation D |
+| E | overload and task congestion | **B — Alarm and Calm** | Situation E, Calm Guide |
+| F | bad or unknown smell | **H — Air, Smell, and Environment** | Situation F after the environmental gate |
+| G | no safe or workable place | **D — Threat and Safe Place** | Situation G |
+| H | smoke, gas, chemicals, electricity, or unsafe air | **H — Air, Smell, and Environment** | Situation H |
+
+O, Z, P, T, and R are route identities rather than additional situation doors:
+they orient, preserve continuity, connect professional systems, carry writable
+facts, and make the whole graph inspectable.
 
 ## Guide topology
 
@@ -130,30 +137,17 @@ particular design. Associations describe variables travelling together. Models
 show what follows from assumptions. None of them becomes a personal prophecy by
 being printed in a confident font.
 
-## Diagram index
+## Illustration cross-reference — what travels with a figure
 
-| Diagram | Location | Purpose |
-|---|---|---|
-| two-pass route map | Appendix | guide topology and dependency modifiers |
-| environmental hazard matrix | Situation H | first action and backup for fire, CO, gas, chemicals, electricity |
-| essential-care continuity map | Situation H, Ch.6 | medication, powered-device, transport, and destination handoff |
-| safe-place route map | Situation G | four distinct no-safe-place routes and their escalation |
-| communication-access card | Situation G | six communication and access adaptations |
-| breathing techniques | Ch.4 | optional pacing patterns |
-| first-aid triage | Ch.5 | response and escalation overview |
-| survival priority pyramid | Ch.6 | infrastructure-failure priorities |
-| group scaling chart | Ch.6 | coordination from one to 100+ |
-| evidence classes | Appendix | what protocols, studies, associations, and models may claim |
-| reproductive-health denominators | Ch.2 | lifetime prevalence versus rare-event incidence without denominator tricks |
-| GAD-7 validation comparison | Ch.3 | original study versus pooled diagnostic accuracy |
-| sleep-restriction study | Ch.3 | repeated sleep opportunity and cumulative impairment |
-| breathwork trial map | Ch.4 | trial arms, dose, outcomes, and limits |
-| stroke time model | Ch.5 | order-of-magnitude urgency model |
-| household water planner | Ch.6 | three- and ten-day storage by household size |
-| social-connection associations | Ch.7 | adjusted observational odds ratios with causal limits |
+The generated illustration index above is canonical. Each figure occurrence
+also carries a compact card with its stable `[BEG:...:G:...]` address, owning
+route, route pattern and glyph, reader question, and paired Blue Book forms.
+That card is part of the figure’s meaning: a copied image without its route,
+question, limit, or form links is an attractive orphan.
 
-Generated images are explanatory aids. The text route remains complete for
-monochrome print, screen readers, low light, and coffee-related diagram loss.
+Generated images remain explanatory aids. The adjacent prose remains the
+complete route for monochrome print, screen readers, low light, failed images,
+and coffee-related diagram loss.
 
 
 ## Evidence labels
@@ -278,28 +272,25 @@ mean anything useful.
 
 
 
-## Fillable fields
+## Fillable fields live in T — Templates
 
-Fill these once, photograph or securely store the page, and update it when
-anything changes.
+R indexes writable resources; it does not maintain a second blank-form system.
+Use the generated detachable-form index above to choose the canonical Blue Book
+page. The route band identifies which operational routes use it, the privacy
+class controls placement, and the figure/support references show what should
+travel with it.
 
-| Field | Your value | Field | Your value |
-|---|---|---|---|
-| Home address, floor, access note | | Emergency contact #1 | |
-| Emergency contact #2 | | Trusted nearby person | |
-| GP / practice | | Pharmacy / night service | |
-| Local hospital / emergency department | | Local gas-network emergency number | |
-| Regional poison-information centre | | Accessible powered destination | |
-| Essential device / approved backup / runtime | | Accessible transport / evacuation help | |
-| Emergency housing — daytime | | Emergency housing — after hours | |
-| Local youth emergency service | | Violence shelter / counselling | |
-| Preferred communication method | | Written emergency card location | |
-| Psychiatric emergency / crisis service | | Sozialpsychiatrischer Dienst | |
-| Maternity / gynecology | | Pediatric emergency | |
-| Veterinary emergency | | Building utility emergency | |
-| Medication list location | | First-aid kit location | |
-| Power bank / radio location | | Evacuation meeting point | |
-| Backup caregiver | | Additional local route | |
+The most commonly paired set is:
+
+- **[BEG:T:F:009] Location and access card**;
+- **[BEG:T:F:003] Emergency call card**;
+- **[BEG:T:F:008] Local professional contacts**;
+- **[BEG:T:F:014] Safe-place and exit map**;
+- **[BEG:T:F:004] Medication, power, and care continuity card**;
+- **[BEG:T:F:007] Household continuity board**.
+
+Complete only relevant fields, store or photograph them safely, and replace
+them when the route, local fact, privacy boundary, or review date changes.
 
 ### Do not put these on a shared printout
 
@@ -458,7 +449,7 @@ EVERY NON-EMERGENCY ROUTE
 ## Offline deployment checklist
 
 - Print the monochrome PDF single-sided or duplex.
-- Write local contacts in Ch.7 or the fillable table above.
+- Complete the relevant T / Blue Book forms and keep their route bands attached.
 - Keep the guide near a charged light source.
 - Add a simple first-aid poster from an official provider.
 - Store current medication and emergency plans nearby but privately.
