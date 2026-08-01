@@ -446,7 +446,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete the exact-source build/test matrix and record 4.10.0 evidence;
 - [x] tag `v4.10.0` locally without pushing, publishing, or deploying.
 
-### 4.11.0 — Outage and continuity standalone edition — release candidate
+### 4.11.0 — Outage and continuity standalone edition — released
 
 - [x] add a current local BBK warning-channel source for NINA and Cell
   Broadcast;
@@ -458,8 +458,8 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   matrix, migration checks, and complete build matrix;
 - [x] expand the standalone PDF matrix from 48 to 54 editions;
 - [x] keep A master-only pending an equivalent visual and standalone review;
-- [ ] complete the exact-source build/test matrix and record 4.11.0 evidence;
-- [ ] tag `v4.11.0` locally without pushing, publishing, or deploying.
+- [x] complete the exact-source build/test matrix and record 4.11.0 evidence;
+- [x] tag `v4.11.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 
