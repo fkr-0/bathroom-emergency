@@ -1,12 +1,39 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.8.0"
-last_updated: "2026-07-27"
+revision: "4.9.0"
+last_updated: "2026-08-01"
 dependencies: []
 ---
 
 # Version History
+
+## 4.9.0 — 1 August 2026
+
+### Observation gets a visible first route
+
+- Added a first-90-seconds body/room/attention scan before the explanatory
+  material in the Small-Room Observatory.
+- Added four diagrams for the scan, interoception loop, signal/story/question
+  sequence, and bounded three-minute observation.
+- Made the stop condition and “no improvement is a result” boundary explicit so
+  observation does not silently become delay.
+
+### A suggested safe place must become an operational destination
+
+- Reworked the four-way route map and communication card into shorter,
+  large-label operational graphics.
+- Added a confirmation packet for destination, availability, access, arrival,
+  backup, and escalation.
+- Added a reserve-clock route that calls and moves before access or essential
+  care fails, while refusing unsupported generic runtime promises.
+
+### Candidate coverage is not a release claim
+
+- O and D now each own four source-backed reader visuals and cross the numerical
+  standalone-candidate screen.
+- Both remain inside the complete guide until standalone extraction, layout,
+  accessibility, and usability review are completed.
 
 ## 4.8.0 — 27 July 2026
 

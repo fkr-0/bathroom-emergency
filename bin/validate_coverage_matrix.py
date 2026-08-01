@@ -41,7 +41,7 @@ if PATH.exists():
     check(totals.get("nodes") == 10, "coverage total node count drifted")
     check(totals.get("sections", 0) >= 200, "coverage matrix has too few sections")
     check(totals.get("sources", 0) >= 50, "coverage matrix has too few sources")
-    check(totals.get("reader_visuals", 0) >= 20, "coverage matrix has too few reader visuals")
+    check(totals.get("reader_visuals", 0) >= 37, "coverage matrix has too few reader visuals")
     for item in nodes:
         node = item.get("node", "?")
         check(item.get("section_count", 0) > 0, f"{node}: no owned sections")
@@ -57,10 +57,14 @@ if PATH.exists():
             check(item.get("readiness") == "released-standalone", f"{node}: released node not marked released")
     check(by_id.get("C", {}).get("readiness") in {"standalone-candidate", "released-standalone"}, "C is no longer ready for standalone review")
     check(by_id.get("P", {}).get("source_count", 0) >= 4, "P lacks the operational source base needed for visual work")
+    check(by_id.get("O", {}).get("owned_visual_count", 0) >= 4, "O lacks four owned reader visuals")
+    check(by_id.get("O", {}).get("readiness") == "standalone-candidate", "O did not cross the numeric candidate screen")
+    check(by_id.get("D", {}).get("owned_visual_count", 0) >= 4, "D lacks four owned reader visuals")
+    check(by_id.get("D", {}).get("readiness") == "standalone-candidate", "D did not cross the numeric candidate screen")
 
 if FRAGMENT.exists():
     text = FRAGMENT.read_text(encoding="utf-8")
-    for marker in ("Source, visual, and standalone coverage matrix", "Per-guide provenance", "C — Body and First Aid", "P — Professional Support"):
+    for marker in ("Source, visual, and standalone coverage matrix", "Per-guide provenance", "O — Small-Room Observatory", "D — Threat and Safe Place", "C — Body and First Aid", "P — Professional Support"):
         check(marker in text, f"coverage fragment missing marker: {marker}")
 
 if errors:

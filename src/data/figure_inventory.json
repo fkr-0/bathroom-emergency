@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.8.0",
+  "release": "4.9.0",
   "generated_by": "bin/build_inventories.py",
   "figures": [
     {
@@ -246,10 +246,27 @@
         "children-help",
         "wcag22"
       ],
-      "replacement_status": "retain-and-redesign",
+      "replacement_status": "current",
       "reader_facing": true,
       "replacement_id": null,
-      "renderer": "generated-raster"
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "safe-place-confirmation-packet",
+      "kind": "illustration",
+      "file": "build/diagrams/safe_place_confirmation_packet.png",
+      "owner": "D",
+      "secondary_subguides": [],
+      "question": "Which six fields turn a suggested safe place into a usable destination and backup route?",
+      "source_basis": [
+        "03g-safe-place-routing--authority-115",
+        "03g-safe-place-routing--shelter-search",
+        "route-catalog"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
     },
     {
       "id": "safe-place-route-map",
@@ -266,10 +283,26 @@
         "telefonseelsorge",
         "women-shelter-search"
       ],
-      "replacement_status": "retain-and-redesign",
+      "replacement_status": "current",
       "reader_facing": true,
       "replacement_id": null,
-      "renderer": "generated-raster"
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "safe-reserve-clock",
+      "kind": "illustration",
+      "file": "build/diagrams/safe_reserve_clock.png",
+      "owner": "D",
+      "secondary_subguides": [],
+      "question": "How should an access or essential-care route use remaining safe runtime without treating it as guaranteed?",
+      "source_basis": [
+        "continuity-catalog",
+        "route-catalog"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
     },
     {
       "id": "dependency-continuity-map",
@@ -340,6 +373,69 @@
       "reader_facing": true,
       "replacement_id": null,
       "renderer": "generated-raster"
+    },
+    {
+      "id": "interoception-loop",
+      "kind": "illustration",
+      "file": "build/diagrams/interoception_loop.png",
+      "owner": "O",
+      "secondary_subguides": [],
+      "question": "How do signal, attention, interpretation, and action produce a revisable loop?",
+      "source_basis": [
+        "01-how-to-use--interoception-review"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "observatory-scan",
+      "kind": "illustration",
+      "file": "build/diagrams/observatory_scan.png",
+      "owner": "O",
+      "secondary_subguides": [],
+      "question": "What should be observed in body, room, and attention before choosing a route?",
+      "source_basis": [
+        "route-catalog",
+        "01-how-to-use--stress-executive"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "signal-story-question",
+      "kind": "illustration",
+      "file": "build/diagrams/signal_story_question.png",
+      "owner": "O",
+      "secondary_subguides": [],
+      "question": "How can a reader separate sensation, fast interpretation, and a route-changing question?",
+      "source_basis": [
+        "01-how-to-use--affect-labeling",
+        "route-catalog"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "three-minute-observation",
+      "kind": "illustration",
+      "file": "build/diagrams/three_minute_observation.png",
+      "owner": "O",
+      "secondary_subguides": [],
+      "question": "What happens at each minute of the bounded observation experiment, and when must it stop?",
+      "source_basis": [
+        "route-catalog",
+        "01-how-to-use--stress-executive"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
     },
     {
       "id": "professional-call-packet",

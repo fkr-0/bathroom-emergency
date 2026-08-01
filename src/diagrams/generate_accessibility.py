@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Generate safe-place and communication-access figures from structured data."""
+"""Generate safe-place, reserve, and communication-access figures."""
 from __future__ import annotations
 
 import json
 import sys
-import textwrap
 from pathlib import Path
 
 import matplotlib
@@ -28,10 +27,6 @@ BLUE = "#175cd3"
 PURPLE = "#6f3ab2"
 AMBER = "#9b5b00"
 PALE = "#e9f2ed"
-
-
-def wrap(text: str, width: int) -> str:
-    return "\n".join(textwrap.wrap(text, width=width, break_long_words=False))
 
 
 def canvas(figsize: tuple[float, float], xlim=(0, 12), ylim=(0, 10)):
@@ -68,15 +63,16 @@ def save(fig, name: str):
     print(f"  [OK] {path}")
 
 
-# Four-way safe-place route map.
-fig, ax = canvas((10.5, 8.6), (0, 12), (0, 9.5))
-ax.text(6, 9.05, "SITUATION G / NO SAFE PLACE", ha="center", color=INK,
+# Four-way safe-place route map: short labels only; the chapter owns the detail.
+fig, ax = canvas((10.5, 7.6), (0, 12), (0, 8.5))
+ax.text(6, 8.34, "SITUATION G / NO SAFE PLACE", ha="center", color=INK,
         fontsize=22, fontweight="bold")
-ax.text(6, 8.62, "Secure the next safe hour. Then solve the larger problem.",
+ax.set_ylim(0, 8.5)
+ax.text(6, 8.08, "Secure the next safe hour. Then solve the larger problem.",
         ha="center", color=MUTED, fontsize=9, style="italic")
-ax.add_patch(FancyBboxPatch((2.4, 7.65), 7.2, .58, boxstyle="round,pad=.03",
+ax.add_patch(FancyBboxPatch((2.4, 7.12), 7.2, .58, boxstyle="round,pad=.03",
                             facecolor=RED, edgecolor=RED))
-ax.text(6, 7.94, "OVERRIDE: 112 life/medical · 110 active threat · Situation H environment",
+ax.text(6, 7.41, "OVERRIDE: 112 life/medical · 110 active threat · Situation H environment",
         ha="center", va="center", color=WHITE, fontsize=8.2, fontweight="bold")
 
 routes = ROUTES["safe_place_routes"]
@@ -87,28 +83,31 @@ titles = {
     "access-care-failure": "3 / PLACE FAILS ACCESS OR CARE",
     "social-internal-crisis": "4 / SOCIAL OR INTERNAL CRISIS",
 }
+route_copy = {
+    "violence-coercion": ("Unsafe person or active threat", "Move toward safety", "Police / rescue / specialist route"),
+    "no-roof-tonight": ("No weather-safe roof tonight", "Contact responsible local service", "Confirmed staffed place + backup"),
+    "access-care-failure": ("Place fails access or essential care", "Name the barrier and reserve", "Accessible staffed destination"),
+    "social-internal-crisis": ("Place is physically safe but unworkable", "Build a one-hour container", "Person + contact + escalation"),
+}
 for idx, (route, color) in enumerate(zip(routes, colors)):
     col, row = idx % 2, idx // 2
     x = .45 + col * 5.8
-    y = 4.55 - row * 3.0
-    body = (
-        "ACTION  " + wrap(route["action"], 49) + "\n\n"
-        "BACKUP  " + wrap(route["backup"], 49) + "\n\n"
-        "ESCALATE  " + wrap(route["escalation"], 49)
-    )
-    card(ax, x, y, 5.3, 2.62, titles[route["id"]], body, color, body_size=5.9)
+    y = 4.35 - row * 2.65
+    failure, first, confirm = route_copy[route["id"]]
+    body = f"FAILURE   {failure}\n\nFIRST     {first}\n\nCONFIRM   {confirm}"
+    card(ax, x, y, 5.3, 2.25, titles[route["id"]], body, color, body_size=7.1)
 
-ax.text(6, .3,
-        "Every branch ends with a confirmed destination, access method, backup, and escalation condition.",
+ax.text(6, .35,
+        "Start with the route that can make the next hour dangerous fastest.",
         ha="center", color=MUTED, fontsize=7.7)
 save(fig, "safe_place_route_map.png")
 
 
-# Communication access card.
-fig, ax = canvas((10.5, 9.2), (0, 12), (0, 10.2))
-ax.text(6, 9.75, "COMMUNICATION IS PART OF THE ROUTE", ha="center", color=INK,
+# Communication access card: channel, action, and confirmation rather than prose blocks.
+fig, ax = canvas((10.5, 8.8), (0, 12), (0, 9.8))
+ax.text(6, 9.35, "COMMUNICATION IS PART OF THE ROUTE", ha="center", color=INK,
         fontsize=21, fontweight="bold")
-ax.text(6, 9.3, "Ask what works. Adapt the channel; do not lower the urgency threshold.",
+ax.text(6, 8.9, "Ask what works. Adapt the channel; do not lower the urgency threshold.",
         ha="center", color=MUTED, fontsize=9)
 profiles = ACCESS["profiles"]
 short = {
@@ -120,12 +119,21 @@ short = {
     "sensory-panic-neurodivergent": "SENSORY / PANIC / NEURODIVERGENCE",
 }
 colors = [BLUE, PURPLE, GREEN, AMBER, BLUE, PURPLE]
+compact = {
+    "blind-low-vision": ("read aloud · describe obstacles", "mobility aid stays with person"),
+    "deaf-hard-of-hearing": ("write · text · visual alert · relay", "confirm the reply was understood"),
+    "speech-language": ("point · yes/no · text · chosen partner", "person answers when they can"),
+    "cognitive-overload": ("one speaker · literal short sentence", "one action, then repeat"),
+    "mobility-fatigue-pain": ("accessible route · trained transfer help", "equipment and position stay safe"),
+    "sensory-panic-neurodivergent": ("reduce stimulation · ask before touch", "offer a non-breath option"),
+}
 for idx, (profile, color) in enumerate(zip(profiles, colors)):
     col, row = idx % 2, idx // 2
     x = .45 + col * 5.8
-    y = 6.65 - row * 2.25
-    body = wrap(profile["adaptation"], 53) + "\n\nHANDOFF  " + wrap(profile["handoff"], 48)
-    card(ax, x, y, 5.3, 1.9, short[profile["id"]], body, color, body_size=6.1)
+    y = 6.25 - row * 2.0
+    adapt, confirm = compact[profile["id"]]
+    body = f"ADAPT    {adapt}\n\nCONFIRM  {confirm}"
+    card(ax, x, y, 5.3, 1.68, short[profile["id"]], body, color, body_size=7.1)
 
 ax.add_patch(FancyBboxPatch((1.0, .34), 10.0, .78, boxstyle="round,pad=.04",
                             facecolor=PALE, edgecolor=GREEN, linewidth=1.5))
@@ -133,3 +141,51 @@ ax.text(6, .73,
         "ONE SPEAKER · ONE SENTENCE · ONE QUESTION · ONE NEXT ACTION · WRITE IT DOWN",
         ha="center", va="center", color=INK, fontsize=8.5, fontweight="bold")
 save(fig, "communication_access_card.png")
+
+
+# Six fields that turn a possible safe place into a usable route.
+fig, ax = canvas((10.8, 6.2), (0, 12), (0, 7))
+ax.text(6, 6.58, "A SAFE PLACE IS CONFIRMED, NOT MERELY NAMED", ha="center", color=INK,
+        fontsize=20, fontweight="bold")
+ax.text(6, 6.18, "Obtain enough operational detail to arrive, enter, and recover when the first route fails.",
+        ha="center", color=MUTED, fontsize=8.8)
+fields = [
+    ("1", "DESTINATION", "name + exact place", PURPLE),
+    ("2", "AVAILABLE", "open · permitted · staffed", AMBER),
+    ("3", "ACCESS", "entry · stairs · lift · transfer", BLUE),
+    ("4", "ARRIVAL", "time · entrance · who to ask for", GREEN),
+    ("5", "BACKUP", "second destination or service", PURPLE),
+    ("6", "ESCALATE", "condition that changes the route", RED),
+]
+for idx, (number, label, detail, colour) in enumerate(fields):
+    col, row = idx % 3, idx // 3
+    x = .45 + col * 3.83
+    y = 3.62 - row * 2.05
+    card(ax, x, y, 3.35, 1.55, f"{number} / {label}", detail, colour, body_size=8.0)
+ax.text(6, .32, "“TRY SOMEWHERE ELSE” IS NOT YET A DESTINATION, BACKUP, OR ARRIVAL INSTRUCTION.",
+        ha="center", va="center", color=INK, fontsize=8.4, fontweight="bold")
+save(fig, "safe_place_confirmation_packet.png")
+
+
+# Reserve clock for access, medication, power, caregiver, and transport failure.
+fig, ax = canvas((10.6, 5.8), (0, 12), (0, 6.5))
+ax.text(6, 6.08, "MOVE BEFORE THE SAFE RESERVE ENDS", ha="center", color=INK,
+        fontsize=21, fontweight="bold")
+ax.text(6, 5.68, "The remaining time or supply is a planning estimate, not a guarantee.",
+        ha="center", color=MUTED, fontsize=9)
+stages = [
+    (0.55, "1 / IDENTIFY", "What function is essential?\nWhat remains?", BLUE),
+    (4.35, "2 / CALL + CONFIRM", "Supplier · care team · service\nDestination · access · transport", GREEN),
+    (8.15, "3 / MOVE EARLY", "Leave margin for delay\nEscalate before failure", AMBER),
+]
+for x, label, body, colour in stages:
+    card(ax, x, 2.6, 3.3, 1.72, label, body, colour, body_size=7.7)
+for x in (3.9, 7.7):
+    ax.annotate("", xy=(x + .35, 3.46), xytext=(x, 3.46),
+                arrowprops={"arrowstyle": "-|>", "lw": 1.8, "color": INK})
+ax.add_patch(FancyBboxPatch((1.2, .75), 9.6, .72, boxstyle="round,pad=.04",
+                            facecolor=PALE, edgecolor=RED, linewidth=1.8))
+ax.text(6, 1.11,
+        "UNKNOWN RESERVE OR A LIFE-SUPPORTING FAILURE → TREAT AS TIME-CRITICAL AND USE THE EMERGENCY ROUTE WHEN INDICATED.",
+        ha="center", va="center", color=RED, fontsize=8.2, fontweight="bold")
+save(fig, "safe_reserve_clock.png")

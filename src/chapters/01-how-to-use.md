@@ -1,9 +1,13 @@
 ---
 title: "The Small-Room Observatory"
 chapter: 1
-revision: "4.8.0"
-last_updated: "2026-07-27"
-dependencies: []
+revision: "4.9.0"
+last_updated: "2026-08-01"
+dependencies:
+  - build/diagrams/observatory_scan.png
+  - build/diagrams/interoception_loop.png
+  - build/diagrams/signal_story_question.png
+  - build/diagrams/three_minute_observation.png
 ---
 
 # The Small-Room Observatory
@@ -43,6 +47,31 @@ only when the next question changes.
 **One guide, one action, one reassessment.** “Read the entire project before
 acting” is not a hidden eleventh route.
 
+## First 90 seconds — scan body, room, and attention
+
+When several things feel wrong at once, do not begin by naming a diagnosis.
+Begin with three observable channels:
+
+1. **Body:** Is the person responsive? Is breathing normal? What hurts, spins,
+   burns, bleeds, tightens, or changed suddenly?
+2. **Room:** Is there smoke, gas, a chemical, live electricity, dangerous heat
+   or cold, rising water, violence, or a blocked exit?
+3. **Attention:** Can you follow one sentence and choose one action, or is alarm,
+   confusion, dissociation, exhaustion, or repetition consuming the available
+   attention?
+
+![Three-channel observatory scan covering body, room, and attention](build/diagrams/observatory_scan.png)
+
+The image is a memory aid, not a test. The complete route is: **name one
+observation, change one safe variable when useful, compare once, then choose the
+guide that owns the loudest problem.** A dangerous body or room sign ends the
+observation experiment and moves directly to the matching emergency route.
+
+Use concrete language. “Everything is wrong” may be emotionally accurate but
+operationally expensive. “Breathing is normal; the room smells ordinary; the
+main change is dizziness when standing” gives the next action somewhere to
+land.
+
 ## 1. When the outside gets quiet, the inside gets loud
 
 **Interoception** is the nervous system’s processing of signals from inside the
@@ -58,6 +87,15 @@ and whether it is interpreted as catastrophe.[^interoception-review]
 
 That distinction is hopeful because interpretation can change before the raw
 signal disappears.
+
+![Interoception loop from body signal through attention and interpretation to action and new data](build/diagrams/interoception_loop.png)
+
+Read the loop as four separate questions: **what signal appeared; what captured
+attention; what story formed; what action produced new information?** The loop
+can amplify itself, but it can also be revised. Sitting down, leaving an unsafe
+room, checking a clock, asking another person, or noticing that a sensation
+changes with posture can alter the next pass without pretending the first
+signal was imaginary.
 
 | Raw observation | Fast story | Better next question |
 |---|---|---|
@@ -170,6 +208,13 @@ with:
 The second sentence does not deny anything. It separates sensation, emotion,
 and forecast. Adjectives are cheaper than prophecy.
 
+![Signal, fast story, and next-question sequence](build/diagrams/signal_story_question.png)
+
+The useful third step is a question that can change the route: **new or
+familiar; steady or worsening; tied to posture or exposure; body, alarm, threat,
+or environment?** The question does not clear danger. It prevents an untested
+story from becoming the only available instruction.
+
 ## 7. Cold water is interesting, not magical
 
 Cooling the face can activate part of the mammalian diving response through
@@ -225,7 +270,11 @@ chemical mixtures without asking the nose to become a laboratory.
 ## 10. The three-minute bathroom experiment
 
 Use this when the state is uncomfortable, familiar enough to observe, and not
-obviously escalating.
+obviously escalating. This is **three minutes of observation, not three minutes
+of mandatory delay**. Stop when a danger sign appears, the state worsens, or
+safe comparison is no longer possible.
+
+![Three-minute observation sequence with support, one change, comparison, and route choice](build/diagrams/three_minute_observation.png)
 
 | Time | Do | Record mentally or on paper |
 |---|---|---|
@@ -241,8 +290,9 @@ $$\Delta S=S_{after}-S_{before}$$
 You do not need a number. “Less sharp,” “same but less frightening,” “moved from
 stomach to throat,” and “worse when standing” are all data.
 
-If nothing improves, the experiment did not fail. It replaced three minutes of
-prediction with three minutes of observation.
+If nothing improves, the experiment did not fail. It produced a result: no
+useful improvement after one controlled change. Choose the next route instead
+of repeating the experiment until it becomes avoidance.
 
 ## Choose the loudest topic
 

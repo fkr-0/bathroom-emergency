@@ -184,10 +184,22 @@ required_route_figures = {
     "dependency_continuity_map.png",
     "safe_place_route_map.png",
     "communication_access_card.png",
+    "safe_place_confirmation_packet.png",
+    "safe_reserve_clock.png",
 }
 for name in sorted(required_route_figures):
     check((ROOT / "build" / "diagrams" / name).exists(), f"required route figure missing: {name}")
     check(name in source, f"required route figure is not referenced in chapters: {name}")
+
+required_observation_figures = {
+    "observatory_scan.png",
+    "interoception_loop.png",
+    "signal_story_question.png",
+    "three_minute_observation.png",
+}
+for name in sorted(required_observation_figures):
+    check((ROOT / "build" / "diagrams" / name).exists(), f"required observation figure missing: {name}")
+    check(name in source, f"required observation figure is not referenced in chapters: {name}")
 
 required_continuity_figures = {
     "household_continuity_board.png",
@@ -362,6 +374,9 @@ for relative in required_cli_scripts:
 check("Situations B–F — Five Different Kinds of “Too Much”" in source, "B–F mixed-situations identity missing")
 check("Situations B–G — Six Different Kinds" not in source, "stale B–G mixed-situations identity remains")
 check("Situation G — No Safe Place" in source, "Situation G standalone handoff missing")
+check("First 90 seconds — scan body, room, and attention" in source, "observatory first-minute scan missing")
+check("A safe place is confirmed, not merely named" in source, "safe-place confirmation contract missing")
+check("three minutes of observation, not three minutes of mandatory delay" in source.lower(), "observation delay boundary missing")
 check("Templates — The Blue Book" in source, "Blue Book template subguide missing")
 check("Stable references — addresses that survive editing" in source, "stable reference explanation missing")
 check("bathroom_emergency@fkr.dev" in source, "reader feedback route missing")

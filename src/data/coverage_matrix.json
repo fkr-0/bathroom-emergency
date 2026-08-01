@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.8.0",
+  "release": "4.9.0",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -9,9 +9,9 @@
   },
   "totals": {
     "nodes": 10,
-    "sections": 215,
+    "sections": 218,
     "sources": 53,
-    "reader_visuals": 31,
+    "reader_visuals": 37,
     "standalone_nodes": 6
   },
   "nodes": [
@@ -24,7 +24,7 @@
         "01-how-to-use.md"
       ],
       "chapter_count": 2,
-      "section_count": 15,
+      "section_count": 16,
       "source_count": 11,
       "source_counts": {
         "operational": 0,
@@ -44,13 +44,21 @@
         "01-how-to-use--situational-syncope",
         "01-how-to-use--stress-executive"
       ],
-      "owned_visual_count": 0,
+      "owned_visual_count": 4,
       "shared_visual_count": 0,
-      "visual_ids": [],
+      "visual_ids": [
+        "interoception-loop",
+        "observatory-scan",
+        "signal-story-question",
+        "three-minute-observation"
+      ],
       "shared_visual_ids": [],
-      "visuals_with_source_basis": 0,
-      "visual_review_priorities": {},
-      "readiness": "needs-visuals"
+      "visuals_with_source_basis": 4,
+      "visual_review_priorities": {
+        "high": 3,
+        "medium": 1
+      },
+      "readiness": "standalone-candidate"
     },
     {
       "node": "A",
@@ -176,7 +184,7 @@
         "03g-safe-place-routing.md"
       ],
       "chapter_count": 2,
-      "section_count": 13,
+      "section_count": 14,
       "source_count": 8,
       "source_counts": {
         "operational": 8,
@@ -193,18 +201,20 @@
         "03g-safe-place-routing--women-help",
         "03g-safe-place-routing--women-sign"
       ],
-      "owned_visual_count": 2,
+      "owned_visual_count": 4,
       "shared_visual_count": 0,
       "visual_ids": [
         "communication-access-card",
-        "safe-place-route-map"
+        "safe-place-confirmation-packet",
+        "safe-place-route-map",
+        "safe-reserve-clock"
       ],
       "shared_visual_ids": [],
-      "visuals_with_source_basis": 2,
+      "visuals_with_source_basis": 4,
       "visual_review_priorities": {
-        "high": 2
+        "high": 4
       },
-      "readiness": "needs-visuals"
+      "readiness": "standalone-candidate"
     },
     {
       "node": "H",
@@ -359,7 +369,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 77,
+      "section_count": 78,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

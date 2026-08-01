@@ -1,8 +1,8 @@
 ---
 title: "Professional Support Directory"
 chapter: 7
-revision: "4.8.0"
-last_updated: "2026-07-27"
+revision: "4.9.0"
+last_updated: "2026-08-01"
 dependencies:
   - build/diagrams/vega_social_connection.png
   - build/diagrams/professional_call_packet.png

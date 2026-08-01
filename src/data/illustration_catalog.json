@@ -1,5 +1,5 @@
 {
-  "release": "4.8.0",
+  "release": "4.9.0",
   "status": "initial audited inventory",
   "families": [
     "quantitative-evidence",
@@ -125,15 +125,15 @@
       ],
       "family": "handoff",
       "question": "Which communication adaptation helps with which barrier?",
-      "renderer": "generated-raster",
+      "renderer": "matplotlib",
       "text_fallback": "The chapter provides the complete communication and access card in text.",
       "mono_strategy": [
         "icons",
         "labels",
         "row position"
       ],
-      "status": "retain-and-redesign",
-      "next_action": "Convert to semantic HTML/SVG so text remains selectable and large-print friendly.",
+      "status": "current",
+      "next_action": "Test channel selection, confirmation wording, and large-print comprehension with users of each communication route.",
       "priority": "high",
       "owner": "D",
       "secondary_subguides": [],
@@ -357,6 +357,57 @@
       "reader_facing": true
     },
     {
+      "id": "interoception-loop",
+      "file": "build/diagrams/interoception_loop.png",
+      "chapters": [
+        "01-how-to-use.md"
+      ],
+      "family": "mechanism-sequence",
+      "question": "How do signal, attention, interpretation, and action produce a revisable loop?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent prose names all four questions and explains that the loop may amplify or revise a working hypothesis.",
+      "mono_strategy": [
+        "numbered nodes",
+        "clockwise connector order",
+        "direct labels"
+      ],
+      "status": "current",
+      "next_action": "Review with readers for accidental diagnostic or reassurance interpretations.",
+      "priority": "medium",
+      "owner": "O",
+      "secondary_subguides": [],
+      "sources": [
+        "01-how-to-use--interoception-review"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "observatory-scan",
+      "file": "build/diagrams/observatory_scan.png",
+      "chapters": [
+        "01-how-to-use.md"
+      ],
+      "family": "orientation",
+      "question": "What should be observed in body, room, and attention before choosing a route?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent First 90 seconds section lists the body, room, and attention checks and states when observation must end.",
+      "mono_strategy": [
+        "numbered channels",
+        "fixed left-to-right order",
+        "direct labels"
+      ],
+      "status": "current",
+      "next_action": "Test the three-channel scan under time pressure and with screen-reader, low-vision, and cognitive-overload profiles.",
+      "priority": "high",
+      "owner": "O",
+      "secondary_subguides": [],
+      "sources": [
+        "route-catalog",
+        "01-how-to-use--stress-executive"
+      ],
+      "reader_facing": true
+    },
+    {
       "id": "overload-control-map",
       "file": "build/diagrams/overload_control_map.png",
       "chapters": [
@@ -487,6 +538,33 @@
       "replacement_id": "vega-reproductive-denominators"
     },
     {
+      "id": "safe-place-confirmation-packet",
+      "file": "build/diagrams/safe_place_confirmation_packet.png",
+      "chapters": [
+        "03g-safe-place-routing.md"
+      ],
+      "family": "handoff",
+      "question": "Which six fields turn a suggested safe place into a usable destination and backup route?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent numbered list defines destination, availability, access, arrival instruction, backup, and escalation in full.",
+      "mono_strategy": [
+        "numbered fields",
+        "fixed grid order",
+        "direct labels"
+      ],
+      "status": "current",
+      "next_action": "Test with municipal, violence-support, disability-access, and youth-service route drills using sanitized scenarios.",
+      "priority": "high",
+      "owner": "D",
+      "secondary_subguides": [],
+      "sources": [
+        "03g-safe-place-routing--authority-115",
+        "03g-safe-place-routing--shelter-search",
+        "route-catalog"
+      ],
+      "reader_facing": true
+    },
+    {
       "id": "safe-place-route-map",
       "file": "build/diagrams/safe_place_route_map.png",
       "chapters": [
@@ -494,15 +572,15 @@
       ],
       "family": "routing",
       "question": "Which of four safe-place routes fits the immediate barrier?",
-      "renderer": "generated-raster",
+      "renderer": "matplotlib",
       "text_fallback": "The chapter contains the complete G1–G4 text routes.",
       "mono_strategy": [
         "route codes",
         "node shape",
         "connector style"
       ],
-      "status": "retain-and-redesign",
-      "next_action": "Use the shared graph grammar and make the four route exits visually equivalent.",
+      "status": "current",
+      "next_action": "Test whether readers can choose the correct route from the short failure/first/confirm labels without relying on colour.",
       "priority": "high",
       "owner": "D",
       "secondary_subguides": [],
@@ -513,6 +591,32 @@
         "children-help",
         "telefonseelsorge",
         "women-shelter-search"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "safe-reserve-clock",
+      "file": "build/diagrams/safe_reserve_clock.png",
+      "chapters": [
+        "03g-safe-place-routing.md"
+      ],
+      "family": "routing",
+      "question": "How should an access or essential-care route use remaining safe runtime without treating it as guaranteed?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent G3 prose explains the estimate limit, unknown-reserve rule, early contact, confirmation fields, movement margin, and escalation.",
+      "mono_strategy": [
+        "three numbered stages",
+        "left-to-right arrows",
+        "boxed time-critical rule"
+      ],
+      "status": "current",
+      "next_action": "Review with device users, caregivers, suppliers, and accessible-transport planners; do not add generic runtime constants.",
+      "priority": "high",
+      "owner": "D",
+      "secondary_subguides": [],
+      "sources": [
+        "continuity-catalog",
+        "route-catalog"
       ],
       "reader_facing": true
     },
@@ -538,6 +642,32 @@
       "secondary_subguides": [],
       "sources": [
         "math-pairwise-channels"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "signal-story-question",
+      "file": "build/diagrams/signal_story_question.png",
+      "chapters": [
+        "01-how-to-use.md"
+      ],
+      "family": "mechanism-sequence",
+      "question": "How can a reader separate sensation, fast interpretation, and a route-changing question?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent affect-labeling section provides the complete signal, story, and next-question sequence and its safety limit.",
+      "mono_strategy": [
+        "numbered stages",
+        "fixed left-to-right order",
+        "direct labels"
+      ],
+      "status": "current",
+      "next_action": "Test whether the third panel encourages observation without implying that symptoms are only anxiety.",
+      "priority": "high",
+      "owner": "O",
+      "secondary_subguides": [],
+      "sources": [
+        "01-how-to-use--affect-labeling",
+        "route-catalog"
       ],
       "reader_facing": true
     },
@@ -641,6 +771,32 @@
       "sources": [
         "bbk-bag",
         "conceptual-priority-order"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "three-minute-observation",
+      "file": "build/diagrams/three_minute_observation.png",
+      "chapters": [
+        "01-how-to-use.md"
+      ],
+      "family": "mechanism-sequence",
+      "question": "What happens at each minute of the bounded observation experiment, and when must it stop?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent table gives all four timed actions and the prose states the danger, worsening, and safe-comparison stop conditions.",
+      "mono_strategy": [
+        "time labels",
+        "ordered panels",
+        "boxed stop condition"
+      ],
+      "status": "current",
+      "next_action": "Usability-test whether the stop rule dominates the timeline and prevents repeated observation from becoming delay.",
+      "priority": "high",
+      "owner": "O",
+      "secondary_subguides": [],
+      "sources": [
+        "route-catalog",
+        "01-how-to-use--stress-executive"
       ],
       "reader_facing": true
     },

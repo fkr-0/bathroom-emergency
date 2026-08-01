@@ -1,11 +1,13 @@
 ---
 title: "Situation G — No Safe Place"
 chapter: "3G"
-revision: "4.8.0"
-last_updated: "2026-07-27"
+revision: "4.9.0"
+last_updated: "2026-08-01"
 dependencies:
   - build/diagrams/safe_place_route_map.png
   - build/diagrams/communication_access_card.png
+  - build/diagrams/safe_place_confirmation_packet.png
+  - build/diagrams/safe_reserve_clock.png
 ---
 
 # Situation G — No Safe Place
@@ -17,6 +19,27 @@ share one rule:
 > **Secure the next safe hour before solving the whole life.**
 
 ![Four-way safe-place routing map](build/diagrams/safe_place_route_map.png)
+
+## A safe place is confirmed, not merely named
+
+“Go to a shelter,” “try a friend,” and “contact the authority” describe possible
+directions. They do not yet prove that a person can arrive, enter, remain, or
+receive essential care. Before travelling when it is safe to check, confirm:
+
+1. **destination:** the exact place or service;
+2. **availability:** open, staffed, permitted, and able to receive the person;
+3. **access:** entrance, stairs or lift, transfer, communication, child,
+   caregiver, equipment, medication, and animal requirements;
+4. **arrival instruction:** when to come, which entrance to use, and whom to ask
+   for;
+5. **backup:** the next destination or service if the first route fails;
+6. **escalation:** the condition that changes the route to emergency help.
+
+![Six-field safe-place confirmation packet](build/diagrams/safe_place_confirmation_packet.png)
+
+A directory result, map pin, waiting-list entry, or well-meant suggestion is not
+the same thing as a confirmed destination. When checking would itself increase
+danger, leave first and confirm from the safer location.
 
 ## First minute — choose the actual failure
 
@@ -126,12 +149,21 @@ Name the barrier rather than saying only “not accessible”:
 
 State the **remaining safe runtime or supply** when one exists.
 
+![Reserve-clock route: identify the essential function, confirm help and a destination, then move before the reserve ends](build/diagrams/safe_reserve_clock.png)
+
+Treat that runtime as a planning estimate, not a promise. Batteries age,
+transport is delayed, lifts fail, medication can be lost, and a caregiver’s
+capacity can change. If the safe reserve is unknown, identify the essential
+function and contact the relevant service early rather than assuming “unknown”
+means “plenty.”
+
 ### Backup
 
 Contact the care team, supplier, pharmacy, municipality, accessible shelter,
-transport service, or **116 117** before the safe reserve is exhausted. Move
-early to a confirmed staffed, powered, accessible destination. The correct time
-to arrange transfer is before the battery icon begins writing its memoir.
+transport service, or **116 117** before the safe reserve is exhausted. Confirm
+destination, access, arrival instruction, transport, and backup. Move with a
+margin for delay; the correct time to arrange transfer is before the battery
+icon begins writing its memoir.
 
 ### Escalation
 

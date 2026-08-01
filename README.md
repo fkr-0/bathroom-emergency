@@ -111,6 +111,9 @@ network dependency.
 Detaching a node is not a copy operation. A standalone node must pass source,
 visual, color/mono, geometry, tagged-PDF, semantic-text, handoff, and
 accessibility gates. B, C, H, P, T, and R currently meet that release contract.
+O and D now cross the numerical source/visual candidate screen, but remain in
+the master guide until their extracted layouts, accessibility behaviour, route
+handoffs, and real-reader usability have been reviewed to the same standard.
 
 ### Stable public references
 
@@ -260,7 +263,7 @@ The validators enforce, among other things:
   title channels;
 - 300+ stable indexed resources across sections, forms, figures, contacts,
   deployment fields, and glossary terms;
-- eight offline Vega-Lite figures and twenty-three current non-Vega illustrations,
+- eight offline Vega-Lite figures and twenty-nine current non-Vega illustrations,
   each with reader question, fallback, source basis, and monochrome strategy;
 - no known unsafe legacy wording or deprecated scientific chart;
 - layout-density, physical-edge, overflow, accessibility, and color/mono checks;

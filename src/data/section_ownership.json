@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.8.0",
+  "release": "4.9.0",
   "generated_by": "bin/build_inventories.py",
   "granularity": "all level-1 and level-2 headings",
   "sections": [
@@ -23,7 +23,7 @@
     {
       "key": "01-how-to-use:the-small-room-observatory",
       "chapter": "01-how-to-use.md",
-      "line": 9,
+      "line": 13,
       "level": 1,
       "heading": "The Small-Room Observatory",
       "owner": "O"
@@ -31,15 +31,23 @@
     {
       "key": "01-how-to-use:which-guide-should-i-pick",
       "chapter": "01-how-to-use.md",
-      "line": 24,
+      "line": 28,
       "level": 2,
       "heading": "Which guide should I pick?",
       "owner": "O"
     },
     {
+      "key": "01-how-to-use:first-90-seconds-scan-body-room-and-attention",
+      "chapter": "01-how-to-use.md",
+      "line": 50,
+      "level": 2,
+      "heading": "First 90 seconds — scan body, room, and attention",
+      "owner": "O"
+    },
+    {
       "key": "01-how-to-use:1-when-the-outside-gets-quiet-the-inside-gets-loud",
       "chapter": "01-how-to-use.md",
-      "line": 46,
+      "line": 75,
       "level": 2,
       "heading": "1. When the outside gets quiet, the inside gets loud",
       "owner": "O"
@@ -47,7 +55,7 @@
     {
       "key": "01-how-to-use:2-the-gut-votes-early",
       "chapter": "01-how-to-use.md",
-      "line": 73,
+      "line": 111,
       "level": 2,
       "heading": "2. The gut votes early",
       "owner": "O"
@@ -55,7 +63,7 @@
     {
       "key": "01-how-to-use:3-the-room-is-amplifying-you",
       "chapter": "01-how-to-use.md",
-      "line": 96,
+      "line": 134,
       "level": 2,
       "heading": "3. The room is amplifying you",
       "owner": "O"
@@ -63,7 +71,7 @@
     {
       "key": "01-how-to-use:4-anxiety-bends-time",
       "chapter": "01-how-to-use.md",
-      "line": 116,
+      "line": 154,
       "level": 2,
       "heading": "4. Anxiety bends time",
       "owner": "O"
@@ -71,7 +79,7 @@
     {
       "key": "01-how-to-use:5-acute-stress-makes-the-mind-narrower-not-stupider",
       "chapter": "01-how-to-use.md",
-      "line": 133,
+      "line": 171,
       "level": 2,
       "heading": "5. Acute stress makes the mind narrower, not stupider",
       "owner": "O"
@@ -79,7 +87,7 @@
     {
       "key": "01-how-to-use:6-naming-a-feeling-changes-the-task",
       "chapter": "01-how-to-use.md",
-      "line": 154,
+      "line": 192,
       "level": 2,
       "heading": "6. Naming a feeling changes the task",
       "owner": "O"
@@ -87,7 +95,7 @@
     {
       "key": "01-how-to-use:7-cold-water-is-interesting-not-magical",
       "chapter": "01-how-to-use.md",
-      "line": 173,
+      "line": 218,
       "level": 2,
       "heading": "7. Cold water is interesting, not magical",
       "owner": "O"
@@ -95,7 +103,7 @@
     {
       "key": "01-how-to-use:8-bathroom-fainting-is-a-real-category",
       "chapter": "01-how-to-use.md",
-      "line": 192,
+      "line": 237,
       "level": 2,
       "heading": "8. Bathroom fainting is a real category",
       "owner": "O"
@@ -103,7 +111,7 @@
     {
       "key": "01-how-to-use:9-smell-is-a-fading-sensor",
       "chapter": "01-how-to-use.md",
-      "line": 212,
+      "line": 257,
       "level": 2,
       "heading": "9. Smell is a fading sensor",
       "owner": "O"
@@ -111,7 +119,7 @@
     {
       "key": "01-how-to-use:10-the-three-minute-bathroom-experiment",
       "chapter": "01-how-to-use.md",
-      "line": 225,
+      "line": 270,
       "level": 2,
       "heading": "10. The three-minute bathroom experiment",
       "owner": "O"
@@ -119,7 +127,7 @@
     {
       "key": "01-how-to-use:choose-the-loudest-topic",
       "chapter": "01-how-to-use.md",
-      "line": 247,
+      "line": 297,
       "level": 2,
       "heading": "Choose the loudest topic",
       "owner": "O"
@@ -303,15 +311,23 @@
     {
       "key": "03g-safe-place-routing:situation-g-no-safe-place",
       "chapter": "03g-safe-place-routing.md",
-      "line": 11,
+      "line": 13,
       "level": 1,
       "heading": "Situation G — No Safe Place",
       "owner": "D"
     },
     {
+      "key": "03g-safe-place-routing:a-safe-place-is-confirmed-not-merely-named",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 23,
+      "level": 2,
+      "heading": "A safe place is confirmed, not merely named",
+      "owner": "D"
+    },
+    {
       "key": "03g-safe-place-routing:first-minute-choose-the-actual-failure",
       "chapter": "03g-safe-place-routing.md",
-      "line": 21,
+      "line": 44,
       "level": 2,
       "heading": "First minute — choose the actual failure",
       "owner": "D"
@@ -319,7 +335,7 @@
     {
       "key": "03g-safe-place-routing:g1-a-person-or-active-threat-makes-the-place-unsafe",
       "chapter": "03g-safe-place-routing.md",
-      "line": 35,
+      "line": 58,
       "level": 2,
       "heading": "G1 — A person or active threat makes the place unsafe",
       "owner": "D"
@@ -327,7 +343,7 @@
     {
       "key": "03g-safe-place-routing:g2-there-is-no-weather-safe-place-to-sleep-tonight",
       "chapter": "03g-safe-place-routing.md",
-      "line": 73,
+      "line": 96,
       "level": 2,
       "heading": "G2 — There is no weather-safe place to sleep tonight",
       "owner": "D"
@@ -335,7 +351,7 @@
     {
       "key": "03g-safe-place-routing:g3-a-place-exists-but-it-cannot-safely-support-the-person",
       "chapter": "03g-safe-place-routing.md",
-      "line": 107,
+      "line": 130,
       "level": 2,
       "heading": "G3 — A place exists, but it cannot safely support the person",
       "owner": "D"
@@ -343,7 +359,7 @@
     {
       "key": "03g-safe-place-routing:g4-the-place-is-physically-safe-but-staying-is-psychologically-or-socially-unworkable",
       "chapter": "03g-safe-place-routing.md",
-      "line": 143,
+      "line": 175,
       "level": 2,
       "heading": "G4 — The place is physically safe, but staying is psychologically or socially unworkable",
       "owner": "D"
@@ -351,7 +367,7 @@
     {
       "key": "03g-safe-place-routing:children-and-young-people-without-a-safe-adult",
       "chapter": "03g-safe-place-routing.md",
-      "line": 173,
+      "line": 205,
       "level": 2,
       "heading": "Children and young people without a safe adult",
       "owner": "D"
@@ -359,7 +375,7 @@
     {
       "key": "03g-safe-place-routing:communication-and-access-card",
       "chapter": "03g-safe-place-routing.md",
-      "line": 187,
+      "line": 219,
       "level": 2,
       "heading": "Communication and access card",
       "owner": "D"
@@ -367,7 +383,7 @@
     {
       "key": "03g-safe-place-routing:the-safe-place-handoff",
       "chapter": "03g-safe-place-routing.md",
-      "line": 225,
+      "line": 257,
       "level": 2,
       "heading": "The safe-place handoff",
       "owner": "D"
@@ -375,7 +391,7 @@
     {
       "key": "03g-safe-place-routing:fill-before-it-is-needed",
       "chapter": "03g-safe-place-routing.md",
-      "line": 239,
+      "line": 271,
       "level": 2,
       "heading": "Fill before it is needed",
       "owner": "D"
@@ -1245,9 +1261,17 @@
       "owner": "R"
     },
     {
-      "key": "09-version-history:4-8-0-27-july-2026",
+      "key": "09-version-history:4-9-0-1-august-2026",
       "chapter": "09-version-history.md",
       "line": 11,
+      "level": 2,
+      "heading": "4.9.0 — 1 August 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-8-0-27-july-2026",
+      "chapter": "09-version-history.md",
+      "line": 38,
       "level": 2,
       "heading": "4.8.0 — 27 July 2026",
       "owner": "R"
@@ -1255,7 +1279,7 @@
     {
       "key": "09-version-history:4-7-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 34,
+      "line": 61,
       "level": 2,
       "heading": "4.7.0 — 26 July 2026",
       "owner": "R"
@@ -1263,7 +1287,7 @@
     {
       "key": "09-version-history:4-6-1-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 56,
+      "line": 83,
       "level": 2,
       "heading": "4.6.1 — 26 July 2026",
       "owner": "R"
@@ -1271,7 +1295,7 @@
     {
       "key": "09-version-history:4-6-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 73,
+      "line": 100,
       "level": 2,
       "heading": "4.6.0 — 26 July 2026",
       "owner": "R"
@@ -1279,7 +1303,7 @@
     {
       "key": "09-version-history:4-5-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 114,
+      "line": 141,
       "level": 2,
       "heading": "4.5.0 — 26 July 2026",
       "owner": "R"
@@ -1287,7 +1311,7 @@
     {
       "key": "09-version-history:4-4-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 147,
+      "line": 174,
       "level": 2,
       "heading": "4.4.1 — 22 July 2026",
       "owner": "R"
@@ -1295,7 +1319,7 @@
     {
       "key": "09-version-history:4-3-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 162,
+      "line": 189,
       "level": 2,
       "heading": "4.3.1 — 22 July 2026",
       "owner": "R"
@@ -1303,7 +1327,7 @@
     {
       "key": "09-version-history:4-3-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 180,
+      "line": 207,
       "level": 2,
       "heading": "4.3.0 — 22 July 2026",
       "owner": "R"
@@ -1311,7 +1335,7 @@
     {
       "key": "09-version-history:4-2-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 210,
+      "line": 237,
       "level": 2,
       "heading": "4.2.0 — 22 July 2026",
       "owner": "R"
@@ -1319,7 +1343,7 @@
     {
       "key": "09-version-history:4-1-2-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 241,
+      "line": 268,
       "level": 2,
       "heading": "4.1.2 — 22 July 2026",
       "owner": "R"
@@ -1327,7 +1351,7 @@
     {
       "key": "09-version-history:4-1-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 265,
+      "line": 292,
       "level": 2,
       "heading": "4.1.1 — 22 July 2026",
       "owner": "R"
@@ -1335,7 +1359,7 @@
     {
       "key": "09-version-history:4-0-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 297,
+      "line": 324,
       "level": 2,
       "heading": "4.0.1 — 22 July 2026",
       "owner": "R"
@@ -1343,7 +1367,7 @@
     {
       "key": "09-version-history:4-0-0-17-july-2026",
       "chapter": "09-version-history.md",
-      "line": 351,
+      "line": 378,
       "level": 2,
       "heading": "4.0.0 — 17 July 2026",
       "owner": "R"
@@ -1351,7 +1375,7 @@
     {
       "key": "09-version-history:earlier-versions",
       "chapter": "09-version-history.md",
-      "line": 387,
+      "line": 414,
       "level": 2,
       "heading": "Earlier versions",
       "owner": "R"

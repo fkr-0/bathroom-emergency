@@ -399,7 +399,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete the full render/test matrix and record release evidence;
 - [x] tag `v4.7.0` locally without pushing, publishing, or deploying.
 
-### 4.8.0 — Modern project and deployment site — release candidate
+### 4.8.0 — Modern project and deployment site — completed into 4.9.0
 
 - [x] replace the single inline landing document with a responsive shared design
   system using local assets, system fonts, route colours, and dark/light modes;
@@ -413,8 +413,24 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   external runtime requests, themes, planner persistence, and filters;
 - [x] add a GitHub Pages workflow with an optional reviewed custom-domain
   variable while keeping local builds non-publishing;
-- [ ] complete the full build/test matrix and record 4.8.0 release evidence;
-- [ ] tag `v4.8.0` locally without pushing, publishing, or deploying.
+- [x] complete the full build/test matrix as the web baseline inherited by
+  4.9.0;
+- [x] keep 4.8.0 untagged and supersede it with the content-and-illustration
+  release rather than creating two indistinguishable local release points.
+
+### 4.9.0 — Observation and safe-place visual language — release candidate
+
+- [x] add a first-90-seconds body/room/attention scan and sharpen the bounded
+  observation language;
+- [x] add four source-backed O illustrations with complete adjacent text;
+- [x] redesign the dense safe-place and communication graphics around short
+  operational labels;
+- [x] add destination-confirmation and remaining-reserve figures to D;
+- [x] require four owned reader visuals and numeric candidate state for O and D;
+- [x] keep both nodes master-only pending standalone layout, accessibility, and
+  real-user review;
+- [ ] complete the exact-source build/test matrix and record 4.9.0 evidence;
+- [ ] tag `v4.9.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 

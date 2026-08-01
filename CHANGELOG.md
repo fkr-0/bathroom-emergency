@@ -1,5 +1,47 @@
 # Changelog
 
+## 4.9.0 — 2026-08-01
+
+### Made the opening route operational before it becomes explanatory
+
+- Added a first-90-seconds scan that separates body, room, and attention before
+  the reader chooses a route or attempts a diagnosis.
+- Clarified that the three-minute experiment is bounded observation rather than
+  mandatory delay, and that no improvement is itself a route-changing result.
+- Tightened the signal/story/question language so curiosity can revise a
+  hypothesis without implying that a vivid symptom is harmless or “only
+  anxiety.”
+
+### Added a four-figure Small-Room Observatory visual set
+
+- Added an observatory scan, interoception loop, signal/story/question sequence,
+  and bounded three-minute timeline.
+- Kept every image redundant with complete adjacent prose, direct labels,
+  numbered order, monochrome-safe structure, and explicit stop conditions.
+- Raised O from zero to four owned reader visuals while retaining its eleven
+  existing source records.
+
+### Reworked safe-place routing around confirmation and remaining reserve
+
+- Replaced dense safe-place and communication graphics with shorter operational
+  labels while preserving the full text routes and accessibility table.
+- Added a six-field confirmation packet covering destination, availability,
+  access, arrival instruction, backup, and escalation.
+- Added a reserve-clock route for access, medication, power, caregiver, and
+  transport failures without inventing generic runtime constants.
+- Raised D from two to four owned reader visuals. O and D now cross the numeric
+  standalone-candidate screen but remain master-guide routes pending equivalent
+  standalone layout, accessibility, and real-user review.
+
+### Strengthened release gates
+
+- Expanded the illustration inventory to 29 current non-Vega figures plus three
+  retained migration records and the total reader-facing visual set to 37.
+- Added required-figure, fallback, provenance, owner-count, and O/D candidate
+  assertions to the guide, illustration, and coverage validators.
+- Rebuilt every master and B/C/H/P/T/R standalone edition without publishing,
+  pushing, or deploying the prepared Pages package.
+
 ## 4.8.0 — 2026-07-27
 
 ### Rebuilt the project landing experience

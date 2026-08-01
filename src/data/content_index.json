@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.8.0",
+  "release": "4.9.0",
   "status": "global-content-index",
   "reference_scheme": "stable typed IDs; page and hierarchical numbers are non-canonical navigation aids",
   "records": [
@@ -815,6 +815,35 @@
       "html_id": "beg-d-g-002"
     },
     {
+      "resource_key": "figure:safe-place-confirmation-packet",
+      "owner": "D",
+      "kind": "G",
+      "title": "safe-place-confirmation-packet",
+      "file": "build/diagrams/safe_place_confirmation_packet.png",
+      "question": "Which six fields turn a suggested safe place into a usable destination and backup route?",
+      "source_basis": [
+        "03g-safe-place-routing--authority-115",
+        "03g-safe-place-routing--shelter-search",
+        "route-catalog"
+      ],
+      "public_ref": "[BEG:D:G:003]",
+      "html_id": "beg-d-g-003"
+    },
+    {
+      "resource_key": "figure:safe-reserve-clock",
+      "owner": "D",
+      "kind": "G",
+      "title": "safe-reserve-clock",
+      "file": "build/diagrams/safe_reserve_clock.png",
+      "question": "How should an access or essential-care route use remaining safe runtime without treating it as guaranteed?",
+      "source_basis": [
+        "continuity-catalog",
+        "route-catalog"
+      ],
+      "public_ref": "[BEG:D:G:004]",
+      "html_id": "beg-d-g-004"
+    },
+    {
       "resource_key": "section:03-situations-b-g:d-threat-has-three-clocks",
       "owner": "D",
       "kind": "S",
@@ -853,7 +882,7 @@
       "kind": "S",
       "title": "Children and young people without a safe adult",
       "chapter": "03g-safe-place-routing.md",
-      "line": 173,
+      "line": 205,
       "level": 2,
       "public_ref": "[BEG:D:S:004]",
       "html_id": "beg-d-s-004"
@@ -864,7 +893,7 @@
       "kind": "S",
       "title": "Communication and access card",
       "chapter": "03g-safe-place-routing.md",
-      "line": 187,
+      "line": 219,
       "level": 2,
       "public_ref": "[BEG:D:S:005]",
       "html_id": "beg-d-s-005"
@@ -875,7 +904,7 @@
       "kind": "S",
       "title": "Fill before it is needed",
       "chapter": "03g-safe-place-routing.md",
-      "line": 239,
+      "line": 271,
       "level": 2,
       "public_ref": "[BEG:D:S:006]",
       "html_id": "beg-d-s-006"
@@ -886,7 +915,7 @@
       "kind": "S",
       "title": "First minute — choose the actual failure",
       "chapter": "03g-safe-place-routing.md",
-      "line": 21,
+      "line": 44,
       "level": 2,
       "public_ref": "[BEG:D:S:007]",
       "html_id": "beg-d-s-007"
@@ -897,7 +926,7 @@
       "kind": "S",
       "title": "G1 — A person or active threat makes the place unsafe",
       "chapter": "03g-safe-place-routing.md",
-      "line": 35,
+      "line": 58,
       "level": 2,
       "public_ref": "[BEG:D:S:008]",
       "html_id": "beg-d-s-008"
@@ -908,7 +937,7 @@
       "kind": "S",
       "title": "G2 — There is no weather-safe place to sleep tonight",
       "chapter": "03g-safe-place-routing.md",
-      "line": 73,
+      "line": 96,
       "level": 2,
       "public_ref": "[BEG:D:S:009]",
       "html_id": "beg-d-s-009"
@@ -919,7 +948,7 @@
       "kind": "S",
       "title": "G3 — A place exists, but it cannot safely support the person",
       "chapter": "03g-safe-place-routing.md",
-      "line": 107,
+      "line": 130,
       "level": 2,
       "public_ref": "[BEG:D:S:010]",
       "html_id": "beg-d-s-010"
@@ -930,7 +959,7 @@
       "kind": "S",
       "title": "G4 — The place is physically safe, but staying is psychologically or socially unworkable",
       "chapter": "03g-safe-place-routing.md",
-      "line": 143,
+      "line": 175,
       "level": 2,
       "public_ref": "[BEG:D:S:011]",
       "html_id": "beg-d-s-011"
@@ -941,7 +970,7 @@
       "kind": "S",
       "title": "Situation G — No Safe Place",
       "chapter": "03g-safe-place-routing.md",
-      "line": 11,
+      "line": 13,
       "level": 1,
       "public_ref": "[BEG:D:S:012]",
       "html_id": "beg-d-s-012"
@@ -952,10 +981,21 @@
       "kind": "S",
       "title": "The safe-place handoff",
       "chapter": "03g-safe-place-routing.md",
-      "line": 225,
+      "line": 257,
       "level": 2,
       "public_ref": "[BEG:D:S:013]",
       "html_id": "beg-d-s-013"
+    },
+    {
+      "resource_key": "section:03g-safe-place-routing:a-safe-place-is-confirmed-not-merely-named",
+      "owner": "D",
+      "kind": "S",
+      "title": "A safe place is confirmed, not merely named",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 23,
+      "level": 2,
+      "public_ref": "[BEG:D:S:014]",
+      "html_id": "beg-d-s-014"
     },
     {
       "resource_key": "figure:dependency-continuity-map",
@@ -1150,6 +1190,61 @@
       "html_id": "beg-h-s-012"
     },
     {
+      "resource_key": "figure:interoception-loop",
+      "owner": "O",
+      "kind": "G",
+      "title": "interoception-loop",
+      "file": "build/diagrams/interoception_loop.png",
+      "question": "How do signal, attention, interpretation, and action produce a revisable loop?",
+      "source_basis": [
+        "01-how-to-use--interoception-review"
+      ],
+      "public_ref": "[BEG:O:G:001]",
+      "html_id": "beg-o-g-001"
+    },
+    {
+      "resource_key": "figure:observatory-scan",
+      "owner": "O",
+      "kind": "G",
+      "title": "observatory-scan",
+      "file": "build/diagrams/observatory_scan.png",
+      "question": "What should be observed in body, room, and attention before choosing a route?",
+      "source_basis": [
+        "route-catalog",
+        "01-how-to-use--stress-executive"
+      ],
+      "public_ref": "[BEG:O:G:002]",
+      "html_id": "beg-o-g-002"
+    },
+    {
+      "resource_key": "figure:signal-story-question",
+      "owner": "O",
+      "kind": "G",
+      "title": "signal-story-question",
+      "file": "build/diagrams/signal_story_question.png",
+      "question": "How can a reader separate sensation, fast interpretation, and a route-changing question?",
+      "source_basis": [
+        "01-how-to-use--affect-labeling",
+        "route-catalog"
+      ],
+      "public_ref": "[BEG:O:G:003]",
+      "html_id": "beg-o-g-003"
+    },
+    {
+      "resource_key": "figure:three-minute-observation",
+      "owner": "O",
+      "kind": "G",
+      "title": "three-minute-observation",
+      "file": "build/diagrams/three_minute_observation.png",
+      "question": "What happens at each minute of the bounded observation experiment, and when must it stop?",
+      "source_basis": [
+        "route-catalog",
+        "01-how-to-use--stress-executive"
+      ],
+      "public_ref": "[BEG:O:G:004]",
+      "html_id": "beg-o-g-004"
+    },
+    {
       "resource_key": "section:00-cover:bathroom-emergency-guide",
       "owner": "O",
       "kind": "S",
@@ -1177,7 +1272,7 @@
       "kind": "S",
       "title": "1. When the outside gets quiet, the inside gets loud",
       "chapter": "01-how-to-use.md",
-      "line": 46,
+      "line": 75,
       "level": 2,
       "public_ref": "[BEG:O:S:003]",
       "html_id": "beg-o-s-003"
@@ -1188,7 +1283,7 @@
       "kind": "S",
       "title": "10. The three-minute bathroom experiment",
       "chapter": "01-how-to-use.md",
-      "line": 225,
+      "line": 270,
       "level": 2,
       "public_ref": "[BEG:O:S:004]",
       "html_id": "beg-o-s-004"
@@ -1199,7 +1294,7 @@
       "kind": "S",
       "title": "2. The gut votes early",
       "chapter": "01-how-to-use.md",
-      "line": 73,
+      "line": 111,
       "level": 2,
       "public_ref": "[BEG:O:S:005]",
       "html_id": "beg-o-s-005"
@@ -1210,7 +1305,7 @@
       "kind": "S",
       "title": "3. The room is amplifying you",
       "chapter": "01-how-to-use.md",
-      "line": 96,
+      "line": 134,
       "level": 2,
       "public_ref": "[BEG:O:S:006]",
       "html_id": "beg-o-s-006"
@@ -1221,7 +1316,7 @@
       "kind": "S",
       "title": "4. Anxiety bends time",
       "chapter": "01-how-to-use.md",
-      "line": 116,
+      "line": 154,
       "level": 2,
       "public_ref": "[BEG:O:S:007]",
       "html_id": "beg-o-s-007"
@@ -1232,7 +1327,7 @@
       "kind": "S",
       "title": "5. Acute stress makes the mind narrower, not stupider",
       "chapter": "01-how-to-use.md",
-      "line": 133,
+      "line": 171,
       "level": 2,
       "public_ref": "[BEG:O:S:008]",
       "html_id": "beg-o-s-008"
@@ -1243,7 +1338,7 @@
       "kind": "S",
       "title": "6. Naming a feeling changes the task",
       "chapter": "01-how-to-use.md",
-      "line": 154,
+      "line": 192,
       "level": 2,
       "public_ref": "[BEG:O:S:009]",
       "html_id": "beg-o-s-009"
@@ -1254,7 +1349,7 @@
       "kind": "S",
       "title": "7. Cold water is interesting, not magical",
       "chapter": "01-how-to-use.md",
-      "line": 173,
+      "line": 218,
       "level": 2,
       "public_ref": "[BEG:O:S:010]",
       "html_id": "beg-o-s-010"
@@ -1265,7 +1360,7 @@
       "kind": "S",
       "title": "8. Bathroom fainting is a real category",
       "chapter": "01-how-to-use.md",
-      "line": 192,
+      "line": 237,
       "level": 2,
       "public_ref": "[BEG:O:S:011]",
       "html_id": "beg-o-s-011"
@@ -1276,7 +1371,7 @@
       "kind": "S",
       "title": "9. Smell is a fading sensor",
       "chapter": "01-how-to-use.md",
-      "line": 212,
+      "line": 257,
       "level": 2,
       "public_ref": "[BEG:O:S:012]",
       "html_id": "beg-o-s-012"
@@ -1287,7 +1382,7 @@
       "kind": "S",
       "title": "Choose the loudest topic",
       "chapter": "01-how-to-use.md",
-      "line": 247,
+      "line": 297,
       "level": 2,
       "public_ref": "[BEG:O:S:013]",
       "html_id": "beg-o-s-013"
@@ -1298,7 +1393,7 @@
       "kind": "S",
       "title": "The Small-Room Observatory",
       "chapter": "01-how-to-use.md",
-      "line": 9,
+      "line": 13,
       "level": 1,
       "public_ref": "[BEG:O:S:014]",
       "html_id": "beg-o-s-014"
@@ -1309,10 +1404,21 @@
       "kind": "S",
       "title": "Which guide should I pick?",
       "chapter": "01-how-to-use.md",
-      "line": 24,
+      "line": 28,
       "level": 2,
       "public_ref": "[BEG:O:S:015]",
       "html_id": "beg-o-s-015"
+    },
+    {
+      "resource_key": "section:01-how-to-use:first-90-seconds-scan-body-room-and-attention",
+      "owner": "O",
+      "kind": "S",
+      "title": "First 90 seconds — scan body, room, and attention",
+      "chapter": "01-how-to-use.md",
+      "line": 50,
+      "level": 2,
+      "public_ref": "[BEG:O:S:016]",
+      "html_id": "beg-o-s-016"
     },
     {
       "resource_key": "contact:poison:berlin",
@@ -1928,7 +2034,7 @@
       "kind": "S",
       "title": "4.0.0 — 17 July 2026",
       "chapter": "09-version-history.md",
-      "line": 351,
+      "line": 378,
       "level": 2,
       "public_ref": "[BEG:R:S:017]",
       "html_id": "beg-r-s-017"
@@ -1939,7 +2045,7 @@
       "kind": "S",
       "title": "4.0.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 297,
+      "line": 324,
       "level": 2,
       "public_ref": "[BEG:R:S:018]",
       "html_id": "beg-r-s-018"
@@ -1950,7 +2056,7 @@
       "kind": "S",
       "title": "4.1.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 265,
+      "line": 292,
       "level": 2,
       "public_ref": "[BEG:R:S:019]",
       "html_id": "beg-r-s-019"
@@ -1961,7 +2067,7 @@
       "kind": "S",
       "title": "4.1.2 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 241,
+      "line": 268,
       "level": 2,
       "public_ref": "[BEG:R:S:020]",
       "html_id": "beg-r-s-020"
@@ -1972,7 +2078,7 @@
       "kind": "S",
       "title": "4.2.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 210,
+      "line": 237,
       "level": 2,
       "public_ref": "[BEG:R:S:021]",
       "html_id": "beg-r-s-021"
@@ -1983,7 +2089,7 @@
       "kind": "S",
       "title": "4.3.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 180,
+      "line": 207,
       "level": 2,
       "public_ref": "[BEG:R:S:022]",
       "html_id": "beg-r-s-022"
@@ -1994,7 +2100,7 @@
       "kind": "S",
       "title": "4.3.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 162,
+      "line": 189,
       "level": 2,
       "public_ref": "[BEG:R:S:023]",
       "html_id": "beg-r-s-023"
@@ -2005,7 +2111,7 @@
       "kind": "S",
       "title": "4.4.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 147,
+      "line": 174,
       "level": 2,
       "public_ref": "[BEG:R:S:024]",
       "html_id": "beg-r-s-024"
@@ -2016,7 +2122,7 @@
       "kind": "S",
       "title": "Earlier versions",
       "chapter": "09-version-history.md",
-      "line": 387,
+      "line": 414,
       "level": 2,
       "public_ref": "[BEG:R:S:026]",
       "html_id": "beg-r-s-026"
@@ -2544,7 +2650,7 @@
       "kind": "S",
       "title": "4.5.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 114,
+      "line": 141,
       "level": 2,
       "public_ref": "[BEG:R:S:074]",
       "html_id": "beg-r-s-074"
@@ -2555,7 +2661,7 @@
       "kind": "S",
       "title": "4.6.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 73,
+      "line": 100,
       "level": 2,
       "public_ref": "[BEG:R:S:075]",
       "html_id": "beg-r-s-075"
@@ -2566,7 +2672,7 @@
       "kind": "S",
       "title": "4.6.1 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 56,
+      "line": 83,
       "level": 2,
       "public_ref": "[BEG:R:S:076]",
       "html_id": "beg-r-s-076"
@@ -2577,7 +2683,7 @@
       "kind": "S",
       "title": "4.7.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 34,
+      "line": 61,
       "level": 2,
       "public_ref": "[BEG:R:S:077]",
       "html_id": "beg-r-s-077"
@@ -2588,10 +2694,21 @@
       "kind": "S",
       "title": "4.8.0 — 27 July 2026",
       "chapter": "09-version-history.md",
-      "line": 11,
+      "line": 38,
       "level": 2,
       "public_ref": "[BEG:R:S:078]",
       "html_id": "beg-r-s-078"
+    },
+    {
+      "resource_key": "section:09-version-history:4-9-0-1-august-2026",
+      "owner": "R",
+      "kind": "S",
+      "title": "4.9.0 — 1 August 2026",
+      "chapter": "09-version-history.md",
+      "line": 11,
+      "level": 2,
+      "public_ref": "[BEG:R:S:079]",
+      "html_id": "beg-r-s-079"
     },
     {
       "resource_key": "glossary:aed",
