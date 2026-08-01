@@ -429,8 +429,8 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] require four owned reader visuals and numeric candidate state for O and D;
 - [x] keep both nodes master-only pending standalone layout, accessibility, and
   real-user review;
-- [ ] complete the exact-source build/test matrix and record 4.9.0 evidence;
-- [ ] tag `v4.9.0` locally without pushing, publishing, or deploying.
+- [x] complete the exact-source build/test matrix and record 4.9.0 evidence;
+- [x] tag `v4.9.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 
