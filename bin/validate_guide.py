@@ -376,7 +376,7 @@ check("Situations B–G — Six Different Kinds" not in source, "stale B–G mix
 check("Situation G — No Safe Place" in source, "Situation G standalone handoff missing")
 check("First 90 seconds — scan body, room, and attention" in source, "observatory first-minute scan missing")
 check("A safe place is confirmed, not merely named" in source, "safe-place confirmation contract missing")
-check("three minutes of observation, not three minutes of mandatory delay" in source.lower(), "observation delay boundary missing")
+check("three minutes of observation, not three minutes of mandatory delay" in re.sub(r"\s+", " ", source).lower(), "observation delay boundary missing")
 check("Templates — The Blue Book" in source, "Blue Book template subguide missing")
 check("Stable references — addresses that survive editing" in source, "stable reference explanation missing")
 check("bathroom_emergency@fkr.dev" in source, "reader feedback route missing")
@@ -585,7 +585,7 @@ print(
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
     f"{len(required_route_figures)} route/access figures, {len(required_continuity_figures)} continuity figures, "
-    "8 cataloged Vega-Lite figures, 23 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
+    "8 cataloged Vega-Lite figures, 29 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
     "structured routing/locales/accessibility, roadmap coverage, native MathML, "
     "A4, A4/2, and large-print outputs."
 )
