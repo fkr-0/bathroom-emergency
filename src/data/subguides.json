@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release": "4.10.0",
-  "status": "core-graph-with-eight-standalone",
+  "release": "4.11.0",
+  "status": "core-graph-with-nine-standalone",
   "identity_frozen_on": "2026-07-26",
   "standalone_nodes": [
     "O",
@@ -9,6 +9,7 @@
     "C",
     "D",
     "H",
+    "Z",
     "P",
     "T",
     "R"

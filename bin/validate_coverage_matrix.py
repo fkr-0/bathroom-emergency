@@ -61,10 +61,13 @@ if PATH.exists():
     check(by_id.get("O", {}).get("readiness") == "released-standalone", "O is not marked as a released standalone")
     check(by_id.get("D", {}).get("owned_visual_count", 0) >= 4, "D lacks four owned reader visuals")
     check(by_id.get("D", {}).get("readiness") == "released-standalone", "D is not marked as a released standalone")
+    check(by_id.get("Z", {}).get("source_count", 0) >= 4, "Z lacks four local sources")
+    check(by_id.get("Z", {}).get("owned_visual_count", 0) >= 7, "Z lacks seven owned reader visuals")
+    check(by_id.get("Z", {}).get("readiness") == "released-standalone", "Z is not marked as a released standalone")
 
 if FRAGMENT.exists():
     text = FRAGMENT.read_text(encoding="utf-8")
-    for marker in ("Source, visual, and standalone coverage matrix", "Per-guide provenance", "O — Small-Room Observatory", "D — Threat and Safe Place", "C — Body and First Aid", "P — Professional Support"):
+    for marker in ("Source, visual, and standalone coverage matrix", "Per-guide provenance", "O — Small-Room Observatory", "D — Threat and Safe Place", "C — Body and First Aid", "Z — Outage and Continuity", "P — Professional Support"):
         check(marker in text, f"coverage fragment missing marker: {marker}")
 
 if errors:

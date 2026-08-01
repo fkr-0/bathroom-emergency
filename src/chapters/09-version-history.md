@@ -1,12 +1,35 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.10.0"
-last_updated: "2026-08-01"
+revision: "4.11.0"
+last_updated: "2026-08-02"
 dependencies: []
 ---
 
 # Version History
+
+## 4.11.0 — 2 August 2026
+
+### Outage and continuity becomes a detachable route
+
+- Z now builds from the canonical outage, disaster, and continuity chapter in
+  six layout/mode editions without copying reader prose into a second source.
+- The standalone family carries four local sources, seven owned reader visuals,
+  complete graph handoffs, and generated Sources and limits.
+
+### Warning channels gain a local operational source
+
+- The initial verification route now cites current BBK information for NINA and
+  Cell Broadcast.
+- Short direct warnings remain paired with fuller official information channels
+  rather than being treated as complete incident instructions.
+
+### Nine standalone families share one canonical source tree
+
+- The released set is O, B, C, D, H, Z, P, T, and R, totalling 54 standalone
+  PDF editions.
+- A remains master-only. Build evidence does not claim that a real outage,
+  evacuation, supply route, or household continuity plan was field-tested.
 
 ## 4.10.0 — 1 August 2026
 

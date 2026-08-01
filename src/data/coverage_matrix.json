@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.10.0",
+  "release": "4.11.0",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -9,10 +9,10 @@
   },
   "totals": {
     "nodes": 10,
-    "sections": 219,
-    "sources": 53,
+    "sections": 220,
+    "sources": 54,
     "reader_visuals": 37,
-    "standalone_nodes": 8
+    "standalone_nodes": 9
   },
   "nodes": [
     {
@@ -260,20 +260,21 @@
     {
       "node": "Z",
       "title": "Outage and Continuity",
-      "standalone": false,
+      "standalone": true,
       "chapters": [
         "06-zombie-guide.md"
       ],
       "chapter_count": 1,
       "section_count": 8,
-      "source_count": 3,
+      "source_count": 4,
       "source_counts": {
-        "operational": 1,
+        "operational": 2,
         "research": 0,
         "explanatory": 2
       },
       "source_ids": [
         "06-zombie-guide--bbk",
+        "06-zombie-guide--bbk-warning",
         "06-zombie-guide--drk-cold",
         "06-zombie-guide--ostrom"
       ],
@@ -296,7 +297,7 @@
         "high": 1,
         "medium": 3
       },
-      "readiness": "needs-sources"
+      "readiness": "released-standalone"
     },
     {
       "node": "P",
@@ -369,7 +370,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 79,
+      "section_count": 80,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

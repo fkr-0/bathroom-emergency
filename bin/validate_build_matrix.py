@@ -59,7 +59,7 @@ if manifest_path.exists():
     released = manifest.get("standalone_nodes", [])
     by_id = {item["id"]: item for item in manifest.get("nodes", [])}
     check(
-        set(released) == {"O", "B", "C", "D", "H", "P", "T", "R"},
+        set(released) == {"O", "B", "C", "D", "H", "Z", "P", "T", "R"},
         "released standalone set drifted",
     )
     for node_id in released:
@@ -86,4 +86,4 @@ if release_path.exists():
 
 if errors:
     raise SystemExit("Build-matrix validation failed:\n- " + "\n- ".join(errors))
-print("Build-matrix validation passed: six master editions, editable formats, landing, release manifest, and 48 standalone O/B/C/D/H/P/T/R editions are present.")
+print("Build-matrix validation passed: six master editions, editable formats, landing, release manifest, and 54 standalone O/B/C/D/H/Z/P/T/R editions are present.")

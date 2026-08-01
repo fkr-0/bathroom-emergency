@@ -124,7 +124,7 @@ if figure_path.exists():
         len(h_reader) >= 4,
         f"H pilot needs four useful canonical visuals, found {len(h_reader)}",
     )
-    for node_id, minimum in (("O", 4), ("C", 5), ("D", 4), ("P", 4)):
+    for node_id, minimum in (("O", 4), ("C", 5), ("D", 4), ("Z", 7), ("P", 4)):
         reader = [
             item
             for item in records
@@ -165,6 +165,7 @@ if source_path.exists():
     check(any("H" in item.get("subguides", []) for item in records), "H has no sources")
     check(any("O" in item.get("subguides", []) for item in records), "O has no sources")
     check(any("P" in item.get("subguides", []) for item in records), "P has no sources")
+    check(sum("Z" in item.get("subguides", []) for item in records) >= 4, "Z has fewer than four sources")
 
 layout_geometry = {
     "a4": ("594", "841"),
@@ -263,6 +264,25 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
             "Sources and limits",
         ),
         ("B — I feel anxious", "C — Pain", "D — Threat", "E — Overload"),
+    ),
+    (
+        "Z",
+        "outage-continuity",
+        4,
+        7,
+        (
+            "Zombie Guide — Mostly for Non-Zombie Disasters",
+            "Verify before optimizing",
+            "Household continuity board",
+            "Water — priority zero after air and immediate safety",
+            "Essential medication and powered-device failure",
+            "Group communication channels",
+            "Five functions for the first meeting",
+            "Evacuation pocket list",
+            "Preparedness checklist before anything happens",
+            "Sources and limits",
+        ),
+        (),
     ),
     (
         "T",
@@ -414,16 +434,16 @@ if hub_manifest_path.exists():
     hub = json.loads(hub_manifest_path.read_text(encoding="utf-8"))
     check(hub.get("release") == VERSION, "hub release drifted")
     check(
-        set(hub.get("standalone_nodes", [])) == {"O", "B", "C", "D", "H", "P", "T", "R"},
+        set(hub.get("standalone_nodes", [])) == {"O", "B", "C", "D", "H", "Z", "P", "T", "R"},
         "hub standalone set drifted",
     )
-    check(set(hub.get("master_only_nodes", [])) == {"A", "Z"}, "hub master-only set drifted")
+    check(set(hub.get("master_only_nodes", [])) == {"A"}, "hub master-only set drifted")
 
 if errors:
     raise SystemExit("Migration validation failed:\n- " + "\n- ".join(errors))
 
 print(
     "Migration validation passed: canonical section/figure/source ownership, "
-    "released visual minimums, graph hub, and 48 tagged standalone PDF editions "
+    "released visual minimums, graph hub, and 54 tagged standalone PDF editions "
     "with A4/A4/2/large-print color-mono parity."
 )

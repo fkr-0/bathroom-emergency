@@ -338,7 +338,7 @@ Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md` and
 - [x] migrate B and H as bounded slices without duplicating canonical prose;
 - [x] generate each released subguide's source-complete end matter from one registry;
 - [x] require orientation, mechanism/evidence, and handoff coverage in the B/H release gate;
-- [ ] detach the remaining two nodes one at a time after equivalent visual,
+- [ ] detach the remaining node after equivalent visual,
   source, layout, and accessibility review.
 
 ### 4.6.0 — Templates, stable references, and deployment — released
@@ -445,6 +445,21 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] keep A and Z master-only pending equivalent visual and standalone review;
 - [x] complete the exact-source build/test matrix and record 4.10.0 evidence;
 - [x] tag `v4.10.0` locally without pushing, publishing, or deploying.
+
+### 4.11.0 — Outage and continuity standalone edition — release candidate
+
+- [x] add a current local BBK warning-channel source for NINA and Cell
+  Broadcast;
+- [x] extract Z from the canonical outage and continuity chapter without
+  duplicating reader prose;
+- [x] require four local sources and seven owned reader visuals in the Z release
+  gate;
+- [x] add Z to the graph hub, Pages package, download catalogue, coverage
+  matrix, migration checks, and complete build matrix;
+- [x] expand the standalone PDF matrix from 48 to 54 editions;
+- [x] keep A master-only pending an equivalent visual and standalone review;
+- [ ] complete the exact-source build/test matrix and record 4.11.0 evidence;
+- [ ] tag `v4.11.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 

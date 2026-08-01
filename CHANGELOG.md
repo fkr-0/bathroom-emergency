@@ -1,5 +1,36 @@
 # Changelog
 
+## 4.11.0 — 2026-08-02
+
+### Released Outage and Continuity as a standalone family
+
+- Detached Z from the canonical outage, disaster, and continuity chapter
+  without creating a parallel source or copying unrelated master-guide prose.
+- Released A4, A4/2, and large-print colour/monochrome editions with four local
+  sources, seven owned reader visuals, complete graph handoffs, and generated
+  Sources and limits.
+- Required the warning-verification route, household continuity board, water
+  planning, essential-treatment continuity, communication scaling, first-
+  meeting roles, evacuation list, and preparedness checklist to remain present
+  across every edition.
+
+### Strengthened warning-channel provenance
+
+- Added a local BBK source for NINA and Cell Broadcast beside the instruction
+  to verify official warnings before optimising supplies or forwarding claims.
+- Kept the warning mix explicit: short direct alerts and fuller information
+  channels complement rather than replace one another.
+
+### Expanded the release matrix to nine route families
+
+- Expanded the graph hub, download catalogue, Pages package, release manifest,
+  coverage report, migration checks, and complete build matrix from 48 to 54
+  standalone PDF editions.
+- Kept A — Responsibility and Care inside the master guide until it gains an
+  equivalent visual set and standalone review.
+- Preserved the publication boundary: local builds and tags do not push,
+  publish, deploy, or run the prepared Pages workflow.
+
 ## 4.10.0 — 2026-08-01
 
 ### Released the Small-Room Observatory as a standalone family

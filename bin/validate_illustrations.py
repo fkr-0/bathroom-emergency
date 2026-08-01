@@ -81,11 +81,12 @@ if CATALOG_PATH.exists():
     check(required_new <= current_ids, f"new O/D illustration set incomplete: {sorted(required_new - current_ids)}")
     owner_counts = {
         owner: sum(1 for item in current if item.get("owner") == owner)
-        for owner in {"O", "D"}
+        for owner in {"O", "D", "Z"}
     }
     check(owner_counts["O"] >= 4, "O lacks the four owned reader visuals required for candidate review")
     check(owner_counts["D"] >= 4, "D lacks the four owned reader visuals required for candidate review")
+    check(owner_counts["Z"] >= 3, "Z lacks its current non-Vega operational visual set")
 
 if errors:
     raise SystemExit("Illustration validation failed:\n- " + "\n- ".join(errors))
-print(f"Illustration validation passed: {len(current)} current non-Vega figures plus {len(migrated)} migrated audit records, including released four-visual O and D slices, at {VERSION}.")
+print(f"Illustration validation passed: {len(current)} current non-Vega figures plus {len(migrated)} migrated audit records, including released O, D, and Z visual slices, at {VERSION}.")

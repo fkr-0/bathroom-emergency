@@ -11,7 +11,7 @@ The project is not one long emergency leaflet. It is a maintained family of:
 
 - one complete master guide;
 - ten graph-linked content identities;
-- eight released standalone subguide families;
+- nine released standalone subguide families;
 - detachable forms and deployment fields;
 - a stable global reference registry;
 - a modern project landing page, deployment planner, download catalogue, route
@@ -103,16 +103,16 @@ network dependency.
 | C | Body and First Aid | master + standalone |
 | D | Threat and Safe Place | master + standalone |
 | H | Air, Smell, and Environment | master + standalone |
-| Z | Disruption and Continuity | master guide |
+| Z | Disruption and Continuity | master + standalone |
 | P | Professional Support | master + standalone |
 | T | Templates — The Blue Book | master + standalone |
 | R | Reference and Appendix | master + standalone |
 
 Detaching a node is not a copy operation. A standalone node must pass source,
 visual, color/mono, geometry, tagged-PDF, semantic-text, handoff, and
-accessibility gates. O, B, C, D, H, P, T, and R currently meet that release
-contract. A and Z remain master-only while their visual and standalone review
-work is incomplete.
+accessibility gates. O, B, C, D, H, Z, P, T, and R currently meet that release
+contract. A remains master-only while its visual and standalone review work is
+incomplete.
 
 ### Stable public references
 
@@ -236,6 +236,7 @@ credentials, private medical details, or violence-related safe locations.
 | C family | `build/subguides/C/` | six first-aid layout-mode editions |
 | D family | `build/subguides/D/` | six threat and safe-place editions |
 | H family | `build/subguides/H/` | six HTML/PDF/Markdown layout-mode editions |
+| Z family | `build/subguides/Z/` | six outage and continuity editions |
 | P family | `build/subguides/P/` | six professional-support editions |
 | T family | `build/subguides/T/` | six detachable-template editions |
 | R family | `build/subguides/R/` | six reference/index editions |
@@ -253,7 +254,7 @@ The validators enforce, among other things:
 
 - 14 canonical chapters at the package version and release date;
 - one-column print output despite the responsive screen navigation;
-- six master layout/mode editions and 48 standalone O/B/C/D/H/P/T/R editions;
+- six master layout/mode editions and 54 standalone O/B/C/D/H/Z/P/T/R editions;
 - valid A4, 105 × 297 mm A4/2, and large-print geometry;
 - tagged PDFs, semantic text parity, page-count parity, and no blank/colliding
   pages;

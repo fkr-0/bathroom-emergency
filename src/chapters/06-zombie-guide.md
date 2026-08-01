@@ -1,8 +1,8 @@
 ---
 title: "Outage, Disaster, and Zombie Guide"
 chapter: 6
-revision: "4.10.0"
-last_updated: "2026-08-01"
+revision: "4.11.0"
+last_updated: "2026-08-02"
 dependencies:
   - build/diagrams/dependency_continuity_map.png
   - build/diagrams/survival_pyramid.png
@@ -31,7 +31,7 @@ Before rationing toothpaste or founding a perimeter committee, verify that the
 crisis exists and identify what kind of failure is actually occurring.
 
 1. Check official warnings: **NINA**, Cell Broadcast, local radio, municipality,
-   police, fire service, or BBK.
+   police, fire service, or BBK.[^bbk-warning]
 2. Identify the hazard: fire, flood, chemical release, outage, heat, cold,
    violence, or ordinary rumour wearing tactical trousers.
 3. Decide whether authorities say **shelter** or **evacuate**.
@@ -625,6 +625,8 @@ Preparedness is not a personality or bunker aesthetic. It is the quiet removal
 of tomorrow’s stupidest problems.
 
 [^bbk]: Bundesamt für Bevölkerungsschutz und Katastrophenhilfe, *Vorsorgen für Krisen und Katastrophen*, current preparedness guide and checklists: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html
+
+[^bbk-warning]: Bundesamt für Bevölkerungsschutz und Katastrophenhilfe, “Warn-App NINA” and “Cell Broadcast.” NINA provides official civil-protection warnings and integrates weather and flood information; Cell Broadcast sends short official warnings directly to compatible mobile devices and should be supplemented with a fuller warning channel when possible. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html and https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/So-werden-Sie-gewarnt/Cell-Broadcast/cell-broadcast_node.html
 
 [^drk-cold]: German Red Cross, “Erfrierungen und Unterkühlungen”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erfrierungen-und-unterkuehlungen/
 

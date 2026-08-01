@@ -399,6 +399,10 @@ def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
                 chapter_without_definitions("03h-environmental-hazards.md"),
             ),
         ]
+    if node_id == "Z":
+        return [
+            ("06-zombie-guide.md", chapter_without_definitions("06-zombie-guide.md")),
+        ]
     if node_id == "T":
         return [
             ("07a-templates.md", chapter_without_definitions("07a-templates.md")),
@@ -624,18 +628,17 @@ fallback; each released standalone page lists all of its neighbours.
 {chr(10).join(cards)}
 </div>
 
-## Why eight nodes are detached in this release
+## Why nine nodes are detached in this release
 
 The standalone set now covers orientation (**O**), alarm and calm (**B**), body
 and first aid (**C**), threat and safe place (**D**), environmental hazards
-(**H**), professional systems (**P**), writable templates (**T**), and reference
-material (**R**). The set deliberately mixes research, operational protocols,
-action sequences, forms, and indexes so the build cannot quietly optimize for
-one content type.
+(**H**), outage and continuity (**Z**), professional systems (**P**), writable
+templates (**T**), and reference material (**R**). The set deliberately mixes
+research, operational protocols, action sequences, forms, and indexes so the
+build cannot quietly optimize for one content type.
 
-Responsibility and care (**A**) and outage and continuity (**Z**) continue to
-work inside the complete master guide until their source ownership, page
-grammar, and visual set pass the same gates.
+Responsibility and care (**A**) continues to work inside the complete master
+guide until its visual set and standalone page grammar pass the same gates.
 
 :::
 '''
