@@ -432,7 +432,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete the exact-source build/test matrix and record 4.9.0 evidence;
 - [x] tag `v4.9.0` locally without pushing, publishing, or deploying.
 
-### 4.10.0 — Orientation and safe-place standalone editions — release candidate
+### 4.10.0 — Orientation and safe-place standalone editions — released
 
 - [x] extract O from the canonical Observatory chapter without copying the
   master cover or duplicating the emergency gate;
@@ -443,8 +443,8 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   matrix, migration checks, and complete build matrix;
 - [x] expand the standalone PDF matrix from 36 to 48 editions;
 - [x] keep A and Z master-only pending equivalent visual and standalone review;
-- [ ] complete the exact-source build/test matrix and record 4.10.0 evidence;
-- [ ] tag `v4.10.0` locally without pushing, publishing, or deploying.
+- [x] complete the exact-source build/test matrix and record 4.10.0 evidence;
+- [x] tag `v4.10.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 
