@@ -338,7 +338,7 @@ Tracked in `docs/plans/4.5.0-graph-subguide-architecture.md` and
 - [x] migrate B and H as bounded slices without duplicating canonical prose;
 - [x] generate each released subguide's source-complete end matter from one registry;
 - [x] require orientation, mechanism/evidence, and handoff coverage in the B/H release gate;
-- [ ] detach the remaining four nodes one at a time after equivalent visual,
+- [ ] detach the remaining two nodes one at a time after equivalent visual,
   source, layout, and accessibility review.
 
 ### 4.6.0 — Templates, stable references, and deployment — released
@@ -418,7 +418,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] keep 4.8.0 untagged and supersede it with the content-and-illustration
   release rather than creating two indistinguishable local release points.
 
-### 4.9.0 — Observation and safe-place visual language — release candidate
+### 4.9.0 — Observation and safe-place visual language — released
 
 - [x] add a first-90-seconds body/room/attention scan and sharpen the bounded
   observation language;
@@ -431,6 +431,20 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   real-user review;
 - [x] complete the exact-source build/test matrix and record 4.9.0 evidence;
 - [x] tag `v4.9.0` locally without pushing, publishing, or deploying.
+
+### 4.10.0 — Orientation and safe-place standalone editions — release candidate
+
+- [x] extract O from the canonical Observatory chapter without copying the
+  master cover or duplicating the emergency gate;
+- [x] extract D from its owned threat section and complete safe-place chapter;
+- [x] require O eleven-source/four-visual and D eight-source/four-visual release
+  thresholds;
+- [x] add O and D to the graph hub, Pages package, download catalogue, coverage
+  matrix, migration checks, and complete build matrix;
+- [x] expand the standalone PDF matrix from 36 to 48 editions;
+- [x] keep A and Z master-only pending equivalent visual and standalone review;
+- [ ] complete the exact-source build/test matrix and record 4.10.0 evidence;
+- [ ] tag `v4.10.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 

@@ -1,7 +1,7 @@
 ---
 title: "Situations B–F, with Situation G Router"
 chapter: 3
-revision: "4.9.0"
+revision: "4.10.0"
 last_updated: "2026-08-01"
 dependencies:
   - build/diagrams/vega_gad7_accuracy.png

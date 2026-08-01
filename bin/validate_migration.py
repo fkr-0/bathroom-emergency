@@ -124,7 +124,7 @@ if figure_path.exists():
         len(h_reader) >= 4,
         f"H pilot needs four useful canonical visuals, found {len(h_reader)}",
     )
-    for node_id, minimum in (("C", 5), ("P", 4)):
+    for node_id, minimum in (("O", 4), ("C", 5), ("D", 4), ("P", 4)):
         reader = [
             item
             for item in records
@@ -161,7 +161,9 @@ if source_path.exists():
     check(len(ids) == len(set(ids)), "duplicate source IDs")
     check(any("B" in item.get("subguides", []) for item in records), "B has no sources")
     check(any("C" in item.get("subguides", []) for item in records), "C has no sources")
+    check(any("D" in item.get("subguides", []) for item in records), "D has no sources")
     check(any("H" in item.get("subguides", []) for item in records), "H has no sources")
+    check(any("O" in item.get("subguides", []) for item in records), "O has no sources")
     check(any("P" in item.get("subguides", []) for item in records), "P has no sources")
 
 layout_geometry = {
@@ -171,6 +173,27 @@ layout_geometry = {
     "largeprint": ("594", "841"),
 }
 for node, slug, min_sources, min_visuals, required, forbidden in (
+    (
+        "O",
+        "small-room-observatory",
+        11,
+        4,
+        (
+            "The Small-Room Observatory",
+            "Which guide should I pick?",
+            "First 90 seconds — scan body, room, and attention",
+            "When the outside gets quiet, the inside gets loud",
+            "The three-minute bathroom experiment",
+            "Sources and limits",
+        ),
+        (
+            "B — I feel anxious",
+            "C — Pain",
+            "D — Threat",
+            "F — Smell",
+            "Situation G — No Safe Place",
+        ),
+    ),
     (
         "B",
         "alarm-calm",
@@ -209,6 +232,23 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
             "Sources and limits",
         ),
         ("B — I feel anxious", "D — Threat", "E — Overload", "F — Smell"),
+    ),
+    (
+        "D",
+        "threat-safe-place",
+        8,
+        4,
+        (
+            "D — Threat has three clocks",
+            "Situation G — No Safe Place",
+            "A safe place is confirmed, not merely named",
+            "G1 — A person or active threat makes the place unsafe",
+            "G3 — A place exists, but it cannot safely support the person",
+            "Communication and access card",
+            "The safe-place handoff",
+            "Sources and limits",
+        ),
+        ("B — I feel anxious", "C — Pain", "E — Overload", "F — Smell"),
     ),
     (
         "H",
@@ -374,16 +414,16 @@ if hub_manifest_path.exists():
     hub = json.loads(hub_manifest_path.read_text(encoding="utf-8"))
     check(hub.get("release") == VERSION, "hub release drifted")
     check(
-        set(hub.get("standalone_nodes", [])) == {"B", "C", "H", "P", "T", "R"},
+        set(hub.get("standalone_nodes", [])) == {"O", "B", "C", "D", "H", "P", "T", "R"},
         "hub standalone set drifted",
     )
-    check(len(hub.get("master_only_nodes", [])) == 4, "hub master-only set drifted")
+    check(set(hub.get("master_only_nodes", [])) == {"A", "Z"}, "hub master-only set drifted")
 
 if errors:
     raise SystemExit("Migration validation failed:\n- " + "\n- ".join(errors))
 
 print(
     "Migration validation passed: canonical section/figure/source ownership, "
-    "released visual minimums, graph hub, and 36 tagged standalone PDF editions "
+    "released visual minimums, graph hub, and 48 tagged standalone PDF editions "
     "with A4/A4/2/large-print color-mono parity."
 )

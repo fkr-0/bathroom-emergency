@@ -1,11 +1,13 @@
 {
   "schema_version": 1,
-  "release": "4.9.0",
-  "status": "core-graph-with-six-standalone",
+  "release": "4.10.0",
+  "status": "core-graph-with-eight-standalone",
   "identity_frozen_on": "2026-07-26",
   "standalone_nodes": [
+    "O",
     "B",
     "C",
+    "D",
     "H",
     "P",
     "T",

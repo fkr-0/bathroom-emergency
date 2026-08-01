@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.9.0",
+  "release": "4.10.0",
   "status": "stable-public-reference-registry",
   "format": "[BEG:<owner>:<kind>:<sequence>]",
   "kind_legend": {
@@ -276,6 +276,7 @@
     "section:09-version-history:4-0-1-22-july-2026": "[BEG:R:S:018]",
     "section:09-version-history:4-1-1-22-july-2026": "[BEG:R:S:019]",
     "section:09-version-history:4-1-2-22-july-2026": "[BEG:R:S:020]",
+    "section:09-version-history:4-10-0-1-august-2026": "[BEG:R:S:080]",
     "section:09-version-history:4-2-0-22-july-2026": "[BEG:R:S:021]",
     "section:09-version-history:4-3-0-22-july-2026": "[BEG:R:S:022]",
     "section:09-version-history:4-3-1-22-july-2026": "[BEG:R:S:023]",

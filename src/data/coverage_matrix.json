@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.9.0",
+  "release": "4.10.0",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -9,16 +9,16 @@
   },
   "totals": {
     "nodes": 10,
-    "sections": 218,
+    "sections": 219,
     "sources": 53,
     "reader_visuals": 37,
-    "standalone_nodes": 6
+    "standalone_nodes": 8
   },
   "nodes": [
     {
       "node": "O",
       "title": "Small-Room Observatory",
-      "standalone": false,
+      "standalone": true,
       "chapters": [
         "00-cover.md",
         "01-how-to-use.md"
@@ -58,7 +58,7 @@
         "high": 3,
         "medium": 1
       },
-      "readiness": "standalone-candidate"
+      "readiness": "released-standalone"
     },
     {
       "node": "A",
@@ -178,7 +178,7 @@
     {
       "node": "D",
       "title": "Threat and Safe Place",
-      "standalone": false,
+      "standalone": true,
       "chapters": [
         "03-situations-b-g.md",
         "03g-safe-place-routing.md"
@@ -214,7 +214,7 @@
       "visual_review_priorities": {
         "high": 4
       },
-      "readiness": "standalone-candidate"
+      "readiness": "released-standalone"
     },
     {
       "node": "H",
@@ -369,7 +369,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 78,
+      "section_count": 79,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

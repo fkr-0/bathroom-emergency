@@ -88,4 +88,4 @@ if CATALOG_PATH.exists():
 
 if errors:
     raise SystemExit("Illustration validation failed:\n- " + "\n- ".join(errors))
-print(f"Illustration validation passed: {len(current)} current non-Vega figures plus {len(migrated)} migrated audit records, including four-visual O and D candidate slices, at {VERSION}.")
+print(f"Illustration validation passed: {len(current)} current non-Vega figures plus {len(migrated)} migrated audit records, including released four-visual O and D slices, at {VERSION}.")

@@ -36,6 +36,7 @@ SPARSE_REVIEW = ROOT / "docs" / "qa" / "4.3.1-sparse-page-review.md"
 SUBGUIDE_PLAN = ROOT / "docs" / "plans" / "4.5.0-graph-subguide-architecture.md"
 VISUALIZATION_PLAN = ROOT / "docs" / "plans" / "visualization-program.md"
 SOURCE_LOCALIZATION_PLAN = ROOT / "docs" / "plans" / "subguide-source-localization.md"
+OD_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.10.0-od-standalone-release.md"
 errors: list[str] = []
 
 
@@ -327,6 +328,11 @@ for path, label, markers in (
         SOURCE_LOCALIZATION_PLAN,
         "subguide source-localization plan",
         ("Sources and limits", "canonical source registry", "two-subguide pilot"),
+    ),
+    (
+        OD_STANDALONE_PLAN,
+        "4.10.0 O/D standalone plan",
+        ("Canonical extraction", "Small-Room Observatory", "Threat and Safe Place", "48", "Do not push"),
     ),
 ):
     check(path.exists(), f"{label} is missing")

@@ -1,5 +1,38 @@
 # Changelog
 
+## 4.10.0 — 2026-08-01
+
+### Released the Small-Room Observatory as a standalone family
+
+- Detached O from the canonical Observatory chapter without copying the master
+  cover or creating a second emergency gate.
+- Released A4, A4/2, and large-print colour/monochrome editions with eleven
+  local sources, four owned reader visuals, graph handoffs, and local Sources
+  and limits.
+- Required the route-choice table, first-90-seconds scan, interoception loop,
+  signal/story/question sequence, and bounded observation contract to remain
+  present across every edition.
+
+### Released Threat and Safe Place as a standalone family
+
+- Detached the D-owned threat-clock section and the complete canonical
+  safe-place chapter without duplicating reader prose.
+- Released six D editions with eight operational sources and four owned reader
+  visuals covering routing, confirmation, communication access, and remaining
+  reserve.
+- Added release checks for the safe-place handoff, G1/G3 routes, one emergency
+  gate, foreign-section exclusion, tagged PDFs, geometry, and semantic parity.
+
+### Expanded the release matrix to eight route families
+
+- Expanded the graph hub, download catalogue, Pages package, release manifest,
+  coverage report, migration checks, and complete build matrix from 36 to 48
+  standalone PDF editions.
+- Kept A — Responsibility and Care and Z — Outage and Continuity inside the
+  master guide until their visual and standalone review work is complete.
+- Preserved the publication boundary: local builds and tags do not push,
+  publish, deploy, or run the prepared Pages workflow.
+
 ## 4.9.0 — 2026-08-01
 
 ### Made the opening route operational before it becomes explanatory

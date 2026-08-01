@@ -58,9 +58,9 @@ if PATH.exists():
     check(by_id.get("C", {}).get("readiness") in {"standalone-candidate", "released-standalone"}, "C is no longer ready for standalone review")
     check(by_id.get("P", {}).get("source_count", 0) >= 4, "P lacks the operational source base needed for visual work")
     check(by_id.get("O", {}).get("owned_visual_count", 0) >= 4, "O lacks four owned reader visuals")
-    check(by_id.get("O", {}).get("readiness") == "standalone-candidate", "O did not cross the numeric candidate screen")
+    check(by_id.get("O", {}).get("readiness") == "released-standalone", "O is not marked as a released standalone")
     check(by_id.get("D", {}).get("owned_visual_count", 0) >= 4, "D lacks four owned reader visuals")
-    check(by_id.get("D", {}).get("readiness") == "standalone-candidate", "D did not cross the numeric candidate screen")
+    check(by_id.get("D", {}).get("readiness") == "released-standalone", "D is not marked as a released standalone")
 
 if FRAGMENT.exists():
     text = FRAGMENT.read_text(encoding="utf-8")

@@ -365,6 +365,18 @@ the handoff page below remain complete in text.
 
 
 def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
+    if node_id == "O":
+        return [
+            ("01-how-to-use.md", chapter_without_definitions("01-how-to-use.md")),
+        ]
+    if node_id == "D":
+        return [
+            ("03-situations-b-g.md", mixed_sections("D")),
+            (
+                "03g-safe-place-routing.md",
+                chapter_without_definitions("03g-safe-place-routing.md"),
+            ),
+        ]
     if node_id == "B":
         return [
             ("03-situations-b-g.md", mixed_sections("B")),
@@ -612,16 +624,18 @@ fallback; each released standalone page lists all of its neighbours.
 {chr(10).join(cards)}
 </div>
 
-## Why six nodes are detached in this release
+## Why eight nodes are detached in this release
 
-The standalone set now covers alarm and calm (**B**), body and first aid (**C**),
-environmental hazards (**H**), professional systems (**P**), writable templates
-(**T**), and reference material (**R**). The set deliberately mixes research,
-operational protocols, action sequences, forms, and indexes so the build cannot
-quietly optimize for one content type.
+The standalone set now covers orientation (**O**), alarm and calm (**B**), body
+and first aid (**C**), threat and safe place (**D**), environmental hazards
+(**H**), professional systems (**P**), writable templates (**T**), and reference
+material (**R**). The set deliberately mixes research, operational protocols,
+action sequences, forms, and indexes so the build cannot quietly optimize for
+one content type.
 
-The remaining four nodes continue to work inside the complete master guide
-until their source ownership, page grammar, and visual set pass the same gates.
+Responsibility and care (**A**) and outage and continuity (**Z**) continue to
+work inside the complete master guide until their source ownership, page
+grammar, and visual set pass the same gates.
 
 :::
 '''

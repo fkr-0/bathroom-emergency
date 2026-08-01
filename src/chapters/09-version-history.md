@@ -1,12 +1,37 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.9.0"
+revision: "4.10.0"
 last_updated: "2026-08-01"
 dependencies: []
 ---
 
 # Version History
+
+## 4.10.0 — 1 August 2026
+
+### Orientation becomes a detachable route
+
+- O now builds from the canonical Small-Room Observatory chapter in six
+  layout/mode editions without copying the master cover or duplicating its
+  emergency gate.
+- The standalone family carries eleven local sources, four owned visuals,
+  complete graph handoffs, and generated Sources and limits.
+
+### Threat and safe place becomes a detachable route
+
+- D now builds from its owned threat-clock section and the complete safe-place
+  chapter in A4, A4/2, and large-print colour/monochrome editions.
+- Eight operational sources and four reader visuals remain attached to the
+  route, including destination confirmation, communication access, and the
+  remaining-reserve model.
+
+### Eight standalone families share one canonical source tree
+
+- The released set is O, B, C, D, H, P, T, and R, totalling 48 standalone PDF
+  editions.
+- A and Z remain master-only. Build evidence does not claim that a local bed,
+  service, safe place, or real-crisis route was available or successfully used.
 
 ## 4.9.0 — 1 August 2026
 

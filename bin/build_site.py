@@ -169,7 +169,7 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
     <div class="section-heading"><div><span class="eyebrow">Start where the task is</span><h2 id="next-move">Choose your next move.</h2></div><p>No account, app, or network request is required. The release is built as HTML, PDF, editable source, and detachable route families.</p></div>
     <div class="action-grid">
       <a class="action-card action-guide" href="guide/"><span class="action-index">01</span><div><strong>Use the guide now</strong><p>Open the responsive complete edition and route from the actual problem.</p></div><span aria-hidden="true">↗</span></a>
-      <a class="action-card action-routes" href="routes/"><span class="action-index">02</span><div><strong>Open one route</strong><p>Use a focused standalone edition for alarm, first aid, environment, support, templates, or reference.</p></div><span aria-hidden="true">↗</span></a>
+      <a class="action-card action-routes" href="routes/"><span class="action-index">02</span><div><strong>Open one route</strong><p>Use a focused standalone edition for orientation, alarm, first aid, safe place, environment, support, templates, or reference.</p></div><span aria-hidden="true">↗</span></a>
       <a class="action-card action-download" href="downloads/"><span class="action-index">03</span><div><strong>Print or download</strong><p>Choose A4, narrow A4/2, large print, colour, or monochrome.</p></div><span aria-hidden="true">↗</span></a>
       <a class="action-card action-deploy" href="deploy/"><span class="action-index">04</span><div><strong>Install it properly</strong><p>Verify local routes, protect private fields, test the room, and assign maintenance.</p></div><span aria-hidden="true">↗</span></a>
     </div>
@@ -177,7 +177,7 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
 
   <section class="route-section section-block" aria-labelledby="route-heading">
     <div class="shell">
-      <div class="section-heading inverse"><div><span class="eyebrow">Ten connected regions</span><h2 id="route-heading">A graph, not a diagnostic maze.</h2></div><p>Each route owns a kind of problem and hands off when another system can change it better. Six routes currently ship as standalone families.</p></div>
+      <div class="section-heading inverse"><div><span class="eyebrow">Ten connected regions</span><h2 id="route-heading">A graph, not a diagnostic maze.</h2></div><p>Each route owns a kind of problem and hands off when another system can change it better. Eight routes currently ship as standalone families.</p></div>
       <div class="route-grid">{route_cards(nodes, released, "")}</div>
       <div class="section-cta"><a class="text-link light" href="routes/">Explore the complete route graph <span aria-hidden="true">→</span></a></div>
     </div>
@@ -321,7 +321,7 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
 {nav("../", "downloads")}
 {emergency_strip()}
 <main id="main">
-  <section class="page-hero download-hero shell"><div><span class="eyebrow">Release {esc(VERSION)} download catalogue</span><h1>Take the guide<br><em>into the room.</em></h1><p class="lede">Choose by reading need and physical context. Every PDF family ships in colour and monochrome with page-count and semantic parity checks.</p></div><div class="download-summary"><strong>36</strong><span>standalone PDF editions</span><strong>6</strong><span>master layout/mode editions</span></div></section>
+  <section class="page-hero download-hero shell"><div><span class="eyebrow">Release {esc(VERSION)} download catalogue</span><h1>Take the guide<br><em>into the room.</em></h1><p class="lede">Choose by reading need and physical context. Every PDF family ships in colour and monochrome with page-count and semantic parity checks.</p></div><div class="download-summary"><strong>{len(released) * 6}</strong><span>standalone PDF editions</span><strong>6</strong><span>master layout/mode editions</span></div></section>
 
   <section class="shell download-controls" aria-label="Download filters"><button class="filter-chip active" type="button" data-download-filter="all">Everything</button><button class="filter-chip" type="button" data-download-filter="master">Complete guide</button><button class="filter-chip" type="button" data-download-filter="routes">Standalone routes</button><button class="filter-chip" type="button" data-download-filter="source">Source & evidence</button></section>
 

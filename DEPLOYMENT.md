@@ -194,7 +194,7 @@ ignored by Git and should be regenerated from tracked sources.
 
 - `build/html/guide.html` — complete interactive HTML guide;
 - `build/pdf/` — master PDF variants;
-- `build/subguides/` — graph hub and standalone B, C, H, P, T, and R families;
+- `build/subguides/` — graph hub and standalone O, B, C, D, H, P, T, and R families;
 - `build/site/index.html` — modern project landing page;
 - `build/site/deploy/index.html` — local-only deployment planner;
 - `build/site/downloads/index.html` — master and standalone download catalogue;

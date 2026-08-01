@@ -111,7 +111,9 @@ download_markers = (
     "Source, evidence, and maintenance",
     "data-download-filter=\"master\"",
     "../files/guide.pdf",
+    "../routes/O/small-room-observatory.pdf",
     "../routes/C/body-first-aid.pdf",
+    "../routes/D/threat-safe-place.pdf",
     "../routes/P/professional-support.pdf",
     "../meta/release.json",
 )
@@ -171,13 +173,13 @@ if meta_path.exists():
     check(meta.get("deployment_performed_by_this_build") is False, "site metadata falsely claims deployment")
     metrics = meta.get("metrics", {})
     check(metrics.get("chapters") == 14, "site chapter metric drifted")
-    check(metrics.get("standalone") == 6, "site standalone metric drifted")
+    check(metrics.get("standalone") == 8, "site standalone metric drifted")
     check(
         metrics.get("references") == expected_active_references,
         "site active stable-reference metric drifted",
     )
     check(metrics.get("visuals", 0) >= 30, "site reader-visual metric unexpectedly small")
-    check(metrics.get("standalone_pdf_editions") == 36, "site standalone PDF metric drifted")
+    check(metrics.get("standalone_pdf_editions") == 48, "site standalone PDF metric drifted")
 
 css = SITE / "assets" / "site.css"
 js = SITE / "assets" / "site.js"

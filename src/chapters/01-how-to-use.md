@@ -1,7 +1,7 @@
 ---
 title: "The Small-Room Observatory"
 chapter: 1
-revision: "4.9.0"
+revision: "4.10.0"
 last_updated: "2026-08-01"
 dependencies:
   - build/diagrams/observatory_scan.png
