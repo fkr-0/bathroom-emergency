@@ -494,7 +494,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete exact-revision build/test evidence for 4.13.0;
 - [x] tag `v4.13.0` locally without pushing, publishing, or deploying.
 
-### 4.13.1 — Deterministic render-tooling patch — release candidate
+### 4.13.1 — Deterministic render-tooling patch — released
 
 - [x] add a project-local Fontconfig profile and declare it in the visualization
   catalog;
@@ -507,9 +507,9 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] add a smoke validator for Fontconfig XML, diagram weights, eight Vega SVGs,
   eight Vega PNGs, exact output names, and zero stderr;
 - [x] verify a complete diagram build emits zero stderr bytes;
-- [ ] complete exact-revision build/test and representative visual-inspection
+- [x] complete exact-revision build/test and representative visual-inspection
   evidence for 4.13.1;
-- [ ] tag `v4.13.1` locally without pushing, publishing, or deploying.
+- [x] tag `v4.13.1` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 
