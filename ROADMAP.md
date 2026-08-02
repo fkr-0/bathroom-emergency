@@ -476,7 +476,7 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete exact-revision build/test evidence for 4.12.0;
 - [x] tag `v4.12.0` locally without pushing, publishing, or deploying.
 
-### 4.13.0 — Responsibility and Care standalone edition — release candidate
+### 4.13.0 — Responsibility and Care standalone edition — released
 
 - [x] rewrite A around four responsibility clocks and the
   stop–stabilize–tell–repair–follow-up sequence;
@@ -491,8 +491,8 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
   checks, and complete build matrix;
 - [x] expand the standalone PDF matrix from 54 to 60 editions and leave no
   master-only graph node;
-- [ ] complete exact-revision build/test evidence for 4.13.0;
-- [ ] tag `v4.13.0` locally without pushing, publishing, or deploying.
+- [x] complete exact-revision build/test evidence for 4.13.0;
+- [x] tag `v4.13.0` locally without pushing, publishing, or deploying.
 
 ### Cross-release visualization program
 
