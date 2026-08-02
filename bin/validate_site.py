@@ -174,13 +174,13 @@ if meta_path.exists():
     check(meta.get("deployment_performed_by_this_build") is False, "site metadata falsely claims deployment")
     metrics = meta.get("metrics", {})
     check(metrics.get("chapters") == 14, "site chapter metric drifted")
-    check(metrics.get("standalone") == 9, "site standalone metric drifted")
+    check(metrics.get("standalone") == 10, "site standalone metric drifted")
     check(
         metrics.get("references") == expected_active_references,
         "site active stable-reference metric drifted",
     )
     check(metrics.get("visuals", 0) >= 30, "site reader-visual metric unexpectedly small")
-    check(metrics.get("standalone_pdf_editions") == 54, "site standalone PDF metric drifted")
+    check(metrics.get("standalone_pdf_editions") == 60, "site standalone PDF metric drifted")
 
 css = SITE / "assets" / "site.css"
 js = SITE / "assets" / "site.js"

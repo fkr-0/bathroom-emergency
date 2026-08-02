@@ -164,6 +164,7 @@ if source_path.exists():
     check(any("D" in item.get("subguides", []) for item in records), "D has no sources")
     check(any("H" in item.get("subguides", []) for item in records), "H has no sources")
     check(any("O" in item.get("subguides", []) for item in records), "O has no sources")
+    check(sum("A" in item.get("subguides", []) for item in records) >= 5, "A has fewer than five sources")
     check(any("P" in item.get("subguides", []) for item in records), "P has no sources")
     check(sum("Z" in item.get("subguides", []) for item in records) >= 4, "Z has fewer than four sources")
 
@@ -194,6 +195,21 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
             "F — Smell",
             "Situation G — No Safe Place",
         ),
+    ),
+    (
+        "A",
+        "responsibility-care",
+        5,
+        5,
+        (
+            "Situation A — I Caused Trouble",
+            "First split: which clock is running?",
+            "Consent, capacity, authority, and support are different",
+            "A8 — Ongoing responsibility for a person, animal, or system",
+            "Accountability theorem",
+            "Sources and limits",
+        ),
+        (),
     ),
     (
         "B",
@@ -360,6 +376,10 @@ for node, slug, min_sources, min_visuals, required, forbidden in (
     if node == "P":
         check(bool(encapsulation.get("form_refs")), "P: no linked Blue Book forms")
         check(bool(encapsulation.get("support_refs")), "P: no linked support services")
+    if node == "A":
+        check(len(encapsulation.get("figure_refs", [])) >= 5, "A: incomplete figure reference set")
+        check(len(encapsulation.get("form_refs", [])) >= 6, "A: incomplete Blue Book form set")
+        check(bool(encapsulation.get("support_refs")), "A: no linked support services")
     if node == "T":
         check(len(encapsulation.get("form_refs", [])) == 18, "T: not all canonical forms are indexed")
     if node == "R":
@@ -477,16 +497,16 @@ if hub_manifest_path.exists():
     hub = json.loads(hub_manifest_path.read_text(encoding="utf-8"))
     check(hub.get("release") == VERSION, "hub release drifted")
     check(
-        set(hub.get("standalone_nodes", [])) == {"O", "B", "C", "D", "H", "Z", "P", "T", "R"},
+        set(hub.get("standalone_nodes", [])) == {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"},
         "hub standalone set drifted",
     )
-    check(set(hub.get("master_only_nodes", [])) == {"A"}, "hub master-only set drifted")
+    check(set(hub.get("master_only_nodes", [])) == set(), "hub master-only set drifted")
 
 if errors:
     raise SystemExit("Migration validation failed:\n- " + "\n- ".join(errors))
 
 print(
     "Migration validation passed: canonical section/figure/source ownership, "
-    "released visual minimums, graph hub, and 54 tagged standalone PDF editions "
+    "released visual minimums, graph hub, and 60 tagged standalone PDF editions "
     "with A4/A4/2/large-print color-mono parity."
 )

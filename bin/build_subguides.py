@@ -469,6 +469,10 @@ def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
         return [
             ("01-how-to-use.md", chapter_without_definitions("01-how-to-use.md")),
         ]
+    if node_id == "A":
+        return [
+            ("02-situation-a.md", chapter_without_definitions("02-situation-a.md")),
+        ]
     if node_id == "D":
         return [
             ("03-situations-b-g.md", mixed_sections("D")),

@@ -1,12 +1,37 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.12.0"
+revision: "4.13.0"
 last_updated: "2026-08-02"
 dependencies: []
 ---
 
 # Version History
+
+## 4.13.0 — 2 August 2026
+
+### Responsibility and Care becomes a detachable route
+
+- A now builds from the canonical responsibility and care chapter in A4, A4/2,
+  and large-print colour/monochrome editions without copying reader prose.
+- Five local sources, five owned reader visuals, seven linked Blue Book forms,
+  graph handoffs, and generated Sources and limits remain attached.
+
+### Safety comes before the verdict
+
+- A four-clock route separates live harm, continuing effects, repair, and
+  ongoing care before blame or explanation.
+- New figures cover the responsibility clocks, the five-step repair sequence,
+  consent/capacity/authority boundaries, and care continuity.
+- Apology, acceptance, forgiveness, legal liability, and completed repair remain
+  distinct claims.
+
+### All ten graph identities are now standalone families
+
+- The released set is O, A, B, C, D, H, Z, P, T, and R, totalling 60 standalone
+  PDF editions.
+- Build evidence does not decide liability, capacity, consent, forgiveness, or
+  whether a real repair or care handoff succeeded.
 
 ## 4.12.0 — 2 August 2026
 

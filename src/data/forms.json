@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.12.0",
+  "release": "4.13.0",
   "status": "canonical-printable-form-registry",
   "forms": [
     {
@@ -24,6 +24,7 @@
       "privacy": "shared-safe",
       "routes": [
         "O",
+        "A",
         "C",
         "D",
         "P"
@@ -44,11 +45,13 @@
       "responsibility": "deployer-and-reader",
       "privacy": "shared-safe",
       "routes": [
+        "A",
         "C",
         "H",
         "P"
       ],
       "figure_ids": [
+        "responsibility-clock-map",
         "professional-call-packet",
         "triage-flow"
       ],
@@ -65,12 +68,14 @@
       "responsibility": "deployer",
       "privacy": "shared-safe",
       "routes": [
+        "A",
         "D",
         "H",
         "Z",
         "P"
       ],
       "figure_ids": [
+        "consent-authority-boundary",
         "professional-route-selector",
         "support-system-layers",
         "safe-place-route-map"
@@ -116,6 +121,8 @@
         "B"
       ],
       "figure_ids": [
+        "repair-sequence",
+        "consent-authority-boundary",
         "overload-control-map"
       ],
       "support_keys": []
@@ -187,12 +194,14 @@
       "responsibility": "deployer-with-affected-person",
       "privacy": "private",
       "routes": [
+        "A",
         "C",
         "H",
         "Z",
         "P"
       ],
       "figure_ids": [
+        "care-continuity-loop",
         "dependency-continuity-map",
         "vega-continuity-dependencies",
         "safe-reserve-clock"
@@ -210,9 +219,11 @@
       "responsibility": "deployer-or-household",
       "privacy": "shared-safe",
       "routes": [
+        "A",
         "Z"
       ],
       "figure_ids": [
+        "care-continuity-loop",
         "household-continuity-board",
         "first-meeting-roles",
         "vega-communication-channels"
@@ -310,11 +321,14 @@
       "responsibility": "reader",
       "privacy": "private-or-shared",
       "routes": [
+        "A",
         "O",
         "P",
         "T"
       ],
-      "figure_ids": [],
+      "figure_ids": [
+        "repair-sequence"
+      ],
       "support_keys": []
     },
     {

@@ -1,8 +1,60 @@
 {
   "schema_version": 1,
-  "release": "4.12.0",
+  "release": "4.13.0",
   "generated_by": "bin/build_inventories.py",
   "figures": [
+    {
+      "id": "care-continuity-loop",
+      "kind": "illustration",
+      "file": "build/diagrams/care_continuity_loop.png",
+      "owner": "A",
+      "secondary_subguides": [
+        "Z"
+      ],
+      "question": "Which five fields keep ongoing care usable when the primary caregiver is absent?",
+      "source_basis": [
+        "02-situation-a--caregiver",
+        "continuity-catalog",
+        "forms-registry"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "consent-authority-boundary",
+      "kind": "illustration",
+      "file": "build/diagrams/consent_authority_boundary.png",
+      "owner": "A",
+      "secondary_subguides": [],
+      "question": "How do requested support, refusal, uncertain capacity, and immediate danger change the first posture?",
+      "source_basis": [
+        "chapter-logic:02-situation-a",
+        "02-situation-a--attachment",
+        "route-catalog"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "repair-sequence",
+      "kind": "illustration",
+      "file": "build/diagrams/repair_sequence.png",
+      "owner": "A",
+      "secondary_subguides": [],
+      "question": "How do stop, stabilize, tell, repair, and follow up form a revisable accountability sequence?",
+      "source_basis": [
+        "chapter-logic:02-situation-a",
+        "forms-registry"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
+      "renderer": "matplotlib"
+    },
     {
       "id": "reproductive-health-denominators",
       "kind": "illustration",
@@ -17,6 +69,22 @@
       "replacement_status": "migrated-to-vega",
       "reader_facing": false,
       "replacement_id": "vega-reproductive-denominators",
+      "renderer": "matplotlib"
+    },
+    {
+      "id": "responsibility-clock-map",
+      "kind": "illustration",
+      "file": "build/diagrams/responsibility_clock_map.png",
+      "owner": "A",
+      "secondary_subguides": [],
+      "question": "Which of four responsibility clocks owns the next useful action?",
+      "source_basis": [
+        "chapter-logic:02-situation-a",
+        "route-catalog"
+      ],
+      "replacement_status": "current",
+      "reader_facing": true,
+      "replacement_id": null,
       "renderer": "matplotlib"
     },
     {

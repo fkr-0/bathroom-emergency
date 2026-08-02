@@ -40,6 +40,7 @@ SOURCE_LOCALIZATION_PLAN = ROOT / "docs" / "plans" / "subguide-source-localizati
 OD_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.10.0-od-standalone-release.md"
 Z_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.11.0-z-standalone-release.md"
 ENCAPSULATION_PLAN = ROOT / "docs" / "plans" / "4.12.0-encapsulation-cross-reference-release.md"
+A_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.13.0-responsibility-care-standalone-release.md"
 errors: list[str] = []
 
 
@@ -210,6 +211,16 @@ for name in sorted(required_observation_figures):
     check((ROOT / "build" / "diagrams" / name).exists(), f"required observation figure missing: {name}")
     check(name in source, f"required observation figure is not referenced in chapters: {name}")
 
+required_responsibility_figures = {
+    "responsibility_clock_map.png",
+    "repair_sequence.png",
+    "consent_authority_boundary.png",
+    "care_continuity_loop.png",
+}
+for name in sorted(required_responsibility_figures):
+    check((ROOT / "build" / "diagrams" / name).exists(), f"required responsibility figure missing: {name}")
+    check(name in source, f"required responsibility figure is not referenced in chapters: {name}")
+
 required_continuity_figures = {
     "household_continuity_board.png",
     "first_meeting_roles.png",
@@ -351,6 +362,11 @@ for path, label, markers in (
         ENCAPSULATION_PLAN,
         "4.12.0 encapsulation plan",
         ("Standalone encapsulation", "Route identity grammar", "Figure cross-references", "54", "Do not push"),
+    ),
+    (
+        A_STANDALONE_PLAN,
+        "4.13.0 A standalone plan",
+        ("Responsibility and Care", "five owned reader visuals", "60", "no master-only", "Do not push"),
     ),
 ):
     check(path.exists(), f"{label} is missing")
@@ -612,8 +628,8 @@ print(
     "Guide validation passed: "
     f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
     f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    f"{len(required_route_figures)} route/access figures, {len(required_continuity_figures)} continuity figures, "
-    "8 cataloged Vega-Lite figures, 29 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
+    f"{len(required_route_figures)} route/access figures, {len(required_responsibility_figures)} responsibility figures, {len(required_continuity_figures)} continuity figures, "
+    "8 cataloged Vega-Lite figures, 33 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
     "structured routing/locales/accessibility, roadmap coverage, native MathML, "
     "A4, A4/2, and large-print outputs."
 )

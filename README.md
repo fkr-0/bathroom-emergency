@@ -11,7 +11,7 @@ The project is not one long emergency leaflet. It is a maintained family of:
 
 - one complete master guide;
 - ten graph-linked content identities;
-- nine released standalone subguide families;
+- ten released standalone subguide families;
 - detachable forms with route, figure, support, privacy, and pattern metadata;
 - a stable global reference registry;
 - a modern project landing page, deployment planner, download catalogue, route
@@ -98,7 +98,7 @@ network dependency.
 | Code | Title | Current packaging |
 |---|---|---|
 | O | Orientation | master + standalone |
-| A | Reproductive Health and Responsibility | master guide |
+| A | Responsibility and Care | master + standalone |
 | B | Alarm and Calm | master + standalone |
 | C | Body and First Aid | master + standalone |
 | D | Threat and Safe Place | master + standalone |
@@ -110,9 +110,8 @@ network dependency.
 
 Detaching a node is not a copy operation. A standalone node must pass source,
 visual, color/mono, geometry, tagged-PDF, semantic-text, handoff, and
-accessibility gates. O, B, C, D, H, Z, P, T, and R currently meet that release
-contract. A remains master-only while its visual and standalone review work is
-incomplete.
+accessibility gates. O, A, B, C, D, H, Z, P, T, and R all meet that release
+contract; every maintained graph identity now has a canonical standalone family.
 
 Each released edition also declares an **encapsulation contract**: what belongs
 inside, what remains outside scope, which canonical/legacy names it answers to,
@@ -251,6 +250,7 @@ credentials, private medical details, or violence-related safe locations.
 |---|---|---|
 | graph hub | `build/subguides/index.html` | ten-node directory and handoffs |
 | O family | `build/subguides/O/` | six orientation and observation editions |
+| A family | `build/subguides/A/` | six responsibility and care editions |
 | B family | `build/subguides/B/` | six HTML/PDF/Markdown layout-mode editions |
 | C family | `build/subguides/C/` | six first-aid layout-mode editions |
 | D family | `build/subguides/D/` | six threat and safe-place editions |
@@ -273,7 +273,7 @@ The validators enforce, among other things:
 
 - 14 canonical chapters at the package version and release date;
 - one-column print output despite the responsive screen navigation;
-- six master layout/mode editions and 54 standalone O/B/C/D/H/Z/P/T/R editions;
+- six master layout/mode editions and 60 standalone O/A/B/C/D/H/Z/P/T/R editions;
 - valid A4, 105 × 297 mm A4/2, and large-print geometry;
 - tagged PDFs, semantic text parity, page-count parity, and no blank/colliding
   pages;
@@ -284,7 +284,7 @@ The validators enforce, among other things:
   title channels;
 - 300+ stable indexed resources across sections, forms, figures, contacts,
   deployment fields, and glossary terms;
-- eight offline Vega-Lite figures and twenty-nine current non-Vega illustrations,
+- eight offline Vega-Lite figures and thirty-three current non-Vega illustrations,
   each with reader question, fallback, source basis, and monochrome strategy;
 - no known unsafe legacy wording or deprecated scientific chart;
 - layout-density, physical-edge, overflow, accessibility, and color/mono checks;

@@ -1,10 +1,14 @@
 ---
 title: "Responsibility, Harm, and Other Life Forms"
 chapter: 2
-revision: "4.12.0"
+revision: "4.13.0"
 last_updated: "2026-08-02"
 dependencies:
   - build/diagrams/vega_reproductive_denominators.png
+  - build/diagrams/responsibility_clock_map.png
+  - build/diagrams/repair_sequence.png
+  - build/diagrams/consent_authority_boundary.png
+  - build/diagrams/care_continuity_loop.png
 ---
 
 # Situation A — I Caused Trouble
@@ -27,6 +31,13 @@ the duty. The clock changes the next action.
 | no acute harm remains | what repair or boundary changes the future? | tell, repair, follow up |
 | care is ongoing | where is the single point of failure? | add relief, backup, instructions, and handoff |
 
+![Four responsibility clocks separate live harm, continuing effects, repair, and ongoing care.](build/diagrams/responsibility_clock_map.png)
+
+Do not combine the clocks into one moral hearing. When harm is live, use the
+safety or emergency route. When effects continue, stabilize and record what is
+known. When the immediate danger is over, repair becomes possible. When someone
+or something depends on continuing care, the work becomes a continuity system.
+
 A live injury, abnormal breathing, severe bleeding, active violence, unexpected
 birth, or another threat to life belongs to the emergency actions on the cover
 and the First Aid or Safety subguide. Fault can wait; physiology cannot.
@@ -40,6 +51,18 @@ $$A = (\text{stop},\; \text{stabilize},\; \text{tell},\; \text{repair},\; \text{
 - **Tell:** inform the affected person or responsible professional plainly.
 - **Repair:** replace, compensate, apologize, document, or obtain care.
 - **Follow up:** check whether the repair worked.
+
+![Five-step repair sequence: stop, stabilize, tell, repair, and follow up.](build/diagrams/repair_sequence.png)
+
+**Tell** means state the relevant facts, effects, and urgent uncertainty. It
+does not require a theatrical confession, a theory about motives, or pressure on
+the affected person to reassure you. **Repair** is proposed, not imposed. The
+other person may reject an apology, request a different remedy, choose no
+contact, or involve a professional or authority.
+
+Use **[BEG:T:F:013] Blank remarks and handoff sheet** for a neutral timeline and
+**[BEG:T:F:006] Five-minute values bridge** for one bounded next action. Neither
+form decides liability, consent, or forgiveness.
 
 The sequence does not produce absolution. It prevents shame from replacing five
 answerable verbs with one enormous moral fog.
@@ -226,6 +249,28 @@ If you shouted, frightened, or handled a child roughly:
 An apology is not “I am the worst person alive.” It is: “I shouted. That was not
 okay. You did not cause my behaviour. I am going to make this safer.”
 
+## Consent, capacity, authority, and support are different
+
+Care does not automatically create authority. Disagreement, disability,
+distress, unusual communication, or a decision you dislike does not by itself
+prove that another adult cannot decide. At the same time, a real immediate
+danger is not cancelled by the word “no.” Use the narrowest route that protects
+safety while preserving participation wherever possible.
+
+| Situation | First useful posture |
+|---|---|
+| the person can decide and asks for help | support the stated choice and offer one bounded action |
+| the person can decide and declines | respect the boundary; state what help remains available |
+| decision-making capacity is genuinely unclear | simplify communication, slow down, and seek qualified assessment or advice |
+| immediate danger is present | use the emergency safety route, then restore participation as soon as possible |
+
+![Four-part boundary map for requested support, refusal, uncertain capacity, and immediate danger.](build/diagrams/consent_authority_boundary.png)
+
+Do not turn “I care” into “therefore I control.” Do not turn “they refused” into
+“therefore no emergency exists.” When legal authority, custody, consent, or
+capacity is disputed, document observable facts and use **P — Professional
+Support** rather than improvising a private court.
+
 ## A5 — The person is an adult, possibly your adult child
 
 Responsibility changes when the other person can decide for themselves. Support
@@ -329,6 +374,15 @@ need relief, rotation, and services—not more private heroism.[^caregiver]
 | Authority | Am I actually permitted to decide this? | clarify consent, custody, contract |
 | Continuity | What happens if I become ill tonight? | backup person and contact sheet |
 | Repair | What recurring failure needs a system change? | simplify, delegate, document |
+
+![Care continuity loop showing essentials, warning signs, owner, backup, and next review.](build/diagrams/care_continuity_loop.png)
+
+The plan is incomplete when the essentials are known but the backup is not, or
+when a backup exists but cannot find the warning signs, documents, supplies, or
+next review time. Use **[BEG:T:F:004] Medication, power, and care continuity
+card** for private dependency details, **[BEG:T:F:007] Household continuity
+board** when several people share the work, and **[BEG:T:F:008] Local
+professional contacts** for verified service routes and backups.
 
 ### Minimum viable care plan
 

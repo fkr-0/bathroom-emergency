@@ -476,6 +476,24 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete exact-revision build/test evidence for 4.12.0;
 - [x] tag `v4.12.0` locally without pushing, publishing, or deploying.
 
+### 4.13.0 — Responsibility and Care standalone edition — release candidate
+
+- [x] rewrite A around four responsibility clocks and the
+  stop–stabilize–tell–repair–follow-up sequence;
+- [x] add explicit consent, capacity, authority, refusal, and immediate-danger
+  boundaries;
+- [x] add four operational A figures beside the existing denominator chart;
+- [x] attach seven canonical Blue Book forms and professional-support routes;
+- [x] extract A from its canonical chapter with one emergency gate, edition
+  contract, resource map, handoffs, and local Sources and limits;
+- [x] require five local sources and five owned reader visuals;
+- [x] add A to the hub, site, release manifest, coverage matrix, migration
+  checks, and complete build matrix;
+- [x] expand the standalone PDF matrix from 54 to 60 editions and leave no
+  master-only graph node;
+- [ ] complete exact-revision build/test evidence for 4.13.0;
+- [ ] tag `v4.13.0` locally without pushing, publishing, or deploying.
+
 ### Cross-release visualization program
 
 Tracked in `docs/plans/visualization-program.md`.

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.12.0",
+  "release": "4.13.0",
   "status": "global-content-index",
   "reference_scheme": "stable typed IDs; page and hierarchical numbers are non-canonical navigation aids",
   "records": [
@@ -22,12 +22,95 @@
       "html_id": "beg-a-g-001"
     },
     {
+      "resource_key": "figure:care-continuity-loop",
+      "owner": "A",
+      "kind": "G",
+      "title": "care-continuity-loop",
+      "file": "build/diagrams/care_continuity_loop.png",
+      "question": "Which five fields keep ongoing care usable when the primary caregiver is absent?",
+      "source_basis": [
+        "02-situation-a--caregiver",
+        "continuity-catalog",
+        "forms-registry"
+      ],
+      "chapters": [],
+      "secondary_subguides": [
+        "Z"
+      ],
+      "related_form_keys": [
+        "essential-care",
+        "household-board"
+      ],
+      "public_ref": "[BEG:A:G:002]",
+      "html_id": "beg-a-g-002"
+    },
+    {
+      "resource_key": "figure:consent-authority-boundary",
+      "owner": "A",
+      "kind": "G",
+      "title": "consent-authority-boundary",
+      "file": "build/diagrams/consent_authority_boundary.png",
+      "question": "How do requested support, refusal, uncertain capacity, and immediate danger change the first posture?",
+      "source_basis": [
+        "chapter-logic:02-situation-a",
+        "02-situation-a--attachment",
+        "route-catalog"
+      ],
+      "chapters": [],
+      "secondary_subguides": [],
+      "related_form_keys": [
+        "five-minute-values",
+        "local-support"
+      ],
+      "public_ref": "[BEG:A:G:003]",
+      "html_id": "beg-a-g-003"
+    },
+    {
+      "resource_key": "figure:repair-sequence",
+      "owner": "A",
+      "kind": "G",
+      "title": "repair-sequence",
+      "file": "build/diagrams/repair_sequence.png",
+      "question": "How do stop, stabilize, tell, repair, and follow up form a revisable accountability sequence?",
+      "source_basis": [
+        "chapter-logic:02-situation-a",
+        "forms-registry"
+      ],
+      "chapters": [],
+      "secondary_subguides": [],
+      "related_form_keys": [
+        "five-minute-values",
+        "remarks"
+      ],
+      "public_ref": "[BEG:A:G:004]",
+      "html_id": "beg-a-g-004"
+    },
+    {
+      "resource_key": "figure:responsibility-clock-map",
+      "owner": "A",
+      "kind": "G",
+      "title": "responsibility-clock-map",
+      "file": "build/diagrams/responsibility_clock_map.png",
+      "question": "Which of four responsibility clocks owns the next useful action?",
+      "source_basis": [
+        "chapter-logic:02-situation-a",
+        "route-catalog"
+      ],
+      "chapters": [],
+      "secondary_subguides": [],
+      "related_form_keys": [
+        "emergency-call"
+      ],
+      "public_ref": "[BEG:A:G:005]",
+      "html_id": "beg-a-g-005"
+    },
+    {
       "resource_key": "section:02-situation-a:a0-biological-social-technical-or-unclear",
       "owner": "A",
       "kind": "S",
       "title": "A0 — Biological, social, technical, or unclear?",
       "chapter": "02-situation-a.md",
-      "line": 47,
+      "line": 70,
       "level": 2,
       "public_ref": "[BEG:A:S:001]",
       "html_id": "beg-a-s-001"
@@ -38,7 +121,7 @@
       "kind": "S",
       "title": "A1 — A life may be developing, but birth has not begun",
       "chapter": "02-situation-a.md",
-      "line": 63,
+      "line": 86,
       "level": 2,
       "public_ref": "[BEG:A:S:002]",
       "html_id": "beg-a-s-002"
@@ -49,7 +132,7 @@
       "kind": "S",
       "title": "A2 — Birth appears to be happening now",
       "chapter": "02-situation-a.md",
-      "line": 103,
+      "line": 126,
       "level": 2,
       "public_ref": "[BEG:A:S:003]",
       "html_id": "beg-a-s-003"
@@ -60,7 +143,7 @@
       "kind": "S",
       "title": "A3 — A baby arrived recently: hours, days, or weeks ago",
       "chapter": "02-situation-a.md",
-      "line": 120,
+      "line": 143,
       "level": 2,
       "public_ref": "[BEG:A:S:004]",
       "html_id": "beg-a-s-004"
@@ -71,7 +154,7 @@
       "kind": "S",
       "title": "A4 — A child or young dependant relies on you",
       "chapter": "02-situation-a.md",
-      "line": 180,
+      "line": 203,
       "level": 2,
       "public_ref": "[BEG:A:S:005]",
       "html_id": "beg-a-s-005"
@@ -82,7 +165,7 @@
       "kind": "S",
       "title": "A5 — The person is an adult, possibly your adult child",
       "chapter": "02-situation-a.md",
-      "line": 229,
+      "line": 274,
       "level": 2,
       "public_ref": "[BEG:A:S:006]",
       "html_id": "beg-a-s-006"
@@ -93,7 +176,7 @@
       "kind": "S",
       "title": "A6 — The responsibility is ambiguous",
       "chapter": "02-situation-a.md",
-      "line": 250,
+      "line": 295,
       "level": 2,
       "public_ref": "[BEG:A:S:007]",
       "html_id": "beg-a-s-007"
@@ -104,7 +187,7 @@
       "kind": "S",
       "title": "A7 — I harmed or may have harmed someone",
       "chapter": "02-situation-a.md",
-      "line": 284,
+      "line": 329,
       "level": 2,
       "public_ref": "[BEG:A:S:008]",
       "html_id": "beg-a-s-008"
@@ -115,7 +198,7 @@
       "kind": "S",
       "title": "A8 — Ongoing responsibility for a person, animal, or system",
       "chapter": "02-situation-a.md",
-      "line": 316,
+      "line": 361,
       "level": 2,
       "public_ref": "[BEG:A:S:009]",
       "html_id": "beg-a-s-009"
@@ -126,7 +209,7 @@
       "kind": "S",
       "title": "A9 — A silicon-based life form escaped",
       "chapter": "02-situation-a.md",
-      "line": 355,
+      "line": 409,
       "level": 2,
       "public_ref": "[BEG:A:S:010]",
       "html_id": "beg-a-s-010"
@@ -137,7 +220,7 @@
       "kind": "S",
       "title": "Accountability theorem",
       "chapter": "02-situation-a.md",
-      "line": 370,
+      "line": 424,
       "level": 2,
       "public_ref": "[BEG:A:S:011]",
       "html_id": "beg-a-s-011"
@@ -148,7 +231,7 @@
       "kind": "S",
       "title": "First split: which clock is running?",
       "chapter": "02-situation-a.md",
-      "line": 21,
+      "line": 25,
       "level": 2,
       "public_ref": "[BEG:A:S:012]",
       "html_id": "beg-a-s-012"
@@ -159,7 +242,7 @@
       "kind": "S",
       "title": "Situation A — I Caused Trouble",
       "chapter": "02-situation-a.md",
-      "line": 10,
+      "line": 14,
       "level": 1,
       "public_ref": "[BEG:A:S:013]",
       "html_id": "beg-a-s-013"
@@ -170,10 +253,21 @@
       "kind": "S",
       "title": "When guilt itself becomes the emergency",
       "chapter": "02-situation-a.md",
-      "line": 394,
+      "line": 448,
       "level": 2,
       "public_ref": "[BEG:A:S:014]",
       "html_id": "beg-a-s-014"
+    },
+    {
+      "resource_key": "section:02-situation-a:consent-capacity-authority-and-support-are-different",
+      "owner": "A",
+      "kind": "S",
+      "title": "Consent, capacity, authority, and support are different",
+      "chapter": "02-situation-a.md",
+      "line": 252,
+      "level": 2,
+      "public_ref": "[BEG:A:S:015]",
+      "html_id": "beg-a-s-015"
     },
     {
       "resource_key": "figure:alarm-channels-map",
@@ -2209,7 +2303,7 @@
       "kind": "S",
       "title": "4.0.0 — 17 July 2026",
       "chapter": "09-version-history.md",
-      "line": 453,
+      "line": 478,
       "level": 2,
       "public_ref": "[BEG:R:S:017]",
       "html_id": "beg-r-s-017"
@@ -2220,7 +2314,7 @@
       "kind": "S",
       "title": "4.0.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 399,
+      "line": 424,
       "level": 2,
       "public_ref": "[BEG:R:S:018]",
       "html_id": "beg-r-s-018"
@@ -2231,7 +2325,7 @@
       "kind": "S",
       "title": "4.1.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 367,
+      "line": 392,
       "level": 2,
       "public_ref": "[BEG:R:S:019]",
       "html_id": "beg-r-s-019"
@@ -2242,7 +2336,7 @@
       "kind": "S",
       "title": "4.1.2 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 343,
+      "line": 368,
       "level": 2,
       "public_ref": "[BEG:R:S:020]",
       "html_id": "beg-r-s-020"
@@ -2253,7 +2347,7 @@
       "kind": "S",
       "title": "4.2.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 312,
+      "line": 337,
       "level": 2,
       "public_ref": "[BEG:R:S:021]",
       "html_id": "beg-r-s-021"
@@ -2264,7 +2358,7 @@
       "kind": "S",
       "title": "4.3.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 282,
+      "line": 307,
       "level": 2,
       "public_ref": "[BEG:R:S:022]",
       "html_id": "beg-r-s-022"
@@ -2275,7 +2369,7 @@
       "kind": "S",
       "title": "4.3.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 264,
+      "line": 289,
       "level": 2,
       "public_ref": "[BEG:R:S:023]",
       "html_id": "beg-r-s-023"
@@ -2286,7 +2380,7 @@
       "kind": "S",
       "title": "4.4.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 249,
+      "line": 274,
       "level": 2,
       "public_ref": "[BEG:R:S:024]",
       "html_id": "beg-r-s-024"
@@ -2297,7 +2391,7 @@
       "kind": "S",
       "title": "Earlier versions",
       "chapter": "09-version-history.md",
-      "line": 489,
+      "line": 514,
       "level": 2,
       "public_ref": "[BEG:R:S:026]",
       "html_id": "beg-r-s-026"
@@ -2825,7 +2919,7 @@
       "kind": "S",
       "title": "4.5.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 216,
+      "line": 241,
       "level": 2,
       "public_ref": "[BEG:R:S:074]",
       "html_id": "beg-r-s-074"
@@ -2836,7 +2930,7 @@
       "kind": "S",
       "title": "4.6.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 175,
+      "line": 200,
       "level": 2,
       "public_ref": "[BEG:R:S:075]",
       "html_id": "beg-r-s-075"
@@ -2847,7 +2941,7 @@
       "kind": "S",
       "title": "4.6.1 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 158,
+      "line": 183,
       "level": 2,
       "public_ref": "[BEG:R:S:076]",
       "html_id": "beg-r-s-076"
@@ -2858,7 +2952,7 @@
       "kind": "S",
       "title": "4.7.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 136,
+      "line": 161,
       "level": 2,
       "public_ref": "[BEG:R:S:077]",
       "html_id": "beg-r-s-077"
@@ -2869,7 +2963,7 @@
       "kind": "S",
       "title": "4.8.0 — 27 July 2026",
       "chapter": "09-version-history.md",
-      "line": 113,
+      "line": 138,
       "level": 2,
       "public_ref": "[BEG:R:S:078]",
       "html_id": "beg-r-s-078"
@@ -2880,7 +2974,7 @@
       "kind": "S",
       "title": "4.9.0 — 1 August 2026",
       "chapter": "09-version-history.md",
-      "line": 86,
+      "line": 111,
       "level": 2,
       "public_ref": "[BEG:R:S:079]",
       "html_id": "beg-r-s-079"
@@ -2891,7 +2985,7 @@
       "kind": "S",
       "title": "4.10.0 — 1 August 2026",
       "chapter": "09-version-history.md",
-      "line": 61,
+      "line": 86,
       "level": 2,
       "public_ref": "[BEG:R:S:080]",
       "html_id": "beg-r-s-080"
@@ -2902,7 +2996,7 @@
       "kind": "S",
       "title": "4.11.0 — 2 August 2026",
       "chapter": "09-version-history.md",
-      "line": 38,
+      "line": 63,
       "level": 2,
       "public_ref": "[BEG:R:S:081]",
       "html_id": "beg-r-s-081"
@@ -2913,10 +3007,21 @@
       "kind": "S",
       "title": "4.12.0 — 2 August 2026",
       "chapter": "09-version-history.md",
-      "line": 11,
+      "line": 36,
       "level": 2,
       "public_ref": "[BEG:R:S:082]",
       "html_id": "beg-r-s-082"
+    },
+    {
+      "resource_key": "section:09-version-history:4-13-0-2-august-2026",
+      "owner": "R",
+      "kind": "S",
+      "title": "4.13.0 — 2 August 2026",
+      "chapter": "09-version-history.md",
+      "line": 11,
+      "level": 2,
+      "public_ref": "[BEG:R:S:083]",
+      "html_id": "beg-r-s-083"
     },
     {
       "resource_key": "glossary:aed",
@@ -3487,11 +3592,13 @@
       "responsibility": "deployer-and-reader",
       "privacy": "shared-safe",
       "routes": [
+        "A",
         "C",
         "H",
         "P"
       ],
       "figure_ids": [
+        "responsibility-clock-map",
         "professional-call-packet",
         "triage-flow"
       ],
@@ -3515,12 +3622,14 @@
       "responsibility": "deployer-with-affected-person",
       "privacy": "private",
       "routes": [
+        "A",
         "C",
         "H",
         "Z",
         "P"
       ],
       "figure_ids": [
+        "care-continuity-loop",
         "dependency-continuity-map",
         "vega-continuity-dependencies",
         "safe-reserve-clock"
@@ -3572,6 +3681,8 @@
         "B"
       ],
       "figure_ids": [
+        "repair-sequence",
+        "consent-authority-boundary",
         "overload-control-map"
       ],
       "support_keys": [],
@@ -3590,9 +3701,11 @@
       "responsibility": "deployer-or-household",
       "privacy": "shared-safe",
       "routes": [
+        "A",
         "Z"
       ],
       "figure_ids": [
+        "care-continuity-loop",
         "household-continuity-board",
         "first-meeting-roles",
         "vega-communication-channels"
@@ -3613,12 +3726,14 @@
       "responsibility": "deployer",
       "privacy": "shared-safe",
       "routes": [
+        "A",
         "D",
         "H",
         "Z",
         "P"
       ],
       "figure_ids": [
+        "consent-authority-boundary",
         "professional-route-selector",
         "support-system-layers",
         "safe-place-route-map"
@@ -3651,6 +3766,7 @@
       "privacy": "shared-safe",
       "routes": [
         "O",
+        "A",
         "C",
         "D",
         "P"
@@ -3745,11 +3861,14 @@
       "responsibility": "reader",
       "privacy": "private-or-shared",
       "routes": [
+        "A",
         "O",
         "P",
         "T"
       ],
-      "figure_ids": [],
+      "figure_ids": [
+        "repair-sequence"
+      ],
       "support_keys": [],
       "public_ref": "[BEG:T:F:013]",
       "html_id": "beg-t-f-013"

@@ -1,5 +1,5 @@
 {
-  "release": "4.12.0",
+  "release": "4.13.0",
   "status": "initial audited inventory",
   "families": [
     "quantitative-evidence",
@@ -507,6 +507,114 @@
       "secondary_subguides": [],
       "sources": [
         "drk-recovery"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "care-continuity-loop",
+      "file": "build/diagrams/care_continuity_loop.png",
+      "chapters": [
+        "02-situation-a.md"
+      ],
+      "family": "dependency",
+      "question": "Which five fields keep ongoing care usable when the primary caregiver is absent?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent responsibility dashboard and prose name essentials, warning signs, owner, backup, and next review.",
+      "mono_strategy": [
+        "numbered fields",
+        "fixed radial positions",
+        "direct labels"
+      ],
+      "status": "current",
+      "next_action": "Test with caregivers, veterinary users, disability-support households, and system operators using sanitized continuity scenarios.",
+      "priority": "high",
+      "owner": "A",
+      "secondary_subguides": [
+        "Z"
+      ],
+      "sources": [
+        "02-situation-a--caregiver",
+        "continuity-catalog",
+        "forms-registry"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "consent-authority-boundary",
+      "file": "build/diagrams/consent_authority_boundary.png",
+      "chapters": [
+        "02-situation-a.md"
+      ],
+      "family": "route-matrix",
+      "question": "How do requested support, refusal, uncertain capacity, and immediate danger change the first posture?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent four-row table gives the complete support, refusal, assessment, and emergency postures and states the limits of the model.",
+      "mono_strategy": [
+        "numbered quadrants",
+        "fixed card order",
+        "direct labels"
+      ],
+      "status": "current",
+      "next_action": "Review with disability advocates, clinicians, legal advisers, and safeguarding practitioners for accidental overreach or paternalistic interpretation.",
+      "priority": "high",
+      "owner": "A",
+      "secondary_subguides": [],
+      "sources": [
+        "chapter-logic:02-situation-a",
+        "02-situation-a--attachment",
+        "route-catalog"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "repair-sequence",
+      "file": "build/diagrams/repair_sequence.png",
+      "chapters": [
+        "02-situation-a.md"
+      ],
+      "family": "mechanism-sequence",
+      "question": "How do stop, stabilize, tell, repair, and follow up form a revisable accountability sequence?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent equation, five action definitions, and limits explain the full repair sequence and its return path.",
+      "mono_strategy": [
+        "numbered steps",
+        "left-to-right order",
+        "direct action labels"
+      ],
+      "status": "current",
+      "next_action": "Test whether readers understand that follow-up can reopen stop or stabilize and that apology does not prove acceptance or completion.",
+      "priority": "high",
+      "owner": "A",
+      "secondary_subguides": [],
+      "sources": [
+        "chapter-logic:02-situation-a",
+        "forms-registry"
+      ],
+      "reader_facing": true
+    },
+    {
+      "id": "responsibility-clock-map",
+      "file": "build/diagrams/responsibility_clock_map.png",
+      "chapters": [
+        "02-situation-a.md"
+      ],
+      "family": "routing",
+      "question": "Which of four responsibility clocks owns the next useful action?",
+      "renderer": "matplotlib",
+      "text_fallback": "The adjacent table and prose define live harm, continuing effects, repair, and ongoing care with their first actions.",
+      "mono_strategy": [
+        "numbered cards",
+        "fixed two-by-two positions",
+        "direct action labels"
+      ],
+      "status": "current",
+      "next_action": "Test whether readers choose safety before blame and distinguish continuing effects from later repair.",
+      "priority": "high",
+      "owner": "A",
+      "secondary_subguides": [],
+      "sources": [
+        "chapter-logic:02-situation-a",
+        "route-catalog"
       ],
       "reader_facing": true
     },

@@ -27,7 +27,7 @@ if CATALOG_PATH.exists():
     files = [item.get("file") for item in records]
 
     check(catalog.get("release") == VERSION, f"illustration catalog release is not {VERSION}")
-    check(len(records) == 32, f"expected 29 current plus three migrated illustration records, found {len(records)}")
+    check(len(records) == 36, f"expected 33 current plus three migrated illustration records, found {len(records)}")
     check(len(ids) == len(set(ids)), "duplicate illustration IDs")
     check(len(files) == len(set(files)), "duplicate illustration files")
 
@@ -65,7 +65,7 @@ if CATALOG_PATH.exists():
     check(referenced == cataloged, f"illustration coverage drift: missing={sorted(referenced - cataloged)}, unused={sorted(cataloged - referenced)}")
     current = [item for item in records if item.get("reader_facing", True)]
     migrated = [item for item in records if not item.get("reader_facing", True)]
-    check(len(current) == 29, f"expected 29 current non-Vega figures after three Vega migrations, found {len(current)}")
+    check(len(current) == 33, f"expected 33 current non-Vega figures after three Vega migrations, found {len(current)}")
     check(len(migrated) == 3, f"expected three migrated illustration records, found {len(migrated)}")
     check(all(item.get("replacement_id") for item in migrated), "migrated illustration lacks replacement_id")
     check(sum(1 for item in current if item.get("priority") == "high") >= 7, "illustration inventory lacks a meaningful high-priority redesign queue")
@@ -77,16 +77,21 @@ if CATALOG_PATH.exists():
         "three-minute-observation",
         "safe-place-confirmation-packet",
         "safe-reserve-clock",
+        "responsibility-clock-map",
+        "repair-sequence",
+        "consent-authority-boundary",
+        "care-continuity-loop",
     }
-    check(required_new <= current_ids, f"new O/D illustration set incomplete: {sorted(required_new - current_ids)}")
+    check(required_new <= current_ids, f"new O/A/D illustration set incomplete: {sorted(required_new - current_ids)}")
     owner_counts = {
         owner: sum(1 for item in current if item.get("owner") == owner)
-        for owner in {"O", "D", "Z"}
+        for owner in {"O", "A", "D", "Z"}
     }
+    check(owner_counts["A"] >= 4, "A lacks the four new operational reader visuals")
     check(owner_counts["O"] >= 4, "O lacks the four owned reader visuals required for candidate review")
     check(owner_counts["D"] >= 4, "D lacks the four owned reader visuals required for candidate review")
     check(owner_counts["Z"] >= 3, "Z lacks its current non-Vega operational visual set")
 
 if errors:
     raise SystemExit("Illustration validation failed:\n- " + "\n- ".join(errors))
-print(f"Illustration validation passed: {len(current)} current non-Vega figures plus {len(migrated)} migrated audit records, including released O, D, and Z visual slices, at {VERSION}.")
+print(f"Illustration validation passed: {len(current)} current non-Vega figures plus {len(migrated)} migrated audit records, including released O, A, D, and Z visual slices, at {VERSION}.")

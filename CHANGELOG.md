@@ -1,5 +1,42 @@
 # Changelog
 
+## 4.13.0 — 2026-08-02
+
+### Released Responsibility and Care as the tenth standalone family
+
+- Detached A from the canonical responsibility and care chapter without copying
+  reader prose into a parallel source.
+- Released A4, A4/2, and large-print colour/monochrome editions with five local
+  sources, five owned reader visuals, seven linked Blue Book forms, complete
+  graph handoffs, and generated Sources and limits.
+- Expanded the graph hub, download catalogue, Pages package, release manifest,
+  coverage report, migration checks, and complete matrix from 54 to 60
+  standalone PDF editions.
+
+### Made responsibility operational before it becomes moral analysis
+
+- Added a four-clock route that separates live harm, continuing effects, repair,
+  and ongoing care so immediate safety outranks blame or explanation.
+- Clarified the stop–stabilize–tell–repair–follow-up sequence and made explicit
+  that apology, acceptance, forgiveness, liability, and completed repair are
+  different claims.
+- Added a consent/capacity/authority boundary that preserves agency while keeping
+  a genuine immediate danger on the emergency route.
+- Added a care-continuity loop for essentials, warning signs, owner, backup, and
+  next review.
+
+### Closed the graph without weakening its boundaries
+
+- Linked A to the canonical emergency, location/access, professional-contact,
+  values, essential-care, household-continuity, and handoff forms instead of
+  creating a second worksheet family.
+- Added stable figure cards and route/form/support metadata for all five A
+  visuals while preserving every existing public reference.
+- Kept liability, diagnosis, capacity findings, consent, forgiveness, service
+  availability, and real-world repair outside the claims of the build evidence.
+- Preserved the publication boundary: no push, publication, deployment, or
+  Pages workflow is performed by the local release build.
+
 ## 4.12.0 — 2026-08-02
 
 ### Made standalone editions explicit field objects

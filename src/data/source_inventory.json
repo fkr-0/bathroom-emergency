@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.12.0",
+  "release": "4.13.0",
   "status": "canonical-source-registry",
   "generated_by": "bin/build_source_inventory.py",
   "footnote_sources": [
@@ -188,7 +188,7 @@
       "text": "Bowlby J, *Attachment and Loss* (1969); Ainsworth MDS et al., *Patterns of Attachment* (1978); and later work on rupture and repair. Attachment patterns are population-level constructs and should not be used as one-event diagnoses.",
       "urls": [],
       "used_at_lines": [
-        178
+        201
       ],
       "subguides": [
         "A"
@@ -204,7 +204,7 @@
         "https://gesund.bund.de/belastungen-pflegende-angehoerige"
       ],
       "used_at_lines": [
-        319
+        364
       ],
       "subguides": [
         "A"
@@ -220,7 +220,7 @@
         "https://www.who.int/news-room/fact-sheets/detail/infertility"
       ],
       "used_at_lines": [
-        152
+        175
       ],
       "subguides": [
         "A"
@@ -236,7 +236,7 @@
         "https://gesund.bund.de/wochenbettdepression"
       ],
       "used_at_lines": [
-        136
+        159
       ],
       "subguides": [
         "A"
@@ -250,7 +250,7 @@
       "text": "VanderKruik R et al., “The global prevalence of postpartum psychosis: a systematic review,” *BMC Psychiatry* 17, 272 (2017), doi:10.1186/s12888-017-1427-7. Five incidence studies ranged from 0.89 to 2.6 per 1,000; methodological heterogeneity prevented pooling.",
       "urls": [],
       "used_at_lines": [
-        158
+        181
       ],
       "subguides": [
         "A"

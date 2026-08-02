@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.12.0",
+  "release": "4.13.0",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -9,10 +9,10 @@
   },
   "totals": {
     "nodes": 10,
-    "sections": 224,
+    "sections": 226,
     "sources": 54,
-    "reader_visuals": 37,
-    "standalone_nodes": 9
+    "reader_visuals": 41,
+    "standalone_nodes": 10
   },
   "nodes": [
     {
@@ -63,12 +63,12 @@
     {
       "node": "A",
       "title": "Responsibility and Care",
-      "standalone": false,
+      "standalone": true,
       "chapters": [
         "02-situation-a.md"
       ],
       "chapter_count": 1,
-      "section_count": 14,
+      "section_count": 15,
       "source_count": 5,
       "source_counts": {
         "operational": 0,
@@ -82,15 +82,21 @@
         "02-situation-a--ppd",
         "02-situation-a--ppp-incidence"
       ],
-      "owned_visual_count": 1,
+      "owned_visual_count": 5,
       "shared_visual_count": 0,
       "visual_ids": [
+        "care-continuity-loop",
+        "consent-authority-boundary",
+        "repair-sequence",
+        "responsibility-clock-map",
         "vega-reproductive-denominators"
       ],
       "shared_visual_ids": [],
-      "visuals_with_source_basis": 1,
-      "visual_review_priorities": {},
-      "readiness": "needs-visuals"
+      "visuals_with_source_basis": 5,
+      "visual_review_priorities": {
+        "high": 4
+      },
+      "readiness": "released-standalone"
     },
     {
       "node": "B",
@@ -279,7 +285,7 @@
         "06-zombie-guide--ostrom"
       ],
       "owned_visual_count": 7,
-      "shared_visual_count": 1,
+      "shared_visual_count": 2,
       "visual_ids": [
         "first-meeting-roles",
         "household-continuity-board",
@@ -290,6 +296,7 @@
         "vega-household-water-stock"
       ],
       "shared_visual_ids": [
+        "care-continuity-loop",
         "dependency-continuity-map"
       ],
       "visuals_with_source_basis": 7,
@@ -370,7 +377,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 81,
+      "section_count": 82,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

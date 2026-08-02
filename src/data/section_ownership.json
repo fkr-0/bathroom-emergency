@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.12.0",
+  "release": "4.13.0",
   "generated_by": "bin/build_inventories.py",
   "granularity": "all level-1 and level-2 headings",
   "sections": [
@@ -135,7 +135,7 @@
     {
       "key": "02-situation-a:situation-a-i-caused-trouble",
       "chapter": "02-situation-a.md",
-      "line": 10,
+      "line": 14,
       "level": 1,
       "heading": "Situation A — I Caused Trouble",
       "owner": "A"
@@ -143,7 +143,7 @@
     {
       "key": "02-situation-a:first-split-which-clock-is-running",
       "chapter": "02-situation-a.md",
-      "line": 21,
+      "line": 25,
       "level": 2,
       "heading": "First split: which clock is running?",
       "owner": "A"
@@ -151,7 +151,7 @@
     {
       "key": "02-situation-a:a0-biological-social-technical-or-unclear",
       "chapter": "02-situation-a.md",
-      "line": 47,
+      "line": 70,
       "level": 2,
       "heading": "A0 — Biological, social, technical, or unclear?",
       "owner": "A"
@@ -159,7 +159,7 @@
     {
       "key": "02-situation-a:a1-a-life-may-be-developing-but-birth-has-not-begun",
       "chapter": "02-situation-a.md",
-      "line": 63,
+      "line": 86,
       "level": 2,
       "heading": "A1 — A life may be developing, but birth has not begun",
       "owner": "A"
@@ -167,7 +167,7 @@
     {
       "key": "02-situation-a:a2-birth-appears-to-be-happening-now",
       "chapter": "02-situation-a.md",
-      "line": 103,
+      "line": 126,
       "level": 2,
       "heading": "A2 — Birth appears to be happening now",
       "owner": "A"
@@ -175,7 +175,7 @@
     {
       "key": "02-situation-a:a3-a-baby-arrived-recently-hours-days-or-weeks-ago",
       "chapter": "02-situation-a.md",
-      "line": 120,
+      "line": 143,
       "level": 2,
       "heading": "A3 — A baby arrived recently: hours, days, or weeks ago",
       "owner": "A"
@@ -183,15 +183,23 @@
     {
       "key": "02-situation-a:a4-a-child-or-young-dependant-relies-on-you",
       "chapter": "02-situation-a.md",
-      "line": 180,
+      "line": 203,
       "level": 2,
       "heading": "A4 — A child or young dependant relies on you",
       "owner": "A"
     },
     {
+      "key": "02-situation-a:consent-capacity-authority-and-support-are-different",
+      "chapter": "02-situation-a.md",
+      "line": 252,
+      "level": 2,
+      "heading": "Consent, capacity, authority, and support are different",
+      "owner": "A"
+    },
+    {
       "key": "02-situation-a:a5-the-person-is-an-adult-possibly-your-adult-child",
       "chapter": "02-situation-a.md",
-      "line": 229,
+      "line": 274,
       "level": 2,
       "heading": "A5 — The person is an adult, possibly your adult child",
       "owner": "A"
@@ -199,7 +207,7 @@
     {
       "key": "02-situation-a:a6-the-responsibility-is-ambiguous",
       "chapter": "02-situation-a.md",
-      "line": 250,
+      "line": 295,
       "level": 2,
       "heading": "A6 — The responsibility is ambiguous",
       "owner": "A"
@@ -207,7 +215,7 @@
     {
       "key": "02-situation-a:a7-i-harmed-or-may-have-harmed-someone",
       "chapter": "02-situation-a.md",
-      "line": 284,
+      "line": 329,
       "level": 2,
       "heading": "A7 — I harmed or may have harmed someone",
       "owner": "A"
@@ -215,7 +223,7 @@
     {
       "key": "02-situation-a:a8-ongoing-responsibility-for-a-person-animal-or-system",
       "chapter": "02-situation-a.md",
-      "line": 316,
+      "line": 361,
       "level": 2,
       "heading": "A8 — Ongoing responsibility for a person, animal, or system",
       "owner": "A"
@@ -223,7 +231,7 @@
     {
       "key": "02-situation-a:a9-a-silicon-based-life-form-escaped",
       "chapter": "02-situation-a.md",
-      "line": 355,
+      "line": 409,
       "level": 2,
       "heading": "A9 — A silicon-based life form escaped",
       "owner": "A"
@@ -231,7 +239,7 @@
     {
       "key": "02-situation-a:accountability-theorem",
       "chapter": "02-situation-a.md",
-      "line": 370,
+      "line": 424,
       "level": 2,
       "heading": "Accountability theorem",
       "owner": "A"
@@ -239,7 +247,7 @@
     {
       "key": "02-situation-a:when-guilt-itself-becomes-the-emergency",
       "chapter": "02-situation-a.md",
-      "line": 394,
+      "line": 448,
       "level": 2,
       "heading": "When guilt itself becomes the emergency",
       "owner": "A"
@@ -1285,9 +1293,17 @@
       "owner": "R"
     },
     {
-      "key": "09-version-history:4-12-0-2-august-2026",
+      "key": "09-version-history:4-13-0-2-august-2026",
       "chapter": "09-version-history.md",
       "line": 11,
+      "level": 2,
+      "heading": "4.13.0 — 2 August 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:4-12-0-2-august-2026",
+      "chapter": "09-version-history.md",
+      "line": 36,
       "level": 2,
       "heading": "4.12.0 — 2 August 2026",
       "owner": "R"
@@ -1295,7 +1311,7 @@
     {
       "key": "09-version-history:4-11-0-2-august-2026",
       "chapter": "09-version-history.md",
-      "line": 38,
+      "line": 63,
       "level": 2,
       "heading": "4.11.0 — 2 August 2026",
       "owner": "R"
@@ -1303,7 +1319,7 @@
     {
       "key": "09-version-history:4-10-0-1-august-2026",
       "chapter": "09-version-history.md",
-      "line": 61,
+      "line": 86,
       "level": 2,
       "heading": "4.10.0 — 1 August 2026",
       "owner": "R"
@@ -1311,7 +1327,7 @@
     {
       "key": "09-version-history:4-9-0-1-august-2026",
       "chapter": "09-version-history.md",
-      "line": 86,
+      "line": 111,
       "level": 2,
       "heading": "4.9.0 — 1 August 2026",
       "owner": "R"
@@ -1319,7 +1335,7 @@
     {
       "key": "09-version-history:4-8-0-27-july-2026",
       "chapter": "09-version-history.md",
-      "line": 113,
+      "line": 138,
       "level": 2,
       "heading": "4.8.0 — 27 July 2026",
       "owner": "R"
@@ -1327,7 +1343,7 @@
     {
       "key": "09-version-history:4-7-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 136,
+      "line": 161,
       "level": 2,
       "heading": "4.7.0 — 26 July 2026",
       "owner": "R"
@@ -1335,7 +1351,7 @@
     {
       "key": "09-version-history:4-6-1-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 158,
+      "line": 183,
       "level": 2,
       "heading": "4.6.1 — 26 July 2026",
       "owner": "R"
@@ -1343,7 +1359,7 @@
     {
       "key": "09-version-history:4-6-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 175,
+      "line": 200,
       "level": 2,
       "heading": "4.6.0 — 26 July 2026",
       "owner": "R"
@@ -1351,7 +1367,7 @@
     {
       "key": "09-version-history:4-5-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 216,
+      "line": 241,
       "level": 2,
       "heading": "4.5.0 — 26 July 2026",
       "owner": "R"
@@ -1359,7 +1375,7 @@
     {
       "key": "09-version-history:4-4-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 249,
+      "line": 274,
       "level": 2,
       "heading": "4.4.1 — 22 July 2026",
       "owner": "R"
@@ -1367,7 +1383,7 @@
     {
       "key": "09-version-history:4-3-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 264,
+      "line": 289,
       "level": 2,
       "heading": "4.3.1 — 22 July 2026",
       "owner": "R"
@@ -1375,7 +1391,7 @@
     {
       "key": "09-version-history:4-3-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 282,
+      "line": 307,
       "level": 2,
       "heading": "4.3.0 — 22 July 2026",
       "owner": "R"
@@ -1383,7 +1399,7 @@
     {
       "key": "09-version-history:4-2-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 312,
+      "line": 337,
       "level": 2,
       "heading": "4.2.0 — 22 July 2026",
       "owner": "R"
@@ -1391,7 +1407,7 @@
     {
       "key": "09-version-history:4-1-2-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 343,
+      "line": 368,
       "level": 2,
       "heading": "4.1.2 — 22 July 2026",
       "owner": "R"
@@ -1399,7 +1415,7 @@
     {
       "key": "09-version-history:4-1-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 367,
+      "line": 392,
       "level": 2,
       "heading": "4.1.1 — 22 July 2026",
       "owner": "R"
@@ -1407,7 +1423,7 @@
     {
       "key": "09-version-history:4-0-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 399,
+      "line": 424,
       "level": 2,
       "heading": "4.0.1 — 22 July 2026",
       "owner": "R"
@@ -1415,7 +1431,7 @@
     {
       "key": "09-version-history:4-0-0-17-july-2026",
       "chapter": "09-version-history.md",
-      "line": 453,
+      "line": 478,
       "level": 2,
       "heading": "4.0.0 — 17 July 2026",
       "owner": "R"
@@ -1423,7 +1439,7 @@
     {
       "key": "09-version-history:earlier-versions",
       "chapter": "09-version-history.md",
-      "line": 489,
+      "line": 514,
       "level": 2,
       "heading": "Earlier versions",
       "owner": "R"

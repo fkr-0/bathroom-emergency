@@ -44,6 +44,7 @@ scripts = [
     "generate_routes.py",
     "generate_continuity.py",
     "generate_observation.py",
+    "generate_responsibility.py",
     "generate_accessibility.py",
     "generate_scientific.py",
     "generate_first_aid.py",
