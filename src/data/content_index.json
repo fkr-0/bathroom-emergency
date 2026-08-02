@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.13.0",
+  "release": "4.13.1",
   "status": "global-content-index",
   "reference_scheme": "stable typed IDs; page and hierarchical numbers are non-canonical navigation aids",
   "records": [
@@ -2303,7 +2303,7 @@
       "kind": "S",
       "title": "4.0.0 — 17 July 2026",
       "chapter": "09-version-history.md",
-      "line": 478,
+      "line": 495,
       "level": 2,
       "public_ref": "[BEG:R:S:017]",
       "html_id": "beg-r-s-017"
@@ -2314,7 +2314,7 @@
       "kind": "S",
       "title": "4.0.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 424,
+      "line": 441,
       "level": 2,
       "public_ref": "[BEG:R:S:018]",
       "html_id": "beg-r-s-018"
@@ -2325,7 +2325,7 @@
       "kind": "S",
       "title": "4.1.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 392,
+      "line": 409,
       "level": 2,
       "public_ref": "[BEG:R:S:019]",
       "html_id": "beg-r-s-019"
@@ -2336,7 +2336,7 @@
       "kind": "S",
       "title": "4.1.2 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 368,
+      "line": 385,
       "level": 2,
       "public_ref": "[BEG:R:S:020]",
       "html_id": "beg-r-s-020"
@@ -2347,7 +2347,7 @@
       "kind": "S",
       "title": "4.2.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 337,
+      "line": 354,
       "level": 2,
       "public_ref": "[BEG:R:S:021]",
       "html_id": "beg-r-s-021"
@@ -2358,7 +2358,7 @@
       "kind": "S",
       "title": "4.3.0 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 307,
+      "line": 324,
       "level": 2,
       "public_ref": "[BEG:R:S:022]",
       "html_id": "beg-r-s-022"
@@ -2369,7 +2369,7 @@
       "kind": "S",
       "title": "4.3.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 289,
+      "line": 306,
       "level": 2,
       "public_ref": "[BEG:R:S:023]",
       "html_id": "beg-r-s-023"
@@ -2380,7 +2380,7 @@
       "kind": "S",
       "title": "4.4.1 — 22 July 2026",
       "chapter": "09-version-history.md",
-      "line": 274,
+      "line": 291,
       "level": 2,
       "public_ref": "[BEG:R:S:024]",
       "html_id": "beg-r-s-024"
@@ -2391,7 +2391,7 @@
       "kind": "S",
       "title": "Earlier versions",
       "chapter": "09-version-history.md",
-      "line": 514,
+      "line": 531,
       "level": 2,
       "public_ref": "[BEG:R:S:026]",
       "html_id": "beg-r-s-026"
@@ -2919,7 +2919,7 @@
       "kind": "S",
       "title": "4.5.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 241,
+      "line": 258,
       "level": 2,
       "public_ref": "[BEG:R:S:074]",
       "html_id": "beg-r-s-074"
@@ -2930,7 +2930,7 @@
       "kind": "S",
       "title": "4.6.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 200,
+      "line": 217,
       "level": 2,
       "public_ref": "[BEG:R:S:075]",
       "html_id": "beg-r-s-075"
@@ -2941,7 +2941,7 @@
       "kind": "S",
       "title": "4.6.1 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 183,
+      "line": 200,
       "level": 2,
       "public_ref": "[BEG:R:S:076]",
       "html_id": "beg-r-s-076"
@@ -2952,7 +2952,7 @@
       "kind": "S",
       "title": "4.7.0 — 26 July 2026",
       "chapter": "09-version-history.md",
-      "line": 161,
+      "line": 178,
       "level": 2,
       "public_ref": "[BEG:R:S:077]",
       "html_id": "beg-r-s-077"
@@ -2963,7 +2963,7 @@
       "kind": "S",
       "title": "4.8.0 — 27 July 2026",
       "chapter": "09-version-history.md",
-      "line": 138,
+      "line": 155,
       "level": 2,
       "public_ref": "[BEG:R:S:078]",
       "html_id": "beg-r-s-078"
@@ -2974,7 +2974,7 @@
       "kind": "S",
       "title": "4.9.0 — 1 August 2026",
       "chapter": "09-version-history.md",
-      "line": 111,
+      "line": 128,
       "level": 2,
       "public_ref": "[BEG:R:S:079]",
       "html_id": "beg-r-s-079"
@@ -2985,7 +2985,7 @@
       "kind": "S",
       "title": "4.10.0 — 1 August 2026",
       "chapter": "09-version-history.md",
-      "line": 86,
+      "line": 103,
       "level": 2,
       "public_ref": "[BEG:R:S:080]",
       "html_id": "beg-r-s-080"
@@ -2996,7 +2996,7 @@
       "kind": "S",
       "title": "4.11.0 — 2 August 2026",
       "chapter": "09-version-history.md",
-      "line": 63,
+      "line": 80,
       "level": 2,
       "public_ref": "[BEG:R:S:081]",
       "html_id": "beg-r-s-081"
@@ -3007,7 +3007,7 @@
       "kind": "S",
       "title": "4.12.0 — 2 August 2026",
       "chapter": "09-version-history.md",
-      "line": 36,
+      "line": 53,
       "level": 2,
       "public_ref": "[BEG:R:S:082]",
       "html_id": "beg-r-s-082"
@@ -3018,10 +3018,21 @@
       "kind": "S",
       "title": "4.13.0 — 2 August 2026",
       "chapter": "09-version-history.md",
-      "line": 11,
+      "line": 28,
       "level": 2,
       "public_ref": "[BEG:R:S:083]",
       "html_id": "beg-r-s-083"
+    },
+    {
+      "resource_key": "section:09-version-history:4-13-1-2-august-2026",
+      "owner": "R",
+      "kind": "S",
+      "title": "4.13.1 — 2 August 2026",
+      "chapter": "09-version-history.md",
+      "line": 11,
+      "level": 2,
+      "public_ref": "[BEG:R:S:084]",
+      "html_id": "beg-r-s-084"
     },
     {
       "resource_key": "glossary:aed",

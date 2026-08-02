@@ -1,5 +1,26 @@
 # Changelog
 
+## 4.13.1 — 2026-08-02
+
+### Made offline rendering deterministic and quiet
+
+- Added a project-local Fontconfig profile for Vega text measurement and SVG to
+  PNG rasterization instead of inheriting unrelated host desktop fragments.
+- Replaced unsupported Matplotlib `black` weight requests with the available
+  bold weight used by the rest of the diagram system.
+- Made successful child-renderer stderr visible so a future warning cannot be
+  silently discarded.
+
+### Added a render-tooling regression gate
+
+- Added a validator that parses the local Fontconfig profile, rejects unsupported
+  diagram weights, smoke-renders all eight Vega-Lite figures, checks the exact
+  SVG/PNG output set, and fails on any stderr.
+- Kept all ten standalone families, 60 standalone PDFs, route identities,
+  evidence claims, forms, sources, and public references otherwise unchanged.
+- Preserved the publication boundary: no push, publication, deployment, or
+  Pages workflow is performed by the local release build.
+
 ## 4.13.0 — 2026-08-02
 
 ### Released Responsibility and Care as the tenth standalone family

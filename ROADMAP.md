@@ -494,6 +494,23 @@ Tracked in `docs/plans/4.6.0-release-architecture.md`.
 - [x] complete exact-revision build/test evidence for 4.13.0;
 - [x] tag `v4.13.0` locally without pushing, publishing, or deploying.
 
+### 4.13.1 — Deterministic render-tooling patch — release candidate
+
+- [x] add a project-local Fontconfig profile and declare it in the visualization
+  catalog;
+- [x] load the profile before Vega/native canvas initialization and propagate it
+  to SVG rasterization;
+- [x] replace unsupported Matplotlib `black` requests with supported bold
+  weights;
+- [x] surface successful child-renderer stderr instead of silently discarding
+  warnings;
+- [x] add a smoke validator for Fontconfig XML, diagram weights, eight Vega SVGs,
+  eight Vega PNGs, exact output names, and zero stderr;
+- [x] verify a complete diagram build emits zero stderr bytes;
+- [ ] complete exact-revision build/test and representative visual-inspection
+  evidence for 4.13.1;
+- [ ] tag `v4.13.1` locally without pushing, publishing, or deploying.
+
 ### Cross-release visualization program
 
 Tracked in `docs/plans/visualization-program.md`.

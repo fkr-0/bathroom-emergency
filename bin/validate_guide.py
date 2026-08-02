@@ -41,6 +41,7 @@ OD_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.10.0-od-standalone-release.md"
 Z_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.11.0-z-standalone-release.md"
 ENCAPSULATION_PLAN = ROOT / "docs" / "plans" / "4.12.0-encapsulation-cross-reference-release.md"
 A_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.13.0-responsibility-care-standalone-release.md"
+RENDER_PATCH_PLAN = ROOT / "docs" / "plans" / "4.13.1-render-tooling-patch.md"
 errors: list[str] = []
 
 
@@ -368,6 +369,11 @@ for path, label, markers in (
         "4.13.0 A standalone plan",
         ("Responsibility and Care", "five owned reader visuals", "60", "no master-only", "Do not push"),
     ),
+    (
+        RENDER_PATCH_PLAN,
+        "4.13.1 render-tooling patch plan",
+        ("deterministic render-tooling patch", "project-local Fontconfig", "all eight", "zero stderr", "Do not push"),
+    ),
 ):
     check(path.exists(), f"{label} is missing")
     if path.exists():
@@ -384,6 +390,7 @@ required_cli_scripts = (
     "bin/validate_routes.py",
     "bin/validate_continuity.py",
     "bin/validate_subguides.py",
+    "bin/validate_render_tooling.py",
     "bin/validate_visualizations.py",
     "bin/build_visualizations.mjs",
     "bin/build_inventories.py",

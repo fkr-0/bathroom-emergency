@@ -1,7 +1,7 @@
 ---
 title: "Responsibility, Harm, and Other Life Forms"
 chapter: 2
-revision: "4.13.0"
+revision: "4.13.1"
 last_updated: "2026-08-02"
 dependencies:
   - build/diagrams/vega_reproductive_denominators.png

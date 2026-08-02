@@ -2,12 +2,22 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
-import * as vega from 'vega';
-import { compile } from 'vega-lite';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const catalogPath = path.join(ROOT, 'src/data/visualization_catalog.json');
 const requestedOut = process.argv[2] ? path.resolve(process.argv[2]) : null;
+const catalog = JSON.parse(await fs.readFile(catalogPath, 'utf8'));
+const fontconfigRelative = catalog.renderer?.fontconfig;
+if (!fontconfigRelative) throw new Error('visualization catalog lacks renderer.fontconfig');
+const fontconfigPath = path.join(ROOT, fontconfigRelative);
+
+// Native text measurement is initialized while Vega's canvas dependencies are
+// imported. Set the deterministic project profile first so host desktop
+// Fontconfig fragments cannot leak warnings or font substitutions into builds.
+process.env.FONTCONFIG_FILE ??= fontconfigPath;
+
+const vega = await import('vega');
+const { compile } = await import('vega-lite');
 
 async function readJson(file) {
   return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -22,7 +32,10 @@ function run(command, args) {
     child.stderr.on('data', chunk => { stderr += chunk; });
     child.on('error', reject);
     child.on('close', code => {
-      if (code === 0) resolve({ stdout, stderr });
+      if (code === 0) {
+        if (stderr) process.stderr.write(stderr);
+        resolve({ stdout, stderr });
+      }
       else reject(new Error(`${command} exited ${code}: ${stderr || stdout}`));
     });
   });
@@ -67,7 +80,6 @@ function addSvgMetadata(svg, item) {
   );
 }
 
-const catalog = await readJson(catalogPath);
 const themePath = path.join(ROOT, catalog.renderer.theme);
 const theme = await readJson(themePath);
 for (const item of catalog.visualizations) {

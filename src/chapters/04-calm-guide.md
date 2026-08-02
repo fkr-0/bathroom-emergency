@@ -1,7 +1,7 @@
 ---
 title: "Calm Guide"
 chapter: 4
-revision: "4.13.0"
+revision: "4.13.1"
 last_updated: "2026-08-02"
 dependencies:
   - build/diagrams/breathing_techniques.png

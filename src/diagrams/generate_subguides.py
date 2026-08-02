@@ -94,7 +94,7 @@ for ax, node in zip(flat_axes, nodes.values()):
     ax.add_patch(Rectangle((0.02, 0.02), .96, .96, facecolor="white", edgecolor=INK, linewidth=1.4))
     ax.add_patch(Rectangle((0.02, .70), .96, .28, facecolor=node["colour"], edgecolor=INK, linewidth=0))
     ax.add_patch(Rectangle((0.02, .70), .96, .28, facecolor="none", edgecolor="white", linewidth=1.3, hatch=HATCHES[node["pattern"]]))
-    ax.text(.08, .82, node["id"], color="white", fontsize=24, fontweight="black", ha="left", va="center")
+    ax.text(.08, .82, node["id"], color="white", fontsize=24, fontweight="bold", ha="left", va="center")
     ax.text(.08, .57, textwrap.fill(node["title"], 25), color=INK, fontsize=10.5, fontweight="bold", ha="left", va="top")
     ax.text(.08, .13, node["pattern"].replace("-", " "), color=MUTED, fontsize=8, ha="left")
 for ax in flat_axes[len(nodes):]:
@@ -133,7 +133,7 @@ for source, target in primary_edges:
 for node_id, (x, y) in overview_pos.items():
     node = nodes[node_id]
     ax.add_patch(Circle((x, y), .42, facecolor=node["colour"], edgecolor=INK, linewidth=2.1, hatch=HATCHES[node["pattern"]], zorder=3))
-    ax.text(x, y, node_id, color="white", fontsize=17, fontweight="black", ha="center", va="center", zorder=4)
+    ax.text(x, y, node_id, color="white", fontsize=17, fontweight="bold", ha="center", va="center", zorder=4)
     ax.text(x, y-.58, textwrap.fill(node["title"], 18), color=INK, fontsize=8.3, fontweight="bold", ha="center", va="top")
 ax.text(0, -3.08, "Immediate danger → 112. This graph orients; it never creates a queue before help.", ha="center", color=RED, fontsize=9, fontweight="bold")
 finish(fig, "subguide_graph_overview")
@@ -157,10 +157,10 @@ for current_id, current in nodes.items():
         ax.add_patch(FancyArrowPatch((0, 0), (x, y), arrowstyle="-|>", mutation_scale=10, linewidth=1.2, color=LINE, shrinkA=37, shrinkB=27))
         neighbour = nodes[neighbour_id]
         ax.add_patch(Circle((x, y), .34, facecolor="white", edgecolor=neighbour["colour"], linewidth=2.1, hatch=HATCHES[neighbour["pattern"]]))
-        ax.text(x, y, neighbour_id, color=INK, fontsize=12, fontweight="black", ha="center", va="center")
+        ax.text(x, y, neighbour_id, color=INK, fontsize=12, fontweight="bold", ha="center", va="center")
         ax.text(x, y-.46, textwrap.fill(neighbour["title"], 18), color=INK, fontsize=7.4, fontweight="bold", ha="center", va="top")
     ax.add_patch(Circle((0, 0), .62, facecolor=current["colour"], edgecolor=INK, linewidth=3.0, hatch=HATCHES[current["pattern"]], zorder=4))
-    ax.text(0, 0, current_id, color="white", fontsize=28, fontweight="black", ha="center", va="center", zorder=5)
+    ax.text(0, 0, current_id, color="white", fontsize=28, fontweight="bold", ha="center", va="center", zorder=5)
     ax.text(0, -2.42, "Complete route names follow as text. Immediate danger bypasses this map.", ha="center", color=MUTED, fontsize=8.5)
     finish(fig, f"subguide_graph_{current_id}")
 
@@ -199,7 +199,7 @@ for ax, (title, rows, note) in zip(axes, panels):
     y=.73
     for code, label in rows:
         ax.add_patch(Circle((.14, y), .055, facecolor=GREEN if "selected" in title else "white", edgecolor=INK, linewidth=1.3))
-        ax.text(.14, y, code, color="white" if "selected" in title else INK, fontsize=9, fontweight="black", ha="center", va="center")
+        ax.text(.14, y, code, color="white" if "selected" in title else INK, fontsize=9, fontweight="bold", ha="center", va="center")
         ax.text(.24, y, label, color=INK, fontsize=10, va="center")
         y -= .14
     ax.text(.08, .15, textwrap.fill(note, 49), color=MUTED, fontsize=9, va="top")
@@ -223,7 +223,7 @@ for index, (code, label, examples, question, color) in enumerate(channels):
     x = .30 + index * 2.63
     ax.add_patch(Rectangle((x, .92), 2.35, 3.72, facecolor="white", edgecolor=color, linewidth=2.2))
     ax.add_patch(Rectangle((x, 3.76), 2.35, .88, facecolor=color, edgecolor=color))
-    ax.text(x+.23, 4.20, code, color="white", fontsize=17, fontweight="black", va="center")
+    ax.text(x+.23, 4.20, code, color="white", fontsize=17, fontweight="bold", va="center")
     ax.text(x+.66, 4.20, label, color="white", fontsize=9.4, fontweight="bold", va="center")
     ax.text(x+.22, 3.30, textwrap.fill(examples, 27), color=INK, fontsize=9.5, fontweight="bold", va="top")
     ax.text(x+.22, 2.14, textwrap.fill(question, 24), color=MUTED, fontsize=9.2, va="top")
@@ -245,15 +245,15 @@ loads = [
 for index, (code, label, lever) in enumerate(loads):
     y = 4.25 - index * 1.12
     ax.add_patch(Rectangle((.45, y-.34), 3.25, .78, facecolor="white", edgecolor="#175cd3", linewidth=1.8))
-    ax.text(.72, y+.05, code, color="#175cd3", fontsize=16, fontweight="black", va="center")
+    ax.text(.72, y+.05, code, color="#175cd3", fontsize=16, fontweight="bold", va="center")
     ax.text(1.14, y+.05, label, color=INK, fontsize=10, fontweight="bold", va="center")
     ax.add_patch(FancyArrowPatch((3.82, y+.05), (5.00, y+.05), arrowstyle="-|>", mutation_scale=12, linewidth=1.5, color=LINE))
     ax.text(5.18, y+.05, lever, color=GREEN, fontsize=10, fontweight="bold", va="center")
-ax.text(7.98, 4.20, "L = I + E + S", ha="center", color=INK, fontsize=20, fontweight="black")
+ax.text(7.98, 4.20, "L = I + E + S", ha="center", color=INK, fontsize=20, fontweight="bold")
 ax.text(7.98, 3.36, "headroom  H = K − L", ha="center", color="#175cd3", fontsize=15, fontweight="bold")
 ax.add_patch(Rectangle((6.32, 1.42), 3.36, 1.16, facecolor="#eef7f3", edgecolor=GREEN, linewidth=2.0))
 ax.text(8.00, 2.18, "When L > capacity K", ha="center", color=INK, fontsize=11, fontweight="bold")
-ax.text(8.00, 1.78, "reduce · support · offload", ha="center", color=GREEN, fontsize=10.5, fontweight="black")
+ax.text(8.00, 1.78, "reduce · support · offload", ha="center", color=GREEN, fontsize=10.5, fontweight="bold")
 ax.text(5.4, .48, "Conceptual units only. Safety, shelter, medication, dependants, and today’s deadline remain first in the queue.", ha="center", color=MUTED, fontsize=8.8)
 finish(fig, "overload_control_map")
 
@@ -274,7 +274,7 @@ for x, kicker, title, body, color, glyph in cards:
     ax.add_patch(Rectangle((x, .75), 3.15, 3.95, facecolor="white", edgecolor=color, linewidth=2.2))
     ax.add_patch(Rectangle((x, 3.86), 3.15, .84, facecolor=color, edgecolor=color))
     ax.text(x+.18, 4.28, kicker, color="white", fontsize=8.5, fontweight="bold", va="center")
-    ax.text(x+.26, 3.42, glyph, color=color, fontsize=21, fontweight="black", va="center")
+    ax.text(x+.26, 3.42, glyph, color=color, fontsize=21, fontweight="bold", va="center")
     ax.text(x+.78, 3.43, textwrap.fill(title, 24), color=INK, fontsize=11.5, fontweight="bold", va="center")
     ax.text(x+.26, 2.30, textwrap.fill(body, 35), color=MUTED, fontsize=9.2, va="top")
 ax.text(5.4, .25, "The diagram chooses no live instruction. NINA, warnung.bund.de, radio, police, and fire service own the event.", ha="center", color=MUTED, fontsize=8.6)
@@ -298,8 +298,8 @@ for index, (number, label, detail) in enumerate(fields):
     x = .35 + index * 2.08
     ax.add_patch(Rectangle((x, 1.22), 1.82, 2.75, facecolor="white", edgecolor=GREEN, linewidth=1.8))
     ax.add_patch(Circle((x+.30, 3.60), .19, facecolor=GREEN, edgecolor=GREEN))
-    ax.text(x+.30, 3.60, number, color="white", fontsize=9, fontweight="black", ha="center", va="center")
-    ax.text(x+.20, 3.10, label, color=INK, fontsize=9.5, fontweight="black", va="top")
+    ax.text(x+.30, 3.60, number, color="white", fontsize=9, fontweight="bold", ha="center", va="center")
+    ax.text(x+.20, 3.10, label, color=INK, fontsize=9.5, fontweight="bold", va="top")
     ax.text(x+.20, 2.55, textwrap.fill(detail, 22), color=MUTED, fontsize=8.2, va="top")
     if index < len(fields)-1:
         ax.add_patch(FancyArrowPatch((x+1.83, 2.58), (x+2.04, 2.58), arrowstyle="-|>", mutation_scale=10, color=LINE, linewidth=1.2))

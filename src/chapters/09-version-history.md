@@ -1,12 +1,29 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.13.0"
+revision: "4.13.1"
 last_updated: "2026-08-02"
 dependencies: []
 ---
 
 # Version History
+
+## 4.13.1 — 2 August 2026
+
+### The render environment is explicit
+
+- Offline Vega-Lite charts now use a tracked Fontconfig profile rather than
+  inheriting unrelated host desktop configuration fragments.
+- Diagram labels request the available bold weight instead of an unavailable
+  black weight that caused fallback messages.
+
+### Renderer warnings become release failures
+
+- Successful SVG rasterization now forwards stderr instead of discarding it.
+- A new smoke validator renders all eight quantitative figures in a temporary
+  directory, checks the exact SVG/PNG set, and requires zero stderr.
+- Reader routes, claims, forms, sources, graph identities, and the 60 standalone
+  PDF editions remain otherwise unchanged.
 
 ## 4.13.0 — 2 August 2026
 

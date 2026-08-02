@@ -89,7 +89,10 @@ Git and are reproducible from tracked sources.
 | Poppler tools | PDF metadata, text, geometry, and page-render validation |
 
 The HTML guide uses native MathML and system fonts. It has no CDN or runtime
-network dependency.
+network dependency. Offline Vega-Lite rendering uses the tracked
+`src/visualizations/fontconfig.conf` profile, and
+`npm run validate:render-tooling` smoke-renders the complete chart set while
+failing on renderer stderr or unsupported diagram font weights.
 
 ## Information architecture
 

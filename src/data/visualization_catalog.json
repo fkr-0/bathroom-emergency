@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.13.0",
+  "release": "4.13.1",
   "renderer": {
     "engine": "Vega-Lite",
     "version": "6.4.3",
@@ -8,6 +8,7 @@
     "canonical": "SVG",
     "fallback": "PNG",
     "theme": "src/visualizations/theme.json",
+    "fontconfig": "src/visualizations/fontconfig.conf",
     "title_owner": "document",
     "svg_accessibility_metadata": true
   },

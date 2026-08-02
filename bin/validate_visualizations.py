@@ -81,6 +81,7 @@ if not errors:
     check(catalog.get("renderer", {}).get("offline") is True, "offline renderer contract missing")
     check(catalog.get("renderer", {}).get("canonical") == "SVG", "SVG is not canonical output")
     check(catalog.get("renderer", {}).get("theme") == "src/visualizations/theme.json", "shared Vega-Lite theme contract missing")
+    check(catalog.get("renderer", {}).get("fontconfig") == "src/visualizations/fontconfig.conf", "project-local Fontconfig contract missing")
     check(catalog.get("renderer", {}).get("title_owner") == "document", "document-owned chart title contract missing")
     check(catalog.get("renderer", {}).get("svg_accessibility_metadata") is True, "SVG accessibility metadata contract missing")
     check(len(items) >= 8, f"expected at least eight Vega-Lite figures, found {len(items)}")
