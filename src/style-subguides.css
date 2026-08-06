@@ -206,7 +206,11 @@
   text-align: center;
 }
 
-table, figure, pre, blockquote, .safety-card, .subguide-scope-grid,
+/* Figures, tables and cards share the prose measure so a page has one right
+   edge. Preformatted blocks are exempt: ASCII forms and diagrams reach 91
+   columns, and forcing them narrower either clips them or shrinks the type
+   past reading size. They are scanned, not read line by line. */
+table, figure, blockquote, .safety-card, .subguide-scope-grid,
 .subguide-neighbours, .edition-resource-map, .subguide-meta {
   max-width: var(--measure);
 }

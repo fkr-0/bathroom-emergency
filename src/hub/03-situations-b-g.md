@@ -17,7 +17,7 @@ but they do so for different reasons. Treating them as one generic crisis wastes
 information. Pick the loudest system first; borrow from neighbouring routes when
 reality refuses to respect chapter boundaries.
 
-## B — I feel anxious
+## What is actually happening
 
 ### Split the experience before trying to solve it
 
@@ -234,7 +234,7 @@ memo.
 Use Ch.4 after checking actual safety. Seek professional help when symptoms are
 severe, persistent, functionally impairing, or connected to self-harm.
 
-## E — Overload is a queueing failure
+## When it is overload, not anxiety
 
 Overload often feels like every task became urgent at once. Usually several
 queues have lost their labels: danger, deadline, discomfort, guilt, and
@@ -288,6 +288,8 @@ support a polite operational rule: after repeated short sleep, reduce complex
 choices, write down handoffs, double-check medication and driving decisions,
 and borrow a second alert brain where possible. Coffee may attend the meeting;
 it does not get voting rights on whether you are fully restored.
+
+## Traffic control
 
 ### The three-line triage
 

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "note": "Reading order for books whose material is spread across chapters. Books absent from this file are assembled whole-chapter in manifest order. Reader references follow this order, so reordering a book is an edit here and a rebuild, not a rewrite. Headings are named as they appear in source; retitling belongs in the source file so the reference registry and anchors stay in agreement.",
+  "orders": {
+    "B": [
+      {
+        "chapter": "04-calm-guide.md",
+        "sections": [
+          ""
+        ]
+      },
+      {
+        "chapter": "03-situations-b-g.md",
+        "sections": [
+          "What is actually happening"
+        ]
+      },
+      {
+        "chapter": "03-situations-b-g.md",
+        "sections": [
+          "When it is overload, not anxiety"
+        ]
+      },
+      {
+        "chapter": "04-calm-guide.md",
+        "sections": [
+          "A pause needs no legal brief",
+          "The 90-second landing",
+          "Breathing exercises",
+          "Stress does not obey a cinematic decay curve",
+          "Yerkes–Dodson",
+          "Polyvagal language",
+          "The bathroom control panel",
+          "Comfort inventory"
+        ]
+      },
+      {
+        "chapter": "03-situations-b-g.md",
+        "sections": [
+          "Traffic control"
+        ]
+      },
+      {
+        "chapter": "04-calm-guide.md",
+        "sections": [
+          "Unhook from the thought",
+          "The five-minute values bridge",
+          "Eventually: leaving the bathroom",
+          "Nice-place map",
+          "When calm is not enough",
+          "A calm plan for another person"
+        ]
+      }
+    ]
+  }
+}

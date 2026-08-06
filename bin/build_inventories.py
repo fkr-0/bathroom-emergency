@@ -41,7 +41,13 @@ def slugify(value: str) -> str:
 def mixed_owner(heading: str, level: int) -> str:
     if level == 1:
         return "B"  # shared chapter shell; first owned route is B
+    # Sections the hub routes to by letter. The letters live on the routing map,
+    # not in the heading text, so sections renamed to say what they are about are
+    # matched here by name.
     for prefix, owner in (
+        ("What is actually happening", "B"),
+        ("When it is overload, not anxiety", "B"),
+        ("Traffic control", "B"),
         ("B —", "B"),
         ("C —", "C"),
         ("D —", "D"),

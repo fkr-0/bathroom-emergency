@@ -228,6 +228,17 @@ def assign_reader_refs(records: list[dict]) -> dict[str, str]:
         node["id"]: node["chapters"]
         for node in load_json("subguides.json")["nodes"]
     }
+    # A book that declares a reading order is numbered the way it reads, not the
+    # way its source files happen to sit on disk. Otherwise the addresses run
+    # 2.1, 2.2, 2.4, 2.3 down a contents page.
+    running_orders = load_json("running_orders.json")["orders"]
+    reading_rank: dict[str, dict[tuple[str, str], int]] = {}
+    for node_id, plan in running_orders.items():
+        rank: dict[tuple[str, str], int] = {}
+        for entry in plan:
+            for heading in entry["sections"]:
+                rank.setdefault((entry["chapter"], heading), len(rank))
+        reading_rank[node_id] = rank
     by_owner: dict[str, list[dict]] = defaultdict(list)
     for record in records:
         if record.get("chapter") and record.get("line") is not None:
@@ -254,6 +265,17 @@ def assign_reader_refs(records: list[dict]) -> dict[str, str]:
         if not abbr or not chapters:
             continue
         order = {name: index for index, name in enumerate(chapters)}
+        rank = reading_rank.get(owner)
+        if rank:
+            # Numbered in reading order: one flat run, because a book with a
+            # declared order is one book, not a pile of source files.
+            owned = sorted(
+                (item for item in owned if (item["chapter"], item["title"]) in rank),
+                key=lambda item: rank[(item["chapter"], item["title"])],
+            )
+            for position, item in enumerate(owned, start=1):
+                refs[item["resource_key"]] = f"{abbr}.{position}"
+            continue
         owned = sorted(
             (item for item in owned if item["chapter"] in order),
             key=lambda item: (order[item["chapter"]], item["line"]),
@@ -617,6 +639,11 @@ def inject_heading_ids(text: str, chapter: str) -> str:
             # 236 sections would otherwise cost several printed pages.
             suffix = f" [{reader_ref}]{{.section-ref}}" if reader_ref else ""
             line = f"{match.group(1)} {match.group(2)}{suffix} {{#{item['html_id']}}}"
+        elif match and "{#" not in line:
+            # A heading a book renamed for its own running order has no registry
+            # entry under the new wording. It still needs an anchor, or it drops
+            # out of the contents list and cannot be linked to.
+            line = f"{match.group(1)} {match.group(2)} {{#{slugify(match.group(2))}}}"
         lines.append(line)
         if form_item:
             lines.extend(("", resource_band(form_item), ""))
@@ -682,6 +709,8 @@ def mini_toc(text: str, max_level: int = 2) -> str:
         if not id_match:
             continue
         title = re.sub(r"\s+\{#[-a-z0-9]+\}\s*$", "", match.group(2))
+        # The reader address is furniture on the heading, not part of its name.
+        title = re.sub(r"\s*\[[a-z]+\.[0-9.]+\]\{\.section-ref\}", "", title)
         indent = "  " * (len(match.group(1)) - 1)
         rows.append(f"{indent}- [{title}](#{id_match.group(1)})")
     return "\n".join(rows)

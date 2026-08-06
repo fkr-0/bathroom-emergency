@@ -9,7 +9,7 @@
   },
   "totals": {
     "nodes": 11,
-    "sections": 253,
+    "sections": 254,
     "sources": 64,
     "reader_visuals": 41,
     "standalone_nodes": 11
@@ -101,7 +101,7 @@
         "04-calm-guide.md"
       ],
       "chapter_count": 2,
-      "section_count": 18,
+      "section_count": 19,
       "source_count": 6,
       "source_counts": {
         "operational": 0,

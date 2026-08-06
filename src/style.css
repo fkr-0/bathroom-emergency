@@ -22,7 +22,7 @@
   --purple: #6f3ab2;
   --shadow: 0 14px 35px rgba(20, 32, 29, .10);
   --radius: 6px;
-  --measure: 76ch;
+  --measure: 65ch;
   color-scheme: light;
   font-family: "IBM Plex Sans", "Atkinson Hyperlegible", "Noto Sans", system-ui, sans-serif;
   font-size: 16px;
@@ -730,6 +730,11 @@ math[display="block"] {
 }
 
 @media print {
+  /* Body text stays ragged-right. WCAG 2.1 SC 1.4.8 states that text is not
+     justified, and this guide ships cognitive-overload and sensory-panic
+     accessibility profiles. Justified + hyphens: auto renders cleanly in
+     Chromium and was tested; it is declined on that ground, not on looks. */
+
   :root {
     --ink: #111;
     --muted: #444;

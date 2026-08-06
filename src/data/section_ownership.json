@@ -277,11 +277,11 @@
       "owner": "B"
     },
     {
-      "key": "03-situations-b-g:b-i-feel-anxious",
+      "key": "03-situations-b-g:what-is-actually-happening",
       "chapter": "03-situations-b-g.md",
       "line": 20,
       "level": 2,
-      "heading": "B — I feel anxious",
+      "heading": "What is actually happening",
       "owner": "B"
     },
     {
@@ -301,17 +301,25 @@
       "owner": "D"
     },
     {
-      "key": "03-situations-b-g:e-overload-is-a-queueing-failure",
+      "key": "03-situations-b-g:when-it-is-overload-not-anxiety",
       "chapter": "03-situations-b-g.md",
       "line": 237,
       "level": 2,
-      "heading": "E — Overload is a queueing failure",
+      "heading": "When it is overload, not anxiety",
+      "owner": "B"
+    },
+    {
+      "key": "03-situations-b-g:traffic-control",
+      "chapter": "03-situations-b-g.md",
+      "line": 292,
+      "level": 2,
+      "heading": "Traffic control",
       "owner": "B"
     },
     {
       "key": "03-situations-b-g:f-smell-is-vivid-evidence-with-poor-calibration",
       "chapter": "03-situations-b-g.md",
-      "line": 326,
+      "line": 328,
       "level": 2,
       "heading": "F — Smell is vivid evidence with poor calibration",
       "owner": "H"
@@ -319,7 +327,7 @@
     {
       "key": "03-situations-b-g:g-no-place-to-go",
       "chapter": "03-situations-b-g.md",
-      "line": 372,
+      "line": 374,
       "level": 2,
       "heading": "G — No place to go",
       "owner": "D"
@@ -327,7 +335,7 @@
     {
       "key": "03-situations-b-g:situations-b-f-with-the-situation-g-handoff",
       "chapter": "03-situations-b-g.md",
-      "line": 379,
+      "line": 381,
       "level": 2,
       "heading": "Situations B–F, with the Situation G handoff",
       "owner": "D"

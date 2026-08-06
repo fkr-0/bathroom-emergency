@@ -404,7 +404,64 @@ primary problem; move when another title becomes more accurate.
     endmatter = source_endmatter(ordered_sources)
     return "\n\n".join((cover, canonical_content, connections, endmatter, ":::")) + "\n"
 
+# Reading order lives in src/data/running_orders.json so the reference index can
+# number sections the way the book actually reads, and so reordering a book is a
+# data edit rather than a code change.
+RUNNING_ORDERS: dict[str, list[dict]] = json.loads(
+    (DATA_DIR / "running_orders.json").read_text(encoding="utf-8")
+)["orders"]
+
+
+def split_sections(text: str, level: int = 2) -> list[tuple[str, str]]:
+    """Split chapter prose into (heading, body) pairs at the given level.
+
+    The body of the first pair is whatever precedes the first heading, keyed by
+    the empty string, so a chapter's opening prose can be placed like any other
+    section.
+    """
+    marker = "#" * level + " "
+    out: list[tuple[str, str]] = []
+    heading = ""
+    buffer: list[str] = []
+    for line in text.split("\n"):
+        if line.startswith(marker):
+            out.append((heading, "\n".join(buffer).strip()))
+            heading = line[len(marker):].strip()
+            buffer = [line]
+        else:
+            buffer.append(line)
+    out.append((heading, "\n".join(buffer).strip()))
+    return [(head, body) for head, body in out if body]
+
+
+def running_order_blocks(plan: list[dict]) -> list[tuple[str, str]]:
+    """Assemble a book from an explicit (chapter, sections) running order.
+
+    Books whose material is spread across chapters need to interleave it, not
+    concatenate whole files. Each plan entry names a chapter and the section
+    headings to take from it, in the order they should be read; ``retitle``
+    renames a heading whose original wording only made sense in the hub.
+    """
+    blocks: list[tuple[str, str]] = []
+    cache: dict[str, dict[str, str]] = {}
+    for entry in plan:
+        chapter = entry["chapter"]
+        if chapter not in cache:
+            cache[chapter] = dict(split_sections(chapter_without_definitions(chapter)))
+        available = cache[chapter]
+        chosen: list[str] = []
+        for heading in entry["sections"]:
+            if heading not in available:
+                raise RuntimeError(f"{chapter}: no section titled {heading!r}")
+            chosen.append(available[heading])
+        blocks.append((chapter, "\n\n".join(chosen)))
+    return blocks
+
+
 def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
+    plan = RUNNING_ORDERS.get(node_id)
+    if plan:
+        return running_order_blocks(plan)
     if node_id == "O":
         return [
             ("01-how-to-use.md", chapter_without_definitions("01-how-to-use.md")),
