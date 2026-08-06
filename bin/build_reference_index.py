@@ -207,6 +207,58 @@ def resources() -> list[dict]:
     return records
 
 
+# Reader-facing short names for each book. The registry ref [BEG:C:S:008] is
+# stable and machine-checkable but says nothing to a reader; [amb.2.8] names the
+# same section in a form someone can read aloud over the phone.
+BOOK_ABBREVS = {
+    "O": "body", "A": "resp", "B": "calm", "C": "amb", "D": "safe",
+    "H": "dis", "Z": "zomb", "P": "supp", "S": "soc", "T": "tmpl", "R": "ref",
+}
+
+
+def assign_reader_refs(records: list[dict]) -> dict[str, str]:
+    """Map each section resource key to a readable ``book.chapter.section`` ref.
+
+    Numbering follows the book that owns the section, over that book's canonical
+    chapter order, so a section keeps the same reader ref in the master guide and
+    in the standalone book. Sections of the shared door chapter are counted per
+    owner, which is what keeps B, C, D, and H from colliding in it.
+    """
+    node_chapters = {
+        node["id"]: node["chapters"]
+        for node in load_json("subguides.json")["nodes"]
+    }
+    by_owner: dict[str, list[dict]] = defaultdict(list)
+    for record in records:
+        if record.get("chapter") and record.get("line") is not None:
+            by_owner[record["owner"]].append(record)
+
+    refs: dict[str, str] = {}
+    for owner, owned in by_owner.items():
+        abbr = BOOK_ABBREVS.get(owner)
+        chapters = node_chapters.get(owner)
+        if not abbr or not chapters:
+            continue
+        order = {name: index for index, name in enumerate(chapters)}
+        owned = sorted(
+            (item for item in owned if item["chapter"] in order),
+            key=lambda item: (order[item["chapter"]], item["line"]),
+        )
+        section_number = 0
+        current_chapter: str | None = None
+        for item in owned:
+            if item["chapter"] != current_chapter:
+                current_chapter = item["chapter"]
+                section_number = 0
+            chapter_number = order[item["chapter"]] + 1
+            if item["level"] <= 1:
+                refs[item["resource_key"]] = f"{abbr}.{chapter_number}"
+                continue
+            section_number += 1
+            refs[item["resource_key"]] = f"{abbr}.{chapter_number}.{section_number}"
+    return refs
+
+
 def assign(records: list[dict]) -> tuple[dict, list[dict]]:
     old = {}
     if REGISTRY_PATH.exists():
@@ -225,6 +277,7 @@ def assign(records: list[dict]) -> tuple[dict, list[dict]]:
             pair = (record["owner"], record["kind"])
             counters[pair] += 1
             ids[key] = f"[BEG:{pair[0]}:{pair[1]}:{counters[pair]:03d}]"
+    reader_refs = assign_reader_refs(records)
     current_keys = {item["resource_key"] for item in records}
     retired = sorted(set(ids) - current_keys)
     migrations_by_target: dict[str, list[str]] = defaultdict(list)
@@ -238,6 +291,9 @@ def assign(records: list[dict]) -> tuple[dict, list[dict]]:
         match = REF_RE.match(item["public_ref"])
         assert match
         item["html_id"] = f"beg-{match.group(1).lower()}-{match.group(2).lower()}-{match.group(3)}"
+        reader_ref = reader_refs.get(record["resource_key"])
+        if reader_ref:
+            item["reader_ref"] = reader_ref
         legacy_refs = [ids[key] for key in migrations_by_target.get(record["resource_key"], [])]
         item["legacy_public_refs"] = legacy_refs
         item["legacy_html_ids"] = [
@@ -542,7 +598,11 @@ def inject_heading_ids(text: str, chapter: str) -> str:
         item = lookup.get(match.group(2)) if match else None
         form_item = form_by_heading.get(match.group(2)) if match else None
         if item and "{#" not in line:
-            line = f"{match.group(1)} {match.group(2)} {{#{item['html_id']}}}"
+            reader_ref = item.get("reader_ref")
+            # Rides along on the heading line rather than taking one of its own:
+            # 236 sections would otherwise cost several printed pages.
+            suffix = f" [{reader_ref}]{{.section-ref}}" if reader_ref else ""
+            line = f"{match.group(1)} {match.group(2)}{suffix} {{#{item['html_id']}}}"
         lines.append(line)
         if form_item:
             lines.extend(("", resource_band(form_item), ""))

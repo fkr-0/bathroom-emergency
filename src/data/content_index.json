@@ -135,6 +135,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:001]",
       "html_id": "beg-a-s-001",
+      "reader_ref": "resp.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -148,6 +149,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:002]",
       "html_id": "beg-a-s-002",
+      "reader_ref": "resp.1.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -161,6 +163,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:003]",
       "html_id": "beg-a-s-003",
+      "reader_ref": "resp.1.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -174,6 +177,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:004]",
       "html_id": "beg-a-s-004",
+      "reader_ref": "resp.1.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -187,6 +191,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:005]",
       "html_id": "beg-a-s-005",
+      "reader_ref": "resp.1.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -200,6 +205,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:006]",
       "html_id": "beg-a-s-006",
+      "reader_ref": "resp.1.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -213,6 +219,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:007]",
       "html_id": "beg-a-s-007",
+      "reader_ref": "resp.1.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -226,6 +233,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:008]",
       "html_id": "beg-a-s-008",
+      "reader_ref": "resp.1.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -239,6 +247,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:009]",
       "html_id": "beg-a-s-009",
+      "reader_ref": "resp.1.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -252,6 +261,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:010]",
       "html_id": "beg-a-s-010",
+      "reader_ref": "resp.1.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -265,6 +275,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:011]",
       "html_id": "beg-a-s-011",
+      "reader_ref": "resp.1.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -278,6 +289,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:012]",
       "html_id": "beg-a-s-012",
+      "reader_ref": "resp.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -291,6 +303,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:014]",
       "html_id": "beg-a-s-014",
+      "reader_ref": "resp.1.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -304,6 +317,7 @@
       "level": 2,
       "public_ref": "[BEG:A:S:015]",
       "html_id": "beg-a-s-015",
+      "reader_ref": "resp.1.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -317,6 +331,7 @@
       "level": 1,
       "public_ref": "[BEG:A:S:016]",
       "html_id": "beg-a-s-016",
+      "reader_ref": "resp.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -463,6 +478,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:001]",
       "html_id": "beg-b-s-001",
+      "reader_ref": "calm.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -476,6 +492,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:002]",
       "html_id": "beg-b-s-002",
+      "reader_ref": "calm.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -489,6 +506,7 @@
       "level": 1,
       "public_ref": "[BEG:B:S:003]",
       "html_id": "beg-b-s-003",
+      "reader_ref": "calm.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -502,6 +520,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:004]",
       "html_id": "beg-b-s-004",
+      "reader_ref": "calm.2.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -515,6 +534,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:005]",
       "html_id": "beg-b-s-005",
+      "reader_ref": "calm.2.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -528,6 +548,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:006]",
       "html_id": "beg-b-s-006",
+      "reader_ref": "calm.2.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -541,6 +562,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:008]",
       "html_id": "beg-b-s-008",
+      "reader_ref": "calm.2.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -554,6 +576,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:009]",
       "html_id": "beg-b-s-009",
+      "reader_ref": "calm.2.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -567,6 +590,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:010]",
       "html_id": "beg-b-s-010",
+      "reader_ref": "calm.2.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -580,6 +604,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:011]",
       "html_id": "beg-b-s-011",
+      "reader_ref": "calm.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -593,6 +618,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:012]",
       "html_id": "beg-b-s-012",
+      "reader_ref": "calm.2.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -606,6 +632,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:013]",
       "html_id": "beg-b-s-013",
+      "reader_ref": "calm.2.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -619,6 +646,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:014]",
       "html_id": "beg-b-s-014",
+      "reader_ref": "calm.2.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -632,6 +660,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:015]",
       "html_id": "beg-b-s-015",
+      "reader_ref": "calm.2.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -645,6 +674,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:016]",
       "html_id": "beg-b-s-016",
+      "reader_ref": "calm.2.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -658,6 +688,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:017]",
       "html_id": "beg-b-s-017",
+      "reader_ref": "calm.2.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -671,6 +702,7 @@
       "level": 2,
       "public_ref": "[BEG:B:S:018]",
       "html_id": "beg-b-s-018",
+      "reader_ref": "calm.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -684,6 +716,7 @@
       "level": 1,
       "public_ref": "[BEG:B:S:019]",
       "html_id": "beg-b-s-019",
+      "reader_ref": "calm.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -812,6 +845,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:001]",
       "html_id": "beg-c-s-001",
+      "reader_ref": "amb.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -825,6 +859,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:002]",
       "html_id": "beg-c-s-002",
+      "reader_ref": "amb.2.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -838,6 +873,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:003]",
       "html_id": "beg-c-s-003",
+      "reader_ref": "amb.2.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -851,6 +887,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:004]",
       "html_id": "beg-c-s-004",
+      "reader_ref": "amb.2.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -864,6 +901,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:005]",
       "html_id": "beg-c-s-005",
+      "reader_ref": "amb.2.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -877,6 +915,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:006]",
       "html_id": "beg-c-s-006",
+      "reader_ref": "amb.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -890,6 +929,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:007]",
       "html_id": "beg-c-s-007",
+      "reader_ref": "amb.2.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -903,6 +943,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:008]",
       "html_id": "beg-c-s-008",
+      "reader_ref": "amb.2.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -916,6 +957,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:010]",
       "html_id": "beg-c-s-010",
+      "reader_ref": "amb.2.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -929,6 +971,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:011]",
       "html_id": "beg-c-s-011",
+      "reader_ref": "amb.2.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -942,6 +985,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:012]",
       "html_id": "beg-c-s-012",
+      "reader_ref": "amb.2.22",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -955,6 +999,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:013]",
       "html_id": "beg-c-s-013",
+      "reader_ref": "amb.2.21",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -968,6 +1013,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:014]",
       "html_id": "beg-c-s-014",
+      "reader_ref": "amb.2.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -981,6 +1027,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:015]",
       "html_id": "beg-c-s-015",
+      "reader_ref": "amb.2.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -994,6 +1041,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:016]",
       "html_id": "beg-c-s-016",
+      "reader_ref": "amb.2.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1007,6 +1055,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:017]",
       "html_id": "beg-c-s-017",
+      "reader_ref": "amb.2.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1020,6 +1069,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:018]",
       "html_id": "beg-c-s-018",
+      "reader_ref": "amb.2.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1033,6 +1083,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:019]",
       "html_id": "beg-c-s-019",
+      "reader_ref": "amb.2.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1046,6 +1097,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:020]",
       "html_id": "beg-c-s-020",
+      "reader_ref": "amb.2.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1059,6 +1111,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:021]",
       "html_id": "beg-c-s-021",
+      "reader_ref": "amb.2.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1072,6 +1125,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:022]",
       "html_id": "beg-c-s-022",
+      "reader_ref": "amb.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1085,6 +1139,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:023]",
       "html_id": "beg-c-s-023",
+      "reader_ref": "amb.2.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1098,6 +1153,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:024]",
       "html_id": "beg-c-s-024",
+      "reader_ref": "amb.2.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1111,6 +1167,7 @@
       "level": 1,
       "public_ref": "[BEG:C:S:025]",
       "html_id": "beg-c-s-025",
+      "reader_ref": "amb.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1219,6 +1276,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:001]",
       "html_id": "beg-d-s-001",
+      "reader_ref": "safe.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1232,6 +1290,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:002]",
       "html_id": "beg-d-s-002",
+      "reader_ref": "safe.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1245,6 +1304,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:003]",
       "html_id": "beg-d-s-003",
+      "reader_ref": "safe.1.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1258,6 +1318,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:004]",
       "html_id": "beg-d-s-004",
+      "reader_ref": "safe.2.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1271,6 +1332,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:005]",
       "html_id": "beg-d-s-005",
+      "reader_ref": "safe.2.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1284,6 +1346,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:006]",
       "html_id": "beg-d-s-006",
+      "reader_ref": "safe.2.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1297,6 +1360,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:007]",
       "html_id": "beg-d-s-007",
+      "reader_ref": "safe.2.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1310,6 +1374,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:008]",
       "html_id": "beg-d-s-008",
+      "reader_ref": "safe.2.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1323,6 +1388,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:009]",
       "html_id": "beg-d-s-009",
+      "reader_ref": "safe.2.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1336,6 +1402,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:010]",
       "html_id": "beg-d-s-010",
+      "reader_ref": "safe.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1349,6 +1416,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:011]",
       "html_id": "beg-d-s-011",
+      "reader_ref": "safe.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1362,6 +1430,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:013]",
       "html_id": "beg-d-s-013",
+      "reader_ref": "safe.2.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1375,6 +1444,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:014]",
       "html_id": "beg-d-s-014",
+      "reader_ref": "safe.2.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1388,6 +1458,7 @@
       "level": 1,
       "public_ref": "[BEG:D:S:015]",
       "html_id": "beg-d-s-015",
+      "reader_ref": "safe.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1495,6 +1566,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:001]",
       "html_id": "beg-h-s-001",
+      "reader_ref": "dis.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1508,6 +1580,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:002]",
       "html_id": "beg-h-s-002",
+      "reader_ref": "dis.2.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1521,6 +1594,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:003]",
       "html_id": "beg-h-s-003",
+      "reader_ref": "dis.2.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1534,6 +1608,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:004]",
       "html_id": "beg-h-s-004",
+      "reader_ref": "dis.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1547,6 +1622,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:005]",
       "html_id": "beg-h-s-005",
+      "reader_ref": "dis.2.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1560,6 +1636,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:006]",
       "html_id": "beg-h-s-006",
+      "reader_ref": "dis.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1573,6 +1650,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:007]",
       "html_id": "beg-h-s-007",
+      "reader_ref": "dis.2.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1586,6 +1664,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:008]",
       "html_id": "beg-h-s-008",
+      "reader_ref": "dis.2.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1599,6 +1678,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:009]",
       "html_id": "beg-h-s-009",
+      "reader_ref": "dis.2.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1612,6 +1692,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:011]",
       "html_id": "beg-h-s-011",
+      "reader_ref": "dis.2.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1625,6 +1706,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:012]",
       "html_id": "beg-h-s-012",
+      "reader_ref": "dis.2.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1638,6 +1720,7 @@
       "level": 1,
       "public_ref": "[BEG:H:S:013]",
       "html_id": "beg-h-s-013",
+      "reader_ref": "dis.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1651,6 +1734,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:014]",
       "html_id": "beg-h-s-014",
+      "reader_ref": "dis.3.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1664,6 +1748,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:015]",
       "html_id": "beg-h-s-015",
+      "reader_ref": "dis.3.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1677,6 +1762,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:016]",
       "html_id": "beg-h-s-016",
+      "reader_ref": "dis.3.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1690,6 +1776,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:017]",
       "html_id": "beg-h-s-017",
+      "reader_ref": "dis.3.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1703,6 +1790,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:018]",
       "html_id": "beg-h-s-018",
+      "reader_ref": "dis.3.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1716,6 +1804,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:019]",
       "html_id": "beg-h-s-019",
+      "reader_ref": "dis.3.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1729,6 +1818,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:020]",
       "html_id": "beg-h-s-020",
+      "reader_ref": "dis.3.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1742,6 +1832,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:021]",
       "html_id": "beg-h-s-021",
+      "reader_ref": "dis.3.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1755,6 +1846,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:022]",
       "html_id": "beg-h-s-022",
+      "reader_ref": "dis.3.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1768,6 +1860,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:023]",
       "html_id": "beg-h-s-023",
+      "reader_ref": "dis.3.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1781,6 +1874,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:024]",
       "html_id": "beg-h-s-024",
+      "reader_ref": "dis.3.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1794,6 +1888,7 @@
       "level": 1,
       "public_ref": "[BEG:H:S:025]",
       "html_id": "beg-h-s-025",
+      "reader_ref": "dis.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1807,6 +1902,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:026]",
       "html_id": "beg-h-s-026",
+      "reader_ref": "dis.3.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1909,6 +2005,7 @@
       "level": 1,
       "public_ref": "[BEG:O:S:001]",
       "html_id": "beg-o-s-001",
+      "reader_ref": "body.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1922,6 +2019,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:017]",
       "html_id": "beg-o-s-017",
+      "reader_ref": "body.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1935,6 +2033,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:018]",
       "html_id": "beg-o-s-018",
+      "reader_ref": "body.2.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1948,6 +2047,7 @@
       "level": 1,
       "public_ref": "[BEG:O:S:019]",
       "html_id": "beg-o-s-019",
+      "reader_ref": "body.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1961,6 +2061,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:020]",
       "html_id": "beg-o-s-020",
+      "reader_ref": "body.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1974,6 +2075,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:021]",
       "html_id": "beg-o-s-021",
+      "reader_ref": "body.2.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1987,6 +2089,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:022]",
       "html_id": "beg-o-s-022",
+      "reader_ref": "body.2.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2000,6 +2103,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:023]",
       "html_id": "beg-o-s-023",
+      "reader_ref": "body.2.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2013,6 +2117,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:024]",
       "html_id": "beg-o-s-024",
+      "reader_ref": "body.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2026,6 +2131,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:025]",
       "html_id": "beg-o-s-025",
+      "reader_ref": "body.3.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2039,6 +2145,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:026]",
       "html_id": "beg-o-s-026",
+      "reader_ref": "body.3.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2052,6 +2159,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:027]",
       "html_id": "beg-o-s-027",
+      "reader_ref": "body.3.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2065,6 +2173,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:028]",
       "html_id": "beg-o-s-028",
+      "reader_ref": "body.3.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2078,6 +2187,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:029]",
       "html_id": "beg-o-s-029",
+      "reader_ref": "body.3.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2091,6 +2201,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:030]",
       "html_id": "beg-o-s-030",
+      "reader_ref": "body.3.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2104,6 +2215,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:031]",
       "html_id": "beg-o-s-031",
+      "reader_ref": "body.3.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2117,6 +2229,7 @@
       "level": 1,
       "public_ref": "[BEG:O:S:032]",
       "html_id": "beg-o-s-032",
+      "reader_ref": "body.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2130,6 +2243,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:033]",
       "html_id": "beg-o-s-033",
+      "reader_ref": "body.3.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2504,6 +2618,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:001]",
       "html_id": "beg-p-s-001",
+      "reader_ref": "supp.1.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2517,6 +2632,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:002]",
       "html_id": "beg-p-s-002",
+      "reader_ref": "supp.1.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2530,6 +2646,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:003]",
       "html_id": "beg-p-s-003",
+      "reader_ref": "supp.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2543,6 +2660,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:004]",
       "html_id": "beg-p-s-004",
+      "reader_ref": "supp.1.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2556,6 +2674,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:005]",
       "html_id": "beg-p-s-005",
+      "reader_ref": "supp.1.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2569,6 +2688,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:006]",
       "html_id": "beg-p-s-006",
+      "reader_ref": "supp.1.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2582,6 +2702,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:008]",
       "html_id": "beg-p-s-008",
+      "reader_ref": "supp.1.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2595,6 +2716,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:009]",
       "html_id": "beg-p-s-009",
+      "reader_ref": "supp.1.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2608,6 +2730,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:010]",
       "html_id": "beg-p-s-010",
+      "reader_ref": "supp.1.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2621,6 +2744,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:011]",
       "html_id": "beg-p-s-011",
+      "reader_ref": "supp.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2634,6 +2758,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:012]",
       "html_id": "beg-p-s-012",
+      "reader_ref": "supp.1.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2647,6 +2772,7 @@
       "level": 2,
       "public_ref": "[BEG:P:S:013]",
       "html_id": "beg-p-s-013",
+      "reader_ref": "supp.1.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2660,6 +2786,7 @@
       "level": 1,
       "public_ref": "[BEG:P:S:014]",
       "html_id": "beg-p-s-014",
+      "reader_ref": "supp.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2721,6 +2848,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:001]",
       "html_id": "beg-r-s-001",
+      "reader_ref": "ref.1.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2734,6 +2862,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:002]",
       "html_id": "beg-r-s-002",
+      "reader_ref": "ref.1.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2747,6 +2876,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:003]",
       "html_id": "beg-r-s-003",
+      "reader_ref": "ref.1.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2760,6 +2890,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:004]",
       "html_id": "beg-r-s-004",
+      "reader_ref": "ref.1.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2773,6 +2904,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:005]",
       "html_id": "beg-r-s-005",
+      "reader_ref": "ref.1.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2786,6 +2918,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:006]",
       "html_id": "beg-r-s-006",
+      "reader_ref": "ref.1.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2799,6 +2932,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:007]",
       "html_id": "beg-r-s-007",
+      "reader_ref": "ref.1.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2812,6 +2946,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:008]",
       "html_id": "beg-r-s-008",
+      "reader_ref": "ref.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2825,6 +2960,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:009]",
       "html_id": "beg-r-s-009",
+      "reader_ref": "ref.1.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2838,6 +2974,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:010]",
       "html_id": "beg-r-s-010",
+      "reader_ref": "ref.1.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2851,6 +2988,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:011]",
       "html_id": "beg-r-s-011",
+      "reader_ref": "ref.1.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2864,6 +3002,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:012]",
       "html_id": "beg-r-s-012",
+      "reader_ref": "ref.1.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2877,6 +3016,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:013]",
       "html_id": "beg-r-s-013",
+      "reader_ref": "ref.1.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2890,6 +3030,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:015]",
       "html_id": "beg-r-s-015",
+      "reader_ref": "ref.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2903,6 +3044,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:016]",
       "html_id": "beg-r-s-016",
+      "reader_ref": "ref.1.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2916,6 +3058,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:017]",
       "html_id": "beg-r-s-017",
+      "reader_ref": "ref.2.21",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2929,6 +3072,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:018]",
       "html_id": "beg-r-s-018",
+      "reader_ref": "ref.2.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2942,6 +3086,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:019]",
       "html_id": "beg-r-s-019",
+      "reader_ref": "ref.2.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2955,6 +3100,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:020]",
       "html_id": "beg-r-s-020",
+      "reader_ref": "ref.2.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2968,6 +3114,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:021]",
       "html_id": "beg-r-s-021",
+      "reader_ref": "ref.2.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2981,6 +3128,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:022]",
       "html_id": "beg-r-s-022",
+      "reader_ref": "ref.2.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2994,6 +3142,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:023]",
       "html_id": "beg-r-s-023",
+      "reader_ref": "ref.2.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3007,6 +3156,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:024]",
       "html_id": "beg-r-s-024",
+      "reader_ref": "ref.2.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3020,6 +3170,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:026]",
       "html_id": "beg-r-s-026",
+      "reader_ref": "ref.2.22",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3033,6 +3184,7 @@
       "level": 1,
       "public_ref": "[BEG:R:S:027]",
       "html_id": "beg-r-s-027",
+      "reader_ref": "ref.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3046,6 +3198,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:028]",
       "html_id": "beg-r-s-028",
+      "reader_ref": "ref.3.27",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3059,6 +3212,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:029]",
       "html_id": "beg-r-s-029",
+      "reader_ref": "ref.3.35",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3072,6 +3226,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:030]",
       "html_id": "beg-r-s-030",
+      "reader_ref": "ref.3.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3085,6 +3240,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:031]",
       "html_id": "beg-r-s-031",
+      "reader_ref": "ref.3.31",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3098,6 +3254,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:032]",
       "html_id": "beg-r-s-032",
+      "reader_ref": "ref.3.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3111,6 +3268,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:033]",
       "html_id": "beg-r-s-033",
+      "reader_ref": "ref.3.23",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3124,6 +3282,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:034]",
       "html_id": "beg-r-s-034",
+      "reader_ref": "ref.3.21",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3137,6 +3296,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:035]",
       "html_id": "beg-r-s-035",
+      "reader_ref": "ref.3.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3150,6 +3310,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:036]",
       "html_id": "beg-r-s-036",
+      "reader_ref": "ref.3.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3163,6 +3324,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:037]",
       "html_id": "beg-r-s-037",
+      "reader_ref": "ref.3.40",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3176,6 +3338,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:038]",
       "html_id": "beg-r-s-038",
+      "reader_ref": "ref.3.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3189,6 +3352,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:039]",
       "html_id": "beg-r-s-039",
+      "reader_ref": "ref.3.45",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3202,6 +3366,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:040]",
       "html_id": "beg-r-s-040",
+      "reader_ref": "ref.3.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3215,6 +3380,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:041]",
       "html_id": "beg-r-s-041",
+      "reader_ref": "ref.3.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3228,6 +3394,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:042]",
       "html_id": "beg-r-s-042",
+      "reader_ref": "ref.3.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3241,6 +3408,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:043]",
       "html_id": "beg-r-s-043",
+      "reader_ref": "ref.3.36",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3254,6 +3422,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:044]",
       "html_id": "beg-r-s-044",
+      "reader_ref": "ref.3.39",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3267,6 +3436,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:045]",
       "html_id": "beg-r-s-045",
+      "reader_ref": "ref.3.33",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3280,6 +3450,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:046]",
       "html_id": "beg-r-s-046",
+      "reader_ref": "ref.3.34",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3293,6 +3464,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:047]",
       "html_id": "beg-r-s-047",
+      "reader_ref": "ref.3.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3306,6 +3478,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:048]",
       "html_id": "beg-r-s-048",
+      "reader_ref": "ref.3.43",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3319,6 +3492,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:049]",
       "html_id": "beg-r-s-049",
+      "reader_ref": "ref.3.28",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3332,6 +3506,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:050]",
       "html_id": "beg-r-s-050",
+      "reader_ref": "ref.3.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3345,6 +3520,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:051]",
       "html_id": "beg-r-s-051",
+      "reader_ref": "ref.3.26",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3358,6 +3534,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:052]",
       "html_id": "beg-r-s-052",
+      "reader_ref": "ref.3.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3371,6 +3548,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:053]",
       "html_id": "beg-r-s-053",
+      "reader_ref": "ref.3.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3384,6 +3562,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:054]",
       "html_id": "beg-r-s-054",
+      "reader_ref": "ref.3.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3397,6 +3576,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:055]",
       "html_id": "beg-r-s-055",
+      "reader_ref": "ref.3.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3410,6 +3590,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:056]",
       "html_id": "beg-r-s-056",
+      "reader_ref": "ref.3.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3423,6 +3604,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:057]",
       "html_id": "beg-r-s-057",
+      "reader_ref": "ref.3.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3436,6 +3618,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:058]",
       "html_id": "beg-r-s-058",
+      "reader_ref": "ref.3.30",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3449,6 +3632,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:059]",
       "html_id": "beg-r-s-059",
+      "reader_ref": "ref.3.32",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3462,6 +3646,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:060]",
       "html_id": "beg-r-s-060",
+      "reader_ref": "ref.3.25",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3475,6 +3660,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:061]",
       "html_id": "beg-r-s-061",
+      "reader_ref": "ref.3.41",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3488,6 +3674,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:062]",
       "html_id": "beg-r-s-062",
+      "reader_ref": "ref.3.38",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3501,6 +3688,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:063]",
       "html_id": "beg-r-s-063",
+      "reader_ref": "ref.3.42",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3514,6 +3702,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:064]",
       "html_id": "beg-r-s-064",
+      "reader_ref": "ref.3.44",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3527,6 +3716,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:065]",
       "html_id": "beg-r-s-065",
+      "reader_ref": "ref.3.24",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3540,6 +3730,7 @@
       "level": 1,
       "public_ref": "[BEG:R:S:066]",
       "html_id": "beg-r-s-066",
+      "reader_ref": "ref.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3553,6 +3744,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:067]",
       "html_id": "beg-r-s-067",
+      "reader_ref": "ref.3.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3566,6 +3758,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:068]",
       "html_id": "beg-r-s-068",
+      "reader_ref": "ref.3.22",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3579,6 +3772,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:069]",
       "html_id": "beg-r-s-069",
+      "reader_ref": "ref.3.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3592,6 +3786,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:070]",
       "html_id": "beg-r-s-070",
+      "reader_ref": "ref.3.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3605,6 +3800,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:071]",
       "html_id": "beg-r-s-071",
+      "reader_ref": "ref.3.37",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3618,6 +3814,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:072]",
       "html_id": "beg-r-s-072",
+      "reader_ref": "ref.3.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3631,6 +3828,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:073]",
       "html_id": "beg-r-s-073",
+      "reader_ref": "ref.3.29",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3644,6 +3842,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:074]",
       "html_id": "beg-r-s-074",
+      "reader_ref": "ref.2.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3657,6 +3856,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:075]",
       "html_id": "beg-r-s-075",
+      "reader_ref": "ref.2.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3670,6 +3870,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:076]",
       "html_id": "beg-r-s-076",
+      "reader_ref": "ref.2.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3683,6 +3884,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:077]",
       "html_id": "beg-r-s-077",
+      "reader_ref": "ref.2.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3696,6 +3898,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:078]",
       "html_id": "beg-r-s-078",
+      "reader_ref": "ref.2.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3709,6 +3912,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:079]",
       "html_id": "beg-r-s-079",
+      "reader_ref": "ref.2.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3722,6 +3926,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:080]",
       "html_id": "beg-r-s-080",
+      "reader_ref": "ref.2.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3735,6 +3940,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:081]",
       "html_id": "beg-r-s-081",
+      "reader_ref": "ref.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3748,6 +3954,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:082]",
       "html_id": "beg-r-s-082",
+      "reader_ref": "ref.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3761,6 +3968,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:083]",
       "html_id": "beg-r-s-083",
+      "reader_ref": "ref.2.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3774,6 +3982,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:084]",
       "html_id": "beg-r-s-084",
+      "reader_ref": "ref.2.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3787,6 +3996,7 @@
       "level": 1,
       "public_ref": "[BEG:R:S:085]",
       "html_id": "beg-r-s-085",
+      "reader_ref": "ref.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3800,6 +4010,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:086]",
       "html_id": "beg-r-s-086",
+      "reader_ref": "ref.2.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3813,6 +4024,7 @@
       "level": 2,
       "public_ref": "[BEG:R:S:087]",
       "html_id": "beg-r-s-087",
+      "reader_ref": "ref.2.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3969,6 +4181,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:001]",
       "html_id": "beg-s-s-001",
+      "reader_ref": "soc.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3982,6 +4195,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:002]",
       "html_id": "beg-s-s-002",
+      "reader_ref": "soc.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -3995,6 +4209,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:003]",
       "html_id": "beg-s-s-003",
+      "reader_ref": "soc.1.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4008,6 +4223,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:004]",
       "html_id": "beg-s-s-004",
+      "reader_ref": "soc.1.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4021,6 +4237,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:005]",
       "html_id": "beg-s-s-005",
+      "reader_ref": "soc.1.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4034,6 +4251,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:006]",
       "html_id": "beg-s-s-006",
+      "reader_ref": "soc.1.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4047,6 +4265,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:007]",
       "html_id": "beg-s-s-007",
+      "reader_ref": "soc.1.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4060,6 +4279,7 @@
       "level": 2,
       "public_ref": "[BEG:S:S:008]",
       "html_id": "beg-s-s-008",
+      "reader_ref": "soc.1.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4073,6 +4293,7 @@
       "level": 1,
       "public_ref": "[BEG:S:S:009]",
       "html_id": "beg-s-s-009",
+      "reader_ref": "soc.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4572,6 +4793,7 @@
       ],
       "public_ref": "[BEG:T:F:003]",
       "html_id": "beg-t-f-003",
+      "reader_ref": "tmpl.1.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4602,6 +4824,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:F:005]",
       "html_id": "beg-t-f-005",
+      "reader_ref": "tmpl.1.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4633,6 +4856,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:F:006]",
       "html_id": "beg-t-f-006",
+      "reader_ref": "tmpl.1.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4666,6 +4890,7 @@
       ],
       "public_ref": "[BEG:T:F:011]",
       "html_id": "beg-t-f-011",
+      "reader_ref": "tmpl.1.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4695,6 +4920,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:F:012]",
       "html_id": "beg-t-f-012",
+      "reader_ref": "tmpl.1.22",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4757,6 +4983,7 @@
       ],
       "public_ref": "[BEG:T:F:015]",
       "html_id": "beg-t-f-015",
+      "reader_ref": "tmpl.1.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4786,6 +5013,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:F:016]",
       "html_id": "beg-t-f-016",
+      "reader_ref": "tmpl.1.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4816,6 +5044,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:F:017]",
       "html_id": "beg-t-f-017",
+      "reader_ref": "tmpl.1.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4846,6 +5075,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:F:018]",
       "html_id": "beg-t-f-018",
+      "reader_ref": "tmpl.1.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4877,6 +5107,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:G:001]",
       "html_id": "beg-t-g-001",
+      "reader_ref": "tmpl.1.9",
       "legacy_public_refs": [
         "[BEG:T:F:001]"
       ],
@@ -4908,6 +5139,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:G:002]",
       "html_id": "beg-t-g-002",
+      "reader_ref": "tmpl.1.5",
       "legacy_public_refs": [
         "[BEG:T:F:002]"
       ],
@@ -4951,6 +5183,7 @@
       ],
       "public_ref": "[BEG:T:G:003]",
       "html_id": "beg-t-g-003",
+      "reader_ref": "tmpl.1.14",
       "legacy_public_refs": [
         "[BEG:T:F:004]"
       ],
@@ -4987,6 +5220,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:G:004]",
       "html_id": "beg-t-g-004",
+      "reader_ref": "tmpl.1.15",
       "legacy_public_refs": [
         "[BEG:T:F:007]"
       ],
@@ -5037,6 +5271,7 @@
       ],
       "public_ref": "[BEG:T:G:005]",
       "html_id": "beg-t-g-005",
+      "reader_ref": "tmpl.1.8",
       "legacy_public_refs": [
         "[BEG:T:F:008]"
       ],
@@ -5077,6 +5312,7 @@
       ],
       "public_ref": "[BEG:T:G:006]",
       "html_id": "beg-t-g-006",
+      "reader_ref": "tmpl.1.6",
       "legacy_public_refs": [
         "[BEG:T:F:009]"
       ],
@@ -5110,6 +5346,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:G:007]",
       "html_id": "beg-t-g-007",
+      "reader_ref": "tmpl.1.12",
       "legacy_public_refs": [
         "[BEG:T:F:010]"
       ],
@@ -5154,6 +5391,7 @@
       ],
       "public_ref": "[BEG:T:G:008]",
       "html_id": "beg-t-g-008",
+      "reader_ref": "tmpl.1.13",
       "legacy_public_refs": [
         "[BEG:T:F:014]"
       ],
@@ -5171,6 +5409,7 @@
       "level": 2,
       "public_ref": "[BEG:T:S:001]",
       "html_id": "beg-t-s-001",
+      "reader_ref": "tmpl.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5184,6 +5423,7 @@
       "level": 2,
       "public_ref": "[BEG:T:S:002]",
       "html_id": "beg-t-s-002",
+      "reader_ref": "tmpl.1.21",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5197,6 +5437,7 @@
       "level": 2,
       "public_ref": "[BEG:T:S:003]",
       "html_id": "beg-t-s-003",
+      "reader_ref": "tmpl.1.23",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5210,6 +5451,7 @@
       "level": 2,
       "public_ref": "[BEG:T:S:005]",
       "html_id": "beg-t-s-005",
+      "reader_ref": "tmpl.1.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5223,6 +5465,7 @@
       "level": 2,
       "public_ref": "[BEG:T:S:006]",
       "html_id": "beg-t-s-006",
+      "reader_ref": "tmpl.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5236,6 +5479,7 @@
       "level": 2,
       "public_ref": "[BEG:T:S:007]",
       "html_id": "beg-t-s-007",
+      "reader_ref": "tmpl.1.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5249,6 +5493,7 @@
       "level": 1,
       "public_ref": "[BEG:T:S:008]",
       "html_id": "beg-t-s-008",
+      "reader_ref": "tmpl.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5412,6 +5657,7 @@
       "level": 2,
       "public_ref": "[BEG:Z:S:001]",
       "html_id": "beg-z-s-001",
+      "reader_ref": "zomb.1.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5425,6 +5671,7 @@
       "level": 2,
       "public_ref": "[BEG:Z:S:002]",
       "html_id": "beg-z-s-002",
+      "reader_ref": "zomb.1.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5438,6 +5685,7 @@
       "level": 2,
       "public_ref": "[BEG:Z:S:003]",
       "html_id": "beg-z-s-003",
+      "reader_ref": "zomb.1.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5451,6 +5699,7 @@
       "level": 2,
       "public_ref": "[BEG:Z:S:004]",
       "html_id": "beg-z-s-004",
+      "reader_ref": "zomb.1.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5464,6 +5713,7 @@
       "level": 2,
       "public_ref": "[BEG:Z:S:005]",
       "html_id": "beg-z-s-005",
+      "reader_ref": "zomb.1.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5477,6 +5727,7 @@
       "level": 2,
       "public_ref": "[BEG:Z:S:006]",
       "html_id": "beg-z-s-006",
+      "reader_ref": "zomb.1.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5490,6 +5741,7 @@
       "level": 2,
       "public_ref": "[BEG:Z:S:007]",
       "html_id": "beg-z-s-007",
+      "reader_ref": "zomb.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5503,6 +5755,7 @@
       "level": 1,
       "public_ref": "[BEG:Z:S:009]",
       "html_id": "beg-z-s-009",
+      "reader_ref": "zomb.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     }

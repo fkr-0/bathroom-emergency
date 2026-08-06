@@ -444,6 +444,20 @@ blockquote {
 
 blockquote p { margin: .25rem 0; }
 
+/* The reader-facing section address, e.g. [amb.2.8]. Sits on the heading's own
+   line, set quietly enough that it never competes with the heading text. The
+   machine-checkable [BEG:C:S:008] form stays in the registry and the anchor. */
+.section-ref {
+  float: right;
+  margin-left: .8em;
+  color: var(--muted);
+  font-family: ui-monospace, monospace;
+  font-size: .58em;
+  font-weight: 400;
+  letter-spacing: .02em;
+  opacity: .75;
+}
+
 /* The rationale under a procedure heading: why we act this way, before how.
    Sits tight to the heading it belongs to and never competes with it. */
 .principle {
