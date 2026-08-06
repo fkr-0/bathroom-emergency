@@ -23,6 +23,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:A:G:001]",
       "html_id": "beg-a-g-001",
+      "reader_ref": "resp.fig.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -48,6 +49,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:A:G:002]",
       "html_id": "beg-a-g-002",
+      "reader_ref": "resp.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -73,6 +75,7 @@
       ],
       "public_ref": "[BEG:A:G:003]",
       "html_id": "beg-a-g-003",
+      "reader_ref": "resp.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -98,6 +101,7 @@
       ],
       "public_ref": "[BEG:A:G:004]",
       "html_id": "beg-a-g-004",
+      "reader_ref": "resp.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -122,6 +126,7 @@
       ],
       "public_ref": "[BEG:A:G:005]",
       "html_id": "beg-a-g-005",
+      "reader_ref": "resp.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -354,6 +359,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:B:G:001]",
       "html_id": "beg-b-g-001",
+      "reader_ref": "calm.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -377,6 +383,7 @@
       ],
       "public_ref": "[BEG:B:G:002]",
       "html_id": "beg-b-g-002",
+      "reader_ref": "calm.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -398,6 +405,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:B:G:003]",
       "html_id": "beg-b-g-003",
+      "reader_ref": "calm.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -422,6 +430,7 @@
       ],
       "public_ref": "[BEG:B:G:004]",
       "html_id": "beg-b-g-004",
+      "reader_ref": "calm.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -444,6 +453,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:B:G:005]",
       "html_id": "beg-b-g-005",
+      "reader_ref": "calm.fig.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -465,6 +475,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:B:G:006]",
       "html_id": "beg-b-g-006",
+      "reader_ref": "calm.fig.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -516,7 +527,7 @@
       "kind": "S",
       "title": "A calm plan for another person",
       "chapter": "04-calm-guide.md",
-      "line": 400,
+      "line": 410,
       "level": 2,
       "public_ref": "[BEG:B:S:004]",
       "html_id": "beg-b-s-004",
@@ -544,7 +555,7 @@
       "kind": "S",
       "title": "Breathing exercises",
       "chapter": "04-calm-guide.md",
-      "line": 108,
+      "line": 110,
       "level": 2,
       "public_ref": "[BEG:B:S:006]",
       "html_id": "beg-b-s-006",
@@ -558,7 +569,7 @@
       "kind": "S",
       "title": "Comfort inventory",
       "chapter": "04-calm-guide.md",
-      "line": 206,
+      "line": 216,
       "level": 2,
       "public_ref": "[BEG:B:S:008]",
       "html_id": "beg-b-s-008",
@@ -572,7 +583,7 @@
       "kind": "S",
       "title": "Eventually: leaving the bathroom",
       "chapter": "04-calm-guide.md",
-      "line": 265,
+      "line": 275,
       "level": 2,
       "public_ref": "[BEG:B:S:009]",
       "html_id": "beg-b-s-009",
@@ -586,25 +597,11 @@
       "kind": "S",
       "title": "Nice-place map",
       "chapter": "04-calm-guide.md",
-      "line": 367,
+      "line": 377,
       "level": 2,
       "public_ref": "[BEG:B:S:010]",
       "html_id": "beg-b-s-010",
       "reader_ref": "calm.2.12",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
-      "resource_key": "section:04-calm-guide:polyvagal-language-useful-metaphor-limited-certainty",
-      "owner": "B",
-      "kind": "S",
-      "title": "Polyvagal language — useful metaphor, limited certainty",
-      "chapter": "04-calm-guide.md",
-      "line": 177,
-      "level": 2,
-      "public_ref": "[BEG:B:S:011]",
-      "html_id": "beg-b-s-011",
-      "reader_ref": "calm.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -614,7 +611,7 @@
       "kind": "S",
       "title": "Stress does not obey a cinematic decay curve",
       "chapter": "04-calm-guide.md",
-      "line": 84,
+      "line": 86,
       "level": 2,
       "public_ref": "[BEG:B:S:012]",
       "html_id": "beg-b-s-012",
@@ -642,7 +639,7 @@
       "kind": "S",
       "title": "The bathroom control panel",
       "chapter": "04-calm-guide.md",
-      "line": 190,
+      "line": 200,
       "level": 2,
       "public_ref": "[BEG:B:S:014]",
       "html_id": "beg-b-s-014",
@@ -656,7 +653,7 @@
       "kind": "S",
       "title": "The five-minute values bridge",
       "chapter": "04-calm-guide.md",
-      "line": 255,
+      "line": 265,
       "level": 2,
       "public_ref": "[BEG:B:S:015]",
       "html_id": "beg-b-s-015",
@@ -670,7 +667,7 @@
       "kind": "S",
       "title": "Unhook from the thought",
       "chapter": "04-calm-guide.md",
-      "line": 235,
+      "line": 245,
       "level": 2,
       "public_ref": "[BEG:B:S:016]",
       "html_id": "beg-b-s-016",
@@ -684,25 +681,11 @@
       "kind": "S",
       "title": "When calm is not enough",
       "chapter": "04-calm-guide.md",
-      "line": 382,
+      "line": 392,
       "level": 2,
       "public_ref": "[BEG:B:S:017]",
       "html_id": "beg-b-s-017",
       "reader_ref": "calm.2.13",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
-      "resource_key": "section:04-calm-guide:yerkes-dodson-some-arousal-can-help-too-much-can-jam-the-controls",
-      "owner": "B",
-      "kind": "S",
-      "title": "Yerkes–Dodson — some arousal can help, too much can jam the controls",
-      "chapter": "04-calm-guide.md",
-      "line": 157,
-      "level": 2,
-      "public_ref": "[BEG:B:S:018]",
-      "html_id": "beg-b-s-018",
-      "reader_ref": "calm.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -717,6 +700,34 @@
       "public_ref": "[BEG:B:S:019]",
       "html_id": "beg-b-s-019",
       "reader_ref": "calm.2",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:04-calm-guide:polyvagal-language",
+      "owner": "B",
+      "kind": "S",
+      "title": "Polyvagal language",
+      "chapter": "04-calm-guide.md",
+      "line": 183,
+      "level": 2,
+      "public_ref": "[BEG:B:S:020]",
+      "html_id": "beg-b-s-020",
+      "reader_ref": "calm.2.6",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:04-calm-guide:yerkes-dodson",
+      "owner": "B",
+      "kind": "S",
+      "title": "Yerkes–Dodson",
+      "chapter": "04-calm-guide.md",
+      "line": 159,
+      "level": 2,
+      "public_ref": "[BEG:B:S:021]",
+      "html_id": "beg-b-s-021",
+      "reader_ref": "calm.2.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -742,6 +753,7 @@
       ],
       "public_ref": "[BEG:C:G:001]",
       "html_id": "beg-c-g-001",
+      "reader_ref": "amb.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -763,6 +775,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:C:G:002]",
       "html_id": "beg-c-g-002",
+      "reader_ref": "amb.fig.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -786,6 +799,7 @@
       ],
       "public_ref": "[BEG:C:G:003]",
       "html_id": "beg-c-g-003",
+      "reader_ref": "amb.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -809,6 +823,7 @@
       ],
       "public_ref": "[BEG:C:G:004]",
       "html_id": "beg-c-g-004",
+      "reader_ref": "amb.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -832,6 +847,7 @@
       ],
       "public_ref": "[BEG:C:G:005]",
       "html_id": "beg-c-g-005",
+      "reader_ref": "amb.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -855,7 +871,7 @@
       "kind": "S",
       "title": "Anaphylaxis",
       "chapter": "05-self-ambulance.md",
-      "line": 307,
+      "line": 315,
       "level": 2,
       "public_ref": "[BEG:C:S:002]",
       "html_id": "beg-c-s-002",
@@ -869,7 +885,7 @@
       "kind": "S",
       "title": "Burns and scalds",
       "chapter": "05-self-ambulance.md",
-      "line": 197,
+      "line": 205,
       "level": 2,
       "public_ref": "[BEG:C:S:003]",
       "html_id": "beg-c-s-003",
@@ -883,7 +899,7 @@
       "kind": "S",
       "title": "Chemical in eye or on skin",
       "chapter": "05-self-ambulance.md",
-      "line": 255,
+      "line": 263,
       "level": 2,
       "public_ref": "[BEG:C:S:004]",
       "html_id": "beg-c-s-004",
@@ -897,7 +913,7 @@
       "kind": "S",
       "title": "Chest pain or severe breathlessness",
       "chapter": "05-self-ambulance.md",
-      "line": 300,
+      "line": 308,
       "level": 2,
       "public_ref": "[BEG:C:S:005]",
       "html_id": "beg-c-s-005",
@@ -911,7 +927,7 @@
       "kind": "S",
       "title": "Choking",
       "chapter": "05-self-ambulance.md",
-      "line": 137,
+      "line": 145,
       "level": 2,
       "public_ref": "[BEG:C:S:006]",
       "html_id": "beg-c-s-006",
@@ -925,7 +941,7 @@
       "kind": "S",
       "title": "Electrical injury",
       "chapter": "05-self-ambulance.md",
-      "line": 266,
+      "line": 274,
       "level": 2,
       "public_ref": "[BEG:C:S:007]",
       "html_id": "beg-c-s-007",
@@ -939,7 +955,7 @@
       "kind": "S",
       "title": "First-aid kit for an ordinary household",
       "chapter": "05-self-ambulance.md",
-      "line": 392,
+      "line": 404,
       "level": 2,
       "public_ref": "[BEG:C:S:008]",
       "html_id": "beg-c-s-008",
@@ -953,7 +969,7 @@
       "kind": "S",
       "title": "Pain without a red flag",
       "chapter": "05-self-ambulance.md",
-      "line": 364,
+      "line": 376,
       "level": 2,
       "public_ref": "[BEG:C:S:010]",
       "html_id": "beg-c-s-010",
@@ -967,7 +983,7 @@
       "kind": "S",
       "title": "Poisoning",
       "chapter": "05-self-ambulance.md",
-      "line": 321,
+      "line": 329,
       "level": 2,
       "public_ref": "[BEG:C:S:011]",
       "html_id": "beg-c-s-011",
@@ -981,7 +997,7 @@
       "kind": "S",
       "title": "Red-flag theorem, again",
       "chapter": "05-self-ambulance.md",
-      "line": 427,
+      "line": 439,
       "level": 2,
       "public_ref": "[BEG:C:S:012]",
       "html_id": "beg-c-s-012",
@@ -995,7 +1011,7 @@
       "kind": "S",
       "title": "Self ambulance for non-physical emergencies",
       "chapter": "05-self-ambulance.md",
-      "line": 410,
+      "line": 422,
       "level": 2,
       "public_ref": "[BEG:C:S:013]",
       "html_id": "beg-c-s-013",
@@ -1009,7 +1025,7 @@
       "kind": "S",
       "title": "Self-care while waiting",
       "chapter": "05-self-ambulance.md",
-      "line": 375,
+      "line": 387,
       "level": 2,
       "public_ref": "[BEG:C:S:014]",
       "html_id": "beg-c-s-014",
@@ -1023,7 +1039,7 @@
       "kind": "S",
       "title": "Stroke — FAST",
       "chapter": "05-self-ambulance.md",
-      "line": 273,
+      "line": 281,
       "level": 2,
       "public_ref": "[BEG:C:S:015]",
       "html_id": "beg-c-s-015",
@@ -1037,7 +1053,7 @@
       "kind": "S",
       "title": "Suspected fractures and joint injuries",
       "chapter": "05-self-ambulance.md",
-      "line": 218,
+      "line": 226,
       "level": 2,
       "public_ref": "[BEG:C:S:016]",
       "html_id": "beg-c-s-016",
@@ -1051,7 +1067,7 @@
       "kind": "S",
       "title": "Suspected spine, neck, or pelvic injury",
       "chapter": "05-self-ambulance.md",
-      "line": 240,
+      "line": 248,
       "level": 2,
       "public_ref": "[BEG:C:S:017]",
       "html_id": "beg-c-s-017",
@@ -1070,20 +1086,6 @@
       "public_ref": "[BEG:C:S:018]",
       "html_id": "beg-c-s-018",
       "reader_ref": "amb.2.1",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
-      "resource_key": "section:05-self-ambulance:the-golden-hour-useful-urgency-not-a-stopwatch",
-      "owner": "C",
-      "kind": "S",
-      "title": "The “golden hour” — useful urgency, not a stopwatch",
-      "chapter": "05-self-ambulance.md",
-      "line": 65,
-      "level": 2,
-      "public_ref": "[BEG:C:S:019]",
-      "html_id": "beg-c-s-019",
-      "reader_ref": "amb.2.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1107,7 +1109,7 @@
       "kind": "S",
       "title": "Unresponsive and not breathing normally",
       "chapter": "05-self-ambulance.md",
-      "line": 75,
+      "line": 79,
       "level": 2,
       "public_ref": "[BEG:C:S:021]",
       "html_id": "beg-c-s-021",
@@ -1121,25 +1123,11 @@
       "kind": "S",
       "title": "Unresponsive but breathing normally",
       "chapter": "05-self-ambulance.md",
-      "line": 117,
+      "line": 125,
       "level": 2,
       "public_ref": "[BEG:C:S:022]",
       "html_id": "beg-c-s-022",
       "reader_ref": "amb.2.5",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
-      "resource_key": "section:05-self-ambulance:vital-signs-observe-record-never-self-clear",
-      "owner": "C",
-      "kind": "S",
-      "title": "Vital signs — observe, record, never self-clear",
-      "chapter": "05-self-ambulance.md",
-      "line": 333,
-      "level": 2,
-      "public_ref": "[BEG:C:S:023]",
-      "html_id": "beg-c-s-023",
-      "reader_ref": "amb.2.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1149,7 +1137,7 @@
       "kind": "S",
       "title": "Wounds and bleeding",
       "chapter": "05-self-ambulance.md",
-      "line": 153,
+      "line": 161,
       "level": 2,
       "public_ref": "[BEG:C:S:024]",
       "html_id": "beg-c-s-024",
@@ -1168,6 +1156,34 @@
       "public_ref": "[BEG:C:S:025]",
       "html_id": "beg-c-s-025",
       "reader_ref": "amb.2",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:05-self-ambulance:the-golden-hour",
+      "owner": "C",
+      "kind": "S",
+      "title": "The “golden hour”",
+      "chapter": "05-self-ambulance.md",
+      "line": 65,
+      "level": 2,
+      "public_ref": "[BEG:C:S:026]",
+      "html_id": "beg-c-s-026",
+      "reader_ref": "amb.2.3",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:05-self-ambulance:vital-signs",
+      "owner": "C",
+      "kind": "S",
+      "title": "Vital signs",
+      "chapter": "05-self-ambulance.md",
+      "line": 341,
+      "level": 2,
+      "public_ref": "[BEG:C:S:027]",
+      "html_id": "beg-c-s-027",
+      "reader_ref": "amb.2.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1192,6 +1208,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:D:G:001]",
       "html_id": "beg-d-g-001",
+      "reader_ref": "safe.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1218,6 +1235,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:D:G:002]",
       "html_id": "beg-d-g-002",
+      "reader_ref": "safe.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1241,6 +1259,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:D:G:003]",
       "html_id": "beg-d-g-003",
+      "reader_ref": "safe.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1263,6 +1282,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:D:G:004]",
       "html_id": "beg-d-g-004",
+      "reader_ref": "safe.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1483,6 +1503,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:H:G:001]",
       "html_id": "beg-h-g-001",
+      "reader_ref": "dis.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1505,6 +1526,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:H:G:002]",
       "html_id": "beg-h-g-002",
+      "reader_ref": "dis.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1531,6 +1553,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:H:G:003]",
       "html_id": "beg-h-g-003",
+      "reader_ref": "dis.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1553,6 +1576,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:H:G:004]",
       "html_id": "beg-h-g-004",
+      "reader_ref": "dis.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1924,6 +1948,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:O:G:001]",
       "html_id": "beg-o-g-001",
+      "reader_ref": "body.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1948,6 +1973,7 @@
       ],
       "public_ref": "[BEG:O:G:002]",
       "html_id": "beg-o-g-002",
+      "reader_ref": "body.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1970,6 +1996,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:O:G:003]",
       "html_id": "beg-o-g-003",
+      "reader_ref": "body.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1992,6 +2019,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:O:G:004]",
       "html_id": "beg-o-g-004",
+      "reader_ref": "body.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2257,6 +2285,7 @@
       "availability": "verify current service details",
       "public_ref": "[BEG:P:C:001]",
       "html_id": "beg-p-c-001",
+      "reader_ref": "supp.call.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2270,6 +2299,7 @@
       "availability": "verify current service details",
       "public_ref": "[BEG:P:C:002]",
       "html_id": "beg-p-c-002",
+      "reader_ref": "supp.call.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2283,6 +2313,7 @@
       "availability": "verify current service details",
       "public_ref": "[BEG:P:C:003]",
       "html_id": "beg-p-c-003",
+      "reader_ref": "supp.call.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2296,6 +2327,7 @@
       "availability": "verify current service details",
       "public_ref": "[BEG:P:C:004]",
       "html_id": "beg-p-c-004",
+      "reader_ref": "supp.call.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2309,6 +2341,7 @@
       "availability": "verify current service details",
       "public_ref": "[BEG:P:C:005]",
       "html_id": "beg-p-c-005",
+      "reader_ref": "supp.call.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2322,6 +2355,7 @@
       "availability": "verify current service details",
       "public_ref": "[BEG:P:C:006]",
       "html_id": "beg-p-c-006",
+      "reader_ref": "supp.call.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2335,6 +2369,7 @@
       "availability": "verify current service details",
       "public_ref": "[BEG:P:C:007]",
       "html_id": "beg-p-c-007",
+      "reader_ref": "supp.call.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2349,6 +2384,7 @@
       "availability": "24/7",
       "public_ref": "[BEG:P:C:008]",
       "html_id": "beg-p-c-008",
+      "reader_ref": "supp.call.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2363,6 +2399,7 @@
       "availability": "24/7",
       "public_ref": "[BEG:P:C:009]",
       "html_id": "beg-p-c-009",
+      "reader_ref": "supp.call.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2377,6 +2414,7 @@
       "availability": "Monday to Friday, 08:00–18:00",
       "public_ref": "[BEG:P:C:010]",
       "html_id": "beg-p-c-010",
+      "reader_ref": "supp.call.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2391,6 +2429,7 @@
       "availability": "24/7",
       "public_ref": "[BEG:P:C:011]",
       "html_id": "beg-p-c-011",
+      "reader_ref": "supp.call.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2405,6 +2444,7 @@
       "availability": "verify locally",
       "public_ref": "[BEG:P:C:012]",
       "html_id": "beg-p-c-012",
+      "reader_ref": "supp.call.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2419,6 +2459,7 @@
       "availability": "24/7",
       "public_ref": "[BEG:P:C:013]",
       "html_id": "beg-p-c-013",
+      "reader_ref": "supp.call.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2433,6 +2474,7 @@
       "availability": "24/7",
       "public_ref": "[BEG:P:C:014]",
       "html_id": "beg-p-c-014",
+      "reader_ref": "supp.call.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2447,6 +2489,7 @@
       "availability": "verify locally",
       "public_ref": "[BEG:P:C:015]",
       "html_id": "beg-p-c-015",
+      "reader_ref": "supp.call.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2461,6 +2504,7 @@
       "availability": "verify locally",
       "public_ref": "[BEG:P:C:016]",
       "html_id": "beg-p-c-016",
+      "reader_ref": "supp.call.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2475,6 +2519,7 @@
       "availability": "verify locally",
       "public_ref": "[BEG:P:C:017]",
       "html_id": "beg-p-c-017",
+      "reader_ref": "supp.call.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2489,6 +2534,7 @@
       "availability": "verify locally",
       "public_ref": "[BEG:P:C:018]",
       "html_id": "beg-p-c-018",
+      "reader_ref": "supp.call.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2503,6 +2549,7 @@
       "availability": "verify locally",
       "public_ref": "[BEG:P:C:019]",
       "html_id": "beg-p-c-019",
+      "reader_ref": "supp.call.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2517,6 +2564,7 @@
       "availability": "verify locally",
       "public_ref": "[BEG:P:C:020]",
       "html_id": "beg-p-c-020",
+      "reader_ref": "supp.call.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2538,6 +2586,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:P:G:001]",
       "html_id": "beg-p-g-001",
+      "reader_ref": "supp.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2561,6 +2610,7 @@
       ],
       "public_ref": "[BEG:P:G:002]",
       "html_id": "beg-p-g-002",
+      "reader_ref": "supp.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2584,6 +2634,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:P:G:003]",
       "html_id": "beg-p-g-003",
+      "reader_ref": "supp.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2605,6 +2656,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:P:G:004]",
       "html_id": "beg-p-g-004",
+      "reader_ref": "supp.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2810,6 +2862,7 @@
       ],
       "public_ref": "[BEG:R:G:001]",
       "html_id": "beg-r-g-001",
+      "reader_ref": "ref.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2835,6 +2888,7 @@
       ],
       "public_ref": "[BEG:R:G:002]",
       "html_id": "beg-r-g-002",
+      "reader_ref": "ref.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4036,6 +4090,7 @@
       "definition": "Automated external defibrillator: a device that analyzes the heart rhythm and gives a shock only when its algorithm identifies a shockable rhythm.",
       "public_ref": "[BEG:R:W:001]",
       "html_id": "beg-r-w-001",
+      "reader_ref": "ref.term.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4047,6 +4102,7 @@
       "definition": "Keeping an essential function operating through a named owner, backup, review time, and escalation route.",
       "public_ref": "[BEG:R:W:002]",
       "html_id": "beg-r-w-002",
+      "reader_ref": "ref.term.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4058,6 +4114,7 @@
       "definition": "Cardiopulmonary resuscitation: chest compressions, with rescue breaths when trained and willing, used when a person is unresponsive and not breathing normally.",
       "public_ref": "[BEG:R:W:003]",
       "html_id": "beg-r-w-003",
+      "reader_ref": "ref.term.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4069,6 +4126,7 @@
       "definition": "The person who adapts, prints, places, checks, and maintains a local copy of the guide.",
       "public_ref": "[BEG:R:W:004]",
       "html_id": "beg-r-w-004",
+      "reader_ref": "ref.term.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4080,6 +4138,7 @@
       "definition": "The trained call handler in a control centre who gathers information, sends suitable help, and may coach immediate actions.",
       "public_ref": "[BEG:R:W:005]",
       "html_id": "beg-r-w-005",
+      "reader_ref": "ref.term.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4091,6 +4150,7 @@
       "definition": "Processing signals from inside the body, including sensing, attention, interpretation, prediction, and regulation.",
       "public_ref": "[BEG:R:W:006]",
       "html_id": "beg-r-w-006",
+      "reader_ref": "ref.term.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4102,6 +4162,7 @@
       "definition": "A stable typed address such as [BEG:C:S:004]. The ID stays stable even when page numbers or surrounding sections move.",
       "public_ref": "[BEG:R:W:007]",
       "html_id": "beg-r-w-007",
+      "reader_ref": "ref.term.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4113,6 +4174,7 @@
       "definition": "Any person using the guide in the moment; the reader is never assumed to be the deployer.",
       "public_ref": "[BEG:R:W:008]",
       "html_id": "beg-r-w-008",
+      "reader_ref": "ref.term.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4124,6 +4186,7 @@
       "definition": "A stable side-lying position used for an unresponsive person who is breathing normally when movement is not prevented by major trauma.",
       "public_ref": "[BEG:R:W:009]",
       "html_id": "beg-r-w-009",
+      "reader_ref": "ref.term.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4135,6 +4198,7 @@
       "definition": "A sign or situation that overrides ordinary self-care and changes the route to urgent or emergency help.",
       "public_ref": "[BEG:R:W:010]",
       "html_id": "beg-r-w-010",
+      "reader_ref": "ref.term.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4146,6 +4210,7 @@
       "definition": "The boundary of what a source, study, protocol, or model can honestly establish.",
       "public_ref": "[BEG:R:W:011]",
       "html_id": "beg-r-w-011",
+      "reader_ref": "ref.term.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4157,6 +4222,7 @@
       "definition": "Prioritizing action by urgency and likely harm; in this guide it is a lay routing aid, not a clinical diagnosis.",
       "public_ref": "[BEG:R:W:012]",
       "html_id": "beg-r-w-012",
+      "reader_ref": "ref.term.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4168,6 +4234,7 @@
       "definition": "An observation such as breathing, pulse, temperature, oxygen saturation, blood pressure, or glucose that may help a handoff but cannot by itself clear a red flag.",
       "public_ref": "[BEG:R:W:013]",
       "html_id": "beg-r-w-013",
+      "reader_ref": "ref.term.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4308,6 +4375,7 @@
       "example": "Confirm mobility, communication, power and care needs",
       "public_ref": "[BEG:T:D:001]",
       "html_id": "beg-t-d-001",
+      "reader_ref": "tmpl.field.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4322,6 +4390,7 @@
       "example": "Example Street 12, 52000 Exampletown, Germany",
       "public_ref": "[BEG:T:D:002]",
       "html_id": "beg-t-d-002",
+      "reader_ref": "tmpl.field.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4336,6 +4405,7 @@
       "example": "Top shelf in labelled pouch",
       "public_ref": "[BEG:T:D:003]",
       "html_id": "beg-t-d-003",
+      "reader_ref": "tmpl.field.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4350,6 +4420,7 @@
       "example": "Speech, writing, sign, yes/no card, relay",
       "public_ref": "[BEG:T:D:004]",
       "html_id": "beg-t-d-004",
+      "reader_ref": "tmpl.field.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4364,6 +4435,7 @@
       "example": "50.0000, 6.0000",
       "public_ref": "[BEG:T:D:005]",
       "html_id": "beg-t-d-005",
+      "reader_ref": "tmpl.field.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4378,6 +4450,7 @@
       "example": "Upstairs bathroom / family copy",
       "public_ref": "[BEG:T:D:006]",
       "html_id": "beg-t-d-006",
+      "reader_ref": "tmpl.field.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4392,6 +4465,7 @@
       "example": "Name, number, hours, access channel",
       "public_ref": "[BEG:T:D:007]",
       "html_id": "beg-t-d-007",
+      "reader_ref": "tmpl.field.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4406,6 +4480,7 @@
       "example": "Unlock front door if dispatcher asks; do not print hidden key locations",
       "public_ref": "[BEG:T:D:008]",
       "html_id": "beg-t-d-008",
+      "reader_ref": "tmpl.field.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4420,6 +4495,7 @@
       "example": "180 m",
       "public_ref": "[BEG:T:D:009]",
       "html_id": "beg-t-d-009",
+      "reader_ref": "tmpl.field.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4434,6 +4510,7 @@
       "example": "Hall cupboard; nearest public AED",
       "public_ref": "[BEG:T:D:010]",
       "html_id": "beg-t-d-010",
+      "reader_ref": "tmpl.field.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4448,6 +4525,7 @@
       "example": "Mark room, two exits, extinguisher, meter shutoffs only where safe",
       "public_ref": "[BEG:T:D:011]",
       "html_id": "beg-t-d-011",
+      "reader_ref": "tmpl.field.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4462,6 +4540,7 @@
       "example": "Call from outside",
       "public_ref": "[BEG:T:D:012]",
       "html_id": "beg-t-d-012",
+      "reader_ref": "tmpl.field.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4476,6 +4555,7 @@
       "example": "Name, number, hours",
       "public_ref": "[BEG:T:D:013]",
       "html_id": "beg-t-d-013",
+      "reader_ref": "tmpl.field.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4490,6 +4570,7 @@
       "example": "Name, address, transport note",
       "public_ref": "[BEG:T:D:014]",
       "html_id": "beg-t-d-014",
+      "reader_ref": "tmpl.field.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4504,6 +4585,7 @@
       "example": "Office, number, required documents",
       "public_ref": "[BEG:T:D:015]",
       "html_id": "beg-t-d-015",
+      "reader_ref": "tmpl.field.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4518,6 +4600,7 @@
       "example": "Confirmed after-hours route",
       "public_ref": "[BEG:T:D:016]",
       "html_id": "beg-t-d-016",
+      "reader_ref": "tmpl.field.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4532,6 +4615,7 @@
       "example": "German/English; trusted interpreter only with consent",
       "public_ref": "[BEG:T:D:017]",
       "html_id": "beg-t-d-017",
+      "reader_ref": "tmpl.field.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4546,6 +4630,7 @@
       "example": "First name or role",
       "public_ref": "[BEG:T:D:018]",
       "html_id": "beg-t-d-018",
+      "reader_ref": "tmpl.field.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4560,6 +4645,7 @@
       "example": "Sealed private card, not a public wall list",
       "public_ref": "[BEG:T:D:019]",
       "html_id": "beg-t-d-019",
+      "reader_ref": "tmpl.field.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4574,6 +4660,7 @@
       "example": "Across the street beside the post box",
       "public_ref": "[BEG:T:D:020]",
       "html_id": "beg-t-d-020",
+      "reader_ref": "tmpl.field.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4588,6 +4675,7 @@
       "example": "Local pharmacy; official night-service route",
       "public_ref": "[BEG:T:D:021]",
       "html_id": "beg-t-d-021",
+      "reader_ref": "tmpl.field.21",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4602,6 +4690,7 @@
       "example": "Verified centre and number",
       "public_ref": "[BEG:T:D:022]",
       "html_id": "beg-t-d-022",
+      "reader_ref": "tmpl.field.22",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4616,6 +4705,7 @@
       "example": "Device; remaining runtime; clinical/vendor plan",
       "public_ref": "[BEG:T:D:023]",
       "html_id": "beg-t-d-023",
+      "reader_ref": "tmpl.field.23",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4630,6 +4720,7 @@
       "example": "2026-10-26",
       "public_ref": "[BEG:T:D:024]",
       "html_id": "beg-t-d-024",
+      "reader_ref": "tmpl.field.24",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4644,6 +4735,7 @@
       "example": "Rear building, 2nd floor, right; bell Smith",
       "public_ref": "[BEG:T:D:025]",
       "html_id": "beg-t-d-025",
+      "reader_ref": "tmpl.field.25",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4658,6 +4750,7 @@
       "example": "Balcony chair, comic, familiar playlist, simple drawing",
       "public_ref": "[BEG:T:D:026]",
       "html_id": "beg-t-d-026",
+      "reader_ref": "tmpl.field.26",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4672,6 +4765,7 @@
       "example": "Large print, high contrast, chair, low-light route",
       "public_ref": "[BEG:T:D:027]",
       "html_id": "beg-t-d-027",
+      "reader_ref": "tmpl.field.27",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4686,6 +4780,7 @@
       "example": "Pencil, clipboard, sleeve, light, charger, current first-aid leaflet",
       "public_ref": "[BEG:T:D:028]",
       "html_id": "beg-t-d-028",
+      "reader_ref": "tmpl.field.28",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4700,6 +4795,7 @@
       "example": "Name, number, availability",
       "public_ref": "[BEG:T:D:029]",
       "html_id": "beg-t-d-029",
+      "reader_ref": "tmpl.field.29",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4714,6 +4810,7 @@
       "example": "Name, number, after-hours backup",
       "public_ref": "[BEG:T:D:030]",
       "html_id": "beg-t-d-030",
+      "reader_ref": "tmpl.field.30",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4728,6 +4825,7 @@
       "example": "Number, hours, transport",
       "public_ref": "[BEG:T:D:031]",
       "html_id": "beg-t-d-031",
+      "reader_ref": "tmpl.field.31",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4742,6 +4840,7 @@
       "example": "Use safe device; include backup",
       "public_ref": "[BEG:T:D:032]",
       "html_id": "beg-t-d-032",
+      "reader_ref": "tmpl.field.32",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4756,6 +4855,7 @@
       "example": "Local day and after-hours route",
       "public_ref": "[BEG:T:D:033]",
       "html_id": "beg-t-d-033",
+      "reader_ref": "tmpl.field.33",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -4949,6 +5049,7 @@
       "support_keys": [],
       "public_ref": "[BEG:T:F:013]",
       "html_id": "beg-t-f-013",
+      "reader_ref": "tmpl.form.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5515,6 +5616,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:Z:G:001]",
       "html_id": "beg-z-g-001",
+      "reader_ref": "zomb.fig.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5538,6 +5640,7 @@
       ],
       "public_ref": "[BEG:Z:G:002]",
       "html_id": "beg-z-g-002",
+      "reader_ref": "zomb.fig.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5559,6 +5662,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:Z:G:003]",
       "html_id": "beg-z-g-003",
+      "reader_ref": "zomb.fig.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5581,6 +5685,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:Z:G:004]",
       "html_id": "beg-z-g-004",
+      "reader_ref": "zomb.fig.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5602,6 +5707,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:Z:G:005]",
       "html_id": "beg-z-g-005",
+      "reader_ref": "zomb.fig.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5623,6 +5729,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:Z:G:006]",
       "html_id": "beg-z-g-006",
+      "reader_ref": "zomb.fig.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -5644,6 +5751,7 @@
       "related_form_keys": [],
       "public_ref": "[BEG:Z:G:007]",
       "html_id": "beg-z-g-007",
+      "reader_ref": "zomb.fig.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },

@@ -66,9 +66,11 @@ only has to give your alarm system something ordinary to chew on.[^who-stress]
 competition, no heroic breath-holding. Stop deliberate breathing if it makes
 you dizzy, tingly, or more frightened and return to normal breathing.
 
-That is the whole instruction; the rest is optional detail. Here is the same
-sentence as a physiologist would write it, so the notation stops looking like a
-spell. Call your inhale time $t_i$ and your exhale time $t_e$. One cycle takes
+That is the whole instruction. Everything after this line is optional detail.
+
+Here is the same sentence written the way a physiologist would write it, so the
+notation stops looking like a spell. Call your inhale time $t_i$ and your exhale
+time $t_e$. One full cycle takes
 
 $$T = t_i + t_e, \qquad f = \frac{60}{T}$$
 
@@ -154,7 +156,11 @@ time, not a promise about you in the next ten minutes.
 **Normal breathing while noticing external objects is a valid choice.** The best
 breathing exercise is the one that does not turn breathing into another exam.
 
-## Yerkes–Dodson — some arousal can help, too much can jam the controls
+## Yerkes–Dodson
+
+::: {.principle}
+some arousal helps; too much jams the controls
+:::
 
 The classic Yerkes–Dodson relationship is usually drawn as an inverted U: too
 little arousal and you are not really engaged, some arousal and you are alert
@@ -162,8 +168,8 @@ and capable, too much and the controls jam. Where the top of that curve sits
 moves with the task, your experience, and you — and complicated tasks generally
 tolerate less arousal than simple ones.
 
-Said plainly: we are not trying to get you to zero. Nothing gets done there
-either.
+Which is worth saying plainly: the guide is not trying to get you to zero. Zero
+is the left-hand side of the curve, and nothing gets done there either.
 
 Practical use:
 
@@ -174,7 +180,11 @@ Practical use:
 
 This is a broad performance principle, not a meter hidden behind your left ear.
 
-## Polyvagal language — useful metaphor, limited certainty
+## Polyvagal language
+
+::: {.principle}
+useful metaphor, limited certainty
+:::
 
 People sometimes describe states as:
 

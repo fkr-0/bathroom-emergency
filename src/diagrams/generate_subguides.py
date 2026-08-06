@@ -138,7 +138,14 @@ for node_id, (x, y) in overview_pos.items():
     node = nodes[node_id]
     ax.add_patch(Circle((x, y), .42, facecolor=node["colour"], edgecolor=INK, linewidth=2.1, hatch=HATCHES[node["pattern"]], zorder=3))
     ax.text(x, y, node_id, color="white", fontsize=17, fontweight="bold", ha="center", va="center", zorder=4)
-    ax.text(x, y-.58, textwrap.fill(node["title"], 18), color=INK, fontsize=8.3, fontweight="bold", ha="center", va="top")
+    below = y > -1.4
+    ax.text(
+        x,
+        y - .58 if below else y + .58,
+        textwrap.fill(node["title"], 18),
+        color=INK, fontsize=8.3, fontweight="bold",
+        ha="center", va="top" if below else "bottom",
+    )
 ax.text(0, -2.85, "Choose the closest title; move when the problem changes.", ha="center", color=RED, fontsize=9, fontweight="bold")
 finish(fig, "subguide_graph_overview")
 
@@ -162,7 +169,17 @@ for current_id, current in nodes.items():
         neighbour = nodes[neighbour_id]
         ax.add_patch(Circle((x, y), .34, facecolor="white", edgecolor=neighbour["colour"], linewidth=2.1, hatch=HATCHES[neighbour["pattern"]]))
         ax.text(x, y, neighbour_id, color=INK, fontsize=12, fontweight="bold", ha="center", va="center")
-        ax.text(x, y-.46, textwrap.fill(neighbour["title"], 18), color=INK, fontsize=7.4, fontweight="bold", ha="center", va="top")
+        # A label normally hangs below its node. Nodes near the bottom of the
+        # ring have no room there and used to print straight through the
+        # caption, so their labels go above instead.
+        below = y > -1.0
+        ax.text(
+            x,
+            y - .46 if below else y + .46,
+            textwrap.fill(neighbour["title"], 18),
+            color=INK, fontsize=7.4, fontweight="bold",
+            ha="center", va="top" if below else "bottom",
+        )
     ax.add_patch(Circle((0, 0), .62, facecolor=current["colour"], edgecolor=INK, linewidth=3.0, hatch=HATCHES[current["pattern"]], zorder=4))
     ax.text(0, 0, current_id, color="white", fontsize=28, fontweight="bold", ha="center", va="center", zorder=5)
     ax.text(0, -2.42, "Complete route names follow as text. Immediate danger bypasses this map.", ha="center", color=MUTED, fontsize=8.5)

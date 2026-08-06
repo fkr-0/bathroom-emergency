@@ -62,7 +62,11 @@ clinical triage category:
 
 A green box does not exist when you are unsure whether breathing is normal.
 
-## The “golden hour” — useful urgency, not a stopwatch
+## The “golden hour”
+
+::: {.principle}
+useful urgency, not a stopwatch
+:::
 
 Trauma teaching uses “golden hour” to make one point: serious bleeding, airway
 problems, and brain injury all do better with fast care. It is a teaching
@@ -98,7 +102,11 @@ call for help, then temporarily support circulation and oxygen delivery until no
 **The dispatcher can guide you. Keep the phone on speaker.** Imperfect
 compressions are better than elegant inaction.[^erc2025]
 
-### AED — what it actually does
+### AED
+
+::: {.principle}
+it analyses the rhythm and shocks only when told to; it does not replace compressions
+:::
 
 **AED means automated external defibrillator.** It analyzes the heart rhythm
 through adhesive pads. It advises or delivers a shock only when its algorithm
@@ -330,7 +338,11 @@ Antihistamines do not replace adrenaline in anaphylaxis.
   specialist instructs you.
 - For inhaled fumes, protect yourself and move to fresh air only if safe.
 
-## Vital signs — observe, record, never self-clear
+## Vital signs
+
+::: {.principle}
+observe and record; a reading never clears a red flag by itself
+:::
 
 Home observations can help a dispatcher or clinician. They cannot reliably rule
 out an emergency.

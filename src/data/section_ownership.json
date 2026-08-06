@@ -535,7 +535,7 @@
     {
       "key": "04-calm-guide:stress-does-not-obey-a-cinematic-decay-curve",
       "chapter": "04-calm-guide.md",
-      "line": 84,
+      "line": 86,
       "level": 2,
       "heading": "Stress does not obey a cinematic decay curve",
       "owner": "B"
@@ -543,31 +543,31 @@
     {
       "key": "04-calm-guide:breathing-exercises",
       "chapter": "04-calm-guide.md",
-      "line": 108,
+      "line": 110,
       "level": 2,
       "heading": "Breathing exercises",
       "owner": "B"
     },
     {
-      "key": "04-calm-guide:yerkes-dodson-some-arousal-can-help-too-much-can-jam-the-controls",
+      "key": "04-calm-guide:yerkes-dodson",
       "chapter": "04-calm-guide.md",
-      "line": 157,
+      "line": 159,
       "level": 2,
-      "heading": "Yerkes–Dodson — some arousal can help, too much can jam the controls",
+      "heading": "Yerkes–Dodson",
       "owner": "B"
     },
     {
-      "key": "04-calm-guide:polyvagal-language-useful-metaphor-limited-certainty",
+      "key": "04-calm-guide:polyvagal-language",
       "chapter": "04-calm-guide.md",
-      "line": 177,
+      "line": 183,
       "level": 2,
-      "heading": "Polyvagal language — useful metaphor, limited certainty",
+      "heading": "Polyvagal language",
       "owner": "B"
     },
     {
       "key": "04-calm-guide:the-bathroom-control-panel",
       "chapter": "04-calm-guide.md",
-      "line": 190,
+      "line": 200,
       "level": 2,
       "heading": "The bathroom control panel",
       "owner": "B"
@@ -575,7 +575,7 @@
     {
       "key": "04-calm-guide:comfort-inventory",
       "chapter": "04-calm-guide.md",
-      "line": 206,
+      "line": 216,
       "level": 2,
       "heading": "Comfort inventory",
       "owner": "B"
@@ -583,7 +583,7 @@
     {
       "key": "04-calm-guide:unhook-from-the-thought",
       "chapter": "04-calm-guide.md",
-      "line": 235,
+      "line": 245,
       "level": 2,
       "heading": "Unhook from the thought",
       "owner": "B"
@@ -591,7 +591,7 @@
     {
       "key": "04-calm-guide:the-five-minute-values-bridge",
       "chapter": "04-calm-guide.md",
-      "line": 255,
+      "line": 265,
       "level": 2,
       "heading": "The five-minute values bridge",
       "owner": "B"
@@ -599,7 +599,7 @@
     {
       "key": "04-calm-guide:eventually-leaving-the-bathroom",
       "chapter": "04-calm-guide.md",
-      "line": 265,
+      "line": 275,
       "level": 2,
       "heading": "Eventually: leaving the bathroom",
       "owner": "B"
@@ -607,7 +607,7 @@
     {
       "key": "04-calm-guide:nice-place-map",
       "chapter": "04-calm-guide.md",
-      "line": 367,
+      "line": 377,
       "level": 2,
       "heading": "Nice-place map",
       "owner": "B"
@@ -615,7 +615,7 @@
     {
       "key": "04-calm-guide:when-calm-is-not-enough",
       "chapter": "04-calm-guide.md",
-      "line": 382,
+      "line": 392,
       "level": 2,
       "heading": "When calm is not enough",
       "owner": "B"
@@ -623,7 +623,7 @@
     {
       "key": "04-calm-guide:a-calm-plan-for-another-person",
       "chapter": "04-calm-guide.md",
-      "line": 400,
+      "line": 410,
       "level": 2,
       "heading": "A calm plan for another person",
       "owner": "B"
@@ -725,17 +725,17 @@
       "owner": "C"
     },
     {
-      "key": "05-self-ambulance:the-golden-hour-useful-urgency-not-a-stopwatch",
+      "key": "05-self-ambulance:the-golden-hour",
       "chapter": "05-self-ambulance.md",
       "line": 65,
       "level": 2,
-      "heading": "The “golden hour” — useful urgency, not a stopwatch",
+      "heading": "The “golden hour”",
       "owner": "C"
     },
     {
       "key": "05-self-ambulance:unresponsive-and-not-breathing-normally",
       "chapter": "05-self-ambulance.md",
-      "line": 75,
+      "line": 79,
       "level": 2,
       "heading": "Unresponsive and not breathing normally",
       "owner": "C"
@@ -743,7 +743,7 @@
     {
       "key": "05-self-ambulance:unresponsive-but-breathing-normally",
       "chapter": "05-self-ambulance.md",
-      "line": 117,
+      "line": 125,
       "level": 2,
       "heading": "Unresponsive but breathing normally",
       "owner": "C"
@@ -751,7 +751,7 @@
     {
       "key": "05-self-ambulance:choking",
       "chapter": "05-self-ambulance.md",
-      "line": 137,
+      "line": 145,
       "level": 2,
       "heading": "Choking",
       "owner": "C"
@@ -759,7 +759,7 @@
     {
       "key": "05-self-ambulance:wounds-and-bleeding",
       "chapter": "05-self-ambulance.md",
-      "line": 153,
+      "line": 161,
       "level": 2,
       "heading": "Wounds and bleeding",
       "owner": "C"
@@ -767,7 +767,7 @@
     {
       "key": "05-self-ambulance:burns-and-scalds",
       "chapter": "05-self-ambulance.md",
-      "line": 197,
+      "line": 205,
       "level": 2,
       "heading": "Burns and scalds",
       "owner": "C"
@@ -775,7 +775,7 @@
     {
       "key": "05-self-ambulance:suspected-fractures-and-joint-injuries",
       "chapter": "05-self-ambulance.md",
-      "line": 218,
+      "line": 226,
       "level": 2,
       "heading": "Suspected fractures and joint injuries",
       "owner": "C"
@@ -783,7 +783,7 @@
     {
       "key": "05-self-ambulance:suspected-spine-neck-or-pelvic-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 240,
+      "line": 248,
       "level": 2,
       "heading": "Suspected spine, neck, or pelvic injury",
       "owner": "C"
@@ -791,7 +791,7 @@
     {
       "key": "05-self-ambulance:chemical-in-eye-or-on-skin",
       "chapter": "05-self-ambulance.md",
-      "line": 255,
+      "line": 263,
       "level": 2,
       "heading": "Chemical in eye or on skin",
       "owner": "C"
@@ -799,7 +799,7 @@
     {
       "key": "05-self-ambulance:electrical-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 266,
+      "line": 274,
       "level": 2,
       "heading": "Electrical injury",
       "owner": "C"
@@ -807,7 +807,7 @@
     {
       "key": "05-self-ambulance:stroke-fast",
       "chapter": "05-self-ambulance.md",
-      "line": 273,
+      "line": 281,
       "level": 2,
       "heading": "Stroke — FAST",
       "owner": "C"
@@ -815,7 +815,7 @@
     {
       "key": "05-self-ambulance:chest-pain-or-severe-breathlessness",
       "chapter": "05-self-ambulance.md",
-      "line": 300,
+      "line": 308,
       "level": 2,
       "heading": "Chest pain or severe breathlessness",
       "owner": "C"
@@ -823,7 +823,7 @@
     {
       "key": "05-self-ambulance:anaphylaxis",
       "chapter": "05-self-ambulance.md",
-      "line": 307,
+      "line": 315,
       "level": 2,
       "heading": "Anaphylaxis",
       "owner": "C"
@@ -831,23 +831,23 @@
     {
       "key": "05-self-ambulance:poisoning",
       "chapter": "05-self-ambulance.md",
-      "line": 321,
+      "line": 329,
       "level": 2,
       "heading": "Poisoning",
       "owner": "C"
     },
     {
-      "key": "05-self-ambulance:vital-signs-observe-record-never-self-clear",
+      "key": "05-self-ambulance:vital-signs",
       "chapter": "05-self-ambulance.md",
-      "line": 333,
+      "line": 341,
       "level": 2,
-      "heading": "Vital signs — observe, record, never self-clear",
+      "heading": "Vital signs",
       "owner": "C"
     },
     {
       "key": "05-self-ambulance:pain-without-a-red-flag",
       "chapter": "05-self-ambulance.md",
-      "line": 364,
+      "line": 376,
       "level": 2,
       "heading": "Pain without a red flag",
       "owner": "C"
@@ -855,7 +855,7 @@
     {
       "key": "05-self-ambulance:self-care-while-waiting",
       "chapter": "05-self-ambulance.md",
-      "line": 375,
+      "line": 387,
       "level": 2,
       "heading": "Self-care while waiting",
       "owner": "C"
@@ -863,7 +863,7 @@
     {
       "key": "05-self-ambulance:first-aid-kit-for-an-ordinary-household",
       "chapter": "05-self-ambulance.md",
-      "line": 392,
+      "line": 404,
       "level": 2,
       "heading": "First-aid kit for an ordinary household",
       "owner": "C"
@@ -871,7 +871,7 @@
     {
       "key": "05-self-ambulance:self-ambulance-for-non-physical-emergencies",
       "chapter": "05-self-ambulance.md",
-      "line": 410,
+      "line": 422,
       "level": 2,
       "heading": "Self ambulance for non-physical emergencies",
       "owner": "C"
@@ -879,7 +879,7 @@
     {
       "key": "05-self-ambulance:red-flag-theorem-again",
       "chapter": "05-self-ambulance.md",
-      "line": 427,
+      "line": 439,
       "level": 2,
       "heading": "Red-flag theorem, again",
       "owner": "C"

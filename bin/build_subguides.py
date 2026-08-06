@@ -153,42 +153,21 @@ def replace_refs(
 
 
 def source_endmatter(sources: list[dict]) -> str:
-    groups = [
-        ("Operational guidance", "operational"),
-        ("Research and evidence", "research"),
-        ("Models and explanations", "explanatory"),
-    ]
-    parts = [
-        "# Source notes",
-        "",
-        "Generated from the canonical source registry. Every entry stays with the "
-        "book that uses it, including the caveats that keep the source honest.",
-        "",
-    ]
-    for title, kind in groups:
-        subset = [item for item in sources if item["kind"] == kind]
-        if not subset:
-            continue
-        parts.extend([f"## {title}", ""])
-        for item in subset:
-            parts.extend(
-                [
-                    f"### `{item['id']}`",
-                    "",
-                    item["text"],
-                    "",
-                    f"**Appears in:** {item['chapter']} · **Book:** "
-                    f"{', '.join(item['subguides']) or 'unassigned'}",
-                    "",
-                ]
-            )
-    parts.extend(["## Citation links", ""])
-    for item in sources:
-        parts.append(
-            f"[^{item['id']}]: See source `{item['id']}` in "
-            "**Source notes** above."
-        )
-    return "\n".join(parts).rstrip()
+    """Footnote definitions carrying the real citation text.
+
+    The body cites a claim; the note at the end of the book *is* the source.
+    Pandoc collects these into one numbered list with back-links, numbered to
+    match the superscripts in the text, which is what a reader expects a
+    reference list to look like.
+
+    This replaces an earlier arrangement that printed the internal slug as a
+    heading, restated the source file it came from, and then added a second
+    list of pointers saying "see the source above" — three layers of
+    indirection around text that is only two lines long.
+    """
+    return "\n\n".join(
+        f"[^{item['id']}]: {' '.join(item['text'].split())}" for item in sources
+    )
 
 
 def variant_stem(slug: str, layout: str, monochrome: bool) -> str:
@@ -391,7 +370,7 @@ emergency services. In Germany, **112** is for life, medical, and fire danger;
 
 ::: {{.subguide-intro}}
 
-# Start here
+# What this book is for
 
 {questions}
 
@@ -417,17 +396,12 @@ primary problem; move when another title becomes more accurate.
 
 ![Connections from {node_id} — {node["title"]}](build/diagrams/subguide_graph_{node_id}.png)
 
-## Tools, forms, and stable references
-
-{resource_map}
-
 :::
 '''
-    endmatter = (
-        f'::: {{.sources-and-limits data-subguide="{node_id}"}}\n\n'
-        + source_endmatter(ordered_sources)
-        + "\n\n:::"
-    )
+    # Bare definitions: pandoc hoists them out of any wrapper into its own
+    # footnotes section at the end of the book, so wrapping them in a div only
+    # produced an empty box above the real list.
+    endmatter = source_endmatter(ordered_sources)
     return "\n\n".join((cover, canonical_content, connections, endmatter, ":::")) + "\n"
 
 def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
@@ -492,6 +466,25 @@ def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
     raise RuntimeError(f"node {node_id} is not a released standalone edition")
 
 
+def drop_redundant_book_title(text: str, node: dict) -> str:
+    """Remove the chapter H1 that merely restates the book title.
+
+    The cover already carries the book's name. Repeating it as a level-one
+    heading part-way through the book made the title look like a chapter and
+    pushed the book's actual first section to page seven.
+    """
+    stem = node["title"].split("—")[-1].strip().lower()
+    kept, dropped = [], False
+    for line in text.split("\n"):
+        if not dropped and line.startswith("# "):
+            heading = line[2:].split("{#")[0].strip().lower()
+            if stem and stem in heading:
+                dropped = True
+                continue
+        kept.append(line)
+    return "\n".join(kept).lstrip("\n")
+
+
 def build_node(node_id: str) -> dict:
     manifest = json.loads(
         (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
@@ -520,6 +513,7 @@ def build_node(node_id: str) -> dict:
             )
         )
     canonical_content = "\n\n".join(content_parts).strip()
+    canonical_content = drop_redundant_book_title(canonical_content, node)
     canonical_content = BG.expand_visualization_macros(
         canonical_content, BG.visualization_lookup()
     )

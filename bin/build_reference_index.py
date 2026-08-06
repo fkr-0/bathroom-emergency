@@ -232,8 +232,22 @@ def assign_reader_refs(records: list[dict]) -> dict[str, str]:
     for record in records:
         if record.get("chapter") and record.get("line") is not None:
             by_owner[record["owner"]].append(record)
+    counters: dict[tuple[str, str], int] = defaultdict(int)
+    extra_refs: dict[str, str] = {}
 
-    refs: dict[str, str] = {}
+    # Figures, templates, contacts, glossary words and deployment fields are
+    # numbered per book in a named series, so every printed reference reads the
+    # same way: book, what kind of thing, which one.
+    series = {"G": "fig", "F": "form", "C": "call", "W": "term", "D": "field"}
+    for record in sorted(records, key=lambda item: item["resource_key"]):
+        kind = record.get("kind")
+        abbr = BOOK_ABBREVS.get(record.get("owner", ""))
+        if kind not in series or not abbr:
+            continue
+        counters[(abbr, kind)] += 1
+        extra_refs[record["resource_key"]] = f"{abbr}.{series[kind]}.{counters[(abbr, kind)]}"
+
+    refs: dict[str, str] = dict(extra_refs)
     for owner, owned in by_owner.items():
         abbr = BOOK_ABBREVS.get(owner)
         chapters = node_chapters.get(owner)
@@ -610,6 +624,11 @@ def inject_heading_ids(text: str, chapter: str) -> str:
 
 
 
+def reader_ref_for(item: dict) -> str:
+    """The reader-facing address for a resource, falling back to nothing."""
+    return item.get("reader_ref", "")
+
+
 def decorate_figure_references(text: str, seen: set[str] | None = None) -> str:
     """Wrap each canonical depiction in one titled, referenced read-only card."""
     seen = seen if seen is not None else set()
@@ -639,16 +658,12 @@ def decorate_figure_references(text: str, seen: set[str] | None = None) -> str:
             f'::: {{{anchor}.figure-reference .resource-card data-subguide="{item["owner"]}" '
             'data-resource-type="figure" data-interaction="read-only"}',
             '',
-            '<div class="resource-kicker"><strong>Figure</strong><span>Read only</span>'
-            f'<code>{item["public_ref"]}</code></div>',
             '<div class="resource-heading">'
             f'<strong>{html.escape(item["title"])}</strong>'
-            f'<span>{html.escape(item["description"])}</span></div>'
+            f'<span>{html.escape(item["description"])}</span>'
+            f'<code>{reader_ref_for(item)}</code></div>'
             '',
             match.group(0),
-            '',
-            '<p class="resource-links"><strong>Related templates:</strong> '
-            f'{html.escape(paired_text)}</p>',
             '',
             ':::',
         ))

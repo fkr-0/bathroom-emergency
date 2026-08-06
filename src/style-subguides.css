@@ -206,6 +206,11 @@
   text-align: center;
 }
 
+table, figure, pre, blockquote, .safety-card, .subguide-scope-grid,
+.subguide-neighbours, .edition-resource-map, .subguide-meta {
+  max-width: var(--measure);
+}
+
 .subguide-meta {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -377,8 +382,12 @@
   overflow: hidden;
 }
 
+/* Figures and cards share the text measure. Running them to the full page
+   width while body text stopped at var(--measure) gave every figure page two
+   different right-hand edges, which is what made the layout look unfinished. */
 .resource-card {
   position: relative;
+  max-width: var(--measure);
   margin: .65rem 0 1.1rem;
   overflow: hidden;
   border: 1px solid var(--line);

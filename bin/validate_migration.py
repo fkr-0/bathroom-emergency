@@ -185,17 +185,36 @@ if manifest_path.exists():
                     text = md.read_text(encoding="utf-8")
                     check(node["title"] in text, f"{node_id}: book title missing")
                     check(text.count("::: {.emergency-gate}") == 1, f"{node_id}/{stem}: emergency gate count is not one")
-                    for marker in ("# Start here", "# Where next?", "# Source notes", "What this book does", "What it hands off"):
+                    for marker in ("# What this book is for", "# Where next?", "What this book does", "What it hands off"):
                         check(marker in text, f"{node_id}: reader contract missing: {marker}")
+                    # The book title belongs on the cover, not repeated as a
+                    # level-one heading part-way through the book.
+                    check(
+                        text.count(f'# {node["title"]}') <= 1,
+                        f"{node_id}/{stem}: book title repeated as a body heading",
+                    )
                     for obsolete in ("Page 0 — Position in the graph", "Edition contract", "Immediate danger bypasses the graph"):
                         check(obsolete not in text, f"{node_id}: old governance-first wrapper remains: {obsolete}")
                 if html.exists():
                     html_text = html.read_text(encoding="utf-8")
                     check(html_text.count('class="emergency-gate"') == 1, f"{node_id}/{stem}: HTML gate count is not one")
-                    check('class="sources-and-limits"' in html_text, f"{node_id}/{stem}: source block missing")
+                    # Sources are pandoc footnotes now: one numbered list with
+                    # back-links at the end of the book, not a slug-headed
+                    # section followed by pointers back to it.
+                    cited = set(re.findall(r'id="fnref(\d+)"', html_text))
+                    noted = set(re.findall(r'id="fn(\d+)"', html_text))
+                    check(
+                        not cited or noted >= cited,
+                        f"{node_id}/{stem}: cited sources missing from the note list",
+                    )
+                    check(
+                        'class="footnotes' in html_text or not cited,
+                        f"{node_id}/{stem}: source list missing",
+                    )
+                    for gone in ("Citation links", "Tools, forms, and stable references"):
+                        check(gone not in html_text, f"{node_id}/{stem}: removed section returned: {gone}")
                     check(f'data-subguide="{node_id}"' in html_text, f"{node_id}/{stem}: identity wrapper missing")
                     check('class="subguide-scope-grid"' in html_text, f"{node_id}/{stem}: concise scope block missing")
-                    check('class="edition-resource-map"' in html_text, f"{node_id}/{stem}: resource map missing")
                     current = semantic_text(html)
                     if reference_text is None:
                         reference_text = current
