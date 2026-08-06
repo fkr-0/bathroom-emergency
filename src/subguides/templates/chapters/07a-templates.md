@@ -214,7 +214,9 @@ number, scope, hours, access channel, and backup.
 
 ## Comfort inventory
 
-**Principle: make useful ordinary things visible; do not turn them into a test.**
+::: {.principle}
+make useful ordinary things visible; do not turn them into a test.
+:::
 
 | Resource | Present and findable? | Reader says it helps? | Location / note |
 |---|---:|---:|---|
@@ -263,8 +265,9 @@ without demanding that one bathroom visit solve the republic.
 
 ## Observation and vital-sign log
 
-**Principle: observe change and improve the handoff; never use one device value
-to cancel a red flag.**
+::: {.principle}
+observe change and improve the handoff; never use one device value to cancel a red flag.
+:::
 
 | Date/time | Response / orientation | Breathing | Pulse / device reading | Symptoms and location | Action taken | Better / same / worse |
 |---|---|---|---|---|---|---|
@@ -307,8 +310,9 @@ bearing walls.
 
 ## Safe-place and exit map
 
-**Principle: a safe place is a confirmed destination plus a backup—not the
-phrase “go somewhere safe” wearing sensible shoes.**
+::: {.principle}
+a safe place is a confirmed destination plus a backup—not the phrase “go somewhere safe” wearing sensible shoes.
+:::
 
 | Route | Confirmed destination | Transport / access | Contact | Backup | Escalation |
 |---|---|---|---|---|---|
@@ -401,7 +405,11 @@ keys, security details, or another person without permission.
 
 ## Route drill and timing log
 
-**Principle: test finding and handoff, not theatrical panic.** Use invented or
+::: {.principle}
+test finding and handoff, not theatrical panic.
+:::
+
+Use invented or
 sanitized facts. Stop the drill immediately when someone becomes distressed or
 a real event interrupts it.
 

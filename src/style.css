@@ -444,6 +444,33 @@ blockquote {
 
 blockquote p { margin: .25rem 0; }
 
+/* The rationale under a procedure heading: why we act this way, before how.
+   Sits tight to the heading it belongs to and never competes with it. */
+.principle {
+  margin: -.35rem 0 1.1rem;
+  padding: .1rem 0 .1rem .7rem;
+  color: var(--muted);
+  border-left: 3px solid color-mix(in srgb, var(--sg-accent, var(--green)) 55%, transparent);
+  font-size: .93rem;
+  font-style: italic;
+  line-height: 1.45;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+.principle p { margin: 0; }
+
+.principle::before {
+  display: block;
+  color: var(--sg-accent, var(--green));
+  font-size: .68rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  content: "Principle";
+}
+
 pre {
   max-width: 100%;
   overflow: auto;

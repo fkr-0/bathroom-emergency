@@ -71,8 +71,9 @@ It is not a biological cliff at minute 60. The practical rule is simpler:
 
 ## Unresponsive and not breathing normally
 
-**Principle: call for help, then temporarily support circulation and oxygen
-delivery until normal breathing or professional help takes over.**
+::: {.principle}
+call for help, then temporarily support circulation and oxygen delivery until normal breathing or professional help takes over.
+:::
 
 1. Call **112** on speaker. If another person is present, send them for an
    **automated external defibrillator (AED)**. A lone rescuer should not stop
@@ -112,7 +113,9 @@ it does not replace CPR.
 
 ## Unresponsive but breathing normally
 
-**Principle: create a stable, drainable airway position while help comes.**
+::: {.principle}
+create a stable, drainable airway position while help comes.
+:::
 
 Call **112**. If no major trauma prevents safe movement:
 
@@ -130,8 +133,9 @@ abnormal, roll them onto their back and start CPR.[^drk-recovery]
 
 ## Choking
 
-**Principle: effective coughing is active airway clearance—do not replace it
-with improvised force.**
+::: {.principle}
+effective coughing is active airway clearance—do not replace it with improvised force.
+:::
 
 If the person can cough effectively, encourage coughing and watch for change.
 Do not begin back blows, abdominal thrusts, or a blind finger sweep while the
@@ -145,9 +149,9 @@ noise, and keep coughing while it remains effective.
 
 ## Wounds and bleeding
 
-**Principle: do not add harm. Reduce contamination or blood loss, protect what
-the body is already repairing, and escalate when the wound exceeds ordinary
-self-care.**
+::: {.principle}
+do not add harm. Reduce contamination or blood loss, protect what the body is already repairing, and escalate when the wound exceeds ordinary self-care.
+:::
 
 ### Minor wound
 
@@ -162,7 +166,9 @@ self-care.**
 
 ### Severe bleeding
 
-**Principle: stop blood loss while making the fewest additional injuries.**
+::: {.principle}
+stop blood loss while making the fewest additional injuries.
+:::
 
 1. Call **112**.
 2. Press firmly and continuously on the wound with a dressing or clean cloth.
@@ -176,8 +182,9 @@ when appropriate. Do not abandon direct pressure to search for perfect gear.[^dr
 
 ### Shock warning signs
 
-**Principle: reduce demand, support temperature and circulation, and keep the
-handoff moving while professional help approaches.**
+::: {.principle}
+reduce demand, support temperature and circulation, and keep the handoff moving while professional help approaches.
+:::
 
 Pale or clammy skin, weakness, restlessness, confusion, rapid breathing,
 collapse, or severe thirst after injury or bleeding can indicate shock. Call
@@ -186,8 +193,9 @@ for low blood pressure; you are not conducting a trauma conference.
 
 ## Burns and scalds
 
-**Principle: stop the source, assess severity, cool the burn without cooling the
-whole person, then protect the surface.**
+::: {.principle}
+stop the source, assess severity, cool the burn without cooling the whole person, then protect the surface.
+:::
 
 - Stop the burning process and remove the person from danger.
 - Cool a limited burn promptly with cool or cold running water for about
@@ -206,8 +214,9 @@ guidance uses at least 20 minutes and strongly warns against hypothermia.[^drk-b
 
 ## Suspected fractures and joint injuries
 
-**Principle: the body has usually chosen the least-worst position already.
-Support it; do not audition alternative geometry.**
+::: {.principle}
+the body has usually chosen the least-worst position already. Support it; do not audition alternative geometry.
+:::
 
 Signs may include pain, swelling, deformity, inability to use the limb, or an
 open wound.
@@ -227,8 +236,9 @@ medieval orthopaedic device from magazines.[^drk-fracture]
 
 ## Suspected spine, neck, or pelvic injury
 
-**Principle: recognize that this rule applies. Unless immediate danger makes
-movement unavoidable, do not move, sit up, or test the person—support and call.**
+::: {.principle}
+recognize that this rule applies. Unless immediate danger makes movement unavoidable, do not move, sit up, or test the person—support and call.
+:::
 
 After a major fall, collision, crush, diving injury, or trauma with neck/back
 pain, weakness, numbness, or altered consciousness:
