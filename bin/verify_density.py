@@ -12,6 +12,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageOps
 
+from project_meta import content_text
+
 ROOT = Path(__file__).resolve().parent.parent
 PDFS = (
     ROOT / "build" / "pdf" / "guide.pdf",
@@ -230,8 +232,8 @@ def main() -> int:
     results = [verify(path) for path in PDFS]
     if results[0]["pages"] != results[1]["pages"]:
         raise DensityError("standard color/mono page counts differ")
-    color_hash = hashlib.sha256(str(results[0]["text"]).encode()).hexdigest()
-    mono_hash = hashlib.sha256(str(results[1]["text"]).encode()).hexdigest()
+    color_hash = hashlib.sha256(content_text(results[0]["text"]).encode()).hexdigest()
+    mono_hash = hashlib.sha256(content_text(results[1]["text"]).encode()).hexdigest()
     if color_hash != mono_hash:
         raise DensityError("standard color/mono extracted text differs")
     for result in results:

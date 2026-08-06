@@ -460,8 +460,10 @@ blockquote p { margin: .25rem 0; }
 
 .principle p { margin: 0; }
 
-.principle::before {
-  display: block;
+/* Inline lead-in rather than its own line: the rationale should read as one
+   quiet line under the heading, not as a stacked label plus a sentence. */
+.principle p:first-of-type::before {
+  margin-right: .4em;
   color: var(--sg-accent, var(--green));
   font-size: .68rem;
   font-style: normal;
@@ -735,30 +737,9 @@ math[display="block"] {
 
   .app-bar, #TOC, .reading-progress { display: none !important; }
 
-  .revision-footer {
-    position: fixed;
-    right: 0;
-    bottom: -11mm;
-    left: 0;
-    z-index: 20;
-    width: auto;
-    height: 8mm;
-    margin: 0;
-    padding: 1.2mm 0 0;
-    gap: 2mm;
-    background: #fff;
-    border-top-width: .8mm;
-    font-size: 5.8pt;
-    line-height: 1.2;
-  }
-
-  .revision-mark {
-    flex-basis: 5mm;
-    width: 5mm;
-    height: 5mm;
-  }
-
-  .revision-url { white-space: nowrap; }
+  /* Print provenance lives in the @page margin boxes generated per edition by
+     project_meta.revision_footer_css. This element stays for screen only. */
+  .revision-footer { display: none !important; }
 
   .app-shell, main {
     display: block;

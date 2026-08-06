@@ -297,7 +297,7 @@ def combined_css(monochrome: bool, *, layout: str = "a4") -> Path:
     if monochrome:
         content += "\n\n" + STYLE_MONO.read_text(encoding="utf-8")
     content += "\n\n" + revision_footer_css(
-        title="Complete guide",
+        title="Bathroom Emergency Guide — Complete guide",
         layout=layout,
         mode="mono" if monochrome else "color",
     )

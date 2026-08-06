@@ -743,7 +743,7 @@
     {
       "key": "05-self-ambulance:unresponsive-but-breathing-normally",
       "chapter": "05-self-ambulance.md",
-      "line": 113,
+      "line": 114,
       "level": 2,
       "heading": "Unresponsive but breathing normally",
       "owner": "C"
@@ -751,7 +751,7 @@
     {
       "key": "05-self-ambulance:choking",
       "chapter": "05-self-ambulance.md",
-      "line": 131,
+      "line": 134,
       "level": 2,
       "heading": "Choking",
       "owner": "C"
@@ -759,7 +759,7 @@
     {
       "key": "05-self-ambulance:wounds-and-bleeding",
       "chapter": "05-self-ambulance.md",
-      "line": 146,
+      "line": 150,
       "level": 2,
       "heading": "Wounds and bleeding",
       "owner": "C"
@@ -767,7 +767,7 @@
     {
       "key": "05-self-ambulance:burns-and-scalds",
       "chapter": "05-self-ambulance.md",
-      "line": 187,
+      "line": 194,
       "level": 2,
       "heading": "Burns and scalds",
       "owner": "C"
@@ -775,7 +775,7 @@
     {
       "key": "05-self-ambulance:suspected-fractures-and-joint-injuries",
       "chapter": "05-self-ambulance.md",
-      "line": 207,
+      "line": 215,
       "level": 2,
       "heading": "Suspected fractures and joint injuries",
       "owner": "C"
@@ -783,7 +783,7 @@
     {
       "key": "05-self-ambulance:suspected-spine-neck-or-pelvic-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 228,
+      "line": 237,
       "level": 2,
       "heading": "Suspected spine, neck, or pelvic injury",
       "owner": "C"
@@ -791,7 +791,7 @@
     {
       "key": "05-self-ambulance:chemical-in-eye-or-on-skin",
       "chapter": "05-self-ambulance.md",
-      "line": 242,
+      "line": 252,
       "level": 2,
       "heading": "Chemical in eye or on skin",
       "owner": "C"
@@ -799,7 +799,7 @@
     {
       "key": "05-self-ambulance:electrical-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 253,
+      "line": 263,
       "level": 2,
       "heading": "Electrical injury",
       "owner": "C"
@@ -807,7 +807,7 @@
     {
       "key": "05-self-ambulance:stroke-fast",
       "chapter": "05-self-ambulance.md",
-      "line": 260,
+      "line": 270,
       "level": 2,
       "heading": "Stroke — FAST",
       "owner": "C"
@@ -815,7 +815,7 @@
     {
       "key": "05-self-ambulance:chest-pain-or-severe-breathlessness",
       "chapter": "05-self-ambulance.md",
-      "line": 287,
+      "line": 297,
       "level": 2,
       "heading": "Chest pain or severe breathlessness",
       "owner": "C"
@@ -823,7 +823,7 @@
     {
       "key": "05-self-ambulance:anaphylaxis",
       "chapter": "05-self-ambulance.md",
-      "line": 294,
+      "line": 304,
       "level": 2,
       "heading": "Anaphylaxis",
       "owner": "C"
@@ -831,7 +831,7 @@
     {
       "key": "05-self-ambulance:poisoning",
       "chapter": "05-self-ambulance.md",
-      "line": 308,
+      "line": 318,
       "level": 2,
       "heading": "Poisoning",
       "owner": "C"
@@ -839,7 +839,7 @@
     {
       "key": "05-self-ambulance:vital-signs-observe-record-never-self-clear",
       "chapter": "05-self-ambulance.md",
-      "line": 320,
+      "line": 330,
       "level": 2,
       "heading": "Vital signs — observe, record, never self-clear",
       "owner": "C"
@@ -847,7 +847,7 @@
     {
       "key": "05-self-ambulance:pain-without-a-red-flag",
       "chapter": "05-self-ambulance.md",
-      "line": 351,
+      "line": 361,
       "level": 2,
       "heading": "Pain without a red flag",
       "owner": "C"
@@ -855,7 +855,7 @@
     {
       "key": "05-self-ambulance:self-care-while-waiting",
       "chapter": "05-self-ambulance.md",
-      "line": 362,
+      "line": 372,
       "level": 2,
       "heading": "Self-care while waiting",
       "owner": "C"
@@ -863,7 +863,7 @@
     {
       "key": "05-self-ambulance:first-aid-kit-for-an-ordinary-household",
       "chapter": "05-self-ambulance.md",
-      "line": 379,
+      "line": 389,
       "level": 2,
       "heading": "First-aid kit for an ordinary household",
       "owner": "C"
@@ -871,7 +871,7 @@
     {
       "key": "05-self-ambulance:self-ambulance-for-non-physical-emergencies",
       "chapter": "05-self-ambulance.md",
-      "line": 397,
+      "line": 407,
       "level": 2,
       "heading": "Self ambulance for non-physical emergencies",
       "owner": "C"
@@ -879,7 +879,7 @@
     {
       "key": "05-self-ambulance:red-flag-theorem-again",
       "chapter": "05-self-ambulance.md",
-      "line": 414,
+      "line": 424,
       "level": 2,
       "heading": "Red-flag theorem, again",
       "owner": "C"
@@ -1239,7 +1239,7 @@
     {
       "key": "07a-templates:five-minute-values-bridge",
       "chapter": "07a-templates.md",
-      "line": 239,
+      "line": 241,
       "level": 2,
       "heading": "Five-minute values bridge",
       "owner": "T"
@@ -1247,7 +1247,7 @@
     {
       "key": "07a-templates:observation-and-vital-sign-log",
       "chapter": "07a-templates.md",
-      "line": 264,
+      "line": 266,
       "level": 2,
       "heading": "Observation and vital-sign log",
       "owner": "T"
@@ -1255,7 +1255,7 @@
     {
       "key": "07a-templates:nice-place-and-low-demand-activity-map",
       "chapter": "07a-templates.md",
-      "line": 285,
+      "line": 288,
       "level": 2,
       "heading": "Nice-place and low-demand activity map",
       "owner": "T"
@@ -1263,7 +1263,7 @@
     {
       "key": "07a-templates:safe-place-and-exit-map",
       "chapter": "07a-templates.md",
-      "line": 308,
+      "line": 311,
       "level": 2,
       "heading": "Safe-place and exit map",
       "owner": "T"
@@ -1271,7 +1271,7 @@
     {
       "key": "07a-templates:medication-power-and-care-continuity-card",
       "chapter": "07a-templates.md",
-      "line": 322,
+      "line": 326,
       "level": 2,
       "heading": "Medication, power, and care continuity card",
       "owner": "T"
@@ -1279,7 +1279,7 @@
     {
       "key": "07a-templates:household-continuity-board",
       "chapter": "07a-templates.md",
-      "line": 341,
+      "line": 345,
       "level": 2,
       "heading": "Household continuity board",
       "owner": "T"
@@ -1287,7 +1287,7 @@
     {
       "key": "07a-templates:feedback-and-field-note-sheet",
       "chapter": "07a-templates.md",
-      "line": 357,
+      "line": 361,
       "level": 2,
       "heading": "Feedback and field-note sheet",
       "owner": "T"
@@ -1295,7 +1295,7 @@
     {
       "key": "07a-templates:installation-and-wet-room-audit",
       "chapter": "07a-templates.md",
-      "line": 378,
+      "line": 382,
       "level": 2,
       "heading": "Installation and wet-room audit",
       "owner": "T"
@@ -1303,7 +1303,7 @@
     {
       "key": "07a-templates:route-drill-and-timing-log",
       "chapter": "07a-templates.md",
-      "line": 402,
+      "line": 406,
       "level": 2,
       "heading": "Route drill and timing log",
       "owner": "T"
@@ -1311,7 +1311,7 @@
     {
       "key": "07a-templates:first-aid-figure-usability-review",
       "chapter": "07a-templates.md",
-      "line": 426,
+      "line": 434,
       "level": 2,
       "heading": "First-aid figure usability review",
       "owner": "T"
@@ -1319,7 +1319,7 @@
     {
       "key": "07a-templates:maintenance-and-replacement-inspection",
       "chapter": "07a-templates.md",
-      "line": 455,
+      "line": 463,
       "level": 2,
       "heading": "Maintenance and replacement inspection",
       "owner": "T"
@@ -1327,7 +1327,7 @@
     {
       "key": "07a-templates:remarks-and-handoff-sheet",
       "chapter": "07a-templates.md",
-      "line": 475,
+      "line": 483,
       "level": 2,
       "heading": "Remarks and handoff sheet",
       "owner": "T"
@@ -1335,7 +1335,7 @@
     {
       "key": "07a-templates:quiet-activity-sheet",
       "chapter": "07a-templates.md",
-      "line": 496,
+      "line": 504,
       "level": 2,
       "heading": "Quiet activity sheet",
       "owner": "T"
@@ -1343,7 +1343,7 @@
     {
       "key": "07a-templates:take-replace-improve",
       "chapter": "07a-templates.md",
-      "line": 530,
+      "line": 538,
       "level": 2,
       "heading": "Take, replace, improve",
       "owner": "T"

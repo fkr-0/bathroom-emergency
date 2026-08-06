@@ -12,6 +12,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageOps
 
+from project_meta import content_text
+
 ROOT = Path(__file__).resolve().parent.parent
 VERSION = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))["version"]
 ACCESS_PATH = ROOT / "src" / "data" / "accessibility_profiles.json"
@@ -231,7 +233,7 @@ for pdf_path in PDFS:
     document = " ".join(normalized).lower()
     for marker in REQUIRED_MARKERS:
         check(normalize_text(marker).lower() in document, f"{pdf_path.name} missing required marker: {marker}")
-    texts.append(re.sub(r"\s+", "", "".join(pages)))
+    texts.append(re.sub(r"\s+", "", content_text("".join(pages))))
     verify_rendered_pages(pdf_path, pages, page_count)
 
 if len(texts) == 2:

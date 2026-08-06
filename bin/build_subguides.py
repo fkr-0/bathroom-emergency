@@ -214,19 +214,11 @@ def identity_css(node: dict, *, layout: str, monochrome: bool) -> str:
             title=f'{node["id"]} — {node["title"]}',
             layout=layout,
             mode="mono" if monochrome else "color",
+            glyph=node["glyph"],
+            accent=node["colour"],
         )
     )
-    layout_label = {"a4": "A4", "a4half": "A4/2", "largeprint": "LARGE PRINT"}[layout]
-    parts.append(
-        "\n".join(
-            (
-                "/* Generated standalone page furniture. */",
-                f'@page {{ @top-left {{ content: "{node["id"]} / {node["title"]}"; }} '
-                f'@top-right {{ content: "{layout_label}"; }} }}',
-                f':root {{ --subguide-accent: {node["colour"]}; }}',
-            )
-        )
-    )
+    parts.append(f':root {{ --subguide-accent: {node["colour"]}; }}')
     return "\n\n".join(parts) + "\n"
 
 
