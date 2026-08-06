@@ -17,9 +17,11 @@ First aid is time management for biology. Keep air moving, limit blood loss,
 reduce heat or chemical injury, prevent a second fall or exposure, and hand the
 person to better-equipped help. Diagnosis is usually not the first job.
 
-A home measurement may improve the handoff. It cannot certify that a dangerous
-pattern is harmless. When emergency help is involved, speakerphone and safe door
-access free both hands and shorten the route to the person.
+A measurement you take at home can improve the handoff — it gives the next
+person a number to work from. What it cannot do is certify that something
+dangerous is harmless; a reassuring reading has never once made a red flag go
+away. And when emergency help is on the way, speakerphone plus an unlocked door
+free both your hands and shorten the route to the person.
 
 ## The first minute: preserve what still works
 
@@ -62,9 +64,10 @@ A green box does not exist when you are unsure whether breathing is normal.
 
 ## The “golden hour” — useful urgency, not a stopwatch
 
-Trauma teaching often uses “golden hour” to emphasize that serious bleeding,
-airway problems, brain injury, and other emergencies benefit from rapid care.
-It is not a biological cliff at minute 60. The practical rule is simpler:
+Trauma teaching uses “golden hour” to make one point: serious bleeding, airway
+problems, and brain injury all do better with fast care. It is a teaching
+device, not a biological cliff that opens at minute 61. Nobody is timing you.
+The practical rule is simpler than the phrase suggests:
 
 > serious mechanism or red flag → call early → do not delay for perfect
 > assessment, transport planning, or a final internet search.
@@ -418,15 +421,20 @@ situational crises, but the actions differ:
 | call emergency service | 112 for acute danger; crisis/medical service otherwise |
 | monitor | better, same, worse, or new red flag? |
 
-A panic attack is not “emotional bleeding,” and metaphor must not replace
-assessment. The useful commonality is sequence, not anatomy.
+A panic attack is not “emotional bleeding,” and the metaphor must not stand in
+for assessment. What actually carries across is the sequence, not the anatomy.
 
 ## Red-flag theorem, again
 
 $$R=1 \Rightarrow \text{call 112}$$
 
-Vital signs, pain scores, internet searches, and apparent calm can add
-information. None of them reliably cancel a red flag for a lay reader.
+Read out loud: $R$ is one yes/no light, and it comes on if **any** red flag is
+present. Not most of them. Not a majority vote. Any single one. That is the only
+job this notation has — it takes “if any of these, then call” and writes it in a
+form you cannot argue with at two in the morning.
+
+Vital signs, pain scores, internet searches, and apparent calm can all add
+information. None of them reliably turn that light off for a lay reader.
 
 [^erc2025]: European Resuscitation Council, *Guidelines 2025* and layperson guidance: https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/
 

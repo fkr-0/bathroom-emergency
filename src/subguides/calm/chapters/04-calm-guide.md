@@ -10,20 +10,21 @@ dependencies:
 
 # The Teal Book — Calm Guide: You Made It Here. That Counts.
 
-You made it here. That counts. Not because a bathroom solves the problem, but
-because you noticed you needed a pause and found one.
+You made it here. That counts. Not because a bathroom solves anything, but
+because you noticed you needed a pause and went and found one.
 
-Calm is not silence inside the body. It is enough bandwidth to notice more than
-one thing and choose among two actions. A heart may still race; the room can
-still become usable. Your nervous system is running kernel panic, not delivering
-a moral verdict. We are restoring enough services to make the next decision.
+Calm isn't silence inside your body. It's enough bandwidth to notice more than
+one thing and pick between two actions. Your heart can still be going; the room
+can still become usable. Your nervous system is running kernel panic, not
+delivering a moral verdict — we're only restarting enough services to make the
+next decision.
 
 Anxiety merges sensation, prediction, memory, and obligation into one enormous
-notification. Separate them. Change one variable. The blanket remains.
+notification. Separate them. Change one variable. The blanket stays.
 
 ## A pause needs no legal brief
 
-You are allowed to take a pause without proving that it is medically,
+You're allowed to take a pause without first proving it is medically,
 philosophically, or economically optimal.
 
 A bathroom can offer:
@@ -34,15 +35,17 @@ A bathroom can offer:
 - a mirror that is not currently required to have an opinion;
 - one small interval in which nobody gets a performance.
 
-Serenity is optional. The first target is narrower: reduce simultaneous demands
-until one next action becomes visible.
+Serenity is optional. We are aiming lower than that on purpose: reduce the
+number of things demanding you at once until exactly one next action is
+visible.
 
 ## The 90-second landing
 
 ### 1. Make contact
 
-Sit or lean somewhere stable. Feel the floor, wall, or sink supporting weight.
-Unclench the jaw. Drop the shoulders one centimetre—not spiritually, literally.
+Sit or lean somewhere stable. Feel the floor, wall, or sink taking your weight.
+Unclench your jaw. Drop your shoulders one centimetre—not spiritually,
+literally.
 
 ### 2. Orient outward
 
@@ -54,8 +57,8 @@ Find:
 - 2 colours;
 - 1 next action.
 
-Grounding is an attention task. It need not produce enlightenment; it only has
-to give the alarm system something ordinary to process.[^who-stress]
+Grounding is an attention task. It doesn't need to produce enlightenment. It
+only has to give your alarm system something ordinary to chew on.[^who-stress]
 
 ### 3. Breathe comfortably
 
@@ -63,32 +66,43 @@ to give the alarm system something ordinary to process.[^who-stress]
 competition, no heroic breath-holding. Stop deliberate breathing if it makes
 you dizzy, tingly, or more frightened and return to normal breathing.
 
-If inhale time is $t_i$ and exhale time is $t_e$, one cycle is
+That is the whole instruction; the rest is optional detail. Here is the same
+sentence as a physiologist would write it, so the notation stops looking like a
+spell. Call your inhale time $t_i$ and your exhale time $t_e$. One cycle takes
 
 $$T = t_i + t_e, \qquad f = \frac{60}{T}$$
 
-where $f$ is breaths per minute. This formula describes pacing; it does not
-prescribe one correct rate. Comfort and absence of dizziness outrank the
-number.
+where $f$ is breaths per minute. **Which means:** breathe in for 3 seconds and
+out for 5, and one cycle is 8 seconds, so $f = 60/8 \approx 7.5$ breaths per
+minute. That is the entire equation. It is arithmetic in a lab coat.
+
+It describes a pattern; it does not prescribe the correct one. Comfort and the
+absence of dizziness outrank the number every time.
 
 ![Three optional breathing patterns](build/diagrams/breathing_techniques.png)
 
 ## Stress does not obey a cinematic decay curve
 
-A tidy exponential cortisol curve would be fiction. Human arousal is not a bath
-plug: stress chemistry, interpretation, pain, safety, sleep, substances, and
-new events interact.
+You may have met a tidy exponential "cortisol decay curve" somewhere. It is
+fiction, and we are not going to print it. Human arousal is not a bath plug:
+stress chemistry, interpretation, pain, safety, sleep, substances, and whatever
+happens next all interact.
 
-A more honest conceptual model is:
+Here is an honest model instead — deliberately a much cruder one:
 
 $$A_{k+1} = A_k - \delta_k + \varepsilon_k$$
 
-- $A_k$ = current arousal at step $k$;
-- $\delta_k$ = any small reduction from a useful action;
-- $\varepsilon_k$ = whatever the world adds back.
+- $A_k$ — how activated you are right now, at step $k$;
+- $\delta_k$ — the small amount some useful action just took off;
+- $\varepsilon_k$ — whatever the world just added back.
 
-This is not physiology. It is a teaching model for a practical fact: several
-small reductions can matter even when calm does not arrive in one magnificent
+**Which means:** you do a thing, it helps a little, the world puts some back,
+and you go again. Notice it predicts no numbers at all — that is the point. A
+formula that admits what it does not know is doing more work than one that
+guesses to two decimal places.
+
+So: not physiology. A teaching model for one practical fact — several small
+reductions can add up, even when calm refuses to arrive in a single magnificent
 wave accompanied by tasteful strings.
 
 ## Breathing exercises
@@ -113,7 +127,12 @@ pattern as proof that symptoms are harmless.
 ### Technique 4 — physiological sigh
 
 One inhale, a small second top-up inhale, then a long gentle exhale. One to
-three repetitions may feel useful.
+three rounds is plenty.
+
+The usual explanation: the second small inhale reopens air sacs that have gone
+slightly flat, so the long exhale carries out more carbon dioxide. Whether or
+not that is the whole story, it is easy and safe to try. Biology, not magic — it
+merely works faster than most things sold as magic.
 
 ![What the 2023 breathwork trial actually tested](build/diagrams/breathwork_trial_map.png)
 
@@ -125,9 +144,10 @@ sighing—showed greater improvement in positive affect and lower respiratory
 rate than mindfulness meditation.[^balban]
 
 That is an interesting trial, not a licence to compress it into “one sigh cures
-panic.” The intervention was repeated daily, the sample was limited, and the
-study did not establish that breathing exercises can rule out chest pain,
-asthma, poisoning, or any other medical danger.
+panic.” People practised daily for a month, the sample was small, and nothing in
+it establishes that breathing exercises can rule out chest pain, asthma,
+poisoning, or any other medical danger. A study is evidence about a group over
+time, not a promise about you in the next ten minutes.
 
 ### Technique 5 — no technique
 
@@ -136,11 +156,14 @@ breathing exercise is the one that does not turn breathing into another exam.
 
 ## Yerkes–Dodson — some arousal can help, too much can jam the controls
 
-The classic Yerkes–Dodson relationship is often summarized as an inverted U:
-very low arousal can reduce engagement, moderate arousal can support some tasks,
-and high arousal can impair performance. The optimum varies with task,
-experience, and person; complex tasks often tolerate less arousal than simple
-ones.
+The classic Yerkes–Dodson relationship is usually drawn as an inverted U: too
+little arousal and you are not really engaged, some arousal and you are alert
+and capable, too much and the controls jam. Where the top of that curve sits
+moves with the task, your experience, and you — and complicated tasks generally
+tolerate less arousal than simple ones.
+
+Said plainly: we are not trying to get you to zero. Nothing gets done there
+either.
 
 Practical use:
 
@@ -159,10 +182,10 @@ People sometimes describe states as:
 - mobilized for fight or flight;
 - shut down, numb, or collapsed.
 
-This language can help name experience, but strong versions of polyvagal theory
-remain scientifically debated. Use the categories as descriptions, not as a
-complete anatomical diagnosis. You do not need to identify the exact cranial
-nerve politics before asking a friend to sit nearby.
+The language is genuinely useful for naming what is happening to you. The
+stronger anatomical claims built on top of it are still argued about, so treat
+the three states as descriptions rather than as a diagnosis. You do not need to
+settle the exact cranial nerve politics before asking a friend to sit nearby.
 
 ## The bathroom control panel
 
@@ -182,8 +205,8 @@ Check the boring variables:
 
 ## Comfort inventory
 
-Comfort is not a biochemical cheat code. It is a set of ordinary conditions
-that can reduce load and support regulation.
+Comfort is not a biochemical cheat code. It is a pile of ordinary conditions
+that quietly lower the load you are carrying.
 
 | Resource | Available? | Practical use |
 |---|---|---|
@@ -204,9 +227,10 @@ oxygen and judgement.
 
 ### Comfort inventory, without a score
 
-There is no validated number of checked boxes that proves safety. One resource
-can still help. Zero resources means the next action may be to obtain contact,
-water, warmth, medical help, or a safer environment.
+Do not count the boxes. There is no validated number of them that proves
+anything, and one resource is still one resource. If you checked none at all,
+that is not a verdict either — it just means your next action is probably to go
+get one: contact, water, warmth, medical help, or a safer room.
 
 ## Unhook from the thought
 
@@ -214,8 +238,9 @@ Try the WHO phrasing:
 
 > “I notice the thought that …”
 
-Not “the thought is false,” not “I must defeat it.” Place one grammatical layer
-between you and the sentence. Then ask:
+Not “the thought is false,” not “I must defeat it.” You are just putting one
+grammatical layer between you and the sentence, which is enough to stop it
+reading as a bulletin. Then ask:
 
 - What is the thought predicting?
 - What fact do I know right now?

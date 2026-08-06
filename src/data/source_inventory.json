@@ -474,7 +474,7 @@
         "https://doi.org/10.1016/j.xcrm.2022.100895"
       ],
       "used_at_lines": [
-        125
+        144
       ],
       "subguides": [
         "B"
@@ -490,7 +490,7 @@
         "https://www.who.int/publications/i/item/9789240003927"
       ],
       "used_at_lines": [
-        58
+        61
       ],
       "subguides": [
         "B"
@@ -661,7 +661,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/blutungen-und-blutstillung/blutungen/"
       ],
       "used_at_lines": [
-        181
+        184
       ],
       "subguides": [
         "C"
@@ -677,7 +677,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/verbrennungen/"
       ],
       "used_at_lines": [
-        213
+        216
       ],
       "subguides": [
         "C"
@@ -693,7 +693,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/knochenbruch/knochenbrueche/"
       ],
       "used_at_lines": [
-        235
+        238
       ],
       "subguides": [
         "C"
@@ -709,7 +709,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stabile-seitenlage/"
       ],
       "used_at_lines": [
-        130
+        133
       ],
       "subguides": [
         "C"
@@ -725,8 +725,8 @@
         "https://gesund.bund.de/notfallnummern"
       ],
       "used_at_lines": [
-        44,
-        366
+        46,
+        369
       ],
       "subguides": [
         "C"
@@ -742,7 +742,7 @@
         "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/"
       ],
       "used_at_lines": [
-        96
+        99
       ],
       "subguides": [
         "C"
@@ -758,7 +758,7 @@
         "https://doi.org/10.1161/01.STR.0000196957.55928.ab"
       ],
       "used_at_lines": [
-        289
+        292
       ],
       "subguides": [
         "C"
