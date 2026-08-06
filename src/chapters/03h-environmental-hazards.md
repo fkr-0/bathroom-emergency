@@ -1,8 +1,8 @@
 ---
-title: "Situation H — Environmental Hazards"
+title: "Orange Book — Environmental Hazards"
 chapter: "3H"
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/hazard_override_matrix.png
   - build/diagrams/dependency_continuity_map.png
@@ -10,7 +10,7 @@ dependencies:
   - build/diagrams/hazard_handoff_card.png
 ---
 
-# Situation H — The Environment May Be Unsafe
+# Orange Book — The Environment May Be Unsafe
 
 Some emergencies are not primarily *inside a person*. The room, building,
 appliance, air, wiring, or substance is the problem. In those cases the guide

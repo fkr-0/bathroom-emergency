@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "src" / "data"
 REGISTRY = DATA / "reference_ids.json"
 INDEX = DATA / "content_index.json"
-REF_RE = re.compile(r"^\[BEG:([OABCDHZPTR]):([SFGCDW]):(\d{3})\]$")
+REF_RE = re.compile(r"^\[BEG:([OABCDHZPSTR]):([SFGCDW]):(\d{3})\]$")
 errors: list[str] = []
 
 
@@ -51,10 +51,18 @@ if REGISTRY.exists() and INDEX.exists():
     retired = set(registry.get("retired_resource_keys", []))
     check(retired == set(ids) - set(active), "retired reference-key set drifted")
     check(not (set(active) & retired), "retired reference key is active")
-    check(
-        retired == {"section:09-version-history:4-5-0-23-july-2026-release-candidate"},
-        f"unexpected stable references retired during wording edits: {sorted(retired)}",
-    )
+    # Retired IDs remain reserved. Editorial restructuring may retire many
+    # headings at once; immutability matters more than preserving obsolete prose.
+    check(all(key in ids for key in retired), "retired reference is no longer reserved")
+    migrations = registry.get("resource_key_migrations", {})
+    check(len(migrations) == 8, f"expected 8 form-to-figure reference migrations, found {len(migrations)}")
+    record_by_key = {item.get("resource_key"): item for item in records}
+    for old_key, new_key in migrations.items():
+        check(old_key in retired, f"migrated key is not retired: {old_key}")
+        check(new_key in active, f"migration target is not active: {new_key}")
+        target = record_by_key.get(new_key, {})
+        check(ids.get(old_key) in target.get("legacy_public_refs", []), f"{new_key}: legacy reference alias missing")
+        check(bool(target.get("legacy_html_ids")), f"{new_key}: legacy HTML anchor missing")
     counts = Counter(item.get("kind") for item in records)
     for kind in ("S", "F", "G", "C", "D", "W"):
         check(counts[kind] > 0, f"reference kind {kind} has no records")
@@ -73,24 +81,40 @@ if REGISTRY.exists() and INDEX.exists():
         item.get("service_key")
         for item in records if item.get("kind") == "C" and item.get("service_key")
     }
-    forms = [item for item in records if item.get("kind") == "F"]
-    check(len(forms) == 18, f"expected 18 canonical forms, found {len(forms)}")
-    for form in forms:
-        check(bool(form.get("routes")), f"{form['title']}: no related route identities")
+    templates = [item for item in records if item.get("kind") == "F"]
+    figures = [item for item in records if item.get("kind") == "G"]
+    local_figures = [item for item in figures if item.get("prepared_by") == "deployer"]
+    check(len(templates) == 10, f"expected 10 canonical templates, found {len(templates)}")
+    check(len(figures) == 49, f"expected 49 canonical figures, found {len(figures)}")
+    check(len(local_figures) == 8, f"expected 8 deployer-completed figures, found {len(local_figures)}")
+
+    for item in [*templates, *local_figures]:
+        check(bool(item.get("routes")), f"{item['title']}: no related book identities")
         check(
-            set(form.get("routes", [])) <= route_ids,
-            f"{form['title']}: unknown route identity",
+            set(item.get("routes", [])) <= route_ids,
+            f"{item['title']}: unknown book identity",
         )
         check(
-            set(form.get("figure_ids", [])) <= figure_ids,
-            f"{form['title']}: unknown related figure",
+            set(item.get("figure_ids", [])) <= figure_ids,
+            f"{item['title']}: unknown related figure",
         )
         check(
-            set(form.get("support_keys", [])) <= service_keys,
-            f"{form['title']}: unknown support service",
+            set(item.get("support_keys", [])) <= service_keys,
+            f"{item['title']}: unknown support service",
         )
-        for field in ("purpose", "responsibility", "privacy"):
-            check(bool(form.get(field)), f"{form['title']}: missing {field}")
+        for field in ("purpose", "description", "resource_type", "interaction", "responsibility", "privacy"):
+            check(bool(item.get(field)), f"{item['title']}: missing {field}")
+
+    for template in templates:
+        check(template.get("resource_type") == "template", f"{template['title']}: not typed as template")
+        check(template.get("interaction") == "write", f"{template['title']}: template is not writable")
+
+    for figure in figures:
+        for field in ("title", "description", "resource_type", "interaction", "public_ref"):
+            check(bool(figure.get(field)), f"{figure.get('resource_key')}: missing {field}")
+        check(figure.get("resource_type") == "figure", f"{figure['title']}: not typed as figure")
+        check(figure.get("interaction") == "read-only", f"{figure['title']}: figure is not read-only")
+
 
 for name in (
     "global-content-index.md",
@@ -99,6 +123,7 @@ for name in (
     "deployment-index.md",
     "glossary-index.md",
     "form-index.md",
+    "template-index.md",
     "route-identity-index.md",
     "support-form-map.md",
 ):
@@ -109,10 +134,11 @@ for name in (
             check("[BEG:" in path.read_text(encoding="utf-8"), f"{name}: no stable references")
 
 for name, markers in {
-    "diagram-index.md": ("Illustration cross-reference", "Paired forms", "Route identity"),
-    "form-index.md": ("Route identities", "Related figures", "Support routes", "Privacy"),
+    "diagram-index.md": ("Figure catalogue", "Figure · read", "stable reference", "short description"),
+    "form-index.md": ("Template catalogue", "Template · write", "stable reference", "short description"),
+    "template-index.md": ("Template catalogue", "Template · write", "stable reference", "short description"),
     "route-identity-index.md": ("code, colour, pattern, and glyph", "Deliberate boundary"),
-    "support-form-map.md": ("Support handoff map", "Use these forms", "Related figures"),
+    "support-form-map.md": ("Support handoff map", "Use this resource", "Related figures"),
 }.items():
     path = ROOT / "build/generated" / name
     if path.exists():

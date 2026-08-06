@@ -15,8 +15,8 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION: str = PACKAGE["version"]
-RELEASE_DATE = "2026-08-02"
-SOURCE_REVIEW_DATE = "2026-07-26"
+RELEASE_DATE = "2026-08-06"
+SOURCE_REVIEW_DATE = "2026-08-06"
 
 
 def git_revision() -> str:

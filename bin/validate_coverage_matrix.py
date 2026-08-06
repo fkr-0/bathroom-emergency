@@ -35,12 +35,12 @@ if PATH.exists():
     by_id = {item.get("node"): item for item in nodes}
     check(data.get("release") == VERSION, "coverage matrix release drifted")
     check(data.get("status") == "canonical-cross-guide-coverage-matrix", "coverage status marker missing")
-    check(set(by_id) == {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"}, "coverage node set drifted")
-    check(len(nodes) == 10, f"expected ten coverage rows, found {len(nodes)}")
+    check(set(by_id) == {"O", "A", "B", "C", "D", "H", "Z", "P", "S", "T", "R"}, "coverage node set drifted")
+    check(len(nodes) == 11, f"expected eleven coverage rows, found {len(nodes)}")
     totals = data.get("totals", {})
-    check(totals.get("nodes") == 10, "coverage total node count drifted")
-    check(totals.get("sections", 0) >= 200, "coverage matrix has too few sections")
-    check(totals.get("sources", 0) >= 50, "coverage matrix has too few sources")
+    check(totals.get("nodes") == 11, "coverage total node count drifted")
+    check(totals.get("sections", 0) >= 220, "coverage matrix has too few sections")
+    check(totals.get("sources", 0) >= 60, "coverage matrix has too few sources")
     check(totals.get("reader_visuals", 0) >= 41, "coverage matrix has too few reader visuals")
     for item in nodes:
         node = item.get("node", "?")
@@ -60,6 +60,8 @@ if PATH.exists():
     check(by_id.get("A", {}).get("owned_visual_count", 0) >= 5, "A lacks five owned reader visuals")
     check(by_id.get("A", {}).get("readiness") == "released-standalone", "A is not marked as a released standalone")
     check(by_id.get("P", {}).get("source_count", 0) >= 4, "P lacks the operational source base needed for visual work")
+    check(by_id.get("S", {}).get("source_count", 0) >= 4, "S lacks a source base")
+    check(by_id.get("S", {}).get("readiness") == "released-standalone", "S is not released")
     check(by_id.get("O", {}).get("owned_visual_count", 0) >= 4, "O lacks four owned reader visuals")
     check(by_id.get("O", {}).get("readiness") == "released-standalone", "O is not marked as a released standalone")
     check(by_id.get("D", {}).get("owned_visual_count", 0) >= 4, "D lacks four owned reader visuals")
@@ -70,9 +72,9 @@ if PATH.exists():
 
 if FRAGMENT.exists():
     text = FRAGMENT.read_text(encoding="utf-8")
-    for marker in ("Source, visual, and standalone coverage matrix", "Per-guide provenance", "O — Small-Room Observatory", "A — Responsibility and Care", "D — Threat and Safe Place", "C — Body and First Aid", "Z — Outage and Continuity", "P — Professional Support"):
+    for marker in ("Source, visual, and standalone coverage matrix", "Per-guide provenance", "O — The Green Book", "A — The Amber Book", "D — The Blue Book", "C — The Red Book", "Z — The Olive Book", "P — The Indigo Book", "S — The Purple Book"):
         check(marker in text, f"coverage fragment missing marker: {marker}")
 
 if errors:
     raise SystemExit("Coverage validation failed:\n- " + "\n- ".join(errors))
-print(f"Coverage validation passed: ten graph nodes with current source, section, visual, and release provenance at {VERSION}.")
+print(f"Coverage validation passed: eleven books with current source, section, visual, and release provenance at {VERSION}.")

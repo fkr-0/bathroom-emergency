@@ -35,16 +35,17 @@ manifest = json.loads(DATA.read_text(encoding="utf-8"))
 nodes = {item["id"]: item for item in manifest["nodes"]}
 
 HATCHES = {
-    "dot-field": "..",
-    "concentric-rings": "OO",
-    "horizontal-waves": "---",
-    "diagonal-crosshatch": "xx",
-    "vertical-bars": "|||",
-    "diagonal-stripes": "///",
-    "staggered-brick": "++",
-    "node-lattice": "o-",
-    "blueprint-corners": "+.",
-    "square-grid": "++",
+    "pulse": "-.-",
+    "diamond": "xx",
+    "wave": "---",
+    "cross": "++",
+    "shield": "OO",
+    "zigzag": "///",
+    "crosshatch": "xx",
+    "dots": "..",
+    "speech": "oO",
+    "form-grid": "++",
+    "solid": "---",
 }
 
 
@@ -59,16 +60,17 @@ def finish(fig: plt.Figure, name: str, *, qa: bool = False) -> None:
 def pattern_svg(pattern: str, title: str) -> str:
     common = 'stroke="#111" stroke-width="2" fill="none" vector-effect="non-scaling-stroke"'
     shapes = {
-        "dot-field": '<g fill="#111"><circle cx="12" cy="12" r="2"/><circle cx="36" cy="36" r="2"/><circle cx="60" cy="12" r="2"/><circle cx="84" cy="36" r="2"/><circle cx="12" cy="60" r="2"/><circle cx="36" cy="84" r="2"/><circle cx="60" cy="60" r="2"/><circle cx="84" cy="84" r="2"/></g>',
-        "concentric-rings": f'<g {common}><circle cx="48" cy="48" r="11"/><circle cx="48" cy="48" r="25"/><circle cx="48" cy="48" r="39"/></g>',
-        "horizontal-waves": f'<g {common}><path d="M0 18 Q12 8 24 18 T48 18 T72 18 T96 18"/><path d="M0 48 Q12 38 24 48 T48 48 T72 48 T96 48"/><path d="M0 78 Q12 68 24 78 T48 78 T72 78 T96 78"/></g>',
-        "diagonal-crosshatch": f'<g {common}><path d="M-24 0 L72 96 M0 0 L96 96 M24 0 L120 96 M72 0 L-24 96 M96 0 L0 96 M120 0 L24 96"/></g>',
-        "vertical-bars": f'<g {common}><path d="M12 0 V96 M32 0 V96 M56 0 V96 M84 0 V96"/></g>',
-        "diagonal-stripes": f'<g {common}><path d="M-36 96 L36 0 M-6 96 L66 0 M24 96 L96 0 M54 96 L126 0"/></g>',
-        "staggered-brick": f'<g {common}><path d="M0 24 H96 M0 48 H96 M0 72 H96 M24 0 V24 M72 0 V24 M0 24 V48 M48 24 V48 M96 24 V48 M24 48 V72 M72 48 V72 M0 72 V96 M48 72 V96 M96 72 V96"/></g>',
-        "node-lattice": f'<g {common}><path d="M14 18 L48 48 L82 18 M48 48 L14 78 M48 48 L82 78"/></g><g fill="#111"><circle cx="14" cy="18" r="4"/><circle cx="82" cy="18" r="4"/><circle cx="48" cy="48" r="4"/><circle cx="14" cy="78" r="4"/><circle cx="82" cy="78" r="4"/></g>',
-        "blueprint-corners": f'<g {common}><path d="M4 28 V4 H28 M68 4 H92 V28 M92 68 V92 H68 M28 92 H4 V68 M18 18 H78 V78 H18 Z"/><path d="M48 18 V78 M18 48 H78" stroke-dasharray="4 4"/></g>',
-        "square-grid": f'<g {common}><path d="M0 24 H96 M0 48 H96 M0 72 H96 M24 0 V96 M48 0 V96 M72 0 V96"/></g>',
+        "pulse": f'<g {common}><path d="M0 50 H18 L27 50 L34 27 L43 72 L52 42 L61 50 H96"/></g>',
+        "diamond": f'<g {common}><path d="M24 4 L44 24 L24 44 L4 24 Z M72 4 L92 24 L72 44 L52 24 Z M48 52 L68 72 L48 92 L28 72 Z"/></g>',
+        "wave": f'<g {common}><path d="M0 18 Q12 8 24 18 T48 18 T72 18 T96 18"/><path d="M0 48 Q12 38 24 48 T48 48 T72 48 T96 48"/><path d="M0 78 Q12 68 24 78 T48 78 T72 78 T96 78"/></g>',
+        "cross": f'<g {common}><path d="M16 8 H32 V16 H40 V32 H32 V40 H16 V32 H8 V16 H16 Z M64 56 H80 V64 H88 V80 H80 V88 H64 V80 H56 V64 H64 Z"/></g>',
+        "shield": f'<g {common}><path d="M18 10 L42 18 V42 C42 58 31 70 18 78 C5 70 -6 58 -6 42 V18 Z M72 18 L96 26 V50 C96 66 85 78 72 86 C59 78 48 66 48 50 V26 Z"/></g>',
+        "zigzag": f'<g {common}><path d="M0 20 L16 4 L32 20 L48 4 L64 20 L80 4 L96 20 M0 58 L16 42 L32 58 L48 42 L64 58 L80 42 L96 58 M0 96 L16 80 L32 96 L48 80 L64 96 L80 80 L96 96"/></g>',
+        "crosshatch": f'<g {common}><path d="M-24 0 L72 96 M0 0 L96 96 M24 0 L120 96 M72 0 L-24 96 M96 0 L0 96 M120 0 L24 96"/></g>',
+        "dots": '<g fill="#111"><circle cx="12" cy="12" r="2"/><circle cx="36" cy="36" r="2"/><circle cx="60" cy="12" r="2"/><circle cx="84" cy="36" r="2"/><circle cx="12" cy="60" r="2"/><circle cx="36" cy="84" r="2"/><circle cx="60" cy="60" r="2"/><circle cx="84" cy="84" r="2"/></g>',
+        "speech": f'<g {common}><rect x="6" y="10" width="56" height="34" rx="9"/><path d="M20 44 L14 55 L34 44"/><rect x="36" y="50" width="54" height="32" rx="9"/><path d="M74 82 L82 91 L60 82"/></g>',
+        "form-grid": f'<g {common}><path d="M0 24 H96 M0 48 H96 M0 72 H96 M24 0 V96 M48 0 V96 M72 0 V96"/><path d="M5 5 H19 V19 H5 Z M53 53 H67 V67 H53 Z"/></g>',
+        "solid": f'<g {common}><path d="M0 18 H96 M0 48 H96 M0 78 H96"/></g>',
     }
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title"><title id="title">{title}</title><rect width="96" height="96" fill="#fff"/>{shapes[pattern]}</svg>\n'''
 
@@ -106,26 +108,28 @@ finish(fig, "subguide_identity_contact_sheet", qa=True)
 # Accessible overview projection. It shows the main routing spine; local pages
 # provide complete neighbour lists generated from the same manifest.
 overview_pos = {
-    "O": (0, 2.6),
-    "B": (-2.4, 1.2), "C": (0, 1.2), "H": (2.4, 1.2),
-    "A": (-2.4, -.4), "D": (0, -.4), "Z": (2.4, -.4),
-    "P": (-2.0, -2.0), "T": (0, -2.0), "R": (2.0, -2.0),
+    "O": (0, 3.0),
+    "B": (-2.7, 1.55), "C": (0, 1.55), "H": (2.7, 1.55),
+    "A": (-3.8, -.15), "D": (-1.3, -.15), "S": (1.3, -.15), "Z": (3.8, -.15),
+    "P": (-2.3, -2.0), "T": (0, -2.0), "R": (2.3, -2.0),
 }
 primary_edges = [
-    ("O", "B"), ("O", "C"), ("O", "H"), ("O", "A"), ("O", "D"),
-    ("O", "Z"), ("B", "C"), ("C", "H"), ("A", "D"), ("D", "P"),
-    ("H", "Z"), ("Z", "P"), ("P", "T"), ("T", "R"), ("P", "R"),
+    ("O", "B"), ("O", "C"), ("O", "H"), ("O", "S"), ("O", "A"),
+    ("B", "C"), ("B", "S"), ("B", "P"), ("C", "H"), ("C", "P"),
+    ("A", "D"), ("A", "P"), ("D", "P"), ("D", "S"), ("D", "H"),
+    ("H", "Z"), ("H", "P"), ("Z", "P"), ("Z", "R"),
+    ("P", "S"), ("P", "T"), ("P", "R"), ("S", "T"), ("T", "R"),
 ]
 for source, target in primary_edges:
     if target not in nodes[source]["outgoing"]:
         raise RuntimeError(f"overview edge {source}->{target} absent from manifest")
 
 fig, ax = plt.subplots(figsize=(10.5, 8.7))
-ax.set_xlim(-3.5, 3.5)
-ax.set_ylim(-3.25, 3.25)
+ax.set_xlim(-4.8, 4.8)
+ax.set_ylim(-3.1, 3.65)
 ax.axis("off")
-ax.set_title("The bathroom-guide graph", fontsize=22, fontweight="bold", color=INK, pad=18)
-ax.text(0, 3.02, "Orientation spine; every standalone page lists its complete neighbouring routes.", ha="center", va="center", color=MUTED, fontsize=9.5)
+ax.set_title("The eleven-book shelf", fontsize=22, fontweight="bold", color=INK, pad=18)
+ax.text(0, 3.02, "Handoffs, not required reading order.", ha="center", va="center", color=MUTED, fontsize=9.5)
 for source, target in primary_edges:
     x1, y1 = overview_pos[source]
     x2, y2 = overview_pos[target]
@@ -135,7 +139,7 @@ for node_id, (x, y) in overview_pos.items():
     ax.add_patch(Circle((x, y), .42, facecolor=node["colour"], edgecolor=INK, linewidth=2.1, hatch=HATCHES[node["pattern"]], zorder=3))
     ax.text(x, y, node_id, color="white", fontsize=17, fontweight="bold", ha="center", va="center", zorder=4)
     ax.text(x, y-.58, textwrap.fill(node["title"], 18), color=INK, fontsize=8.3, fontweight="bold", ha="center", va="top")
-ax.text(0, -3.08, "Immediate danger → 112. This graph orients; it never creates a queue before help.", ha="center", color=RED, fontsize=9, fontweight="bold")
+ax.text(0, -2.85, "Choose the closest title; move when the problem changes.", ha="center", color=RED, fontsize=9, fontweight="bold")
 finish(fig, "subguide_graph_overview")
 
 

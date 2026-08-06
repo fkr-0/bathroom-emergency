@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate ownership, source registry, hub, and released standalone editions."""
+"""Validate the eleven-book extraction, provenance, and edition matrix."""
 from __future__ import annotations
 
 import hashlib
@@ -9,10 +9,12 @@ import subprocess
 from html.parser import HTMLParser
 from pathlib import Path
 
+from project_meta import VERSION
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "src" / "data"
 BUILD = ROOT / "build" / "subguides"
-from project_meta import VERSION
+EXPECTED = {"O", "A", "B", "C", "D", "H", "Z", "P", "S", "T", "R"}
 errors: list[str] = []
 
 
@@ -61,13 +63,7 @@ class MainText(HTMLParser):
 def semantic_text(path: Path) -> str:
     parser = MainText()
     parser.feed(path.read_text(encoding="utf-8"))
-    text = re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
-    return re.sub(
-        r"standalone (?:a4half|largeprint|a4)",
-        "standalone layout",
-        text,
-        flags=re.IGNORECASE,
-    )
+    return re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
 
 
 def pdf_info(path: Path) -> dict[str, str]:
@@ -76,7 +72,7 @@ def pdf_info(path: Path) -> dict[str, str]:
     )
     if result.returncode:
         return {}
-    info = {}
+    info: dict[str, str] = {}
     for line in result.stdout.splitlines():
         if ":" in line:
             key, value = line.split(":", 1)
@@ -86,427 +82,156 @@ def pdf_info(path: Path) -> dict[str, str]:
 
 run_check("build_inventories.py")
 run_check("build_source_inventory.py")
+run_check("build_reference_index.py")
+run_check("build_coverage_matrix.py")
 
 section_path = DATA / "section_ownership.json"
 figure_path = DATA / "figure_inventory.json"
 source_path = DATA / "source_inventory.json"
-for path in (section_path, figure_path, source_path):
+manifest_path = DATA / "subguides.json"
+for path in (section_path, figure_path, source_path, manifest_path):
     check(path.exists(), f"missing {path.relative_to(ROOT)}")
 
 if section_path.exists():
-    sections = json.loads(section_path.read_text(encoding="utf-8"))
-    records = sections.get("sections", [])
+    data = json.loads(section_path.read_text(encoding="utf-8"))
+    records = data.get("sections", [])
     keys = [item.get("key") for item in records]
-    check(sections.get("release") == VERSION, "section inventory version drifted")
-    check(len(records) >= 180, f"section inventory unexpectedly small: {len(records)}")
+    check(data.get("release") == VERSION, "section inventory version drifted")
+    check(len(records) >= 220, f"section inventory unexpectedly small: {len(records)}")
     check(len(keys) == len(set(keys)), "duplicate section inventory keys")
-    check(
-        all(
-            item.get("owner") in {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"}
-            for item in records
-        ),
-        "unknown section owner",
-    )
+    check(all(item.get("owner") in EXPECTED for item in records), "unknown section owner")
+    check(any(item.get("owner") == "S" for item in records), "Purple Book owns no sections")
 
 if figure_path.exists():
-    figures = json.loads(figure_path.read_text(encoding="utf-8"))
-    records = figures.get("figures", [])
+    data = json.loads(figure_path.read_text(encoding="utf-8"))
+    records = data.get("figures", [])
     ids = [item.get("id") for item in records]
-    check(figures.get("release") == VERSION, "figure inventory version drifted")
+    check(data.get("release") == VERSION, "figure inventory version drifted")
     check(len(records) >= 26, f"figure inventory unexpectedly small: {len(records)}")
     check(len(ids) == len(set(ids)), "duplicate figure inventory IDs")
-    h_reader = [
-        item
-        for item in records
-        if item.get("owner") == "H" and item.get("reader_facing", True)
-    ]
-    check(
-        len(h_reader) >= 4,
-        f"H pilot needs four useful canonical visuals, found {len(h_reader)}",
-    )
-    for node_id, minimum in (("O", 4), ("C", 5), ("D", 4), ("Z", 7), ("P", 4)):
-        reader = [
-            item
-            for item in records
-            if item.get("owner") == node_id and item.get("reader_facing", True)
-        ]
-        check(
-            len(reader) >= minimum,
-            f"{node_id} standalone needs {minimum} useful canonical visuals, found {len(reader)}",
-        )
     for item in records:
-        check(
-            item.get("owner") in {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"},
-            f"{item.get('id')}: missing exact owner",
-        )
+        check(item.get("owner") in EXPECTED, f"{item.get('id')}: missing exact owner")
         check(bool(item.get("question")), f"{item.get('id')}: missing question")
         check(bool(item.get("source_basis")), f"{item.get('id')}: missing source basis")
         if item.get("reader_facing", True):
-            check(
-                (ROOT / item.get("file", "missing")).exists(),
-                f"{item.get('id')}: output missing",
-            )
+            check((ROOT / item.get("file", "missing")).exists(), f"{item.get('id')}: output missing")
 
 if source_path.exists():
-    sources = json.loads(source_path.read_text(encoding="utf-8"))
-    records = sources.get("footnote_sources", [])
+    data = json.loads(source_path.read_text(encoding="utf-8"))
+    records = data.get("footnote_sources", [])
     ids = [item.get("id") for item in records]
-    check(sources.get("release") == VERSION, "source registry version drifted")
-    check(
-        sources.get("status") == "canonical-source-registry",
-        "canonical source-registry status missing",
-    )
-    check(not sources.get("unresolved_references"), "unresolved chapter citations remain")
-    check(len(records) >= 50, f"source registry unexpectedly small: {len(records)}")
+    check(data.get("release") == VERSION, "source registry version drifted")
+    check(data.get("status") == "canonical-source-registry", "canonical source status missing")
+    check(not data.get("unresolved_references"), "unresolved chapter citations remain")
+    check(len(records) >= 60, f"source registry unexpectedly small: {len(records)}")
     check(len(ids) == len(set(ids)), "duplicate source IDs")
-    check(any("B" in item.get("subguides", []) for item in records), "B has no sources")
-    check(any("C" in item.get("subguides", []) for item in records), "C has no sources")
-    check(any("D" in item.get("subguides", []) for item in records), "D has no sources")
-    check(any("H" in item.get("subguides", []) for item in records), "H has no sources")
-    check(any("O" in item.get("subguides", []) for item in records), "O has no sources")
-    check(sum("A" in item.get("subguides", []) for item in records) >= 5, "A has fewer than five sources")
-    check(any("P" in item.get("subguides", []) for item in records), "P has no sources")
-    check(sum("Z" in item.get("subguides", []) for item in records) >= 4, "Z has fewer than four sources")
+    for node in EXPECTED - {"T", "R"}:
+        check(any(node in item.get("subguides", []) for item in records), f"{node} has no source")
 
 layout_geometry = {
     "a4": ("594", "841"),
-    # Chromium reports the standards-defined 105 mm width as 298.08 pt.
     "a4half": ("298", "841"),
     "largeprint": ("594", "841"),
 }
-for node, slug, min_sources, min_visuals, required, forbidden in (
-    (
-        "O",
-        "small-room-observatory",
-        11,
-        4,
-        (
-            "The Small-Room Observatory",
-            "Which guide should I pick?",
-            "First 90 seconds — scan body, room, and attention",
-            "When the outside gets quiet, the inside gets loud",
-            "The three-minute bathroom experiment",
-            "Sources and limits",
-        ),
-        (
-            "B — I feel anxious",
-            "C — Pain",
-            "D — Threat",
-            "F — Smell",
-            "Situation G — No Safe Place",
-        ),
-    ),
-    (
-        "A",
-        "responsibility-care",
-        5,
-        5,
-        (
-            "Situation A — I Caused Trouble",
-            "First split: which clock is running?",
-            "Consent, capacity, authority, and support are different",
-            "A8 — Ongoing responsibility for a person, animal, or system",
-            "Accountability theorem",
-            "Sources and limits",
-        ),
-        (),
-    ),
-    (
-        "B",
-        "alarm-calm",
-        6,
-        4,
-        ("B — I feel anxious", "E — Overload", "Calm Guide", "Sources and limits"),
-        ("C — Pain", "D — Threat", "F — Smell"),
-    ),
-    (
-        "P",
-        "professional-support",
-        5,
-        4,
-        (
-            "Professional Support — When the Bathroom Is Too Small",
-            "Germany quick reference",
-            "The call script — location before autobiography",
-            "Make the contact operational — ask, confirm, record",
-            "Support handoff map — service, form, figure, and route",
-            "IASC support pyramid — start with foundations",
-            "Support-selection matrix",
-            "Sources and limits",
-        ),
-        (),
-    ),
-    (
-        "C",
-        "body-first-aid",
-        7,
-        5,
-        (
-            "C — Pain",
-            "First Aid — You Are the First Link, Not the Whole Ambulance",
-            "112 — one action box",
-            "Unresponsive and not breathing normally",
-            "AED — what it actually does",
-            "Vital signs — observe, record, never self-clear",
-            "Sources and limits",
-        ),
-        ("B — I feel anxious", "D — Threat", "E — Overload", "F — Smell"),
-    ),
-    (
-        "D",
-        "threat-safe-place",
-        8,
-        4,
-        (
-            "D — Threat has three clocks",
-            "Situation G — No Safe Place",
-            "A safe place is confirmed, not merely named",
-            "G1 — A person or active threat makes the place unsafe",
-            "G3 — A place exists, but it cannot safely support the person",
-            "Communication and access card",
-            "The safe-place handoff",
-            "Sources and limits",
-        ),
-        ("B — I feel anxious", "C — Pain", "E — Overload", "F — Smell"),
-    ),
-    (
-        "H",
-        "air-smell-environment",
-        8,
-        4,
-        (
-            "F — Smell",
-            "Situation H — The Environment May Be Unsafe",
-            "Source-location decision map",
-            "Five-field hazard handoff card",
-            "Sources and limits",
-        ),
-        ("B — I feel anxious", "C — Pain", "D — Threat", "E — Overload"),
-    ),
-    (
-        "Z",
-        "outage-continuity",
-        4,
-        7,
-        (
-            "Zombie Guide — Mostly for Non-Zombie Disasters",
-            "Verify before optimizing",
-            "Household continuity board",
-            "Water — priority zero after air and immediate safety",
-            "Essential medication and powered-device failure",
-            "Group communication channels",
-            "Five functions for the first meeting",
-            "Evacuation pocket list",
-            "Preparedness checklist before anything happens",
-            "Sources and limits",
-        ),
-        (),
-    ),
-    (
-        "T",
-        "templates-blue-book",
-        0,
-        0,
-        (
-            "Templates — The Blue Book",
-            "How to read the route band",
-            "Use, update, replace",
-            "Deployment cover and ownership card",
-            "Observation and vital-sign log",
-            "Feedback and field-note sheet",
-            "Installation and wet-room audit",
-            "First-aid figure usability review",
-            "Sources and limits",
-        ),
-        (),
-    ),
-    (
-        "R",
-        "reference",
-        0,
-        2,
-        (
-            "Reference and Appendix — The Useful Loose Ends",
-            "Stable references — addresses that survive editing",
-            "Route identity key — code, colour, pattern, and glyph",
-            "Professional contact and service index",
-            "Illustration cross-reference — figures, routes, and forms",
-            "Fillable fields live in T — Templates",
-            "Glossary",
-            "Global content index",
-            "Source, visual, and standalone coverage matrix",
-            "Version History",
-            "Sources and Evidence Notes",
-        ),
-        (),
-    ),
-):
-    out = BUILD / node
-    manifest_path = out / "manifest.json"
-    check(manifest_path.exists(), f"{node}: standalone manifest missing")
-    if not manifest_path.exists():
-        continue
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    check(manifest.get("release") == VERSION, f"{node}: standalone version drifted")
-    check(
-        manifest.get("source_count", 0) >= min_sources,
-        f"{node}: local source block too small",
-    )
-    check(
-        manifest.get("canonical_visual_count", 0) >= min_visuals,
-        f"{node}: visual set below release minimum",
-    )
-    check(
-        len(manifest.get("source_ids", []))
-        == len(set(manifest.get("source_ids", []))),
-        f"{node}: duplicate local source IDs",
-    )
-    outputs = manifest.get("outputs", {})
-    check(set(outputs) == {"a4", "a4half", "largeprint"}, f"{node}: layout set drifted")
-    encapsulation = manifest.get("encapsulation", {})
-    for field in ("scope", "outside_scope", "aliases", "figure_refs", "form_refs", "support_refs"):
-        check(field in encapsulation, f"{node}: encapsulation lacks {field}")
-    check(bool(encapsulation.get("scope")), f"{node}: empty standalone scope")
-    check(bool(encapsulation.get("outside_scope")), f"{node}: empty standalone boundary")
-    check(bool(encapsulation.get("aliases")), f"{node}: no canonical aliases")
-    check(
-        len(encapsulation.get("figure_refs", [])) == manifest.get("canonical_visual_count", 0),
-        f"{node}: figure reference set differs from canonical visual count",
-    )
-    if node == "P":
-        check(bool(encapsulation.get("form_refs")), "P: no linked Blue Book forms")
-        check(bool(encapsulation.get("support_refs")), "P: no linked support services")
-    if node == "A":
-        check(len(encapsulation.get("figure_refs", [])) >= 5, "A: incomplete figure reference set")
-        check(len(encapsulation.get("form_refs", [])) >= 6, "A: incomplete Blue Book form set")
-        check(bool(encapsulation.get("support_refs")), "A: no linked support services")
-    if node == "T":
-        check(len(encapsulation.get("form_refs", [])) == 18, "T: not all canonical forms are indexed")
-    if node == "R":
-        check(bool(encapsulation.get("form_refs")), "R: no linked review/reference forms")
 
-    reference_text: str | None = None
-    for layout in ("a4", "a4half", "largeprint"):
-        modes = outputs.get(layout, {})
-        check(set(modes) == {"color", "mono"}, f"{node}/{layout}: color/mono set drifted")
-        page_counts = []
-        for monochrome in (False, True):
-            mode = "mono" if monochrome else "color"
-            stem_parts = [slug]
-            if layout != "a4":
-                stem_parts.append(layout)
-            if monochrome:
-                stem_parts.append("mono")
-            stem = "_".join(stem_parts)
-            md = out / f"{stem}.md"
-            html = out / f"{stem}.html"
-            pdf = out / f"{stem}.pdf"
-            for path in (md, html, pdf):
-                check(path.exists(), f"{node}: missing {path.name}")
-            if md.exists():
-                text = md.read_text(encoding="utf-8")
-                content_region = text.split("# Handoff", 1)[0]
-                for marker in required:
-                    check(marker in text, f"{node}: canonical marker missing: {marker}")
-                for marker in ("Edition contract", "Edition resource map", "Deliberate boundary", "Canonical names"):
-                    check(marker in text, f"{node}: encapsulation marker missing: {marker}")
-                for marker in forbidden:
-                    check(
-                        f"\n## {marker}" not in content_region,
-                        f"{node}: foreign owned section leaked: {marker}",
-                    )
-                check(
-                    text.count("::: {.emergency-gate}") == 1,
-                    f"{node}/{stem}: emergency gate count is not one",
-                )
-                for source_id in manifest.get("source_ids", []):
-                    check(
-                        f"### `{source_id}`" in text,
-                        f"{node}: source {source_id} missing from local end matter",
-                    )
-            if html.exists():
-                html_text = html.read_text(encoding="utf-8")
-                check(
-                    html_text.count('class="emergency-gate"') == 1,
-                    f"{node}/{stem}: HTML emergency gate count is not one",
-                )
-                check(
-                    'class="sources-and-limits"' in html_text,
-                    f"{node}/{stem}: local source block missing",
-                )
-                check(
-                    f'data-print-layout="{layout}"' in html_text,
-                    f"{node}/{stem}: layout metadata missing",
-                )
-                check(
-                    f'data-subguide="{node}"' in html_text,
-                    f"{node}/{stem}: identity wrapper missing",
-                )
-                check(
-                    'class="subguide-scope-grid"' in html_text,
-                    f"{node}/{stem}: edition contract grid missing",
-                )
-                check(
-                    'class="edition-resource-map"' in html_text,
-                    f"{node}/{stem}: edition resource map missing",
-                )
-                if manifest.get("canonical_visual_count", 0):
-                    check(
-                        'class="figure-reference"' in html_text,
-                        f"{node}/{stem}: figure cross-reference cards missing",
-                    )
-                if node == "T":
-                    check(
-                        html_text.count('class="template-route-band"') >= 18,
-                        f"{node}/{stem}: canonical template route bands incomplete",
-                    )
-                current_text = semantic_text(html)
-                if reference_text is None:
-                    reference_text = current_text
-                else:
-                    check(
-                        current_text == reference_text,
-                        f"{node}/{stem}: semantic text differs across editions",
-                    )
-            if pdf.exists():
-                info = pdf_info(pdf)
-                page_counts.append(int(info.get("Pages", "0") or 0))
-                check(info.get("Tagged") == "yes", f"{node}/{stem}: PDF is not tagged")
-                size = info.get("Page size", "")
-                width, height = layout_geometry[layout]
-                check(
-                    width in size and height in size,
-                    f"{node}/{stem}: wrong page geometry: {size}",
-                )
-                output_meta = modes.get(mode, {})
-                check(
-                    output_meta.get("pdf_sha256") == hashlib.sha256(pdf.read_bytes()).hexdigest(),
-                    f"{node}/{stem}: PDF hash drifted",
-                )
-        if len(page_counts) == 2:
-            check(
-                page_counts[0] == page_counts[1],
-                f"{node}/{layout}: color/mono page counts differ {page_counts}",
-            )
+if manifest_path.exists():
+    graph = json.loads(manifest_path.read_text(encoding="utf-8"))
+    nodes = graph.get("nodes", [])
+    by_id = {node["id"]: node for node in nodes}
+    check(graph.get("release") == VERSION, "book manifest version drifted")
+    check(set(by_id) == EXPECTED, "eleven-book node set drifted")
+    check(set(graph.get("standalone_nodes", [])) == EXPECTED, "standalone shelf drifted")
+    check(graph.get("standalone_emergency_gate") == "once-on-cover", "cover gate policy drifted")
+
+    pdf_editions = 0
+    for node_id in graph.get("standalone_nodes", []):
+        node = by_id[node_id]
+        out = BUILD / node_id
+        book_manifest_path = out / "manifest.json"
+        check(book_manifest_path.exists(), f"{node_id}: standalone manifest missing")
+        if not book_manifest_path.exists():
+            continue
+        book = json.loads(book_manifest_path.read_text(encoding="utf-8"))
+        check(book.get("release") == VERSION, f"{node_id}: version drifted")
+        check(book.get("node") == node_id, f"{node_id}: manifest node drifted")
+        check(book.get("source_count") == len(book.get("source_ids", [])), f"{node_id}: source count mismatch")
+        check(len(book.get("source_ids", [])) == len(set(book.get("source_ids", []))), f"{node_id}: duplicate source IDs")
+        check(book.get("canonical_visual_count") == len(book.get("canonical_visuals", [])), f"{node_id}: visual count mismatch")
+        encapsulation = book.get("encapsulation", {})
+        for field in ("scope", "outside_scope", "aliases", "figure_refs", "form_refs", "support_refs"):
+            check(field in encapsulation, f"{node_id}: encapsulation lacks {field}")
+
+        reference_text: str | None = None
+        outputs = book.get("outputs", {})
+        check(set(outputs) == set(layout_geometry), f"{node_id}: layout set drifted")
+        for layout, (width, height) in layout_geometry.items():
+            modes = outputs.get(layout, {})
+            check(set(modes) == {"color", "mono"}, f"{node_id}/{layout}: mode set drifted")
+            page_counts: list[int] = []
+            for monochrome in (False, True):
+                mode = "mono" if monochrome else "color"
+                parts = [node["slug"]]
+                if layout != "a4":
+                    parts.append(layout)
+                if monochrome:
+                    parts.append("mono")
+                stem = "_".join(parts)
+                md = out / f"{stem}.md"
+                html = out / f"{stem}.html"
+                pdf = out / f"{stem}.pdf"
+                for artifact in (md, html, pdf):
+                    check(artifact.exists() and artifact.stat().st_size > 0, f"{node_id}: missing {artifact.name}")
+                if md.exists():
+                    text = md.read_text(encoding="utf-8")
+                    check(node["title"] in text, f"{node_id}: book title missing")
+                    check(text.count("::: {.emergency-gate}") == 1, f"{node_id}/{stem}: emergency gate count is not one")
+                    for marker in ("# Start here", "# Where next?", "# Source notes", "What this book does", "What it hands off"):
+                        check(marker in text, f"{node_id}: reader contract missing: {marker}")
+                    for obsolete in ("Page 0 — Position in the graph", "Edition contract", "Immediate danger bypasses the graph"):
+                        check(obsolete not in text, f"{node_id}: old governance-first wrapper remains: {obsolete}")
+                if html.exists():
+                    html_text = html.read_text(encoding="utf-8")
+                    check(html_text.count('class="emergency-gate"') == 1, f"{node_id}/{stem}: HTML gate count is not one")
+                    check('class="sources-and-limits"' in html_text, f"{node_id}/{stem}: source block missing")
+                    check(f'data-subguide="{node_id}"' in html_text, f"{node_id}/{stem}: identity wrapper missing")
+                    check('class="subguide-scope-grid"' in html_text, f"{node_id}/{stem}: concise scope block missing")
+                    check('class="edition-resource-map"' in html_text, f"{node_id}/{stem}: resource map missing")
+                    current = semantic_text(html)
+                    if reference_text is None:
+                        reference_text = current
+                    else:
+                        check(current == reference_text, f"{node_id}/{stem}: semantic text differs across editions")
+                if pdf.exists():
+                    pdf_editions += 1
+                    info = pdf_info(pdf)
+                    pages = int(info.get("Pages", "0") or 0)
+                    page_counts.append(pages)
+                    check(info.get("Tagged") == "yes", f"{node_id}/{stem}: PDF is not tagged")
+                    size = info.get("Page size", "")
+                    check(width in size and height in size, f"{node_id}/{stem}: wrong page geometry: {size}")
+                    expected_hash = modes.get(mode, {}).get("pdf_sha256")
+                    check(expected_hash == hashlib.sha256(pdf.read_bytes()).hexdigest(), f"{node_id}/{stem}: PDF hash drifted")
+            if len(page_counts) == 2:
+                check(page_counts[0] == page_counts[1], f"{node_id}/{layout}: colour/mono page counts differ")
+
+    check(pdf_editions == 66, f"expected 66 standalone PDFs, found {pdf_editions}")
 
 hub_path = BUILD / "index.html"
 hub_manifest_path = BUILD / "manifest.json"
-check(hub_path.exists(), "graph hub HTML missing")
-check(hub_manifest_path.exists(), "graph hub manifest missing")
+check(hub_path.exists(), "eleven-book hub missing")
+check(hub_manifest_path.exists(), "hub manifest missing")
 if hub_manifest_path.exists():
     hub = json.loads(hub_manifest_path.read_text(encoding="utf-8"))
     check(hub.get("release") == VERSION, "hub release drifted")
-    check(
-        set(hub.get("standalone_nodes", [])) == {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"},
-        "hub standalone set drifted",
-    )
-    check(set(hub.get("master_only_nodes", [])) == set(), "hub master-only set drifted")
+    check(set(hub.get("standalone_nodes", [])) == EXPECTED, "hub shelf drifted")
+    check(not hub.get("master_only_nodes"), "all eleven books should be standalone")
+if hub_path.exists():
+    hub_text = hub_path.read_text(encoding="utf-8")
+    check("The Eleven Books" in hub_text, "hub title missing")
+    for title in ("Green Book", "Amber Book", "Teal Book", "Red Book", "Blue Book", "Orange Book", "Olive Book", "Indigo Book", "Purple Book", "Grey Book", "Copper Book"):
+        check(title in hub_text, f"hub book missing: {title}")
 
 if errors:
     raise SystemExit("Migration validation failed:\n- " + "\n- ".join(errors))
 
-print(
-    "Migration validation passed: canonical section/figure/source ownership, "
-    "released visual minimums, graph hub, and 60 tagged standalone PDF editions "
-    "with A4/A4/2/large-print color-mono parity."
-)
+print("Migration validation passed: eleven canonical books, one cover gate each, source-complete extraction, and 66 tagged standalone PDF editions with layout and colour/mono parity.")

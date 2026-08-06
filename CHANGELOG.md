@@ -1,5 +1,51 @@
 # Changelog
 
+## 4.14.0-alt.2 — 2026-08-06
+
+### Changed
+
+- repaired the figure and template layout grammar so each resource is one visual group rather than a heading, image, route dashboard, and reference card competing for attention;
+- reduced the public resource model to **Figure · Read only** and **Template · Write**;
+- reclassified eight deployer-completed local reference sheets as figures, bringing the public inventory to 49 figures and 10 templates;
+- added a title, stable reference, and short description to every figure and template;
+- separated the Grey Book contents into local reference figures and reusable templates and generated matching Copper Book catalogues;
+- preserved former form references for the eight local figures as legacy anchors rather than silently recycling them;
+- updated README, deployment instructions, roadmap, in-guide history, landing metrics, downloads, and feedback wording to the same model;
+- linked the landing and download pages directly to `[BEG:T:F:005] Feedback and field-note sheet`;
+- made clean standalone builds remove stale pre-Grey-Book output aliases before rendering;
+- made selected guide builds regenerate diagrams and reference inventories before rendering so stale depictions cannot survive behind current prose.
+
+### Compatibility
+
+- active stable references retain their assigned meaning;
+- the eight migrated local sheets have new canonical G references while their former F references remain reserved and resolve through legacy HTML anchors;
+- historical changelog and release-plan terminology remains unchanged where it accurately describes an older release.
+
+### Verification
+
+- the complete six-edition master matrix and all 66 standalone PDF editions build from one source tree;
+- reference, migration, layout, density, accessibility, overflow, browser, site, and build-matrix gates pass;
+- site metadata distinguishes 49 public figures from 41 authored visual depictions;
+- local build and tagging do not push, publish, deploy, or run the Pages deployment workflow.
+
+## 4.14.0-alt.1 — 2026-08-06
+
+### Changed
+
+- integrated the 4.x-alt editorial and visual direction into the mature main-line build;
+- replaced the ten-node naming layer with eleven memorable colour books while preserving stable route IDs;
+- made the Green Body Owner’s Manual, Purple Social Field Guide, and Orange Natural Disasters book canonical;
+- shortened the opening into an adult, practical book map and moved graph/provenance material behind the content;
+- retained jokes and direct address while removing repetitive safety-preface language;
+- rebuilt unsafe alternate overclaims about disaster shelter, emergency water, medication, fainting, and body interpretation;
+- replaced dense governance-first standalone wrappers with reader questions and compact handoffs;
+- expanded the standalone matrix from 60 to 66 tagged PDF editions.
+
+### Verification
+
+- all eleven books build from canonical chapters with one cover emergency gate each;
+- source, route, accessibility, stable-reference, layout, and colour/monochrome contracts remain active across the expanded matrix.
+
 ## 4.13.1 — 2026-08-02
 
 ### Made offline rendering deterministic and quiet

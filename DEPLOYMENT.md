@@ -1,9 +1,9 @@
 # Deploying the Bathroom Emergency Guide
 
 A deployment is not “print PDF, place near toilet, achieve resilience.” It is a
-small maintained installation: a chosen edition, verified local facts, writable
-templates, visible revision information, basic supplies, and a person who knows
-when the copy must be replaced.
+small maintained installation: a chosen edition, verified local reference
+figures, writable templates, visible revision information, basic supplies, and
+a person who knows when the copy must be replaced.
 
 ## Roles
 
@@ -25,13 +25,13 @@ when the copy must be replaced.
    - large print when the standard edition is not comfortably readable;
    - monochrome only after checking that pattern, labels, and contrast remain
      legible on the actual printer.
-3. Fill the required fields in `src/data/deployment_fields.json` or the Blue Book
-   forms.
-   - keep each detached form’s stable reference, route band, privacy class, and
-     local review date attached;
+3. Complete the required fields in `src/data/deployment_fields.json` and the
+   matching Grey Book figures or templates.
+   - keep each detached resource’s title, stable reference, short description,
+     privacy class, and local review date attached;
    - do not crop away route codes or patterns merely because the colour looks
      sufficient on one printer;
-   - when a form names figures or support services, keep those references with
+   - when a resource names figures or support services, keep those references with
      the deployed packet or confirm that they remain immediately findable.
 4. Verify every local number from an official or directly responsible source.
 5. Mark private and context-sensitive fields; do not expose hidden-key, medical,
@@ -39,7 +39,7 @@ when the copy must be replaced.
 6. Add writing tools, light, and charging support.
 7. Test one route: find the address, choose 112 versus 116 117, find a local
    backup, and open the online guide without relying on a QR code alone.
-8. Complete the **Installation and wet-room audit** in the Blue Book under the
+8. Complete the **Installation and wet-room audit** in the Grey Book under the
    actual light, reach, moisture, privacy, and page-turning conditions.
 9. Record the guide version, build commit, local customization revision, last
    check, and next check.
@@ -103,7 +103,7 @@ operations, access channels, and after-hours routes still vary.
 
 ## Object- and person-specific safe places
 
-A destination is not safe because a form calls it “safe.” Confirm the features
+A destination is not safe because a local figure calls it “safe.” Confirm the features
 that matter:
 
 | Need | Confirmation question |
@@ -139,16 +139,16 @@ pages requires two hands.
 
 A folder or open-front box can align its visible face with the guide cover so the
 project announces itself instead of resembling archived appliance warranties.
-Use dividers for master guide, Blue Book templates, local cards, and replacement
-blanks.
+Use dividers for the master guide, Grey Book local reference figures, private
+templates, and replacement blanks.
 
-Whichever installation method is used, test it with the Blue Book’s
+Whichever installation method is used, test it with the Grey Book’s
 **Installation and wet-room audit**. A sleeve that looks excellent on a desk may
 be unreadable under bathroom glare or impossible to turn with one hand.
 
 ### Wall panel plus takeaways
 
-Keep only shared-safe orientation and contact cards visible. Put private forms in
+Keep only shared-safe orientation and contact figures visible. Put private templates in
 a closed section. A QR code may link to `https://be.fkr.dev`, but print the URL
 and retain an offline route because batteries and networks are unusually fond of
 failing during examples about continuity.
@@ -200,7 +200,7 @@ ignored by Git and should be regenerated from tracked sources.
 
 - `build/html/guide.html` — complete interactive HTML guide;
 - `build/pdf/` — master PDF variants;
-- `build/subguides/` — graph hub and standalone O, B, C, D, H, Z, P, T, and R families;
+- `build/subguides/` — eleven-book shelf and standalone O, A, B, C, D, H, Z, P, S, T, and R families;
 - `build/site/index.html` — modern project landing page;
 - `build/site/deploy/index.html` — local-only deployment planner;
 - `build/site/downloads/index.html` — master and standalone download catalogue;
@@ -277,7 +277,7 @@ At each check:
 2. verify required local fields and every time-sensitive contact;
 3. confirm that private information is still appropriately protected;
 4. charge lights and power banks; test cables;
-5. replace used forms and dry pens with functioning pencils;
+5. replace used templates, stale local figures, and dry pens with functioning pencils;
 6. compare local version with the latest approved release;
 7. run one tabletop route with a willing household member;
 8. use the route-drill log to record delay, wrong turns, and author coaching;

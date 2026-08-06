@@ -4,6 +4,23 @@ The guide is now broad enough that “add more chapters” is not a strategy. Fu
 work should improve **routing coverage**, **local usefulness**, and **evidence
 quality** without turning the first minute into a literature review.
 
+## Current release state
+
+The active experimental line is **4.14.0-alt.2**. It has eleven standalone
+colour books, 49 figures, 10 templates, 66 standalone PDF editions, and one
+shared stable-reference registry. The current release work is no longer about
+adding another top-level book. It is about reader review, field testing,
+documentation accuracy, and making local deployment evidence as inspectable as
+the build evidence.
+
+Immediate open work:
+
+- review representative master and standalone contact sheets with readers;
+- test figures and templates in actual wet-room installations;
+- test first-aid depictions with trained instructors and novice readers;
+- verify that the feedback mailbox and response workflow work operationally;
+- promote or retire the experimental `alt` line only after that evidence exists.
+
 ## Design invariants
 
 Every extension must preserve these rules:
@@ -563,3 +580,27 @@ Tracked in `docs/plans/subguide-source-localization.md`.
 
 Those topics may be scientifically interesting. They are not automatically good
 bathroom furniture.
+
+### 4.14.0-alt.1 — Eleven-book editorial synthesis — experimental
+
+- [x] preserve 4.13.1 as the technical baseline;
+- [x] import Green, Purple, and Orange as first-class canonical books;
+- [x] apply colour-book titles and alt-derived adult humour across the shelf;
+- [x] remove governance-first standalone wrappers and repetitive safety framing;
+- [x] retain route, source, accessibility, stable-reference, and release contracts;
+- [ ] complete reader review of all master and standalone contact sheets before promoting the experiment.
+
+### 4.14.0-alt.2 — Resource grammar and release-documentation pass
+
+- [x] classify every public resource as either **Figure · Read only** or
+  **Template · Write**;
+- [x] reclassify eight deployer-completed local sheets as figures while
+  retaining their former stable references as legacy aliases;
+- [x] require title, stable reference, and short description on all 49 figures
+  and 10 templates;
+- [x] update README, deployment instructions, roadmap, landing metrics, feedback
+  wording, and generated catalogues to the same model;
+- [x] remove stale pre-Grey-Book output aliases from clean standalone builds;
+- [x] rebuild and validate all six master and 66 standalone editions;
+- [ ] complete real-reader and real-installation review before promoting the
+  experimental line.

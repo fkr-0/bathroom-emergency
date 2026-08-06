@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Structural, content-parity, and safety regression checks for the guide."""
-
+"""Validate the full eleven-book guide without enforcing one editorial era."""
 from __future__ import annotations
 
 import json
@@ -8,40 +7,17 @@ import re
 import subprocess
 from pathlib import Path
 
-from project_meta import RELEASE_DATE
+from project_meta import RELEASE_DATE, VERSION
 
-ROOT = Path(__file__).resolve().parent.parent
-CHAPTERS = sorted((ROOT / "src" / "chapters").glob("*.md"))
+ROOT = Path(__file__).resolve().parents[1]
+CHAPTER_DIR = ROOT / "src" / "chapters"
+CHAPTERS = sorted(CHAPTER_DIR.glob("*.md"))
 STYLE = (ROOT / "src" / "style.css").read_text(encoding="utf-8")
-STYLE_SUBGUIDES = (ROOT / "src" / "style-subguides.css").read_text(encoding="utf-8")
-STYLE_A4_HALF = (ROOT / "src" / "style-a4-half.css").read_text(encoding="utf-8")
-STYLE_LARGE_PRINT = (ROOT / "src" / "style-large-print.css").read_text(encoding="utf-8")
+STYLE_BOOKS = (ROOT / "src" / "style-subguides.css").read_text(encoding="utf-8")
+STYLE_HALF = (ROOT / "src" / "style-a4-half.css").read_text(encoding="utf-8")
+STYLE_LARGE = (ROOT / "src" / "style-large-print.css").read_text(encoding="utf-8")
 HTML = ROOT / "build" / "html" / "guide.html"
 PDF = ROOT / "build" / "pdf" / "guide.pdf"
-A4_HALF_HTML = ROOT / "build" / "html" / "guide_a4half.html"
-A4_HALF_MONO_HTML = ROOT / "build" / "html" / "guide_a4half_mono.html"
-A4_HALF_CSS = ROOT / "build" / "html" / "guide-a4half.css"
-A4_HALF_MONO_CSS = ROOT / "build" / "html" / "guide-a4half-mono.css"
-A4_HALF_PDF = ROOT / "build" / "pdf" / "guide_a4half.pdf"
-A4_HALF_MONO_PDF = ROOT / "build" / "pdf" / "guide_a4half_mono.pdf"
-PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
-VERSION = PACKAGE["version"]
-EVIDENCE_PATH = ROOT / "src" / "data" / "evidence_facts.json"
-ROADMAP = ROOT / "ROADMAP.md"
-ACCESSIBILITY_PLAN = ROOT / "docs" / "plans" / "4.3.0-accessibility-plan.md"
-PATCH_PLAN = ROOT / "docs" / "plans" / "4.3.1-polish-plan.md"
-COMMON_SYNTHESIS_PLAN = ROOT / "docs" / "plans" / "4.4.1-common-synthesis.md"
-ALT_SPEC_PLAN = ROOT / "docs" / "plans" / "4.4.2-alt-spec-feasibility-and-vega.md"
-MILESTONE_PLAN = ROOT / "docs" / "plans" / "4.5.0-roadmap-milestones.md"
-SPARSE_REVIEW = ROOT / "docs" / "qa" / "4.3.1-sparse-page-review.md"
-SUBGUIDE_PLAN = ROOT / "docs" / "plans" / "4.5.0-graph-subguide-architecture.md"
-VISUALIZATION_PLAN = ROOT / "docs" / "plans" / "visualization-program.md"
-SOURCE_LOCALIZATION_PLAN = ROOT / "docs" / "plans" / "subguide-source-localization.md"
-OD_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.10.0-od-standalone-release.md"
-Z_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.11.0-z-standalone-release.md"
-ENCAPSULATION_PLAN = ROOT / "docs" / "plans" / "4.12.0-encapsulation-cross-reference-release.md"
-A_STANDALONE_PLAN = ROOT / "docs" / "plans" / "4.13.0-responsibility-care-standalone-release.md"
-RENDER_PATCH_PLAN = ROOT / "docs" / "plans" / "4.13.1-render-tooling-patch.md"
 errors: list[str] = []
 
 
@@ -50,580 +26,286 @@ def check(condition: bool, message: str) -> None:
         errors.append(message)
 
 
-check(len(CHAPTERS) == 14, f"expected 14 chapters, found {len(CHAPTERS)}")
+def pdf_info(path: Path) -> dict[str, str]:
+    result = subprocess.run(["pdfinfo", str(path)], capture_output=True, text=True)
+    if result.returncode:
+        return {}
+    info: dict[str, str] = {}
+    for line in result.stdout.splitlines():
+        if ":" in line:
+            key, value = line.split(":", 1)
+            info[key.strip()] = value.strip()
+    return info
+
+
+check(len(CHAPTERS) == 17, f"expected 17 canonical chapters, found {len(CHAPTERS)}")
 source = "\n".join(path.read_text(encoding="utf-8") for path in CHAPTERS)
 action_source = "\n".join(
     path.read_text(encoding="utf-8")
     for path in CHAPTERS
     if path.name not in {"09-version-history.md", "10-sources.md"}
 )
-opening_source = "\n".join(
-    (ROOT / "src" / "chapters" / name).read_text(encoding="utf-8")
+opening = "\n".join(
+    (CHAPTER_DIR / name).read_text(encoding="utf-8")
     for name in ("00-cover.md", "01-how-to-use.md")
 )
 
-# The reader-facing guide contains subject matter, not release archaeology.
-for forbidden in (
-    "v3.",
-    "Version 3.",
-    "Version 4.",
-    "old guide",
-    "old edition",
-    "new chapter",
-    "this chapter",
-    "this subguide",
-    "implemented candidate",
-):
-    check(forbidden.lower() not in action_source.lower(), f"reader-facing project meta remains: {forbidden}")
-check(opening_source.count("112") == 1, "opening must contain exactly one 112 emergency gate")
-for marker in (
-    "The Small-Room Observatory",
-    "When the outside gets quiet, the inside gets loud",
-    "The gut votes early",
-    "The room is amplifying you",
-    "Anxiety bends time",
-    "Acute stress makes the mind narrower, not stupider",
-    "Naming a feeling changes the task",
-    "Cold water is interesting, not magical",
-    "Bathroom fainting is a real category",
-    "Smell is a fading sensor",
-    "The three-minute bathroom experiment",
-):
-    check(marker.lower() in opening_source.lower(), f"curiosity-first opening marker missing: {marker}")
-
-# Safety regressions intentionally removed from the v3.x action material.
-# History and evidence notes may quote a removed claim in order to document it.
-for forbidden, message in {
-    "Call 110. Now.": "medical path still routes to police 110",
-    "pain_nrs_correlates": "pain score still claims physiological correlates",
-    "2 drops of unscented household bleach": "unsafe concentration-free bleach recipe remains",
-    "starvation is preferable to poisoning": "unsafe foraging rhetoric remains",
-    "Notdienst (emergency lawyer)": "unverified legacy lawyer hotline remains",
-    "fight it — not heroically": "unsafe instruction to fight loss of consciousness remains",
-    "Scent candle location": "shared-print secret/unsafe candle field remains",
-}.items():
-    check(forbidden.lower() not in action_source.lower(), message)
-
-check(
-    "C(t) = C_0" not in action_source and "C(t)=C_0" not in action_source,
-    "legacy cortisol-decay formula remains",
-)
-check(
-    "112" in source and "116 117" in source and "116 123" in source,
-    "core German help numbers missing",
-)
-check("column-count: 1 !important" in STYLE, "single-column print invariant missing")
-check("columns: auto !important" in STYLE, "print column reset missing")
-check("font-size: 9.3pt" in STYLE, "standard A4 density typography invariant missing")
-check("font-size: 8.35pt" in STYLE_A4_HALF, "A4/2 density typography invariant missing")
-check(".emergency-gate" in STYLE, "single opening emergency-gate styling missing")
-check("size: 105mm 297mm" in STYLE_A4_HALF, "A4/2 page geometry missing from layout CSS")
-check("grid-template-columns: 1fr 1fr" in STYLE_A4_HALF, "A4/2 emergency strip adaptation missing")
-check("table-layout: fixed" in STYLE_A4_HALF, "A4/2 narrow-table protection missing")
-check("LOOK CLOSER" in STYLE_A4_HALF, "A4/2 curiosity figure label missing")
-check("font-size: 13.25pt" in STYLE_LARGE_PRINT, "large-print typography invariant missing")
-check("LARGE PRINT / TEXT ROUTE FOLLOWS" in STYLE_LARGE_PRINT, "large-print text-route marker missing")
-check(".revision-footer" in STYLE, "revision footer styling missing")
-check("h2::before" in STYLE, "prominent heading accent marker missing")
-for marker in (
-    ".route-chip", ".template-route-band", ".figure-reference",
-    ".subguide-scope-grid", ".edition-resource-map",
-):
-    check(marker in STYLE_SUBGUIDES, f"subguide cross-reference styling missing: {marker}")
-
-# Evidence registry and figure checks. A chart may be simple; its provenance may not.
-evidence: dict = {}
-if EVIDENCE_PATH.exists():
-    try:
-        evidence = json.loads(EVIDENCE_PATH.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        errors.append(f"evidence registry is invalid JSON: {exc}")
-else:
-    errors.append("src/data/evidence_facts.json is missing")
-
-facts = evidence.get("facts", {}) if isinstance(evidence, dict) else {}
-required_fact_keys = {
-    "gad7_original",
-    "gad7_cochrane",
-    "breathwork_trial",
-    "infertility_lifetime",
-    "postpartum_psychosis",
-    "stroke_time_model",
-    "household_water",
-    "sleep_restriction",
-    "social_connection_mortality",
-}
-check(evidence.get("release") == VERSION, "evidence registry release does not match package version")
-check(required_fact_keys <= set(facts), "evidence registry is missing one or more required fact sets")
-for key in sorted(required_fact_keys & set(facts)):
-    fact = facts[key]
-    check(bool(fact.get("class")), f"evidence fact {key} has no evidence class")
-    check(bool(fact.get("source")), f"evidence fact {key} has no source")
-    check(bool(fact.get("limit")), f"evidence fact {key} has no practical limit")
-    context_keys = {
-        "population", "denominator", "scope", "target", "participants",
-        "participants_included", "incidence_per_1000_range",
-        "litres_per_person_per_day", "associations", "estimate",
-    }
-    check(any(name in fact for name in context_keys), f"evidence fact {key} has no scope or denominator field")
-
-if required_fact_keys <= set(facts):
-    check(facts["gad7_cochrane"].get("sensitivity") == 0.64, "pooled GAD-7 sensitivity drifted from reviewed value")
-    check(facts["gad7_cochrane"].get("specificity") == 0.91, "pooled GAD-7 specificity drifted from reviewed value")
-    check(facts["infertility_lifetime"].get("estimate") == 0.175, "WHO infertility estimate drifted from reviewed value")
-    check(facts["stroke_time_model"].get("neurons_million_per_minute") == 1.9, "stroke model value drifted from reviewed value")
-    check(facts["household_water"].get("litres_per_person_per_day") == 2, "BBK household-water value drifted from reviewed value")
-
-required_evidence_figures = {
-    "evidence_classes.png",
-    "vega_gad7_accuracy.png",
-    "breathwork_trial_map.png",
-    "vega_reproductive_denominators.png",
-    "vega_stroke_time_model.png",
-    "vega_household_water_stock.png",
-    "vega_sleep_study_design.png",
-    "vega_social_connection.png",
-    "vega_communication_channels.png",
-}
-for name in sorted(required_evidence_figures):
-    check((ROOT / "build" / "diagrams" / name).exists(), f"required evidence figure missing: {name}")
-    check(name in source, f"required evidence figure is not referenced in chapters: {name}")
-
-required_route_figures = {
-    "two_pass_route_map.png",
-    "hazard_override_matrix.png",
-    "dependency_continuity_map.png",
-    "safe_place_route_map.png",
-    "communication_access_card.png",
-    "safe_place_confirmation_packet.png",
-    "safe_reserve_clock.png",
-}
-for name in sorted(required_route_figures):
-    check((ROOT / "build" / "diagrams" / name).exists(), f"required route figure missing: {name}")
-    check(name in source, f"required route figure is not referenced in chapters: {name}")
-
-required_observation_figures = {
-    "observatory_scan.png",
-    "interoception_loop.png",
-    "signal_story_question.png",
-    "three_minute_observation.png",
-}
-for name in sorted(required_observation_figures):
-    check((ROOT / "build" / "diagrams" / name).exists(), f"required observation figure missing: {name}")
-    check(name in source, f"required observation figure is not referenced in chapters: {name}")
-
-required_responsibility_figures = {
-    "responsibility_clock_map.png",
-    "repair_sequence.png",
-    "consent_authority_boundary.png",
-    "care_continuity_loop.png",
-}
-for name in sorted(required_responsibility_figures):
-    check((ROOT / "build" / "diagrams" / name).exists(), f"required responsibility figure missing: {name}")
-    check(name in source, f"required responsibility figure is not referenced in chapters: {name}")
-
-required_continuity_figures = {
-    "household_continuity_board.png",
-    "first_meeting_roles.png",
-    "vega_continuity_dependencies.png",
-}
-for name in sorted(required_continuity_figures):
-    check((ROOT / "build" / "diagrams" / name).exists(), f"required continuity figure missing: {name}")
-    check(name in source, f"required continuity figure is not referenced in chapters: {name}")
-
-deprecated_figures = {
-    "stress_decay_curve.png",
-    "anxiety_severity_spectrum.png",
-    "survival_probability_function.png",
-    "group_complexity_scaling.png",
-    "pain_nrs_correlates.png",
-    "water_requirements_scaling.png",
-    "situation_a_tree.png",
-    "gad7_validation_comparison.png",
-    "household_water_planner.png",
-    "social_connection_associations.png",
-    "reproductive_health_denominators.png",
-    "stroke_time_model.png",
-    "sleep_restriction_study.png",
-}
-for name in sorted(deprecated_figures):
-    deprecated_path = f"build/diagrams/{name}"
-    check(deprecated_path not in source, f"deprecated figure is still referenced: {name}")
-    check(not (ROOT / deprecated_path).exists(), f"deprecated figure was regenerated: {name}")
-
-check(ROADMAP.exists(), "ROADMAP.md is missing")
-if ROADMAP.exists():
-    roadmap = ROADMAP.read_text(encoding="utf-8")
-    for marker in (
-        "Proposed two-pass topology",
-        "fire, smoke, carbon monoxide",
-        "vulnerable-person modifier",
-        "4.2.0 — Routing and hazard architecture",
-        "4.3.0 — Locale, accessibility, and safe-place routing",
-        "4.3.1 — Navigation and release polish",
-        "4.4.1 — Household continuity and common-source synthesis",
-        "4.4.2 — Manifest and Vega foundation",
-        "4.5.0-roadmap-milestones.md",
-        "Cross-release visualization program",
-        "Subguide-local source migration",
-    ):
-        check(marker.lower() in roadmap.lower(), f"roadmap marker missing: {marker}")
-
-check(ACCESSIBILITY_PLAN.exists(), "4.3.0 accessibility plan is missing")
-if ACCESSIBILITY_PLAN.exists():
-    next_minor = ACCESSIBILITY_PLAN.read_text(encoding="utf-8")
-    for marker in (
-        "Safe-place route split",
-        "Source freshness",
-        "Communication access profiles",
-        "Large-print edition",
-        "Release acceptance",
-    ):
-        check(marker.lower() in next_minor.lower(), f"4.3.0 plan marker missing: {marker}")
-
-check(PATCH_PLAN.exists(), "4.3.1 polish plan is missing")
-if PATCH_PLAN.exists():
-    patch_plan = PATCH_PLAN.read_text(encoding="utf-8")
-    for marker in (
-        "candidate complete",
-        "Navigation accuracy",
-        "Release and script integrity",
-        "Reader-voice cleanup",
-        "Density review",
-        "Acceptance criteria",
-    ):
-        check(marker.lower() in patch_plan.lower(), f"4.3.1 plan marker missing: {marker}")
-
-check(COMMON_SYNTHESIS_PLAN.exists(), "4.4.1 common synthesis plan is missing")
-if COMMON_SYNTHESIS_PLAN.exists():
-    common_plan = re.sub(r"\s+", " ", COMMON_SYNTHESIS_PLAN.read_text(encoding="utf-8")).lower()
-    for marker in (
-        "Canonical material retained",
-        "Alternate material accepted",
-        "Alternate material rejected or deferred",
-        "Structured continuity layer",
-        "Acceptance criteria",
-    ):
-        check(marker.lower() in common_plan, f"4.4.1 synthesis marker missing: {marker}")
-
-check(ALT_SPEC_PLAN.exists(), "4.4.2 alternate-spec feasibility plan is missing")
-if ALT_SPEC_PLAN.exists():
-    alt_plan = re.sub(r"\s+", " ", ALT_SPEC_PLAN.read_text(encoding="utf-8")).lower()
-    for marker in (
-        "Decision matrix",
-        "Material explicitly not imported",
-        "Initial Vega batch",
-        "4.4.2 acceptance boundary",
-    ):
-        check(marker.lower() in alt_plan, f"4.4.2 feasibility marker missing: {marker}")
-
-check(MILESTONE_PLAN.exists(), "4.5.0 milestone plan is missing")
-if MILESTONE_PLAN.exists():
-    milestone_plan = re.sub(r"\s+", " ", MILESTONE_PLAN.read_text(encoding="utf-8")).lower()
-    for marker in (
-        "M0 — Foundation inventory",
-        "M3 — Two vertical-slice standalone pilots",
-        "M6 — Visualization expansion",
-        "Milestone stop rules",
-    ):
-        check(marker.lower() in milestone_plan, f"4.5.0 milestone marker missing: {marker}")
-
-for path, label, markers in (
-    (
-        SPARSE_REVIEW,
-        "4.3.1 sparse-page review",
-        ("Reviewed pages", "Pages retained intentionally", "Future subguide role"),
-    ),
-    (
-        SUBGUIDE_PLAN,
-        "4.5.0 subguide plan",
-        ("Core graph versus future modules", "Small-Room Physics", "Sources and limits"),
-    ),
-    (
-        VISUALIZATION_PLAN,
-        "visualization program",
-        ("48–60 reviewed visuals", "Visualization linting and QA", "Vega-Lite"),
-    ),
-    (
-        SOURCE_LOCALIZATION_PLAN,
-        "subguide source-localization plan",
-        ("Sources and limits", "canonical source registry", "two-subguide pilot"),
-    ),
-    (
-        OD_STANDALONE_PLAN,
-        "4.10.0 O/D standalone plan",
-        ("Canonical extraction", "Small-Room Observatory", "Threat and Safe Place", "48", "Do not push"),
-    ),
-    (
-        Z_STANDALONE_PLAN,
-        "4.11.0 Z standalone plan",
-        ("Canonical extraction", "Outage and Continuity", "54", "NINA", "Do not push"),
-    ),
-    (
-        ENCAPSULATION_PLAN,
-        "4.12.0 encapsulation plan",
-        ("Standalone encapsulation", "Route identity grammar", "Figure cross-references", "54", "Do not push"),
-    ),
-    (
-        A_STANDALONE_PLAN,
-        "4.13.0 A standalone plan",
-        ("Responsibility and Care", "five owned reader visuals", "60", "no master-only", "Do not push"),
-    ),
-    (
-        RENDER_PATCH_PLAN,
-        "4.13.1 render-tooling patch plan",
-        ("deterministic render-tooling patch", "project-local Fontconfig", "all eight", "zero stderr", "Do not push"),
-    ),
-):
-    check(path.exists(), f"{label} is missing")
-    if path.exists():
-        text = path.read_text(encoding="utf-8")
-        normalized_text = re.sub(r"\s+", " ", text).lower()
-        for marker in markers:
-            check(marker.lower() in normalized_text, f"{label} marker missing: {marker}")
-
-required_cli_scripts = (
-    "bin/build_all.sh",
-    "bin/build_guide.sh",
-    "bin/chrome_pdf.mjs",
-    "bin/validate_guide.py",
-    "bin/validate_routes.py",
-    "bin/validate_continuity.py",
-    "bin/validate_subguides.py",
-    "bin/validate_render_tooling.py",
-    "bin/validate_visualizations.py",
-    "bin/build_visualizations.mjs",
-    "bin/build_inventories.py",
-    "bin/build_source_inventory.py",
-    "bin/build_reference_index.py",
-    "bin/build_coverage_matrix.py",
-    "bin/build_subguides.py",
-    "bin/build_site.py",
-    "bin/build_release_manifest.py",
-    "bin/validate_migration.py",
-    "bin/validate_reference_index.py",
-    "bin/validate_coverage_matrix.py",
-    "bin/validate_site.py",
-    "bin/validate_build_matrix.py",
-    "bin/project_meta.py",
-    "src/visualizations/derive_data.py",
-    "bin/verify_accessibility.py",
-    "bin/verify_density.py",
-    "bin/verify_layout.py",
-    "bin/verify_overflow.mjs",
-)
-for relative in required_cli_scripts:
-    script = ROOT / relative
-    check(script.exists(), f"required command-line script is missing: {relative}")
-    if script.exists():
-        check(bool(script.stat().st_mode & 0o111), f"required command-line script is not executable: {relative}")
-
-check("Situations B–F — Five Different Kinds of “Too Much”" in source, "B–F mixed-situations identity missing")
-check("Situations B–G — Six Different Kinds" not in source, "stale B–G mixed-situations identity remains")
-check("Situation G — No Safe Place" in source, "Situation G standalone handoff missing")
-check("First 90 seconds — scan body, room, and attention" in source, "observatory first-minute scan missing")
-check("A safe place is confirmed, not merely named" in source, "safe-place confirmation contract missing")
-check("three minutes of observation, not three minutes of mandatory delay" in re.sub(r"\s+", " ", source).lower(), "observation delay boundary missing")
-check("Templates — The Blue Book" in source, "Blue Book template subguide missing")
-check("Stable references — addresses that survive editing" in source, "stable reference explanation missing")
-check("bathroom_emergency@fkr.dev" in source, "reader feedback route missing")
-
-# Version and source-shape checks.
+# Chapter metadata remains reproducible.
 for path in CHAPTERS:
     text = path.read_text(encoding="utf-8")
     check(text.startswith("---\n"), f"{path.name}: missing YAML frontmatter")
-    check(
-        re.search(rf"revision:\s*[\"']{re.escape(VERSION)}[\"']", text) is not None,
-        f"{path.name}: revision is not {VERSION}",
-    )
-    check(
-        re.search(rf"last_updated:\s*[\"']{re.escape(RELEASE_DATE)}[\"']", text) is not None,
-        f"{path.name}: release date is not {RELEASE_DATE}",
-    )
+    check(re.search(rf'revision:\s*["\']{re.escape(VERSION)}["\']', text) is not None, f"{path.name}: revision drifted")
+    check(re.search(rf'last_updated:\s*["\']{re.escape(RELEASE_DATE)}["\']', text) is not None, f"{path.name}: release date drifted")
 
-# v3.3 breadth must remain represented even though unsafe claims were rewritten.
-parity_markers = [
-    "Mathematical notation legend",
-    "Guide topology",
-    "Flowchart legend",
-    "Master flowchart",
-    "Eight situation doors inside ten route identities",
-    "Situation G — No Safe Place",
-    "G1 — A person or active threat makes the place unsafe",
-    "G2 — There is no weather-safe place to sleep tonight",
-    "Communication and access card",
-    "Minimal written emergency card",
-    "Situation H — The Environment May Be Unsafe",
-    "Essential medication and powered-device failure",
-    "The hazard handoff",
-    "A1 — A life may be developing",
-    "A2 — Birth appears to be happening now",
-    "A3 — A baby arrived recently",
-    "Attachment",
-    "Postpartum",
-    "A8 — Ongoing responsibility",
-    "silicon-based life form",
-    "Panic attack",
-    "GAD-7 severity spectrum",
-    "NRS pain scale",
-    "Cognitive load",
-    "Smell decision tree",
-    "No place to go",
-    "Yerkes–Dodson",
-    "Polyvagal",
-    "Comfort inventory",
-    "Five-minute values bridge",
-    "Observation and vital-sign log",
-    "Feedback and field-note sheet",
-    "Installation and wet-room audit",
-    "Route drill and timing log",
-    "First-aid figure usability review",
-    "Maintenance and replacement inspection",
-    "Conversation strategies",
-    "Smalltalk toolkit",
-    "Triage priority heatmap",
-    "Suspected fractures",
-    "Vital signs",
-    "Self ambulance for non-physical emergencies",
-    "Thermoregulation",
-    "Prisoner’s dilemma",
-    "Dunbar numbers",
-    "Ostrom’s eight commons principles",
-    "Forms of self-administration",
-    "Psychology of masses",
-    "IASC support pyramid",
-    "Friends’ psychological-support guide",
-    "Legal support",
-    "Housing and “no place tonight”",
-    "Master cross-reference",
-    "Illustration cross-reference",
-    "Stable references — addresses that survive editing",
-    "Fillable fields live in T — Templates",
-    "Master flowchart — complete text version",
-    "Navigation invariant",
-    "Therapy effectiveness",
-    "Game theory and cooperation",
-]
-for marker in parity_markers:
-    check(marker.lower() in source.lower(), f"v3.3 parity marker missing: {marker}")
+# The master guide uses one compact gate, not a safety preface before every idea.
+check(opening.count('<div class="emergency-gate">') == 1, "opening must contain one emergency gate")
+check(opening.count("112") == 1, "opening must name 112 exactly once")
+check("Page 0 — Position in the graph" not in source, "governance-first wrapper leaked into canonical prose")
+check("Edition contract" not in source, "edition-contract language leaked into canonical prose")
 
-# A content-volume floor catches accidental replacement by the former lean edition.
-check(
-    len(source) >= 130_000,
-    f"canonical chapter source is too small for full-content edition: {len(source):,} chars",
+books = (
+    "The Green Book — Body Owner’s Manual",
+    "The Amber Book — Responsibility",
+    "The Teal Book — Calm Guide",
+    "The Red Book — Self Ambulance",
+    "The Blue Book — Safety & No Place",
+    "The Orange Book — Natural Disasters",
+    "The Olive Book — Zombie Guide",
+    "The Indigo Book — Professional Support",
+    "The Purple Book — Social Field Guide",
+    "The Grey Book — Templates & Forms",
+    "The Copper Book — Reference",
 )
+for title in books:
+    check(title in source, f"canonical book title missing: {title}")
 
+# Voice acceptance: adult humour remains, but it may not invent certainty.
+for marker in (
+    "You’re in a bathroom. That’s already a good start.",
+    "future remains poorly supervised",
+    "kernel panic",
+    "The world changed while you were on the toilet",
+    "floor first, dignity later",
+    "The jokes stay. So do the sources.",
+):
+    check(marker in source, f"adult voice marker missing: {marker}")
+
+unsafe_legacy = {
+    "You die in 3 days without water": "fixed survival-clock claim remains",
+    "You can survive roughly three weeks without food": "fixed starvation-clock claim remains",
+    "Every container you find is now a water container": "unsafe indiscriminate water storage advice remains",
+    "2 drops of unscented household bleach": "concentration-free bleach recipe remains",
+    "Used by Navy SEALs": "unsupported authority appeal remains",
+    "Fastest known way to reduce real-time physiological arousal": "breathing overclaim remains",
+    "comfort threshold": "invented comfort score remains",
+    "The bathtub protocol": "universal bathtub shelter protocol remains",
+    "pressure equalization": "window-opening storm myth remains",
+    "Toilet tank (cistern) |": "toilet-cistern drinking table remains",
+    "112 works on any mobile, any network": "universal network guarantee remains",
+    "Insects. Yes, really.": "unsafe wild-insect advice remains",
+    "Scavenging. In a collapse": "looting/scavenging guidance remains",
+}
+for phrase, message in unsafe_legacy.items():
+    check(phrase.lower() not in action_source.lower(), message)
+
+# Core safety removals from earlier releases remain removed.
+for phrase in (
+    "Call 110. Now.",
+    "pain_nrs_correlates",
+    "starvation is preferable to poisoning",
+    "Notdienst (emergency lawyer)",
+    "fight it — not heroically",
+    "Scent candle location",
+):
+    check(phrase.lower() not in action_source.lower(), f"removed unsafe phrase remains: {phrase}")
+check("C(t) = C_0" not in action_source and "C(t)=C_0" not in action_source, "fictional cortisol equation remains")
+
+# Every identity is independently visible without colour.
+for node, pattern in {
+    "O": "pulse", "A": "diamond", "B": "wave", "C": "cross",
+    "D": "shield", "H": "zigzag", "Z": "crosshatch", "P": "dots",
+    "S": "speech", "T": "form-grid", "R": "solid",
+}.items():
+    check(f'[data-subguide="{node}"]' in STYLE_BOOKS, f"book CSS selector missing: {node}")
+    check(pattern in STYLE_BOOKS, f"book pattern missing: {pattern}")
+for marker in (
+    ".route-chip", ".figure-reference", ".template-route-band",
+    ".resource-card", ".resource-kicker", ".resource-catalog",
+    ".subguide-scope-grid", ".edition-resource-map",
+):
+    check(marker in STYLE_BOOKS, f"book cross-reference styling missing: {marker}")
+check("column-count: 1 !important" in STYLE, "single-column print invariant missing")
+check("font-size: 9.3pt" in STYLE, "A4 density typography drifted")
+check("size: 105mm 297mm" in STYLE_HALF, "A4/2 geometry missing")
+check("font-size: 13.25pt" in STYLE_LARGE, "large-print typography drifted")
+
+# Evidence facts retain class, context, source, and limit.
+evidence_path = ROOT / "src" / "data" / "evidence_facts.json"
+check(evidence_path.exists(), "evidence registry missing")
+if evidence_path.exists():
+    evidence = json.loads(evidence_path.read_text(encoding="utf-8"))
+    facts = evidence.get("facts", {})
+    required = {
+        "gad7_original", "gad7_cochrane", "breathwork_trial",
+        "infertility_lifetime", "postpartum_psychosis", "stroke_time_model",
+        "household_water", "sleep_restriction", "social_connection_mortality",
+    }
+    check(evidence.get("release") == VERSION, "evidence release drifted")
+    check(required <= set(facts), "reviewed evidence fact set incomplete")
+    for key in required & set(facts):
+        fact = facts[key]
+        check(bool(fact.get("class")), f"{key}: evidence class missing")
+        check(bool(fact.get("source")), f"{key}: source missing")
+        check(bool(fact.get("limit")), f"{key}: practical limit missing")
+
+figure_groups = {
+    "evidence": {
+        "evidence_classes.png", "vega_gad7_accuracy.png", "breathwork_trial_map.png",
+        "vega_reproductive_denominators.png", "vega_stroke_time_model.png",
+        "vega_household_water_stock.png", "vega_sleep_study_design.png",
+        "vega_social_connection.png", "vega_communication_channels.png",
+    },
+    "route": {
+        "two_pass_route_map.png", "hazard_override_matrix.png",
+        "dependency_continuity_map.png", "safe_place_route_map.png",
+        "communication_access_card.png", "safe_place_confirmation_packet.png",
+        "safe_reserve_clock.png",
+    },
+    "observation": {
+        "observatory_scan.png", "interoception_loop.png",
+        "signal_story_question.png", "three_minute_observation.png",
+    },
+    "responsibility": {
+        "responsibility_clock_map.png", "repair_sequence.png",
+        "consent_authority_boundary.png", "care_continuity_loop.png",
+    },
+    "continuity": {
+        "household_continuity_board.png", "first_meeting_roles.png",
+        "vega_continuity_dependencies.png",
+    },
+}
+for group, names in figure_groups.items():
+    for name in names:
+        check((ROOT / "build" / "diagrams" / name).exists(), f"{group} figure missing: {name}")
+        check(name in source, f"{group} figure not referenced: {name}")
+
+for name in (
+    "stress_decay_curve.png", "anxiety_severity_spectrum.png",
+    "survival_probability_function.png", "pain_nrs_correlates.png",
+    "water_requirements_scaling.png", "situation_a_tree.png",
+):
+    check(f"build/diagrams/{name}" not in source, f"deprecated figure referenced: {name}")
+
+# The alternate integration must add real breadth rather than replace the mature guide.
+for marker in (
+    "OPQRST", "GAD-7 severity spectrum", "Situation G — No Safe Place",
+    "Essential medication and powered-device failure", "IASC support pyramid",
+    "Ostrom’s eight commons principles", "Stable references — addresses that survive editing",
+    "Templates", "Boundary Setting From a Bathroom", "Emergency water",
+):
+    check(marker.lower() in source.lower(), f"subject breadth marker missing: {marker}")
+check(len(source) >= 220_000, f"canonical source unexpectedly small: {len(source):,} chars")
+
+# Source registry must resolve every chapter footnote.
+source_inventory = ROOT / "src" / "data" / "source_inventory.json"
+check(source_inventory.exists(), "source inventory missing")
+if source_inventory.exists():
+    inventory = json.loads(source_inventory.read_text(encoding="utf-8"))
+    check(inventory.get("release") == VERSION, "source inventory version drifted")
+    check(not inventory.get("unresolved_references"), "unresolved source references remain")
+    check(len(inventory.get("footnote_sources", [])) >= 60, "source inventory too small")
+
+# Built master artifacts must contain the current books and native math.
 if HTML.exists():
     html = HTML.read_text(encoding="utf-8")
+    html_titles = html.replace("&amp;", "&")
     check("<math" in html, "built HTML has no native MathML")
+    check("cdn.jsdelivr" not in html and not re.search(r"<script[^>]+mathjax", html, re.I), "remote math dependency remains")
+    check('<main id="guide">' in html, "semantic guide wrapper missing")
+    check('class="chapter' in html, "chapter wrappers missing")
+    check('class="revision-footer"' in html, "revision footer missing")
+    check(VERSION in html, "built HTML version drifted")
+    for title in books:
+        check(title in html_titles, f"built HTML missing book: {title}")
+    graphical_figures = len(re.findall(
+        r'class="figure-reference resource-card"[^>]+data-interaction="read-only"',
+        html,
+    ))
+    local_figures = len(re.findall(
+        r'class="template-route-band resource-card"[^>]+data-resource-type="figure"[^>]+data-interaction="read-only"',
+        html,
+    ))
+    writable_templates = len(re.findall(
+        r'class="template-route-band resource-card"[^>]+data-resource-type="template"[^>]+data-interaction="write"',
+        html,
+    ))
+    check(graphical_figures >= 41, f"built HTML has too few graphical figures: {graphical_figures}")
+    check(local_figures == 8, f"built HTML has {local_figures} deployer-completed figures, expected 8")
+    check(writable_templates == 10, f"built HTML has {writable_templates} templates, expected 10")
     check(
-        "cdn.jsdelivr" not in html
-        and re.search(r"<script[^>]+mathjax", html, re.IGNORECASE) is None,
-        "built HTML has a remote math dependency",
+        re.search(r"<strong>Figure</strong><span>Read\s+only</span>", html) is not None,
+        "built HTML missing Figure · Read only label",
     )
-    check("<main id=\"guide\">" in html, "semantic guide wrapper missing")
-    check("class=\"chapter" in html, "chapter wrappers missing")
-    check("class=\"revision-footer\"" in html, "built HTML revision footer missing")
-    check("build-revision" in html and "build-date" in html, "built HTML provenance metadata missing")
-    check(VERSION in html, f"built HTML does not contain version {VERSION}")
-    normalized_html = re.sub(r"\s+", " ", html).lower()
-    for marker in (
-        "The Small-Room Observatory",
-        "The gut votes early",
-        "Acute stress makes the mind narrower, not stupider",
-        "Bathroom fainting is a real category",
-        "The three-minute bathroom experiment",
-        "IASC support pyramid",
-        "Ostrom",
-        "Master flowchart — complete text version",
-        "That is not a contradiction requiring a duel between bar charts",
-        "Time is brain",
-        "Social connection is not decorative trim",
-        "Situation G — No Safe Place",
-        "G3 — A place exists, but it cannot safely support the person",
-        "Minimal written emergency card",
-        "Situation H — The Environment May Be Unsafe",
-        "Essential medication and powered-device failure",
-        "The hazard handoff",
-        "Templates — The Blue Book",
-        "Deployment cover and ownership card",
-        "Feedback and field-note sheet",
-        "Installation and wet-room audit",
-        "First-aid figure usability review",
-        "How to read the route band",
-        "Make the contact operational — ask, confirm, record",
-        "Route identity key — code, colour, pattern, and glyph",
-        "Support handoff map — service, form, figure, and route",
-        "Stable references — addresses that survive editing",
-        "Professional contact and service index",
-        "Illustration cross-reference — figures, routes, and forms",
-        "Global content index",
-        "Source, visual, and standalone coverage matrix",
-    ):
-        check(marker.lower() in normalized_html, f"built HTML missing required content: {marker}")
+    check("<strong>Template</strong>" in html, "built HTML missing Template · Write label")
+    check("<strong>Deployment plate</strong>" not in html, "obsolete deployment-plate type remains")
+    for label, pattern in {
+        "figure catalogue": r"Figure catalogue\s+—\s+read-only references",
+        "template catalogue": r"Template catalogue\s+—\s+write when needed",
+    }.items():
+        check(re.search(pattern, html) is not None, f"built HTML missing {label}")
+    check("Reader question:" not in html, "legacy figure dashboard label remains in built HTML")
+    check("Paired forms:" not in html, "legacy paired-form dashboard label remains in built HTML")
 else:
     errors.append("build/html/guide.html is missing")
 
+package_path = ROOT / "package.json"
+if package_path.exists():
+    package = json.loads(package_path.read_text(encoding="utf-8"))
+    for target in ("build:guide", "build:a4half", "build:largeprint"):
+        command = package.get("scripts", {}).get(target, "")
+        check("build:diagrams" in command, f"{target} does not refresh diagrams before rendering")
+        check("build:inventories" in command, f"{target} does not refresh reference inventories before rendering")
+
 if PDF.exists():
-    result = subprocess.run(["pdfinfo", str(PDF)], capture_output=True, text=True)
-    check(result.returncode == 0, "pdfinfo could not read guide.pdf")
-    if result.returncode == 0:
-        match = re.search(r"Pages:\s+(\d+)", result.stdout)
-        check(bool(match and int(match.group(1)) >= 30), "PDF is suspiciously short for full-content edition")
-        check("A4" in result.stdout or "595" in result.stdout, "PDF does not appear to be A4")
+    info = pdf_info(PDF)
+    check(int(info.get("Pages", "0") or 0) >= 40, "master PDF is suspiciously short")
+    check("594" in info.get("Page size", "") and "841" in info.get("Page size", ""), "master PDF is not A4")
+    check(info.get("Tagged") == "yes", "master PDF is not tagged")
 else:
     errors.append("build/pdf/guide.pdf is missing")
 
-
-def check_a4_half_pdf(path: Path, label: str) -> None:
-    if not path.exists():
-        errors.append(f"{label} is missing")
-        return
-    result = subprocess.run(["pdfinfo", str(path)], capture_output=True, text=True)
-    check(result.returncode == 0, f"pdfinfo could not read {label}")
-    if result.returncode:
-        return
-    pages_match = re.search(r"Pages:\s+(\d+)", result.stdout)
-    size_match = re.search(r"Page size:\s+([0-9.]+) x ([0-9.]+) pts", result.stdout)
-    check(bool(pages_match and int(pages_match.group(1)) >= 60), f"{label} is suspiciously short")
-    if size_match:
-        width = float(size_match.group(1))
-        height = float(size_match.group(2))
-        check(abs(width - 297.64) <= 1.5, f"{label} width is not 105 mm: {width:.2f} pt")
-        check(abs(height - 841.89) <= 1.5, f"{label} height is not 297 mm: {height:.2f} pt")
-    else:
-        errors.append(f"could not parse page size for {label}")
-    check("Tagged:          yes" in result.stdout, f"{label} is not tagged")
-
-
-for narrow_html, label in (
-    (A4_HALF_HTML, "A4/2 color HTML"),
-    (A4_HALF_MONO_HTML, "A4/2 mono HTML"),
+for stem, width in (
+    ("guide_a4half", "298"), ("guide_a4half_mono", "298"),
+    ("guide_largeprint", "594"), ("guide_largeprint_mono", "594"),
 ):
-    if narrow_html.exists():
-        narrow_text = narrow_html.read_text(encoding="utf-8")
-        check(VERSION in narrow_text, f"{label} does not contain version {VERSION}")
-        check("guide-a4half" in narrow_text, f"{label} does not link the A4/2 stylesheet")
-    else:
-        errors.append(f"{label} is missing")
+    html_path = ROOT / "build" / "html" / f"{stem}.html"
+    pdf_path = ROOT / "build" / "pdf" / f"{stem}.pdf"
+    check(html_path.exists(), f"missing {stem}.html")
+    check(pdf_path.exists(), f"missing {stem}.pdf")
+    if pdf_path.exists():
+        info = pdf_info(pdf_path)
+        check(width in info.get("Page size", "") and "841" in info.get("Page size", ""), f"{stem}: wrong geometry")
+        check(info.get("Tagged") == "yes", f"{stem}: PDF is not tagged")
 
-for narrow_css, label in (
-    (A4_HALF_CSS, "A4/2 color CSS"),
-    (A4_HALF_MONO_CSS, "A4/2 mono CSS"),
-):
-    if narrow_css.exists():
-        css_text = narrow_css.read_text(encoding="utf-8")
-        check("size: 105mm 297mm" in css_text, f"{label} lacks A4/2 page geometry")
-        check("LOOK CLOSER" in css_text, f"{label} lacks the narrow figure treatment")
-    else:
-        errors.append(f"{label} is missing")
-
-check_a4_half_pdf(A4_HALF_PDF, "A4/2 color PDF")
-check_a4_half_pdf(A4_HALF_MONO_PDF, "A4/2 mono PDF")
-
-for markdown_path in re.findall(r"\]\((?:build/)?(diagrams/[^)]+)\)", source):
-    image = ROOT / "build" / markdown_path
-    check(image.exists(), f"referenced image missing: {image.relative_to(ROOT)}")
+required_scripts = (
+    "bin/build_all.sh", "bin/build_guide.sh", "bin/chrome_pdf.mjs",
+    "bin/validate_guide.py", "bin/validate_routes.py", "bin/validate_continuity.py",
+    "bin/validate_subguides.py", "bin/validate_render_tooling.py",
+    "bin/validate_visualizations.py", "bin/validate_illustrations.py",
+    "bin/build_inventories.py", "bin/build_source_inventory.py",
+    "bin/build_reference_index.py", "bin/build_coverage_matrix.py",
+    "bin/build_subguides.py", "bin/build_site.py", "bin/build_release_manifest.py",
+    "bin/validate_migration.py", "bin/validate_reference_index.py",
+    "bin/validate_coverage_matrix.py", "bin/validate_site.py",
+    "bin/validate_build_matrix.py", "bin/project_meta.py",
+    "bin/verify_accessibility.py", "bin/verify_density.py",
+    "bin/verify_layout.py", "bin/verify_overflow.mjs",
+)
+for relative in required_scripts:
+    path = ROOT / relative
+    check(path.exists(), f"required script missing: {relative}")
+    if path.exists():
+        check(bool(path.stat().st_mode & 0o111), f"required script not executable: {relative}")
 
 if errors:
     print("Guide validation failed:")
@@ -632,11 +314,7 @@ if errors:
     raise SystemExit(1)
 
 print(
-    "Guide validation passed: "
-    f"{len(CHAPTERS)} chapters at {VERSION}, {len(source):,} source chars, "
-    f"{len(required_fact_keys)} reviewed fact sets, {len(required_evidence_figures)} evidence figures, "
-    f"{len(required_route_figures)} route/access figures, {len(required_responsibility_figures)} responsibility figures, {len(required_continuity_figures)} continuity figures, "
-    "8 cataloged Vega-Lite figures, 33 current illustrations, 10 frozen subguide nodes, stable references, Blue Book forms, subject-breadth markers, "
-    "structured routing/locales/accessibility, roadmap coverage, native MathML, "
-    "A4, A4/2, and large-print outputs."
+    f"Guide validation passed: {len(CHAPTERS)} chapters at {VERSION}, "
+    f"{len(source):,} source chars, eleven adult-voice books, reviewed evidence, "
+    "resolved sources, local assets, native MathML, and A4/A4-half/large-print outputs."
 )

@@ -22,14 +22,29 @@ HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)(?:\s+\{#[-a-z0-9]+\})?\s*$")
 # Public references name resources, not wording. When an existing section gets
 # a clearer heading, retain its original resource key so the stable address and
 # inbound links survive the edit.
+RESOURCE_KEY_MIGRATIONS = {
+    "form:comfort-inventory": "figure:local-comfort-inventory",
+    "form:deployment-cover": "figure:local-deployment-cover",
+    "form:essential-care": "figure:local-essential-care",
+    "form:household-board": "figure:local-household-board",
+    "form:local-support": "figure:local-local-support",
+    "form:location-access": "figure:local-location-access",
+    "form:nice-place-map": "figure:local-nice-place-map",
+    "form:safe-place-map": "figure:local-safe-place-map",
+}
+
 SECTION_RESOURCE_KEY_ALIASES = {
-    ("07-professional-support.md", "Pair support with a maintained Blue Book page"):
+    ("07a-templates.md", "How to read the resource band"):
+        "section:07a-templates:how-to-read-the-route-band",
+    ("07-professional-support.md", "Pair support with a maintained Grey Book resource"):
         "section:07-professional-support:fill-these-before-deployment",
     ("08-appendix.md", "Master cross-reference — where problems, routes, forms, and support meet"):
         "section:08-appendix:master-cross-reference-where-everything-points",
     ("08-appendix.md", "Eight situation doors inside ten route identities"):
         "section:08-appendix:the-eight-entry-points",
     ("08-appendix.md", "Illustration cross-reference — what travels with a figure"):
+        "section:08-appendix:diagram-index",
+    ("08-appendix.md", "Figure and template grammar"):
         "section:08-appendix:diagram-index",
     ("08-appendix.md", "Fillable fields live in T — Templates"):
         "section:08-appendix:fillable-fields",
@@ -55,16 +70,42 @@ def resources() -> list[dict]:
     form_by_title = {item["title"]: item for item in forms}
     related_forms_by_figure: dict[str, list[str]] = defaultdict(list)
     for form in forms:
+        if form["resource_type"] != "template":
+            continue
         for figure_id in form.get("figure_ids", []):
             related_forms_by_figure[figure_id].append(form["key"])
+
+    def form_resource_identity(form: dict) -> tuple[str, str]:
+        if form["resource_type"] == "figure":
+            return f"figure:local-{form['key']}", "G"
+        return f"form:{form['key']}", "F"
+
+    def form_metadata(form: dict) -> dict:
+        return {
+            "form_key": form["key"],
+            "resource_type": form["resource_type"],
+            "purpose": form["purpose"],
+            "description": form["description"],
+            "interaction": form["interaction"],
+            "prepared_by": form.get("prepared_by"),
+            "responsibility": form["responsibility"],
+            "privacy": form["privacy"],
+            "routes": form.get("routes", ["T"]),
+            "figure_ids": form.get("figure_ids", []),
+            "support_keys": form.get("support_keys", []),
+        }
+
     records: list[dict] = []
     matched_forms: set[str] = set()
 
     for section in sections:
-        form = form_by_title.get(section["heading"])
-        if section["chapter"] == "07a-templates.md" and form:
-            resource_key = f"form:{form['key']}"
-            kind = "F"
+        form = (
+            form_by_title.get(section["heading"])
+            if section["chapter"] == "07a-templates.md"
+            else None
+        )
+        if form:
+            resource_key, kind = form_resource_identity(form)
             matched_forms.add(form["key"])
         else:
             resource_key = SECTION_RESOURCE_KEY_ALIASES.get(
@@ -80,30 +121,19 @@ def resources() -> list[dict]:
             "chapter": section["chapter"],
             "line": section["line"],
             "level": section["level"],
-            **({
-                "purpose": form["purpose"],
-                "responsibility": form["responsibility"],
-                "privacy": form["privacy"],
-                "routes": form.get("routes", ["T"]),
-                "figure_ids": form.get("figure_ids", []),
-                "support_keys": form.get("support_keys", []),
-            } if form else {}),
+            **(form_metadata(form) if form else {}),
         })
 
     for form in forms:
         if form["key"] in matched_forms:
             continue
+        resource_key, kind = form_resource_identity(form)
         records.append({
-            "resource_key": f"form:{form['key']}",
+            "resource_key": resource_key,
             "owner": "T",
-            "kind": "F",
+            "kind": kind,
             "title": form["title"],
-            "purpose": form["purpose"],
-            "responsibility": form["responsibility"],
-            "privacy": form["privacy"],
-            "routes": form.get("routes", ["T"]),
-            "figure_ids": form.get("figure_ids", []),
-            "support_keys": form.get("support_keys", []),
+            **form_metadata(form),
         })
 
     for figure in figures:
@@ -113,7 +143,10 @@ def resources() -> list[dict]:
             "resource_key": f"figure:{figure['id']}",
             "owner": figure["owner"],
             "kind": "G",
-            "title": figure["id"].replace("_", " "),
+            "title": figure["title"],
+            "description": figure["description"],
+            "resource_type": "figure",
+            "interaction": figure["interaction"],
             "file": figure["file"],
             "question": figure["question"],
             "source_basis": figure["source_basis"],
@@ -194,6 +227,10 @@ def assign(records: list[dict]) -> tuple[dict, list[dict]]:
             ids[key] = f"[BEG:{pair[0]}:{pair[1]}:{counters[pair]:03d}]"
     current_keys = {item["resource_key"] for item in records}
     retired = sorted(set(ids) - current_keys)
+    migrations_by_target: dict[str, list[str]] = defaultdict(list)
+    for old_key, new_key in RESOURCE_KEY_MIGRATIONS.items():
+        if old_key in ids and new_key in current_keys:
+            migrations_by_target[new_key].append(old_key)
     enriched = []
     for record in records:
         item = dict(record)
@@ -201,6 +238,13 @@ def assign(records: list[dict]) -> tuple[dict, list[dict]]:
         match = REF_RE.match(item["public_ref"])
         assert match
         item["html_id"] = f"beg-{match.group(1).lower()}-{match.group(2).lower()}-{match.group(3)}"
+        legacy_refs = [ids[key] for key in migrations_by_target.get(record["resource_key"], [])]
+        item["legacy_public_refs"] = legacy_refs
+        item["legacy_html_ids"] = [
+            f"beg-{legacy.group(1).lower()}-{legacy.group(2).lower()}-{legacy.group(3)}"
+            for ref in legacy_refs
+            if (legacy := REF_RE.match(ref))
+        ]
         enriched.append(item)
     registry = {
         "schema_version": 1,
@@ -209,13 +253,14 @@ def assign(records: list[dict]) -> tuple[dict, list[dict]]:
         "format": "[BEG:<owner>:<kind>:<sequence>]",
         "kind_legend": {
             "S": "section",
-            "F": "form or detachable template",
-            "G": "figure, chart, map, or diagram",
+            "F": "template: reusable writable page",
+            "G": "figure: read-only depiction or deployer-completed local reference",
             "C": "professional contact or service",
             "D": "deployment field",
             "W": "glossary word or term",
         },
         "ids": dict(sorted(ids.items())),
+        "resource_key_migrations": dict(sorted(RESOURCE_KEY_MIGRATIONS.items())),
         "retired_resource_keys": retired,
     }
     return registry, enriched
@@ -253,7 +298,7 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
                 values.append(f"{item['public_ref']} {item['title']}")
         return "<br>".join(values) or "—"
 
-    def related_form_list(form_keys: list[str]) -> str:
+    def related_template_list(form_keys: list[str]) -> str:
         values = []
         for form_key in form_keys:
             item = by_key.get(f"form:{form_key}")
@@ -269,32 +314,82 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
                 values.append(f"{item['public_ref']} {item['title']}")
         return "<br>".join(values) or "—"
 
+    def interaction_label(item: dict) -> str:
+        return "Figure · read" if item["kind"] == "G" else "Template · write"
+
+    def related_resources(item: dict) -> str:
+        values = []
+        for form_key in item.get("related_form_keys", []):
+            related = by_key.get(f"form:{form_key}")
+            if related:
+                values.append(f"{related['public_ref']} {related['title']}")
+        for figure_id in item.get("figure_ids", []):
+            related = by_key.get(f"figure:{figure_id}")
+            if related:
+                values.append(f"{related['public_ref']} {related['title']}")
+        return "<br>".join(values) or "—"
+
+    def resource_catalog(items: list[dict]) -> str:
+        cards = []
+        for item in items:
+            details = []
+            if item.get("prepared_by") == "deployer":
+                details.append(
+                    '<p class="resource-catalog-preparation"><strong>Preparation:</strong> '
+                    'deployer completes and dates it before installation; readers use the installed copy as reference.</p>'
+                )
+            if item.get("privacy"):
+                details.append(
+                    '<p class="resource-catalog-privacy"><strong>Privacy:</strong> '
+                    f'{html.escape(item["privacy"])}</p>'
+                )
+            related = related_resources(item)
+            if related != "—":
+                details.append(
+                    '<p class="resource-catalog-links"><strong>Related:</strong> '
+                    f'{related}</p>'
+                )
+            cards.append(
+                '<article class="resource-catalog-item" '
+                f'data-resource-type="{html.escape(item["resource_type"])}" '
+                f'data-interaction="{html.escape(item["interaction"])}">'
+                '<div class="resource-catalog-kicker">'
+                f'<strong>{html.escape(interaction_label(item))}</strong>'
+                f'<code>{html.escape(item["public_ref"])}</code></div>'
+                f'<h3>{html.escape(item["title"])}</h3>'
+                f'<p class="resource-catalog-description">{html.escape(item["description"])}</p>'
+                + "".join(details)
+                + '</article>'
+            )
+        return '<div class="resource-catalog">' + "".join(cards) + '</div>'
+
     content_rows = [
         [item["public_ref"], item["kind"], item["owner"], item["title"], item.get("chapter", "—")]
         for item in records
     ]
-    diagrams = [item for item in records if item["kind"] == "G"]
+    figures = [item for item in records if item["kind"] == "G"]
+    templates = [item for item in records if item["kind"] == "F"]
     contacts = [item for item in records if item["kind"] == "C"]
     fields = [item for item in records if item["kind"] == "D"]
     words = [item for item in records if item["kind"] == "W"]
-    forms = [item for item in records if item["kind"] == "F"]
+    support_resources = [
+        item for item in [*figures, *templates] if item.get("support_keys")
+    ]
+    template_catalog = (
+        "## Template catalogue — write when needed\n\n"
+        "A template is a reusable working page. Every template carries a title, stable "
+        "reference, and short description before its writable content.\n\n"
+        + resource_catalog(templates) + "\n"
+    )
     return {
         "global-content-index.md": "## Global content index\n\n" + table(
             ["Stable reference", "Kind", "Guide", "Resource", "Canonical source"], content_rows
         ) + "\n",
-        "diagram-index.md": "## Illustration cross-reference — figures, routes, and forms\n\n"
-        "Every figure keeps a stable address. Colour is supplementary: the route code, "
-        "pattern name, and glyph name identify the same family in monochrome, speech, and "
-        "low-colour printing.\n\n" + table(
-            ["Stable reference", "Route identity", "Resource", "Reader question", "Paired forms"],
-            [[
-                i["public_ref"],
-                route_identity(i["owner"]),
-                i["title"],
-                i.get("question", "—"),
-                related_form_list(i.get("related_form_keys", [])),
-            ] for i in diagrams],
-        ) + "\n",
+        "diagram-index.md": "## Figure catalogue — read-only references\n\n"
+        "A figure is read-only during use. It may be an authored depiction or a local "
+        "reference sheet completed and dated by the deployer before installation. Every "
+        "figure carries a title, stable reference, and short description.\n\n"
+        + resource_catalog(figures) + "\n",
         "contact-index.md": "## Professional contact and service index\n\n" + table(
             ["Stable reference", "Service", "Number / local field", "Purpose", "Availability"],
             [[i["public_ref"], i["title"], i.get("number", "—"), i.get("scope", "—"), i.get("availability", "—")] for i in contacts],
@@ -306,17 +401,8 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
         "glossary-index.md": "## Glossary\n\n" + "\n\n".join(
             f"### {i['title']} {{#{i['html_id']}}}\n\n**{i['public_ref']}** — {i['definition']}" for i in words
         ) + "\n",
-        "form-index.md": "## Detachable form index\n\n" + table(
-            ["Stable reference", "Template", "Route identities", "Related figures", "Support routes", "Privacy"],
-            [[
-                i["public_ref"],
-                i["title"],
-                route_list(i.get("routes", ["T"])),
-                related_figure_list(i.get("figure_ids", [])),
-                related_support_list(i.get("support_keys", [])),
-                i.get("privacy", "—"),
-            ] for i in forms],
-        ) + "\n",
+        "form-index.md": template_catalog,
+        "template-index.md": template_catalog,
         "route-identity-index.md": "## Route identity key — code, colour, pattern, and glyph\n\n"
         "Use the code and title first. Colour accelerates scanning; the printed pattern and "
         "written glyph name carry the identity when colour is unavailable.\n\n" + table(
@@ -329,19 +415,20 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
                 node["outside_scope"],
             ] for node_id, node in nodes.items()],
         ) + "\n",
-        "support-form-map.md": "## Support handoff map — service, form, figure, and route\n\n"
+        "support-form-map.md": "## Support handoff map — service, resource, figure, and book\n\n"
         "A telephone number or directory result is not yet a handoff. Pair the service with "
-        "the form that carries location, access, current state, requested outcome, backup, "
-        "and review time.\n\n" + table(
-            ["Support or service", "Use these forms", "Related figures", "Route identities"],
+        "the figure or template carrying location, access, current state, requested outcome, "
+        "backup, and review time.\n\n" + table(
+            ["Support or service", "Use this resource", "Related figures", "Book identities"],
             [[
-                related_support_list(form.get("support_keys", [])),
-                f"{form['public_ref']} {form['title']}",
-                related_figure_list(form.get("figure_ids", [])),
-                route_list(form.get("routes", ["P", "T"])),
-            ] for form in forms if form.get("support_keys")],
+                related_support_list(item.get("support_keys", [])),
+                f"{item['public_ref']} {item['title']}",
+                related_figure_list(item.get("figure_ids", [])),
+                route_list(item.get("routes", ["P", "T"])),
+            ] for item in support_resources],
         ) + "\n",
     }
+
 
 
 def render(check: bool = False) -> None:
@@ -358,6 +445,8 @@ def render(check: bool = False) -> None:
         INDEX_PATH: json.dumps(index, indent=2, ensure_ascii=False) + "\n",
     }
     GENERATED.mkdir(parents=True, exist_ok=True)
+    if not check:
+        (GENERATED / "deployment-plate-index.md").unlink(missing_ok=True)
     for name, content in generated_fragments(records).items():
         outputs[GENERATED / name] = content
     stale = []
@@ -385,24 +474,13 @@ def inject_heading_ids(text: str, chapter: str) -> str:
     lookup = {
         item["title"]: item
         for item in index_records
-        if item.get("chapter") == chapter and item["kind"] in {"S", "F"}
+        if item.get("chapter") == chapter and item["kind"] in {"S", "F", "G"}
     }
-    nodes = {
-        item["id"]: item for item in load_json("subguides.json")["nodes"]
-    }
-
-    def route_chip(route: str) -> str:
-        node = nodes[route]
-        return (
-            f'<span class="route-chip" data-subguide="{route}">'
-            f'<strong>{route}</strong><span>{html.escape(node["title"])}</span>'
-            f'<small>{html.escape(node["pattern"].replace("-", " "))}</small></span>'
-        )
-
     by_resource = {item["resource_key"]: item for item in index_records}
     form_records = {
-        item["resource_key"].split(":", 1)[1]: item
-        for item in index_records if item.get("kind") == "F"
+        item["form_key"]: item
+        for item in index_records
+        if item.get("form_key")
     }
     form_by_heading = (
         {
@@ -413,8 +491,7 @@ def inject_heading_ids(text: str, chapter: str) -> str:
         else {}
     )
 
-    def form_band(item: dict) -> str:
-        routes = "".join(route_chip(route) for route in item.get("routes", ["T"]))
+    def resource_band(item: dict) -> str:
         figures = [
             by_resource.get(f"figure:{figure_id}")
             for figure_id in item.get("figure_ids", [])
@@ -428,16 +505,34 @@ def inject_heading_ids(text: str, chapter: str) -> str:
         ) or "none required"
         support_text = ", ".join(
             f"{support['public_ref']} {support['title']}" for support in supports if support
-        ) or "local route as applicable"
+        ) or "named local service when applicable"
+        type_name = "Figure" if item["resource_type"] == "figure" else "Template"
+        action = "Read only" if item["interaction"] == "read-only" else "Write"
+        books = " ".join(item.get("routes", ["T"]))
+        preparation = (
+            '<p class="resource-preparation"><strong>Prepared by:</strong> deployer before installation; '
+            'replace when local facts or privacy boundaries change.</p>'
+            if item.get("prepared_by") == "deployer"
+            else ""
+        )
+        legacy_anchors = "".join(
+            f'<span id="{legacy_id}" class="legacy-reference-anchor" aria-hidden="true"></span>'
+            for legacy_id in item.get("legacy_html_ids", [])
+        )
         return "\n".join((
-            f'<div class="template-route-band" data-template-ref="{item["public_ref"]}">',
-            '<div class="template-route-head">'
-            f'<strong>{item["public_ref"]}</strong>'
-            f'<span>{html.escape(item.get("privacy", "review locally"))}</span></div>',
-            f'<div class="route-chip-row" aria-label="Routes using this form">{routes}</div>',
-            '<div class="template-crossrefs">'
-            f'<span><strong>Figures:</strong> {html.escape(figure_text)}</span>'
-            f'<span><strong>Support:</strong> {html.escape(support_text)}</span></div>',
+            legacy_anchors,
+            f'<div class="template-route-band resource-card" data-resource-ref="{item["public_ref"]}" '
+            f'data-resource-type="{item["resource_type"]}" data-interaction="{item["interaction"]}" '
+            f'data-books="{books}">',
+            '<div class="resource-kicker">'
+            f'<strong>{type_name}</strong><span>{action}</span>'
+            f'<code>{item["public_ref"]}</code></div>',
+            f'<p class="resource-description">{html.escape(item["description"])}</p>',
+            preparation,
+            '<p class="resource-privacy"><strong>Privacy:</strong> '
+            f'{html.escape(item.get("privacy", "review locally"))}</p>',
+            '<p class="resource-links"><strong>See also:</strong> '
+            f'figures {html.escape(figure_text)} · support {html.escape(support_text)}</p>',
             '</div>',
         ))
 
@@ -450,21 +545,21 @@ def inject_heading_ids(text: str, chapter: str) -> str:
             line = f"{match.group(1)} {match.group(2)} {{#{item['html_id']}}}"
         lines.append(line)
         if form_item:
-            lines.extend(("", form_band(form_item), ""))
+            lines.extend(("", resource_band(form_item), ""))
     return "\n".join(lines)
 
 
+
 def decorate_figure_references(text: str, seen: set[str] | None = None) -> str:
-    """Add stable route/form metadata after canonical figure occurrences."""
+    """Wrap each canonical depiction in one titled, referenced read-only card."""
     seen = seen if seen is not None else set()
     records = load_index()["records"] if INDEX_PATH.exists() else []
     figures = {
-        item.get("file"): item for item in records if item.get("kind") == "G"
+        item["file"]: item
+        for item in records
+        if item.get("kind") == "G" and item.get("file")
     }
     forms = [item for item in records if item.get("kind") == "F"]
-    nodes = {
-        item["id"]: item for item in load_json("subguides.json")["nodes"]
-    }
     pattern = re.compile(r"^!\[([^\]]*)\]\((build/diagrams/[^)]+)\)\s*$", re.MULTILINE)
 
     def replace(match: re.Match[str]) -> str:
@@ -473,25 +568,31 @@ def decorate_figure_references(text: str, seen: set[str] | None = None) -> str:
             return match.group(0)
         figure_id = item["resource_key"].split(":", 1)[1]
         paired = [form for form in forms if figure_id in form.get("figure_ids", [])]
-        paired_text = ", ".join(
+        paired_text = " · ".join(
             f"{form['public_ref']} {form['title']}" for form in paired
-        ) or "no dedicated form"
-        node = nodes[item["owner"]]
+        ) or "no dedicated template"
         anchor = ""
         if item["public_ref"] not in seen:
-            anchor = f' id="{item["html_id"]}"'
+            anchor = f'#{item["html_id"]} '
             seen.add(item["public_ref"])
-        card = (
-            f'<div{anchor} class="figure-reference" data-subguide="{item["owner"]}">'
-            f'<span class="figure-reference-code">{item["public_ref"]}</span>'
-            f'<span><strong>{item["owner"]} — {html.escape(node["title"])}</strong> · '
-            f'{html.escape(node["pattern"].replace("-", " "))} · '
-            f'{html.escape(node["glyph"].replace("-", " "))}</span>'
-            f'<span><strong>Reader question:</strong> {html.escape(item.get("question", "—"))}</span>'
-            f'<span><strong>Paired forms:</strong> {html.escape(paired_text)}</span>'
-            '</div>'
-        )
-        return match.group(0) + "\n\n" + card
+        card = "\n".join((
+            f'::: {{{anchor}.figure-reference .resource-card data-subguide="{item["owner"]}" '
+            'data-resource-type="figure" data-interaction="read-only"}',
+            '',
+            '<div class="resource-kicker"><strong>Figure</strong><span>Read only</span>'
+            f'<code>{item["public_ref"]}</code></div>',
+            '<div class="resource-heading">'
+            f'<strong>{html.escape(item["title"])}</strong>'
+            f'<span>{html.escape(item["description"])}</span></div>'
+            '',
+            match.group(0),
+            '',
+            '<p class="resource-links"><strong>Related templates:</strong> '
+            f'{html.escape(paired_text)}</p>',
+            '',
+            ':::',
+        ))
+        return card
 
     return pattern.sub(replace, text)
 

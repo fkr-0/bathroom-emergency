@@ -15,12 +15,15 @@ from project_meta import VERSION
 DEFAULT_OWNER = {
     "00-cover.md": "O",
     "01-how-to-use.md": "O",
+    "01b-body-owner-manual.md": "O",
     "02-situation-a.md": "A",
     "03g-safe-place-routing.md": "D",
     "03h-environmental-hazards.md": "H",
     "04-calm-guide.md": "B",
+    "04b-social-field-guide.md": "S",
     "05-self-ambulance.md": "C",
     "06-zombie-guide.md": "Z",
+    "06b-natural-disasters.md": "H",
     "07-professional-support.md": "P",
     "07a-templates.md": "T",
     "08-appendix.md": "R",
@@ -85,12 +88,29 @@ def build_sections() -> dict:
 def build_figures() -> dict:
     illustrations = json.loads((DATA_DIR / "illustration_catalog.json").read_text(encoding="utf-8"))["illustrations"]
     visualizations = json.loads((DATA_DIR / "visualization_catalog.json").read_text(encoding="utf-8"))["visualizations"]
+    image_titles: dict[str, str] = {}
+    image_re = re.compile(r"^!\[([^\]]+)\]\((build/diagrams/[^)]+)\)\s*$", re.MULTILINE)
+    for chapter in sorted(CHAPTER_DIR.glob("*.md")):
+        for alt, file in image_re.findall(chapter.read_text(encoding="utf-8")):
+            previous = image_titles.get(file)
+            if previous and previous != alt:
+                raise ValueError(
+                    f"Figure {file} has conflicting titles: {previous!r} / {alt!r}"
+                )
+            image_titles[file] = alt.strip()
     records: list[dict] = []
     for item in illustrations:
+        title = image_titles.get(item["file"])
+        if item.get("reader_facing", True) and not title:
+            raise ValueError(f"Reader-facing figure {item['id']} has no Markdown title")
         records.append({
             "id": item["id"],
             "kind": "illustration",
             "file": item["file"],
+            "title": title or item["id"].replace("-", " "),
+            "description": item["question"],
+            "resource_type": "figure",
+            "interaction": "read-only",
             "owner": item["owner"],
             "secondary_subguides": item.get("secondary_subguides", []),
             "question": item["question"],
@@ -108,6 +128,10 @@ def build_figures() -> dict:
             "id": item["id"],
             "kind": "vega-lite",
             "file": item["png"],
+            "title": item["title"],
+            "description": item["question"],
+            "resource_type": "figure",
+            "interaction": "read-only",
             "owner": owners[0],
             "secondary_subguides": [],
             "question": item["question"],

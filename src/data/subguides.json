@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "release": "4.13.1",
-  "status": "core-graph-all-ten-standalone",
-  "identity_frozen_on": "2026-07-26",
+  "release": "4.14.0-alt.2",
+  "status": "experimental-eleven-book-synthesis",
+  "identity_frozen_on": "2026-08-06",
   "standalone_nodes": [
     "O",
     "A",
@@ -12,116 +12,108 @@
     "H",
     "Z",
     "P",
+    "S",
     "T",
     "R"
   ],
   "master_emergency_gate": "once-on-master-cover",
-  "standalone_emergency_gate": "once-on-page-zero",
+  "standalone_emergency_gate": "once-on-cover",
   "source_strategy": "generated-filtered-sources-and-limits",
   "nodes": [
     {
       "id": "O",
-      "slug": "small-room-observatory",
-      "title": "Small-Room Observatory",
-      "promise": "Observe body, room, and attention before choosing the route that owns the loudest problem.",
-      "reviewed_on": "2026-07-26",
+      "slug": "green-book-body-owners-manual",
+      "title": "The Green Book — Body Owner’s Manual",
+      "promise": "Read body signals without turning them into a diagnosis or a catastrophe.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "00-cover.md",
-        "01-how-to-use.md"
+        "01-how-to-use.md",
+        "01b-body-owner-manual.md"
       ],
       "sections": [
-        "orientation",
-        "observatory"
+        "O"
       ],
-      "colour": "#126e67",
-      "pattern": "dot-field",
-      "glyph": "open-eye",
+      "colour": "#16A34A",
+      "pattern": "pulse",
+      "glyph": "∿",
       "incoming": [
         "A",
         "B",
         "C",
-        "D",
         "H",
-        "Z",
-        "P",
         "R",
-        "T"
+        "S"
       ],
       "outgoing": [
         "A",
         "B",
         "C",
-        "D",
         "H",
-        "Z",
-        "P",
         "R",
-        "T"
+        "S"
       ],
       "questions": [
-        "What is happening in body, room, and attention?",
-        "Which route owns the loudest problem?"
+        "What is the body doing?",
+        "What changed?",
+        "Which book or person takes over?"
       ],
       "aliases": [
-        "Ch.1",
-        "Observatory",
-        "orientation"
+        "Body Owner’s Manual",
+        "Green Book",
+        "Small-Room Observatory"
       ],
-      "scope": "Observe body, room, and attention, then choose the route that owns the next useful action.",
-      "outside_scope": "Does not diagnose symptoms or replace the route that owns an identified danger."
+      "scope": "Body observation, ordinary inputs, medication context, fainting prevention, and choosing the next book.",
+      "outside_scope": "Diagnosis, emergency clearance, and personal dosing."
     },
     {
       "id": "A",
-      "slug": "responsibility-care",
-      "title": "Responsibility and Care",
-      "promise": "Separate live harm, repair, and continuing care so responsibility becomes actionable.",
-      "reviewed_on": "2026-07-26",
+      "slug": "amber-book-responsibility",
+      "title": "The Amber Book — Responsibility",
+      "promise": "Turn guilt, duty, and care into concrete repair and continuity.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "02-situation-a.md"
       ],
       "sections": [
         "A"
       ],
-      "colour": "#9a6700",
-      "pattern": "concentric-rings",
-      "glyph": "nested-circle",
+      "colour": "#D4880A",
+      "pattern": "diamond",
+      "glyph": "◆",
       "incoming": [
-        "O",
-        "C",
         "D",
-        "Z",
+        "O",
         "P",
         "R",
         "T"
       ],
       "outgoing": [
-        "O",
-        "C",
         "D",
-        "Z",
+        "O",
         "P",
         "R",
         "T"
       ],
       "questions": [
-        "Who may depend on this action?",
-        "What repair and continuing care are required?"
+        "Is harm still happening?",
+        "Who needs truth or care?",
+        "What repair changes the future?"
       ],
       "aliases": [
-        "Ch.2",
+        "Responsibility and Care",
         "Situation A",
-        "Responsibility, Harm, and Other Life Forms",
-        "responsibility"
+        "Amber Book"
       ],
       "scope": "Separate immediate harm, repair, consent, dependency, and continuing care.",
       "outside_scope": "Does not decide legal liability or replace medical, safety, or social-service routes."
     },
     {
       "id": "B",
-      "slug": "alarm-calm",
-      "title": "Alarm and Calm",
-      "promise": "Investigate alarm, attention, overload, and small actions without hiding bodily red flags.",
-      "reviewed_on": "2026-07-26",
+      "slug": "teal-book-calm-guide",
+      "title": "The Teal Book — Calm Guide",
+      "promise": "Reduce the volume enough to choose the next useful action.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "03-situations-b-g.md",
         "04-calm-guide.md"
@@ -130,44 +122,42 @@
         "B",
         "E"
       ],
-      "colour": "#175cd3",
-      "pattern": "horizontal-waves",
-      "glyph": "breath-wave",
+      "colour": "#2E8B7A",
+      "pattern": "wave",
+      "glyph": "≈",
       "incoming": [
-        "O",
         "C",
-        "D",
+        "O",
         "P",
-        "R",
+        "S",
         "T"
       ],
       "outgoing": [
-        "O",
         "C",
-        "D",
+        "O",
         "P",
-        "R",
+        "S",
         "T"
       ],
       "questions": [
-        "Is alarm the primary problem?",
-        "What reduces load without hiding a red flag?"
+        "What is signal and what is forecast?",
+        "What can become quieter?",
+        "Do I stay, return, or leave?"
       ],
       "aliases": [
-        "Ch.3B",
-        "Ch.3E",
-        "Ch.4",
-        "Calm Guide"
+        "Alarm and Calm",
+        "Calm Guide",
+        "Teal Book"
       ],
       "scope": "Reduce alarm and overload enough to notice, choose, and complete one safe action.",
       "outside_scope": "Does not explain away bodily red flags, active threats, or unsafe environments."
     },
     {
       "id": "C",
-      "slug": "body-first-aid",
-      "title": "Body and First Aid",
-      "promise": "Route injury and illness, then support the body safely while professional help is arranged.",
-      "reviewed_on": "2026-07-26",
+      "slug": "red-book-self-ambulance",
+      "title": "The Red Book — Self Ambulance",
+      "promise": "Provide first aid, record useful observations, and hand over early.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "03-situations-b-g.md",
         "05-self-ambulance.md"
@@ -175,47 +165,42 @@
       "sections": [
         "C"
       ],
-      "colour": "#b42318",
-      "pattern": "diagonal-crosshatch",
-      "glyph": "pulse-cross",
+      "colour": "#C23D2E",
+      "pattern": "cross",
+      "glyph": "+",
       "incoming": [
-        "O",
-        "A",
         "B",
         "H",
-        "Z",
+        "O",
         "P",
-        "R",
         "T"
       ],
       "outgoing": [
-        "O",
-        "A",
         "B",
         "H",
-        "Z",
+        "O",
         "P",
-        "R",
         "T"
       ],
       "questions": [
-        "Is body injury or illness primary?",
-        "What can safely happen while help is arranged?"
+        "What still works?",
+        "What action preserves it?",
+        "Who needs to take over?"
       ],
       "aliases": [
-        "Ch.3C",
-        "Ch.5",
-        "First Aid"
+        "Body and First Aid",
+        "Self Ambulance",
+        "Red Book"
       ],
       "scope": "Route injury and illness and support the body while professional help is arranged.",
       "outside_scope": "Does not replace dispatch instructions, clinical diagnosis, or hands-on training."
     },
     {
       "id": "D",
-      "slug": "threat-safe-place",
-      "title": "Threat and Safe Place",
-      "promise": "Name the unsafe person or place and move toward a confirmed destination with a backup.",
-      "reviewed_on": "2026-07-26",
+      "slug": "blue-book-safety-no-place",
+      "title": "The Blue Book — Safety & No Place",
+      "promise": "Secure the next safe hour when a person or place is the problem.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "03-situations-b-g.md",
         "03g-safe-place-routing.md"
@@ -224,239 +209,269 @@
         "D",
         "G"
       ],
-      "colour": "#6f3ab2",
-      "pattern": "vertical-bars",
-      "glyph": "shield-door",
+      "colour": "#2563EB",
+      "pattern": "shield",
+      "glyph": "■",
       "incoming": [
-        "O",
         "A",
-        "B",
         "H",
-        "Z",
         "P",
-        "R",
+        "S",
         "T"
       ],
       "outgoing": [
-        "O",
         "A",
-        "B",
         "H",
-        "Z",
         "P",
-        "R",
+        "S",
         "T"
       ],
       "questions": [
-        "Is a person or place unsafe?",
-        "Which confirmed destination and backup exist?"
+        "What makes this unsafe?",
+        "Which destination is confirmed?",
+        "What access need changes the route?"
       ],
       "aliases": [
-        "Ch.3D",
+        "Threat and Safe Place",
         "Situation G",
-        "safe place"
+        "Blue Book"
       ],
       "scope": "Name the unsafe person or place and move toward a confirmed destination with a backup.",
       "outside_scope": "Does not provide tactical confrontation advice or treat a suggested destination as confirmed."
     },
     {
       "id": "H",
-      "slug": "air-smell-environment",
-      "title": "Air, Smell, and Environment",
-      "promise": "Distinguish room, building, air, wiring, and substance hazards before ordinary troubleshooting.",
-      "reviewed_on": "2026-07-26",
+      "slug": "orange-book-natural-disasters",
+      "title": "The Orange Book — Natural Disasters",
+      "promise": "Respond to environmental hazards and official warnings without room mythology.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "03-situations-b-g.md",
-        "03h-environmental-hazards.md"
+        "03h-environmental-hazards.md",
+        "06b-natural-disasters.md"
       ],
       "sections": [
         "F",
         "H"
       ],
-      "colour": "#b54708",
-      "pattern": "diagonal-stripes",
-      "glyph": "air-triangle",
+      "colour": "#EA580C",
+      "pattern": "zigzag",
+      "glyph": "⚡",
       "incoming": [
-        "O",
         "C",
         "D",
-        "Z",
+        "O",
         "P",
-        "R",
-        "T"
+        "T",
+        "Z"
       ],
       "outgoing": [
-        "O",
         "C",
         "D",
-        "Z",
+        "O",
         "P",
-        "R",
-        "T"
+        "T",
+        "Z"
       ],
       "questions": [
-        "Is the environment unsafe now?",
-        "Is the source indoors or an official outside warning?"
+        "Is the source inside or outside?",
+        "What do officials instruct now?",
+        "Leave, shelter, move higher, or call?"
       ],
       "aliases": [
-        "Ch.3F",
-        "Situation H",
-        "environmental gate"
+        "Air, Smell, Environment",
+        "Environmental Hazards",
+        "Orange Book"
       ],
-      "scope": "Identify room, building, air, wiring, and substance hazards before ordinary troubleshooting.",
-      "outside_scope": "Does not authorize re-entry, improvised chemical treatment, or work on live systems."
+      "scope": "Identify room, building, air, wiring, and substance hazards before ordinary troubleshooting. Includes natural disasters and official-warning response.",
+      "outside_scope": "Does not authorize re-entry, improvised chemical treatment, or work on live systems. It cannot predict a live hazard."
     },
     {
       "id": "Z",
-      "slug": "outage-continuity",
-      "title": "Outage and Continuity",
-      "promise": "Keep essential household functions visible, assigned, backed up, and reviewed.",
-      "reviewed_on": "2026-07-26",
+      "slug": "olive-book-zombie-guide",
+      "title": "The Olive Book — Zombie Guide",
+      "promise": "Keep water, care, power, information, and cooperation working.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "06-zombie-guide.md"
       ],
       "sections": [
         "Z"
       ],
-      "colour": "#16794a",
-      "pattern": "staggered-brick",
-      "glyph": "linked-blocks",
+      "colour": "#4A6741",
+      "pattern": "crosshatch",
+      "glyph": "╳",
       "incoming": [
-        "O",
-        "A",
-        "C",
-        "D",
         "H",
         "P",
         "R",
         "T"
       ],
       "outgoing": [
-        "O",
-        "A",
-        "C",
-        "D",
         "H",
         "P",
         "R",
         "T"
       ],
       "questions": [
-        "Which household function is failing?",
-        "Who owns the next action, backup, and review time?"
+        "Which dependency fails first?",
+        "What is the approved backup?",
+        "How does the group coordinate?"
       ],
       "aliases": [
-        "Ch.6",
-        "Outage Guide",
-        "continuity"
+        "Outage and Continuity",
+        "Zombie Guide",
+        "Olive Book"
       ],
       "scope": "Keep essential household functions visible, assigned, backed up, and reviewed during disruption.",
       "outside_scope": "Does not replace official warnings, clinical device plans, or local evacuation instructions."
     },
     {
       "id": "P",
-      "slug": "professional-support",
-      "title": "Professional Support",
-      "promise": "Match a named problem to the service able to change it, with one backup route.",
-      "reviewed_on": "2026-07-26",
+      "slug": "indigo-book-professional-support",
+      "title": "The Indigo Book — Professional Support",
+      "promise": "Choose a service that has the authority and capability to change the problem.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "07-professional-support.md"
       ],
       "sections": [
         "P"
       ],
-      "colour": "#0e7490",
-      "pattern": "node-lattice",
-      "glyph": "connected-nodes",
+      "colour": "#6366F1",
+      "pattern": "dots",
+      "glyph": "●",
       "incoming": [
-        "O",
         "A",
         "B",
         "C",
         "D",
         "H",
-        "Z",
         "R",
-        "T"
+        "S",
+        "T",
+        "Z"
       ],
       "outgoing": [
-        "O",
         "A",
         "B",
         "C",
         "D",
         "H",
-        "Z",
         "R",
-        "T"
+        "S",
+        "T",
+        "Z"
       ],
       "questions": [
-        "Which system can change the named problem?",
-        "What is the first route and backup route?"
+        "What change is needed?",
+        "Which service owns it?",
+        "What should I say and record?"
       ],
       "aliases": [
-        "Ch.7",
-        "Support Directory",
-        "professional help"
+        "Professional Support",
+        "Indigo Book"
       ],
       "scope": "Match a named problem to the service able to change it, then prepare a usable handoff and backup.",
       "outside_scope": "Does not guarantee service availability, accommodation, treatment, legal outcome, or response time."
     },
     {
+      "id": "S",
+      "slug": "purple-book-social-field-guide",
+      "title": "The Purple Book — Social Field Guide",
+      "promise": "Manage absence, re-entry, boundaries, awkwardness, and graceful exits.",
+      "reviewed_on": "2026-08-06",
+      "chapters": [
+        "04b-social-field-guide.md"
+      ],
+      "sections": [
+        "S"
+      ],
+      "colour": "#9333EA",
+      "pattern": "speech",
+      "glyph": "◤",
+      "incoming": [
+        "B",
+        "D",
+        "O",
+        "P",
+        "T"
+      ],
+      "outgoing": [
+        "B",
+        "D",
+        "O",
+        "P",
+        "T"
+      ],
+      "questions": [
+        "Do I need to communicate?",
+        "Am I returning or leaving?",
+        "Is this awkward or actually unsafe?"
+      ],
+      "aliases": [
+        "Social Field Guide",
+        "Purple Book"
+      ],
+      "scope": "Social absence, communication scripts, re-entry, boundaries, and graceful exits.",
+      "outside_scope": "Active threats and clinical treatment; those hand off to Blue, Red, or Indigo."
+    },
+    {
       "id": "T",
-      "slug": "templates-blue-book",
-      "title": "Templates — The Blue Book",
-      "promise": "Take, complete, detach, replace, and maintain the forms that move facts out of a crowded head.",
-      "reviewed_on": "2026-07-26",
+      "slug": "grey-book-templates-forms",
+      "title": "The Grey Book — Templates & Forms",
+      "promise": "Put facts, plans, and handoffs somewhere more reliable than working memory.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "07a-templates.md"
       ],
       "sections": [
         "T"
       ],
-      "colour": "#2457a6",
-      "pattern": "blueprint-corners",
-      "glyph": "folded-sheet",
+      "colour": "#6B7280",
+      "pattern": "form-grid",
+      "glyph": "▦",
       "incoming": [
-        "O",
         "A",
         "B",
         "C",
         "D",
         "H",
-        "Z",
         "P",
-        "R"
+        "R",
+        "S",
+        "Z"
       ],
       "outgoing": [
-        "O",
         "A",
         "B",
         "C",
         "D",
         "H",
-        "Z",
         "P",
-        "R"
+        "R",
+        "S",
+        "Z"
       ],
       "questions": [
-        "Which fact, list, map, log, or handoff should leave working memory?",
-        "Who completes, protects, checks, and replaces this page?"
+        "What fact needs a stable place?",
+        "Who owns this form?",
+        "When must it be replaced?"
       ],
       "aliases": [
-        "Ch.7A",
-        "Blue Book",
-        "templates"
+        "Templates",
+        "Forms",
+        "Grey Book"
       ],
       "scope": "Externalize facts, plans, logs, and handoffs that should not depend on working memory.",
       "outside_scope": "A completed form does not prove safety, competence, consent, or current local accuracy."
     },
     {
       "id": "R",
-      "slug": "reference",
-      "title": "Reference",
-      "promise": "Check the complete graph, formulas, fields, sources, limits, and reproducible evidence trail.",
-      "reviewed_on": "2026-07-26",
+      "slug": "copper-book-reference",
+      "title": "The Copper Book — Reference",
+      "promise": "Find the stable address, source, map, figure, formula, or index.",
+      "reviewed_on": "2026-08-06",
       "chapters": [
         "08-appendix.md",
         "09-version-history.md",
@@ -465,39 +480,32 @@
       "sections": [
         "R"
       ],
-      "colour": "#344054",
-      "pattern": "square-grid",
-      "glyph": "index-grid",
+      "colour": "#B5763B",
+      "pattern": "solid",
+      "glyph": "━",
       "incoming": [
-        "O",
         "A",
-        "B",
-        "C",
-        "D",
-        "H",
-        "Z",
+        "O",
         "P",
-        "T"
+        "T",
+        "Z"
       ],
       "outgoing": [
-        "O",
         "A",
-        "B",
-        "C",
-        "D",
-        "H",
-        "Z",
+        "O",
         "P",
-        "T"
+        "T",
+        "Z"
       ],
       "questions": [
-        "Which formula, source, field, or complete route is needed?",
-        "How can the result be checked and reproduced?"
+        "What resource am I locating?",
+        "What owns it?",
+        "Which source or stable ID verifies it?"
       ],
       "aliases": [
-        "Ch.8",
+        "Reference",
         "Appendix",
-        "Reference"
+        "Copper Book"
       ],
       "scope": "Locate stable references, figures, forms, services, fields, formulas, sources, and build evidence.",
       "outside_scope": "Reference material supports a route; it is not an emergency reading queue or a substitute for action."

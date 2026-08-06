@@ -82,7 +82,7 @@ landing_markers = (
     f"Release {VERSION}",
     "Useful before heroic.",
     "Choose your next move.",
-    "A graph, not a diagnostic maze.",
+    "A shelf, not a diagnostic maze.",
     "A PDF on a shelf is not resilience.",
     "The source trail stays attached.",
     "data-theme-toggle",
@@ -92,6 +92,8 @@ landing_markers = (
     "href=\"downloads/\"",
     "href=\"deploy/\"",
     "bathroom_emergency@fkr.dev",
+    "Open feedback template",
+    "figures, including local references",
 )
 deployment_markers = (
     "Minimum viable deployment",
@@ -107,15 +109,23 @@ deployment_markers = (
 download_markers = (
     f"Release {VERSION} download catalogue",
     "Master editions",
-    "Standalone routes",
+    "The eleven individual books",
     "Source, evidence, and maintenance",
     "data-download-filter=\"master\"",
     "../files/guide.pdf",
-    "../routes/O/small-room-observatory.pdf",
-    "../routes/C/body-first-aid.pdf",
-    "../routes/D/threat-safe-place.pdf",
-    "../routes/Z/outage-continuity.pdf",
-    "../routes/P/professional-support.pdf",
+    "../routes/O/green-book-body-owners-manual.pdf",
+    "../routes/A/amber-book-responsibility.pdf",
+    "../routes/B/teal-book-calm-guide.pdf",
+    "../routes/C/red-book-self-ambulance.pdf",
+    "../routes/D/blue-book-safety-no-place.pdf",
+    "../routes/H/orange-book-natural-disasters.pdf",
+    "../routes/Z/olive-book-zombie-guide.pdf",
+    "../routes/P/indigo-book-professional-support.pdf",
+    "../routes/S/purple-book-social-field-guide.pdf",
+    "../routes/T/grey-book-templates-forms.pdf",
+    "../routes/R/copper-book-reference.pdf",
+    "../routes/T/grey-book-templates-forms.html#beg-t-f-005",
+    "Feedback template",
     "../meta/release.json",
 )
 for page, markers in (
@@ -173,14 +183,20 @@ if meta_path.exists():
     check(meta.get("published_by_this_build") is False, "site metadata falsely claims publication")
     check(meta.get("deployment_performed_by_this_build") is False, "site metadata falsely claims deployment")
     metrics = meta.get("metrics", {})
-    check(metrics.get("chapters") == 14, "site chapter metric drifted")
-    check(metrics.get("standalone") == 10, "site standalone metric drifted")
+    check(metrics.get("chapters") == 17, "site chapter metric drifted")
+    check(metrics.get("standalone") == 11, "site standalone metric drifted")
     check(
         metrics.get("references") == expected_active_references,
         "site active stable-reference metric drifted",
     )
-    check(metrics.get("visuals", 0) >= 30, "site reader-visual metric unexpectedly small")
-    check(metrics.get("standalone_pdf_editions") == 60, "site standalone PDF metric drifted")
+    check(metrics.get("figures") == 49, "site public figure metric drifted")
+    check(metrics.get("authored_visuals") == 41, "site authored-visual metric drifted")
+    check(metrics.get("standalone_pdf_editions") == 66, "site standalone PDF metric drifted")
+
+check(
+    not list((SITE / "routes" / "T").glob("templates-blue-book*")),
+    "Pages package retained obsolete templates-blue-book output aliases",
+)
 
 css = SITE / "assets" / "site.css"
 js = SITE / "assets" / "site.js"

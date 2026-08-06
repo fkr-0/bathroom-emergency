@@ -1,8 +1,8 @@
 ---
-title: "Professional Support Directory"
+title: "The Indigo Book — Professional Support"
 chapter: 7
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/vega_social_connection.png
   - build/diagrams/professional_call_packet.png
@@ -10,7 +10,7 @@ dependencies:
   - build/diagrams/professional_route_selector.png
 ---
 
-# Professional Support — When the Bathroom Is Too Small
+# The Indigo Book — Professional Support
 
 Professional systems are different kinds of leverage, not rungs on a ladder
 from “minor” to “serious.” A hospital can treat an acute illness but cannot
@@ -447,10 +447,10 @@ Do not delay leaving immediate danger to obtain the perfect folder.
   <p><strong>116 111</strong> children and young people</p>
 </div>
 
-## Pair support with a maintained Blue Book page
+## Pair support with a maintained Grey Book resource
 
-Complete **[BEG:T:F:008] Local professional contacts** before deployment and
-keep **[BEG:T:F:003] Emergency call card**, **[BEG:T:F:009] Location and access
+Complete **[BEG:T:G:005] Local professional contacts** before deployment and
+keep **[BEG:T:F:003] Emergency call card**, **[BEG:T:G:006] Location and access
 card**, and any route-specific form beside it. The contact page owns names,
 numbers, hours, access channels, verification dates, and backups; **P —
 Professional Support** owns the selection logic and limits. Keeping those jobs

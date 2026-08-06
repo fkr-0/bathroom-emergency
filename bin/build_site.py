@@ -45,7 +45,7 @@ def route_cards(nodes: list[dict], released: set[str], prefix: str) -> str:
     for node in nodes:
         node_id = node["id"]
         is_released = node_id in released
-        status = "Standalone" if is_released else "Complete guide"
+        status = "Individual book" if is_released else "Complete guide"
         href = (
             f'{prefix}routes/{esc(node_id)}/{esc(node["slug"])}.html'
             if is_released
@@ -57,7 +57,7 @@ def route_cards(nodes: list[dict], released: set[str], prefix: str) -> str:
   <span class="route-status">{status}</span>
   <strong>{esc(node['title'])}</strong>
   <span>{esc(node['promise'])}</span>
-  <span class="route-open">Open route <span aria-hidden="true">↗</span></span>
+  <span class="route-open">Open book <span aria-hidden="true">↗</span></span>
 </a>'''
         )
     return "\n".join(cards)
@@ -67,7 +67,7 @@ def nav(prefix: str, active: str) -> str:
     items = (
         ("home", "Project", f"{prefix}index.html"),
         ("guide", "Guide", f"{prefix}guide/"),
-        ("routes", "Routes", f"{prefix}routes/"),
+        ("routes", "Books", f"{prefix}routes/"),
         ("downloads", "Downloads", f"{prefix}downloads/"),
         ("deploy", "Deploy", f"{prefix}deploy/"),
     )
@@ -160,16 +160,16 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
 
   <section class="metrics shell" aria-label="Release metrics">
     <div><strong>{metrics['chapters']}</strong><span>canonical chapters</span></div>
-    <div><strong>{metrics['standalone']}</strong><span>standalone route families</span></div>
+    <div><strong>{metrics['standalone']}</strong><span>individual colour books</span></div>
     <div><strong>{metrics['references']}</strong><span>stable public references</span></div>
-    <div><strong>{metrics['visuals']}</strong><span>reader-facing visuals</span></div>
+    <div><strong>{metrics['figures']}</strong><span>figures, including local references</span></div>
   </section>
 
   <section class="shell section-block" aria-labelledby="next-move">
-    <div class="section-heading"><div><span class="eyebrow">Start where the task is</span><h2 id="next-move">Choose your next move.</h2></div><p>No account, app, or network request is required. The release is built as HTML, PDF, editable source, and detachable route families.</p></div>
+    <div class="section-heading"><div><span class="eyebrow">Start where the task is</span><h2 id="next-move">Choose your next move.</h2></div><p>No account, app, or network request is required. The release is built as HTML, PDF, editable source, and eleven books that can leave the shelf one at a time.</p></div>
     <div class="action-grid">
       <a class="action-card action-guide" href="guide/"><span class="action-index">01</span><div><strong>Use the guide now</strong><p>Open the responsive complete edition and route from the actual problem.</p></div><span aria-hidden="true">↗</span></a>
-      <a class="action-card action-routes" href="routes/"><span class="action-index">02</span><div><strong>Open one route</strong><p>Use a focused standalone edition for orientation, alarm, first aid, safe place, environment, continuity, support, templates, or reference.</p></div><span aria-hidden="true">↗</span></a>
+      <a class="action-card action-routes" href="routes/"><span class="action-index">02</span><div><strong>Open one book</strong><p>Pick by colour and title: body, responsibility, calm, first aid, safety, disaster, continuity, professional support, social life, figures and templates, or reference.</p></div><span aria-hidden="true">↗</span></a>
       <a class="action-card action-download" href="downloads/"><span class="action-index">03</span><div><strong>Print or download</strong><p>Choose A4, narrow A4/2, large print, colour, or monochrome.</p></div><span aria-hidden="true">↗</span></a>
       <a class="action-card action-deploy" href="deploy/"><span class="action-index">04</span><div><strong>Install it properly</strong><p>Verify local routes, protect private fields, test the room, and assign maintenance.</p></div><span aria-hidden="true">↗</span></a>
     </div>
@@ -177,9 +177,9 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
 
   <section class="route-section section-block" aria-labelledby="route-heading">
     <div class="shell">
-      <div class="section-heading inverse"><div><span class="eyebrow">Ten connected regions</span><h2 id="route-heading">A graph, not a diagnostic maze.</h2></div><p>Each route owns a kind of problem and hands off when another system can change it better. {len(released)} routes currently ship as standalone families.</p></div>
+      <div class="section-heading inverse"><div><span class="eyebrow">Eleven books, no compulsory reading order</span><h2 id="route-heading">A shelf, not a diagnostic maze.</h2></div><p>Choose the title that sounds closest. Each book can start alone and point to another when the problem changes departments.</p></div>
       <div class="route-grid">{route_cards(nodes, released, "")}</div>
-      <div class="section-cta"><a class="text-link light" href="routes/">Explore the complete route graph <span aria-hidden="true">→</span></a></div>
+      <div class="section-cta"><a class="text-link light" href="routes/">Browse the eleven-book shelf <span aria-hidden="true">→</span></a></div>
     </div>
   </section>
 
@@ -202,7 +202,7 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
     <div class="shell proof-grid">
       <div><span class="eyebrow">Evidence with boundaries</span><h2 id="proof-heading">The source trail stays attached.</h2><p>Protocols, studies, associations, models, and mnemonics are labelled by what they can honestly establish. Local values remain visible deployment fields rather than plausible inventions.</p></div>
       <div class="proof-cards">
-        <article><strong>One source tree</strong><span>HTML, PDF, standalone routes, forms, indexes, and deployment pages are generated together.</span></article>
+        <article><strong>One source tree</strong><span>HTML, PDF, individual books, figures, templates, indexes, and deployment pages are generated together.</span></article>
         <article><strong>Stable addresses</strong><span>Typed references such as <code>[BEG:T:F:003]</code> survive page and chapter movement.</span></article>
         <article><strong>Build evidence</strong><span>Geometry, blank pages, overflow, colour/mono parity, accessibility, and artifact hashes are validated.</span></article>
         <article><strong>Field evidence stays separate</strong><span>A successful build does not pretend that a real wet room or novice first-aid session was tested.</span></article>
@@ -212,7 +212,7 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
 
   <section class="shell contact-band">
     <div><span class="eyebrow">Correct the guide in public, protect people in private</span><h2>Found a failed route or a better installation?</h2></div>
-    <div><p>Send the release, build revision, layout, and stable reference. Never send medical records, credentials, hidden safe-place locations, or another person’s identifying information without permission.</p><a class="button secondary" href="mailto:bathroom_emergency@fkr.dev">bathroom_emergency@fkr.dev</a></div>
+    <div><p>Use the feedback template to record the release, build revision, layout, stable reference, and what helped or failed. Never send medical records, credentials, hidden safe-place locations, or another person’s identifying information without permission.</p><div class="hero-actions"><a class="button primary" href="routes/T/grey-book-templates-forms.html#beg-t-f-005">Open feedback template</a><a class="button secondary" href="mailto:bathroom_emergency@fkr.dev?subject=Bathroom%20Emergency%20Guide%20feedback%20{VERSION}">Email feedback</a></div></div>
   </section>
 </main>
 {footer("", revision, date)}
@@ -283,13 +283,13 @@ def deployment_page(revision: str, date: str) -> str:
     <div class="mount-grid">
       <article><span>01</span><strong>Clear sleeve</strong><p>Wipeable, removable, and easy to replace. Glare and condensation can still defeat it.</p></article>
       <article><span>02</span><strong>Clip-hung strip</strong><p>Efficient for A4/2. Keep clear of water, heat, flame, doors, and snag points.</p></article>
-      <article><span>03</span><strong>Open folder or shallow box</strong><p>Separates master guide, Blue Book, local cards, private forms, and blanks.</p></article>
+      <article><span>03</span><strong>Open folder or shallow box</strong><p>Separates master guide, Safety Book, local reference figures, private templates, and blanks.</p></article>
       <article><span>04</span><strong>Wall panel plus takeaways</strong><p>Keep shared-safe orientation visible and detachable private material protected.</p></article>
     </div>
   </section>
 
   <section class="shell section-block operator-section" aria-labelledby="pages-heading">
-    <div class="operator-copy"><span class="eyebrow">Website operator</span><h2 id="pages-heading">GitHub Pages deployment is prepared, not presumed.</h2><p>The repository includes a dedicated Pages workflow that builds the entire release, validates it, and publishes <code>build/site</code>. A push or workflow run is still an explicit deployment event.</p><ol><li>Enable GitHub Pages with <strong>GitHub Actions</strong> as the source.</li><li>Review repository variables and optional custom-domain DNS.</li><li>Push the workflow or run it manually.</li><li>Verify the deployed landing, guide, route hub, PDFs, planner, and 404 page.</li></ol></div>
+    <div class="operator-copy"><span class="eyebrow">Website operator</span><h2 id="pages-heading">GitHub Pages deployment is prepared, not presumed.</h2><p>The repository includes a dedicated Pages workflow that builds the entire release, validates it, and publishes <code>build/site</code>. A push or workflow run is still an explicit deployment event.</p><ol><li>Enable GitHub Pages with <strong>GitHub Actions</strong> as the source.</li><li>Review repository variables and optional custom-domain DNS.</li><li>Push the workflow or run it manually.</li><li>Verify the deployed landing, guide, book shelf, PDFs, planner, and 404 page.</li></ol></div>
     <div class="code-card"><div class="code-head"><span>Local preview</span><button type="button" data-copy-code>Copy</button></div><pre><code>npm ci
 npx playwright install chromium
 npm run build
@@ -315,7 +315,7 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
         route_downloads.append(
             f'''<article class="download-route" data-download-group="routes" style="--route:{esc(node['colour'])}"><span class="route-code">{esc(node['id'])}</span><div><strong>{esc(node['title'])}</strong><p>{esc(node['promise'])}</p><div class="card-links"><a href="../routes/{esc(node['id'])}/{esc(slug)}.html">HTML</a><a href="../routes/{esc(node['id'])}/{esc(slug)}.pdf">A4 PDF</a><a href="../routes/{esc(node['id'])}/{esc(slug)}_largeprint.pdf">Large print</a></div></div></article>'''
         )
-    return f'''{page_head("Downloads — Bathroom Emergency Guide", "Download the complete guide, standalone routes, printable forms, and release documentation.", "../")}
+    return f'''{page_head("Downloads — Bathroom Emergency Guide", "Download the complete guide, individual colour books, printable figures and templates, and release documentation.", "../")}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {nav("../", "downloads")}
@@ -323,7 +323,7 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
 <main id="main">
   <section class="page-hero download-hero shell"><div><span class="eyebrow">Release {esc(VERSION)} download catalogue</span><h1>Take the guide<br><em>into the room.</em></h1><p class="lede">Choose by reading need and physical context. Every PDF family ships in colour and monochrome with page-count and semantic parity checks.</p></div><div class="download-summary"><strong>{len(released) * 6}</strong><span>standalone PDF editions</span><strong>6</strong><span>master layout/mode editions</span></div></section>
 
-  <section class="shell download-controls" aria-label="Download filters"><button class="filter-chip active" type="button" data-download-filter="all">Everything</button><button class="filter-chip" type="button" data-download-filter="master">Complete guide</button><button class="filter-chip" type="button" data-download-filter="routes">Standalone routes</button><button class="filter-chip" type="button" data-download-filter="source">Source & evidence</button></section>
+  <section class="shell download-controls" aria-label="Download filters"><button class="filter-chip active" type="button" data-download-filter="all">Everything</button><button class="filter-chip" type="button" data-download-filter="master">Complete guide</button><button class="filter-chip" type="button" data-download-filter="routes">Individual books</button><button class="filter-chip" type="button" data-download-filter="source">Source & evidence</button></section>
 
   <section class="shell download-section" data-download-group="master" aria-labelledby="master-downloads"><div class="section-heading"><div><span class="eyebrow">Complete guide</span><h2 id="master-downloads">Master editions</h2></div><p>HTML is best for responsive reading. PDF is best for a controlled print layout and offline distribution.</p></div>
     <div class="download-matrix">
@@ -333,9 +333,9 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
     </div>
   </section>
 
-  <section class="route-download-section download-section" data-download-group="routes" aria-labelledby="route-downloads"><div class="shell"><div class="section-heading inverse"><div><span class="eyebrow">Focused, source-complete families</span><h2 id="route-downloads">Standalone routes</h2></div><p>Each family contains A4, A4/2, and large-print colour/monochrome editions plus local Sources and limits.</p></div><div class="download-route-grid">{''.join(route_downloads)}</div></div></section>
+  <section class="route-download-section download-section" data-download-group="routes" aria-labelledby="route-downloads"><div class="shell"><div class="section-heading inverse"><div><span class="eyebrow">Take only the book you need</span><h2 id="route-downloads">The eleven individual books</h2></div><p>Each book contains A4, A4/2, and large-print colour/monochrome editions plus its own source notes.</p></div><div class="download-route-grid">{''.join(route_downloads)}</div></div></section>
 
-  <section class="shell download-section" data-download-group="source" aria-labelledby="source-downloads"><div class="section-heading"><div><span class="eyebrow">Inspect and reproduce</span><h2 id="source-downloads">Source, evidence, and maintenance</h2></div><p>The build remains inspectable. Generated release metadata in this package records the version, revision, coverage, and available routes.</p></div><div class="source-grid"><a href="../docs/README.md"><strong>README</strong><span>Architecture, build system, output matrix, and validation gates.</span></a><a href="../docs/DEPLOYMENT.md"><strong>Deployment manual</strong><span>Local fields, privacy, physical installation, maintenance, and domain contract.</span></a><a href="../docs/CHANGELOG.md"><strong>Changelog</strong><span>Release-by-release implementation and content history.</span></a><a href="../meta/release.json"><strong>Site release metadata</strong><span>Version, revision, metrics, route families, and build date.</span></a></div></section>
+  <section class="shell download-section" data-download-group="source" aria-labelledby="source-downloads"><div class="section-heading"><div><span class="eyebrow">Inspect and reproduce</span><h2 id="source-downloads">Source, evidence, and maintenance</h2></div><p>The build remains inspectable. Generated release metadata in this package records the version, revision, coverage, and available books.</p></div><div class="source-grid"><a href="../docs/README.md"><strong>README</strong><span>Architecture, build system, output matrix, and validation gates.</span></a><a href="../docs/DEPLOYMENT.md"><strong>Deployment manual</strong><span>Local fields, privacy, physical installation, maintenance, and domain contract.</span></a><a href="../routes/T/grey-book-templates-forms.html#beg-t-f-005"><strong>Feedback template</strong><span>Record a failed route, confusing figure, missing local fact, print defect, or useful adaptation.</span></a><a href="../docs/CHANGELOG.md"><strong>Changelog</strong><span>Release-by-release implementation and content history.</span></a><a href="../meta/release.json"><strong>Site release metadata</strong><span>Version, revision, metrics, book families, and build date.</span></a></div></section>
 </main>
 {footer("../", revision, date)}
 </body>
@@ -347,7 +347,7 @@ def not_found_page(revision: str, date: str) -> str:
     return f'''{page_head("Page not found — Bathroom Emergency Guide", "The requested Bathroom Emergency Guide page was not found.", "")}
 <body class="not-found">
 {nav("", "")}
-<main id="main" class="shell not-found-main"><span class="error-code">404</span><h1>This route is not in the graph.</h1><p>The link may target an older build or a file that was moved. Return to the project page, route hub, or download catalogue.</p><div class="hero-actions"><a class="button primary" href="index.html">Project home</a><a class="button secondary" href="routes/">Route hub</a><a class="button ghost" href="downloads/">Downloads</a></div></main>
+<main id="main" class="shell not-found-main"><span class="error-code">404</span><h1>This page fell off the shelf.</h1><p>The link may target an older build or a book that moved. Return to the project page, the eleven-book shelf, or the download catalogue.</p><div class="hero-actions"><a class="button primary" href="index.html">Project home</a><a class="button secondary" href="routes/">Book shelf</a><a class="button ghost" href="downloads/">Downloads</a></div></main>
 {footer("", revision, date)}
 </body>
 </html>
@@ -614,12 +614,14 @@ def build() -> Path:
     released = set(subguides["standalone_nodes"])
     coverage = json.loads((DATA / "coverage_matrix.json").read_text(encoding="utf-8"))
     references = json.loads((DATA / "reference_ids.json").read_text(encoding="utf-8"))
+    content_index = json.loads((DATA / "content_index.json").read_text(encoding="utf-8"))
     metrics = {
         "chapters": len(list((ROOT / "src" / "chapters").glob("*.md"))),
         "standalone": len(released),
         "references": len(references.get("ids", {}))
         - len(references.get("retired_resource_keys", [])),
-        "visuals": coverage["totals"]["reader_visuals"],
+        "figures": sum(1 for item in content_index["records"] if item.get("kind") == "G"),
+        "authored_visuals": coverage["totals"]["reader_visuals"],
     }
 
     write(OUT / "index.html", landing_page(nodes, released, metrics, revision, date))

@@ -1,18 +1,20 @@
 # Bathroom Emergency Guide
 
-> Most bathroom crises are short intervals in which the body becomes unusually
-> noticeable and the world unusually small.
+> You’re in a bathroom. That’s already a good start.
 
-A sourced, rebuildable, print-first field guide for panic, pain, responsibility,
-strange body signals, immediate danger, overload, environmental hazards, loss of
-safe place, and infrastructure failure.
+A sourced, rebuildable, print-first field guide with an adult voice, useful
+jokes, and eleven memorable colour books for body signals, panic, pain,
+responsibility, other people, unsafe places, environmental hazards, professional
+support, and infrastructure failure.
 
 The project is not one long emergency leaflet. It is a maintained family of:
 
 - one complete master guide;
-- ten graph-linked content identities;
-- ten released standalone subguide families;
-- detachable forms with route, figure, support, privacy, and pattern metadata;
+- eleven graph-linked book identities;
+- eleven released standalone book families;
+- ten reusable templates;
+- 49 reader-facing figures: 41 authored depictions and eight deployer-completed local reference sheets;
+- title, stable reference, and short description on every figure and template;
 - a stable global reference registry;
 - a modern project landing page, deployment planner, download catalogue, route
   hub, and enhanced HTML guide;
@@ -96,30 +98,31 @@ failing on renderer stderr or unsupported diagram font weights.
 
 ## Information architecture
 
-### Ten graph identities
+### The eleven-book shelf
 
 | Code | Title | Current packaging |
 |---|---|---|
-| O | Orientation | master + standalone |
-| A | Responsibility and Care | master + standalone |
-| B | Alarm and Calm | master + standalone |
-| C | Body and First Aid | master + standalone |
-| D | Threat and Safe Place | master + standalone |
-| H | Air, Smell, and Environment | master + standalone |
-| Z | Disruption and Continuity | master + standalone |
-| P | Professional Support | master + standalone |
-| T | Templates — The Blue Book | master + standalone |
-| R | Reference and Appendix | master + standalone |
+| O | The Green Book — Body Owner’s Manual | master + standalone |
+| A | The Amber Book — Responsibility | master + standalone |
+| B | The Teal Book — Calm Guide | master + standalone |
+| C | The Red Book — Self Ambulance | master + standalone |
+| D | The Blue Book — Safety & No Place | master + standalone |
+| H | The Orange Book — Natural Disasters | master + standalone |
+| Z | The Olive Book — Zombie Guide | master + standalone |
+| P | The Indigo Book — Professional Support | master + standalone |
+| S | The Purple Book — Social Field Guide | master + standalone |
+| T | The Grey Book — Templates & Forms | master + standalone |
+| R | The Copper Book — Reference | master + standalone |
 
-Detaching a node is not a copy operation. A standalone node must pass source,
-visual, color/mono, geometry, tagged-PDF, semantic-text, handoff, and
-accessibility gates. O, A, B, C, D, H, Z, P, T, and R all meet that release
-contract; every maintained graph identity now has a canonical standalone family.
+Detaching a book is not a copy operation. A standalone book must pass source,
+visual, colour/mono, geometry, tagged-PDF, semantic-text, handoff, and
+accessibility gates. O, A, B, C, D, H, Z, P, S, T, and R all meet that release
+contract; every maintained book identity has a canonical standalone family.
 
 Each released edition also declares an **encapsulation contract**: what belongs
 inside, what remains outside scope, which canonical/legacy names it answers to,
-how to exit to another route, and which figures, Blue Book forms, support
-services, and route identities travel with it. Those relationships are stored
+how to exit to another book, and which figures, Grey Book resources, support
+services, and book identities travel with it. Those relationships are stored
 in the standalone manifest and validated across every layout/mode edition.
 
 ### Stable public references
@@ -130,8 +133,9 @@ Canonical references use:
 
 Examples:
 
-    [BEG:C:S:004]   section in Body and First Aid
-    [BEG:T:F:003]   detachable Blue Book form
+    [BEG:C:S:004]   section in the Red Book
+    [BEG:T:F:003]   writable Grey Book template
+    [BEG:T:G:006]   deployer-completed local reference figure
     [BEG:R:W:005]   glossary term
 
 Kinds:
@@ -139,8 +143,8 @@ Kinds:
 | Code | Resource |
 |---|---|
 | S | section |
-| F | form or detachable template |
-| G | figure, chart, map, or diagram |
+| F | template: reusable writable page |
+| G | figure: read-only depiction or deployer-completed local reference |
 | C | professional contact or service |
 | D | deployment field |
 | W | glossary word or term |
@@ -149,18 +153,26 @@ The corresponding HTML anchor is `#beg-c-s-004`. Page numbers and hierarchical
 chapter numbers remain useful navigation aids, but they are not canonical IDs:
 an insertion must not silently rename every later resource.
 
-### Route identity and cross-reference grammar
+### Resource and cross-reference grammar
 
 Every route has a code, title, colour, print-safe pattern, and glyph name. Code
 and title are primary. Colour accelerates scanning; pattern and written glyph
 name preserve identity in monochrome, low-colour printing, screen-reader
 context, and spoken handoffs.
 
-Every canonical figure occurrence carries its stable figure reference, owning
-route, reader question, and paired forms. Every canonical form carries its
-stable form reference, privacy class, operational route chips, related figures,
-and relevant support services. The generated Reference and Professional Support
-indexes expose the same relationships without maintaining parallel copies.
+Every reader-facing resource declares how it may be used:
+
+- **Figure · Read only** — an authored depiction or a local reference sheet.
+  Local figures are completed and dated by the deployer before installation;
+  readers use the installed copy as reference.
+- **Template · Write** — a repeatable working page for an incident,
+  observation, review, drill, or handoff.
+
+Every figure and template carries the same minimum identity: **title, stable
+reference, and short description**. The rendered card keeps those elements and
+the content inside one visual group. Internal book-routing metadata remains
+machine-readable without becoming a dashboard above every resource. The
+Copper Book catalogues figures and templates without parallel prose copies.
 
 Source files:
 
@@ -174,10 +186,13 @@ Source files:
 - `bin/build_coverage_matrix.py` / `bin/validate_coverage_matrix.py` — generated
   provenance report and drift gate.
 
-### Blue Book forms
+### Grey Book writable resources
 
-`src/chapters/07a-templates.md` and `src/data/forms.json` define detachable,
-fillable resources, including:
+`src/chapters/07a-templates.md` and `src/data/forms.json` define ten reusable
+templates and eight deployer-completed local reference figures. The local
+figures are filled and dated before installation, then read rather than edited;
+replace them when facts, privacy boundaries, condition, or review dates change.
+The complete Grey Book collection includes:
 
 - deployment ownership and revision card;
 - factual location and access card;
@@ -202,7 +217,7 @@ credentials, private medical details, or violence-related safe locations.
 ```text
 .
 ├── src/
-│   ├── chapters/                 14 canonical source chapters
+│   ├── chapters/                 17 canonical source chapters
 │   ├── data/                     routes, sources, forms, references, locale,
 │   │                             accessibility, continuity, and figure catalogs
 │   ├── data/locales/             reviewed locale-specific service foundations
@@ -251,17 +266,18 @@ credentials, private medical details, or violence-related safe locations.
 
 | Output | Path | Contract |
 |---|---|---|
-| graph hub | `build/subguides/index.html` | ten-node directory and handoffs |
-| O family | `build/subguides/O/` | six orientation and observation editions |
-| A family | `build/subguides/A/` | six responsibility and care editions |
-| B family | `build/subguides/B/` | six HTML/PDF/Markdown layout-mode editions |
-| C family | `build/subguides/C/` | six first-aid layout-mode editions |
-| D family | `build/subguides/D/` | six threat and safe-place editions |
-| H family | `build/subguides/H/` | six HTML/PDF/Markdown layout-mode editions |
-| Z family | `build/subguides/Z/` | six outage and continuity editions |
-| P family | `build/subguides/P/` | six professional-support editions |
-| T family | `build/subguides/T/` | six detachable-template editions |
-| R family | `build/subguides/R/` | six reference/index editions |
+| eleven-book hub | `build/subguides/index.html` | colour-book directory and handoffs |
+| O family | `build/subguides/O/` | six Green Book body-observation editions |
+| A family | `build/subguides/A/` | six Amber Book responsibility editions |
+| B family | `build/subguides/B/` | six Teal Book calm editions |
+| C family | `build/subguides/C/` | six Red Book first-aid editions |
+| D family | `build/subguides/D/` | six Blue Book safety editions |
+| H family | `build/subguides/H/` | six Orange Book environment/disaster editions |
+| Z family | `build/subguides/Z/` | six Olive Book continuity editions |
+| P family | `build/subguides/P/` | six Indigo Book support editions |
+| S family | `build/subguides/S/` | six Purple Book social-field editions |
+| T family | `build/subguides/T/` | six Grey Book template editions |
+| R family | `build/subguides/R/` | six Copper Book reference editions |
 | project landing page | `build/site/index.html` | modern project representation and route entry points |
 | deployment planner | `build/site/deploy/index.html` | local-only checklist, privacy, format, mounting, and operator guidance |
 | download catalogue | `build/site/downloads/index.html` | master and standalone release selection |
@@ -274,21 +290,25 @@ credentials, private medical details, or violence-related safe locations.
 
 The validators enforce, among other things:
 
-- 14 canonical chapters at the package version and release date;
+- 17 canonical chapters at the package version and release date;
 - one-column print output despite the responsive screen navigation;
-- six master layout/mode editions and 60 standalone O/A/B/C/D/H/Z/P/T/R editions;
+- six master layout/mode editions and 66 standalone eleven-book editions;
 - valid A4, 105 × 297 mm A4/2, and large-print geometry;
 - tagged PDFs, semantic text parity, page-count parity, and no blank/colliding
   pages;
 - native MathML and no remote MathJax;
 - one source-backed route registry with escalation, destination, backup, and
   reviewed-source contracts;
-- ten reciprocal graph identities with unique code, pattern, glyph, color, and
+- eleven reciprocal book identities with unique code, pattern, glyph, colour, and
   title channels;
 - 300+ stable indexed resources across sections, forms, figures, contacts,
   deployment fields, and glossary terms;
 - eight offline Vega-Lite figures and thirty-three current non-Vega illustrations,
-  each with reader question, fallback, source basis, and monochrome strategy;
+  each with a title, short description, stable reference, fallback, source basis,
+  and monochrome strategy;
+- eight deployer-completed local reference figures and ten reusable templates,
+  each with a title, short description, privacy class, stable reference, and
+  related-figure links;
 - no known unsafe legacy wording or deprecated scientific chart;
 - layout-density, physical-edge, overflow, accessibility, and color/mono checks;
 - a self-contained landing/deployment/download package, responsive browser QA,

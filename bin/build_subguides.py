@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the graph hub and released standalone vertical slices.
+"""Build the public book shelf and released standalone books.
 
 Canonical prose remains in src/chapters. This builder extracts owned sections,
 adds generated orientation/source wrappers, and renders the same content into
@@ -153,16 +153,15 @@ def replace_refs(
 
 def source_endmatter(sources: list[dict]) -> str:
     groups = [
-        ("Operational routes", "operational"),
+        ("Operational guidance", "operational"),
         ("Research and evidence", "research"),
-        ("Models and explanatory sources", "explanatory"),
+        ("Models and explanations", "explanatory"),
     ]
     parts = [
-        "# Sources and limits",
+        "# Source notes",
         "",
-        "Generated from the canonical source registry. Every entry stays attached "
-        "to the subguide that uses it; scope and operational limits remain part "
-        "of the entry.",
+        "Generated from the canonical source registry. Every entry stays with the "
+        "book that uses it, including the caveats that keep the source honest.",
         "",
     ]
     for title, kind in groups:
@@ -177,7 +176,7 @@ def source_endmatter(sources: list[dict]) -> str:
                     "",
                     item["text"],
                     "",
-                    f"**Used in:** {item['chapter']} · **Subguide ownership:** "
+                    f"**Appears in:** {item['chapter']} · **Book:** "
                     f"{', '.join(item['subguides']) or 'unassigned'}",
                     "",
                 ]
@@ -186,7 +185,7 @@ def source_endmatter(sources: list[dict]) -> str:
     for item in sources:
         parts.append(
             f"[^{item['id']}]: See source `{item['id']}` in "
-            "**Sources and limits** above."
+            "**Source notes** above."
         )
     return "\n".join(parts).rstrip()
 
@@ -270,46 +269,58 @@ def edition_resource_map(node: dict, visual_files: list[str]) -> tuple[str, dict
         item["id"]: item
         for item in json.loads((DATA_DIR / "subguides.json").read_text(encoding="utf-8"))["nodes"]
     }
-    visual_records = [
+    authored_figures = [
         item for item in records
         if item.get("kind") == "G" and item.get("file") in visual_files
     ]
-    form_records = [
+    local_figures = [
+        item for item in records
+        if item.get("kind") == "G"
+        and item.get("prepared_by") == "deployer"
+        and (node["id"] == "T" or node["id"] in item.get("routes", []))
+    ]
+    figure_records = [*authored_figures, *local_figures]
+    template_records = [
         item for item in records
         if item.get("kind") == "F"
         and (node["id"] == "T" or node["id"] in item.get("routes", []))
     ]
     support_keys = {
-        key for form in form_records for key in form.get("support_keys", [])
+        key
+        for resource in [*local_figures, *template_records]
+        for key in resource.get("support_keys", [])
     }
     support_records = [
         item for item in records
         if item.get("kind") == "C" and item.get("service_key") in support_keys
     ]
 
-    if visual_records:
+    if figure_records:
         figures = "".join(
             f'<li><strong>{item["public_ref"]}</strong> {item["title"]}<br>'
-            f'<span>{item.get("question", "")}</span></li>'
-            for item in visual_records
+            f'<span>{item.get("description", "")}</span>'
+            + ('<br><small>Completed by deployer before installation.</small>' if item.get("prepared_by") == "deployer" else '')
+            + '</li>'
+            for item in figure_records
         )
     else:
-        figures = "<li>No figure is required to use the text route.</li>"
+        figures = "<li>No figure is required to use this book.</li>"
 
     if node["id"] == "T":
-        forms = (
-            f'<p><strong>{len(form_records)} canonical forms.</strong> Each heading below '
-            'carries its stable form address, privacy class, route chips, paired figures, '
-            'and support links.</p>'
+        templates = (
+            f'<p><strong>{len(template_records)} canonical templates.</strong> Each heading below '
+            'carries its title, stable template reference, short description, privacy class, '
+            'related figures, and support links.</p>'
         )
-    elif form_records:
-        forms = "<ul>" + "".join(
-            f'<li><strong>{item["public_ref"]}</strong> {item["title"]} '
+    elif template_records:
+        templates = "<ul>" + "".join(
+            f'<li><strong>{item["public_ref"]}</strong> {item["title"]} — '
+            f'{item.get("description", "")} '
             f'<span class="resource-privacy">{item.get("privacy", "review locally")}</span></li>'
-            for item in form_records
+            for item in template_records
         ) + "</ul>"
     else:
-        forms = "<p>No dedicated Blue Book form is required.</p>"
+        templates = "<p>No dedicated Grey Book template is required.</p>"
 
     if support_records:
         support = "<ul>" + "".join(
@@ -318,26 +329,28 @@ def edition_resource_map(node: dict, visual_files: list[str]) -> tuple[str, dict
             for item in support_records
         ) + "</ul>"
     else:
-        support = "<p>Use the named local or emergency route when the text calls for it.</p>"
+        support = "<p>Use the named local or emergency service when the text calls for it.</p>"
 
     related_routes = [node["id"]]
-    for form in form_records:
-        related_routes.extend(form.get("routes", []))
-    related_routes.extend(item["owner"] for item in visual_records)
+    for resource in [*local_figures, *template_records]:
+        related_routes.extend(resource.get("routes", []))
+    related_routes.extend(item["owner"] for item in authored_figures)
     related_routes = list(dict.fromkeys(related_routes))
     route_chips = "".join(route_chip(route, nodes) for route in related_routes)
     html = f'''<div class="edition-resource-map">
-<section><h3>Figures inside this edition</h3><ul>{figures}</ul></section>
-<section><h3>Blue Book forms paired with this route</h3>{forms}</section>
-<section><h3>Support routes named by those forms</h3>{support}</section>
-<section class="edition-route-key"><h3>Route key</h3><div class="route-chip-row">{route_chips}</div></section>
+<section><h3>Figures used by this edition</h3><ul>{figures}</ul></section>
+<section><h3>Grey Book templates paired with this book</h3>{templates}</section>
+<section><h3>Support contacts named by those resources</h3>{support}</section>
+<section class="edition-route-key"><h3>Related books</h3><div class="route-chip-row">{route_chips}</div></section>
 </div>'''
     metadata = {
-        "figure_refs": [item["public_ref"] for item in visual_records],
-        "form_refs": [item["public_ref"] for item in form_records],
+        "figure_refs": [item["public_ref"] for item in figure_records],
+        "form_refs": [item["public_ref"] for item in template_records],
+        "template_refs": [item["public_ref"] for item in template_records],
         "support_refs": [item["public_ref"] for item in support_records],
     }
     return html, metadata
+
 
 
 def build_markdown(
@@ -349,6 +362,7 @@ def build_markdown(
     contents: str,
     resource_map: str,
 ) -> str:
+    """Assemble a standalone book without placing governance before content."""
     node_id = node["id"]
     titles = {
         item["id"]: item["title"]
@@ -358,57 +372,25 @@ def build_markdown(
     }
     questions = "\n".join(f"- {question}" for question in node["questions"])
     handoffs = "\n".join(
-        f"- **{edge} — {titles[edge]}** — move here when that problem becomes primary."
+        f"- **{edge} — {titles[edge]}** — use it when that problem becomes primary."
         for edge in node["outgoing"]
     )
     cover = f'''::: {{#top .standalone-subguide data-subguide="{node_id}" data-pattern="{node["pattern"]}"}}
 
 ::: {{.subguide-cover}}
 
-<div class="subguide-family-mark">Bathroom Emergency Guide / graph field guide</div>
-<div class="subguide-code">{node_id}</div>
+<div class="subguide-family-mark">Bathroom Emergency Guide / one of eleven books</div>
+<div class="subguide-code">{node["glyph"]}</div>
 
 # {node["title"]}
 
 <div class="subguide-promise">{node["promise"]}</div>
 
-:::
-
-::: {{.subguide-position data-subguide="{node_id}"}}
-
-# Page 0 — Position in the graph
-
-![Subguide graph for {node_id} — {node["title"]}](build/diagrams/subguide_graph_{node_id}.png)
-
-{meta_grid(node, layout)}
-
-<div class="subguide-identity-key"><span class="subguide-pattern-swatch" aria-hidden="true"></span><span><strong>{node_id}</strong> uses the <strong>{node["pattern"].replace("-", " ")}</strong> pattern and the written glyph name <strong>{node["glyph"].replace("-", " ")}</strong>.</span></div>
-
-## Arrive here when
-
-{questions}
-
-## Edition contract
-
-<div class="subguide-scope-grid">
-<section><strong>Inside</strong><p>{node["scope"]}</p></section>
-<section><strong>Deliberate boundary</strong><p>{node["outside_scope"]}</p></section>
-<section><strong>Canonical names</strong><p>{" · ".join(node["aliases"])}</p></section>
-<section><strong>Exit rule</strong><p>Move to a named neighbouring route when its problem becomes primary; immediate danger bypasses the graph.</p></section>
-</div>
-
-## Neighbouring routes
-
-{neighbour_grid(node, titles)}
-
 ::: {{.emergency-gate}}
 
-**Immediate emergency gate**
-
-Call **112** now for immediate danger to life, severe breathing difficulty,
-unconsciousness, fire, smoke, suspected carbon monoxide, major bleeding, or
-another rapidly escalating emergency. Move to safety first when the environment
-itself is dangerous.
+**Actual emergency?** Stop reading, involve another person, and call local
+emergency services. In Germany, **112** is for life, medical, and fire danger;
+**110** is for an active police threat.
 
 :::
 
@@ -416,43 +398,35 @@ itself is dangerous.
 
 ::: {{.subguide-intro}}
 
-# Introduction and contents
-
-**Begin with the loudest useful question, not a complete theory of your life.**
-This edition collects the canonical sections owned by node **{node_id}** and
-keeps their original order.
-
-Questions in this edition:
+# Start here
 
 {questions}
 
-## Mini contents
+<div class="subguide-scope-grid">
+<section><strong>What this book does</strong><p>{node["scope"]}</p></section>
+<section><strong>What it hands off</strong><p>{node["outside_scope"]}</p></section>
+</div>
 
-{contents or '- The canonical content follows on the next page.'}
+## Contents
 
-## Edition resource map
-
-{resource_map}
-
-The HTML navigation and PDF outline contain the same route. The graph above and
-the handoff page below remain complete in text.
+{contents or '- The book begins on the next page.'}
 
 :::
 '''
-    handoff = f'''::: {{.subguide-handoff data-subguide="{node_id}"}}
+    connections = f'''::: {{.subguide-handoff data-subguide="{node_id}"}}
 
-# Handoff — What changed while reading?
+# Where next?
 
-- **Better:** write the action that helped and the condition that would change the route.
-- **Same:** use the backup action or choose the closest neighbouring guide.
-- **Worse:** use the chapter escalation condition; immediate danger goes directly to **112**.
-- **Different problem:** follow the named graph edge below.
+You do not need to complete the shelf in order. Stay here while this is the
+primary problem; move when another title becomes more accurate.
 
 {handoffs}
 
-**Notes:** ________________________________________________________________
+![Connections from {node_id} — {node["title"]}](build/diagrams/subguide_graph_{node_id}.png)
 
-**Next check / time:** ____________________________________________________
+## Tools, forms, and stable references
+
+{resource_map}
 
 :::
 '''
@@ -461,13 +435,13 @@ the handoff page below remain complete in text.
         + source_endmatter(ordered_sources)
         + "\n\n:::"
     )
-    return "\n\n".join((cover, canonical_content, handoff, endmatter, ":::")) + "\n"
-
+    return "\n\n".join((cover, canonical_content, connections, endmatter, ":::")) + "\n"
 
 def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
     if node_id == "O":
         return [
             ("01-how-to-use.md", chapter_without_definitions("01-how-to-use.md")),
+            ("01b-body-owner-manual.md", chapter_without_definitions("01b-body-owner-manual.md")),
         ]
     if node_id == "A":
         return [
@@ -502,10 +476,15 @@ def canonical_blocks(node_id: str) -> list[tuple[str, str]]:
                 "03h-environmental-hazards.md",
                 chapter_without_definitions("03h-environmental-hazards.md"),
             ),
+            ("06b-natural-disasters.md", chapter_without_definitions("06b-natural-disasters.md")),
         ]
     if node_id == "Z":
         return [
             ("06-zombie-guide.md", chapter_without_definitions("06-zombie-guide.md")),
+        ]
+    if node_id == "S":
+        return [
+            ("04b-social-field-guide.md", chapter_without_definitions("04b-social-field-guide.md")),
         ]
     if node_id == "T":
         return [
@@ -686,23 +665,20 @@ def build_hub(results: dict[str, dict]) -> None:
         if node["id"] in results:
             action = (
                 f'<a class="hub-open" href="{node["id"]}/{node["slug"]}.html">'
-                f'Open standalone {node["id"]} →</a>'
+                'Open this book →</a>'
             )
-            status = "Standalone release"
         else:
             action = '<span class="hub-master">Read in the complete master guide</span>'
-            status = "Master-guide node"
         cards.append(
             f'''<article class="hub-node" data-subguide="{node["id"]}">
 <img class="hub-node-pattern" src="{pattern_path}" alt="{node["id"]} {node["pattern"].replace("-", " ")} identity pattern">
 <div class="hub-node-heading"><span>{node["id"]}</span><h2>{node["title"]}</h2></div>
 <p>{node["promise"]}</p>
-<dl><div><dt>Pattern</dt><dd>{node["pattern"].replace("-", " ")}</dd></div><div><dt>Glyph</dt><dd>{node["glyph"].replace("-", " ")}</dd></div><div><dt>Status</dt><dd>{status}</dd></div></dl>
 {action}
 </article>'''
         )
     markdown = f'''---
-title: "Bathroom Emergency Guide — Graph Hub"
+title: "Bathroom Emergency Guide — The Eleven Books"
 version: "{VERSION}"
 lang: "en"
 ---
@@ -712,46 +688,41 @@ lang: "en"
 ::: {{.subguide-cover}}
 
 <div class="subguide-family-mark">Bathroom Emergency Guide / v{VERSION}</div>
-<div class="subguide-code">O</div>
+<div class="subguide-code">11</div>
 
-# Graph Hub
+# The Eleven Books
 
-<div class="subguide-promise">Choose one region, keep one next action, and move when the primary problem changes.</div>
+<div class="subguide-promise">Choose the title that sounds closest. Read until one useful action becomes possible.</div>
 
 :::
 
 ::: {{.emergency-gate}}
 
-**Immediate emergency gate**
-
-Immediate danger to life, fire, smoke, suspected carbon monoxide, severe
-breathing difficulty, unconsciousness, or major bleeding goes directly to
-**112**. Active violence or crime goes to a safer place and **110 / 112**.
+**Actual emergency?** Use emergency services before choosing a book. In Germany,
+call **112** for life, medical, or fire danger and **110** for an active police
+threat.
 
 :::
 
-# The graph
+# Pick a book
 
-![Bathroom Emergency Guide subguide graph overview](build/diagrams/subguide_graph_overview.png)
+![Bathroom Emergency Guide book connections](build/diagrams/subguide_graph_overview.png)
 
-The image shows the orientation spine. The directory below is the complete text
-fallback; each released standalone page lists all of its neighbours.
+The lines only show where one book can hand over to another. They are not a
+reading order and there will be no quiz.
 
-<div class="hub-directory" aria-label="Ten subguide routes">
+<div class="hub-directory" aria-label="Eleven colour books">
 {chr(10).join(cards)}
 </div>
 
-## Why nine nodes are detached in this release
+## A shelf, not a hierarchy
 
-The standalone set now covers orientation (**O**), alarm and calm (**B**), body
-and first aid (**C**), threat and safe place (**D**), environmental hazards
-(**H**), outage and continuity (**Z**), professional systems (**P**), writable
-templates (**T**), and reference material (**R**). The set deliberately mixes
-research, operational protocols, action sequences, forms, and indexes so the
-build cannot quietly optimize for one content type.
+Green observes the body. Amber handles responsibility. Teal lowers the volume.
+Red handles first aid. Blue finds safety. Orange reads the environment. Olive
+keeps systems alive. Indigo finds professional leverage. Purple handles other
+people. Grey stores facts. Copper helps you find everything again.
 
-Responsibility and care (**A**) continues to work inside the complete master
-guide until its visual set and standalone page grammar pass the same gates.
+Every book is complete enough to start alone and honest enough to hand off.
 
 :::
 '''
@@ -804,7 +775,7 @@ guide until its visual set and standalone page grammar pass the same gates.
     (out / "manifest.json").write_text(
         json.dumps(hub_manifest, indent=2) + "\n", encoding="utf-8"
     )
-    print("  [OK] graph hub → build/subguides/index.html")
+    print("  [OK] eleven-book shelf → build/subguides/index.html")
 
 
 def main() -> int:
@@ -814,6 +785,14 @@ def main() -> int:
     parser.add_argument("--node", choices=[*released, "all"], default="all")
     args = parser.parse_args()
     node_ids = released if args.node == "all" else [args.node]
+    # A clean build must not retain output names from an older book identity.
+    # Preserve generated pattern assets, which are produced before this step,
+    # while replacing every selected book directory and root hub file.
+    for node_id in node_ids:
+        shutil.rmtree(BUILD / node_id, ignore_errors=True)
+    if args.node == "all":
+        for name in ("index.md", "index.css", "index.html", "manifest.json"):
+            (BUILD / name).unlink(missing_ok=True)
     results = {node_id: build_node(node_id) for node_id in node_ids}
     if args.node == "all":
         build_hub(results)

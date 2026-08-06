@@ -43,13 +43,16 @@ GENERATED = BUILD / "generated"
 CHAPTERS = [
     "00-cover.md",
     "01-how-to-use.md",
+    "01b-body-owner-manual.md",
     "02-situation-a.md",
     "03-situations-b-g.md",
     "03g-safe-place-routing.md",
     "03h-environmental-hazards.md",
     "04-calm-guide.md",
+    "04b-social-field-guide.md",
     "05-self-ambulance.md",
     "06-zombie-guide.md",
+    "06b-natural-disasters.md",
     "07-professional-support.md",
     "07a-templates.md",
     "08-appendix.md",
@@ -60,13 +63,16 @@ CHAPTERS = [
 CHAPTER_OWNERS = {
     "00-cover.md": "O",
     "01-how-to-use.md": "O",
+    "01b-body-owner-manual.md": "O",
     "02-situation-a.md": "A",
     "03-situations-b-g.md": "D",
     "03g-safe-place-routing.md": "D",
     "03h-environmental-hazards.md": "H",
     "04-calm-guide.md": "B",
+    "04b-social-field-guide.md": "S",
     "05-self-ambulance.md": "C",
     "06-zombie-guide.md": "Z",
+    "06b-natural-disasters.md": "H",
     "07-professional-support.md": "P",
     "07a-templates.md": "T",
     "08-appendix.md": "R",
@@ -165,6 +171,7 @@ def expand_reference_macros(text: str) -> str:
         "deployment-field-index": "deployment-index.md",
         "glossary-index": "glossary-index.md",
         "detachable-form-index": "form-index.md",
+        "writable-template-index": "template-index.md",
         "route-identity-index": "route-identity-index.md",
         "support-form-map": "support-form-map.md",
         "coverage-matrix": "coverage-matrix.md",
@@ -177,7 +184,7 @@ def expand_reference_macros(text: str) -> str:
         if not path.exists():
             raise BuildError(f"Generated reference fragment missing: {path}")
         text = text.replace(token, path.read_text(encoding="utf-8").strip())
-    if re.search(r"\{\{(?:global-content-index|diagram-index-generated|professional-contact-index|deployment-field-index|glossary-index|detachable-form-index|route-identity-index|support-form-map|coverage-matrix)\}\}", text):
+    if re.search(r"\{\{(?:global-content-index|diagram-index-generated|professional-contact-index|deployment-field-index|glossary-index|detachable-form-index|writable-template-index|route-identity-index|support-form-map|coverage-matrix)\}\}", text):
         raise BuildError("Unexpanded reference-index macro remains")
     return text
 
@@ -195,7 +202,7 @@ def source_inventory_records() -> list[dict]:
 
 
 def expand_subguide_source_macros(text: str, records: list[dict]) -> str:
-    """Render compact local source blocks from the generated migration inventory."""
+    """Render compact book-level source notes from the generated inventory."""
 
     pattern = re.compile(r"\{\{subguide-sources:([A-Z])\}\}")
     chapter_order = {name: index for index, name in enumerate(CHAPTERS)}
@@ -208,14 +215,14 @@ def expand_subguide_source_macros(text: str, records: list[dict]) -> str:
             return "\n".join((
                 f'::: {{.sources-and-limits data-subguide="{node}"}}',
                 "",
-                f"## Sources and limits — {node}",
+                f"## Source notes — {node}",
                 "",
-                "This subguide contains organizational templates rather than independent medical claims. Clinical and operational claims remain sourced beside the corresponding master-guide sections and in Reference.",
+                "This book contains organizational templates rather than independent medical claims. Clinical and operational claims remain sourced beside the corresponding guide sections and in the Copper Book.",
                 "",
                 ":::"
             ))
-        groups = (("Operational routes", "operational"), ("Research and evidence", "research"), ("Models and explanatory sources", "explanatory"))
-        parts = [f'::: {{.sources-and-limits data-subguide="{node}"}}', "", f"## Sources and limits — {node}", "", "Generated from the current chapter-footnote inventory. Stable IDs come from the canonical source registry used by master and standalone editions.", ""]
+        groups = (("Operational guidance", "operational"), ("Research and evidence", "research"), ("Models and explanations", "explanatory"))
+        parts = [f'::: {{.sources-and-limits data-subguide="{node}"}}', "", f"## Source notes — {node}", "", "Generated from the current chapter-footnote inventory. Stable IDs come from the canonical source registry used by the complete guide and individual books.", ""]
         for title, kind in groups:
             subset = [item for item in selected if item["kind"] == kind]
             if not subset:

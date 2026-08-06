@@ -1,180 +1,68 @@
 {
   "schema_version": 1,
-  "release": "4.13.1",
+  "release": "4.14.0-alt.2",
   "status": "canonical-source-registry",
   "generated_by": "bin/build_source_inventory.py",
   "footnote_sources": [
     {
-      "id": "01-how-to-use--affect-labeling",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "affect-labeling",
-      "kind": "explanatory",
-      "text": "Lieberman MD, Inagaki TK, Tabibnia G, Crockett MJ, “Subjective Responses to Emotional Stimuli During Labeling, Reappraisal, and Distraction,” *Emotion* 11 (2011): 468–480. Across four experiments, affect labeling dampened reported affect relative to passive viewing; the tasks used pictures, not bathroom crises, so the practical inference remains modest. https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/",
-      "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/"
-      ],
-      "used_at_lines": [
-        197
-      ],
-      "subguides": [
-        "O"
-      ]
-    },
-    {
-      "id": "01-how-to-use--anxiety-time",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "anxiety-time",
+      "id": "01b-body-owner-manual--gut-brain",
+      "chapter": "01b-body-owner-manual.md",
+      "footnote_key": "gut-brain",
       "kind": "research",
-      "text": "Sarigiannidis I et al., “Anxiety makes time pass quicker while fear has no effect,” *Cognition* 197 (2020): 104116. Across three experiments, induced anxiety shifted duration judgments toward underestimation; this laboratory effect is not a personal diagnostic test. https://pmc.ncbi.nlm.nih.gov/articles/PMC7033556/",
+      "text": "Carabotti M et al., “The gut-brain axis: interactions between enteric microbiota, central and enteric nervous systems,” *Annals of Gastroenterology* 28 (2015): 203–209. https://pmc.ncbi.nlm.nih.gov/articles/PMC4367209/",
       "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7033556/"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4367209/"
       ],
       "used_at_lines": [
-        160
+        55
       ],
       "subguides": [
         "O"
       ]
     },
     {
-      "id": "01-how-to-use--bathroom-acoustics",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "bathroom-acoustics",
+      "id": "01b-body-owner-manual--nrs",
+      "chapter": "01b-body-owner-manual.md",
+      "footnote_key": "nrs",
       "kind": "research",
-      "text": "Reinhart PN et al., “Effects of Reverberation and Compression on Consonant Identification in Individuals with Hearing Impairment,” *Ear and Hearing* 37 (2016). The article uses tiled bathrooms as an everyday high-reverberation example and notes that actual reverberation depends on the room. https://pmc.ncbi.nlm.nih.gov/articles/PMC4767560/",
+      "text": "Hjermstad MJ et al., “Studies Comparing Numerical Rating Scales, Verbal Rating Scales, and Visual Analogue Scales for Assessment of Pain Intensity in Adults,” *Journal of Pain and Symptom Management* 41 (2011): 1073–1093. https://doi.org/10.1016/j.jpainsymman.2010.08.016",
       "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4767560/"
+        "https://doi.org/10.1016/j.jpainsymman.2010.08.016"
       ],
       "used_at_lines": [
-        139
+        83
       ],
       "subguides": [
         "O"
       ]
     },
     {
-      "id": "01-how-to-use--cold-face",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "cold-face",
+      "id": "01b-body-owner-manual--rome",
+      "chapter": "01b-body-owner-manual.md",
+      "footnote_key": "rome",
       "kind": "research",
-      "text": "Khurana RK et al., “The Implications of the Diving Response in Reducing Panic Symptoms,” *Frontiers in Psychiatry* 12 (2021): 798664. Small experimental study; promising, not a universal treatment protocol. https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/",
+      "text": "Lacy BE et al., “Bowel Disorders,” *Gastroenterology* 150 (2016): 1393–1407. Rome IV criteria describe clinical patterns over time; they are not a one-visit self-diagnosis. https://doi.org/10.1053/j.gastro.2016.02.031",
       "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/"
+        "https://doi.org/10.1053/j.gastro.2016.02.031"
       ],
       "used_at_lines": [
-        223
+        78
       ],
       "subguides": [
         "O"
       ]
     },
     {
-      "id": "01-how-to-use--cold-water",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "cold-water",
+      "id": "01b-body-owner-manual--syncope",
+      "chapter": "01b-body-owner-manual.md",
+      "footnote_key": "syncope",
       "kind": "research",
-      "text": "Espeland D et al., “Health effects of voluntary exposure to cold water—a continuing subject of debate,” *International Journal of Circumpolar Health* 81 (2022). Cold-water exposure can evoke both diving and cold-shock responses. https://pmc.ncbi.nlm.nih.gov/articles/PMC9518606/",
+      "text": "Brignole M et al., “2018 ESC Guidelines for the diagnosis and management of syncope,” *European Heart Journal* 39 (2018): 1883–1948. https://doi.org/10.1093/eurheartj/ehy037",
       "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9518606/"
+        "https://doi.org/10.1093/eurheartj/ehy037"
       ],
       "used_at_lines": [
-        227
-      ],
-      "subguides": [
-        "O"
-      ]
-    },
-    {
-      "id": "01-how-to-use--gut-stress",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "gut-stress",
-      "kind": "research",
-      "text": "Taché Y, Bonaz B, “Neuroendocrine control of the gut during stress,” *Annual Review of Physiology* 69 (2007/PMC 2009). Stress-related CRF pathways can inhibit upper-GI motor function and stimulate colonic propulsive activity; individual responses and clinical meanings vary. https://pmc.ncbi.nlm.nih.gov/articles/PMC2714186/",
-      "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2714186/"
-      ],
-      "used_at_lines": [
-        117
-      ],
-      "subguides": [
-        "O"
-      ]
-    },
-    {
-      "id": "01-how-to-use--interoception-review",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "interoception-review",
-      "kind": "research",
-      "text": "Jenkinson PM, Fotopoulou A, Ibañez A, “Interoception in anxiety, depression, and psychosis: a review,” *eClinicalMedicine* 73 (2024): 102673. The review emphasizes that interoception includes sensing, interpretation, integration, regulation, and prediction; meta-analyses do not show a simple reliable increase in heartbeat-detection accuracy in anxiety. https://pmc.ncbi.nlm.nih.gov/articles/PMC11169962/",
-      "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11169962/"
-      ],
-      "used_at_lines": [
-        86
-      ],
-      "subguides": [
-        "O"
-      ]
-    },
-    {
-      "id": "01-how-to-use--olfactory-habituation",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "olfactory-habituation",
-      "kind": "research",
-      "text": "Sinding C et al., “New determinants of olfactory habituation,” *Scientific Reports* 7 (2017): 41047. Habituation is reduced responsiveness to continuous or repeated sensory input; it does not establish source safety. https://pmc.ncbi.nlm.nih.gov/articles/PMC5264389/",
-      "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5264389/"
-      ],
-      "used_at_lines": [
-        262
-      ],
-      "subguides": [
-        "O"
-      ]
-    },
-    {
-      "id": "01-how-to-use--panic-course",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "panic-course",
-      "kind": "research",
-      "text": "Gorman JM et al./reviewed in Johnson PL et al., “Etiology, triggers and neurochemical circuits associated with unexpected, expected, and laboratory-induced panic attacks,” *Neuroscience & Biobehavioral Reviews* 46 (2014): 429–454. Typical panic attacks peak rapidly and commonly subside over tens of minutes, but similar symptoms can have non-panic causes. https://pmc.ncbi.nlm.nih.gov/articles/PMC4252820/",
-      "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4252820/"
-      ],
-      "used_at_lines": [
-        164
-      ],
-      "subguides": [
-        "O"
-      ]
-    },
-    {
-      "id": "01-how-to-use--situational-syncope",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "situational-syncope",
-      "kind": "explanatory",
-      "text": "da Silva RMFL, “Syncope: epidemiology, etiology, and prognosis,” *Frontiers in Physiology* 5 (2014): 471. Situational syncope includes episodes associated with urination, defecation, coughing, visceral pain, and other triggers. https://pmc.ncbi.nlm.nih.gov/articles/PMC4258989/",
-      "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4258989/"
-      ],
-      "used_at_lines": [
-        243
-      ],
-      "subguides": [
-        "O"
-      ]
-    },
-    {
-      "id": "01-how-to-use--stress-executive",
-      "chapter": "01-how-to-use.md",
-      "footnote_key": "stress-executive",
-      "kind": "research",
-      "text": "Shields GS, Sazma MA, Yonelinas AP, “The Effects of Acute Stress on Core Executive Functions,” *Neuroscience & Biobehavioral Reviews* 68 (2016): 651–668. Meta-analysis: 51 studies, 2,486 participants; average effects varied by task and context. https://pmc.ncbi.nlm.nih.gov/articles/PMC5003767/",
-      "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5003767/"
-      ],
-      "used_at_lines": [
-        177
+        163
       ],
       "subguides": [
         "O"
@@ -586,7 +474,7 @@
         "https://doi.org/10.1016/j.xcrm.2022.100895"
       ],
       "used_at_lines": [
-        123
+        125
       ],
       "subguides": [
         "B"
@@ -602,10 +490,165 @@
         "https://www.who.int/publications/i/item/9789240003927"
       ],
       "used_at_lines": [
-        56
+        58
       ],
       "subguides": [
         "B"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--affect-labeling",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "affect-labeling",
+      "kind": "research",
+      "text": "Lieberman MD et al., \"Subjective Responses to Emotional Stimuli During Labeling, Reappraisal, and Distraction,\" *Emotion* 11 (2011): 468–480. https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/"
+      ],
+      "used_at_lines": [
+        218
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--boundary-setting",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "boundary-setting",
+      "kind": "explanatory",
+      "text": "Cloud H, Townsend J, *Boundaries: When to Say Yes, How to Say No to Take Control of Your Life* (Zondervan, 1992). Widely referenced clinical framework for interpersonal boundary-setting. ISBN 978-0310247456.",
+      "urls": [],
+      "used_at_lines": [
+        286
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--cold-face",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "cold-face",
+      "kind": "research",
+      "text": "Khurana RK et al., \"The Implications of the Diving Response in Reducing Panic Symptoms,\" *Frontiers in Psychiatry* 12 (2021): 798664. https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/"
+      ],
+      "used_at_lines": [
+        213
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--dv-definition",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "dv-definition",
+      "kind": "explanatory",
+      "text": "World Health Organization, *Violence Against Women Prevalence Estimates, 2018* (Geneva: WHO, 2021). Intimate partner violence includes physical, sexual, and psychological abuse as well as controlling behaviours. https://www.who.int/publications/i/item/9789240022256",
+      "urls": [
+        "https://www.who.int/publications/i/item/9789240022256"
+      ],
+      "used_at_lines": [
+        517
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--dv-hotline",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "dv-hotline",
+      "kind": "explanatory",
+      "text": "Bundesamt für Familie und zivilgesellschaftliche Aufgaben, \"Hilfetelefon Gewalt gegen Frauen,\" https://www.hilfetelefon.de/ — 24/7, anonymous, free, available in 18 languages.",
+      "urls": [
+        "https://www.hilfetelefon.de/"
+      ],
+      "used_at_lines": [
+        522
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--fear-signals",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "fear-signals",
+      "kind": "explanatory",
+      "text": "de Becker G, *The Gift of Fear* (Little, Brown, 1997). Practical framework for distinguishing social anxiety from genuine threat signals. ISBN 978-0316235020.",
+      "urls": [],
+      "used_at_lines": [
+        483
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--rejection-sensitivity",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "rejection-sensitivity",
+      "kind": "research",
+      "text": "Downey G, Feldman SI, \"Implications of rejection sensitivity for intimate relationships,\" *Journal of Personality and Social Psychology* 70 (1996): 1327–1343. Rejection-sensitive individuals overinterpret ambiguous social cues as rejection. https://doi.org/10.1037/0022-3514.70.6.1327",
+      "urls": [
+        "https://doi.org/10.1037/0022-3514.70.6.1327"
+      ],
+      "used_at_lines": [
+        266
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--social-anxiety",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "social-anxiety",
+      "kind": "explanatory",
+      "text": "American Psychiatric Association, *Diagnostic and Statistical Manual of Mental Disorders*, 5th ed., text rev. (DSM-5-TR, 2022). Social anxiety disorder criteria distinguish persistent fear of social situations from situational threat responses.",
+      "urls": [],
+      "used_at_lines": [
+        548
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--social-comparison",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "social-comparison",
+      "kind": "research",
+      "text": "Festinger L, \"A Theory of Social Comparison Processes,\" *Human Relations* 7 (1954): 117–140. Foundational paper on how people evaluate themselves through comparison with others, especially under uncertainty. https://doi.org/10.1177/001872675400700202",
+      "urls": [
+        "https://doi.org/10.1177/001872675400700202"
+      ],
+      "used_at_lines": [
+        201
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--social-support",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "social-support",
+      "kind": "research",
+      "text": "Lakey B, Orehek E, \"Relational Regulation Theory: A New Approach to Explain the Link Between Perceived Social Support and Mental Health,\" *Psychological Review* 118 (2011): 482–495. Perceived support availability buffers distress even when not actively used. https://doi.org/10.1037/a0023477",
+      "urls": [
+        "https://doi.org/10.1037/a0023477"
+      ],
+      "used_at_lines": [
+        144,
+        441
+      ],
+      "subguides": [
+        "S"
       ]
     },
     {
@@ -784,6 +827,118 @@
       ],
       "subguides": [
         "Z"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--bbk-fire",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "bbk-fire",
+      "kind": "operational",
+      "text": "BBK, “Was tun, wenn es brennt?” https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html"
+      ],
+      "used_at_lines": [
+        90
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--bbk-warning",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "bbk-warning",
+      "kind": "operational",
+      "text": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe, official warnings and NINA information: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html"
+      ],
+      "used_at_lines": [
+        29
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--cdc-water",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "cdc-water",
+      "kind": "explanatory",
+      "text": "Centers for Disease Control and Prevention, “Making Water Safe in an Emergency.” https://www.cdc.gov/healthywater/emergency/making-water-safe.html",
+      "urls": [
+        "https://www.cdc.gov/healthywater/emergency/making-water-safe.html"
+      ],
+      "used_at_lines": [
+        143
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--closed-door",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "closed-door",
+      "kind": "explanatory",
+      "text": "UL Fire Safety Research Institute, Close Before You Doze / closed-door fire research. https://closeyourdoor.org/",
+      "urls": [
+        "https://closeyourdoor.org/"
+      ],
+      "used_at_lines": [
+        105
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--nws-flood",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "nws-flood",
+      "kind": "explanatory",
+      "text": "National Weather Service, flood safety and “Turn Around, Don’t Drown.” https://www.weather.gov/safety/flood",
+      "urls": [
+        "https://www.weather.gov/safety/flood"
+      ],
+      "used_at_lines": [
+        80
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--ready-earthquake",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "ready-earthquake",
+      "kind": "explanatory",
+      "text": "Ready.gov, “Earthquakes”: Drop, Cover, Hold On and post-event guidance. https://www.ready.gov/earthquakes",
+      "urls": [
+        "https://www.ready.gov/earthquakes"
+      ],
+      "used_at_lines": [
+        37
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--ready-tornado",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "ready-tornado",
+      "kind": "explanatory",
+      "text": "Ready.gov, “Tornadoes”: basement or small interior lowest-floor room, away from windows. https://www.ready.gov/tornadoes",
+      "urls": [
+        "https://www.ready.gov/tornadoes"
+      ],
+      "used_at_lines": [
+        62
+      ],
+      "subguides": [
+        "H"
       ]
     },
     {
@@ -1639,6 +1794,27 @@
       "url": "https://gesund.bund.de/notfallnummern",
       "source_ids": [
         "05-self-ambulance--emergency-numbers",
+        "07-professional-support--numbers"
+      ]
+    },
+    {
+      "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html",
+      "source_ids": [
+        "03h-environmental-hazards--bbk-fire",
+        "06b-natural-disasters--bbk-fire"
+      ]
+    },
+    {
+      "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html",
+      "source_ids": [
+        "06-zombie-guide--bbk-warning",
+        "06b-natural-disasters--bbk-warning"
+      ]
+    },
+    {
+      "url": "https://www.hilfetelefon.de/",
+      "source_ids": [
+        "04b-social-field-guide--dv-hotline",
         "07-professional-support--numbers"
       ]
     }

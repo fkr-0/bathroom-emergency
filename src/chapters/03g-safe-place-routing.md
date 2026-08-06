@@ -1,8 +1,8 @@
 ---
-title: "Situation G — No Safe Place"
+title: "The Blue Book — Safety & No Place"
 chapter: "3G"
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/safe_place_route_map.png
   - build/diagrams/communication_access_card.png
@@ -10,7 +10,7 @@ dependencies:
   - build/diagrams/safe_reserve_clock.png
 ---
 
-# Situation G — No Safe Place
+# The Blue Book — Safety & No Place
 
 “No place” is not one problem. It can mean violence, no roof, an inaccessible
 or medically unusable place, social rupture, or an internal crisis. Those routes

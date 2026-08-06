@@ -26,7 +26,7 @@ PDFS = [
     ROOT / "build" / "pdf" / "guide_largeprint_mono.pdf",
 ]
 REQUIRED_MARKERS = (
-    "Situation G — No Safe Place",
+    "The Blue Book — Safety & No Place",
     "G1 — A person or active threat makes the place unsafe",
     "G2 — There is no weather-safe place to sleep tonight",
     "G3 — A place exists, but it cannot safely support the person",

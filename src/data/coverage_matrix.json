@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.13.1",
+  "release": "4.14.0-alt.2",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -8,41 +8,35 @@
     "note": "Passing the numeric screen does not replace content, source, layout, accessibility, or usability review."
   },
   "totals": {
-    "nodes": 10,
-    "sections": 227,
-    "sources": 54,
+    "nodes": 11,
+    "sections": 253,
+    "sources": 64,
     "reader_visuals": 41,
-    "standalone_nodes": 10
+    "standalone_nodes": 11
   },
   "nodes": [
     {
       "node": "O",
-      "title": "Small-Room Observatory",
+      "title": "The Green Book — Body Owner’s Manual",
       "standalone": true,
       "chapters": [
         "00-cover.md",
-        "01-how-to-use.md"
+        "01-how-to-use.md",
+        "01b-body-owner-manual.md"
       ],
-      "chapter_count": 2,
-      "section_count": 16,
-      "source_count": 11,
+      "chapter_count": 3,
+      "section_count": 18,
+      "source_count": 4,
       "source_counts": {
         "operational": 0,
-        "research": 9,
-        "explanatory": 2
+        "research": 4,
+        "explanatory": 0
       },
       "source_ids": [
-        "01-how-to-use--affect-labeling",
-        "01-how-to-use--anxiety-time",
-        "01-how-to-use--bathroom-acoustics",
-        "01-how-to-use--cold-face",
-        "01-how-to-use--cold-water",
-        "01-how-to-use--gut-stress",
-        "01-how-to-use--interoception-review",
-        "01-how-to-use--olfactory-habituation",
-        "01-how-to-use--panic-course",
-        "01-how-to-use--situational-syncope",
-        "01-how-to-use--stress-executive"
+        "01b-body-owner-manual--gut-brain",
+        "01b-body-owner-manual--nrs",
+        "01b-body-owner-manual--rome",
+        "01b-body-owner-manual--syncope"
       ],
       "owned_visual_count": 4,
       "shared_visual_count": 0,
@@ -62,7 +56,7 @@
     },
     {
       "node": "A",
-      "title": "Responsibility and Care",
+      "title": "The Amber Book — Responsibility",
       "standalone": true,
       "chapters": [
         "02-situation-a.md"
@@ -100,7 +94,7 @@
     },
     {
       "node": "B",
-      "title": "Alarm and Calm",
+      "title": "The Teal Book — Calm Guide",
       "standalone": true,
       "chapters": [
         "03-situations-b-g.md",
@@ -142,7 +136,7 @@
     },
     {
       "node": "C",
-      "title": "Body and First Aid",
+      "title": "The Red Book — Self Ambulance",
       "standalone": true,
       "chapters": [
         "03-situations-b-g.md",
@@ -183,7 +177,7 @@
     },
     {
       "node": "D",
-      "title": "Threat and Safe Place",
+      "title": "The Blue Book — Safety & No Place",
       "standalone": true,
       "chapters": [
         "03-situations-b-g.md",
@@ -224,19 +218,20 @@
     },
     {
       "node": "H",
-      "title": "Air, Smell, and Environment",
+      "title": "The Orange Book — Natural Disasters",
       "standalone": true,
       "chapters": [
         "03-situations-b-g.md",
-        "03h-environmental-hazards.md"
+        "03h-environmental-hazards.md",
+        "06b-natural-disasters.md"
       ],
-      "chapter_count": 2,
-      "section_count": 12,
-      "source_count": 8,
+      "chapter_count": 3,
+      "section_count": 25,
+      "source_count": 15,
       "source_counts": {
-        "operational": 8,
+        "operational": 10,
         "research": 0,
-        "explanatory": 0
+        "explanatory": 5
       },
       "source_ids": [
         "03h-environmental-hazards--bbk-112",
@@ -246,7 +241,14 @@
         "03h-environmental-hazards--dvgw",
         "03h-environmental-hazards--electric",
         "03h-environmental-hazards--poison",
-        "03h-environmental-hazards--warning"
+        "03h-environmental-hazards--warning",
+        "06b-natural-disasters--bbk-fire",
+        "06b-natural-disasters--bbk-warning",
+        "06b-natural-disasters--cdc-water",
+        "06b-natural-disasters--closed-door",
+        "06b-natural-disasters--nws-flood",
+        "06b-natural-disasters--ready-earthquake",
+        "06b-natural-disasters--ready-tornado"
       ],
       "owned_visual_count": 4,
       "shared_visual_count": 0,
@@ -265,7 +267,7 @@
     },
     {
       "node": "Z",
-      "title": "Outage and Continuity",
+      "title": "The Olive Book — Zombie Guide",
       "standalone": true,
       "chapters": [
         "06-zombie-guide.md"
@@ -308,7 +310,7 @@
     },
     {
       "node": "P",
-      "title": "Professional Support",
+      "title": "The Indigo Book — Professional Support",
       "standalone": true,
       "chapters": [
         "07-professional-support.md"
@@ -344,8 +346,43 @@
       "readiness": "released-standalone"
     },
     {
+      "node": "S",
+      "title": "The Purple Book — Social Field Guide",
+      "standalone": true,
+      "chapters": [
+        "04b-social-field-guide.md"
+      ],
+      "chapter_count": 1,
+      "section_count": 9,
+      "source_count": 10,
+      "source_counts": {
+        "operational": 0,
+        "research": 5,
+        "explanatory": 5
+      },
+      "source_ids": [
+        "04b-social-field-guide--affect-labeling",
+        "04b-social-field-guide--boundary-setting",
+        "04b-social-field-guide--cold-face",
+        "04b-social-field-guide--dv-definition",
+        "04b-social-field-guide--dv-hotline",
+        "04b-social-field-guide--fear-signals",
+        "04b-social-field-guide--rejection-sensitivity",
+        "04b-social-field-guide--social-anxiety",
+        "04b-social-field-guide--social-comparison",
+        "04b-social-field-guide--social-support"
+      ],
+      "owned_visual_count": 0,
+      "shared_visual_count": 0,
+      "visual_ids": [],
+      "shared_visual_ids": [],
+      "visuals_with_source_basis": 0,
+      "visual_review_priorities": {},
+      "readiness": "released-standalone"
+    },
+    {
       "node": "T",
-      "title": "Templates — The Blue Book",
+      "title": "The Grey Book — Templates & Forms",
       "standalone": true,
       "chapters": [
         "07a-templates.md"
@@ -369,7 +406,7 @@
     },
     {
       "node": "R",
-      "title": "Reference",
+      "title": "The Copper Book — Reference",
       "standalone": true,
       "chapters": [
         "08-appendix.md",
@@ -377,7 +414,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 83,
+      "section_count": 85,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

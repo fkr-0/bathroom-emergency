@@ -29,31 +29,31 @@ check(STYLE_PATH.exists(), "subguide identity stylesheet missing")
 if PATH.exists():
     data = json.loads(PATH.read_text(encoding="utf-8"))
     nodes = data.get("nodes", [])
-    expected = {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"}
+    expected = {"O", "A", "B", "C", "D", "H", "Z", "P", "S", "T", "R"}
     ids = [item.get("id") for item in nodes]
     check(data.get("release") == VERSION, f"subguide release is not {VERSION}")
     check(
-        data.get("status") == "core-graph-all-ten-standalone",
-        "released graph status marker missing",
+        data.get("status") == "experimental-eleven-book-synthesis",
+        "experimental eleven-book status marker missing",
     )
-    check(data.get("identity_frozen_on") == "2026-07-26", "identity freeze date missing")
+    check(data.get("identity_frozen_on") == "2026-08-06", "identity freeze date missing")
     check(
-        set(data.get("standalone_nodes", [])) == {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"},
-        "O/A/B/C/D/H/Z/P/T/R standalone release set drifted",
+        set(data.get("standalone_nodes", [])) == {"O", "A", "B", "C", "D", "H", "Z", "P", "S", "T", "R"},
+        "eleven-book standalone release set drifted",
     )
     check(
         data.get("master_emergency_gate") == "once-on-master-cover",
         "master emergency-gate rule drifted",
     )
     check(
-        data.get("standalone_emergency_gate") == "once-on-page-zero",
-        "standalone emergency-gate rule drifted",
+        data.get("standalone_emergency_gate") == "once-on-cover",
+        "standalone cover emergency-gate rule drifted",
     )
     check(
         data.get("source_strategy") == "generated-filtered-sources-and-limits",
         "generated source strategy missing",
     )
-    check(len(nodes) == 10, f"expected 10 core nodes, found {len(nodes)}")
+    check(len(nodes) == 11, f"expected 11 books, found {len(nodes)}")
     check(set(ids) == expected, f"core node IDs drifted: {ids}")
     check(len(ids) == len(set(ids)), "duplicate subguide IDs")
 
@@ -71,7 +71,7 @@ if PATH.exists():
             "aliases", "scope", "outside_scope",
         ):
             check(bool(item.get(field)), f"{node_id}: missing {field}")
-        check(item.get("reviewed_on") == "2026-07-26", f"{node_id}: review date drifted")
+        check(item.get("reviewed_on") == "2026-08-06", f"{node_id}: review date drifted")
         pattern = item.get("pattern")
         check(pattern not in patterns, f"{node_id}: duplicate pattern {pattern}")
         patterns.add(pattern)
@@ -154,7 +154,7 @@ if PATH.exists():
         hashlib.sha256(path.read_bytes()).hexdigest()
         for path in pattern_files if path.exists()
     }
-    check(len(hashes) == 10, "pattern prototype files are not visually/file-distinct")
+    check(len(hashes) == 11, "pattern prototype files are not visually/file-distinct")
 
     for name in (
         "subguide_graph_overview.png",
@@ -169,12 +169,16 @@ if PATH.exists():
             f"{node_id}: local graph figure missing",
         )
     check(HUB_PATH.exists(), "accessible graph hub HTML missing")
+    check(
+        not list((ROOT / "build" / "subguides" / "T").glob("templates-blue-book*")),
+        "obsolete templates-blue-book output aliases remain after clean build",
+    )
 
 if errors:
     raise SystemExit("Subguide validation failed:\n- " + "\n- ".join(errors))
 
 print(
-    "Subguide validation passed: 10 frozen code/pattern/glyph identities, "
+    "Subguide validation passed: 11 code/pattern/glyph book identities, "
     "reciprocal graph declarations, generated hub/local maps, print-safe pattern "
-    f"prototypes, and O/A/B/C/D/H/Z/P/T/R standalone scope at {VERSION}."
+    f"prototypes, and the complete eleven-book standalone shelf at {VERSION}."
 )

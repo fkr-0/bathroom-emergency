@@ -1,23 +1,25 @@
 ---
-title: "Calm Guide"
+title: "The Teal Book — Calm Guide"
 chapter: 4
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/breathing_techniques.png
   - build/diagrams/breathwork_trial_map.png
 ---
 
-# Calm Guide — Reduce the Volume, Not Your Existence
+# The Teal Book — Calm Guide: You Made It Here. That Counts.
+
+You made it here. That counts. Not because a bathroom solves the problem, but
+because you noticed you needed a pause and found one.
 
 Calm is not silence inside the body. It is enough bandwidth to notice more than
 one thing and choose among two actions. A heart may still race; the room can
-still become usable.
+still become usable. Your nervous system is running kernel panic, not delivering
+a moral verdict. We are restoring enough services to make the next decision.
 
-An anxious system tends to merge sensation, prediction, memory, and obligation.
-They can be separated through contact, orientation, comfortable breathing,
-environmental adjustments, thought-unhooking, conversation, and an exit plan.
-The blanket remains.
+Anxiety merges sensation, prediction, memory, and obligation into one enormous
+notification. Separate them. Change one variable. The blanket remains.
 
 ## A pause needs no legal brief
 
@@ -200,7 +202,7 @@ Avoid candles, smoke, incense, or strong scents when there may be gas, chemical
 exposure, asthma, migraine, sensory sensitivity, or a general shortage of
 oxygen and judgement.
 
-### Comfort threshold, rewritten
+### Comfort inventory, without a score
 
 There is no validated number of checked boxes that proves safety. One resource
 can still help. Zero resources means the next action may be to obtain contact,

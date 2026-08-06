@@ -1,8 +1,8 @@
 ---
-title: "Appendix: Formulas, Theorems, Cross-References, and Print Card"
+title: "The Copper Book — Reference"
 chapter: 8
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/two_pass_route_map.png
   - build/diagrams/evidence_classes.png
@@ -12,7 +12,7 @@ dependencies:
   - build/diagrams/communication_access_card.png
 ---
 
-# Reference and Appendix — The Useful Loose Ends
+# The Copper Book — Reference and Useful Loose Ends
 
 Use **R — Reference** when you need an address, map, formula, figure, form,
 service, field, source, or complete text route. R should shorten retrieval, not
@@ -23,9 +23,10 @@ verify something.
 ## Stable references — addresses that survive editing
 
 Canonical references use the form **`[BEG:<guide>:<kind>:<sequence>]`**. For
-example, `[BEG:C:S:004]` names a Body and First Aid section while
-`[BEG:T:F:003]` names a detachable Blue Book form. The corresponding HTML
-anchor is `#beg-c-s-004` or `#beg-t-f-003`.
+example, `[BEG:C:S:004]` names a Body and First Aid section,
+`[BEG:T:F:003]` names a detachable Grey Book template, and `[BEG:T:G:006]`
+names the deployer-completed Location and access figure. The corresponding HTML
+anchors are `#beg-c-s-004`, `#beg-t-f-003`, and `#beg-t-g-006`.
 
 Page numbers and labels such as “calm 1.1.3” remain useful navigation aids, but
 they are not canonical addresses: inserting a section would silently rename
@@ -35,8 +36,8 @@ kept in the registry rather than recycled for a different thing.
 | Kind | Resource |
 |---|---|
 | S | section |
-| F | form or detachable template |
-| G | figure, chart, map, or diagram |
+| F | template: reusable writable page |
+| G | figure: read-only depiction or deployer-completed local reference |
 | C | professional contact or service |
 | D | deployment field |
 | W | glossary word or term |
@@ -46,7 +47,7 @@ view is `src/data/content_index.json`.
 
 {{route-identity-index}}
 
-{{detachable-form-index}}
+{{writable-template-index}}
 
 {{deployment-field-index}}
 
@@ -62,7 +63,7 @@ view is `src/data/content_index.json`.
 
 ## Master cross-reference — where problems, routes, forms, and support meet
 
-| Starting problem | Owning route | Useful Blue Book form | Professional route |
+| Starting problem | Owning book | Useful Grey Book resource | Professional handoff |
 |---|---|---|---|
 | red flag / life danger | **C — Body and First Aid** | emergency call; location and access | 112 / dispatcher |
 | caused harm / responsibility | **A — Responsibility and Care** | five-minute values; remarks and handoff | P medical/legal/social route as needed |
@@ -72,7 +73,7 @@ view is `src/data/content_index.json`.
 | unknown smell or environmental danger | **H — Air, Smell, and Environment** | emergency call; essential-care continuity | 112 / gas service / poison centre |
 | outage / disaster / failing household function | **Z — Outage and Continuity** | essential-care card; household board | BBK / local authority / 112 |
 | need a number, appointment, bed, document, or handoff | **P — Professional Support** | local contacts; emergency call; location and access | named service plus backup |
-| need a writable packet | **T — Templates** | choose by route band and privacy class | receiving route named on form |
+| need a writable packet | **T — Templates** | choose by use mode and privacy class | receiving service named on the resource |
 | need a stable address, figure, formula, or source | **R — Reference** | feedback or review form when correcting | owning route remains primary |
 
 
@@ -137,13 +138,17 @@ particular design. Associations describe variables travelling together. Models
 show what follows from assumptions. None of them becomes a personal prophecy by
 being printed in a confident font.
 
-## Illustration cross-reference — what travels with a figure
+## Figure and template grammar
 
-The generated illustration index above is canonical. Each figure occurrence
-also carries a compact card with its stable `[BEG:...:G:...]` address, owning
-route, route pattern and glyph, reader question, and paired Blue Book forms.
-That card is part of the figure’s meaning: a copied image without its route,
-question, limit, or form links is an attractive orphan.
+The generated figure catalogue above is canonical. Every figure is presented
+as **Figure · Read only** with a stable `[BEG:...:G:...]` address, title, and
+short description. A figure may be an authored depiction or a local reference
+sheet completed and dated by the deployer before installation. Readers do not
+edit the installed figure; it is replaced when the local truth changes.
+
+Grey Book templates use the parallel label **Template · Write** with a stable
+`[BEG:...:F:...]` address, title, and short description. Use a fresh copy for
+each incident, observation, review, drill, or handoff.
 
 Generated images remain explanatory aids. The adjacent prose remains the
 complete route for monochrome print, screen readers, low light, failed images,
@@ -275,19 +280,19 @@ mean anything useful.
 ## Fillable fields live in T — Templates
 
 R indexes writable resources; it does not maintain a second blank-form system.
-Use the generated detachable-form index above to choose the canonical Blue Book
-page. The route band identifies which operational routes use it, the privacy
-class controls placement, and the figure/support references show what should
-travel with it.
+Use the generated figure and template catalogues above to choose the canonical
+Grey Book page. The resource band identifies its type, stable reference, and
+short description; the privacy class controls placement, and related references
+show what should travel with it.
 
 The most commonly paired set is:
 
-- **[BEG:T:F:009] Location and access card**;
+- **[BEG:T:G:006] Location and access card**;
 - **[BEG:T:F:003] Emergency call card**;
-- **[BEG:T:F:008] Local professional contacts**;
-- **[BEG:T:F:014] Safe-place and exit map**;
-- **[BEG:T:F:004] Medication, power, and care continuity card**;
-- **[BEG:T:F:007] Household continuity board**.
+- **[BEG:T:G:005] Local professional contacts**;
+- **[BEG:T:G:008] Safe-place and exit map**;
+- **[BEG:T:G:003] Medication, power, and care continuity card**;
+- **[BEG:T:G:004] Household continuity board**.
 
 Complete only relevant fields, store or photograph them safely, and replace
 them when the route, local fact, privacy boundary, or review date changes.
@@ -449,7 +454,7 @@ EVERY NON-EMERGENCY ROUTE
 ## Offline deployment checklist
 
 - Print the monochrome PDF single-sided or duplex.
-- Complete the relevant T / Blue Book forms and keep their route bands attached.
+- Complete the relevant Grey Book resources and keep their resource bands attached.
 - Keep the guide near a charged light source.
 - Add a simple first-aid poster from an official provider.
 - Store current medication and emergency plans nearby but privately.

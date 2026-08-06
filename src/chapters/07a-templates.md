@@ -1,16 +1,16 @@
 ---
-title: "Templates: The Blue Book"
+title: "The Grey Book — Templates & Forms"
 chapter: "T"
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies: []
 ---
 
-# Templates — The Blue Book
+# The Grey Book — Templates & Forms
 
 **Take a page. Put the needed fact on it. Replace it when the world changes.**
 
-The other routes explain, decide, and escalate. **T — Templates** externalizes:
+The other books explain, decide, and escalate. **T — Templates** externalizes:
 it gives facts, plans, observations, and handoffs a stable place outside a
 reader’s working memory. That matters when someone is frightened, tired, hurt,
 overloaded, or holding a phone with one hand.
@@ -18,31 +18,46 @@ overloaded, or holding a phone with one hand.
 A blank form is not proof of preparation. A completed form is not proof of
 safety. These pages are small interfaces between attention and action.
 
-The Blue Book’s blueprint-corner pattern and blue accent identify the template
-family. The smaller route chips on each form identify the operational routes
-that use that page. A form may therefore be **owned by T** and still support C,
-D, P, or Z without becoming four competing copies.
+The Grey Book’s form-grid pattern and grey accent identify its figures and
+templates. Each page begins with one compact resource band containing exactly
+the information needed to recognize and cite it: **title, stable reference, and
+a short description**. Privacy and related-resource notes remain secondary.
+
+There are two public resource types:
+
+- **Figure · Read only** — an authored depiction or a local reference sheet. A
+  deployer may complete local facts before installation, but readers do not edit
+  the installed copy. Replace it when those facts or privacy boundaries change.
+- **Template · Write** — use a fresh copy for a new incident, observation,
+  review, drill, or handoff.
+
+{{writable-template-index}}
 
 ## Mini contents
 
+### Figures — read only after deployment
+
 1. deployment cover and ownership card;
 2. location and access card;
-3. emergency call card;
-4. local professional contacts;
-5. comfort inventory;
-6. five-minute values bridge;
-7. observation and vital-sign log;
-8. nice-place and low-demand activity map;
-9. safe-place and exit map;
-10. medication, power, and care continuity card;
-11. household continuity board;
-12. feedback and field-note sheet;
-13. installation and wet-room audit;
-14. route drill and timing log;
-15. first-aid figure usability review;
-16. maintenance and replacement inspection;
-17. remarks sheet;
-18. quiet activity sheet.
+3. local professional contacts;
+4. comfort inventory;
+5. nice-place and low-demand activity map;
+6. safe-place and exit map;
+7. medication, power, and care continuity card;
+8. household continuity board.
+
+### Templates — write on a fresh copy
+
+1. emergency call card;
+2. five-minute values bridge;
+3. observation and vital-sign log;
+4. feedback and field-note sheet;
+5. installation and wet-room audit;
+6. route drill and timing log;
+7. first-aid figure usability review;
+8. maintenance and replacement inspection;
+9. remarks sheet;
+10. quiet activity sheet.
 
 ::: {.badger-box}
 ### Badger box — forms are handles, not homework
@@ -53,25 +68,25 @@ prompt, and send the correction upstream. The paper works for the person; the
 person does not work for the paper.
 :::
 
-## How to read the route band
+## How to read the resource band
 
-Every canonical form begins with a generated identity band:
+Every canonical figure or template begins with a generated identity band:
 
-- **Stable reference:** the `[BEG:T:F:...]` address remains attached when page
-  numbers or headings move.
-- **Route chips:** code and title are primary; colour speeds scanning; the
-  printed pattern and written pattern name preserve identity in monochrome and
-  spoken handoffs.
+- **Title:** names the resource in plain language.
+- **Stable reference:** `[BEG:...:G:...]` identifies a figure and
+  `[BEG:...:F:...]` identifies a template even when page numbers move.
+- **Short description:** states what the resource is for before its content begins.
+- **Use mode:** **Figure · Read only** or **Template · Write**.
 - **Privacy class:** decide whether the completed page may remain visible,
   requires local review, or belongs in protected storage.
-- **Figures:** stable figure references point to the diagram that explains or
+- **Figures:** stable figure references point to the read-only depiction that explains or
   tests the same operation.
 - **Support:** service references point to the professional route that can
   receive the completed packet.
 
-Multiple route chips do not mean multiple owners. They mean one form is a
-shared handoff object. Write once, protect once, update once, and let several
-routes use the same current facts.
+The small related-reference line is navigation, not a second dashboard. Stable
+references make a copied page findable without adding another coloured box for
+every relationship.
 
 ## Use, update, replace
 
@@ -109,7 +124,7 @@ which copy this is, who maintains it, and when local facts expire.
 | Copy / site name | |
 | Exact placement | |
 | Deployer or maintainer | |
-| Guide version | 4.13.1 |
+| Guide version | 4.14.0-alt.2 |
 | Local customization revision | |
 | Build commit | |
 | Built on | |
@@ -355,7 +370,7 @@ locations, or identifying details about another person without permission.
 | What the guide made easier | |
 | What caused delay or confusion | |
 | Local fact that was missing or wrong | |
-| Diagram / form that helped or failed | |
+| Figure / template that helped or failed | |
 | Proposed correction | |
 | Can this be quoted anonymously? | yes / no |
 | Reply address, optional | |
@@ -514,7 +529,7 @@ therefore a future illustrated insert rather than confident origami fan fiction.
 
 ## Take, replace, improve
 
-Templates may be copied independently. Keep the route band, stable reference,
+Templates may be copied independently. Keep the resource band, stable reference,
 guide version, privacy class, and local review date with each detached page. A
 page without provenance can be useful today and dangerous after three phone-
 number changes.

@@ -1,8 +1,8 @@
 ---
-title: "Responsibility, Harm, and Other Life Forms"
+title: "The Amber Book — Responsibility"
 chapter: 2
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/vega_reproductive_denominators.png
   - build/diagrams/responsibility_clock_map.png
@@ -11,7 +11,7 @@ dependencies:
   - build/diagrams/care_continuity_loop.png
 ---
 
-# Situation A — I Caused Trouble
+# The Amber Book — Responsibility
 
 Guilt wants one enormous verdict. Responsibility is usually a sequence of
 smaller questions: **is harm still happening, what needs stabilizing, who needs
@@ -379,9 +379,9 @@ need relief, rotation, and services—not more private heroism.[^caregiver]
 
 The plan is incomplete when the essentials are known but the backup is not, or
 when a backup exists but cannot find the warning signs, documents, supplies, or
-next review time. Use **[BEG:T:F:004] Medication, power, and care continuity
-card** for private dependency details, **[BEG:T:F:007] Household continuity
-board** when several people share the work, and **[BEG:T:F:008] Local
+next review time. Use **[BEG:T:G:003] Medication, power, and care continuity
+card** for private dependency details, **[BEG:T:G:004] Household continuity
+board** when several people share the work, and **[BEG:T:G:005] Local
 professional contacts** for verified service routes and backups.
 
 ### Minimum viable care plan

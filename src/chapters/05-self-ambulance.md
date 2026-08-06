@@ -1,8 +1,8 @@
 ---
-title: "First Aid While Help Is Coming"
+title: "The Red Book — Self Ambulance"
 chapter: 5
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/triage_flow.png
   - build/diagrams/cpr_body_orientation.png
@@ -11,7 +11,7 @@ dependencies:
   - build/diagrams/vega_stroke_time_model.png
 ---
 
-# First Aid — You Are the First Link, Not the Whole Ambulance
+# The Red Book — Self Ambulance
 
 First aid is time management for biology. Keep air moving, limit blood loss,
 reduce heat or chemical injury, prevent a second fall or exposure, and hand the
@@ -337,7 +337,7 @@ size, poor circulation, battery, or user technique. A reassuring display is not
 a permission slip to ignore collapse, stroke signs, severe breathlessness, or
 chest pain.
 
-The detachable **Observation and vital-sign log** in the Blue Book keeps time,
+The detachable **Observation and vital-sign log** in the Grey Book keeps time,
 change, actions, and readings together. Use it to improve the handoff, not to
 award yourself a green discharge badge.
 

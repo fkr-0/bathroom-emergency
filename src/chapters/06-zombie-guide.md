@@ -1,8 +1,8 @@
 ---
-title: "Outage, Disaster, and Zombie Guide"
+title: "The Olive Book — Zombie Guide"
 chapter: 6
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies:
   - build/diagrams/dependency_continuity_map.png
   - build/diagrams/survival_pyramid.png
@@ -14,7 +14,7 @@ dependencies:
   - build/diagrams/first_meeting_roles.png
 ---
 
-# Zombie Guide — Mostly for Non-Zombie Disasters
+# The Olive Book — Zombie Guide
 
 No confirmed zombie outbreak is known. Power cuts, floods, heat, cold,
 contaminated water, smoke, communication failures, and groups improvising a

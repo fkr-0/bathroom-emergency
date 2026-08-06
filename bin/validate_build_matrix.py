@@ -59,7 +59,7 @@ if manifest_path.exists():
     released = manifest.get("standalone_nodes", [])
     by_id = {item["id"]: item for item in manifest.get("nodes", [])}
     check(
-        set(released) == {"O", "A", "B", "C", "D", "H", "Z", "P", "T", "R"},
+        set(released) == {"O", "A", "B", "C", "D", "H", "Z", "P", "S", "T", "R"},
         "released standalone set drifted",
     )
     for node_id in released:
@@ -82,8 +82,8 @@ if release_path.exists():
     check(release.get("release") == VERSION, "release-manifest version drifted")
     check(release.get("deployment_performed") is False, "local build falsely claims deployment")
     check(release.get("publish_performed") is False, "local build falsely claims publication")
-    check(len(release.get("artifacts", [])) >= 80, "release manifest does not cover the complete matrix")
+    check(len(release.get("artifacts", [])) >= 90, "release manifest does not cover the complete matrix")
 
 if errors:
     raise SystemExit("Build-matrix validation failed:\n- " + "\n- ".join(errors))
-print("Build-matrix validation passed: six master editions, editable formats, landing, release manifest, and 60 standalone O/A/B/C/D/H/Z/P/T/R editions are present.")
+print("Build-matrix validation passed: six master editions, editable formats, landing, release manifest, and 66 standalone eleven-book editions are present.")

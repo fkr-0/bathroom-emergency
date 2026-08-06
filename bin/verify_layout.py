@@ -26,22 +26,23 @@ QA = ROOT / "build" / "qa" / "a4half"
 EXPECTED_WIDTH_PT = 105 / 25.4 * 72
 EXPECTED_HEIGHT_PT = 297 / 25.4 * 72
 REQUIRED_MARKERS = (
-    "The Small-Room Observatory",
-    "The gut votes early",
-    "Acute stress makes the mind narrower, not stupider",
-    "Bathroom fainting is a real category",
-    "The three-minute bathroom experiment",
-    "How to read the evidence figures",
-    "Two useful numbers, with their denominators attached",
-    "Sleep debt can hide behind confidence",
-    "Time is brain",
-    "Social connection is not decorative trim",
-    "Mathematical notation legend",
-    "Situation G — No Safe Place",
-    "Minimal written emergency card",
-    "Situation H — The Environment May Be Unsafe",
+    "How to Use the Eleven Books",
+    "The Green Book — Body Owner’s Manual",
+    "The gastrointestinal chapter you did not ask for",
+    "Pain: communication, not a verdict",
+    "The Amber Book — Responsibility",
+    "Five Different Kinds of “Too Much”",
+    "The Teal Book — Calm Guide",
+    "The Red Book — Self Ambulance",
+    "The Blue Book — Safety & No Place",
+    "Orange Book — The Environment May Be Unsafe",
+    "The Orange Book — Natural Disasters",
     "Essential medication and powered-device failure",
-    "The hazard handoff",
+    "The Olive Book — Zombie Guide",
+    "The Indigo Book — Professional Support",
+    "The Purple Book — Social Field Guide",
+    "The Grey Book — Templates & Forms",
+    "The Copper Book — Reference",
 )
 
 

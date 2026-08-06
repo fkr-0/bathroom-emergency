@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.13.1",
+  "release": "4.14.0-alt.2",
   "status": "canonical-printable-form-registry",
   "forms": [
     {
@@ -14,7 +14,11 @@
         "R"
       ],
       "figure_ids": [],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Identity, ownership, version, and review date for this copy.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "location-access",
@@ -36,7 +40,11 @@
       "support_keys": [
         "112",
         "110"
-      ]
+      ],
+      "description": "Verified address, access barriers, exits, and meeting point.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "emergency-call",
@@ -59,7 +67,10 @@
         "112",
         "110",
         "116117"
-      ]
+      ],
+      "description": "A writable launch pad for the facts a dispatcher needs.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "local-support",
@@ -91,7 +102,11 @@
         "accessible_emergency_place",
         "youth_emergency_service",
         "gas_network"
-      ]
+      ],
+      "description": "Verified local names, channels, hours, and backups.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "comfort-inventory",
@@ -108,7 +123,11 @@
         "overload-control-map",
         "breathing-techniques"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Ordinary regulation resources made findable before overload.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "five-minute-values",
@@ -125,7 +144,10 @@
         "consent-authority-boundary",
         "overload-control-map"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "One value translated into one bounded next action.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "observation-log",
@@ -144,7 +166,10 @@
       "support_keys": [
         "112",
         "116117"
-      ]
+      ],
+      "description": "Changes and actions recorded for a clinician or dispatcher.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "nice-place-map",
@@ -159,7 +184,11 @@
       "figure_ids": [
         "safe-place-route-map"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Preselected reversible places and low-demand activities.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "safe-place-map",
@@ -185,7 +214,11 @@
         "municipal_emergency_housing",
         "accessible_emergency_place",
         "youth_emergency_service"
-      ]
+      ],
+      "description": "Confirmed destinations, access routes, backups, and escalation.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "essential-care",
@@ -210,7 +243,11 @@
         "112",
         "116117",
         "accessible_emergency_place"
-      ]
+      ],
+      "description": "Medication, power, care dependencies, runtime, and approved backup.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "household-board",
@@ -228,7 +265,11 @@
         "first-meeting-roles",
         "vega-communication-channels"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Owners, backups, checks, and escalation for essential functions.",
+      "resource_type": "figure",
+      "interaction": "read-only",
+      "prepared_by": "deployer"
     },
     {
       "key": "feedback",
@@ -244,7 +285,10 @@
         "evidence-classes",
         "two-pass-route-map"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Corrections, failed routes, local adaptations, and useful inventions.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "installation-audit",
@@ -259,7 +303,10 @@
       "figure_ids": [
         "two-pass-route-map"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Wet-room readability, reach, privacy, glare, and physical handling.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "route-drill-log",
@@ -275,7 +322,10 @@
       "figure_ids": [
         "two-pass-route-map"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Calm-time timings and friction from finding to handoff.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "first-aid-figure-review",
@@ -295,7 +345,10 @@
       ],
       "support_keys": [
         "112"
-      ]
+      ],
+      "description": "Usability test for action, sequence, geometry, and limits.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "maintenance-inspection",
@@ -311,7 +364,10 @@
       "figure_ids": [
         "household-continuity-board"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Damage, stale facts, used supplies, and replacement actions.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "remarks",
@@ -329,7 +385,10 @@
       "figure_ids": [
         "repair-sequence"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Blank space for observation, action, result, and next handoff.",
+      "resource_type": "template",
+      "interaction": "write"
     },
     {
       "key": "quiet-activity",
@@ -344,7 +403,10 @@
       "figure_ids": [
         "breathing-techniques"
       ],
-      "support_keys": []
+      "support_keys": [],
+      "description": "Low-demand drawing, building, and folding prompts.",
+      "resource_type": "template",
+      "interaction": "write"
     }
   ]
 }

@@ -1,12 +1,56 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.13.1"
-last_updated: "2026-08-02"
+revision: "4.14.0-alt.2"
+last_updated: "2026-08-06"
 dependencies: []
 ---
 
 # Version History
+
+## 4.14.0-alt.2 — 6 August 2026
+
+### Figures and templates become different objects
+
+- Every reader-facing resource now declares one of two public types:
+  **Figure · Read only** or **Template · Write**.
+- The eight local-information sheets completed by deployers are figures because
+  readers use the installed copies as reference; they are replaced rather than
+  edited when facts, privacy, condition, or review dates change.
+- Every one of the 49 figures and 10 templates carries a title, stable
+  reference, and short description.
+- Former form references for migrated local figures remain available as legacy
+  anchors rather than being reused for another meaning.
+
+### Rendering and public documentation follow the source of truth
+
+- Figure and template wrappers now group type, title, stable reference, short
+  description, content, and related-resource links as one visual object.
+- The Grey Book separates local reference figures from reusable templates; the
+  Copper Book generates the corresponding catalogues.
+- README, deployment instructions, roadmap, landing metrics, downloads, and the
+  feedback path now use the same two-type vocabulary.
+- Clean standalone builds remove stale pre-Grey-Book output names before
+  rendering, while selected guide builds refresh diagrams and inventories first.
+
+### Verification
+
+- Validators require title, stable reference, short description, and use mode
+  for every indexed figure and template, exactly ten writable templates, exactly
+  eight deployer-completed local figures, and read-only semantics for every
+  figure.
+- Six master editions, 66 standalone PDF editions, and the complete responsive
+  site pass reference, migration, layout, density, accessibility, overflow,
+  browser, and release-matrix checks.
+
+## 4.14.0-alt.1 — 6 August 2026
+
+Experimental full synthesis of the mature 4.13 release machinery with the
+4.x-alt editorial line. The guide becomes an eleven-book shelf with colour
+titles, adult humour, the Green Body Owner’s Manual, Purple Social Field Guide,
+and Orange Natural Disasters book as canonical members. Standalone editions
+begin with reader questions rather than graph governance. Safety remains
+decisive at real red flags but no longer supplies the tone of every page.
 
 ## 4.13.1 — 2 August 2026
 
