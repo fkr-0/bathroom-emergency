@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Build the public book shelf and released standalone books.
 
-Canonical prose remains in src/chapters. This builder extracts owned sections,
+Canonical prose lives in src/hub and src/subguides/<key>/chapters. This
+builder extracts owned sections,
 adds generated orientation/source wrappers, and renders the same content into
 A4, A4/2, and large-print colour/monochrome editions.
 """
@@ -18,6 +19,7 @@ import subprocess
 from pathlib import Path
 
 from build_reference_index import decorate_figure_references, inject_heading_ids, mini_toc
+from src_layout import chapter_path
 from project_meta import (
     SOURCE_REVIEW_DATE,
     VERSION,
@@ -28,7 +30,6 @@ from project_meta import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
-CHAPTER_DIR = SRC / "chapters"
 DATA_DIR = SRC / "data"
 BUILD = ROOT / "build" / "subguides"
 REVIEWED_ON = SOURCE_REVIEW_DATE
@@ -98,7 +99,7 @@ def remove_footnote_definitions(text: str) -> str:
 
 
 def mixed_sections(owner: str) -> str:
-    path = CHAPTER_DIR / "03-situations-b-g.md"
+    path = chapter_path("03-situations-b-g.md")
     body = BG.strip_frontmatter(path.read_text(encoding="utf-8"))
     lines = body.splitlines()
     starts: list[tuple[int, str]] = []
@@ -125,7 +126,7 @@ def mixed_sections(owner: str) -> str:
 
 def chapter_without_definitions(filename: str) -> str:
     text = remove_footnote_definitions(
-        BG.strip_frontmatter((CHAPTER_DIR / filename).read_text(encoding="utf-8"))
+        BG.strip_frontmatter(chapter_path(filename).read_text(encoding="utf-8"))
     )
     return re.sub(r"\{\{subguide-sources:[A-Z]\}\}", "", text).rstrip()
 

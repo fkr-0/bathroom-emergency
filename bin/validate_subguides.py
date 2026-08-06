@@ -14,6 +14,7 @@ PATTERN_DIR = ROOT / "build" / "subguides" / "assets" / "patterns"
 DIAGRAM_DIR = ROOT / "build" / "diagrams"
 HUB_PATH = ROOT / "build" / "subguides" / "index.html"
 from project_meta import VERSION
+from src_layout import all_chapter_paths, find_chapter
 errors: list[str] = []
 
 
@@ -100,11 +101,10 @@ if PATH.exists():
                     f"{node_id}->{target}: outgoing edge lacks reciprocal incoming declaration",
                 )
         for chapter in item.get("chapters", []):
-            chapter_path = ROOT / "src" / "chapters" / chapter
-            check(chapter_path.exists(), f"{node_id}: missing canonical chapter {chapter}")
+            check(find_chapter(chapter) is not None, f"{node_id}: missing canonical chapter {chapter}")
             chapter_owners.setdefault(chapter, []).append(node_id)
 
-    canonical = {path.name for path in (ROOT / "src" / "chapters").glob("*.md")}
+    canonical = {path.name for path in all_chapter_paths()}
     check(
         set(chapter_owners) == canonical,
         f"manifest chapter coverage differs: owned={sorted(chapter_owners)} canonical={sorted(canonical)}",

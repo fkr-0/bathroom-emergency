@@ -9,6 +9,7 @@ import shutil
 from pathlib import Path
 
 from project_meta import VERSION, build_date, git_revision
+from src_layout import all_chapter_paths, chapter_path
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
@@ -616,7 +617,7 @@ def build() -> Path:
     references = json.loads((DATA / "reference_ids.json").read_text(encoding="utf-8"))
     content_index = json.loads((DATA / "content_index.json").read_text(encoding="utf-8"))
     metrics = {
-        "chapters": len(list((ROOT / "src" / "chapters").glob("*.md"))),
+        "chapters": len(all_chapter_paths()),
         "standalone": len(released),
         "references": len(references.get("ids", {}))
         - len(references.get("retired_resource_keys", [])),

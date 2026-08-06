@@ -8,9 +8,9 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CHAPTER_DIR = ROOT / "src" / "chapters"
 DATA_DIR = ROOT / "src" / "data"
 from project_meta import VERSION
+from src_layout import all_chapter_paths, chapter_path
 
 DEFAULT_OWNER = {
     "00-cover.md": "O",
@@ -57,7 +57,7 @@ def mixed_owner(heading: str, level: int) -> str:
 
 def build_sections() -> dict:
     records: list[dict] = []
-    for chapter in sorted(CHAPTER_DIR.glob("*.md")):
+    for chapter in all_chapter_paths():
         for line_number, line in enumerate(chapter.read_text(encoding="utf-8").splitlines(), 1):
             match = re.match(r"^(#{1,2})\s+(.+?)\s*$", line)
             if not match:
@@ -90,7 +90,7 @@ def build_figures() -> dict:
     visualizations = json.loads((DATA_DIR / "visualization_catalog.json").read_text(encoding="utf-8"))["visualizations"]
     image_titles: dict[str, str] = {}
     image_re = re.compile(r"^!\[([^\]]+)\]\((build/diagrams/[^)]+)\)\s*$", re.MULTILINE)
-    for chapter in sorted(CHAPTER_DIR.glob("*.md")):
+    for chapter in all_chapter_paths():
         for alt, file in image_re.findall(chapter.read_text(encoding="utf-8")):
             previous = image_titles.get(file)
             if previous and previous != alt:

@@ -20,10 +20,10 @@ from pathlib import Path
 
 from project_meta import VERSION, build_date, git_revision, revision_footer_css
 from build_reference_index import decorate_figure_references, inject_heading_ids
+from src_layout import find_chapter
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
-CHAPTER_DIR = SRC / "chapters"
 BUILD = ROOT / "build"
 BUILD_MD = BUILD / "md"
 BUILD_HTML = BUILD / "html"
@@ -252,9 +252,9 @@ def assemble() -> Path:
         "",
     ]
     for index, filename in enumerate(CHAPTERS):
-        path = CHAPTER_DIR / filename
-        if not path.exists():
-            raise BuildError(f"Missing chapter: {path}")
+        path = find_chapter(filename)
+        if path is None:
+            raise BuildError(f"Missing chapter: {filename}")
         body = strip_frontmatter(path.read_text(encoding="utf-8"))
         body = expand_visualization_macros(body, visualizations)
         body = expand_subguide_source_macros(body, source_records)

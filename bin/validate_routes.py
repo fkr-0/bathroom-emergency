@@ -6,6 +6,7 @@ import json
 import os
 from datetime import date
 from pathlib import Path
+from src_layout import all_chapter_paths, chapter_path
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
@@ -177,14 +178,14 @@ for profile in profiles:
 for source_id in access.get("policy", {}).get("source_ids", []):
     check(source_id in sources, f"accessibility registry has unknown source {source_id}")
 
-safe_chapter = ROOT / "src" / "chapters" / "03g-safe-place-routing.md"
+safe_chapter = chapter_path("03g-safe-place-routing.md")
 check(safe_chapter.exists(), "Situation G safe-place chapter is missing")
 if safe_chapter.exists():
     safe_text = safe_chapter.read_text(encoding="utf-8")
     for marker in ("G1 — A person", "G2 — There is no weather-safe place", "G3 — A place exists", "G4 — The place is physically safe", "Minimal written emergency card", "safe-place handoff"):
         check(marker.lower() in safe_text.lower(), f"Situation G marker missing: {marker}")
 
-chapter = ROOT / "src" / "chapters" / "03h-environmental-hazards.md"
+chapter = chapter_path("03h-environmental-hazards.md")
 check(chapter.exists(), "Situation H chapter is missing")
 if chapter.exists():
     text = chapter.read_text(encoding="utf-8")

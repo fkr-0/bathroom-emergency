@@ -9,9 +9,9 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CHAPTER_DIR = ROOT / "src" / "chapters"
 DATA_DIR = ROOT / "src" / "data"
 from project_meta import VERSION
+from src_layout import all_chapter_paths, chapter_path
 URL_RE = re.compile(r"https?://[^\s)>]+")
 REF_RE = re.compile(r"\[\^([A-Za-z0-9_-]+)\]")
 DEF_RE = re.compile(r"^\[\^([A-Za-z0-9_-]+)\]:\s*(.*)$")
@@ -68,7 +68,7 @@ def build() -> dict:
 
     records: list[dict] = []
     unresolved: list[dict] = []
-    for path in sorted(CHAPTER_DIR.glob("*.md")):
+    for path in all_chapter_paths():
         lines = path.read_text(encoding="utf-8").splitlines()
         definitions, definition_lines = parse_definitions(lines)
         uses: dict[str, list[int]] = defaultdict(list)
@@ -97,7 +97,7 @@ def build() -> dict:
 
     # Index the existing global source notes without attempting semantic cleanup.
     source_notes: list[dict] = []
-    source_path = CHAPTER_DIR / "10-sources.md"
+    source_path = chapter_path("10-sources.md")
     source_lines = source_path.read_text(encoding="utf-8").splitlines()
     headings: list[tuple[int, int, str]] = []
     for index, line in enumerate(source_lines, 1):

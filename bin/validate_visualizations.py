@@ -15,6 +15,7 @@ THEME_PATH = ROOT / "src" / "visualizations" / "theme.json"
 DESIGN_SYSTEM_PATH = ROOT / "docs" / "plans" / "visual-design-system.md"
 HTML_PATH = ROOT / "build" / "html" / "guide.html"
 from project_meta import VERSION
+from src_layout import all_chapter_paths, chapter_path
 errors: list[str] = []
 
 
@@ -87,7 +88,7 @@ if not errors:
     check(len(items) >= 8, f"expected at least eight Vega-Lite figures, found {len(items)}")
     check(len(ids) == len(set(ids)), "duplicate visualization IDs")
 
-    chapter_source = "\n".join(path.read_text(encoding="utf-8") for path in sorted((ROOT / "src" / "chapters").glob("*.md")))
+    chapter_source = "\n".join(path.read_text(encoding="utf-8") for path in all_chapter_paths())
     for item in items:
         item_id = item.get("id", "?")
         for field in ("title", "subguides", "family", "question", "takeaway", "data", "spec", "svg", "png", "sources", "evidence_class", "denominator_scope", "uncertainty_policy", "limit", "alt", "long_description", "table_fallback", "mono_encoding", "reviewed_on"):

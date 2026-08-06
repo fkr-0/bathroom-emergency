@@ -8,8 +8,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "src" / "data" / "illustration_catalog.json"
-CHAPTER_DIR = ROOT / "src" / "chapters"
 from project_meta import VERSION
+from src_layout import all_chapter_paths, find_chapter
 errors: list[str] = []
 
 
@@ -49,14 +49,14 @@ if CATALOG_PATH.exists():
         if reader_facing:
             check(figure_path.exists(), f"{item_id}: generated figure missing: {item.get('file')}")
         for chapter in item.get("chapters", []):
-            chapter_path = CHAPTER_DIR / chapter
-            check(chapter_path.exists(), f"{item_id}: unknown chapter {chapter}")
-            if reader_facing and chapter_path.exists():
-                check(Path(item["file"]).name in chapter_path.read_text(encoding="utf-8"), f"{item_id}: figure not referenced by declared chapter {chapter}")
+            resolved = find_chapter(chapter)
+            check(resolved is not None, f"{item_id}: unknown chapter {chapter}")
+            if reader_facing and resolved is not None:
+                check(Path(item["file"]).name in resolved.read_text(encoding="utf-8"), f"{item_id}: figure not referenced by declared chapter {chapter}")
 
     referenced: set[str] = set()
-    for chapter_path in CHAPTER_DIR.glob("*.md"):
-        text = chapter_path.read_text(encoding="utf-8")
+    for resolved in all_chapter_paths():
+        text = resolved.read_text(encoding="utf-8")
         for match in re.finditer(r"!\[[^\]]*\]\((build/diagrams/[^)]+)\)", text):
             file = match.group(1)
             if "vega_" not in file:

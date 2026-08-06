@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from src_layout import all_chapter_paths, chapter_path
 
 ROOT = Path(__file__).resolve().parent.parent
 PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION = PACKAGE["version"]
 CONTINUITY_PATH = ROOT / "src" / "data" / "continuity_catalog.json"
 ROUTES_PATH = ROOT / "src" / "data" / "route_catalog.json"
-CHAPTER_PATH = ROOT / "src" / "chapters" / "06-zombie-guide.md"
+CHAPTER_PATH = chapter_path("06-zombie-guide.md")
 errors: list[str] = []
 
 

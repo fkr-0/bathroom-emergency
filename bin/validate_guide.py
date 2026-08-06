@@ -8,10 +8,10 @@ import subprocess
 from pathlib import Path
 
 from project_meta import RELEASE_DATE, VERSION
+from src_layout import all_chapter_paths, chapter_path
 
 ROOT = Path(__file__).resolve().parents[1]
-CHAPTER_DIR = ROOT / "src" / "chapters"
-CHAPTERS = sorted(CHAPTER_DIR.glob("*.md"))
+CHAPTERS = all_chapter_paths()
 STYLE = (ROOT / "src" / "style.css").read_text(encoding="utf-8")
 STYLE_BOOKS = (ROOT / "src" / "style-subguides.css").read_text(encoding="utf-8")
 STYLE_HALF = (ROOT / "src" / "style-a4-half.css").read_text(encoding="utf-8")
@@ -46,7 +46,7 @@ action_source = "\n".join(
     if path.name not in {"09-version-history.md", "10-sources.md"}
 )
 opening = "\n".join(
-    (CHAPTER_DIR / name).read_text(encoding="utf-8")
+    chapter_path(name).read_text(encoding="utf-8")
     for name in ("00-cover.md", "01-how-to-use.md")
 )
 
