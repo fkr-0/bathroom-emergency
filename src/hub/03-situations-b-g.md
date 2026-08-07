@@ -110,7 +110,7 @@ A single alarm during a strange event is an episode. An alarm that predictably
 returns, cancels plans, or narrows daily life is a pattern. Patterns often
 respond better to structured help than to another argument with willpower.
 
-## C — Pain is an alarm, not a damage display
+## Pain is an alarm, not a damage display
 
 Pain is a protective experience, not a transparent window onto tissue. Its
 intensity matters, but so do onset, location, spread, rhythm, function, context,
@@ -180,7 +180,7 @@ being weird, please infer the plot.”
 Do not delay emergency help to complete the table. Paperwork must learn its
 place.
 
-## D — Threat has three clocks
+## Threat has three clocks
 
 A threat can be **present now**, **expected later**, or **over while the body is
 still reacting**. Those clocks require different work. Present danger needs
@@ -325,7 +325,7 @@ If basic care is repeatedly failing, involve professional, social, or practical
 support. Productivity advice is not a substitute for treating depression,
 ADHD, burnout, sleep deprivation, pain, or crisis.
 
-## F — Smell is vivid evidence with poor calibration
+## Smell is vivid evidence with poor calibration
 
 Smell is excellent at demanding attention and poor at measuring concentration,
 toxicity, or distance. A weak odour can matter; a strong odour can be ordinary;
@@ -371,14 +371,14 @@ into the room. Running water may refill the trap. Persistent odour, leaks, or
 repeated empty traps need building management or plumbing repair. A candle is
 not plumbing, even when scented “Alpine Responsibility.”
 
-## G — No place to go
+## No place to go
 
 Use **Situation G — No Safe Place**. It separates active violence, no roof
 tonight, inaccessible or medically unusable accommodation, and social or
 internal crisis. Secure the next safe hour, then use the matching German or
 local service route.
 
-## Situations B–F, with the Situation G handoff
+## How the situations relate
 
 | Situation | Do now | Understand later | Escalate when |
 |---|---|---|---|

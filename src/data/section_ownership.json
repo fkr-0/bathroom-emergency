@@ -285,19 +285,19 @@
       "owner": "B"
     },
     {
-      "key": "03-situations-b-g:c-pain-is-an-alarm-not-a-damage-display",
+      "key": "03-situations-b-g:pain-is-an-alarm-not-a-damage-display",
       "chapter": "03-situations-b-g.md",
       "line": 113,
       "level": 2,
-      "heading": "C — Pain is an alarm, not a damage display",
+      "heading": "Pain is an alarm, not a damage display",
       "owner": "C"
     },
     {
-      "key": "03-situations-b-g:d-threat-has-three-clocks",
+      "key": "03-situations-b-g:threat-has-three-clocks",
       "chapter": "03-situations-b-g.md",
       "line": 183,
       "level": 2,
-      "heading": "D — Threat has three clocks",
+      "heading": "Threat has three clocks",
       "owner": "D"
     },
     {
@@ -317,27 +317,27 @@
       "owner": "B"
     },
     {
-      "key": "03-situations-b-g:f-smell-is-vivid-evidence-with-poor-calibration",
+      "key": "03-situations-b-g:smell-is-vivid-evidence-with-poor-calibration",
       "chapter": "03-situations-b-g.md",
       "line": 328,
       "level": 2,
-      "heading": "F — Smell is vivid evidence with poor calibration",
+      "heading": "Smell is vivid evidence with poor calibration",
       "owner": "H"
     },
     {
-      "key": "03-situations-b-g:g-no-place-to-go",
+      "key": "03-situations-b-g:no-place-to-go",
       "chapter": "03-situations-b-g.md",
       "line": 374,
       "level": 2,
-      "heading": "G — No place to go",
+      "heading": "No place to go",
       "owner": "D"
     },
     {
-      "key": "03-situations-b-g:situations-b-f-with-the-situation-g-handoff",
+      "key": "03-situations-b-g:how-the-situations-relate",
       "chapter": "03-situations-b-g.md",
       "line": 381,
       "level": 2,
-      "heading": "Situations B–F, with the Situation G handoff",
+      "heading": "How the situations relate",
       "owner": "D"
     },
     {

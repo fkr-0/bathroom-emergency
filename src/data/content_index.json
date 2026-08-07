@@ -864,20 +864,6 @@
       "legacy_html_ids": []
     },
     {
-      "resource_key": "section:03-situations-b-g:c-pain-is-an-alarm-not-a-damage-display",
-      "owner": "C",
-      "kind": "S",
-      "title": "C — Pain is an alarm, not a damage display",
-      "chapter": "03-situations-b-g.md",
-      "line": 113,
-      "level": 2,
-      "public_ref": "[BEG:C:S:001]",
-      "html_id": "beg-c-s-001",
-      "reader_ref": "amb.1.1",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
       "resource_key": "section:05-self-ambulance:anaphylaxis",
       "owner": "C",
       "kind": "S",
@@ -887,7 +873,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:002]",
       "html_id": "beg-c-s-002",
-      "reader_ref": "amb.2.15",
+      "reader_ref": "amb.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -901,7 +887,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:003]",
       "html_id": "beg-c-s-003",
-      "reader_ref": "amb.2.8",
+      "reader_ref": "amb.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -915,7 +901,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:004]",
       "html_id": "beg-c-s-004",
-      "reader_ref": "amb.2.11",
+      "reader_ref": "amb.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -929,7 +915,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:005]",
       "html_id": "beg-c-s-005",
-      "reader_ref": "amb.2.14",
+      "reader_ref": "amb.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -943,7 +929,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:006]",
       "html_id": "beg-c-s-006",
-      "reader_ref": "amb.2.6",
+      "reader_ref": "amb.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -957,7 +943,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:007]",
       "html_id": "beg-c-s-007",
-      "reader_ref": "amb.2.12",
+      "reader_ref": "amb.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -971,7 +957,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:008]",
       "html_id": "beg-c-s-008",
-      "reader_ref": "amb.2.20",
+      "reader_ref": "amb.21",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -985,7 +971,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:010]",
       "html_id": "beg-c-s-010",
-      "reader_ref": "amb.2.18",
+      "reader_ref": "amb.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -999,7 +985,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:011]",
       "html_id": "beg-c-s-011",
-      "reader_ref": "amb.2.16",
+      "reader_ref": "amb.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1013,7 +999,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:012]",
       "html_id": "beg-c-s-012",
-      "reader_ref": "amb.2.22",
+      "reader_ref": "amb.23",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1027,7 +1013,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:013]",
       "html_id": "beg-c-s-013",
-      "reader_ref": "amb.2.21",
+      "reader_ref": "amb.22",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1041,7 +1027,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:014]",
       "html_id": "beg-c-s-014",
-      "reader_ref": "amb.2.19",
+      "reader_ref": "amb.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1055,7 +1041,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:015]",
       "html_id": "beg-c-s-015",
-      "reader_ref": "amb.2.13",
+      "reader_ref": "amb.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1069,7 +1055,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:016]",
       "html_id": "beg-c-s-016",
-      "reader_ref": "amb.2.9",
+      "reader_ref": "amb.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1083,7 +1069,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:017]",
       "html_id": "beg-c-s-017",
-      "reader_ref": "amb.2.10",
+      "reader_ref": "amb.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1097,7 +1083,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:018]",
       "html_id": "beg-c-s-018",
-      "reader_ref": "amb.2.1",
+      "reader_ref": "amb.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1111,7 +1097,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:020]",
       "html_id": "beg-c-s-020",
-      "reader_ref": "amb.2.2",
+      "reader_ref": "amb.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1125,7 +1111,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:021]",
       "html_id": "beg-c-s-021",
-      "reader_ref": "amb.2.4",
+      "reader_ref": "amb.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1139,7 +1125,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:022]",
       "html_id": "beg-c-s-022",
-      "reader_ref": "amb.2.5",
+      "reader_ref": "amb.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1153,7 +1139,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:024]",
       "html_id": "beg-c-s-024",
-      "reader_ref": "amb.2.7",
+      "reader_ref": "amb.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1167,7 +1153,6 @@
       "level": 1,
       "public_ref": "[BEG:C:S:025]",
       "html_id": "beg-c-s-025",
-      "reader_ref": "amb.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1181,7 +1166,7 @@
       "level": 2,
       "public_ref": "[BEG:C:S:026]",
       "html_id": "beg-c-s-026",
-      "reader_ref": "amb.2.3",
+      "reader_ref": "amb.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1195,7 +1180,21 @@
       "level": 2,
       "public_ref": "[BEG:C:S:027]",
       "html_id": "beg-c-s-027",
-      "reader_ref": "amb.2.17",
+      "reader_ref": "amb.17",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:03-situations-b-g:pain-is-an-alarm-not-a-damage-display",
+      "owner": "C",
+      "kind": "S",
+      "title": "Pain is an alarm, not a damage display",
+      "chapter": "03-situations-b-g.md",
+      "line": 113,
+      "level": 2,
+      "public_ref": "[BEG:C:S:028]",
+      "html_id": "beg-c-s-028",
+      "reader_ref": "amb.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1299,48 +1298,6 @@
       "legacy_html_ids": []
     },
     {
-      "resource_key": "section:03-situations-b-g:d-threat-has-three-clocks",
-      "owner": "D",
-      "kind": "S",
-      "title": "D — Threat has three clocks",
-      "chapter": "03-situations-b-g.md",
-      "line": 183,
-      "level": 2,
-      "public_ref": "[BEG:D:S:001]",
-      "html_id": "beg-d-s-001",
-      "reader_ref": "safe.1.1",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
-      "resource_key": "section:03-situations-b-g:g-no-place-to-go",
-      "owner": "D",
-      "kind": "S",
-      "title": "G — No place to go",
-      "chapter": "03-situations-b-g.md",
-      "line": 374,
-      "level": 2,
-      "public_ref": "[BEG:D:S:002]",
-      "html_id": "beg-d-s-002",
-      "reader_ref": "safe.1.2",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
-      "resource_key": "section:03-situations-b-g:situations-b-f-with-the-situation-g-handoff",
-      "owner": "D",
-      "kind": "S",
-      "title": "Situations B–F, with the Situation G handoff",
-      "chapter": "03-situations-b-g.md",
-      "line": 381,
-      "level": 2,
-      "public_ref": "[BEG:D:S:003]",
-      "html_id": "beg-d-s-003",
-      "reader_ref": "safe.1.3",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
       "resource_key": "section:03g-safe-place-routing:children-and-young-people-without-a-safe-adult",
       "owner": "D",
       "kind": "S",
@@ -1350,7 +1307,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:004]",
       "html_id": "beg-d-s-004",
-      "reader_ref": "safe.2.7",
+      "reader_ref": "safe.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1364,7 +1321,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:005]",
       "html_id": "beg-d-s-005",
-      "reader_ref": "safe.2.8",
+      "reader_ref": "safe.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1378,7 +1335,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:006]",
       "html_id": "beg-d-s-006",
-      "reader_ref": "safe.2.10",
+      "reader_ref": "safe.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1392,7 +1349,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:007]",
       "html_id": "beg-d-s-007",
-      "reader_ref": "safe.2.2",
+      "reader_ref": "safe.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1406,7 +1363,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:008]",
       "html_id": "beg-d-s-008",
-      "reader_ref": "safe.2.3",
+      "reader_ref": "safe.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1420,7 +1377,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:009]",
       "html_id": "beg-d-s-009",
-      "reader_ref": "safe.2.4",
+      "reader_ref": "safe.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1434,7 +1391,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:010]",
       "html_id": "beg-d-s-010",
-      "reader_ref": "safe.2.5",
+      "reader_ref": "safe.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1448,7 +1405,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:011]",
       "html_id": "beg-d-s-011",
-      "reader_ref": "safe.2.6",
+      "reader_ref": "safe.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1462,7 +1419,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:013]",
       "html_id": "beg-d-s-013",
-      "reader_ref": "safe.2.9",
+      "reader_ref": "safe.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1476,7 +1433,7 @@
       "level": 2,
       "public_ref": "[BEG:D:S:014]",
       "html_id": "beg-d-s-014",
-      "reader_ref": "safe.2.1",
+      "reader_ref": "safe.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1490,7 +1447,47 @@
       "level": 1,
       "public_ref": "[BEG:D:S:015]",
       "html_id": "beg-d-s-015",
-      "reader_ref": "safe.2",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:03-situations-b-g:how-the-situations-relate",
+      "owner": "D",
+      "kind": "S",
+      "title": "How the situations relate",
+      "chapter": "03-situations-b-g.md",
+      "line": 381,
+      "level": 2,
+      "public_ref": "[BEG:D:S:016]",
+      "html_id": "beg-d-s-016",
+      "reader_ref": "safe.12",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:03-situations-b-g:no-place-to-go",
+      "owner": "D",
+      "kind": "S",
+      "title": "No place to go",
+      "chapter": "03-situations-b-g.md",
+      "line": 374,
+      "level": 2,
+      "public_ref": "[BEG:D:S:017]",
+      "html_id": "beg-d-s-017",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:03-situations-b-g:threat-has-three-clocks",
+      "owner": "D",
+      "kind": "S",
+      "title": "Threat has three clocks",
+      "chapter": "03-situations-b-g.md",
+      "line": 183,
+      "level": 2,
+      "public_ref": "[BEG:D:S:018]",
+      "html_id": "beg-d-s-018",
+      "reader_ref": "safe.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1593,20 +1590,6 @@
       "legacy_html_ids": []
     },
     {
-      "resource_key": "section:03-situations-b-g:f-smell-is-vivid-evidence-with-poor-calibration",
-      "owner": "H",
-      "kind": "S",
-      "title": "F — Smell is vivid evidence with poor calibration",
-      "chapter": "03-situations-b-g.md",
-      "line": 328,
-      "level": 2,
-      "public_ref": "[BEG:H:S:001]",
-      "html_id": "beg-h-s-001",
-      "reader_ref": "dis.1.1",
-      "legacy_public_refs": [],
-      "legacy_html_ids": []
-    },
-    {
       "resource_key": "section:03h-environmental-hazards:after-the-immediate-hazard",
       "owner": "H",
       "kind": "S",
@@ -1616,7 +1599,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:002]",
       "html_id": "beg-h-s-002",
-      "reader_ref": "dis.2.10",
+      "reader_ref": "dis.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1630,7 +1613,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:003]",
       "html_id": "beg-h-s-003",
-      "reader_ref": "dis.2.3",
+      "reader_ref": "dis.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1644,7 +1627,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:004]",
       "html_id": "beg-h-s-004",
-      "reader_ref": "dis.2.5",
+      "reader_ref": "dis.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1658,7 +1641,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:005]",
       "html_id": "beg-h-s-005",
-      "reader_ref": "dis.2.8",
+      "reader_ref": "dis.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1672,7 +1655,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:006]",
       "html_id": "beg-h-s-006",
-      "reader_ref": "dis.2.6",
+      "reader_ref": "dis.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1686,7 +1669,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:007]",
       "html_id": "beg-h-s-007",
-      "reader_ref": "dis.2.2",
+      "reader_ref": "dis.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1700,7 +1683,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:008]",
       "html_id": "beg-h-s-008",
-      "reader_ref": "dis.2.4",
+      "reader_ref": "dis.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1714,7 +1697,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:009]",
       "html_id": "beg-h-s-009",
-      "reader_ref": "dis.2.7",
+      "reader_ref": "dis.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1728,7 +1711,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:011]",
       "html_id": "beg-h-s-011",
-      "reader_ref": "dis.2.1",
+      "reader_ref": "dis.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1742,7 +1725,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:012]",
       "html_id": "beg-h-s-012",
-      "reader_ref": "dis.2.9",
+      "reader_ref": "dis.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1756,7 +1739,6 @@
       "level": 1,
       "public_ref": "[BEG:H:S:013]",
       "html_id": "beg-h-s-013",
-      "reader_ref": "dis.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1770,7 +1752,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:014]",
       "html_id": "beg-h-s-014",
-      "reader_ref": "dis.3.11",
+      "reader_ref": "dis.22",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1784,7 +1766,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:015]",
       "html_id": "beg-h-s-015",
-      "reader_ref": "dis.3.10",
+      "reader_ref": "dis.21",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1798,7 +1780,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:016]",
       "html_id": "beg-h-s-016",
-      "reader_ref": "dis.3.3",
+      "reader_ref": "dis.14",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1812,7 +1794,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:017]",
       "html_id": "beg-h-s-017",
-      "reader_ref": "dis.3.9",
+      "reader_ref": "dis.20",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1826,7 +1808,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:018]",
       "html_id": "beg-h-s-018",
-      "reader_ref": "dis.3.6",
+      "reader_ref": "dis.17",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1840,7 +1822,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:019]",
       "html_id": "beg-h-s-019",
-      "reader_ref": "dis.3.2",
+      "reader_ref": "dis.13",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1854,7 +1836,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:020]",
       "html_id": "beg-h-s-020",
-      "reader_ref": "dis.3.5",
+      "reader_ref": "dis.16",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1868,7 +1850,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:021]",
       "html_id": "beg-h-s-021",
-      "reader_ref": "dis.3.7",
+      "reader_ref": "dis.18",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1882,7 +1864,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:022]",
       "html_id": "beg-h-s-022",
-      "reader_ref": "dis.3.8",
+      "reader_ref": "dis.19",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1896,7 +1878,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:023]",
       "html_id": "beg-h-s-023",
-      "reader_ref": "dis.3.12",
+      "reader_ref": "dis.23",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1910,7 +1892,7 @@
       "level": 2,
       "public_ref": "[BEG:H:S:024]",
       "html_id": "beg-h-s-024",
-      "reader_ref": "dis.3.4",
+      "reader_ref": "dis.15",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1924,7 +1906,6 @@
       "level": 1,
       "public_ref": "[BEG:H:S:025]",
       "html_id": "beg-h-s-025",
-      "reader_ref": "dis.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -1938,7 +1919,21 @@
       "level": 2,
       "public_ref": "[BEG:H:S:026]",
       "html_id": "beg-h-s-026",
-      "reader_ref": "dis.3.1",
+      "reader_ref": "dis.12",
+      "legacy_public_refs": [],
+      "legacy_html_ids": []
+    },
+    {
+      "resource_key": "section:03-situations-b-g:smell-is-vivid-evidence-with-poor-calibration",
+      "owner": "H",
+      "kind": "S",
+      "title": "Smell is vivid evidence with poor calibration",
+      "chapter": "03-situations-b-g.md",
+      "line": 328,
+      "level": 2,
+      "public_ref": "[BEG:H:S:027]",
+      "html_id": "beg-h-s-027",
+      "reader_ref": "dis.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2045,7 +2040,6 @@
       "level": 1,
       "public_ref": "[BEG:O:S:001]",
       "html_id": "beg-o-s-001",
-      "reader_ref": "body.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2059,7 +2053,6 @@
       "level": 2,
       "public_ref": "[BEG:O:S:017]",
       "html_id": "beg-o-s-017",
-      "reader_ref": "body.1.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2073,7 +2066,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:018]",
       "html_id": "beg-o-s-018",
-      "reader_ref": "body.2.2",
+      "reader_ref": "body.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2087,7 +2080,6 @@
       "level": 1,
       "public_ref": "[BEG:O:S:019]",
       "html_id": "beg-o-s-019",
-      "reader_ref": "body.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2101,7 +2093,6 @@
       "level": 2,
       "public_ref": "[BEG:O:S:020]",
       "html_id": "beg-o-s-020",
-      "reader_ref": "body.2.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2115,7 +2106,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:021]",
       "html_id": "beg-o-s-021",
-      "reader_ref": "body.2.3",
+      "reader_ref": "body.2",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2129,7 +2120,6 @@
       "level": 2,
       "public_ref": "[BEG:O:S:022]",
       "html_id": "beg-o-s-022",
-      "reader_ref": "body.2.1",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2143,7 +2133,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:023]",
       "html_id": "beg-o-s-023",
-      "reader_ref": "body.2.4",
+      "reader_ref": "body.5",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2157,7 +2147,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:024]",
       "html_id": "beg-o-s-024",
-      "reader_ref": "body.2.5",
+      "reader_ref": "body.6",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2171,7 +2161,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:025]",
       "html_id": "beg-o-s-025",
-      "reader_ref": "body.3.2",
+      "reader_ref": "body.4",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2185,7 +2175,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:026]",
       "html_id": "beg-o-s-026",
-      "reader_ref": "body.3.7",
+      "reader_ref": "body.11",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2199,7 +2189,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:027]",
       "html_id": "beg-o-s-027",
-      "reader_ref": "body.3.6",
+      "reader_ref": "body.10",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2213,7 +2203,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:028]",
       "html_id": "beg-o-s-028",
-      "reader_ref": "body.3.4",
+      "reader_ref": "body.8",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2227,7 +2217,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:029]",
       "html_id": "beg-o-s-029",
-      "reader_ref": "body.3.8",
+      "reader_ref": "body.12",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2241,7 +2231,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:030]",
       "html_id": "beg-o-s-030",
-      "reader_ref": "body.3.1",
+      "reader_ref": "body.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2255,7 +2245,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:031]",
       "html_id": "beg-o-s-031",
-      "reader_ref": "body.3.3",
+      "reader_ref": "body.7",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2269,7 +2259,6 @@
       "level": 1,
       "public_ref": "[BEG:O:S:032]",
       "html_id": "beg-o-s-032",
-      "reader_ref": "body.3",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },
@@ -2283,7 +2272,7 @@
       "level": 2,
       "public_ref": "[BEG:O:S:033]",
       "html_id": "beg-o-s-033",
-      "reader_ref": "body.3.5",
+      "reader_ref": "body.9",
       "legacy_public_refs": [],
       "legacy_html_ids": []
     },

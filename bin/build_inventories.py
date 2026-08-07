@@ -48,13 +48,11 @@ def mixed_owner(heading: str, level: int) -> str:
         ("What is actually happening", "B"),
         ("When it is overload, not anxiety", "B"),
         ("Traffic control", "B"),
-        ("B —", "B"),
-        ("C —", "C"),
-        ("D —", "D"),
-        ("E —", "B"),
-        ("F —", "H"),
-        ("G —", "D"),
-        ("Situations B–F", "D"),
+        ("Pain is an alarm", "C"),
+        ("Threat has three clocks", "D"),
+        ("No place to go", "D"),
+        ("How the situations relate", "D"),
+        ("Smell is vivid evidence", "H"),
     ):
         if heading.startswith(prefix):
             return owner

@@ -51,6 +51,169 @@
           "A calm plan for another person"
         ]
       }
+    ],
+    "O": [
+      {
+        "chapter": "01b-body-owner-manual.md",
+        "sections": [
+          ""
+        ]
+      },
+      {
+        "chapter": "01-how-to-use.md",
+        "sections": [
+          "First 90 seconds — notice before narrating",
+          "Signal, story, next question"
+        ]
+      },
+      {
+        "chapter": "01b-body-owner-manual.md",
+        "sections": [
+          "Read the signal without putting it on trial",
+          "A one-minute body inventory"
+        ]
+      },
+      {
+        "chapter": "01-how-to-use.md",
+        "sections": [
+          "The three-minute experiment",
+          "Why a small room amplifies everything"
+        ]
+      },
+      {
+        "chapter": "01b-body-owner-manual.md",
+        "sections": [
+          "The gastrointestinal chapter you did not ask for",
+          "Pain: communication, not a verdict",
+          "Water, food, and temperature",
+          "Medication and substances: make a factual list",
+          "Feeling faint in a room made of hard surfaces",
+          "Quick reference"
+        ]
+      }
+    ],
+    "C": [
+      {
+        "chapter": "05-self-ambulance.md",
+        "sections": [
+          "",
+          "The first minute: preserve what still works",
+          "Triage priority heatmap",
+          "The “golden hour”",
+          "Unresponsive and not breathing normally",
+          "Unresponsive but breathing normally",
+          "Choking",
+          "Wounds and bleeding",
+          "Burns and scalds",
+          "Suspected fractures and joint injuries",
+          "Suspected spine, neck, or pelvic injury",
+          "Chemical in eye or on skin",
+          "Electrical injury",
+          "Stroke — FAST",
+          "Chest pain or severe breathlessness",
+          "Anaphylaxis",
+          "Poisoning",
+          "Vital signs"
+        ]
+      },
+      {
+        "chapter": "03-situations-b-g.md",
+        "sections": [
+          "Pain is an alarm, not a damage display"
+        ]
+      },
+      {
+        "chapter": "05-self-ambulance.md",
+        "sections": [
+          "Pain without a red flag",
+          "Self-care while waiting",
+          "First-aid kit for an ordinary household",
+          "Self ambulance for non-physical emergencies",
+          "Red-flag theorem, again"
+        ]
+      }
+    ],
+    "D": [
+      {
+        "chapter": "03g-safe-place-routing.md",
+        "sections": [
+          ""
+        ]
+      },
+      {
+        "chapter": "03-situations-b-g.md",
+        "sections": [
+          "Threat has three clocks"
+        ]
+      },
+      {
+        "chapter": "03g-safe-place-routing.md",
+        "sections": [
+          "A safe place is confirmed, not merely named",
+          "First minute — choose the actual failure",
+          "G1 — A person or active threat makes the place unsafe",
+          "G2 — There is no weather-safe place to sleep tonight",
+          "G3 — A place exists, but it cannot safely support the person",
+          "G4 — The place is physically safe, but staying is psychologically or socially unworkable",
+          "Children and young people without a safe adult",
+          "Communication and access card",
+          "The safe-place handoff",
+          "Fill before it is needed"
+        ]
+      },
+      {
+        "chapter": "03-situations-b-g.md",
+        "sections": [
+          "How the situations relate"
+        ]
+      }
+    ],
+    "H": [
+      {
+        "chapter": "03h-environmental-hazards.md",
+        "sections": [
+          "",
+          "The five-second hazard gate"
+        ]
+      },
+      {
+        "chapter": "03-situations-b-g.md",
+        "sections": [
+          "Smell is vivid evidence with poor calibration"
+        ]
+      },
+      {
+        "chapter": "03h-environmental-hazards.md",
+        "sections": [
+          "Fire or smoke",
+          "Carbon monoxide",
+          "Gas smell or hissing",
+          "Chemical fumes, splash, or swallowed product",
+          "Electrical danger",
+          "Outdoor warning versus indoor source",
+          "Dependency modifiers during a hazard",
+          "The hazard handoff",
+          "After the immediate hazard"
+        ]
+      },
+      {
+        "chapter": "06b-natural-disasters.md",
+        "sections": [
+          "",
+          "The world changed while you were on the toilet",
+          "First principle: identify the event",
+          "Earthquake",
+          "Severe wind and tornado",
+          "Flood",
+          "Fire and smoke",
+          "Gas, carbon monoxide, chemicals, and electricity",
+          "Power outage",
+          "Emergency water",
+          "Communication and rescue",
+          "After the event",
+          "Quick reference"
+        ]
+      }
     ]
   }
 }
