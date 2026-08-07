@@ -20,6 +20,7 @@ from pathlib import Path
 
 from project_meta import VERSION, build_date, git_revision, revision_footer_css
 from build_reference_index import decorate_figure_references, inject_heading_ids
+from footnotes import merge_duplicate_footnotes
 from src_layout import find_chapter
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -297,7 +298,7 @@ def combined_css(monochrome: bool, *, layout: str = "a4") -> Path:
     if monochrome:
         content += "\n\n" + STYLE_MONO.read_text(encoding="utf-8")
     content += "\n\n" + revision_footer_css(
-        title="Bathroom Emergency Guide — Complete guide",
+        title="Bathroom Emergency Guide",
         layout=layout,
         mode="mono" if monochrome else "color",
     )
@@ -345,6 +346,12 @@ def build_html(markdown: Path, *, monochrome: bool = False, layout: str = "a4") 
     ]
     run(command)
     html = output.read_text(encoding="utf-8")
+    # Pandoc emits one note per reference, so a source cited twice appears twice
+    # in the reference list under different numbers.
+    merged = merge_duplicate_footnotes(html)
+    if merged != html:
+        output.write_text(merged, encoding="utf-8")
+        html = merged
     if "cdn.jsdelivr" in html or re.search(r"<script[^>]+mathjax", html, re.IGNORECASE):
         raise BuildError("HTML unexpectedly contains a remote MathJax dependency")
     if "<math" not in html:

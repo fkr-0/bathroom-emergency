@@ -3,6 +3,19 @@
   "release": "4.14.0-alt.2",
   "status": "experimental-eleven-book-synthesis",
   "identity_frozen_on": "2026-08-06",
+  "shelf_order": [
+    "O",
+    "A",
+    "B",
+    "C",
+    "D",
+    "H",
+    "Z",
+    "P",
+    "S",
+    "T",
+    "R"
+  ],
   "standalone_nodes": [
     "O",
     "A",

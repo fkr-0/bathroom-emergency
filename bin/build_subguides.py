@@ -19,6 +19,7 @@ import subprocess
 from pathlib import Path
 
 from build_reference_index import decorate_figure_references, inject_heading_ids, mini_toc
+from footnotes import merge_duplicate_footnotes
 from src_layout import chapter_path
 from project_meta import (
     SOURCE_REVIEW_DATE,
@@ -190,11 +191,15 @@ def identity_css(node: dict, *, layout: str, monochrome: bool) -> str:
         parts.append((SRC / "style-mono.css").read_text(encoding="utf-8"))
     parts.append(
         revision_footer_css(
-            title=f'{node["id"]} — {node["title"]}',
+            # The routing letter is gone from the band: the book's name and its
+            # pattern already say which book this is, and the letter cost the
+            # line the width it needed to stay on one line.
+            title=node["title"],
             layout=layout,
             mode="mono" if monochrome else "color",
             glyph=node["glyph"],
             accent=node["colour"],
+            pattern=node["pattern"],
         )
     )
     parts.append(f':root {{ --subguide-accent: {node["colour"]}; }}')
@@ -342,6 +347,12 @@ def build_markdown(
             (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
         )["nodes"]
     }
+    manifest = json.loads(
+        (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
+    )
+    shelf = manifest["shelf_order"]
+    shelf_position = shelf.index(node_id) + 1
+    shelf_total = len(shelf)
     questions = "\n".join(f"- {question}" for question in node["questions"])
     handoffs = "\n".join(
         f"- **{edge} — {titles[edge]}** — use it when that problem becomes primary."
@@ -351,7 +362,7 @@ def build_markdown(
 
 ::: {{.subguide-cover}}
 
-<div class="subguide-family-mark">Bathroom Emergency Guide / one of eleven books</div>
+<div class="subguide-family-mark">Bathroom Emergency Guide / Book {shelf_position} of {shelf_total}</div>
 <div class="subguide-code">{node["glyph"]}</div>
 
 # {node["title"]}
@@ -651,6 +662,12 @@ def build_node(node_id: str) -> dict:
                     "--output",
                     str(html_path),
                 ]
+            )
+            # Pandoc emits one note per reference, so a source cited twice
+            # appears twice in the reference list under different numbers.
+            html_path.write_text(
+                merge_duplicate_footnotes(html_path.read_text(encoding="utf-8")),
+                encoding="utf-8",
             )
             pdf_path = out_dir / f"{stem}.pdf"
             run(

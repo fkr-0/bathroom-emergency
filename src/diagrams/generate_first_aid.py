@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import sys
+import textwrap
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -97,13 +98,17 @@ ax.set_xlim(0, 12.6)
 ax.set_ylim(0, 5.2)
 ax.axis("off")
 ax.set_title("AED — attach, listen, clear, continue CPR", fontsize=20, fontweight="bold", color=INK, pad=14)
+# Notes are wrapped to the panel rather than hand-broken: "Device shocks only
+# if indicated." was one character run too long and printed through the box.
+NOTE_WRAP = 19
 steps = [
-    ("1", "TURN ON", "Open or power on.\nFollow the voice."),
-    ("2", "BARE + DRY CHEST", "Attach pads exactly\nas pictured."),
-    ("3", "ANALYSE", "Nobody touches\nthe person."),
-    ("4", "SHOCK IF TOLD", "Say CLEAR.\nDevice shocks only if indicated."),
-    ("5", "CPR AGAIN", "Resume immediately.\nFollow the next prompt."),
+    ("1", "TURN ON", "Open or power on. Follow the voice."),
+    ("2", "BARE + DRY CHEST", "Attach pads exactly as pictured."),
+    ("3", "ANALYSE", "Nobody touches the person."),
+    ("4", "SHOCK IF TOLD", "Say CLEAR. Device shocks only if indicated."),
+    ("5", "CPR AGAIN", "Resume immediately. Follow the next prompt."),
 ]
+steps = [(n, title, textwrap.fill(note, NOTE_WRAP)) for n, title, note in steps]
 for index,(number,title,note) in enumerate(steps):
     x=.25+index*2.46
     ax.add_patch(FancyBboxPatch((x,.9),2.12,3.2,boxstyle="round,pad=.08",facecolor="white",edgecolor=BLUE if index<3 else RED if index==3 else GREEN,linewidth=2))

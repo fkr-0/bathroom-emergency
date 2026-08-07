@@ -201,14 +201,27 @@ if manifest_path.exists():
                     # Sources are pandoc footnotes now: one numbered list with
                     # back-links at the end of the book, not a slug-headed
                     # section followed by pointers back to it.
-                    cited = set(re.findall(r'id="fnref(\d+)"', html_text))
-                    noted = set(re.findall(r'id="fn(\d+)"', html_text))
+                    # Every citation must resolve to a note. Reference anchors
+                    # keep their own ids so back-links stay unique, and a source
+                    # cited twice now points both citations at one note, so the
+                    # test is that each href target exists -- not that anchor
+                    # ids and note ids pair up one to one.
+                    targets = set(re.findall(r'href="#fn(\d+)"', html_text))
+                    noted = set(re.findall(r'<li id="fn(\d+)"', html_text))
                     check(
-                        not cited or noted >= cited,
-                        f"{node_id}/{stem}: cited sources missing from the note list",
+                        targets <= noted,
+                        f"{node_id}/{stem}: citations point at missing notes: "
+                        f"{sorted(targets - noted)}",
+                    )
+                    back = set(re.findall(r'href="#fnref(\d+)"', html_text))
+                    anchors = set(re.findall(r'id="fnref(\d+)"', html_text))
+                    check(
+                        back <= anchors,
+                        f"{node_id}/{stem}: note back-links point at missing anchors: "
+                        f"{sorted(back - anchors)}",
                     )
                     check(
-                        'class="footnotes' in html_text or not cited,
+                        'class="footnotes' in html_text or not targets,
                         f"{node_id}/{stem}: source list missing",
                     )
                     for gone in ("Citation links", "Tools, forms, and stable references"):
