@@ -707,7 +707,13 @@ math[display="block"] {
 
 @page {
   size: A4;
-  margin: 14.5mm 13mm 16mm;
+  /* Side margins set the measure. A 184mm text area meant content had to be
+     capped at var(--measure), which left prose sitting under a rule twice its
+     width with all the slack on one side. Narrowing the page instead gives one
+     column that the running header, footer, prose, tables and figures share:
+     108mm is about 70 characters here, close to the 66 the A4/2 edition
+     already reads at. */
+  margin: 14.5mm 51mm 16mm;
   @top-left {
     content: "BATHROOM EMERGENCY GUIDE";
     color: #52645e;
@@ -730,6 +736,10 @@ math[display="block"] {
 }
 
 @media print {
+  /* The page geometry is the measure in every print edition, as it already
+     was for A4/2 and large print. Nothing is capped separately. */
+  :root { --measure: 100%; }
+
   /* Body text stays ragged-right. WCAG 2.1 SC 1.4.8 states that text is not
      justified, and this guide ships cognitive-overload and sensory-panic
      accessibility profiles. Justified + hyphens: auto renders cleanly in

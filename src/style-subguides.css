@@ -206,14 +206,9 @@
   text-align: center;
 }
 
-/* Figures, tables and cards share the prose measure so a page has one right
-   edge. Preformatted blocks are exempt: ASCII forms and diagrams reach 91
-   columns, and forcing them narrower either clips them or shrinks the type
-   past reading size. They are scanned, not read line by line. */
-table, figure, blockquote, .safety-card, .subguide-scope-grid,
-.subguide-neighbours, .edition-resource-map, .subguide-meta {
-  max-width: var(--measure);
-}
+/* Nothing is capped here any more. The print page geometry is the column, so
+   prose, tables, figures and cards already share one width, and capping a
+   table inside it only made the table narrower than its own columns need. */
 
 .subguide-meta {
   display: grid;
@@ -436,9 +431,26 @@ table, figure, blockquote, .safety-card, .subguide-scope-grid,
 
 .resource-heading {
   display: grid;
-  gap: .15rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .15rem .6rem;
   padding: .65rem .7rem .35rem;
 }
+
+/* The figure's address belongs at the edge of the card, the way a section
+   address sits at the edge of its heading — not on a line of its own. */
+.resource-heading code {
+  grid-area: 1 / 2 / 3 / 3;
+  align-self: start;
+  color: var(--muted);
+  background: none;
+  font-family: ui-monospace, monospace;
+  font-size: .62rem;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+
+.resource-heading strong,
+.resource-heading span { grid-column: 1; }
 
 .resource-heading strong {
   font-size: 1rem;

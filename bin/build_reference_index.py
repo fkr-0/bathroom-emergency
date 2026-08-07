@@ -637,6 +637,12 @@ def inject_heading_ids(text: str, chapter: str) -> str:
             reader_ref = item.get("reader_ref")
             # Rides along on the heading line rather than taking one of its own:
             # 236 sections would otherwise cost several printed pages.
+            # The address follows the heading text. Putting it first looked
+            # tidier on headings that wrap, but a right float interleaves at
+            # the point it is encountered, so it split the heading phrase in
+            # extracted text -- breaking the layout markers and, more to the
+            # point, the order a screen reader reads. Contiguous wording wins
+            # over the reference sitting on the first line.
             suffix = f" [{reader_ref}]{{.section-ref}}" if reader_ref else ""
             line = f"{match.group(1)} {match.group(2)}{suffix} {{#{item['html_id']}}}"
         elif match and "{#" not in line:
@@ -710,7 +716,7 @@ def mini_toc(text: str, max_level: int = 2) -> str:
             continue
         title = re.sub(r"\s+\{#[-a-z0-9]+\}\s*$", "", match.group(2))
         # The reader address is furniture on the heading, not part of its name.
-        title = re.sub(r"\s*\[[a-z]+\.[0-9.]+\]\{\.section-ref\}", "", title)
+        title = re.sub(r"\s*\[[a-z]+\.[0-9.a-z]+\]\{\.section-ref\}", "", title).strip()
         indent = "  " * (len(match.group(1)) - 1)
         rows.append(f"{indent}- [{title}](#{id_match.group(1)})")
     return "\n".join(rows)

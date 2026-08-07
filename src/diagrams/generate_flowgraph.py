@@ -36,11 +36,23 @@ def box(ax, x, y, width, height, text, color, size=10):
     ax.text(x, y, text, ha="center", va="center", color=WHITE, fontsize=size, fontweight="bold")
 
 
-def arrow(ax, start, end, label=None, color=INK):
-    ax.annotate("", xy=end, xytext=start, arrowprops={"arrowstyle": "->", "color": color, "lw": 1.7})
+def arrow(ax, start, end, label=None, color=INK, label_at=0.5, rad=0.0):
+    """Draw an arrow, optionally labelled.
+
+    ``label_at`` is how far along the arrow the label sits, 0 at the start and
+    1 at the end. It defaults to the midpoint, which is wrong whenever a long
+    arrow passes a box on its way down: the midpoint then lands inside that box
+    and the label prints on top of it.
+    """
+    props = {"arrowstyle": "->", "color": color, "lw": 1.7}
+    if rad:
+        # Bow the arrow so it travels around an intervening box instead of
+        # straight through it.
+        props["connectionstyle"] = f"arc3,rad={rad}"
+    ax.annotate("", xy=end, xytext=start, arrowprops=props)
     if label:
-        x = (start[0] + end[0]) / 2
-        y = (start[1] + end[1]) / 2
+        x = start[0] + (end[0] - start[0]) * label_at
+        y = start[1] + (end[1] - start[1]) * label_at
         ax.text(x + .07, y, label, color=color, fontsize=7.5, fontweight="bold", backgroundcolor=PAPER)
 
 
@@ -147,7 +159,7 @@ arrow(ax, (4.2, 4.63), (4.2, 4.02), color=RED)
 box(ax, 8.1, 5.05, 2.8, .82, "YES · CALL 112", RED, 10.5)
 box(ax, 8.1, 3.55, 2.8, .9, "NO · matching\nfirst-aid section", BLUE, 9.5)
 arrow(ax, (8.1, 6.18), (8.1, 5.48), "YES", RED)
-arrow(ax, (8.85, 6.18), (8.55, 4.02), "NO", BLUE)
+arrow(ax, (8.85, 6.18), (8.55, 4.02), "NO", BLUE, label_at=0.10, rad=-0.42)
 ax.text(5, 1.9, "Speakerphone externalizes the call and frees both hands.", ha="center", color=INK, fontsize=9.5, fontweight="bold")
 ax.text(5, 1.28, "Gasping is not normal breathing. Do not delay the call to finish the chart.", ha="center", color=MUTED, fontsize=9)
 save(fig, "triage_flow.png")

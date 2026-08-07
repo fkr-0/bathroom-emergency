@@ -81,8 +81,15 @@ def revision_footer_css(
     muted = "#111111" if mode == "mono" else "#52645e"
 
     heading = f"{glyph}  {title}" if glyph else title
-    stamp = f"Bathroom Emergency {VERSION} · {git_revision()}"
-    trailer = f"{build_date()} · be.fkr.dev"
+    # The A4/2 page is 105mm wide and gives the running line about 91mm. The
+    # full strings wrapped onto a second line there, including the page number.
+    # That edition is the primary print target, so it gets compact furniture.
+    if layout == "a4half":
+        stamp = f"BE {VERSION}"
+        trailer = "be.fkr.dev"
+    else:
+        stamp = f"Bathroom Emergency {VERSION} · {git_revision()}"
+        trailer = f"{build_date()} · be.fkr.dev"
     # Always carry the mode so two printouts of the same book can be told
     # apart. verify_density normalizes this one token before comparing colour
     # and monochrome text, because it is meant to differ.
