@@ -33,7 +33,8 @@
     "verify:site": "node bin/verify_site.mjs",
     "validate:matrix": "python3 bin/validate_build_matrix.py",
     "validate:migration": "python3 bin/validate_migration.py",
-    "validate:superseded": "python3 bin/validate_superseded.py"
+    "validate:superseded": "python3 bin/validate_superseded.py",
+    "build:twoup": "python3 bin/impose_two_up.py"
   },
   "devDependencies": {
     "playwright": "^1.54.0",

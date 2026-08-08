@@ -20,7 +20,7 @@ from pathlib import Path
 
 from build_reference_index import decorate_figure_references, inject_heading_ids, mini_toc
 from footnotes import merge_duplicate_footnotes
-from src_layout import chapter_path
+from src_layout import chapter_path, find_chapter
 from project_meta import (
     SOURCE_REVIEW_DATE,
     VERSION,
@@ -351,8 +351,15 @@ def build_markdown(
         (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
     )
     shelf = manifest["shelf_order"]
-    shelf_position = shelf.index(node_id) + 1
     shelf_total = len(shelf)
+    # The shelf front matter is not one of the eleven; it introduces them.
+    on_shelf = node_id in shelf
+    shelf_position = shelf.index(node_id) + 1 if on_shelf else 0
+    family_mark = (
+        f"Bathroom Emergency Guide / Book {shelf_position} of {shelf_total}"
+        if on_shelf
+        else f"Bathroom Emergency Guide / Start here · {shelf_total} books"
+    )
     questions = "\n".join(f"- {question}" for question in node["questions"])
     handoffs = "\n".join(
         f"- **{edge} — {titles[edge]}** — use it when that problem becomes primary."
@@ -362,7 +369,7 @@ def build_markdown(
 
 ::: {{.subguide-cover}}
 
-<div class="subguide-family-mark">Bathroom Emergency Guide / Book {shelf_position} of {shelf_total}</div>
+<div class="subguide-family-mark">{family_mark}</div>
 <div class="subguide-code">{node["glyph"]}</div>
 
 # {node["title"]}
@@ -611,17 +618,12 @@ def canonical_body(node_id: str, node: dict) -> tuple[str, list[dict]]:
     return decorate_figure_references(canonical_content, set()), ordered_sources
 
 
-def build_node(node_id: str) -> dict:
-    manifest = json.loads(
-        (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
-    )
-    node = next(item for item in manifest["nodes"] if item["id"] == node_id)
-    canonical_content, ordered_sources = canonical_body(node_id, node)
-    contents = mini_toc(canonical_content)
-    visual_files = sorted(set(IMAGE_RE.findall(canonical_content)))
-    resource_map, resource_metadata = edition_resource_map(node, visual_files)
-
-    out_dir = BUILD / node_id
+def render_editions(node, canonical_content, ordered_sources, contents,
+                    resource_map, out_dir) -> dict:
+    """Render one book's six editions. Shared so the shelf front matter is
+    produced by exactly the same rules as the eleven books -- a separate
+    assembly path is how the master ended up with defects the books had
+    already had fixed."""
     out_dir.mkdir(parents=True, exist_ok=True)
     outputs: dict[str, dict] = {}
     for layout in LAYOUTS:
@@ -718,6 +720,77 @@ def build_node(node_id: str) -> dict:
                 "pdf_sha256": file_sha256(pdf_path),
             }
 
+    return outputs
+
+
+# The shelf front matter is a book like the others. It gets the same cover,
+# contents, identity, footer and six editions, from the same functions -- so it
+# cannot acquire defects the eleven books have already had fixed, and so its
+# running header names itself rather than inheriting somebody else's.
+SHELF_NODE = {
+    "id": "SHELF",
+    "slug": "shelf-how-to-use",
+    "title": "Bathroom Emergency Guide — The Shelf",
+    "promise": "Which of the eleven books to open, and why reading order is optional.",
+    "colour": "#344054",
+    "pattern": "solid",
+    "glyph": "⌘",
+    "chapters": ["00-cover.md"],
+    "questions": [
+        "Which book is closest to the present problem?",
+        "What do I read first?",
+        "What happens when the problem changes?",
+    ],
+    "scope": "Names the eleven books, what each is for, and how to move between them.",
+    "outside_scope": "Every actual route. This page points; the books act.",
+    "aliases": ["Cover", "How to use the eleven books"],
+    "outgoing": [],
+}
+
+
+def build_shelf() -> dict:
+    node = dict(SHELF_NODE)
+    inventory = json.loads(
+        (DATA_DIR / "source_inventory.json").read_text(encoding="utf-8")
+    )
+    source_lookup = {
+        (item["chapter"], item["footnote_key"]): item
+        for item in inventory["footnote_sources"]
+    }
+    ordered_sources: list[dict] = []
+    chapter = node["chapters"][0]
+    block = BG.expand_reference_macros(
+        BG.strip_frontmatter(find_chapter(chapter).read_text(encoding="utf-8"))
+    )
+    block = inject_heading_ids(block, chapter)
+    content = replace_refs(
+        remove_footnote_definitions(block), chapter, source_lookup, ordered_sources
+    )
+    content = drop_redundant_book_title(content, node)
+    content = BG.expand_visualization_macros(content, BG.visualization_lookup())
+    content = decorate_figure_references(content, set())
+    out_dir = BUILD / node["id"]
+    render_editions(
+        node, content, ordered_sources, mini_toc(content), "", out_dir
+    )
+    print(f"  [OK] SHELF standalone: front matter, 6 editions")
+    return {"release": VERSION, "node": "SHELF", "slug": node["slug"]}
+
+
+def build_node(node_id: str) -> dict:
+    manifest = json.loads(
+        (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
+    )
+    node = next(item for item in manifest["nodes"] if item["id"] == node_id)
+    canonical_content, ordered_sources = canonical_body(node_id, node)
+    contents = mini_toc(canonical_content)
+    visual_files = sorted(set(IMAGE_RE.findall(canonical_content)))
+    resource_map, resource_metadata = edition_resource_map(node, visual_files)
+
+    out_dir = BUILD / node_id
+    outputs = render_editions(
+        node, canonical_content, ordered_sources, contents, resource_map, out_dir
+    )
     result = {
         "release": VERSION,
         "node": node_id,
@@ -874,7 +947,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     manifest = json.loads((DATA_DIR / "subguides.json").read_text(encoding="utf-8"))
     released = manifest["standalone_nodes"]
-    parser.add_argument("--node", choices=[*released, "all"], default="all")
+    parser.add_argument("--node", choices=[*released, "SHELF", "all"], default="all")
     args = parser.parse_args()
     node_ids = released if args.node == "all" else [args.node]
     # A clean build must not retain output names from an older book identity.
@@ -885,8 +958,13 @@ def main() -> int:
     if args.node == "all":
         for name in ("index.md", "index.css", "index.html", "manifest.json"):
             (BUILD / name).unlink(missing_ok=True)
+    if args.node == "SHELF":
+        build_shelf()
+        return 0
     results = {node_id: build_node(node_id) for node_id in node_ids}
     if args.node == "all":
+        shutil.rmtree(BUILD / "SHELF", ignore_errors=True)
+        build_shelf()
         build_hub(results)
     return 0
 

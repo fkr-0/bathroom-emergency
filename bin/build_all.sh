@@ -8,6 +8,7 @@ python3 "$SCRIPT_DIR/build_reference_index.py"
 python3 "$SCRIPT_DIR/build_coverage_matrix.py"
 "$SCRIPT_DIR/build_guide.sh" all
 python3 "$SCRIPT_DIR/build_subguides.py" --node all
+python3 "$SCRIPT_DIR/impose_two_up.py"
 python3 "$SCRIPT_DIR/build_site.py"
 python3 "$SCRIPT_DIR/build_release_manifest.py"
 python3 "$SCRIPT_DIR/validate_routes.py"
