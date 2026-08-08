@@ -129,8 +129,9 @@ Before explaining the cause, describe the geometry:
 | companions | fever, weakness, numbness, rash, vomiting, bleeding, collapse |
 
 Sudden severe pain, chest pressure, severe abdominal pain, major injury,
-collapse, severe breathlessness, new neurological signs, pregnancy-related red
-flags, or serious uncertainty bypass the notebook and use urgent medical help.
+collapse, severe breathlessness, new neurological signs, pregnancy with severe
+pain, heavy bleeding or collapse, or serious uncertainty bypass the notebook and
+use urgent medical help.
 Otherwise stop the aggravating activity, support the body, note the onset, and
 use First Aid or **116 117** when prompt assessment is needed.
 

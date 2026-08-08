@@ -154,7 +154,7 @@
         "https://doi.org/10.1017/S0140525X01003922"
       ],
       "used_at_lines": [
-        272
+        273
       ],
       "subguides": [
         "B"
@@ -202,7 +202,7 @@
         "https://doi.org/10.1093/sleep/26.2.117"
       ],
       "used_at_lines": [
-        284
+        285
       ],
       "subguides": [
         "B"
@@ -661,7 +661,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/blutungen-und-blutstillung/blutungen/"
       ],
       "used_at_lines": [
-        192
+        225
       ],
       "subguides": [
         "C"
@@ -677,7 +677,23 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/verbrennungen/"
       ],
       "used_at_lines": [
-        224
+        257
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
+      "id": "05-self-ambulance--drk-electrical",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "drk-electrical",
+      "kind": "operational",
+      "text": "German Red Cross, “Stromschlag”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stromschlag/",
+      "urls": [
+        "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stromschlag/"
+      ],
+      "used_at_lines": [
+        316
       ],
       "subguides": [
         "C"
@@ -693,7 +709,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/knochenbruch/knochenbrueche/"
       ],
       "used_at_lines": [
-        246
+        279
       ],
       "subguides": [
         "C"
@@ -709,7 +725,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stabile-seitenlage/"
       ],
       "used_at_lines": [
-        141
+        162
       ],
       "subguides": [
         "C"
@@ -726,7 +742,7 @@
       ],
       "used_at_lines": [
         46,
-        381
+        403
       ],
       "subguides": [
         "C"
@@ -742,7 +758,8 @@
         "https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/"
       ],
       "used_at_lines": [
-        103
+        124,
+        187
       ],
       "subguides": [
         "C"
@@ -758,7 +775,7 @@
         "https://doi.org/10.1161/01.STR.0000196957.55928.ab"
       ],
       "used_at_lines": [
-        300
+        452
       ],
       "subguides": [
         "C"
@@ -1809,6 +1826,13 @@
       "source_ids": [
         "06-zombie-guide--bbk-warning",
         "06b-natural-disasters--bbk-warning"
+      ]
+    },
+    {
+      "url": "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stromschlag/",
+      "source_ids": [
+        "03h-environmental-hazards--electric",
+        "05-self-ambulance--drk-electrical"
       ]
     },
     {

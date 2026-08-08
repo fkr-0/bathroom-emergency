@@ -460,6 +460,37 @@ crisis conversation, a local social psychiatric service, or a psychiatric
 emergency department. Use **112** for acute self-harm, other-endangerment,
 severe confusion, or medical danger.
 
+## My known-good settings
+
+Fill this in on an ordinary day, when the answers are cheap. On a bad day they
+are expensive, and you will not want to derive them from first principles while
+sitting on a bathroom floor.
+
+It is allowed to be embarrassingly specific. "Tea, second shelf" is a better
+answer than "self-care".
+
+| Prompt | Mine |
+|---|---|
+| Person I can contact without explaining much | |
+| Place that reliably lowers the demand on me | |
+| Food or drink that is easy when nothing is easy | |
+| Sound, music, or silence that helps | |
+| Safer next room, or outside place | |
+| Medication plan I already have | |
+| One thing I should stop doing when overloaded | |
+| A sign that I should ask for help rather than wait | |
+
+One sentence I can send, so I do not have to compose it later:
+
+> "I am overloaded and need ______. Can you ______ for ______?"
+
+One sentence for leaving a room:
+
+> "I got overloaded and needed a minute. I am going to ______."
+
+This is not a contract, and nothing here has to be used. It is cached
+configuration for a day when working it out live is too expensive.
+
 ## A calm plan for another person
 
 When supporting someone else:

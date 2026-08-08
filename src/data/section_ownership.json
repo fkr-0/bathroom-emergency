@@ -295,7 +295,7 @@
     {
       "key": "03-situations-b-g:threat-has-three-clocks",
       "chapter": "03-situations-b-g.md",
-      "line": 183,
+      "line": 184,
       "level": 2,
       "heading": "Threat has three clocks",
       "owner": "D"
@@ -303,7 +303,7 @@
     {
       "key": "03-situations-b-g:when-it-is-overload-not-anxiety",
       "chapter": "03-situations-b-g.md",
-      "line": 237,
+      "line": 238,
       "level": 2,
       "heading": "When it is overload, not anxiety",
       "owner": "B"
@@ -311,7 +311,7 @@
     {
       "key": "03-situations-b-g:traffic-control",
       "chapter": "03-situations-b-g.md",
-      "line": 292,
+      "line": 293,
       "level": 2,
       "heading": "Traffic control",
       "owner": "B"
@@ -319,7 +319,7 @@
     {
       "key": "03-situations-b-g:smell-is-vivid-evidence-with-poor-calibration",
       "chapter": "03-situations-b-g.md",
-      "line": 328,
+      "line": 329,
       "level": 2,
       "heading": "Smell is vivid evidence with poor calibration",
       "owner": "H"
@@ -327,7 +327,7 @@
     {
       "key": "03-situations-b-g:no-place-to-go",
       "chapter": "03-situations-b-g.md",
-      "line": 374,
+      "line": 375,
       "level": 2,
       "heading": "No place to go",
       "owner": "D"
@@ -335,7 +335,7 @@
     {
       "key": "03-situations-b-g:how-the-situations-relate",
       "chapter": "03-situations-b-g.md",
-      "line": 381,
+      "line": 382,
       "level": 2,
       "heading": "How the situations relate",
       "owner": "D"
@@ -653,9 +653,17 @@
       "owner": "B"
     },
     {
-      "key": "04-calm-guide:a-calm-plan-for-another-person",
+      "key": "04-calm-guide:my-known-good-settings",
       "chapter": "04-calm-guide.md",
       "line": 463,
+      "level": 2,
+      "heading": "My known-good settings",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:a-calm-plan-for-another-person",
+      "chapter": "04-calm-guide.md",
+      "line": 494,
       "level": 2,
       "heading": "A calm plan for another person",
       "owner": "B"
@@ -757,41 +765,49 @@
       "owner": "C"
     },
     {
+      "key": "05-self-ambulance:optional-reading-why-some-of-these-rules-look-like-this",
+      "chapter": "05-self-ambulance.md",
+      "line": 69,
+      "level": 2,
+      "heading": "Optional reading — why some of these rules look like this",
+      "owner": "C"
+    },
+    {
       "key": "05-self-ambulance:the-golden-hour",
       "chapter": "05-self-ambulance.md",
-      "line": 65,
+      "line": 79,
       "level": 2,
       "heading": "The “golden hour”",
       "owner": "C"
     },
     {
-      "key": "05-self-ambulance:unresponsive-and-not-breathing-normally",
+      "key": "05-self-ambulance:adult-unresponsive-and-not-breathing-normally",
       "chapter": "05-self-ambulance.md",
-      "line": 79,
+      "line": 93,
       "level": 2,
-      "heading": "Unresponsive and not breathing normally",
+      "heading": "Adult: unresponsive and not breathing normally",
       "owner": "C"
     },
     {
       "key": "05-self-ambulance:unresponsive-but-breathing-normally",
       "chapter": "05-self-ambulance.md",
-      "line": 125,
+      "line": 146,
       "level": 2,
       "heading": "Unresponsive but breathing normally",
       "owner": "C"
     },
     {
-      "key": "05-self-ambulance:choking",
+      "key": "05-self-ambulance:choking-adult",
       "chapter": "05-self-ambulance.md",
-      "line": 145,
+      "line": 166,
       "level": 2,
-      "heading": "Choking",
+      "heading": "Choking — adult",
       "owner": "C"
     },
     {
       "key": "05-self-ambulance:wounds-and-bleeding",
       "chapter": "05-self-ambulance.md",
-      "line": 161,
+      "line": 194,
       "level": 2,
       "heading": "Wounds and bleeding",
       "owner": "C"
@@ -799,7 +815,7 @@
     {
       "key": "05-self-ambulance:burns-and-scalds",
       "chapter": "05-self-ambulance.md",
-      "line": 205,
+      "line": 238,
       "level": 2,
       "heading": "Burns and scalds",
       "owner": "C"
@@ -807,7 +823,7 @@
     {
       "key": "05-self-ambulance:suspected-fractures-and-joint-injuries",
       "chapter": "05-self-ambulance.md",
-      "line": 226,
+      "line": 259,
       "level": 2,
       "heading": "Suspected fractures and joint injuries",
       "owner": "C"
@@ -815,7 +831,7 @@
     {
       "key": "05-self-ambulance:suspected-spine-neck-or-pelvic-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 248,
+      "line": 281,
       "level": 2,
       "heading": "Suspected spine, neck, or pelvic injury",
       "owner": "C"
@@ -823,7 +839,7 @@
     {
       "key": "05-self-ambulance:chemical-in-eye-or-on-skin",
       "chapter": "05-self-ambulance.md",
-      "line": 263,
+      "line": 296,
       "level": 2,
       "heading": "Chemical in eye or on skin",
       "owner": "C"
@@ -831,7 +847,7 @@
     {
       "key": "05-self-ambulance:electrical-injury",
       "chapter": "05-self-ambulance.md",
-      "line": 274,
+      "line": 307,
       "level": 2,
       "heading": "Electrical injury",
       "owner": "C"
@@ -839,7 +855,7 @@
     {
       "key": "05-self-ambulance:stroke-fast",
       "chapter": "05-self-ambulance.md",
-      "line": 281,
+      "line": 318,
       "level": 2,
       "heading": "Stroke — FAST",
       "owner": "C"
@@ -847,7 +863,7 @@
     {
       "key": "05-self-ambulance:chest-pain-or-severe-breathlessness",
       "chapter": "05-self-ambulance.md",
-      "line": 308,
+      "line": 330,
       "level": 2,
       "heading": "Chest pain or severe breathlessness",
       "owner": "C"
@@ -855,7 +871,7 @@
     {
       "key": "05-self-ambulance:anaphylaxis",
       "chapter": "05-self-ambulance.md",
-      "line": 315,
+      "line": 337,
       "level": 2,
       "heading": "Anaphylaxis",
       "owner": "C"
@@ -863,7 +879,7 @@
     {
       "key": "05-self-ambulance:poisoning",
       "chapter": "05-self-ambulance.md",
-      "line": 329,
+      "line": 351,
       "level": 2,
       "heading": "Poisoning",
       "owner": "C"
@@ -871,7 +887,7 @@
     {
       "key": "05-self-ambulance:vital-signs",
       "chapter": "05-self-ambulance.md",
-      "line": 341,
+      "line": 363,
       "level": 2,
       "heading": "Vital signs",
       "owner": "C"
@@ -879,7 +895,7 @@
     {
       "key": "05-self-ambulance:pain-without-a-red-flag",
       "chapter": "05-self-ambulance.md",
-      "line": 376,
+      "line": 398,
       "level": 2,
       "heading": "Pain without a red flag",
       "owner": "C"
@@ -887,7 +903,7 @@
     {
       "key": "05-self-ambulance:self-care-while-waiting",
       "chapter": "05-self-ambulance.md",
-      "line": 387,
+      "line": 409,
       "level": 2,
       "heading": "Self-care while waiting",
       "owner": "C"
@@ -895,23 +911,39 @@
     {
       "key": "05-self-ambulance:first-aid-kit-for-an-ordinary-household",
       "chapter": "05-self-ambulance.md",
-      "line": 404,
+      "line": 426,
       "level": 2,
       "heading": "First-aid kit for an ordinary household",
       "owner": "C"
     },
     {
+      "key": "05-self-ambulance:time-is-brain-quantified-with-the-word-model-attached",
+      "chapter": "05-self-ambulance.md",
+      "line": 444,
+      "level": 2,
+      "heading": "“Time is brain” — quantified, with the word *model* attached",
+      "owner": "C"
+    },
+    {
       "key": "05-self-ambulance:self-ambulance-for-non-physical-emergencies",
       "chapter": "05-self-ambulance.md",
-      "line": 422,
+      "line": 460,
       "level": 2,
       "heading": "Self ambulance for non-physical emergencies",
       "owner": "C"
     },
     {
+      "key": "05-self-ambulance:red-flags-one-is-enough",
+      "chapter": "05-self-ambulance.md",
+      "line": 477,
+      "level": 2,
+      "heading": "Red flags — one is enough",
+      "owner": "C"
+    },
+    {
       "key": "05-self-ambulance:red-flag-theorem-again",
       "chapter": "05-self-ambulance.md",
-      "line": 439,
+      "line": 498,
       "level": 2,
       "heading": "Red-flag theorem, again",
       "owner": "C"

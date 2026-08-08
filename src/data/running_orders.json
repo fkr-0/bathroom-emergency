@@ -47,6 +47,7 @@
           "Re-entry or exit",
           "Nice-place map",
           "When calm is not enough",
+          "My known-good settings",
           "A calm plan for another person"
         ]
       },
@@ -107,10 +108,9 @@
           "",
           "The first minute: preserve what still works",
           "Triage priority heatmap",
-          "The “golden hour”",
-          "Unresponsive and not breathing normally",
+          "Adult: unresponsive and not breathing normally",
           "Unresponsive but breathing normally",
-          "Choking",
+          "Choking — adult",
           "Wounds and bleeding",
           "Burns and scalds",
           "Suspected fractures and joint injuries",
@@ -136,6 +136,10 @@
           "Pain without a red flag",
           "Self-care while waiting",
           "First-aid kit for an ordinary household",
+          "Red flags — one is enough",
+          "Optional reading — why some of these rules look like this",
+          "The “golden hour”",
+          "“Time is brain” — quantified, with the word *model* attached",
           "Self ambulance for non-physical emergencies",
           "Red-flag theorem, again"
         ]

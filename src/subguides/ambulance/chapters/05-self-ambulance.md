@@ -60,7 +60,21 @@ clinical triage category:
 | **Yellow — prompt review** | persistent or recurrent symptoms affecting function | practice, pharmacy, or appropriate service |
 | **Green — self-care with monitoring** | minor stable issue with no red flag | simple first aid, observe, escalate if worse |
 
-A green box does not exist when you are unsure whether breathing is normal.
+A green box does not exist when breathing might be abnormal, when a red flag
+might be present, when the condition is getting worse, or when you are
+seriously unsure what you are looking at. Uncertainty about something
+potentially serious is itself a reason to call, not a reason to award yourself
+a green badge.
+
+## Optional reading — why some of these rules look like this
+
+Some of what follows could reasonably live in the Green Book, a first-aid
+course, or a moderately overcaffeinated physiology lecture. The editor wants it
+here for now.
+
+That is not permission to finish an interesting model before calling for help.
+If an action section above applies, use it. Curiosity is optional; first aid is
+not.
 
 ## The “golden hour”
 
@@ -76,10 +90,17 @@ The practical rule is simpler than the phrase suggests:
 > serious mechanism or red flag → call early → do not delay for perfect
 > assessment, transport planning, or a final internet search.
 
-## Unresponsive and not breathing normally
+## Adult: unresponsive and not breathing normally
 
 ::: {.principle}
 call for help, then temporarily support circulation and oxygen delivery until normal breathing or professional help takes over.
+:::
+
+::: {.safety-card}
+**The depths, rates, and hand positions here are adult figures.** CPR for a
+child or infant differs. If a child or infant is unresponsive and not breathing
+normally, call **112** on speaker and start immediately — then follow the
+dispatcher rather than stopping to look up the paediatric technique.
 :::
 
 1. Call **112** on speaker. If another person is present, send them for an
@@ -142,21 +163,33 @@ abnormal, roll them onto their back and start CPR.[^drk-recovery]
 
 ![Five-step recovery-position orientation](build/diagrams/recovery_position_steps.png)
 
-## Choking
+## Choking — adult
 
 ::: {.principle}
-effective coughing is active airway clearance—do not replace it with improvised force.
+an effective cough is already clearing the airway; when the cough fails, escalate from cough to back blows to abdominal thrusts.
 :::
 
-If the person can cough effectively, encourage coughing and watch for change.
-Do not begin back blows, abdominal thrusts, or a blind finger sweep while the
-cough remains effective. If they cannot speak, breathe, or cough effectively,
-call **112** and follow the dispatcher’s choking instructions. If they become
-unresponsive, begin CPR.
+1. **Can they cough effectively?** Encourage coughing and watch for change. Do
+   not use back blows, abdominal thrusts, or a finger sweep while the cough is
+   still working — you would be interrupting the thing that clears airways best.
+2. **Cannot cough, speak, or breathe — or the cough is failing?** Call for help
+   and give **up to five firm back blows** with the heel of your hand between
+   the shoulder blades, checking after each one.
+3. **Still obstructed?** Give **up to five abdominal thrusts**.
+4. **Still obstructed?** Call **112** if that has not happened yet, and keep
+   alternating **five back blows and five abdominal thrusts** until the airway
+   clears or the person stops responding.
+5. **No blind finger sweeps.** Remove an object only when you can see it and
+   reach it.
+6. **If they become unresponsive, start CPR.**
 
-For **your own** choking episode, this page does not prescribe self-thrusts or
-furniture manoeuvres. Call 112 on speaker if possible, unlock access, make
-noise, and keep coughing while it remains effective.
+Once the obstruction clears after thrusts or compressions, arrange medical
+assessment: those manoeuvres can injure on their own.[^erc2025]
+
+For **your own** choking episode there is little good evidence for
+self-administered manoeuvres, so this page does not prescribe furniture. Call
+112 on speaker if you can, unlock the door, make noise, and keep coughing while
+coughing still works.
 
 ## Wounds and bleeding
 
@@ -273,10 +306,14 @@ lab, no matter how persuasive the bottles look.
 
 ## Electrical injury
 
-Do not touch the person until the power source is safely disconnected. Call
-**112** for high-voltage exposure, loss of consciousness, abnormal breathing,
-chest symptoms, burns, pregnancy, or any significant shock. Electrical injury
-can cause internal harm even when the skin mark is small.
+Do not touch the person until the power source is safely disconnected. Once you
+are clear of the current, **call 112** and keep rechecking response and
+breathing while help comes. Electricity that passed through a person can cause
+serious internal or cardiac harm even when the skin mark is small, which is why
+the call does not wait for a checklist of symptoms.
+
+For **high-voltage** incidents, do not approach or attempt rescue at all until
+specialist personnel have made the scene safe.[^drk-electrical]
 
 ## Stroke — FAST
 
@@ -289,21 +326,6 @@ can cause internal harm even when the skin mark is small.
 Do not wait for several signs. One sudden FAST sign is enough to call. Do not
 drive the person yourself when emergency services are available.
 
-### “Time is brain” — quantified, with the word *model* attached
-
-{{visualization:vega-stroke-time-model}}
-
-A widely cited 2006 calculation combined published estimates for forebrain
-neurons, typical large-vessel stroke volume, and stroke evolution time. For its
-modelled “typical” untreated large-vessel supratentorial ischemic stroke, it
-estimated losses on the order of **1.9 million neurons, 14 billion synapses, and
-12 km of myelinated fibres per minute**.[^time-brain]
-
-Those are order-of-magnitude model estimates, not tissue counts occurring on a
-bathroom display in one individual. Stroke type, vessel, collateral circulation,
-and treatment differ. The reliable lay conclusion is much shorter than the
-calculation: a sudden FAST sign gets **112 now**, not a timer, spreadsheet, or
-request to finish the sentence first.
 
 ## Chest pain or severe breathlessness
 
@@ -419,6 +441,22 @@ A practical kit may include:
 Check expiry dates and replace used items. A kit hidden beneath twelve expired
 hotel shampoos is technically present and operationally fictional.
 
+## “Time is brain” — quantified, with the word *model* attached
+
+{{visualization:vega-stroke-time-model}}
+
+A widely cited 2006 calculation combined published estimates for forebrain
+neurons, typical large-vessel stroke volume, and stroke evolution time. For its
+modelled “typical” untreated large-vessel supratentorial ischemic stroke, it
+estimated losses on the order of **1.9 million neurons, 14 billion synapses, and
+12 km of myelinated fibres per minute**.[^time-brain]
+
+Those are order-of-magnitude model estimates, not tissue counts occurring on a
+bathroom display in one individual. Stroke type, vessel, collateral circulation,
+and treatment differ. The reliable lay conclusion is much shorter than the
+calculation: a sudden FAST sign gets **112 now**, not a timer, spreadsheet, or
+request to finish the sentence first.
+
 ## Self ambulance for non-physical emergencies
 
 The structure “stabilize, assess, get help” also applies to psychological or
@@ -436,6 +474,27 @@ situational crises, but the actions differ:
 A panic attack is not “emotional bleeding,” and the metaphor must not stand in
 for assessment. What actually carries across is the sequence, not the anatomy.
 
+## Red flags — one is enough
+
+::: {.safety-card}
+### Stop categorizing and call 112
+
+- **unresponsive**, or newly and severely confused;
+- **not breathing normally** — gasping, severe effort, or blue or grey colour;
+- **severe bleeding you cannot control**, or collapse after major blood loss;
+- **one sudden FAST stroke sign**;
+- **strong chest pressure**, severe breathlessness, or collapse;
+- **severe allergic reaction** affecting airway, breathing, or circulation;
+- **seizure**, severe poisoning symptoms, or a life-threatening exposure;
+- **major trauma**, major burn, or a high-voltage incident;
+- anything **getting rapidly worse**;
+- **serious uncertainty** about whether this is dangerous.
+
+**One item is enough.** Not most of them. Not a majority.
+
+**Call · speakerphone · state location · unlock the door · follow instructions.**
+:::
+
 ## Red-flag theorem, again
 
 $$R=1 \Rightarrow \text{call 112}$$
@@ -446,7 +505,10 @@ job this notation has — it takes “if any of these, then call” and writes i
 form you cannot argue with at two in the morning.
 
 Vital signs, pain scores, internet searches, and apparent calm can all add
-information. None of them reliably turn that light off for a lay reader.
+information. None of them reliably turn that light off for a lay reader. The
+card above is the working interface; the equation only admits that Boolean
+algebra is sometimes easier to negotiate with than yourself at two in the
+morning.
 
 [^erc2025]: European Resuscitation Council, *Guidelines 2025* and layperson guidance: https://www.erc.edu/science-research/guidelines/guidelines-2025/guidelines-2025-english/
 
@@ -457,6 +519,8 @@ information. None of them reliably turn that light off for a lay reader.
 [^drk-burns]: German Red Cross, “Verbrennungen, Verbrühungen und Brandwunden”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/verbrennungen/
 
 [^drk-fracture]: German Red Cross, “Knochenbrüche”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/knochenbruch/knochenbrueche/
+
+[^drk-electrical]: German Red Cross, “Stromschlag”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stromschlag/
 
 [^emergency-numbers]: gesund.bund.de, “Nummern für den Notfall”: https://gesund.bund.de/notfallnummern
 

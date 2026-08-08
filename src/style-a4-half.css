@@ -92,6 +92,11 @@
   .subguide-contents h2 { counter-increment: none; }
   .subguide-contents h2::before { content: none; }
 
+  /* A Field Note heading must not be the last thing on a page. Three headings
+     printed alone at a page foot, reading as if the printer had eaten the
+     section that followed. */
+  h2, h3 { break-after: avoid-page; }
+
   h2 {
     counter-increment: field-section;
     position: relative;

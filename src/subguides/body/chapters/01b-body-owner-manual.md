@@ -69,7 +69,7 @@ inconvenient. It is not a promise that every digestive symptom is stress.
 
 - pain is severe, localized, or worsening;
 - there is blood in vomit or stool, black stool, high fever with marked illness,
-  a rigid abdomen, collapse, or pregnancy-related concern;
+  a rigid abdomen, collapse, or pregnancy with severe pain, bleeding, or collapse;
 - vomiting prevents fluids from staying down;
 - symptoms are new, persistent, recurrent, or shrinking ordinary life.
 

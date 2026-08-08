@@ -9,8 +9,8 @@
   },
   "totals": {
     "nodes": 11,
-    "sections": 257,
-    "sources": 64,
+    "sections": 261,
+    "sources": 65,
     "reader_visuals": 41,
     "standalone_nodes": 11
   },
@@ -101,7 +101,7 @@
         "04-calm-guide.md"
       ],
       "chapter_count": 2,
-      "section_count": 22,
+      "section_count": 23,
       "source_count": 6,
       "source_counts": {
         "operational": 0,
@@ -143,16 +143,17 @@
         "05-self-ambulance.md"
       ],
       "chapter_count": 2,
-      "section_count": 24,
-      "source_count": 7,
+      "section_count": 27,
+      "source_count": 8,
       "source_counts": {
-        "operational": 1,
+        "operational": 2,
         "research": 1,
         "explanatory": 5
       },
       "source_ids": [
         "05-self-ambulance--drk-bleeding",
         "05-self-ambulance--drk-burns",
+        "05-self-ambulance--drk-electrical",
         "05-self-ambulance--drk-fracture",
         "05-self-ambulance--drk-recovery",
         "05-self-ambulance--emergency-numbers",
