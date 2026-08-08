@@ -26,12 +26,12 @@ QA = ROOT / "build" / "qa" / "a4half"
 EXPECTED_WIDTH_PT = 105 / 25.4 * 72
 EXPECTED_HEIGHT_PT = 297 / 25.4 * 72
 REQUIRED_MARKERS = (
-    "How to Use the Eleven Books",
+    "How to use the eleven books",
     "The Green Book — Body Owner’s Manual",
     "The gastrointestinal chapter you did not ask for",
     "Pain: communication, not a verdict",
     "The Amber Book — Responsibility",
-    "Five Different Kinds of “Too Much”",
+    "When it is overload, not anxiety",
     "The Teal Book — Calm Guide",
     "The Red Book — Self Ambulance",
     "The Blue Book — Safety & No Place",

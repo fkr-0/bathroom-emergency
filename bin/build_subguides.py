@@ -557,11 +557,30 @@ def drop_redundant_book_title(text: str, node: dict) -> str:
     return "\n".join(kept).lstrip("\n")
 
 
-def build_node(node_id: str) -> dict:
-    manifest = json.loads(
-        (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
-    )
+def assembled_book(node_id: str) -> str:
+    """The book exactly as its standalone edition reads: cover, positioning,
+    contents, canonical content, handoffs, and its own source list.
+
+    The master guide concatenates these rather than re-assembling raw chapters,
+    so a book cannot look one way detached and another way bound. Verified
+    beforehand that no section is claimed by two books, so concatenation
+    introduces neither duplicate prose nor duplicate anchors.
+    """
+    manifest = json.loads((DATA_DIR / "subguides.json").read_text(encoding="utf-8"))
     node = next(item for item in manifest["nodes"] if item["id"] == node_id)
+    canonical_content, ordered_sources = canonical_body(node_id, node)
+    return build_markdown(
+        node,
+        canonical_content,
+        ordered_sources,
+        layout="a4",
+        contents=mini_toc(canonical_content),
+        resource_map=edition_resource_map(node, sorted(set(IMAGE_RE.findall(canonical_content))))[0],
+    )
+
+
+def canonical_body(node_id: str, node: dict) -> tuple[str, list[dict]]:
+    """Expand one book's canonical chapters into finished reader markdown."""
     inventory = json.loads(
         (DATA_DIR / "source_inventory.json").read_text(encoding="utf-8")
     )
@@ -589,7 +608,15 @@ def build_node(node_id: str) -> dict:
     canonical_content = BG.expand_visualization_macros(
         canonical_content, BG.visualization_lookup()
     )
-    canonical_content = decorate_figure_references(canonical_content, set())
+    return decorate_figure_references(canonical_content, set()), ordered_sources
+
+
+def build_node(node_id: str) -> dict:
+    manifest = json.loads(
+        (DATA_DIR / "subguides.json").read_text(encoding="utf-8")
+    )
+    node = next(item for item in manifest["nodes"] if item["id"] == node_id)
+    canonical_content, ordered_sources = canonical_body(node_id, node)
     contents = mini_toc(canonical_content)
     visual_files = sorted(set(IMAGE_RE.findall(canonical_content)))
     resource_map, resource_metadata = edition_resource_map(node, visual_files)

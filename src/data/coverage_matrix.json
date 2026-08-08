@@ -9,7 +9,7 @@
   },
   "totals": {
     "nodes": 11,
-    "sections": 283,
+    "sections": 281,
     "sources": 96,
     "reader_visuals": 41,
     "standalone_nodes": 11
@@ -198,7 +198,7 @@
         "03g-safe-place-routing.md"
       ],
       "chapter_count": 2,
-      "section_count": 16,
+      "section_count": 14,
       "source_count": 11,
       "source_counts": {
         "operational": 11,

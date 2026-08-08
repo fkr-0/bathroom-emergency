@@ -378,24 +378,6 @@ into the room. Running water may refill the trap. Persistent odour, leaks, or
 repeated empty traps need building management or plumbing repair. A candle is
 not plumbing, even when scented “Alpine Responsibility.”
 
-## No place to go
-
-Use **Situation G — No Safe Place**. It separates active violence, no roof
-tonight, inaccessible or medically unusable accommodation, and social or
-internal crisis. Secure the next safe hour, then use the matching German or
-local service route.
-
-## How the situations relate
-
-| Situation | Do now | Understand later | Escalate when |
-|---|---|---|---|
-| Anxiety | orient outward; contact one person | panic, GAD-7, stress response | red flag, self-harm risk, worsening |
-| Pain | check red flags; simple first aid | OPQRST and pain log | sudden/severe; neuro; chest/collapse |
-| Danger | move to safety; call police/rescue | safety planning and after-effects | threat current or injury exists |
-| Congestion | externalize; choose one action | cognitive load and delegation | basic care or safety failing |
-| Smell | run the Situation H hazard gate; leave fumes | source-specific troubleshooting only after clearance | fire, gas, chemical exposure, symptoms |
-| No place | use Situation G; secure one hour | violence / no roof / access-care / social-internal branches | exposure, violence, failed essential care, medical/self-harm risk |
-
 [^gad7]: Spitzer RL et al., “A Brief Measure for Assessing Generalized Anxiety Disorder: The GAD-7,” *Archives of Internal Medicine* 166 (2006): 1092–1097. https://doi.org/10.1001/archinte.166.10.1092
 
 [^gad7-review]: *Generalized Anxiety Disorder 7-item (GAD-7) and 2-item (GAD-2) scales for detecting anxiety disorders in adults*, Cochrane diagnostic-test-accuracy review (2025). At cut-off 10 or nearest available, summary sensitivity was 0.64 (95% CI 0.56–0.72) and specificity 0.91 (0.87–0.93) for generalized anxiety disorder; heterogeneity remained substantial. https://www.cochrane.org/evidence/CD015455_how-accurate-are-gad-7-and-gad-2-questionnaires-detecting-anxiety-disorders

@@ -12,6 +12,7 @@ The build has one source of truth and no network dependency:
 from __future__ import annotations
 
 import os
+import json
 import re
 import shutil
 import subprocess
@@ -240,6 +241,12 @@ def expand_subguide_source_macros(text: str, records: list[dict]) -> str:
     return expanded
 
 
+# The master cover is the only page no book owns: it names the shelf and the
+# reading order. Everything after it is a book, assembled exactly the way its
+# standalone edition assembles it.
+FRONT_MATTER = ("00-cover.md",)
+
+
 def assemble() -> Path:
     visualizations = visualization_lookup()
     source_records = source_inventory_records()
@@ -252,7 +259,7 @@ def assemble() -> Path:
         "---",
         "",
     ]
-    for index, filename in enumerate(CHAPTERS):
+    for index, filename in enumerate(FRONT_MATTER):
         path = find_chapter(filename)
         if path is None:
             raise BuildError(f"Missing chapter: {filename}")
@@ -262,10 +269,9 @@ def assemble() -> Path:
         body = expand_reference_macros(body)
         body = inject_heading_ids(body, filename)
         body = decorate_figure_references(body, seen_figure_refs).strip()
-        slug = path.stem
         classes = "chapter document-cover" if index == 0 else "chapter"
         parts.extend([
-            f'::: {{#{slug} .{classes.replace(" ", " .")} data-subguide="{CHAPTER_OWNERS[filename]}"}}',
+            f'::: {{#{path.stem} .{classes.replace(" ", " .")} data-subguide="{CHAPTER_OWNERS[filename]}"}}',
             "",
             body,
             "",
@@ -273,9 +279,22 @@ def assemble() -> Path:
             "",
         ])
 
+    # The master is the shelf in shelf order, not a pile of chapters. Each book
+    # arrives with its cover, "Book N of 11" positioning, promise, contents,
+    # handoffs, and its own sources -- so a reader who has the bound guide sees
+    # the same object as a reader holding the detached book.
+    import build_subguides as SG
+
+    shelf = json.loads(
+        (ROOT / "src" / "data" / "subguides.json").read_text(encoding="utf-8")
+    )["shelf_order"]
+    for node_id in shelf:
+        parts.extend([SG.assembled_book(node_id), ""])
+
     output = BUILD_MD / "guide.md"
     output.write_text("\n".join(parts).rstrip() + "\n", encoding="utf-8")
-    note(f"assembled {len(CHAPTERS)} chapters → {output.relative_to(ROOT)}")
+    note(f"assembled {len(FRONT_MATTER)} front-matter pages + {len(shelf)} books "
+         f"→ {output.relative_to(ROOT)}")
     return output
 
 

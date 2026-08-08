@@ -202,7 +202,7 @@ for name in (
 # section rather than pinning it. Keep apostrophes out of the markers: pandoc
 # smart-quotes the output, so source and rendered text disagree on the glyph.
 for marker in (
-    "OPQRST", "GAD-7 severity spectrum", "Situation G — No Safe Place",
+    "OPQRST", "GAD-7 severity spectrum", "The Blue Book — Safety & No Place",
     "Essential medication and powered-device continuity", "IASC support pyramid",
     "commons principles", "Stable references — addresses that survive editing",
     "Templates", "Boundary Setting From a Bathroom", "Emergency water",

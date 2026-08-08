@@ -21,25 +21,33 @@
       "owner": "O"
     },
     {
-      "key": "01-how-to-use:how-to-use-the-eleven-books",
-      "chapter": "01-how-to-use.md",
-      "line": 13,
-      "level": 1,
-      "heading": "How to Use the Eleven Books",
+      "key": "00-cover:how-to-use-the-eleven-books",
+      "chapter": "00-cover.md",
+      "line": 35,
+      "level": 2,
+      "heading": "How to use the eleven books",
       "owner": "O"
     },
     {
-      "key": "01-how-to-use:the-shelf",
-      "chapter": "01-how-to-use.md",
-      "line": 19,
+      "key": "00-cover:the-shelf",
+      "chapter": "00-cover.md",
+      "line": 41,
       "level": 2,
       "heading": "The shelf",
       "owner": "O"
     },
     {
+      "key": "00-cover:reading-order-is-optional",
+      "chapter": "00-cover.md",
+      "line": 57,
+      "level": 2,
+      "heading": "Reading order is optional",
+      "owner": "O"
+    },
+    {
       "key": "01-how-to-use:first-90-seconds-notice-before-narrating",
       "chapter": "01-how-to-use.md",
-      "line": 35,
+      "line": 13,
       "level": 2,
       "heading": "First 90 seconds — notice before narrating",
       "owner": "O"
@@ -47,7 +55,7 @@
     {
       "key": "01-how-to-use:signal-story-next-question",
       "chapter": "01-how-to-use.md",
-      "line": 49,
+      "line": 27,
       "level": 2,
       "heading": "Signal, story, next question",
       "owner": "O"
@@ -55,7 +63,7 @@
     {
       "key": "01-how-to-use:the-three-minute-experiment",
       "chapter": "01-how-to-use.md",
-      "line": 63,
+      "line": 41,
       "level": 2,
       "heading": "The three-minute experiment",
       "owner": "O"
@@ -63,17 +71,9 @@
     {
       "key": "01-how-to-use:why-a-small-room-amplifies-everything",
       "chapter": "01-how-to-use.md",
-      "line": 73,
+      "line": 51,
       "level": 2,
       "heading": "Why a small room amplifies everything",
-      "owner": "O"
-    },
-    {
-      "key": "01-how-to-use:reading-order-is-optional",
-      "chapter": "01-how-to-use.md",
-      "line": 81,
-      "level": 2,
-      "heading": "Reading order is optional",
       "owner": "O"
     },
     {
@@ -323,22 +323,6 @@
       "level": 2,
       "heading": "Smell is vivid evidence with poor calibration",
       "owner": "H"
-    },
-    {
-      "key": "03-situations-b-g:no-place-to-go",
-      "chapter": "03-situations-b-g.md",
-      "line": 381,
-      "level": 2,
-      "heading": "No place to go",
-      "owner": "D"
-    },
-    {
-      "key": "03-situations-b-g:how-the-situations-relate",
-      "chapter": "03-situations-b-g.md",
-      "line": 388,
-      "level": 2,
-      "heading": "How the situations relate",
-      "owner": "D"
     },
     {
       "key": "03g-safe-place-routing:the-blue-book-safety-no-place",
