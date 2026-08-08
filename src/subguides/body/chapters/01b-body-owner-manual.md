@@ -18,8 +18,8 @@ should take over.
 
 ## Read the signal without putting it on trial
 
-Symptoms and interpretations arrive together but are not the same department.
-Record the first; remain politely suspicious of the second.
+Symptoms and your interpretation of them arrive together, but they are not the
+same department. Write down the first. Stay politely suspicious of the second.
 
 | Observe | Useful description | What changes the route |
 |---|---|---|

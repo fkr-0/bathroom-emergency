@@ -1,7 +1,7 @@
 # Bathroom Emergency Guide — Source Register
 
 The canonical annotated source register is
-[src/chapters/10-sources.md](src/chapters/10-sources.md).
+[src/subguides/reference/chapters/10-sources.md](src/subguides/reference/chapters/10-sources.md).
 
 ## Release policy
 
@@ -16,7 +16,9 @@ For each release:
 5. Remove claims that exceed the source, even when they sound usefully
    scientific.
 6. Keep emergency instructions short enough to execute.
-7. Rebuild and validate color and monochrome A4 and A4/2 outputs.
+7. Run `python3 bin/verify_sources.py` to confirm every cited URL still
+   resolves and every DOI is still registered.
+8. Rebuild and validate color and monochrome A4 and A4/2 outputs.
 
 ## Operational route sources
 

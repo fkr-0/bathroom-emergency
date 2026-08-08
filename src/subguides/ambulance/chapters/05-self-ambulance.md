@@ -291,7 +291,7 @@ pain, weakness, numbness, or altered consciousness:
 - ask the person not to move;
 - support the head in the position found if safe and necessary;
 - do not sit them up or “test” walking;
-- move only to escape immediate danger or as instructed.[^drk-spine]
+- move only to escape immediate danger or as instructed.[^erc2025-first-aid]
 
 ## Chemical in eye or on skin
 
@@ -531,8 +531,6 @@ morning.
 [^drk-heart]: German Red Cross, “Herzinfarkt”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/herzinfarkt/
 
 [^drk-chemical]: German Red Cross, “Verätzungen”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/veraetzungen/
-
-[^drk-spine]: German Red Cross, “Wirbelsäulenverletzung”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/
 
 [^erc2025-first-aid]: Djärv T et al., “European Resuscitation Council Guidelines 2025 First Aid,” *Resuscitation* 215 Suppl 1 (2025): 110752. https://doi.org/10.1016/j.resuscitation.2025.110752
 

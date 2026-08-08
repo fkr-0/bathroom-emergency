@@ -14,11 +14,14 @@ dependencies:
 
 Professional systems are different kinds of leverage, not rungs on a ladder
 from “minor” to “serious.” A hospital can treat an acute illness but cannot
-create housing. A therapist can provide treatment but cannot repair a gas line.
-A friend can stay, write, drive, and call but cannot issue a prescription. An
-authority finder can identify an office but cannot promise that the office has a
-bed. **P — Professional Support** begins by naming the change required, then
-chooses the system that has the power to make that change.
+find you a flat. A therapist can treat you but cannot repair a gas line. A
+friend can stay, write, drive, and call but cannot issue a prescription. An
+authority finder can name the responsible office but cannot promise that office
+has a bed.
+
+So the useful question is not “how bad is this?” It is **what needs to change,
+and who actually has the power to change it?** Get that the wrong way round and
+you can spend an afternoon being very politely redirected.
 
 ## Germany quick reference
 
@@ -101,8 +104,9 @@ Useful instruction:
 
 ## Make the contact operational — ask, confirm, record
 
-Reaching a number, directory, waiting room, or inbox is not yet a completed
-handoff. Before ending contact, obtain the smallest workable packet:
+Reaching a number, a directory, a waiting room, or an inbox is not the same
+as having handed anything over. Before you end the contact, get the smallest
+packet that still works:
 
 1. **Ask for the concrete outcome.** Advice, assessment, transport, an
    appointment, accommodation, a home visit, a document, or another named
@@ -110,15 +114,15 @@ handoff. Before ending contact, obtain the smallest workable packet:
 2. **Give the minimum facts.** Location, access, current state, immediate
    danger, relevant time, and a callback route usually matter before a complete
    history.
-3. **Confirm what exists now.** Record who accepted the handoff, what they will
-   do, where and when it happens, and what the reader must do next.
+3. **Confirm what now exists.** Write down who accepted the handoff, what they
+   will do, where and when it happens, and what is left for you.
 4. **Name the backup.** Ask what to do if no reply arrives, access fails, the
    state worsens, or the promised resource is unavailable.
-5. **Assign the next check.** A person and a time prevent “someone should follow
-   up” from becoming a quiet dead end.
+5. **Assign the next check.** A name and a time are what stop “someone should
+   follow up” from quietly becoming nobody, never.
 
-Use **T — Templates** to carry the facts rather than rebuilding them during
-each call. The generated map below joins services to the relevant forms,
+Use **T — Templates** to carry the facts, so you are not rebuilding them from
+memory on every call. The generated map below joins services to the relevant forms,
 figures, and route identities.
 
 {{support-form-map}}

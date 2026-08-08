@@ -189,16 +189,33 @@ footage.
 
 ## Quick reference
 
-```text
-EARTHQUAKE   Drop · Cover · Hold On · avoid glass · expect aftershocks
-WIND         Lowest suitable interior space · protect head/neck · official all-clear
-FLOOD        Leave low levels early · move higher as directed · never enter current
-FIRE         Smoke-free exit · close doors · 112 from safety · trapped: close, call, signal
-GAS / CO     Leave source · no switches/flame · fresh air · call outside
-CHEMICAL     Stop exposure · fresh air/rinse · label · poison advice / emergency help
-POWER        Light first · essential devices and medication · transfer before reserve ends
-WATER        Stored drinking water · obey notices · no cistern or generic bleach recipe
-```
+::: {.safety-card}
+### Orange — quick hazard router
+
+**First, always:** where is the source?
+
+| | |
+|---|---|
+| **Source local — in the room or building** | leave or isolate it → call from safety |
+| **Warning for the area outside** | do what the current official instruction says |
+| **Source unclear** | increase distance → verify from safety → do not walk into it |
+
+| Hazard | Immediate shape |
+|---|---|
+| **Fire / smoke** | smoke-free exit → close doors behind you → stairs → **112** from safety. Trapped: close the door, call, signal from a window |
+| **Carbon monoxide** | everyone outside now → **112** → no re-entry until it is cleared |
+| **Gas** | no flame, switch, plug, bell, fan or phone inside → knock → leave → call from outside |
+| **Chemical, local** | stop the exposure → cleaner air when the route is safe → rinse → keep the label → poison centre or **112** |
+| **Electricity** | do not touch a connected person → isolate only at a known safe control → keep clear → **112** |
+| **Earthquake** | stay in the building while it shakes → sturdy cover or interior wall → protect head → expect aftershocks |
+| **Severe wind** | interior room, lowest suitable floor → away from glass → protect head and neck |
+| **Flood** | leave basements and low levels early → move up rather than into water → never enter moving water |
+| **Power** | light first → find who depends on power → transfer before the reserve runs out |
+| **Water** | stored drinking water → obey local notices → no cistern, no generic bleach recipe |
+
+**An unclear active hazard is not a harmless one.** Increase the margin and
+verify from somewhere safe. Current official instructions outrank this page.
+:::
 
 [^bbk-warning]: Bundesamt für Bevölkerungsschutz und Katastrophenhilfe, official warnings and NINA information: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html
 

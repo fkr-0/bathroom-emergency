@@ -765,22 +765,6 @@
       ]
     },
     {
-      "id": "05-self-ambulance--drk-spine",
-      "chapter": "05-self-ambulance.md",
-      "footnote_key": "drk-spine",
-      "kind": "explanatory",
-      "text": "German Red Cross, “Wirbelsäulenverletzung”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/",
-      "urls": [
-        "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/"
-      ],
-      "used_at_lines": [
-        294
-      ],
-      "subguides": [
-        "C"
-      ]
-    },
-    {
       "id": "05-self-ambulance--drk-stroke",
       "chapter": "05-self-ambulance.md",
       "footnote_key": "drk-stroke",
@@ -840,6 +824,7 @@
         "https://doi.org/10.1016/j.resuscitation.2025.110752"
       ],
       "used_at_lines": [
+        294,
         349
       ],
       "subguides": [
@@ -1113,7 +1098,7 @@
         "https://doi.org/10.1177/1745691614568352"
       ],
       "used_at_lines": [
-        240
+        244
       ],
       "subguides": [
         "P"
@@ -1129,7 +1114,7 @@
         "https://interagencystandingcommittee.org/iasc-task-force-mental-health-and-psychosocial-support-emergency-settings/iasc-guidelines-mental-health-and-psychosocial-support-emergency-settings-2007"
       ],
       "used_at_lines": [
-        131
+        135
       ],
       "subguides": [
         "P"
@@ -1146,7 +1131,7 @@
         "https://service.justiz.de/prozesskostenhilfe"
       ],
       "used_at_lines": [
-        313
+        317
       ],
       "subguides": [
         "P"
@@ -1164,8 +1149,8 @@
         "https://www.hilfetelefon.de/"
       ],
       "used_at_lines": [
-        39,
-        51
+        42,
+        54
       ],
       "subguides": [
         "P"
@@ -1181,7 +1166,7 @@
         "https://gesund.bund.de/sozialpsychiatrischer-dienst"
       ],
       "used_at_lines": [
-        174
+        178
       ],
       "subguides": [
         "P"
