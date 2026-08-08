@@ -23,6 +23,39 @@ already are.
 
 ---
 
+## Quick reference — social router
+
+Four questions, in order. The first one outranks the other three.
+
+```
+BATHROOM SOCIAL TRIAGE
+
+1. Am I safe?
+   ├─ NO, or I cannot tell → Section 7. Get another person
+   │                         involved. Do not go back in alone.
+   └─ YES → continue.
+
+2. Does anyone actually need to hear from me?
+   ├─ Nobody is waiting on me → no. Come back when ready.
+   ├─ One person would worry, or is holding something for me
+   │  → one bounded message (Templates A–D).
+   └─ The thing cannot continue without me
+      → say so plainly, or leave properly (Template E).
+
+3. Am I ready to go back?
+   ├─ YES → Section 6. Pick one thing that is not you.
+   ├─ MAYBE → change one thing (Section 3), set a limit, try.
+   └─ NO → leave (Section 5). Send the message from outside.
+
+4. Is this a pattern?
+   ├─ Rarely → an ordinary evening. File under "survived."
+   └─ Often, and it is narrowing where I go
+      → the Teal Book for the acute part, the Indigo Book for
+        the plan. This is treatable, not a character flaw.
+```
+
+---
+
 ## 1 — You Left the Room. Now What.
 
 ### People notice patterns, not stopwatches
@@ -38,52 +71,64 @@ miniseries about it.**
 
 ### Cover Stories and Their Shelf Life
 
-A cover story is not a lie. It's a boundary with a narrative wrapper. You are
-not obligated to explain your internal state to anyone who happens to share a
-floor plan with you.
+Privacy does not require autobiography, and it does not require inventing a
+medical subplot. You are not obliged to explain your internal state to anyone
+who happens to share a floor plan with you — and you can decline to explain
+without making anything up.
 
-**Tier 1 — No Explanation Needed (under 10 min)**
+Use the smallest true sentence that does the job. The levels are about how much
+you disclose, not about how many minutes have elapsed.
+
+**Level 0 — No explanation**
 
 - Walk back in. Say nothing. Sit down. This works far more often than anxiety
   predicts.
 
-**Tier 2 — Light Deflection (10–20 min)**
+**Level 1 — Minimal fact**
 
-- "Phone call." (Universal, unchallengeable, requires no follow-up.)
-- "Needed some air." (Even if the air was bathroom air.)
-- "Had to deal with something — all sorted." (Vague is fine. Vague is
-  allowed.)
+- "Needed a minute."
+- "Had to deal with something."
+- "Stepped out for a bit." (Vague is fine. Vague is allowed. Vague is *true*.)
 
-**Tier 3 — Plausible Medical (20+ min)**
+**Level 2 — Bounded update**
 
-- "Stomach thing. Don't ask." (Nobody asks. Nobody *wants* to ask.)
-- "Felt a bit off — better now." (Medically non-specific, socially complete.)
-- "Took a medication that needed a few minutes." (True if "sitting on the
-  floor processing your own existence" counts as medication, which it should.)
+- "Had to deal with something. I'm okay enough now."
+- "Wasn't feeling 100%. I'm deciding whether to stay."
 
-**Tier 4 — Honest-Adjacent (any duration, trusted people only)**
+**Level 3 — Honest summary**
 
 - "I got overwhelmed and needed to reset."
-- "I'm dealing with something. I'm okay, but I needed a minute."
-- "I'm having a hard day. I'm back now."
+- "I'm having a hard day. I needed a minute."
 
-The shelf life of a cover story is one use per audience. If you disappear three
-times in one evening, the story needs to either escalate ("I'm not feeling
-great — I might head out") or become honest ("This is a hard night for me").
-Recycling "phone call" a fourth time is less believable than the truth.
+**Level 4 — Privacy boundary**
 
-### The Difference Between 5 Minutes and 45 Minutes
+- "I'm handling it, but I'd rather not go into detail."
+- "Thanks for checking. I don't want to discuss it right now."
 
-Five minutes is a bathroom visit. Forty-five minutes is a *situation*. The gap
-between them isn't just time — it's a genre shift.
+Note what is missing: the invented phone call, the fictional medication, the
+stomach complaint you do not have. Those work right up until someone follows up
+kindly and you have to maintain a small fictional universe while already
+depleted. A true short sentence needs no maintenance.
 
-At five minutes, you return and the conversation hasn't moved. At forty-five
-minutes, the conversation has moved, rearranged its furniture, and possibly
-forgotten you were in it. This isn't cruel — social groups are streams, not
+A low-disclosure explanation has no fixed shelf life. If the same problem keeps
+removing you from the room, the useful change is rarely a more elaborate
+sentence. It is a clearer update — "I'm not feeling great, I might head out" —
+or a decision about leaving, asking for support, or dealing with the pattern
+another day.
+
+### A brief absence, versus a situation that changed while you were gone
+
+The threshold that matters is not a number on a clock. It is whether anything
+out there has actually moved.
+
+A short absence disappears into ordinary room noise. A longer one does not: the
+conversation moves, rearranges its furniture, and possibly forgets you were in
+it. Food arrives. Rides leave. Meetings decide things. People who were counting
+on you start wondering. That is not cruelty — social groups are streams, not
 lakes. They flow whether or not you're standing in them.
 
-The strategic implication: if you know you need more than fifteen minutes,
-**send a message early**. An early message buys space. Waiting until several people are searching for you makes the eventual explanation do unnecessary heavy lifting.
+The strategic implication: if you already know you will be gone long enough to
+affect what someone else is doing, **send a message early**. An early message buys space. Waiting until several people are searching for you makes the eventual explanation do unnecessary heavy lifting.
 
 ---
 
@@ -93,12 +138,12 @@ The strategic implication: if you know you need more than fifteen minutes,
 
 | Scenario | Best Channel | Why |
 |---|---|---|
-| You'll be back in 10 min | Say nothing | Nobody noticed yet. |
-| You'll be 15–30 min | Text one person | Creates a proxy. Minimal disruption. |
+| Brief, and nobody is depending on you | Say nothing | There is no communication problem yet. |
+| Long enough to cause concern or affect plans | Text one person | Creates one informed ally without broadcasting. |
 | You might need to leave | Text, then possibly call | Escalation ladder. Don't open with the nuclear option. |
 | You need someone to come to you | Call or text with "can you come here" | Urgency is clearer in a call. Text if you can't speak. |
 | You've decided to leave entirely | Text after you've left | Compose it from safety, not from the bathroom floor. |
-| You're in danger | Call 112 / text a trusted person | See Section 7. This is no longer a social problem. |
+| You're in danger | Use the emergency route that fits the threat — **110** for an active police threat, **112** for medical, fire or rescue danger. A trusted person is support in parallel, not a substitute. | See Section 7. This is no longer a social problem. |
 
 ### The Templates
 
@@ -238,20 +283,23 @@ bathroom, which is exactly what you did.
 
 ## 4 — Navigating Specific Social Contexts
 
+This is **field lore, not municipal regulation**. Role, dependency, timing
+and the specific people involved decide this, not a stopwatch.
+
 Every social setting has an unwritten absence policy. Here's the cheat sheet.
 
-| Context | Acceptable Absence | Who to Tell | What to Say | Risk Level |
+| Context | When absence starts to be noticed | Who might need to know | A true short sentence | What actually matters |
 |---|---|---|---|---|
-| **Work meeting** | 5–7 min | Nobody (if brief) or your closest colleague | "Quick bathroom break" / "Stepped out for a call" | Medium — noted but usually forgiven |
-| **Work event / conference** | 15–20 min | One colleague you trust | "Needed some air" | Low — events are chaotic; people wander |
-| **Family gathering** | 10–20 min | One ally (the family member who gets it) | "Stomach" or honest, depending on family | Variable — some families count minutes, others don't notice |
-| **Date** | 5–10 min | Your date (via text if needed) | "Be right back" → if longer: "Not feeling 100%, give me a minute" | High — your absence is 50% of the population leaving |
-| **House party** | 20–40 min | Host or one friend | "Took a call" / "Chilling for a sec" | Low — parties have many rooms and few roll calls |
-| **Bar / club** | 15–30 min | One person in your group | Text: "At the bar" / "Stepped outside" | Low — noise and movement cover absence |
-| **School / university** | 5–10 min in class; longer between | Teacher/professor (if in class) | "May I be excused" / just go | Medium — depends on the teacher |
-| **Public transit** | N/A — you're in a station bathroom | Nobody (unless travelling with someone) | "Catching the next one" | Low — trains don't judge |
-| **Religious service** | 5–10 min | Nobody (slip out quietly) | Nothing. Return to your seat. | Low–Medium — depends on the congregation |
-| **Wedding** | 10–20 min (not during the vows) | Your +1 or one friend | "Needed a minute" | Medium — photos are the real risk |
+| **Work meeting** | when your role, turn, or task is affected | the chair, or one colleague | "Had to step out; I'm back." | responsibility, not elapsed minutes |
+| **Work event / conference** | when somebody is waiting on you | one colleague | "Needed a minute." | events have movement and parallel conversations |
+| **Family gathering** | whenever your particular family starts doing family | one ally | "Needed some space." | family norms vary catastrophically |
+| **Date** | early, because the social unit is tiny | your date | "Just need a minute — I'll be back." | your absence is 50% of the population leaving |
+| **House party** | when the host or a friend might reasonably worry | host or one friend | "Stepped away for a bit." | people move between rooms; roll calls are rare |
+| **Bar / club** | when your group may leave or need a safety check | one person in your group | "I'm at [place], all okay." | group safety outranks etiquette |
+| **School / university** | when attendance, supervision, or a task is affected | the responsible person, if any | "I need to step out." | formal rules may genuinely apply |
+| **Public transit** | when companions or onward plans are affected | your companion, if any | "Catching the next one." | transport waits for nobody and judges nobody |
+| **Religious service** | when a role or a companion is affected | usually nobody | none required | local norms vary |
+| **Wedding** | around ceremonies, speeches, photos, transport | your +1, the host, or one friend | "Needed a minute." | key moments matter more than total time |
 
 ### Context-Specific Notes
 
@@ -283,7 +331,7 @@ will be attributed to "getting a drink" by default.
 Sometimes you're not in here because of anxiety or nausea or needing to cry.
 Sometimes you're in here because the room you left contains a person or
 situation that you needed distance from. That's not avoidance — that's spatial
-boundary enforcement. The bathroom is a socially sanctioned airlock.[^boundary-setting]
+boundary enforcement. The bathroom is a socially sanctioned airlock.
 
 ### Quick Boundary Scripts
 
@@ -361,10 +409,9 @@ available. Here's when it works:
 - Situations where someone is relying on you for a ride home
 - When someone will genuinely worry about your safety
 
-**Execution:** Gather your things quietly. Walk toward the door with purpose
-but without speed. Do not make eye contact with anyone who might start a
-conversation. Text the host from the car/bus/sidewalk: "Had to head out —
-thanks for tonight." Done. Regret rate: surprisingly low.
+**Execution:** Gather your things. Leave normally. Do not start fresh rounds of
+farewell if avoiding another negotiation was the entire point. Text the host
+once you are outside: "Had to head out — thanks for tonight." Done.
 
 ---
 
@@ -376,23 +423,32 @@ You've decided to return. The door is in front of you. Your hand is on the
 handle. Your brain is projecting a fantasy where the entire room turns to
 stare at you in unison, like meerkats sensing a hawk.
 
-This will not happen. Here's what will actually happen: almost nothing. Most
-people are mid-conversation, mid-drink, or mid-thought. Your return is
-significantly less dramatic than your departure felt.
+It will usually be far less noticeable than it feels. People systematically
+overestimate how much others register their appearance and behaviour — the
+spotlight effect.[^spotlight] That is not a promise that nobody noticed you
+were gone. It is a reason to stop appointing yourself the room's official
+audience-measurement device.
 
-### Body Language Checklist
+### Before you open the door: pick something outside yourself
 
-Before you open the door:
+Do **not** run a live facial-expression debugger. Auditing your own shoulders,
+jaw and walking speed puts your attention exactly where it is least useful, and
+it is one of the things social-anxiety treatment works to undo — attention
+turned inward, checking, and small managing behaviours are what keep the fear
+running.[^nice-social-anxiety]
 
-- [ ] Shoulders down (not around your ears)
-- [ ] Hands out of pockets (or one hand, if you need a pocket)
-- [ ] Jaw unclenched
-- [ ] Walking speed: normal (not skulking, not power-walking)
-- [ ] Face: neutral-to-pleasant (not performing "I'M FINE" with every muscle)
+So pick one thing that is not you:
 
-You do not need to smile. You do not need to perform joy. You need to look
-like a person who went to the bathroom and came back, which is, again, exactly
-what you did.
+- a person you know;
+- your seat;
+- the conversation already happening;
+- water, food, or a small practical task;
+- your exit route, if you are going back in with a plan.
+
+If a shoulder drops or a jaw unclenches on its own, good. It does not need
+certification. You do not need to smile, and you do not need to perform joy.
+You need to look like a person who went to the bathroom and came back — which
+is, again, exactly what you did.
 
 ### Conversation Re-Entry
 
@@ -480,7 +536,7 @@ longer a social field guide problem. This is a safety problem.
 - You are afraid of what will happen when you go back out
 
 Any one of these is enough. You do not need all of them. You do not need to
-be "sure enough." If several items fit, treat the concern seriously and involve another person or a specialist service rather than arguing yourself into returning.[^fear-signals]
+be "sure enough." If several items fit, treat the concern seriously and involve another person or a specialist service rather than arguing yourself into returning.[^danger-assessment]
 
 ### What to Do
 
@@ -488,11 +544,19 @@ be "sure enough." If several items fit, treat the concern seriously and involve 
 
 1. Call **112** (EU emergency) or **110** (police, Germany). In other regions,
    call your local emergency number.
-2. If speaking may increase danger, state the location and need as briefly as possible. Use a verified official emergency app, text, relay, or silent-call procedure only where that service is actually available.
+2. If speaking may increase danger, state the location and the need in as few
+   words as possible — an address and "help" is a complete emergency call.
+   Silent routes exist, but they are set up in advance, not in the moment: in
+   Germany the official emergency app is **nora**, which reaches the same control
+   rooms as 110 and 112 without speaking, and requires installing and registering
+   it beforehand.[^nora] Assume nothing else texts through unless you have
+   confirmed it for your own country.
 3. Text a trusted person your location and the word "help" or a pre-arranged
    code word.
-4. Do not leave the locked bathroom until help arrives, if the threat is
-   immediate and on the other side of the door.
+4. If the threat is immediately outside the door, a locked door between you and
+   it is worth keeping — stay behind it while it is the safer side. Leave anyway
+   if the room itself stops being safe: fire or smoke, a hazardous atmosphere,
+   the door being forced, or an emergency responder telling you to come out.
 
 **If you can leave safely:**
 
@@ -542,49 +606,34 @@ precisely appropriate.
 
 ### Social Anxiety vs Actual Threat — A Clarification
 
-Social anxiety tells you that *people* are dangerous. An actual threat means
-that a *specific person or situation* is dangerous. The felt experience can
-be similar — racing heart, dread, avoidance — but the response is
-different.[^social-anxiety]
+Both can feel identical from the inside — racing heart, dread, a strong pull
+toward the door. The felt intensity does not tell you which one you are in. What
+you are predicting does.
 
-- Social anxiety: use the Calm Guide, grounding, gradual re-entry, and
-  consider professional support for ongoing symptoms.
-- Actual threat: use the safety protocols above. You cannot ground your way
-  out of a genuine threat. Get safe first, process later.
+- **Social anxiety** predicts *being judged*: that you will be watched, found
+  awkward, or thought badly of. The fear is about other people's opinion of you,
+  and it turns up whether or not anyone has actually done anything.[^social-anxiety]
+- **A threat** is something a specific person is *doing*: threatening, blocking,
+  following, refusing "no", controlling where you go or who you can reach. It
+  points at behaviour you could describe to a stranger.
 
-If you are unsure which category you're in, err on the side of safety. The
-worst outcome of treating social anxiety as a threat is that you called
-someone unnecessarily. The worst outcome of treating a threat as social
-anxiety is significantly worse.
+The responses differ accordingly. Anxiety: the Calm Guide, grounding, gradual
+re-entry, professional support if it persists. Threat: the safety protocols
+above — you cannot ground your way out of someone else's behaviour, so get safe
+first and process later.
 
----
+If there is a concrete threat cue, or you genuinely cannot tell whether you are
+safe right now, choose safety and involve another person. The worst outcome of
+treating a threat as social anxiety is far worse than the worst outcome of the
+reverse.
 
-## Quick Reference Card
-
-Cut this out mentally. Keep it in your pocket.
-
-```
-BATHROOM SOCIAL TRIAGE
-
-1. Am I safe?
-   ├─ NO  → Section 7. Call for help. Do not re-enter.
-   └─ YES → Continue.
-
-2. Do I need to communicate?
-   ├─ Gone < 10 min → No. Return when ready.
-   ├─ Gone 10–30 min → Text one person (Templates A–D).
-   └─ Gone 30+ min → Text or call. Consider leaving (Template E).
-
-3. Am I ready to go back?
-   ├─ YES → Section 6. Shoulders down. Walk in. You're fine.
-   ├─ MAYBE → Fix one thing (Section 3). Set a time limit. Try.
-   └─ NO  → Leave (Section 5, Irish Goodbye). Text from outside.
-
-4. Will this happen again?
-   ├─ Rarely → Normal human experience. File under "survived."
-   └─ Often → Consider professional support. This is a pattern,
-              not a character flaw.
-```
+That rule is for uncertainty about immediate danger. It is not a way of life. If
+the fear of being watched and judged returns often, with no threatening
+behaviour from anyone, running the emergency protocol every time will make the
+fear stronger rather than smaller — avoidance is one of the things that keeps it
+going. Use the Calm Guide, and Professional Support if it is narrowing your
+life. Planned treatment can work on that gradually, without asking you to gamble
+with actual safety.[^nice-social-anxiety]
 
 ---
 
@@ -604,12 +653,16 @@ BATHROOM SOCIAL TRIAGE
 
 [^rejection-sensitivity]: Downey G, Feldman SI, "Implications of rejection sensitivity for intimate relationships," *Journal of Personality and Social Psychology* 70 (1996): 1327–1343. Rejection-sensitive individuals overinterpret ambiguous social cues as rejection. https://doi.org/10.1037/0022-3514.70.6.1327
 
-[^boundary-setting]: Cloud H, Townsend J, *Boundaries: When to Say Yes, How to Say No to Take Control of Your Life* (Zondervan, 1992). Widely referenced clinical framework for interpersonal boundary-setting. ISBN 978-0310247456.
-
-[^fear-signals]: de Becker G, *The Gift of Fear* (Little, Brown, 1997). Practical framework for distinguishing social anxiety from genuine threat signals. ISBN 978-0316235020.
+[^danger-assessment]: Campbell JC, Webster DW, Glass N, “The Danger Assessment: validation of a lethality risk assessment instrument for intimate partner femicide,” *Journal of Interpersonal Violence* 24 (2009): 653–674. https://doi.org/10.1177/0886260508317180 — the validated instrument weights prior threats, weapon access, controlling behaviour and the person’s own sense of danger, and treats several co-occurring factors as raised risk rather than requiring certainty.
 
 [^social-anxiety]: American Psychiatric Association, *Diagnostic and Statistical Manual of Mental Disorders*, 5th ed., text rev. (DSM-5-TR, 2022). Social anxiety disorder criteria distinguish persistent fear of social situations from situational threat responses.
+
+[^nora]: Bundesländer der Bundesrepublik Deutschland, “nora — die offizielle Notruf-App der Bundesländer”: https://www.nora-notruf.de/ . nora reaches the same control rooms as 110 and 112 without a voice call, and requires registration before it can be used.
 
 [^dv-definition]: World Health Organization, *Violence Against Women Prevalence Estimates, 2018* (Geneva: WHO, 2021). Intimate partner violence includes physical, sexual, and psychological abuse as well as controlling behaviours. https://www.who.int/publications/i/item/9789240022256
 
 [^dv-hotline]: Bundesamt für Familie und zivilgesellschaftliche Aufgaben, "Hilfetelefon Gewalt gegen Frauen," https://www.hilfetelefon.de/ — 24/7, anonymous, free, available in 18 languages.
+
+[^spotlight]: Gilovich T, Medvec VH, Savitsky K, “The spotlight effect in social judgment: an egocentric bias in estimates of the salience of one's own actions and appearance,” *Journal of Personality and Social Psychology* 78 (2000): 211–222. https://doi.org/10.1037/0022-3514.78.2.211
+
+[^nice-social-anxiety]: National Institute for Health and Care Excellence, *Social anxiety disorder: recognition, assessment and treatment* (CG159). Its recommended individual CBT explicitly addresses self-focused attention, safety-seeking behaviours, behavioural experiments and graduated exposure. https://www.nice.org.uk/guidance/cg159/chapter/recommendations

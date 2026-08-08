@@ -677,9 +677,17 @@
       "owner": "S"
     },
     {
-      "key": "04b-social-field-guide:1-you-left-the-room-now-what",
+      "key": "04b-social-field-guide:quick-reference-social-router",
       "chapter": "04b-social-field-guide.md",
       "line": 26,
+      "level": 2,
+      "heading": "Quick reference — social router",
+      "owner": "S"
+    },
+    {
+      "key": "04b-social-field-guide:1-you-left-the-room-now-what",
+      "chapter": "04b-social-field-guide.md",
+      "line": 59,
       "level": 2,
       "heading": "1 — You Left the Room. Now What.",
       "owner": "S"
@@ -687,7 +695,7 @@
     {
       "key": "04b-social-field-guide:2-communication-templates",
       "chapter": "04b-social-field-guide.md",
-      "line": 90,
+      "line": 135,
       "level": 2,
       "heading": "2 — Communication Templates",
       "owner": "S"
@@ -695,7 +703,7 @@
     {
       "key": "04b-social-field-guide:3-the-mirror-conversation",
       "chapter": "04b-social-field-guide.md",
-      "line": 175,
+      "line": 220,
       "level": 2,
       "heading": "3 — The Mirror Conversation",
       "owner": "S"
@@ -703,7 +711,7 @@
     {
       "key": "04b-social-field-guide:4-navigating-specific-social-contexts",
       "chapter": "04b-social-field-guide.md",
-      "line": 239,
+      "line": 284,
       "level": 2,
       "heading": "4 — Navigating Specific Social Contexts",
       "owner": "S"
@@ -711,7 +719,7 @@
     {
       "key": "04b-social-field-guide:5-boundary-setting-from-a-bathroom",
       "chapter": "04b-social-field-guide.md",
-      "line": 279,
+      "line": 327,
       "level": 2,
       "heading": "5 — Boundary Setting From a Bathroom",
       "owner": "S"
@@ -719,7 +727,7 @@
     {
       "key": "04b-social-field-guide:6-re-entry-strategies",
       "chapter": "04b-social-field-guide.md",
-      "line": 371,
+      "line": 418,
       "level": 2,
       "heading": "6 — Re-Entry Strategies",
       "owner": "S"
@@ -727,17 +735,9 @@
     {
       "key": "04b-social-field-guide:7-when-social-emergency-becomes-real-emergency",
       "chapter": "04b-social-field-guide.md",
-      "line": 445,
+      "line": 501,
       "level": 2,
       "heading": "7 — When Social Emergency Becomes Real Emergency",
-      "owner": "S"
-    },
-    {
-      "key": "04b-social-field-guide:quick-reference-card",
-      "chapter": "04b-social-field-guide.md",
-      "line": 562,
-      "level": 2,
-      "heading": "Quick Reference Card",
       "owner": "S"
     },
     {

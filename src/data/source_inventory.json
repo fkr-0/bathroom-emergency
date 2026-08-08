@@ -539,21 +539,7 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC3444304/"
       ],
       "used_at_lines": [
-        218
-      ],
-      "subguides": [
-        "S"
-      ]
-    },
-    {
-      "id": "04b-social-field-guide--boundary-setting",
-      "chapter": "04b-social-field-guide.md",
-      "footnote_key": "boundary-setting",
-      "kind": "explanatory",
-      "text": "Cloud H, Townsend J, *Boundaries: When to Say Yes, How to Say No to Take Control of Your Life* (Zondervan, 1992). Widely referenced clinical framework for interpersonal boundary-setting. ISBN 978-0310247456.",
-      "urls": [],
-      "used_at_lines": [
-        286
+        263
       ],
       "subguides": [
         "S"
@@ -569,7 +555,23 @@
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC8667218/"
       ],
       "used_at_lines": [
-        213
+        258
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--danger-assessment",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "danger-assessment",
+      "kind": "research",
+      "text": "Campbell JC, Webster DW, Glass N, “The Danger Assessment: validation of a lethality risk assessment instrument for intimate partner femicide,” *Journal of Interpersonal Violence* 24 (2009): 653–674. https://doi.org/10.1177/0886260508317180 — the validated instrument weights prior threats, weapon access, controlling behaviour and the person’s own sense of danger, and treats several co-occurring factors as raised risk rather than requiring certainty.",
+      "urls": [
+        "https://doi.org/10.1177/0886260508317180"
+      ],
+      "used_at_lines": [
+        539
       ],
       "subguides": [
         "S"
@@ -585,7 +587,7 @@
         "https://www.who.int/publications/i/item/9789240022256"
       ],
       "used_at_lines": [
-        517
+        581
       ],
       "subguides": [
         "S"
@@ -601,21 +603,40 @@
         "https://www.hilfetelefon.de/"
       ],
       "used_at_lines": [
-        522
+        586
       ],
       "subguides": [
         "S"
       ]
     },
     {
-      "id": "04b-social-field-guide--fear-signals",
+      "id": "04b-social-field-guide--nice-social-anxiety",
       "chapter": "04b-social-field-guide.md",
-      "footnote_key": "fear-signals",
+      "footnote_key": "nice-social-anxiety",
       "kind": "explanatory",
-      "text": "de Becker G, *The Gift of Fear* (Little, Brown, 1997). Practical framework for distinguishing social anxiety from genuine threat signals. ISBN 978-0316235020.",
-      "urls": [],
+      "text": "National Institute for Health and Care Excellence, *Social anxiety disorder: recognition, assessment and treatment* (CG159). Its recommended individual CBT explicitly addresses self-focused attention, safety-seeking behaviours, behavioural experiments and graduated exposure. https://www.nice.org.uk/guidance/cg159/chapter/recommendations",
+      "urls": [
+        "https://www.nice.org.uk/guidance/cg159/chapter/recommendations"
+      ],
       "used_at_lines": [
-        483
+        438,
+        636
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--nora",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "nora",
+      "kind": "explanatory",
+      "text": "Bundesländer der Bundesrepublik Deutschland, “nora — die offizielle Notruf-App der Bundesländer”: https://www.nora-notruf.de/ . nora reaches the same control rooms as 110 and 112 without a voice call, and requires registration before it can be used.",
+      "urls": [
+        "https://www.nora-notruf.de/"
+      ],
+      "used_at_lines": [
+        552
       ],
       "subguides": [
         "S"
@@ -631,7 +652,7 @@
         "https://doi.org/10.1037/0022-3514.70.6.1327"
       ],
       "used_at_lines": [
-        266
+        314
       ],
       "subguides": [
         "S"
@@ -645,7 +666,7 @@
       "text": "American Psychiatric Association, *Diagnostic and Statistical Manual of Mental Disorders*, 5th ed., text rev. (DSM-5-TR, 2022). Social anxiety disorder criteria distinguish persistent fear of social situations from situational threat responses.",
       "urls": [],
       "used_at_lines": [
-        548
+        615
       ],
       "subguides": [
         "S"
@@ -661,7 +682,7 @@
         "https://doi.org/10.1177/001872675400700202"
       ],
       "used_at_lines": [
-        201
+        246
       ],
       "subguides": [
         "S"
@@ -677,8 +698,24 @@
         "https://doi.org/10.1037/a0023477"
       ],
       "used_at_lines": [
-        144,
-        441
+        189,
+        497
+      ],
+      "subguides": [
+        "S"
+      ]
+    },
+    {
+      "id": "04b-social-field-guide--spotlight",
+      "chapter": "04b-social-field-guide.md",
+      "footnote_key": "spotlight",
+      "kind": "research",
+      "text": "Gilovich T, Medvec VH, Savitsky K, “The spotlight effect in social judgment: an egocentric bias in estimates of the salience of one's own actions and appearance,” *Journal of Personality and Social Psychology* 78 (2000): 211–222. https://doi.org/10.1037/0022-3514.78.2.211",
+      "urls": [
+        "https://doi.org/10.1037/0022-3514.78.2.211"
+      ],
+      "used_at_lines": [
+        428
       ],
       "subguides": [
         "S"

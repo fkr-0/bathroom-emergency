@@ -10,7 +10,7 @@
   "totals": {
     "nodes": 11,
     "sections": 262,
-    "sources": 76,
+    "sources": 78,
     "reader_visuals": 41,
     "standalone_nodes": 11
   },
@@ -366,23 +366,25 @@
       ],
       "chapter_count": 1,
       "section_count": 9,
-      "source_count": 10,
+      "source_count": 12,
       "source_counts": {
         "operational": 0,
-        "research": 5,
+        "research": 7,
         "explanatory": 5
       },
       "source_ids": [
         "04b-social-field-guide--affect-labeling",
-        "04b-social-field-guide--boundary-setting",
         "04b-social-field-guide--cold-face",
+        "04b-social-field-guide--danger-assessment",
         "04b-social-field-guide--dv-definition",
         "04b-social-field-guide--dv-hotline",
-        "04b-social-field-guide--fear-signals",
+        "04b-social-field-guide--nice-social-anxiety",
+        "04b-social-field-guide--nora",
         "04b-social-field-guide--rejection-sensitivity",
         "04b-social-field-guide--social-anxiety",
         "04b-social-field-guide--social-comparison",
-        "04b-social-field-guide--social-support"
+        "04b-social-field-guide--social-support",
+        "04b-social-field-guide--spotlight"
       ],
       "owned_visual_count": 0,
       "shared_visual_count": 0,
