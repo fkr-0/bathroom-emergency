@@ -64,7 +64,7 @@ PATTERN_SWATCHES = {
     "shield":     "repeating-linear-gradient(0deg,{c} 0 1.5px,transparent 1.5px 5px)",
     "zigzag":     "repeating-linear-gradient(135deg,{c} 0 1.4px,transparent 1.4px 5px)",
     "crosshatch": "repeating-linear-gradient(45deg,{c} 0 1px,transparent 1px 3px)",
-    "dots":       "radial-gradient({c} 0 .9px,transparent 1.2px)",
+    "dots":       "repeating-radial-gradient(circle at 1.6px 1.6px,{c} 0 .9px,transparent 1.1px 3.2px)",
     "speech":     "repeating-radial-gradient(circle at 40% 60%,transparent 0 1.5px,{c} 1.5px 2.4px,transparent 2.4px 5px)",
     "form-grid":  "repeating-linear-gradient(90deg,{c} 0 1px,transparent 1px 3px)",
     "solid":      "repeating-linear-gradient(0deg,{c} 0 2.2px,transparent 2.2px 5.5px)",
