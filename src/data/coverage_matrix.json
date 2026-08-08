@@ -10,7 +10,7 @@
   "totals": {
     "nodes": 11,
     "sections": 262,
-    "sources": 78,
+    "sources": 84,
     "reader_visuals": 41,
     "standalone_nodes": 11
   },
@@ -65,18 +65,24 @@
       ],
       "chapter_count": 1,
       "section_count": 15,
-      "source_count": 5,
+      "source_count": 11,
       "source_counts": {
         "operational": 0,
         "research": 2,
-        "explanatory": 3
+        "explanatory": 9
       },
       "source_ids": [
-        "02-situation-a--attachment",
+        "02-situation-a--bsi-incident",
         "02-situation-a--caregiver",
+        "02-situation-a--child-development",
+        "02-situation-a--embryotox",
+        "02-situation-a--emergency",
         "02-situation-a--infertility",
+        "02-situation-a--interactive-repair",
         "02-situation-a--ppd",
-        "02-situation-a--ppp-incidence"
+        "02-situation-a--ppp-incidence",
+        "02-situation-a--pregnancy-counselling",
+        "02-situation-a--shaking"
       ],
       "owned_visual_count": 5,
       "shared_visual_count": 0,

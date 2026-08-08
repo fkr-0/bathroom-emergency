@@ -101,14 +101,16 @@
       ]
     },
     {
-      "id": "02-situation-a--attachment",
+      "id": "02-situation-a--bsi-incident",
       "chapter": "02-situation-a.md",
-      "footnote_key": "attachment",
-      "kind": "research",
-      "text": "Bowlby J, *Attachment and Loss* (1969); Ainsworth MDS et al., *Patterns of Attachment* (1978); and later work on rupture and repair. Attachment patterns are population-level constructs and should not be used as one-event diagnoses.",
-      "urls": [],
+      "footnote_key": "bsi-incident",
+      "kind": "explanatory",
+      "text": "Bundesamt für Sicherheit in der Informationstechnik (BSI), incident-response and incident-reporting guidance. Organizations can use BSI incident resources and voluntary reporting; regulated organizations may have separate mandatory reporting routes. https://www.bsi.bund.de/DE/IT-Sicherheitsvorfall/Unternehmen/Ich-moechte-einen-IT-Sicherheitsvorfall-melden/ich-moechte-einen-it-sicherheitsvorfall-melden.html",
+      "urls": [
+        "https://www.bsi.bund.de/DE/IT-Sicherheitsvorfall/Unternehmen/Ich-moechte-einen-IT-Sicherheitsvorfall-melden/ich-moechte-einen-it-sicherheitsvorfall-melden.html"
+      ],
       "used_at_lines": [
-        201
+        526
       ],
       "subguides": [
         "A"
@@ -119,12 +121,63 @@
       "chapter": "02-situation-a.md",
       "footnote_key": "caregiver",
       "kind": "explanatory",
-      "text": "gesund.bund.de, “Überlastung bei pflegenden Angehörigen,” including warning signs, counselling, relief, and crisis options: https://gesund.bund.de/belastungen-pflegende-angehoerige",
+      "text": "gesund.bund.de, “Überlastung bei pflegenden Angehörigen,” covering warning signs, counselling, relief, respite, and crisis options. https://gesund.bund.de/belastungen-pflegende-angehoerige",
       "urls": [
         "https://gesund.bund.de/belastungen-pflegende-angehoerige"
       ],
       "used_at_lines": [
-        364
+        239
+      ],
+      "subguides": [
+        "A"
+      ]
+    },
+    {
+      "id": "02-situation-a--child-development",
+      "chapter": "02-situation-a.md",
+      "footnote_key": "child-development",
+      "kind": "explanatory",
+      "text": "Bundesinstitut für Öffentliche Gesundheit, kindergesundheit-info.de, developmental guidance emphasizing individual developmental tempo and professional assessment for persistent concerns. https://www.kindergesundheit-info.de/themen/entwicklung/0-12-monate/einzigartigkeit/",
+      "urls": [
+        "https://www.kindergesundheit-info.de/themen/entwicklung/0-12-monate/einzigartigkeit/"
+      ],
+      "used_at_lines": [
+        426
+      ],
+      "subguides": [
+        "A"
+      ]
+    },
+    {
+      "id": "02-situation-a--embryotox",
+      "chapter": "02-situation-a.md",
+      "footnote_key": "embryotox",
+      "kind": "explanatory",
+      "text": "Embryotox, Charité – Universitätsmedizin Berlin, current medication information and individual counselling on medicines in pregnancy. https://www.embryotox.de/ and https://www.embryotox.de/beratung/",
+      "urls": [
+        "https://www.embryotox.de/",
+        "https://www.embryotox.de/beratung/"
+      ],
+      "used_at_lines": [
+        337
+      ],
+      "subguides": [
+        "A"
+      ]
+    },
+    {
+      "id": "02-situation-a--emergency",
+      "chapter": "02-situation-a.md",
+      "footnote_key": "emergency",
+      "kind": "explanatory",
+      "text": "gesund.bund.de, “Notruf und Notaufnahme” and “Nummern für den Notfall.” Severe injury, heavy blood loss, unconsciousness, severe breathing difficulty, severe pain, and other potentially life-threatening situations belong to the 112 route. https://gesund.bund.de/wege-im-gesundheitswesen/erwachsenenleben/notfaelle/notruf-und-notaufnahme and https://gesund.bund.de/notfallnummern",
+      "urls": [
+        "https://gesund.bund.de/wege-im-gesundheitswesen/erwachsenenleben/notfaelle/notruf-und-notaufnahme",
+        "https://gesund.bund.de/notfallnummern"
+      ],
+      "used_at_lines": [
+        46,
+        309
       ],
       "subguides": [
         "A"
@@ -135,12 +188,28 @@
       "chapter": "02-situation-a.md",
       "footnote_key": "infertility",
       "kind": "explanatory",
-      "text": "World Health Organization, *Infertility Prevalence Estimates, 1990–2021* and the 2025 infertility fact sheet/guideline: approximately 17.5% of adults, or one in six people of reproductive age, experience infertility in their lifetime. https://www.who.int/news-room/fact-sheets/detail/infertility",
+      "text": "World Health Organization, infertility fact sheet: approximately 17.5% of adults, or one in six people of reproductive age, experience infertility in their lifetime. https://www.who.int/news-room/fact-sheets/detail/infertility",
       "urls": [
         "https://www.who.int/news-room/fact-sheets/detail/infertility"
       ],
       "used_at_lines": [
-        175
+        642
+      ],
+      "subguides": [
+        "A"
+      ]
+    },
+    {
+      "id": "02-situation-a--interactive-repair",
+      "chapter": "02-situation-a.md",
+      "footnote_key": "interactive-repair",
+      "kind": "research",
+      "text": "Müller M, Zietlow A-L, Klauser N, Woll C, Nonnenmacher N, Tronick E, Reck C, “From Early Micro-Temporal Interaction Patterns to Child Cortisol Levels: Toward the Role of Interactive Reparation and Infant Attachment in a Longitudinal Study,” *Frontiers in Psychology* 12 (2022): 807157. https://doi.org/10.3389/fpsyg.2021.807157 — supports the relevance of interactive reparation. Amber's four-step script is a practical synthesis, not a validated diagnostic protocol.",
+      "urls": [
+        "https://doi.org/10.3389/fpsyg.2021.807157"
+      ],
+      "used_at_lines": [
+        393
       ],
       "subguides": [
         "A"
@@ -151,12 +220,13 @@
       "chapter": "02-situation-a.md",
       "footnote_key": "ppd",
       "kind": "explanatory",
-      "text": "gesund.bund.de, “Wochenbettdepression,” describing persistent symptoms beyond a brief baby blues period and the need for professional assessment: https://gesund.bund.de/wochenbettdepression",
+      "text": "gesund.bund.de, “Wochenbett” and “Wochenbettdepression.” A brief baby-blues period can occur after birth; persistent or more severe depressive symptoms deserve professional assessment. https://gesund.bund.de/wege-im-gesundheitswesen/schwangerschaft-und-geburt/nach-der-geburt/wochenbett and https://gesund.bund.de/wochenbettdepression",
       "urls": [
+        "https://gesund.bund.de/wege-im-gesundheitswesen/schwangerschaft-und-geburt/nach-der-geburt/wochenbett",
         "https://gesund.bund.de/wochenbettdepression"
       ],
       "used_at_lines": [
-        159
+        376
       ],
       "subguides": [
         "A"
@@ -167,10 +237,45 @@
       "chapter": "02-situation-a.md",
       "footnote_key": "ppp-incidence",
       "kind": "research",
-      "text": "VanderKruik R et al., “The global prevalence of postpartum psychosis: a systematic review,” *BMC Psychiatry* 17, 272 (2017), doi:10.1186/s12888-017-1427-7. Five incidence studies ranged from 0.89 to 2.6 per 1,000; methodological heterogeneity prevented pooling.",
-      "urls": [],
+      "text": "VanderKruik R et al., “The global prevalence of postpartum psychosis: a systematic review,” *BMC Psychiatry* 17, 272 (2017). https://doi.org/10.1186/s12888-017-1427-7 — five incidence studies ranged from 0.89 to 2.6 per 1,000; methodological heterogeneity prevented pooling.",
+      "urls": [
+        "https://doi.org/10.1186/s12888-017-1427-7"
+      ],
       "used_at_lines": [
-        181
+        649
+      ],
+      "subguides": [
+        "A"
+      ]
+    },
+    {
+      "id": "02-situation-a--pregnancy-counselling",
+      "chapter": "02-situation-a.md",
+      "footnote_key": "pregnancy-counselling",
+      "kind": "explanatory",
+      "text": "Bundesinstitut für Öffentliche Gesundheit (BIÖG), familienplanung.de, recognized pregnancy and pregnancy-conflict counselling directory. The service directory and the legal framework are maintained there rather than in this guide. https://www.familienplanung.de/beratung/beratungsstelle-finden/ and https://www.familienplanung.de/beratung/wer-beraet-mich/",
+      "urls": [
+        "https://www.familienplanung.de/beratung/beratungsstelle-finden/",
+        "https://www.familienplanung.de/beratung/wer-beraet-mich/"
+      ],
+      "used_at_lines": [
+        328
+      ],
+      "subguides": [
+        "A"
+      ]
+    },
+    {
+      "id": "02-situation-a--shaking",
+      "chapter": "02-situation-a.md",
+      "footnote_key": "shaking",
+      "kind": "explanatory",
+      "text": "Bundesinstitut für Öffentliche Gesundheit, kindergesundheit-info.de, “Weshalb ist Schütteln so gefährlich für ein Baby?” Violent shaking can cause severe neurological injury or death. https://www.kindergesundheit-info.de/themen/faq/weshalb-ist-schuetteln-so-gefaehrlich-fuer-ein-baby/",
+      "urls": [
+        "https://www.kindergesundheit-info.de/themen/faq/weshalb-ist-schuetteln-so-gefaehrlich-fuer-ein-baby/"
+      ],
+      "used_at_lines": [
+        443
       ],
       "subguides": [
         "A"
@@ -2034,6 +2139,7 @@
       "url": "https://gesund.bund.de/notfallnummern",
       "source_ids": [
         "01b-body-owner-manual--emergency-routing",
+        "02-situation-a--emergency",
         "05-self-ambulance--emergency-numbers",
         "07-professional-support--numbers"
       ]

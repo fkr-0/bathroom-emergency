@@ -159,103 +159,95 @@
     {
       "key": "02-situation-a:first-split-which-clock-is-running",
       "chapter": "02-situation-a.md",
-      "line": 25,
+      "line": 27,
       "level": 2,
       "heading": "First split: which clock is running?",
       "owner": "A"
     },
     {
-      "key": "02-situation-a:a0-biological-social-technical-or-unclear",
+      "key": "02-situation-a:what-kind-of-stake-does-this-entity-have",
       "chapter": "02-situation-a.md",
-      "line": 70,
+      "line": 74,
       "level": 2,
-      "heading": "A0 — Biological, social, technical, or unclear?",
-      "owner": "A"
-    },
-    {
-      "key": "02-situation-a:a1-a-life-may-be-developing-but-birth-has-not-begun",
-      "chapter": "02-situation-a.md",
-      "line": 86,
-      "level": 2,
-      "heading": "A1 — A life may be developing, but birth has not begun",
-      "owner": "A"
-    },
-    {
-      "key": "02-situation-a:a2-birth-appears-to-be-happening-now",
-      "chapter": "02-situation-a.md",
-      "line": 126,
-      "level": 2,
-      "heading": "A2 — Birth appears to be happening now",
-      "owner": "A"
-    },
-    {
-      "key": "02-situation-a:a3-a-baby-arrived-recently-hours-days-or-weeks-ago",
-      "chapter": "02-situation-a.md",
-      "line": 143,
-      "level": 2,
-      "heading": "A3 — A baby arrived recently: hours, days, or weeks ago",
-      "owner": "A"
-    },
-    {
-      "key": "02-situation-a:a4-a-child-or-young-dependant-relies-on-you",
-      "chapter": "02-situation-a.md",
-      "line": 203,
-      "level": 2,
-      "heading": "A4 — A child or young dependant relies on you",
+      "heading": "What kind of stake does this entity have?",
       "owner": "A"
     },
     {
       "key": "02-situation-a:consent-capacity-authority-and-support-are-different",
       "chapter": "02-situation-a.md",
-      "line": 252,
+      "line": 125,
       "level": 2,
       "heading": "Consent, capacity, authority, and support are different",
       "owner": "A"
     },
     {
-      "key": "02-situation-a:a5-the-person-is-an-adult-possibly-your-adult-child",
+      "key": "02-situation-a:the-responsibility-is-ambiguous",
       "chapter": "02-situation-a.md",
-      "line": 274,
+      "line": 164,
       "level": 2,
-      "heading": "A5 — The person is an adult, possibly your adult child",
+      "heading": "The responsibility is ambiguous",
       "owner": "A"
     },
     {
-      "key": "02-situation-a:a6-the-responsibility-is-ambiguous",
+      "key": "02-situation-a:harm-you-may-have-caused",
       "chapter": "02-situation-a.md",
-      "line": 295,
+      "line": 198,
       "level": 2,
-      "heading": "A6 — The responsibility is ambiguous",
+      "heading": "Harm you may have caused",
       "owner": "A"
     },
     {
-      "key": "02-situation-a:a7-i-harmed-or-may-have-harmed-someone",
+      "key": "02-situation-a:ongoing-responsibility-build-continuity-not-heroism",
       "chapter": "02-situation-a.md",
-      "line": 329,
+      "line": 236,
       "level": 2,
-      "heading": "A7 — I harmed or may have harmed someone",
+      "heading": "Ongoing responsibility: build continuity, not heroism",
       "owner": "A"
     },
     {
-      "key": "02-situation-a:a8-ongoing-responsibility-for-a-person-animal-or-system",
+      "key": "02-situation-a:domain-modules-same-machinery-different-consequences",
       "chapter": "02-situation-a.md",
-      "line": 361,
+      "line": 279,
       "level": 2,
-      "heading": "A8 — Ongoing responsibility for a person, animal, or system",
+      "heading": "Domain modules — same machinery, different consequences",
       "owner": "A"
     },
     {
-      "key": "02-situation-a:a9-a-silicon-based-life-form-escaped",
+      "key": "02-situation-a:developing-biological-entities-pregnancy-birth-baby-child",
       "chapter": "02-situation-a.md",
-      "line": 409,
+      "line": 287,
       "level": 2,
-      "heading": "A9 — A silicon-based life form escaped",
+      "heading": "Developing biological entities: pregnancy, birth, baby, child",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:adults-and-chosen-responsibility",
+      "chapter": "02-situation-a.md",
+      "line": 467,
+      "level": 2,
+      "heading": "Adults and chosen responsibility",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:other-animals",
+      "chapter": "02-situation-a.md",
+      "line": 483,
+      "level": 2,
+      "heading": "Other animals",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:a-silicon-based-life-form-escaped",
+      "chapter": "02-situation-a.md",
+      "line": 503,
+      "level": 2,
+      "heading": "A silicon-based life form escaped",
       "owner": "A"
     },
     {
       "key": "02-situation-a:accountability-theorem",
       "chapter": "02-situation-a.md",
-      "line": 424,
+      "line": 554,
       "level": 2,
       "heading": "Accountability theorem",
       "owner": "A"
@@ -263,9 +255,17 @@
     {
       "key": "02-situation-a:when-guilt-itself-becomes-the-emergency",
       "chapter": "02-situation-a.md",
-      "line": 449,
+      "line": 583,
       "level": 2,
       "heading": "When guilt itself becomes the emergency",
+      "owner": "A"
+    },
+    {
+      "key": "02-situation-a:optional-reading-the-machinery-at-length",
+      "chapter": "02-situation-a.md",
+      "line": 593,
+      "level": 2,
+      "heading": "Optional reading — the machinery, at length",
       "owner": "A"
     },
     {
