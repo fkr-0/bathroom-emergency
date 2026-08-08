@@ -20,10 +20,13 @@ No confirmed zombie outbreak is known. Power cuts, floods, heat, cold,
 contaminated water, smoke, communication failures, and groups improvising a
 constitution before locating the first-aid kit are real enough.
 
-Infrastructure is mostly invisible while it works. Failure turns background
-assumptions—water, temperature, medication, charging, sewage, transport, and
-trustworthy information—into a queue. Survival is less about wilderness theatre
-than maintaining those dependencies in the right order.
+Infrastructure is invisible right up until it stops. Then everything you never
+had to think about — water, warmth, medication, charging, sewage, transport,
+and knowing what is actually true — arrives at once, as a queue, and wants
+handling in order.
+
+Which is the real work. Not wilderness theatre: queue management, with worse
+lighting.
 
 ## Verify before optimizing
 

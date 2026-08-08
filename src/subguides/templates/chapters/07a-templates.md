@@ -11,9 +11,9 @@ dependencies: []
 **Take a page. Put the needed fact on it. Replace it when the world changes.**
 
 The other books explain, decide, and escalate. **T — Templates** externalizes:
-it gives facts, plans, observations, and handoffs a stable place outside a
-reader’s working memory. That matters when someone is frightened, tired, hurt,
-overloaded, or holding a phone with one hand.
+it gives facts, plans, observations, and handoffs somewhere to live outside your
+working memory. Which matters when you are frightened, tired, hurt, overloaded,
+or holding a phone with one hand.
 
 A blank form is not proof of preparation. A completed form is not proof of
 safety. These pages are small interfaces between attention and action.

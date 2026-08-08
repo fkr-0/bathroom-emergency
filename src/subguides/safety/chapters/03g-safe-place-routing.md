@@ -23,11 +23,11 @@ share one rule:
 ## A safe place is confirmed, not merely named
 
 “Go to a shelter,” “try a friend,” and “contact the authority” describe possible
-directions. They do not yet prove that a person can arrive, enter, remain, or
-receive essential care. Before travelling when it is safe to check, confirm:
+directions. None of them yet proves that you can get there, get in, stay, and still
+receive the care you need. When it is safe to check first, confirm:
 
 1. **destination:** the exact place or service;
-2. **availability:** open, staffed, permitted, and able to receive the person;
+2. **availability:** open, staffed, allowed, and able to take you in;
 3. **access:** entrance, stairs or lift, transfer, communication, child,
    caregiver, equipment, medication, and animal requirements;
 4. **arrival instruction:** when to come, which entrance to use, and whom to ask
@@ -37,9 +37,9 @@ receive essential care. Before travelling when it is safe to check, confirm:
 
 ![Six-field safe-place confirmation packet](build/diagrams/safe_place_confirmation_packet.png)
 
-A directory result, map pin, waiting-list entry, or well-meant suggestion is not
-the same thing as a confirmed destination. When checking would itself increase
-danger, leave first and confirm from the safer location.
+A directory result, a map pin, a waiting-list entry, or a well-meant suggestion
+is not a confirmed destination. And if checking would itself put you in danger,
+leave first and confirm once you are somewhere safer.
 
 ## First minute — choose the actual failure
 
@@ -59,8 +59,8 @@ Start with the one that can make tonight dangerous fastest.
 
 ### Action
 
-Move toward a safer place without announcing, arguing, collecting evidence, or
-confronting the person when that increases danger. Use **110** for active police
+Move toward a safer place without announcing it, arguing, collecting evidence,
+or confronting whoever is threatening you when that would increase the danger. Use **110** for active police
 danger and **112** when injury, fire, medical danger, or life danger is also
 present.
 
@@ -81,16 +81,16 @@ safe. The mapped point may deliberately not show the true refuge location.
 
 ### Escalation
 
-Use **110 / 112 now** when the threat is present, a weapon is involved, access is
-blocked, a child or dependant is endangered, the person is injured, or leaving
-cannot be attempted safely.
+Call **110 or 112 now** if the threat is in the room, there is a weapon, your
+way out is blocked, a child or dependant is in danger, someone is hurt, or you
+cannot leave safely.
 
 ### Digital safety modifier
 
 Use a trusted device when monitoring is possible. A suddenly cleared history,
 new password, disabled location share, or visible shelter search can itself be
-discovered. Ask a specialist service for a plan that matches the device and the
-person controlling it. “Private mode” is a browser setting, not diplomatic
+discovered. Ask a specialist service for a plan that fits your device and whoever might be
+watching it. “Private mode” is a browser setting, not diplomatic
 immunity.
 
 ## G2 — There is no weather-safe place to sleep tonight

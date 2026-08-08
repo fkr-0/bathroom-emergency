@@ -60,8 +60,8 @@ the affected person to reassure you. **Repair** is proposed, not imposed. The
 other person may reject an apology, request a different remedy, choose no
 contact, or involve a professional or authority.
 
-Use **[BEG:T:F:013] Blank remarks and handoff sheet** for a neutral timeline and
-**[BEG:T:F:006] Five-minute values bridge** for one bounded next action. Neither
+Use the **Blank remarks and handoff sheet** for a neutral timeline and
+the **Five-minute values bridge** for one bounded next action. Neither
 form decides liability, consent, or forgiveness.
 
 The sequence does not produce absolution. It prevents shame from replacing five
@@ -379,9 +379,9 @@ need relief, rotation, and services—not more private heroism.[^caregiver]
 
 The plan is incomplete when the essentials are known but the backup is not, or
 when a backup exists but cannot find the warning signs, documents, supplies, or
-next review time. Use **[BEG:T:G:003] Medication, power, and care continuity
-card** for private dependency details, **[BEG:T:G:004] Household continuity
-board** when several people share the work, and **[BEG:T:G:005] Local
+next review time. Use the **Medication, power, and care continuity
+card** for private dependency details, the **Household continuity
+board** when several people share the work, and the **Local
 professional contacts** for verified service routes and backups.
 
 ### Minimum viable care plan
@@ -427,9 +427,10 @@ Self-punishment and repair are not the same variable:
 
 $$\text{remorse} \neq \text{repair}$$
 
-Useful accountability increases truth, safety, restitution, and changed
-behaviour. If an action only increases your suffering while changing nothing
-for the affected party, it may be punishment—but it is not yet repair.
+Accountability is useful when it adds truth, safety, restitution, or changed
+behaviour. If what you are doing only makes you feel worse and changes nothing
+for the person you harmed, it may well be punishment — but it is not yet repair.
+Repair is measured at their end, not at yours.
 
 ### The repair worksheet
 

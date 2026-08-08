@@ -14,11 +14,11 @@ dependencies:
 
 # The Copper Book — Reference and Useful Loose Ends
 
-Use **R — Reference** when you need an address, map, formula, figure, form,
-service, field, source, or complete text route. R should shorten retrieval, not
-become a compulsory corridor before action. In an emergency, use the owning
-route or service first; return here when you need to locate, compare, cite, or
-verify something.
+Use **R — Reference** when you need an address, a map, a formula, a figure, a
+form, a service, a field, a source, or a complete text route. It exists to
+shorten a search, not to become a corridor you have to walk down before doing
+anything. In an emergency use the owning route or service first, and come back
+here when you need to find, compare, cite, or check something.
 
 ## Stable references — addresses that survive editing
 
