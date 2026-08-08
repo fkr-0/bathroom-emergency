@@ -66,8 +66,13 @@ for role in roles:
 check(len(continuity.get("handoff_fields", [])) >= 7, "continuity handoff lacks required fields")
 check(CHAPTER_PATH.exists(), "continuity chapter is missing")
 chapter = CHAPTER_PATH.read_text(encoding="utf-8") if CHAPTER_PATH.exists() else ""
+# Markers for the machinery Olive must not silently lose, not for the wording
+# it happens to use today. "The continuity invariant" is the section that was
+# called "Household continuity board" until the status/reserve/owner/backup/
+# next-action/review/failure-route fields were promoted to the front of the
+# book; the figure marker below still pins the board itself.
 for marker in (
-    "Household continuity board",
+    "The continuity invariant",
     "Capability inventory",
     "Five functions for the first meeting",
     "The assignment invariant",

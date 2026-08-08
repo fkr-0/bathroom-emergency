@@ -1090,16 +1090,82 @@
       ]
     },
     {
-      "id": "06-zombie-guide--bbk",
+      "id": "06-zombie-guide--bbk-heat",
       "chapter": "06-zombie-guide.md",
-      "footnote_key": "bbk",
+      "footnote_key": "bbk-heat",
       "kind": "operational",
-      "text": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe, *Vorsorgen für Krisen und Katastrophen*, current preparedness guide and checklists: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html",
+      "text": "BBK, current heat guidance: cooling, hydration, reduced exertion, checks on vulnerable people, and emergency escalation for severe heat illness. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Mit-Naturgefahren-umgehen/Hitze-Duerre/hitze-duerre_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Mit-Naturgefahren-umgehen/Hitze-Duerre/hitze-duerre_node.html"
+      ],
+      "used_at_lines": [
+        253
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--bbk-hygiene",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "bbk-hygiene",
+      "kind": "operational",
+      "text": "BBK, “Hygiene in Notsituationen,” including water-saving hygiene and preparation for toilet failure. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Gesundheit-und-Hygiene/Hygiene-in-Notsituationen/hygiene-in-notsituationen_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Gesundheit-und-Hygiene/Hygiene-in-Notsituationen/hygiene-in-notsituationen_node.html"
+      ],
+      "used_at_lines": [
+        325
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--bbk-power",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "bbk-power",
+      "kind": "operational",
+      "text": "BBK, “Vorsorge und Handeln bei Stromausfall.” Covers alternative heating, oxygen-deficiency and flame-failure safety devices for gas appliances, carbon-monoxide detectors, cooking without mains power, and the explicit warning not to use a grill inside the flat or house because of the suffocation risk. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html"
+      ],
+      "used_at_lines": [
+        260,
+        270
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--bbk-ratgeber",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "bbk-ratgeber",
+      "kind": "operational",
+      "text": "BBK, *Ratgeber und Checkliste für Notfallvorsorge und richtiges Handeln in Notsituationen*, the maintained national preparedness guide. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html",
       "urls": [
         "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Ratgeber-Checkliste/ratgeber-checkliste_node.html"
       ],
       "used_at_lines": [
-        121
+        618
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--bbk-stock",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "bbk-stock",
+      "kind": "operational",
+      "text": "BBK, “Essen und Trinken bevorraten.” Current text: an adult needs at least 1.5 litres of fluid per day, with about 0.5 litres of water extra per day if cooking is planned; aim where possible for ten days of self-supply, though a stock for at least three days already helps considerably and can be built up in stages. The combined 2 L/person/day figure used above is this guide's own planning convention. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Bevorraten/bevorraten.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Bevorraten/bevorraten.html"
+      ],
+      "used_at_lines": [
+        116,
+        128
       ],
       "subguides": [
         "Z"
@@ -1110,13 +1176,66 @@
       "chapter": "06-zombie-guide.md",
       "footnote_key": "bbk-warning",
       "kind": "operational",
-      "text": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe, “Warn-App NINA” and “Cell Broadcast.” NINA provides official civil-protection warnings and integrates weather and flood information; Cell Broadcast sends short official warnings directly to compatible mobile devices and should be supplemented with a fuller warning channel when possible. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html and https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/So-werden-Sie-gewarnt/Cell-Broadcast/cell-broadcast_node.html",
+      "text": "Bundesamt für Bevölkerungsschutz und Katastrophenhilfe (BBK), “Warn-App NINA” and “Cell Broadcast.” NINA carries official civil-protection warnings with weather and flood information; Cell Broadcast pushes short official warnings to compatible mobile devices and is designed to be supplemented by a fuller channel. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html and https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/So-werden-Sie-gewarnt/Cell-Broadcast/cell-broadcast_node.html",
       "urls": [
         "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html",
         "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warnung-in-Deutschland/So-werden-Sie-gewarnt/Cell-Broadcast/cell-broadcast_node.html"
       ],
       "used_at_lines": [
-        37
+        43,
+        54
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--collective-emergency",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "collective-emergency",
+      "kind": "research",
+      "text": "Drury J, Cocking C, Reicher S, “Everyone for themselves? A comparative study of crowd solidarity among emergency survivors,” *British Journal of Social Psychology* 48 (2009): 487–506. https://doi.org/10.1348/014466608X357893",
+      "urls": [
+        "https://doi.org/10.1348/014466608X357893"
+      ],
+      "used_at_lines": [
+        410,
+        485,
+        697
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--collective-recovery",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "collective-recovery",
+      "kind": "research",
+      "text": "Ntontis E, Drury J, Amlôt R, Rubin GJ, Williams R, Saavedra P, “Collective resilience in the disaster recovery period: Emergent social identity and observed social support are associated with collective efficacy, well-being, and the provision of social support,” *British Journal of Social Psychology* 60 (2021): 1075–1095. https://doi.org/10.1111/bjso.12434",
+      "urls": [
+        "https://doi.org/10.1111/bjso.12434"
+      ],
+      "used_at_lines": [
+        410,
+        487,
+        697
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--dfv-co",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "dfv-co",
+      "kind": "explanatory",
+      "text": "Deutscher Feuerwehrverband, carbon-monoxide prevention guidance: charcoal grills and generators do not belong in enclosed spaces, and an apparently open door or window does not make them safe. https://www.feuerwehrverband.de/feuerwehrverband-klaert-auf-rechtzeitige-warnung-vor-kohlenmonoxid-vergiftungen-bieten-nur-co-melder/",
+      "urls": [
+        "https://www.feuerwehrverband.de/feuerwehrverband-klaert-auf-rechtzeitige-warnung-vor-kohlenmonoxid-vergiftungen-bieten-nur-co-melder/"
+      ],
+      "used_at_lines": [
+        262
       ],
       "subguides": [
         "Z"
@@ -1127,12 +1246,28 @@
       "chapter": "06-zombie-guide.md",
       "footnote_key": "drk-cold",
       "kind": "explanatory",
-      "text": "German Red Cross, “Erfrierungen und Unterkühlungen”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erfrierungen-und-unterkuehlungen/",
+      "text": "Deutsches Rotes Kreuz, “Erfrierungen und Unterkühlungen.” DRK routes both described stages of hypothermia to 112. Stage I: warm place, slow warming, remove wet clothing, wrap in blankets, no active heat by rubbing or hot water bottle, warm sweet non-alcoholic drinks if the person is conscious. Stage II (slowed breathing, muscle rigidity, drowsiness or unconsciousness): no further warming attempts, recovery position if unconscious and breathing, CPR if breathing is not normal. https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erfrierungen-und-unterkuehlungen/",
       "urls": [
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erfrierungen-und-unterkuehlungen/"
       ],
       "used_at_lines": [
-        188
+        225
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--medical-route",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "medical-route",
+      "kind": "explanatory",
+      "text": "116117 Patientenservice / ärztlicher Bereitschaftsdienst. The service states it is reachable around the clock, 24 hours a day and seven days a week, for urgent problems that are not life-threatening; life-threatening emergencies belong to 112. https://www.116117.de/de/aerztlicher-bereitschaftsdienst.php",
+      "urls": [
+        "https://www.116117.de/de/aerztlicher-bereitschaftsdienst.php"
+      ],
+      "used_at_lines": [
+        175
       ],
       "subguides": [
         "Z"
@@ -1143,12 +1278,28 @@
       "chapter": "06-zombie-guide.md",
       "footnote_key": "ostrom",
       "kind": "explanatory",
-      "text": "Elinor Ostrom, “Beyond Markets and States: Polycentric Governance of Complex Economic Systems,” Nobel Prize Lecture (2009): https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/",
+      "text": "Elinor Ostrom, “Beyond Markets and States: Polycentric Governance of Complex Economic Systems,” Nobel Prize Lecture (2009). https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/",
       "urls": [
         "https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/lecture/"
       ],
       "used_at_lines": [
-        507
+        551
+      ],
+      "subguides": [
+        "Z"
+      ]
+    },
+    {
+      "id": "06-zombie-guide--stgb32",
+      "chapter": "06-zombie-guide.md",
+      "footnote_key": "stgb32",
+      "kind": "explanatory",
+      "text": "Strafgesetzbuch §32 Notwehr: “Notwehr ist die Verteidigung, die erforderlich ist, um einen gegenwärtigen rechtswidrigen Angriff von sich oder einem anderen abzuwenden.” https://www.gesetze-im-internet.de/stgb/__32.html",
+      "urls": [
+        "https://www.gesetze-im-internet.de/stgb/__32.html"
+      ],
+      "used_at_lines": [
+        581
       ],
       "subguides": [
         "Z"
@@ -2197,6 +2348,13 @@
       ]
     },
     {
+      "url": "https://www.116117.de/de/aerztlicher-bereitschaftsdienst.php",
+      "source_ids": [
+        "03g-safe-place-routing--medical-116117",
+        "06-zombie-guide--medical-route"
+      ]
+    },
+    {
       "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html",
       "source_ids": [
         "03h-environmental-hazards--bbk-fire",
@@ -2207,6 +2365,7 @@
       "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html",
       "source_ids": [
         "03h-environmental-hazards--bbk-power",
+        "06-zombie-guide--bbk-power",
         "06b-natural-disasters--bbk-outage"
       ]
     },

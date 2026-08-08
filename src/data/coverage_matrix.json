@@ -9,8 +9,8 @@
   },
   "totals": {
     "nodes": 11,
-    "sections": 264,
-    "sources": 87,
+    "sections": 280,
+    "sources": 96,
     "reader_visuals": 41,
     "standalone_nodes": 11
   },
@@ -293,18 +293,27 @@
         "06-zombie-guide.md"
       ],
       "chapter_count": 1,
-      "section_count": 8,
-      "source_count": 4,
+      "section_count": 24,
+      "source_count": 13,
       "source_counts": {
-        "operational": 2,
-        "research": 0,
-        "explanatory": 2
+        "operational": 6,
+        "research": 2,
+        "explanatory": 5
       },
       "source_ids": [
-        "06-zombie-guide--bbk",
+        "06-zombie-guide--bbk-heat",
+        "06-zombie-guide--bbk-hygiene",
+        "06-zombie-guide--bbk-power",
+        "06-zombie-guide--bbk-ratgeber",
+        "06-zombie-guide--bbk-stock",
         "06-zombie-guide--bbk-warning",
+        "06-zombie-guide--collective-emergency",
+        "06-zombie-guide--collective-recovery",
+        "06-zombie-guide--dfv-co",
         "06-zombie-guide--drk-cold",
-        "06-zombie-guide--ostrom"
+        "06-zombie-guide--medical-route",
+        "06-zombie-guide--ostrom",
+        "06-zombie-guide--stgb32"
       ],
       "owned_visual_count": 7,
       "shared_visual_count": 2,

@@ -196,11 +196,15 @@ for name in (
 ):
     check(f"build/diagrams/{name}" not in source, f"deprecated figure referenced: {name}")
 
-# The alternate integration must add real breadth rather than replace the mature guide.
+# The alternate integration must add real breadth rather than replace the mature
+# guide. These name subjects that must still be covered somewhere -- they are not
+# a freeze on the headings that cover them, so a marker follows a retitled
+# section rather than pinning it. Keep apostrophes out of the markers: pandoc
+# smart-quotes the output, so source and rendered text disagree on the glyph.
 for marker in (
     "OPQRST", "GAD-7 severity spectrum", "Situation G — No Safe Place",
-    "Essential medication and powered-device failure", "IASC support pyramid",
-    "Ostrom’s eight commons principles", "Stable references — addresses that survive editing",
+    "Essential medication and powered-device continuity", "IASC support pyramid",
+    "commons principles", "Stable references — addresses that survive editing",
     "Templates", "Boundary Setting From a Bathroom", "Emergency water",
 ):
     check(marker.lower() in source.lower(), f"subject breadth marker missing: {marker}")

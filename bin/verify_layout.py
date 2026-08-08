@@ -37,7 +37,7 @@ REQUIRED_MARKERS = (
     "The Blue Book — Safety & No Place",
     "Orange Book — The Environment May Be Unsafe",
     "The Orange Book — Hazards & Disasters",
-    "Essential medication and powered-device failure",
+    "Essential medication and powered-device continuity",
     "The Olive Book — Zombie Guide",
     "The Indigo Book — Professional Support",
     "The Purple Book — Social Field Guide",
@@ -108,11 +108,24 @@ def edge_dark_count(mask: Image.Image, band: int = 2) -> int:
     return sum(dark_count(strip) for strip in strips)
 
 
+def page_variants(page: str) -> tuple[str, str]:
+    """A page as extracted, and again with hyphenated line breaks rejoined.
+
+    The A4/2 column is narrow enough that a heading like "Essential medication
+    and powered-device continuity" wraps at its own hyphen. Collapsing
+    whitespace then yields "powered- device", so a marker that is present and
+    perfectly legible on the page fails to match. Search both forms.
+    """
+    flat = re.sub(r"\s+", " ", page).lower()
+    return flat, re.sub(r"-\s+", "-", flat)
+
+
 def marker_pages(pages: list[str]) -> list[int]:
     found: list[int] = []
     for marker in REQUIRED_MARKERS:
+        needle = marker.lower()
         for index, page in enumerate(pages, start=1):
-            if marker.lower() in re.sub(r"\s+", " ", page).lower():
+            if any(needle in variant for variant in page_variants(page)):
                 found.append(index)
                 break
         else:

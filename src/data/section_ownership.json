@@ -975,47 +975,167 @@
     {
       "key": "06-zombie-guide:verify-before-optimizing",
       "chapter": "06-zombie-guide.md",
-      "line": 31,
+      "line": 37,
       "level": 2,
       "heading": "Verify before optimizing",
       "owner": "Z"
     },
     {
-      "key": "06-zombie-guide:survival-probability-valid-mathematics-unusable-prophecy",
+      "key": "06-zombie-guide:the-continuity-invariant",
       "chapter": "06-zombie-guide.md",
-      "line": 46,
+      "line": 58,
       "level": 2,
-      "heading": "Survival probability — valid mathematics, unusable prophecy",
+      "heading": "The continuity invariant",
       "owner": "Z"
     },
     {
-      "key": "06-zombie-guide:mini-survival-guide-in-nature-or-infrastructure-failure",
+      "key": "06-zombie-guide:first-minutes-protect-what-fails-fastest",
       "chapter": "06-zombie-guide.md",
-      "line": 59,
+      "line": 90,
       "level": 2,
-      "heading": "Mini survival guide — in nature or infrastructure failure",
+      "heading": "First minutes — protect what fails fastest",
       "owner": "Z"
     },
     {
-      "key": "06-zombie-guide:mini-collapsing-society-guide",
+      "key": "06-zombie-guide:water-priority-zero-after-air-and-immediate-safety",
       "chapter": "06-zombie-guide.md",
-      "line": 326,
+      "line": 112,
       "level": 2,
-      "heading": "Mini collapsing-society guide",
+      "heading": "Water — priority zero after air and immediate safety",
       "owner": "Z"
     },
     {
-      "key": "06-zombie-guide:mini-building-society-guide",
+      "key": "06-zombie-guide:essential-medication-and-powered-device-continuity",
       "chapter": "06-zombie-guide.md",
-      "line": 472,
+      "line": 158,
       "level": 2,
-      "heading": "Mini building-society guide",
+      "heading": "Essential medication and powered-device continuity",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:shelter-and-temperature",
+      "chapter": "06-zombie-guide.md",
+      "line": 200,
+      "level": 2,
+      "heading": "Shelter and temperature",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:air-fire-and-carbon-monoxide",
+      "chapter": "06-zombie-guide.md",
+      "line": 255,
+      "level": 2,
+      "heading": "Air, fire, and carbon monoxide",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:food",
+      "chapter": "06-zombie-guide.md",
+      "line": 279,
+      "level": 2,
+      "heading": "Food",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:medication",
+      "chapter": "06-zombie-guide.md",
+      "line": 291,
+      "level": 2,
+      "heading": "Medication",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:energy",
+      "chapter": "06-zombie-guide.md",
+      "line": 300,
+      "level": 2,
+      "heading": "Energy",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:hygiene-and-toilet-failure",
+      "chapter": "06-zombie-guide.md",
+      "line": 320,
+      "level": 2,
+      "heading": "Hygiene and toilet failure",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:reading-traces-and-observing-the-environment",
+      "chapter": "06-zombie-guide.md",
+      "line": 331,
+      "level": 2,
+      "heading": "Reading traces and observing the environment",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:mini-collapsing-society-guide-or-more-often-several-bad-days-with-broken-infrastructure",
+      "chapter": "06-zombie-guide.md",
+      "line": 344,
+      "level": 2,
+      "heading": "Mini collapsing-society guide — or, more often, several bad days with broken infrastructure",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:several-households-coordinating-without-inventing-a-tiny-dictatorship",
+      "chapter": "06-zombie-guide.md",
+      "line": 404,
+      "level": 2,
+      "heading": "Several households — coordinating without inventing a tiny dictatorship",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:the-assignment-invariant",
+      "chapter": "06-zombie-guide.md",
+      "line": 443,
+      "level": 2,
+      "heading": "The assignment invariant",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:communication-as-the-group-grows",
+      "chapter": "06-zombie-guide.md",
+      "line": 459,
+      "level": 2,
+      "heading": "Communication as the group grows",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:cooperation-and-collective-resilience",
+      "chapter": "06-zombie-guide.md",
+      "line": 480,
+      "level": 2,
+      "heading": "Cooperation and collective resilience",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:water-energy-and-hygiene-at-group-scale",
+      "chapter": "06-zombie-guide.md",
+      "line": 508,
+      "level": 2,
+      "heading": "Water, energy, and hygiene at group scale",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:if-the-disruption-lasts-shared-rules-without-emergency-cosplay",
+      "chapter": "06-zombie-guide.md",
+      "line": 521,
+      "level": 2,
+      "heading": "If the disruption lasts — shared rules without emergency cosplay",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:self-defence-is-not-a-continuity-strategy",
+      "chapter": "06-zombie-guide.md",
+      "line": 566,
+      "level": 2,
+      "heading": "Self-defence is not a continuity strategy",
       "owner": "Z"
     },
     {
       "key": "06-zombie-guide:evacuation-pocket-list",
       "chapter": "06-zombie-guide.md",
-      "line": 596,
+      "line": 584,
       "level": 2,
       "heading": "Evacuation pocket list",
       "owner": "Z"
@@ -1023,9 +1143,17 @@
     {
       "key": "06-zombie-guide:preparedness-checklist-before-anything-happens",
       "chapter": "06-zombie-guide.md",
-      "line": 612,
+      "line": 602,
       "level": 2,
-      "heading": "Preparedness checklist before anything happens",
+      "heading": "Preparedness checklist — before anything happens",
+      "owner": "Z"
+    },
+    {
+      "key": "06-zombie-guide:optional-reading-models-that-are-not-prerequisites-for-action",
+      "chapter": "06-zombie-guide.md",
+      "line": 623,
+      "level": 2,
+      "heading": "Optional reading — models that are not prerequisites for action",
       "owner": "Z"
     },
     {
