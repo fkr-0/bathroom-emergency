@@ -1,7 +1,7 @@
 ---
 title: "Orange Book — Environmental Hazards"
 chapter: "3H"
-revision: "4.14.0-alt.3"
+revision: "5.0.0-rc.1"
 last_updated: "2026-08-08"
 dependencies:
   - build/diagrams/hazard_override_matrix.png

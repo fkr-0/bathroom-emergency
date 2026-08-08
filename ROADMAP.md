@@ -6,7 +6,7 @@ quality** without turning the first minute into a literature review.
 
 ## Current release state
 
-The active experimental line is **4.14.0-alt.3**. It has eleven standalone
+The active experimental line is **5.0.0-rc.1**. It has eleven standalone
 colour books, 49 figures, 10 templates, 66 standalone PDF editions, and one
 shared stable-reference registry. The current release work is no longer about
 adding another top-level book. It is about reader review, field testing,
@@ -590,7 +590,7 @@ bathroom furniture.
 - [x] retain route, source, accessibility, stable-reference, and release contracts;
 - [ ] complete reader review of all master and standalone contact sheets before promoting the experiment.
 
-### 4.14.0-alt.3 — Resource grammar and release-documentation pass
+### 5.0.0-rc.1 — Resource grammar and release-documentation pass
 
 - [x] classify every public resource as either **Figure · Read only** or
   **Template · Write**;

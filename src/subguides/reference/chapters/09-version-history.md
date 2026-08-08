@@ -1,14 +1,37 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.14.0-alt.3"
+revision: "5.0.0-rc.1"
 last_updated: "2026-08-08"
 dependencies: []
 ---
 
 # Version History
 
-## 4.14.0-alt.3 — 8 August 2026
+## 5.0.0-rc.1 — 8 August 2026
+
+### Why this is 5.0.0 and not 4.14.0-alt.4
+
+The `-alt` suffix existed to mark an experimental editorial line running beside
+the mature 4.13 release machinery. That line is finished. The two have been one
+tree since the synthesis, all eleven books have now been read by outside
+reviewers and revised, and continuing to ship a "4.x alternate" would describe a
+fork that no longer exists.
+
+What actually changed at the major-version boundary: the shelf is eleven
+colour-titled books rather than eight situation doors; the A–H doors survive
+only as a compatibility map; reader references replaced machine identifiers on
+the page; every book carries sourced citations attached to individual claims;
+and the indexes are generated from registries rather than maintained by hand.
+Old stable references still resolve — `[BEG:...]` addresses and retired IDs were
+never recycled — so this is a major version by scope, not by breakage.
+
+It is a release *candidate* because nothing here has been deployed, installed in
+an actual bathroom, or drilled with a reader who did not write it. The
+installation and route-drill sheets in Grey exist precisely to produce the
+evidence that would justify dropping the `-rc`.
+
+### The revision campaign
 
 Six books were revised against reader critiques. The pattern across all of them
 was the same: a rule stated carefully in one place and carelessly in another,
@@ -122,7 +145,13 @@ with nothing in the build noticing the disagreement.
   The same swap removed two trade paperbacks from Purple, where the Danger
   Assessment now supports the danger list.
 - Purple, Blue, Olive, and Amber added sourced citations where the text
-  previously asserted. Cited sources went from 72 to 96 across the campaign.
+  previously asserted. Cited sources went from 72 to 95 across the campaign.
+- The IASP pain definition now cites Raja et al. (2020) in *Pain*, the paper
+  that states and explains it, with the IASP term list as the secondary link.
+  The IASP host refuses automated requests, so the previous citation could never
+  be machine-checked; the page was read by hand on 8 August 2026 and that
+  confirmation is now recorded in the source checker rather than reported
+  forever as an outstanding task.
 
 ### Verification
 

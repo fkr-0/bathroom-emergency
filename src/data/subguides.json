@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.14.0-alt.3",
+  "release": "5.0.0-rc.1",
   "status": "experimental-eleven-book-synthesis",
   "identity_frozen_on": "2026-08-06",
   "shelf_order": [

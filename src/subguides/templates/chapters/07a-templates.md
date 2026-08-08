@@ -1,7 +1,7 @@
 ---
 title: "The Grey Book — Templates & Forms"
 chapter: "T"
-revision: "4.14.0-alt.3"
+revision: "5.0.0-rc.1"
 last_updated: "2026-08-08"
 dependencies: []
 ---
@@ -137,7 +137,7 @@ which copy this is, who maintains it, and when local facts expire.
 | Copy / site name | |
 | Exact placement | |
 | Deployer or maintainer | |
-| Guide version | 4.14.0-alt.3 |
+| Guide version | 5.0.0-rc.1 |
 | Local customization revision | |
 | Build commit | |
 | Built on | |

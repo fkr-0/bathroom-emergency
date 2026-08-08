@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.14.0-alt.3",
+  "release": "5.0.0-rc.1",
   "status": "canonical-source-registry",
   "generated_by": "bin/build_source_inventory.py",
   "footnote_sources": [
@@ -41,8 +41,9 @@
       "chapter": "01b-body-owner-manual.md",
       "footnote_key": "iasp",
       "kind": "research",
-      "text": "International Association for the Study of Pain, “IASP Terminology — Pain”: https://www.iasp-pain.org/resources/terminology/ . Pain is a personal experience shaped by biological, psychological and social factors, and is not the same thing as nociception.",
+      "text": "Raja SN, Carr DB, Cohen M, et al., “The revised International Association for the Study of Pain definition of pain: concepts, challenges, and compromises,” *Pain* 161 (2020): 1976–1982. https://doi.org/10.1097/j.pain.0000000000001939 — the paper that states and explains the current definition: pain is a personal experience influenced by biological, psychological and social factors, and is not the same thing as nociception. IASP publishes the term list itself at https://www.iasp-pain.org/resources/terminology/ (that host refuses automated requests; confirmed by hand on 8 August 2026).",
       "urls": [
+        "https://doi.org/10.1097/j.pain.0000000000001939",
         "https://www.iasp-pain.org/resources/terminology/"
       ],
       "used_at_lines": [

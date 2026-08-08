@@ -1,7 +1,7 @@
 ---
 title: "The Green Book — Body Owner’s Manual"
 chapter: "1B"
-revision: "4.14.0-alt.3"
+revision: "5.0.0-rc.1"
 last_updated: "2026-08-08"
 dependencies: []
 ---
@@ -195,7 +195,7 @@ what is left, and hand the problem on when it outgrows home support.
 
 [^rome]: The Rome Foundation, *Rome V: A Global Framework for Disorders of Gut–Brain Interaction*: https://theromefoundation.org/rome-iv/rome-v/ . Rome V separates clinical from research criteria and updates the IBS and other DGBI definitions. These describe clinical patterns over time; they are not a one-visit self-diagnosis.
 
-[^iasp]: International Association for the Study of Pain, “IASP Terminology — Pain”: https://www.iasp-pain.org/resources/terminology/ . Pain is a personal experience shaped by biological, psychological and social factors, and is not the same thing as nociception.
+[^iasp]: Raja SN, Carr DB, Cohen M, et al., “The revised International Association for the Study of Pain definition of pain: concepts, challenges, and compromises,” *Pain* 161 (2020): 1976–1982. https://doi.org/10.1097/j.pain.0000000000001939 — the paper that states and explains the current definition: pain is a personal experience influenced by biological, psychological and social factors, and is not the same thing as nociception. IASP publishes the term list itself at https://www.iasp-pain.org/resources/terminology/ (that host refuses automated requests; confirmed by hand on 8 August 2026).
 
 [^emergency-routing]: gesund.bund.de, “Nummern für den Notfall”: https://gesund.bund.de/notfallnummern . Loss of consciousness, severe breathlessness, severe chest pain or pressure and stroke signs are listed emergency examples; when it is unclear whether a situation is life-threatening, the portal advises calling 112.
 

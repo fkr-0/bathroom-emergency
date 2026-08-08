@@ -34,6 +34,14 @@ AGENT = "Mozilla/5.0 (bathroom-emergency-guide source review)"
 # check that can never pass is a check people learn to ignore.
 BOT_BLOCKED = {"www.iasp-pain.org"}
 
+# URLs a human has opened and read. Recording the date turns a permanent
+# "someone should check this" into provenance: the reviewer confirmed the page
+# served the expected content, and the entry ages like any other source.
+CONFIRMED_BY_HAND = {
+    "https://www.iasp-pain.org/resources/terminology/":
+        "2026-08-08 (IASP Terminology, Loeser preamble and term list)",
+}
+
 
 def cited_urls() -> dict[str, list[str]]:
     found: dict[str, list[str]] = defaultdict(list)
@@ -103,15 +111,20 @@ def main() -> int:
             print(f"  ok    {detail:<24} {url}")
 
     for url, detail in manual:
-        print(f"  MANUAL {detail:<23} {url}")
-        print("        this host blocks automated requests; confirm by hand")
+        seen = CONFIRMED_BY_HAND.get(url)
+        label = "SEEN  " if seen else "MANUAL"
+        print(f"  {label} {detail:<23} {url}")
+        print(f"        blocks automated requests; read by hand {seen}" if seen
+              else "        this host blocks automated requests; confirm by hand")
 
     for url, detail, uses in failures:
         print(f"  FAIL  {detail:<24} {url}")
         print(f"        cited by: {', '.join(sorted(set(uses)))}")
 
+    unseen = [url for url, _ in manual if url not in CONFIRMED_BY_HAND]
     print(f"\n{len(urls) - len(failures) - len(manual)}/{len(urls)} cited sources resolve"
-          f"{f', {len(manual)} need a manual check' if manual else ''}.")
+          f"{f', {len(manual) - len(unseen)} confirmed by hand' if len(manual) != len(unseen) else ''}"
+          f"{f', {len(unseen)} still need a manual check' if unseen else ''}.")
     if failures:
         print("Check whether the authority moved the page or withdrew the guidance;")
         print("a moved page needs a new URL, withdrawn guidance needs a new claim.")
