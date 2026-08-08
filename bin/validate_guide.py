@@ -69,7 +69,7 @@ books = (
     "The Teal Book — Calm Guide",
     "The Red Book — Self Ambulance",
     "The Blue Book — Safety & No Place",
-    "The Orange Book — Natural Disasters",
+    "The Orange Book — Hazards & Disasters",
     "The Olive Book — Zombie Guide",
     "The Indigo Book — Professional Support",
     "The Purple Book — Social Field Guide",

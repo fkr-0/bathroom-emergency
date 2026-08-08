@@ -36,7 +36,7 @@ REQUIRED_MARKERS = (
     "The Red Book — Self Ambulance",
     "The Blue Book — Safety & No Place",
     "Orange Book — The Environment May Be Unsafe",
-    "The Orange Book — Natural Disasters",
+    "The Orange Book — Hazards & Disasters",
     "Essential medication and powered-device failure",
     "The Olive Book — Zombie Guide",
     "The Indigo Book — Professional Support",

@@ -10,7 +10,7 @@
   "totals": {
     "nodes": 11,
     "sections": 261,
-    "sources": 65,
+    "sources": 74,
     "reader_visuals": 41,
     "standalone_nodes": 11
   },
@@ -144,20 +144,26 @@
       ],
       "chapter_count": 2,
       "section_count": 27,
-      "source_count": 8,
+      "source_count": 14,
       "source_counts": {
-        "operational": 2,
-        "research": 1,
-        "explanatory": 5
+        "operational": 3,
+        "research": 2,
+        "explanatory": 9
       },
       "source_ids": [
         "05-self-ambulance--drk-bleeding",
         "05-self-ambulance--drk-burns",
+        "05-self-ambulance--drk-chemical",
         "05-self-ambulance--drk-electrical",
         "05-self-ambulance--drk-fracture",
+        "05-self-ambulance--drk-heart",
         "05-self-ambulance--drk-recovery",
+        "05-self-ambulance--drk-spine",
+        "05-self-ambulance--drk-stroke",
         "05-self-ambulance--emergency-numbers",
         "05-self-ambulance--erc2025",
+        "05-self-ambulance--erc2025-first-aid",
+        "05-self-ambulance--gesund-poisoning",
         "05-self-ambulance--time-brain"
       ],
       "owned_visual_count": 5,
@@ -219,7 +225,7 @@
     },
     {
       "node": "H",
-      "title": "The Orange Book — Natural Disasters",
+      "title": "The Orange Book — Hazards & Disasters",
       "standalone": true,
       "chapters": [
         "03-situations-b-g.md",
@@ -228,11 +234,11 @@
       ],
       "chapter_count": 3,
       "section_count": 25,
-      "source_count": 15,
+      "source_count": 18,
       "source_counts": {
-        "operational": 10,
+        "operational": 15,
         "research": 0,
-        "explanatory": 5
+        "explanatory": 3
       },
       "source_ids": [
         "03h-environmental-hazards--bbk-112",
@@ -243,12 +249,15 @@
         "03h-environmental-hazards--electric",
         "03h-environmental-hazards--poison",
         "03h-environmental-hazards--warning",
+        "06b-natural-disasters--bbk-earthquake",
         "06b-natural-disasters--bbk-fire",
+        "06b-natural-disasters--bbk-outage",
+        "06b-natural-disasters--bbk-shelter",
         "06b-natural-disasters--bbk-warning",
-        "06b-natural-disasters--cdc-water",
+        "06b-natural-disasters--bbk-water",
+        "06b-natural-disasters--bbk-wind",
         "06b-natural-disasters--closed-door",
-        "06b-natural-disasters--nws-flood",
-        "06b-natural-disasters--ready-earthquake",
+        "06b-natural-disasters--gfz-earthquake",
         "06b-natural-disasters--ready-tornado"
       ],
       "owned_visual_count": 4,

@@ -118,7 +118,7 @@ download_markers = (
     "../routes/B/teal-book-calm-guide.pdf",
     "../routes/C/red-book-self-ambulance.pdf",
     "../routes/D/blue-book-safety-no-place.pdf",
-    "../routes/H/orange-book-natural-disasters.pdf",
+    "../routes/H/orange-book-hazards-disasters.pdf",
     "../routes/Z/olive-book-zombie-guide.pdf",
     "../routes/P/indigo-book-professional-support.pdf",
     "../routes/S/purple-book-social-field-guide.pdf",

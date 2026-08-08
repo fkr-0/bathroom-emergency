@@ -25,7 +25,7 @@ action you can actually perform. Then perform it and reassess.
 | **The Teal Book — Calm Guide** | anxiety, panic, overload, shame, or sensory noise has taken the controls |
 | **The Red Book — Self Ambulance** | pain, injury, illness, first aid, or a medical handoff is the main problem |
 | **The Blue Book — Safety & No Place** | a person, place, access barrier, or lack of shelter makes the next hour unsafe |
-| **The Orange Book — Natural Disasters** | fire, smoke, gas, flood, severe weather, building damage, or an official warning changes the environment |
+| **The Orange Book — Hazards & Disasters** | fire, smoke, gas, flood, severe weather, building damage, or an official warning changes the environment |
 | **The Olive Book — Zombie Guide** | power, water, transport, medication, communication, or community systems are failing |
 | **The Indigo Book — Professional Support** | you need the right service, number, script, legal route, or medical contact |
 | **The Purple Book — Social Field Guide** | the emergency is other people, returning to them, leaving them, or setting a boundary |

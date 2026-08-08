@@ -291,7 +291,7 @@ pain, weakness, numbness, or altered consciousness:
 - ask the person not to move;
 - support the head in the position found if safe and necessary;
 - do not sit them up or “test” walking;
-- move only to escape immediate danger or as instructed.
+- move only to escape immediate danger or as instructed.[^drk-spine]
 
 ## Chemical in eye or on skin
 
@@ -302,7 +302,7 @@ For eye exposure, hold lids open and remove contact lenses only if easy. Call
 advice.
 
 Do not neutralize one chemical with another. The bathroom is not a titration
-lab, no matter how persuasive the bottles look.
+lab, no matter how persuasive the bottles look.[^drk-chemical]
 
 ## Electrical injury
 
@@ -324,7 +324,7 @@ specialist personnel have made the scene safe.[^drk-electrical]
   well.
 
 Do not wait for several signs. One sudden FAST sign is enough to call. Do not
-drive the person yourself when emergency services are available.
+drive the person yourself when emergency services are available.[^drk-stroke]
 
 
 ## Chest pain or severe breathlessness
@@ -332,7 +332,7 @@ drive the person yourself when emergency services are available.
 Call **112** for strong chest pressure or pain, severe breathlessness, cold
 sweat, collapse, pain spreading to arm/jaw/back, blue or grey colour, or serious
 uncertainty. Let the person rest in the position that makes breathing easiest.
-Do not drive yourself.
+Do not drive yourself.[^drk-heart]
 
 ## Anaphylaxis
 
@@ -346,7 +346,7 @@ progressing symptoms after an allergen is an emergency.
   stand or walk.
 - Follow the dispatcher and device instructions for any further dose.
 
-Antihistamines do not replace adrenaline in anaphylaxis.
+Antihistamines do not replace adrenaline in anaphylaxis.[^erc2025-first-aid]
 
 ## Poisoning
 
@@ -358,7 +358,7 @@ Antihistamines do not replace adrenaline in anaphylaxis.
 - Record amount and time if known.
 - Do **not** induce vomiting and do not give a home “antidote” unless a poison
   specialist instructs you.
-- For inhaled fumes, protect yourself and move to fresh air only if safe.
+- For inhaled fumes, protect yourself and move to fresh air only if safe.[^gesund-poisoning]
 
 ## Vital signs
 
@@ -525,3 +525,15 @@ morning.
 [^emergency-numbers]: gesund.bund.de, “Nummern für den Notfall”: https://gesund.bund.de/notfallnummern
 
 [^time-brain]: Saver JL, “Time is brain—quantified,” *Stroke* 37 (2006): 263–266. The figures are literature-derived estimates for a modelled typical untreated large-vessel supratentorial ischemic stroke, not direct measurement in an individual patient. https://doi.org/10.1161/01.STR.0000196957.55928.ab
+
+[^drk-stroke]: German Red Cross, “Schlaganfall”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/schlaganfall/
+
+[^drk-heart]: German Red Cross, “Herzinfarkt”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/herzinfarkt/
+
+[^drk-chemical]: German Red Cross, “Verätzungen”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/veraetzungen/
+
+[^drk-spine]: German Red Cross, “Wirbelsäulenverletzung”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/
+
+[^erc2025-first-aid]: Djärv T et al., “European Resuscitation Council Guidelines 2025 First Aid,” *Resuscitation* 215 Suppl 1 (2025): 110752. https://doi.org/10.1016/j.resuscitation.2025.110752
+
+[^gesund-poisoning]: gesund.bund.de, “Erste Hilfe bei Vergiftungen”: https://gesund.bund.de/erste-hilfe-bei-vergiftungen

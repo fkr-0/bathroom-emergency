@@ -1,12 +1,12 @@
 ---
-title: "The Orange Book — Natural Disasters"
+title: "The Orange Book — Hazards & Disasters"
 chapter: "6B"
 revision: "4.14.0-alt.2"
 last_updated: "2026-08-06"
 dependencies: []
 ---
 
-# The Orange Book — Natural Disasters
+# The Orange Book — Hazards & Disasters
 
 ## The world changed while you were on the toilet
 
@@ -34,7 +34,7 @@ safety rating. The hazard and the building decide.**
 ## Earthquake
 
 During shaking, use **Drop, Cover, Hold On**: get low, protect the head and neck
-under sturdy cover when available, and hold on.[^ready-earthquake]
+under sturdy cover when available, and hold on.[^gfz-earthquake][^bbk-earthquake]
 
 In a bathroom:
 
@@ -57,9 +57,14 @@ After shaking:
 
 ## Severe wind and tornado
 
-Where tornado guidance applies, go to a basement or a small interior room on the
-lowest floor, away from windows, and protect the head and neck. Bathrooms and
-closets are examples only when they meet those conditions.[^ready-tornado]
+Where **tornado-specific** guidance applies — this branch follows US
+FEMA/NOAA practice — go to a basement or a small interior room on the lowest
+floor, away from windows, and protect the head and neck. Bathrooms and closets
+are examples only when they meet those conditions.[^ready-tornado]
+
+For German windstorms and severe thunderstorms, follow DWD, NINA, Cell
+Broadcast, and local instructions instead: stay away from windows and avoid
+trees, unsecured objects, damaged roofs, and flooded routes.[^bbk-wind]
 
 Do not open windows or doors to equalize pressure. Do not cross an exposed area
 to collect a mattress after the warning has become immediate. Use what is within
@@ -74,10 +79,12 @@ routes. The correct room depends on the building and the event.
 Water reverses many “stay in the bathroom” instincts.
 
 - Leave basements and low rooms early when flooding is possible.
-- Move to higher safe ground or a higher level only when the building remains
-  structurally sound and officials advise it.
+- Follow official evacuation or shelter instructions. If rising water has already
+  made the lower level unsafe and no safe exit through the water exists, move
+  upward inside a structurally sound building rather than entering moving
+  water — do not wait for permission to stop standing in a flooding room.
 - Do not walk, cycle, or drive through moving floodwater. Depth, current,
-  missing covers, contamination, and electricity are difficult to judge.[^nws-flood]
+  missing covers, contamination, and electricity are difficult to judge.[^bbk-shelter]
 - Keep away from electrical equipment and water together; they remain a poor
   collaboration.
 - After flooding, treat water, food, medicines, and surfaces as potentially
@@ -135,12 +142,12 @@ Darkness in a tiled room creates a small slapstick injury factory.
 
 A life-supporting function losing power is a medical problem, not an energy-saving
 challenge. Use the personal backup plan and call early enough to transfer before
-the safe reserve ends.
+the safe reserve ends.[^bbk-outage]
 
 ## Emergency water
 
 The safest emergency water is commercially sealed stock or water stored in clean
-food-safe containers before the event. Follow local notices exactly.[^cdc-water]
+food-safe containers before the event. Follow local notices exactly.[^bbk-water]
 
 - Do not assume bathtub water remains drinkable; use it primarily for sanitation
   unless authorities provide a safe treatment route.
@@ -195,14 +202,22 @@ WATER        Stored drinking water · obey notices · no cistern or generic blea
 
 [^bbk-warning]: Bundesamt für Bevölkerungsschutz und Katastrophenhilfe, official warnings and NINA information: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/warn-app-nina_node.html
 
-[^ready-earthquake]: Ready.gov, “Earthquakes”: Drop, Cover, Hold On and post-event guidance. https://www.ready.gov/earthquakes
+[^gfz-earthquake]: GFZ Helmholtz Centre for Geosciences with the BBK, “Verhalten bei Erdbeben” (August 2025): stay in the building during strong shaking, take sturdy cover or protect head and face beside a load-bearing interior wall, avoid stairwells and lifts, follow local instructions. https://www.gfz.de/fileadmin/gfz/medien_kommunikation/Infothek/Merkbl%C3%A4tter/Verhalten-Erdbeben-August2025.pdf
+
+[^bbk-earthquake]: BBK, “Erdbeben”: https://www.bbk.bund.de/DE/Themen/Risikomanagement/Baulicher-Bevoelkerungsschutz/Schutz-vor-geologischen-Gefahren/Erdbeben/erdbeben_node.html
+
+[^ready-earthquake]: Ready.gov, “Earthquakes”: Drop, Cover, Hold On and post-event guidance, retained as a supplementary international source. https://www.ready.gov/earthquakes
 
 [^ready-tornado]: Ready.gov, “Tornadoes”: basement or small interior lowest-floor room, away from windows. https://www.ready.gov/tornadoes
 
-[^nws-flood]: National Weather Service, flood safety and “Turn Around, Don’t Drown.” https://www.weather.gov/safety/flood
+[^bbk-shelter]: BBK, “Schutz suchen”: higher floors protect during flooding, and a flooding basement must not be entered because of entrapment and electrocution risk. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Schutz-suchen/schutz-suchen_node.html
+
+[^bbk-wind]: BBK, severe-weather guidance for storm, thunderstorm and hail: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Mit-Naturgefahren-umgehen/Unwetter/unwetter_node.html
 
 [^bbk-fire]: BBK, “Was tun, wenn es brennt?” https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html
 
 [^closed-door]: UL Fire Safety Research Institute, Close Before You Doze / closed-door fire research. https://closeyourdoor.org/
 
-[^cdc-water]: Centers for Disease Control and Prevention, “Making Water Safe in an Emergency.” https://www.cdc.gov/healthywater/emergency/making-water-safe.html
+[^bbk-water]: BBK, “Essen und Trinken bevorraten”: about two litres of water per person per day for drinking and cooking, planning for several days. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Bevorraten/bevorraten_node.html
+
+[^bbk-outage]: BBK, “Vorsorge und Handeln bei Stromausfall,” including combustion and carbon-monoxide precautions during an outage: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html

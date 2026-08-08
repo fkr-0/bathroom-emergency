@@ -185,7 +185,8 @@
         "chapter": "03h-environmental-hazards.md",
         "sections": [
           "",
-          "The five-second hazard gate"
+          "Where is the source?",
+          "The five-second local-hazard gate"
         ]
       },
       {
@@ -202,7 +203,6 @@
           "Gas smell or hissing",
           "Chemical fumes, splash, or swallowed product",
           "Electrical danger",
-          "Outdoor warning versus indoor source",
           "Dependency modifiers during a hazard",
           "The hazard handoff",
           "After the immediate hazard"

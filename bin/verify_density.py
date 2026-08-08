@@ -33,7 +33,7 @@ MARKERS = (
     "The Purple Book — Social Field Guide",
     "The Red Book — Self Ambulance",
     "The Olive Book — Zombie Guide",
-    "The Orange Book — Natural Disasters",
+    "The Orange Book — Hazards & Disasters",
     "The Indigo Book — Professional Support",
     "The Grey Book — Templates & Forms",
     "The Copper Book — Reference",

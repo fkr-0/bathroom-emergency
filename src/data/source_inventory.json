@@ -346,7 +346,7 @@
         "https://www.bbk.bund.de/SharedDocs/Kurzmeldungen/DE/2026/02/om-11-tag-notruf.html"
       ],
       "used_at_lines": [
-        101
+        108
       ],
       "subguides": [
         "H"
@@ -362,7 +362,7 @@
         "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html"
       ],
       "used_at_lines": [
-        50
+        54
       ],
       "subguides": [
         "H"
@@ -378,7 +378,7 @@
         "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html"
       ],
       "used_at_lines": [
-        69
+        73
       ],
       "subguides": [
         "H"
@@ -394,7 +394,7 @@
         "https://www.bfr.bund.de/deutsches-produktregister-depro/giftinformationszentren-in-deutschland/"
       ],
       "used_at_lines": [
-        137
+        144
       ],
       "subguides": [
         "H"
@@ -410,7 +410,8 @@
         "https://www.dvgw.de/themen/gas/verbraucherinformationen/was-tun-bei-gasgeruch"
       ],
       "used_at_lines": [
-        90
+        94,
+        104
       ],
       "subguides": [
         "H"
@@ -426,7 +427,7 @@
         "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/stromschlag/"
       ],
       "used_at_lines": [
-        152
+        159
       ],
       "subguides": [
         "H"
@@ -442,7 +443,7 @@
         "https://gesund.bund.de/erste-hilfe-bei-vergiftungen"
       ],
       "used_at_lines": [
-        112
+        119
       ],
       "subguides": [
         "H"
@@ -458,7 +459,7 @@
         "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Warn-App-NINA/Funktion-Inhalt/Warnmeldungen/warnmeldungen_node.html"
       ],
       "used_at_lines": [
-        170
+        182
       ],
       "subguides": [
         "H"
@@ -684,6 +685,22 @@
       ]
     },
     {
+      "id": "05-self-ambulance--drk-chemical",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "drk-chemical",
+      "kind": "explanatory",
+      "text": "German Red Cross, “Verätzungen”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/veraetzungen/",
+      "urls": [
+        "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/veraetzungen/"
+      ],
+      "used_at_lines": [
+        305
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
       "id": "05-self-ambulance--drk-electrical",
       "chapter": "05-self-ambulance.md",
       "footnote_key": "drk-electrical",
@@ -716,6 +733,22 @@
       ]
     },
     {
+      "id": "05-self-ambulance--drk-heart",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "drk-heart",
+      "kind": "explanatory",
+      "text": "German Red Cross, “Herzinfarkt”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/herzinfarkt/",
+      "urls": [
+        "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/herzinfarkt/"
+      ],
+      "used_at_lines": [
+        335
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
       "id": "05-self-ambulance--drk-recovery",
       "chapter": "05-self-ambulance.md",
       "footnote_key": "drk-recovery",
@@ -726,6 +759,38 @@
       ],
       "used_at_lines": [
         162
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
+      "id": "05-self-ambulance--drk-spine",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "drk-spine",
+      "kind": "explanatory",
+      "text": "German Red Cross, “Wirbelsäulenverletzung”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/",
+      "urls": [
+        "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/"
+      ],
+      "used_at_lines": [
+        294
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
+      "id": "05-self-ambulance--drk-stroke",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "drk-stroke",
+      "kind": "explanatory",
+      "text": "German Red Cross, “Schlaganfall”: https://www.drk.de/hilfe-in-deutschland/erste-hilfe/schlaganfall/",
+      "urls": [
+        "https://www.drk.de/hilfe-in-deutschland/erste-hilfe/schlaganfall/"
+      ],
+      "used_at_lines": [
+        327
       ],
       "subguides": [
         "C"
@@ -760,6 +825,38 @@
       "used_at_lines": [
         124,
         187
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
+      "id": "05-self-ambulance--erc2025-first-aid",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "erc2025-first-aid",
+      "kind": "research",
+      "text": "Djärv T et al., “European Resuscitation Council Guidelines 2025 First Aid,” *Resuscitation* 215 Suppl 1 (2025): 110752. https://doi.org/10.1016/j.resuscitation.2025.110752",
+      "urls": [
+        "https://doi.org/10.1016/j.resuscitation.2025.110752"
+      ],
+      "used_at_lines": [
+        349
+      ],
+      "subguides": [
+        "C"
+      ]
+    },
+    {
+      "id": "05-self-ambulance--gesund-poisoning",
+      "chapter": "05-self-ambulance.md",
+      "footnote_key": "gesund-poisoning",
+      "kind": "operational",
+      "text": "gesund.bund.de, “Erste Hilfe bei Vergiftungen”: https://gesund.bund.de/erste-hilfe-bei-vergiftungen",
+      "urls": [
+        "https://gesund.bund.de/erste-hilfe-bei-vergiftungen"
+      ],
+      "used_at_lines": [
+        361
       ],
       "subguides": [
         "C"
@@ -847,6 +944,22 @@
       ]
     },
     {
+      "id": "06b-natural-disasters--bbk-earthquake",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "bbk-earthquake",
+      "kind": "operational",
+      "text": "BBK, “Erdbeben”: https://www.bbk.bund.de/DE/Themen/Risikomanagement/Baulicher-Bevoelkerungsschutz/Schutz-vor-geologischen-Gefahren/Erdbeben/erdbeben_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Themen/Risikomanagement/Baulicher-Bevoelkerungsschutz/Schutz-vor-geologischen-Gefahren/Erdbeben/erdbeben_node.html"
+      ],
+      "used_at_lines": [
+        37
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
       "id": "06b-natural-disasters--bbk-fire",
       "chapter": "06b-natural-disasters.md",
       "footnote_key": "bbk-fire",
@@ -856,7 +969,39 @@
         "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Brandschutz/_documents/feuer-verhalten_dossier2.html"
       ],
       "used_at_lines": [
-        90
+        97
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--bbk-outage",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "bbk-outage",
+      "kind": "operational",
+      "text": "BBK, “Vorsorge und Handeln bei Stromausfall,” including combustion and carbon-monoxide precautions during an outage: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html"
+      ],
+      "used_at_lines": [
+        145
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--bbk-shelter",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "bbk-shelter",
+      "kind": "operational",
+      "text": "BBK, “Schutz suchen”: higher floors protect during flooding, and a flooding basement must not be entered because of entrapment and electrocution risk. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Schutz-suchen/schutz-suchen_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Schutz-suchen/schutz-suchen_node.html"
+      ],
+      "used_at_lines": [
+        87
       ],
       "subguides": [
         "H"
@@ -879,16 +1024,32 @@
       ]
     },
     {
-      "id": "06b-natural-disasters--cdc-water",
+      "id": "06b-natural-disasters--bbk-water",
       "chapter": "06b-natural-disasters.md",
-      "footnote_key": "cdc-water",
-      "kind": "explanatory",
-      "text": "Centers for Disease Control and Prevention, “Making Water Safe in an Emergency.” https://www.cdc.gov/healthywater/emergency/making-water-safe.html",
+      "footnote_key": "bbk-water",
+      "kind": "operational",
+      "text": "BBK, “Essen und Trinken bevorraten”: about two litres of water per person per day for drinking and cooking, planning for several days. https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Bevorraten/bevorraten_node.html",
       "urls": [
-        "https://www.cdc.gov/healthywater/emergency/making-water-safe.html"
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/So-koennen-Sie-sich-vorbereiten/Bevorraten/bevorraten_node.html"
       ],
       "used_at_lines": [
-        143
+        150
+      ],
+      "subguides": [
+        "H"
+      ]
+    },
+    {
+      "id": "06b-natural-disasters--bbk-wind",
+      "chapter": "06b-natural-disasters.md",
+      "footnote_key": "bbk-wind",
+      "kind": "operational",
+      "text": "BBK, severe-weather guidance for storm, thunderstorm and hail: https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Mit-Naturgefahren-umgehen/Unwetter/unwetter_node.html",
+      "urls": [
+        "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Mit-Naturgefahren-umgehen/Unwetter/unwetter_node.html"
+      ],
+      "used_at_lines": [
+        67
       ],
       "subguides": [
         "H"
@@ -904,36 +1065,20 @@
         "https://closeyourdoor.org/"
       ],
       "used_at_lines": [
-        105
+        112
       ],
       "subguides": [
         "H"
       ]
     },
     {
-      "id": "06b-natural-disasters--nws-flood",
+      "id": "06b-natural-disasters--gfz-earthquake",
       "chapter": "06b-natural-disasters.md",
-      "footnote_key": "nws-flood",
+      "footnote_key": "gfz-earthquake",
       "kind": "explanatory",
-      "text": "National Weather Service, flood safety and “Turn Around, Don’t Drown.” https://www.weather.gov/safety/flood",
+      "text": "GFZ Helmholtz Centre for Geosciences with the BBK, “Verhalten bei Erdbeben” (August 2025): stay in the building during strong shaking, take sturdy cover or protect head and face beside a load-bearing interior wall, avoid stairwells and lifts, follow local instructions. https://www.gfz.de/fileadmin/gfz/medien_kommunikation/Infothek/Merkbl%C3%A4tter/Verhalten-Erdbeben-August2025.pdf",
       "urls": [
-        "https://www.weather.gov/safety/flood"
-      ],
-      "used_at_lines": [
-        80
-      ],
-      "subguides": [
-        "H"
-      ]
-    },
-    {
-      "id": "06b-natural-disasters--ready-earthquake",
-      "chapter": "06b-natural-disasters.md",
-      "footnote_key": "ready-earthquake",
-      "kind": "explanatory",
-      "text": "Ready.gov, “Earthquakes”: Drop, Cover, Hold On and post-event guidance. https://www.ready.gov/earthquakes",
-      "urls": [
-        "https://www.ready.gov/earthquakes"
+        "https://www.gfz.de/fileadmin/gfz/medien_kommunikation/Infothek/Merkbl%C3%A4tter/Verhalten-Erdbeben-August2025.pdf"
       ],
       "used_at_lines": [
         37
@@ -952,7 +1097,7 @@
         "https://www.ready.gov/tornadoes"
       ],
       "used_at_lines": [
-        62
+        63
       ],
       "subguides": [
         "H"
@@ -1808,6 +1953,13 @@
   ],
   "duplicate_urls": [
     {
+      "url": "https://gesund.bund.de/erste-hilfe-bei-vergiftungen",
+      "source_ids": [
+        "03h-environmental-hazards--poison",
+        "05-self-ambulance--gesund-poisoning"
+      ]
+    },
+    {
       "url": "https://gesund.bund.de/notfallnummern",
       "source_ids": [
         "05-self-ambulance--emergency-numbers",
@@ -1819,6 +1971,13 @@
       "source_ids": [
         "03h-environmental-hazards--bbk-fire",
         "06b-natural-disasters--bbk-fire"
+      ]
+    },
+    {
+      "url": "https://www.bbk.bund.de/DE/Warnung-Vorsorge/Vorsorge/Stromausfall/stromausfall_node.html",
+      "source_ids": [
+        "03h-environmental-hazards--bbk-power",
+        "06b-natural-disasters--bbk-outage"
       ]
     },
     {

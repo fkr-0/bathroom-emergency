@@ -254,9 +254,9 @@
     },
     {
       "id": "H",
-      "slug": "orange-book-natural-disasters",
-      "title": "The Orange Book — Natural Disasters",
-      "promise": "Respond to environmental hazards and official warnings without room mythology.",
+      "slug": "orange-book-hazards-disasters",
+      "title": "The Orange Book — Hazards & Disasters",
+      "promise": "When nature or infrastructure turns hostile: leave or isolate the hazard first, classify symptoms second.",
       "reviewed_on": "2026-08-06",
       "chapters": [
         "03-situations-b-g.md",
@@ -294,9 +294,10 @@
       "aliases": [
         "Air, Smell, Environment",
         "Environmental Hazards",
+        "Natural Disasters",
         "Orange Book"
       ],
-      "scope": "Identify room, building, air, wiring, and substance hazards before ordinary troubleshooting. Includes natural disasters and official-warning response.",
+      "scope": "Room, building, air, wiring, and substance hazards, area-scale natural events, and official-warning response.",
       "outside_scope": "Does not authorize re-entry, improvised chemical treatment, or work on live systems. It cannot predict a live hazard."
     },
     {

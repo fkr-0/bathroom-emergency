@@ -437,17 +437,17 @@
       "owner": "H"
     },
     {
-      "key": "03h-environmental-hazards:the-five-second-hazard-gate",
+      "key": "03h-environmental-hazards:the-five-second-local-hazard-gate",
       "chapter": "03h-environmental-hazards.md",
       "line": 26,
       "level": 2,
-      "heading": "The five-second hazard gate",
+      "heading": "The five-second local-hazard gate",
       "owner": "H"
     },
     {
       "key": "03h-environmental-hazards:fire-or-smoke",
       "chapter": "03h-environmental-hazards.md",
-      "line": 42,
+      "line": 46,
       "level": 2,
       "heading": "Fire or smoke",
       "owner": "H"
@@ -455,7 +455,7 @@
     {
       "key": "03h-environmental-hazards:carbon-monoxide",
       "chapter": "03h-environmental-hazards.md",
-      "line": 65,
+      "line": 69,
       "level": 2,
       "heading": "Carbon monoxide",
       "owner": "H"
@@ -463,7 +463,7 @@
     {
       "key": "03h-environmental-hazards:gas-smell-or-hissing",
       "chapter": "03h-environmental-hazards.md",
-      "line": 87,
+      "line": 91,
       "level": 2,
       "heading": "Gas smell or hissing",
       "owner": "H"
@@ -471,7 +471,7 @@
     {
       "key": "03h-environmental-hazards:chemical-fumes-splash-or-swallowed-product",
       "chapter": "03h-environmental-hazards.md",
-      "line": 108,
+      "line": 115,
       "level": 2,
       "heading": "Chemical fumes, splash, or swallowed product",
       "owner": "H"
@@ -479,23 +479,23 @@
     {
       "key": "03h-environmental-hazards:electrical-danger",
       "chapter": "03h-environmental-hazards.md",
-      "line": 139,
+      "line": 146,
       "level": 2,
       "heading": "Electrical danger",
       "owner": "H"
     },
     {
-      "key": "03h-environmental-hazards:outdoor-warning-versus-indoor-source",
+      "key": "03h-environmental-hazards:where-is-the-source",
       "chapter": "03h-environmental-hazards.md",
-      "line": 158,
+      "line": 165,
       "level": 2,
-      "heading": "Outdoor warning versus indoor source",
+      "heading": "Where is the source?",
       "owner": "H"
     },
     {
       "key": "03h-environmental-hazards:dependency-modifiers-during-a-hazard",
       "chapter": "03h-environmental-hazards.md",
-      "line": 180,
+      "line": 192,
       "level": 2,
       "heading": "Dependency modifiers during a hazard",
       "owner": "H"
@@ -503,7 +503,7 @@
     {
       "key": "03h-environmental-hazards:the-hazard-handoff",
       "chapter": "03h-environmental-hazards.md",
-      "line": 199,
+      "line": 211,
       "level": 2,
       "heading": "The hazard handoff",
       "owner": "H"
@@ -511,7 +511,7 @@
     {
       "key": "03h-environmental-hazards:after-the-immediate-hazard",
       "chapter": "03h-environmental-hazards.md",
-      "line": 218,
+      "line": 230,
       "level": 2,
       "heading": "After the immediate hazard",
       "owner": "H"
@@ -1013,11 +1013,11 @@
       "owner": "Z"
     },
     {
-      "key": "06b-natural-disasters:the-orange-book-natural-disasters",
+      "key": "06b-natural-disasters:the-orange-book-hazards-disasters",
       "chapter": "06b-natural-disasters.md",
       "line": 9,
       "level": 1,
-      "heading": "The Orange Book — Natural Disasters",
+      "heading": "The Orange Book — Hazards & Disasters",
       "owner": "H"
     },
     {
@@ -1055,7 +1055,7 @@
     {
       "key": "06b-natural-disasters:flood",
       "chapter": "06b-natural-disasters.md",
-      "line": 72,
+      "line": 77,
       "level": 2,
       "heading": "Flood",
       "owner": "H"
@@ -1063,7 +1063,7 @@
     {
       "key": "06b-natural-disasters:fire-and-smoke",
       "chapter": "06b-natural-disasters.md",
-      "line": 86,
+      "line": 93,
       "level": 2,
       "heading": "Fire and smoke",
       "owner": "H"
@@ -1071,7 +1071,7 @@
     {
       "key": "06b-natural-disasters:gas-carbon-monoxide-chemicals-and-electricity",
       "chapter": "06b-natural-disasters.md",
-      "line": 107,
+      "line": 114,
       "level": 2,
       "heading": "Gas, carbon monoxide, chemicals, and electricity",
       "owner": "H"
@@ -1079,7 +1079,7 @@
     {
       "key": "06b-natural-disasters:power-outage",
       "chapter": "06b-natural-disasters.md",
-      "line": 124,
+      "line": 131,
       "level": 2,
       "heading": "Power outage",
       "owner": "H"
@@ -1087,7 +1087,7 @@
     {
       "key": "06b-natural-disasters:emergency-water",
       "chapter": "06b-natural-disasters.md",
-      "line": 140,
+      "line": 147,
       "level": 2,
       "heading": "Emergency water",
       "owner": "H"
@@ -1095,7 +1095,7 @@
     {
       "key": "06b-natural-disasters:communication-and-rescue",
       "chapter": "06b-natural-disasters.md",
-      "line": 158,
+      "line": 165,
       "level": 2,
       "heading": "Communication and rescue",
       "owner": "H"
@@ -1103,7 +1103,7 @@
     {
       "key": "06b-natural-disasters:after-the-event",
       "chapter": "06b-natural-disasters.md",
-      "line": 169,
+      "line": 176,
       "level": 2,
       "heading": "After the event",
       "owner": "H"
@@ -1111,7 +1111,7 @@
     {
       "key": "06b-natural-disasters:quick-reference",
       "chapter": "06b-natural-disasters.md",
-      "line": 183,
+      "line": 190,
       "level": 2,
       "heading": "Quick reference",
       "owner": "H"

@@ -23,7 +23,11 @@ room. The checklist has no feelings and will cope.
 
 ![Environmental hazard override matrix](build/diagrams/hazard_override_matrix.png)
 
-## The five-second hazard gate
+## The five-second local-hazard gate
+
+Use this branch for a source **in the room, building, appliance, or immediately
+around you**. For an area-scale event outside, use *Where is the source?* above
+and follow the current official instruction instead.
 
 Use this branch before ordinary smell troubleshooting or calming:
 
@@ -95,6 +99,9 @@ but a lay reader cannot measure the margin. The safe route prevents sparks.[^dvg
 - Do not operate lights, switches, plugs, bells, fans, extractors, or phones
   inside.
 - Warn other occupants by **knocking**, not ringing.
+- If a gas shut-off valve is **already known to you, clearly reachable, and can
+  be closed without delay or moving into stronger gas**, close it. Do not go
+  looking for one.[^dvgw]
 - Leave the building.
 - Call the local gas-network emergency service from outside. Call **112** for a
   strong release, damaged line, symptoms, fire/explosion risk, or when the local
@@ -155,10 +162,15 @@ A person who appears well after an electrical shock may still need medical
 assessment. Do not use a home pulse, smartwatch, or heroic confidence as a
 clearance certificate.
 
-## Outdoor warning versus indoor source
+## Where is the source?
 
-The same word—gas, smoke, chemical—can require opposite movement depending on
-where the source is:
+::: {.principle}
+local source: leave it. Area warning: follow the live instruction. Unclear: increase distance and verify from safety.
+:::
+
+Decide this **before** applying any general instruction such as "get fresh air".
+The same word — gas, smoke, chemical — can require opposite movement depending
+on where the source is:
 
 - **source inside your room/building:** leave the source area;
 - **hazard cloud or smoke outside:** an official warning may instruct you to go
