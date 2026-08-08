@@ -37,20 +37,33 @@ ax.axis("off")
 ax.set_title("Adult chest-compression orientation", fontsize=20, fontweight="bold", color=INK, pad=18)
 ax.text(5, 13.35, "Person flat on a firm surface · kneel beside the chest", ha="center", color=MUTED, fontsize=10)
 ax.add_patch(Circle((5, 11.9), .72, facecolor="white", edgecolor=INK, linewidth=2))
+# Torso, drawn as chest and abdomen rather than one box. With a single
+# shoulders-to-hips rectangle, "centre of the chest" reads as centre of the
+# rectangle, which is the upper abdomen -- the wrong place to compress.
 ax.add_patch(FancyBboxPatch((3.25, 7.1), 3.5, 4.25, boxstyle="round,pad=.18,rounding_size=.8", facecolor="white", edgecolor=INK, linewidth=2))
+ax.add_patch(Rectangle((3.32, 9.35), 3.36, 2.0, facecolor="#eef4f2", edgecolor="none", zorder=1))
+ax.plot([3.32, 6.68], [9.35, 9.35], color=LINE, linewidth=1.6, linestyle=(0, (5, 3)), zorder=2)
+ax.text(7.15, 9.35, "ribs end here", va="center", color=MUTED, fontsize=8.5)
+ax.text(5, 11.02, "CHEST", ha="center", color=MUTED, fontsize=9, fontweight="bold", zorder=3)
 ax.add_patch(Polygon([[3.55,7.2],[2.95,4.7],[3.75,4.55],[4.45,7.2]], closed=True, facecolor="white", edgecolor=INK, linewidth=2))
 ax.add_patch(Polygon([[6.45,7.2],[5.55,7.2],[6.25,4.55],[7.05,4.7]], closed=True, facecolor="white", edgecolor=INK, linewidth=2))
 ax.add_patch(Rectangle((3.95, 1.2), .9, 3.5, facecolor="white", edgecolor=INK, linewidth=2))
 ax.add_patch(Rectangle((5.15, 1.2), .9, 3.5, facecolor="white", edgecolor=INK, linewidth=2))
 ax.add_patch(Rectangle((3.55, .75), 1.3, .55, facecolor="white", edgecolor=INK, linewidth=2))
 ax.add_patch(Rectangle((5.15, .75), 1.3, .55, facecolor="white", edgecolor=INK, linewidth=2))
-ax.add_patch(Circle((5, 9.25), .43, facecolor="#fde7e5", edgecolor=RED, linewidth=3))
-ax.add_patch(FancyArrowPatch((8.75, 10.2), (5.45, 9.45), arrowstyle="-|>", mutation_scale=16, color=RED, linewidth=2))
-ax.text(8.8, 10.55, "CENTRE OF CHEST", ha="right", color=RED, fontsize=12, fontweight="bold")
-ax.text(8.8, 10.05, "lower half of breastbone", ha="right", color=INK, fontsize=9.5)
-ax.text(1.05, 12.0, "HEAD", color=BLUE, fontsize=11, fontweight="bold")
-ax.add_patch(FancyArrowPatch((2.1, 11.95), (4.2, 11.95), arrowstyle="-|>", mutation_scale=12, color=BLUE))
-ax.text(1.05, 6.3, "HIPS", color=BLUE, fontsize=11, fontweight="bold")
+# Target: lower half of the breastbone, which is the upper-middle of the torso.
+ax.add_patch(Circle((5, 9.95), .42, facecolor="#fde7e5", edgecolor=RED, linewidth=3, zorder=4))
+ax.plot([4.72, 5.28], [9.95, 9.95], color=RED, linewidth=2.4, zorder=5)
+ax.plot([5, 5], [9.67, 10.23], color=RED, linewidth=2.4, zorder=5)
+# Label sits clear of the figure; the leader ends at the circle and crosses nothing.
+ax.text(9.7, 10.95, "HANDS HERE", ha="right", color=RED, fontsize=13, fontweight="bold")
+ax.text(9.7, 10.55, "lower half of the breastbone", ha="right", color=INK, fontsize=10)
+ax.add_patch(FancyArrowPatch((7.5, 10.45), (5.5, 10.05), arrowstyle="-|>", mutation_scale=16, color=RED, linewidth=2))
+ax.text(9.7, 8.9, "not on the soft part", ha="right", color=MUTED, fontsize=9)
+ax.text(9.7, 8.55, "below the ribs", ha="right", color=MUTED, fontsize=9)
+ax.text(1.05, 11.9, "HEAD", color=BLUE, fontsize=11, fontweight="bold")
+ax.add_patch(FancyArrowPatch((2.1, 11.9), (4.2, 11.9), arrowstyle="-|>", mutation_scale=12, color=BLUE))
+ax.text(1.05, 6.25, "HIPS", color=BLUE, fontsize=11, fontweight="bold")
 ax.add_patch(FancyArrowPatch((2.1, 6.25), (3.6, 6.25), arrowstyle="-|>", mutation_scale=12, color=BLUE))
 ax.text(1.05, 1.0, "FEET", color=BLUE, fontsize=11, fontweight="bold")
 ax.add_patch(FancyArrowPatch((2.1, 1.0), (3.5, 1.0), arrowstyle="-|>", mutation_scale=12, color=BLUE))
@@ -59,7 +72,11 @@ finish(fig, "cpr_body_orientation")
 
 
 # Recovery position: five spatial steps, matching the adjacent text route.
-fig, axes = plt.subplots(1, 5, figsize=(15.5, 4.2))
+# Laid out 2x3 rather than 1x5. One row of five made each panel about 25mm wide
+# on the A4/2 edition, which is the primary print target -- readable only if you
+# stopped and studied it, which is the opposite of what this figure is for.
+fig, axes = plt.subplots(3, 2, figsize=(9.0, 10.6))
+axes = list(axes.flat)  # a bare .flat iterator loses the spare cell to zip
 fig.suptitle("Recovery position — unresponsive and breathing normally", fontsize=19, fontweight="bold", color=INK)
 steps = [
     ("1", "Near arm up", "Kneel beside them.\nStraighten legs."),
@@ -68,7 +85,7 @@ steps = [
     ("4", "Roll toward you", "Use the bent knee\nas a lever."),
     ("5", "Airway and drain", "Top leg at a right angle.\nTilt head back; mouth down."),
 ]
-for ax, (number, title, note) in zip(axes, steps):
+for ax, (number, title, note) in zip(axes[:5], steps):
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1)
     ax.axis("off")
@@ -87,8 +104,16 @@ for ax, (number, title, note) in zip(axes, steps):
         ax.add_patch(FancyArrowPatch((.75,.66),(.60,.52),arrowstyle="-|>",mutation_scale=12,color=GREEN))
     ax.text(.5,.18,title,ha="center",fontweight="bold",color=INK,fontsize=10)
     ax.text(.5,.075,note,ha="center",va="top",color=MUTED,fontsize=7.8)
-fig.text(.5,.01,"Call 112 · keep checking normal breathing · abnormal breathing means CPR",ha="center",color=RED,fontweight="bold",fontsize=9)
-fig.tight_layout(rect=(0,.05,1,.88))
+spare = axes[5]                   # the sixth cell carries the standing instruction
+spare.set_xlim(0, 1); spare.set_ylim(0, 1); spare.axis("off")
+spare.add_patch(FancyBboxPatch((.03,.05),.94,.88,boxstyle="round,pad=.02",
+                               facecolor="#fdf1ef",edgecolor=RED,linewidth=1.8))
+spare.text(.5,.62,"Keep checking\nnormal breathing.",ha="center",va="center",
+           color=INK,fontweight="bold",fontsize=12)
+spare.text(.5,.34,"Abnormal breathing\nmeans CPR.",ha="center",va="center",
+           color=RED,fontweight="bold",fontsize=12)
+fig.text(.5,.015,"Call 112 · do not give food or drink",ha="center",color=RED,fontweight="bold",fontsize=10)
+fig.tight_layout(rect=(0,.03,1,.94))
 finish(fig, "recovery_position_steps")
 
 
