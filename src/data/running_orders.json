@@ -226,6 +226,31 @@
           "Quick reference"
         ]
       }
+    ],
+    "P": [
+      {
+        "chapter": "07-professional-support.md",
+        "sections": [
+          "",
+          "Germany quick reference",
+          "Support-selection matrix",
+          "The call script — location before autobiography",
+          "Make the contact operational — ask, confirm, record"
+        ]
+      },
+      {
+        "chapter": "07-professional-support.md",
+        "sections": [
+          "Psychological support",
+          "Violence and coercion",
+          "Legal support",
+          "Medical support",
+          "Children, dependants, and caregiving",
+          "Housing and “no place tonight”",
+          "Pair support with a maintained Grey Book resource",
+          "Quick reference card"
+        ]
+      }
     ]
   }
 }

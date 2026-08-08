@@ -97,6 +97,12 @@ multilingual, sign-language, written-language, and easy-language routes. These
 channels require the relevant device, connection, service availability, and a
 safe context; they do not replace **112 / 110** during immediate danger.
 
+For emergencies in Germany, **nora** is the official emergency-call app of the
+federal states. It reaches police, fire and rescue control centres without a
+spoken call, transmits your location, and supports text chat once the call is
+placed. It is worth installing, registering and testing **before** you need it —
+there is a demo mode. Do not make installing an app a step inside an emergency.
+
 Useful instruction:
 
 > “I communicate best by **[writing / text / sign / pointing / yes-no]**. Please
@@ -122,10 +128,22 @@ packet that still works:
    follow up” from quietly becoming nobody, never.
 
 Use **T — Templates** to carry the facts, so you are not rebuilding them from
-memory on every call. The generated map below joins services to the relevant forms,
-figures, and route identities.
+memory on every call.
 
-{{support-form-map}}
+### The Indigo / Grey contract
+
+**Indigo owns the selection logic and the limits. Grey owns the current contact
+data.** Names, numbers, opening hours, access channels, verification dates and
+local addresses live in the Grey Book, beside the emergency call card and the
+location-and-access card.
+
+That split is what stops a long explanatory book from quietly becoming a second,
+staler phone directory.
+
+<!-- The generated service/resource/figure graph is deliberately not printed
+here. It is genuinely useful as a build and reference artifact, and it renders
+in the Copper Book and the HTML edition, but a reader in a bathroom needs a
+door, not a normalized table of internal identifiers. -->
 
 ## Psychological support
 
@@ -311,6 +329,10 @@ needed.
 - **Beratungshilfe** for eligible people needing out-of-court legal help;
 - **Prozesskostenhilfe / Verfahrenskostenhilfe** for eligible court proceedings.
 
+**Hamburg and Bremen are exceptions:** they run public legal-advice offices
+instead of ordinary Beratungshilfe. Prozesskostenhilfe remains separate and
+applies to court proceedings either way.
+
 Official Justiz-Services explain that Beratungshilfe can cover legal advice and
 out-of-court representation for people who meet the financial and necessity
 criteria. Applications can be prepared online, submitted to the Amtsgericht,
@@ -453,8 +475,8 @@ Do not delay leaving immediate danger to obtain the perfect folder.
 
 ## Pair support with a maintained Grey Book resource
 
-Complete **[BEG:T:G:005] Local professional contacts** before deployment and
-keep **[BEG:T:F:003] Emergency call card**, **[BEG:T:G:006] Location and access
+Complete the **Local professional contacts** page before deployment, and
+keep the **Emergency call card**, the **Location and access
 card**, and any route-specific form beside it. The contact page owns names,
 numbers, hours, access channels, verification dates, and backups; **P —
 Professional Support** owns the selection logic and limits. Keeping those jobs
