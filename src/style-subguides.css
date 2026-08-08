@@ -726,6 +726,14 @@
     margin: 0;
     padding: 15mm;
     border-width: 4mm;
+    /* break-before matters as much as break-after once books are bound into
+       the master. A standalone cover is the first thing in the document, so it
+       starts at a page top by luck. In the master it follows whatever ended
+       mid-page, and a 257mm box starting halfway down simply fragments: the
+       pattern band, the "Book N of 11" mark, and the glyph land at the foot of
+       one page and the title on the next, which reads as a cover with its
+       identity missing. */
+    break-before: page;
     break-after: page;
   }
 
