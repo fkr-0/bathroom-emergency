@@ -291,7 +291,7 @@
         "https://doi.org/10.1017/S0140525X01003922"
       ],
       "used_at_lines": [
-        273
+        279
       ],
       "subguides": [
         "B"
@@ -339,7 +339,7 @@
         "https://doi.org/10.1093/sleep/26.2.117"
       ],
       "used_at_lines": [
-        285
+        291
       ],
       "subguides": [
         "B"
@@ -350,12 +350,13 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "authority-115",
       "kind": "operational",
-      "text": "Behördennummer 115, nationwide administration information, Monday–Friday 08:00–18:00: https://www.115.de/",
+      "text": "Behördennummer 115, nationwide administration information, staffed on published weekday hours: https://www.115.de/",
       "urls": [
         "https://www.115.de/"
       ],
       "used_at_lines": [
-        115
+        166,
+        347
       ],
       "subguides": [
         "D"
@@ -366,12 +367,12 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "authority-sign",
       "kind": "operational",
-      "text": "115 sign-language video service: https://www.115.de/gebaerdensprache",
+      "text": "115 sign-language video service, published on its own schedule and requiring internet and a camera-capable device: https://www.115.de/gebaerdensprache",
       "urls": [
         "https://www.115.de/gebaerdensprache"
       ],
       "used_at_lines": [
-        253
+        347
       ],
       "subguides": [
         "D"
@@ -382,12 +383,31 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "children-help",
       "kind": "operational",
-      "text": "Nummer gegen Kummer, child and youth telephone 116 111 and online counselling: https://www.nummergegenkummer.de/",
+      "text": "Nummer gegen Kummer, child and youth telephone 116 111 and online counselling. The telephone service runs on published afternoon and evening hours, and its own guidance directs acute danger to 110 or 112 rather than to the counselling line. https://www.nummergegenkummer.de/kinder-und-jugendberatung/faq-kinder-und-jugendtelefon/",
       "urls": [
-        "https://www.nummergegenkummer.de/"
+        "https://www.nummergegenkummer.de/kinder-und-jugendberatung/faq-kinder-und-jugendtelefon/"
       ],
       "used_at_lines": [
-        195
+        188,
+        275,
+        309
+      ],
+      "subguides": [
+        "D"
+      ]
+    },
+    {
+      "id": "03g-safe-place-routing--medical-116117",
+      "chapter": "03g-safe-place-routing.md",
+      "footnote_key": "medical-116117",
+      "kind": "operational",
+      "text": "116117, the patient service and ärztlicher Bereitschaftsdienst, reachable around the clock for urgent medical problems that are not life-threatening; emergencies belong to 112. https://www.116117.de/de/aerztlicher-bereitschaftsdienst.php",
+      "urls": [
+        "https://www.116117.de/de/aerztlicher-bereitschaftsdienst.php"
+      ],
+      "used_at_lines": [
+        226,
+        277
       ],
       "subguides": [
         "D"
@@ -398,12 +418,44 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "men-help",
       "kind": "operational",
-      "text": "Hilfetelefon Gewalt an Männern, current telephone and online counselling information: https://www.maennerhilfetelefon.de/",
+      "text": "Hilfetelefon Gewalt an Männern, current telephone and online counselling information. The telephone service runs during published weekday hours rather than around the clock. https://www.maennerhilfetelefon.de/",
       "urls": [
         "https://www.maennerhilfetelefon.de/"
       ],
       "used_at_lines": [
-        75
+        110
+      ],
+      "subguides": [
+        "D"
+      ]
+    },
+    {
+      "id": "03g-safe-place-routing--nora",
+      "chapter": "03g-safe-place-routing.md",
+      "footnote_key": "nora",
+      "kind": "operational",
+      "text": "nora, the official emergency-call app of the German federal states. Reaches police, fire, and rescue control centres, transmits location, supports text-based emergency calls, and provides a silent emergency-call option for qualifying threat situations plus a demo mode for practice. https://www.nora-notruf.de/",
+      "urls": [
+        "https://www.nora-notruf.de/"
+      ],
+      "used_at_lines": [
+        134
+      ],
+      "subguides": [
+        "D"
+      ]
+    },
+    {
+      "id": "03g-safe-place-routing--police-acute",
+      "chapter": "03g-safe-place-routing.md",
+      "footnote_key": "police-acute",
+      "kind": "operational",
+      "text": "Polizeiliche Kriminalprävention der Länder und des Bundes, “Häusliche Gewalt”: in an acute threat, call 110. https://www.polizei-beratung.de/infos-fuer-betroffene/haeusliche-gewalt/",
+      "urls": [
+        "https://www.polizei-beratung.de/infos-fuer-betroffene/haeusliche-gewalt/"
+      ],
+      "used_at_lines": [
+        37
       ],
       "subguides": [
         "D"
@@ -414,12 +466,12 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "shelter-search",
       "kind": "operational",
-      "text": "Zentrale Informationsstelle Autonomer Frauenhäuser, nationwide refuge search, including availability and accessibility filters and its completeness limits: https://www.frauenhaus-suche.de/",
+      "text": "Zentrale Informationsstelle Autonomer Frauenhäuser, nationwide refuge search. Entries can include current admission information, accessibility, care and support needs, children, and animals; individual facilities differ, and the directory documents its own completeness limits. https://www.frauenhaus-suche.de/",
       "urls": [
         "https://www.frauenhaus-suche.de/"
       ],
       "used_at_lines": [
-        77
+        112
       ],
       "subguides": [
         "D"
@@ -430,12 +482,12 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "telefonseelsorge",
       "kind": "operational",
-      "text": "TelefonSeelsorge Germany, 116 123 and other published numbers, around the clock: https://www.telefonseelsorge.de/telefon/",
+      "text": "TelefonSeelsorge Germany, 116 123 and its other published numbers, available day and night: https://www.telefonseelsorge.de/telefon/",
       "urls": [
         "https://www.telefonseelsorge.de/telefon/"
       ],
       "used_at_lines": [
-        193
+        273
       ],
       "subguides": [
         "D"
@@ -446,12 +498,12 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "women-help",
       "kind": "operational",
-      "text": "Hilfetelefon “Gewalt gegen Frauen,” 116 016, current service overview: https://www.hilfetelefon.de/das-hilfetelefon/angebot-im-ueberblick/",
+      "text": "Hilfetelefon “Gewalt gegen Frauen,” 116 016, current service overview: around-the-clock telephone counselling, anonymous and confidential, multilingual, free, with accessible and online routes. https://www.hilfetelefon.de/das-hilfetelefon/angebot-im-ueberblick/",
       "urls": [
         "https://www.hilfetelefon.de/das-hilfetelefon/angebot-im-ueberblick/"
       ],
       "used_at_lines": [
-        73
+        108
       ],
       "subguides": [
         "D"
@@ -462,12 +514,12 @@
       "chapter": "03g-safe-place-routing.md",
       "footnote_key": "women-sign",
       "kind": "operational",
-      "text": "Hilfetelefon “Gewalt gegen Frauen,” sign-language and written-language access: https://www.hilfetelefon.de/das-hilfetelefon/beratung/beratung-in-gebaerdensprache/",
+      "text": "Hilfetelefon “Gewalt gegen Frauen,” sign-language and written-language access routes: https://www.hilfetelefon.de/das-hilfetelefon/beratung/beratung-in-gebaerdensprache/",
       "urls": [
         "https://www.hilfetelefon.de/das-hilfetelefon/beratung/beratung-in-gebaerdensprache/"
       ],
       "used_at_lines": [
-        255
+        349
       ],
       "subguides": [
         "D"
@@ -2177,6 +2229,13 @@
       "source_ids": [
         "04b-social-field-guide--dv-hotline",
         "07-professional-support--numbers"
+      ]
+    },
+    {
+      "url": "https://www.nora-notruf.de/",
+      "source_ids": [
+        "03g-safe-place-routing--nora",
+        "04b-social-field-guide--nora"
       ]
     }
   ],

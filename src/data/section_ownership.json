@@ -303,7 +303,7 @@
     {
       "key": "03-situations-b-g:when-it-is-overload-not-anxiety",
       "chapter": "03-situations-b-g.md",
-      "line": 238,
+      "line": 244,
       "level": 2,
       "heading": "When it is overload, not anxiety",
       "owner": "B"
@@ -311,7 +311,7 @@
     {
       "key": "03-situations-b-g:traffic-control",
       "chapter": "03-situations-b-g.md",
-      "line": 293,
+      "line": 299,
       "level": 2,
       "heading": "Traffic control",
       "owner": "B"
@@ -319,7 +319,7 @@
     {
       "key": "03-situations-b-g:smell-is-vivid-evidence-with-poor-calibration",
       "chapter": "03-situations-b-g.md",
-      "line": 329,
+      "line": 335,
       "level": 2,
       "heading": "Smell is vivid evidence with poor calibration",
       "owner": "H"
@@ -327,7 +327,7 @@
     {
       "key": "03-situations-b-g:no-place-to-go",
       "chapter": "03-situations-b-g.md",
-      "line": 375,
+      "line": 381,
       "level": 2,
       "heading": "No place to go",
       "owner": "D"
@@ -335,7 +335,7 @@
     {
       "key": "03-situations-b-g:how-the-situations-relate",
       "chapter": "03-situations-b-g.md",
-      "line": 382,
+      "line": 388,
       "level": 2,
       "heading": "How the situations relate",
       "owner": "D"
@@ -349,33 +349,41 @@
       "owner": "D"
     },
     {
-      "key": "03g-safe-place-routing:a-safe-place-is-confirmed-not-merely-named",
-      "chapter": "03g-safe-place-routing.md",
-      "line": 23,
-      "level": 2,
-      "heading": "A safe place is confirmed, not merely named",
-      "owner": "D"
-    },
-    {
       "key": "03g-safe-place-routing:first-minute-choose-the-actual-failure",
       "chapter": "03g-safe-place-routing.md",
-      "line": 44,
+      "line": 29,
       "level": 2,
       "heading": "First minute — choose the actual failure",
       "owner": "D"
     },
     {
+      "key": "03g-safe-place-routing:a-safe-place-is-confirmed-not-merely-named",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 57,
+      "level": 2,
+      "heading": "A safe place is confirmed, not merely named",
+      "owner": "D"
+    },
+    {
       "key": "03g-safe-place-routing:g1-a-person-or-active-threat-makes-the-place-unsafe",
       "chapter": "03g-safe-place-routing.md",
-      "line": 58,
+      "line": 81,
       "level": 2,
       "heading": "G1 — A person or active threat makes the place unsafe",
       "owner": "D"
     },
     {
+      "key": "03g-safe-place-routing:specialist-backup-digital-safety-and-a-prepared-non-voice-route",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 102,
+      "level": 2,
+      "heading": "Specialist backup, digital safety, and a prepared non-voice route",
+      "owner": "D"
+    },
+    {
       "key": "03g-safe-place-routing:g2-there-is-no-weather-safe-place-to-sleep-tonight",
       "chapter": "03g-safe-place-routing.md",
-      "line": 96,
+      "line": 141,
       "level": 2,
       "heading": "G2 — There is no weather-safe place to sleep tonight",
       "owner": "D"
@@ -383,7 +391,7 @@
     {
       "key": "03g-safe-place-routing:g3-a-place-exists-but-it-cannot-safely-support-the-person",
       "chapter": "03g-safe-place-routing.md",
-      "line": 130,
+      "line": 190,
       "level": 2,
       "heading": "G3 — A place exists, but it cannot safely support the person",
       "owner": "D"
@@ -391,7 +399,7 @@
     {
       "key": "03g-safe-place-routing:g4-the-place-is-physically-safe-but-staying-is-psychologically-or-socially-unworkable",
       "chapter": "03g-safe-place-routing.md",
-      "line": 175,
+      "line": 244,
       "level": 2,
       "heading": "G4 — The place is physically safe, but staying is psychologically or socially unworkable",
       "owner": "D"
@@ -399,7 +407,7 @@
     {
       "key": "03g-safe-place-routing:children-and-young-people-without-a-safe-adult",
       "chapter": "03g-safe-place-routing.md",
-      "line": 205,
+      "line": 288,
       "level": 2,
       "heading": "Children and young people without a safe adult",
       "owner": "D"
@@ -407,7 +415,7 @@
     {
       "key": "03g-safe-place-routing:communication-and-access-card",
       "chapter": "03g-safe-place-routing.md",
-      "line": 219,
+      "line": 311,
       "level": 2,
       "heading": "Communication and access card",
       "owner": "D"
@@ -415,7 +423,7 @@
     {
       "key": "03g-safe-place-routing:the-safe-place-handoff",
       "chapter": "03g-safe-place-routing.md",
-      "line": 257,
+      "line": 354,
       "level": 2,
       "heading": "The safe-place handoff",
       "owner": "D"
@@ -423,9 +431,17 @@
     {
       "key": "03g-safe-place-routing:fill-before-it-is-needed",
       "chapter": "03g-safe-place-routing.md",
-      "line": 271,
+      "line": 368,
       "level": 2,
       "heading": "Fill before it is needed",
+      "owner": "D"
+    },
+    {
+      "key": "03g-safe-place-routing:quick-router-no-safe-place",
+      "chapter": "03g-safe-place-routing.md",
+      "line": 395,
+      "level": 2,
+      "heading": "Quick router — no safe place",
       "owner": "D"
     },
     {

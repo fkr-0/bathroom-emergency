@@ -191,7 +191,10 @@ pretending the original event was imaginary.
 ### Danger is present now
 
 - Move toward an exit, other people, or a lockable safe place—whichever reduces
-  danger rather than trapping you.
+  danger rather than trapping you. A lock is a temporary barrier, not a plan:
+  stay behind it only while that room is the safest option available, and leave
+  anyway for fire, smoke, hazardous air, forced entry, or a responder's
+  instruction.
 - Keep noise and screen light low if discovery creates risk.
 - Call **110** for police. Call **112** for medical rescue or immediate danger
   to life.
@@ -204,8 +207,11 @@ pretending the original event was imaginary.
 - Tell one trusted person.
 - Save messages, images, dates, and witness names if safe.
 - Plan transport and a place to stay.
-- Change passwords and device access from a trusted device if monitoring is
-  possible.
+- If digital monitoring may be involved, do not make conspicuous account or
+  device changes merely because a guide suggests them. A suddenly cleared
+  history, a new password, or a disabled location share can itself be noticed.
+  Use a device the other person cannot reach when possible, and ask a specialist
+  service for a device-safety plan that fits the actual risk.
 - Contact a specialist service. The Violence against Women Helpline is
   **116 016**, anonymous, free, multilingual, and available around the clock.
 

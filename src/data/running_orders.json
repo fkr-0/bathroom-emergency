@@ -149,7 +149,10 @@
       {
         "chapter": "03g-safe-place-routing.md",
         "sections": [
-          ""
+          "",
+          "First minute — choose the actual failure",
+          "A safe place is confirmed, not merely named",
+          "G1 — A person or active threat makes the place unsafe"
         ]
       },
       {
@@ -161,22 +164,15 @@
       {
         "chapter": "03g-safe-place-routing.md",
         "sections": [
-          "A safe place is confirmed, not merely named",
-          "First minute — choose the actual failure",
-          "G1 — A person or active threat makes the place unsafe",
+          "Specialist backup, digital safety, and a prepared non-voice route",
           "G2 — There is no weather-safe place to sleep tonight",
           "G3 — A place exists, but it cannot safely support the person",
           "G4 — The place is physically safe, but staying is psychologically or socially unworkable",
           "Children and young people without a safe adult",
           "Communication and access card",
           "The safe-place handoff",
-          "Fill before it is needed"
-        ]
-      },
-      {
-        "chapter": "03-situations-b-g.md",
-        "sections": [
-          "How the situations relate"
+          "Fill before it is needed",
+          "Quick router — no safe place"
         ]
       }
     ],

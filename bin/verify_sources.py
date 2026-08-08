@@ -16,6 +16,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 import urllib.parse
 from collections import defaultdict
 from pathlib import Path
@@ -62,12 +63,24 @@ def check_doi(url: str) -> tuple[bool, str]:
 
 
 def check_http(url: str) -> tuple[bool, str]:
-    result = subprocess.run(
-        ["curl", "-sSL", "-o", "/dev/null", "-w", "%{http_code}",
-         "--max-time", "25", "-A", AGENT, url],
-        capture_output=True, text=True,
-    )
-    code = result.stdout.strip() or "no response"
+    """Fetch the URL, retrying once when nothing came back at all.
+
+    curl reports a timeout or dropped connection as code 000. Several of the
+    cited authorities rate-limit, so a single 000 says "try again", not "the
+    guidance is gone" -- and a checker that cries wolf on a slow ministry is a
+    checker nobody runs before a release.
+    """
+    for attempt in range(2):
+        result = subprocess.run(
+            ["curl", "-sSL", "-o", "/dev/null", "-w", "%{http_code}",
+             "--max-time", "25", "-A", AGENT, url],
+            capture_output=True, text=True,
+        )
+        code = result.stdout.strip() or "000"
+        if code != "000":
+            break
+        if attempt == 0:
+            time.sleep(3)
     return code.startswith(("2", "3")), f"HTTP {code}"
 
 
