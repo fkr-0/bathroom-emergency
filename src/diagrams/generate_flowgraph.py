@@ -9,6 +9,9 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
 from matplotlib.patches import FancyBboxPatch, Rectangle
 
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parents[2] / "build" / "diagrams"
@@ -67,6 +70,8 @@ def canvas(size, xlim, ylim):
 
 
 def save(fig, name):
+    fit_labels(fig)
+    audit_figure(fig, name)
     path = OUT / name
     fig.savefig(path, bbox_inches="tight", facecolor=PAPER)
     plt.close(fig)

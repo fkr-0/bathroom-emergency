@@ -11,6 +11,9 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
 from matplotlib.patches import FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -46,6 +49,8 @@ def arrow(ax, start, end, color=MUTED, lw=1.5):
 
 
 def save(fig, name):
+    fit_labels(fig)
+    audit_figure(fig, name)
     path = OUT / name
     fig.savefig(path, bbox_inches="tight", facecolor=PAPER)
     plt.close(fig)
@@ -58,9 +63,9 @@ ax.text(5, 13.55, "TWO PASSES, ONE NEXT ACTION", ha="center", color=INK, fontsiz
 ax.text(5, 13.12, "Pass 1 removes danger. Pass 2 identifies the need. Modifiers change logistics, not urgency.", ha="center", color=MUTED, fontsize=8.5)
 ax.text(.5, 12.45, "PASS 1 / OVERRIDES", color=RED, fontsize=10, fontweight="bold")
 groups = [
-    (0.5, 10.65, 2.75, 1.45, "LIFE / MEDICAL", "Possible death, abnormal breathing, severe bleeding, collapse or lasting harm\n→ 112", RED),
+    (0.5, 10.65, 2.75, 1.45, "LIFE / MEDICAL", "Possible death, abnormal breathing,\nsevere bleeding, collapse, lasting harm\n→ 112", RED),
     (3.62, 10.65, 2.75, 1.45, "VIOLENCE / CRIME", "Move to safety; 110.\nMedical or life danger too → 112", PURPLE),
-    (6.75, 10.65, 2.75, 1.45, "ENVIRONMENT", "Fire · smoke · CO · gas · chemicals · electricity\n→ Situation H / 112", AMBER),
+    (6.75, 10.65, 2.75, 1.45, "ENVIRONMENT", "Fire · smoke · CO · gas\nchemicals · electricity\n→ Situation H / 112", AMBER),
 ]
 for args in groups: card(ax, *args)
 for x in (1.875, 4.995, 8.125): arrow(ax, (x, 10.55), (x, 9.78), color=RED)
@@ -76,9 +81,12 @@ ax.text(.5, 3.05, "MODIFIERS / APPLY AFTER THE ROUTE", color=BLUE, fontsize=10, 
 labels = [m["label"] for m in DATA["modifiers"]]
 for idx, label in enumerate(labels):
     col = idx % 3; row = idx // 3
-    x = .5 + col*3.15; y = 2.15 - row*.7
-    ax.add_patch(FancyBboxPatch((x, y), 2.75, .48, boxstyle="round,pad=.03", facecolor=PALE, edgecolor=BLUE, linewidth=1))
-    ax.text(x+1.375, y+.24, label, ha="center", va="center", color=INK, fontsize=7.2, fontweight="bold")
+    x = .5 + col*3.15; y = 2.15 - row*.78
+    ax.add_patch(FancyBboxPatch((x, y), 2.75, .56, boxstyle="round,pad=.03", facecolor=PALE, edgecolor=BLUE, linewidth=1))
+    # Labels come from the registry and are as long as the registry needs them
+    # to be, so wrap at render time rather than shortening the canonical text.
+    ax.text(x+1.375, y+.28, wrap(label, 34), ha="center", va="center", color=INK,
+            fontsize=7.2, fontweight="bold", linespacing=1.2)
 ax.text(5, .1, "Registry: src/data/route_catalog.json · action + backup + escalation + destination", ha="center", color=MUTED, fontsize=7.5)
 save(fig, "two_pass_route_map.png")
 for alias in ("emergency_flowgraph.png", "master_flowchart.png", "decision_flow_graph.png"):
@@ -104,7 +112,7 @@ save(fig, "hazard_override_matrix.png")
 fig, ax = canvas((10.4, 8.8), (0, 12), (0, 10))
 ax.text(6, 9.55, "ESSENTIAL CARE CONTINUITY", ha="center", color=INK, fontsize=21, fontweight="bold")
 ax.text(6, 9.12, "When power, medication, equipment, transport, or a caregiver fails", ha="center", color=MUTED, fontsize=9)
-card(ax, 3.2, 7.5, 5.6, 1.05, "CAN THE TREATMENT OR DEVICE FAIL SAFELY?", "Use the personal emergency plan. If the answer is unknown, treat the uncertainty as time-critical.", RED, 9, 7)
+card(ax, 3.2, 7.5, 5.6, 1.05, "CAN THE TREATMENT OR DEVICE FAIL SAFELY?", "Use the personal emergency plan. If the answer is\nunknown, treat the uncertainty as time-critical.", RED, 9, 7)
 arrow(ax, (6, 7.42), (6, 6.85), RED)
 steps = [
     (0.45, 4.65, "1 / IDENTIFY", "What function is essential?\nWhat stopped?\nHow much runtime or supply remains?", BLUE),

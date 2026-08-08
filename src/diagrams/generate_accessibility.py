@@ -9,6 +9,9 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
 from matplotlib.patches import FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -57,6 +60,8 @@ def card(ax, x, y, w, h, title, body, color, *, body_size=6.8):
 
 
 def save(fig, name: str):
+    fit_labels(fig)
+    audit_figure(fig, name)
     path = OUT / name
     fig.savefig(path, bbox_inches="tight", facecolor=PAPER)
     plt.close(fig)
@@ -186,6 +191,6 @@ for x in (3.9, 7.7):
 ax.add_patch(FancyBboxPatch((1.2, .75), 9.6, .72, boxstyle="round,pad=.04",
                             facecolor=PALE, edgecolor=RED, linewidth=1.8))
 ax.text(6, 1.11,
-        "UNKNOWN RESERVE OR A LIFE-SUPPORTING FAILURE → TREAT AS TIME-CRITICAL AND USE THE EMERGENCY ROUTE WHEN INDICATED.",
+        "UNKNOWN RESERVE OR A LIFE-SUPPORTING FAILURE → TREAT AS TIME-CRITICAL\nAND USE THE EMERGENCY ROUTE WHEN INDICATED.",
         ha="center", va="center", color=RED, fontsize=8.2, fontweight="bold")
 save(fig, "safe_reserve_clock.png")

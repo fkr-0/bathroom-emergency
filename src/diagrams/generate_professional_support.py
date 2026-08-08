@@ -11,6 +11,9 @@ import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -59,6 +62,8 @@ def title(ax, heading: str, subtitle: str) -> None:
 
 
 def save(fig, filename: str) -> None:
+    fit_labels(fig)
+    audit_figure(fig, filename)
     path = OUT / filename
     fig.savefig(path, dpi=220, bbox_inches="tight", pad_inches=0.12, facecolor=fig.get_facecolor())
     plt.close(fig)
@@ -114,7 +119,7 @@ def support_layers() -> None:
 
 
 def route_selector() -> None:
-    fig, ax = setup(11.5, 7.1)
+    fig, ax = setup(11.5, 7.6)
     title(
         ax,
         "Name the problem, then choose the system",
@@ -124,27 +129,27 @@ def route_selector() -> None:
     for x, label in headers:
         ax.text(x, 0.81, label, ha="left", va="center", fontsize=10, fontweight="bold", color=ACCENT)
     rows = [
-        ("Life danger · fire · severe injury", "112 control centre", "Follow dispatcher · do not delay for another service"),
+        ("Life danger · fire · severe injury", "112 control centre", "Follow the dispatcher;\ndo not delay for another service"),
         ("Active crime or immediate threat", "110 police · 112 for rescue/fire", "Move to safety when possible"),
-        ("Urgent, non-life-threatening medical need", "116 117 medical on-call", "112 if state becomes dangerous or unclear"),
-        ("Psychological crisis without acute danger", "116 123 · SPD · clinical route", "112 for immediate self/other danger"),
-        ("Legal, authority, housing, or benefits problem", "Responsible legal/social/municipal service", "115 may identify authority; it does not guarantee a bed"),
+        ("Urgent, non-life-threatening\nmedical need", "116 117 medical on-call", "112 if the state becomes\ndangerous or unclear"),
+        ("Psychological crisis\nwithout acute danger", "116 123 · SPD · clinical route", "112 for immediate\nself/other danger"),
+        ("Legal, authority, housing,\nor benefits problem", "Responsible legal, social,\nor municipal service", "115 may identify the authority;\nit does not guarantee a bed"),
     ]
-    y = 0.69
+    y = 0.72
     for index, (problem, primary, backup) in enumerate(rows, start=1):
         face = ACCENT_LIGHT if index % 2 else "white"
-        box(ax, 0.035, y - 0.065, 0.285, 0.12, face=face)
-        box(ax, 0.355, y - 0.065, 0.285, 0.12, face=SAFE if index in {1, 2, 3} else "white")
-        box(ax, 0.675, y - 0.065, 0.29, 0.12, face=WARM if index in {1, 2} else "white")
+        box(ax, 0.035, y - 0.058, 0.285, 0.116, face=face)
+        box(ax, 0.355, y - 0.058, 0.285, 0.116, face=SAFE if index in {1, 2, 3} else "white")
+        box(ax, 0.675, y - 0.058, 0.29, 0.116, face=WARM if index in {1, 2} else "white")
         ax.text(0.055, y + 0.015, f"{index}", ha="left", va="center", fontsize=11, fontweight="bold", color=ACCENT)
         ax.text(0.09, y, problem, ha="left", va="center", fontsize=8.5, color=INK, wrap=True)
         ax.text(0.375, y, primary, ha="left", va="center", fontsize=8.5, color=INK, wrap=True)
         ax.text(0.695, y, backup, ha="left", va="center", fontsize=8.2, color=INK, wrap=True)
         arrow(ax, 0.322, y, 0.352, y)
         arrow(ax, 0.642, y, 0.672, y)
-        y -= 0.145
-    box(ax, 0.16, 0.04, 0.68, 0.08, face=SAFE, edge=ACCENT)
-    ax.text(0.50, 0.08, "WRONG SYSTEM? NAME THE UNCHANGED PROBLEM AGAIN AND HAND OFF — DO NOT INVENT A PROMISE.", ha="center", va="center", fontsize=8.8, fontweight="bold", color=INK)
+        y -= 0.136
+    box(ax, 0.13, 0.015, 0.74, 0.075, face=SAFE, edge=ACCENT)
+    ax.text(0.50, 0.0525, "WRONG SYSTEM? NAME THE UNCHANGED PROBLEM AGAIN AND HAND OFF — DO NOT INVENT A PROMISE.", ha="center", va="center", fontsize=8.4, fontweight="bold", color=INK)
     save(fig, "professional_route_selector.png")
 
 

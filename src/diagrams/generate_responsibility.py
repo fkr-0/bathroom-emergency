@@ -14,6 +14,9 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -102,6 +105,8 @@ def title(ax, heading: str, subtitle: str) -> None:
 
 
 def save(fig, filename: str) -> None:
+    fit_labels(fig)
+    audit_figure(fig, filename)
     path = OUT / filename
     fig.savefig(path, dpi=220, bbox_inches="tight", pad_inches=0.12, facecolor=fig.get_facecolor())
     plt.close(fig)
@@ -230,7 +235,7 @@ def care_continuity_loop() -> None:
         ax.text(x + 0.025, y + 0.055, detail, ha="left", va="center", fontsize=8.0, color=MUTED, linespacing=1.35)
         arrow(ax, x + 0.125, y + 0.085, centre[0], centre[1], color=edge, lw=1.4)
     box(ax, 0.18, 0.055, 0.64, 0.075, face=WHITE, edge=GREEN)
-    ax.text(0.50, 0.092, "WRITE THE PLAN WHERE THE BACKUP CAN FIND IT — NOT ONLY IN THE MOST EXHAUSTED PERSON'S HEAD.", ha="center", va="center", fontsize=8.6, fontweight="bold", color=INK)
+    ax.text(0.50, 0.092, "WRITE THE PLAN WHERE THE BACKUP CAN FIND IT —\nNOT ONLY IN THE MOST EXHAUSTED PERSON'S HEAD.", ha="center", va="center", fontsize=8.6, fontweight="bold", color=INK)
     save(fig, "care_continuity_loop.png")
 
 

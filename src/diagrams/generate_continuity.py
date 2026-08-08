@@ -10,6 +10,9 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
 from matplotlib.patches import FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -61,6 +64,8 @@ def card(ax, x: float, y: float, w: float, h: float, title: str, question: str, 
 
 
 def save(fig, name: str):
+    fit_labels(fig)
+    audit_figure(fig, name)
     path = OUT / name
     fig.savefig(path, bbox_inches="tight", facecolor=PAPER)
     plt.close(fig)

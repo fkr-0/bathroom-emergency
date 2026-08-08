@@ -13,6 +13,9 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Circle
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -89,6 +92,8 @@ def title(ax, heading: str, subtitle: str) -> None:
 
 
 def save(fig, filename: str) -> None:
+    fit_labels(fig)
+    audit_figure(fig, filename)
     path = OUT / filename
     fig.savefig(path, dpi=220, bbox_inches="tight", pad_inches=0.12, facecolor=fig.get_facecolor())
     plt.close(fig)
@@ -201,7 +206,7 @@ def three_minute_observation() -> None:
     for x in (0.245, 0.485, 0.725):
         arrow(ax, x, 0.52, x + 0.03, 0.52)
     box(ax, 0.17, 0.13, 0.66, 0.10, face=WHITE, edge=RED)
-    ax.text(0.50, 0.18, "STOP THE EXPERIMENT WHEN DANGER APPEARS, THE STATE WORSENS, OR SAFE COMPARISON IS NO LONGER POSSIBLE.", ha="center", va="center", fontsize=8.7, fontweight="bold", color=RED)
+    ax.text(0.50, 0.18, "STOP THE EXPERIMENT WHEN DANGER APPEARS, THE STATE WORSENS,\nOR SAFE COMPARISON IS NO LONGER POSSIBLE.", ha="center", va="center", fontsize=8.7, fontweight="bold", color=RED)
     save(fig, "three_minute_observation.png")
 
 
