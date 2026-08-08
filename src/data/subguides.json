@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.14.0-alt.2",
+  "release": "4.14.0-alt.3",
   "status": "experimental-eleven-book-synthesis",
   "identity_frozen_on": "2026-08-06",
   "shelf_order": [
@@ -84,7 +84,7 @@
       "slug": "amber-book-responsibility",
       "title": "The Amber Book — Responsibility",
       "promise": "Turn guilt, duty, and care into concrete repair and continuity.",
-      "reviewed_on": "2026-08-06",
+      "reviewed_on": "2026-08-08",
       "chapters": [
         "02-situation-a.md"
       ],
@@ -213,7 +213,7 @@
       "slug": "blue-book-safety-no-place",
       "title": "The Blue Book — Safety & No Place",
       "promise": "Secure the next safe hour when a person or place is the problem.",
-      "reviewed_on": "2026-08-06",
+      "reviewed_on": "2026-08-08",
       "chapters": [
         "03-situations-b-g.md",
         "03g-safe-place-routing.md"
@@ -305,7 +305,7 @@
       "slug": "olive-book-zombie-guide",
       "title": "The Olive Book — Zombie Guide",
       "promise": "Keep water, care, power, information, and cooperation working.",
-      "reviewed_on": "2026-08-06",
+      "reviewed_on": "2026-08-08",
       "chapters": [
         "06-zombie-guide.md"
       ],
@@ -394,7 +394,7 @@
       "slug": "purple-book-social-field-guide",
       "title": "The Purple Book — Social Field Guide",
       "promise": "Manage absence, re-entry, boundaries, awkwardness, and graceful exits.",
-      "reviewed_on": "2026-08-06",
+      "reviewed_on": "2026-08-08",
       "chapters": [
         "04b-social-field-guide.md"
       ],
@@ -435,7 +435,7 @@
       "slug": "grey-book-templates-forms",
       "title": "The Grey Book — Templates & Forms",
       "promise": "Put facts, plans, and handoffs somewhere more reliable than working memory.",
-      "reviewed_on": "2026-08-06",
+      "reviewed_on": "2026-08-08",
       "chapters": [
         "07a-templates.md"
       ],
@@ -485,7 +485,7 @@
       "slug": "copper-book-reference",
       "title": "The Copper Book — Reference",
       "promise": "Find the stable address, source, map, figure, formula, or index.",
-      "reviewed_on": "2026-08-06",
+      "reviewed_on": "2026-08-08",
       "chapters": [
         "08-appendix.md",
         "09-version-history.md",

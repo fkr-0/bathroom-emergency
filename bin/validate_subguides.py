@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,7 +14,7 @@ STYLE_PATH = ROOT / "src" / "style-subguides.css"
 PATTERN_DIR = ROOT / "build" / "subguides" / "assets" / "patterns"
 DIAGRAM_DIR = ROOT / "build" / "diagrams"
 HUB_PATH = ROOT / "build" / "subguides" / "index.html"
-from project_meta import VERSION
+from project_meta import RELEASE_DATE, VERSION
 from src_layout import all_chapter_paths, find_chapter
 errors: list[str] = []
 
@@ -72,7 +73,18 @@ if PATH.exists():
             "aliases", "scope", "outside_scope",
         ):
             check(bool(item.get(field)), f"{node_id}: missing {field}")
-        check(item.get("reviewed_on") == "2026-08-06", f"{node_id}: review date drifted")
+        # A per-book review date exists so books can be reviewed on different
+        # days. Pinning them all to one constant defeated that, and turned an
+        # honest "this book was revised today" into a build failure. Require a
+        # real ISO date no later than the release instead.
+        try:
+            reviewed = date.fromisoformat(str(item.get("reviewed_on")))
+        except ValueError:
+            reviewed = None
+        check(reviewed is not None, f"{node_id}: reviewed_on is not an ISO date")
+        if reviewed is not None:
+            check(reviewed <= date.fromisoformat(RELEASE_DATE),
+                  f"{node_id}: reviewed_on is after the release date")
         pattern = item.get("pattern")
         check(pattern not in patterns, f"{node_id}: duplicate pattern {pattern}")
         patterns.add(pattern)

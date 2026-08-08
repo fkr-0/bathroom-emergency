@@ -1,8 +1,8 @@
 ---
 title: "Sources and Evidence Notes"
 chapter: 10
-revision: "4.14.0-alt.2"
-last_updated: "2026-08-06"
+revision: "4.14.0-alt.3"
+last_updated: "2026-08-08"
 dependencies: []
 ---
 
@@ -10,9 +10,14 @@ dependencies: []
 
 Emergency routes, German service information, and medical, legal-aid,
 preparedness, postpartum, fracture, burn, and hypothermia material were
-reviewed for **22 July 2026**. Official and primary sources are preferred.
-A link is not evidence by itself; the guide records what each source supports
-and what it does **not** support.
+reviewed for **22 July 2026**. Selected operational sources were re-checked on
+**8 August 2026**: BBK household water planning and outage guidance, DRK
+hypothermia, the 116 117 / 112 boundary, 115 access channels, and the
+disaster-cooperation literature. A refresh date applies only to the sources
+actually opened that day; it is not a blanket claim about every external page.
+
+Official and primary sources are preferred. A link is not evidence by itself;
+the guide records what each source supports and what it does **not** support.
 
 ## Evidence hierarchy used here
 
@@ -24,6 +29,26 @@ and what it does **not** support.
 
 No philosophical text, social-science model, screening score, home device, or
 attractive equation overrides emergency symptoms or dispatcher instructions.
+
+## Source status — a second axis
+
+Evidence class answers *what kind of claim is this?* Source status answers *what
+job is it allowed to do in the current guide?* The two are independent: a
+classic paper can be excellent scholarship and still not be an emergency
+protocol, and a current service page can go stale without becoming bad
+scholarship.
+
+- **Current operational** — supports a present action, route, service fact, or
+  safety boundary.
+- **Current optional** — useful explanation or context; not required to act.
+- **Contested / approximate** — retained only with an explicit dispute or
+  approximation label.
+- **Historical** — kept to explain an older design, theory, or release.
+- **Superseded** — deliberately replaced. It may stay findable for provenance,
+  and must not be reused as current guidance.
+
+Where a section below carries a status line, that status governs how the
+material may be used.
 
 
 ## Bathroom-scale body and perception science
@@ -153,8 +178,13 @@ a harmless one.
 
 ### Limits
 
-- The 2 L/person/day value is a household planning baseline, not an individual
-  medical prescription.
+- **Current operational BBK wording:** an adult needs at least **1.5 L of
+  fluids per day**, and about **0.5 L of water per day extra** should be allowed
+  when cooking is planned. The preparedness target is ideally ten days, with
+  BBK noting that even three days already helps and can be built up gradually.
+- The **2 L/person/day** figure is Olive's own drinking-plus-cooking planning
+  convention. It is a convenient sum, not BBK's stated physiological
+  requirement, and not an individual medical prescription.
 - The guide does not print universal bleach dosing, wild-food lists, or personal
   survival probabilities.
 - Shelter guidance must yield to official fire, flood, storm, and chemical
@@ -307,6 +337,9 @@ clinical tests.
 
 ## Dunbar numbers — social-brain hypothesis
 
+**Status: current optional background.** Moved out of Olive's operational path;
+no group-size threshold decides when a household needs a shared log.
+
 33. **Dunbar RIM.** “Neocortex size as a constraint on group size in primates.”
     *Journal of Human Evolution* 22 (1992): 469–493.
 
@@ -314,6 +347,9 @@ Nested social-network values are approximate population findings. The guide
 uses them only to explain why larger groups need structures and records.
 
 ## Ostrom — commons governance
+
+**Status: current optional background, for sustained shared-resource problems
+only.** Not a first-minutes emergency constitution.
 
 34. **Ostrom E.** *Governing the Commons* (1990).
 
@@ -380,6 +416,8 @@ preference matter.
 
 ## Seneca, Tao, and Stoic philosophy
 
+**Status: current optional / historical-philosophical background.**
+
 ### Seneca and Stoicism
 
 46. Seneca’s letters and Stoic traditions offer historical material on control,
@@ -404,9 +442,27 @@ book is an activity, not evidence-based triage.
 
 ### Crowd psychology and social identity
 
-49. **Drury, Reicher, Stott and related social-identity disaster research.**
-    Crowds often show cooperation and shared identity, challenging assumptions
-    of automatic panic and disorder.
+**Status: current operational support for Olive's cooperation-first framing.**
+This literature, not game theory, carries the empirical weight for how people
+actually behave in emergencies.
+
+49. **Drury J, Cocking C, Reicher S.** “Everyone for themselves? A comparative
+    study of crowd solidarity among emergency survivors.” *British Journal of
+    Social Psychology* 48 (2009): 487–506. Interviews with survivors of eleven
+    emergencies support an account in which shared identity can arise from the
+    emergency itself and be associated with solidarity rather than automatic
+    mass panic. https://doi.org/10.1348/014466608X357893
+
+    Its companion for the recovery period is **Ntontis E, Drury J, Amlôt R,
+    Rubin GJ, Williams R, Saavedra P**, “Collective resilience in the disaster
+    recovery period,” *British Journal of Social Psychology* 60 (2021):
+    1075–1095. Emergent social identity and observed social support were
+    associated with collective efficacy, well-being, and the provision of
+    support during recovery, not only during the acute event.
+    https://doi.org/10.1111/bjso.12434
+
+    Together these correct simplistic panic assumptions. They do not guarantee
+    cooperation in every crowd or every disaster.
 
 ### Conformity and obedience
 
@@ -461,6 +517,8 @@ be safe, and emergency symptoms require assessment.
 
 ## Yerkes–Dodson law
 
+**Status: current optional, approximate explanatory background.**
+
 58. **Yerkes RM and Dodson JD** (1908) and later performance research support a
     broad relation among arousal, task difficulty, and performance.
 
@@ -471,6 +529,8 @@ it to justify simplifying tasks under high arousal.
 
 ## Polyvagal theory
 
+**Status: contested / approximate background.**
+
 59. Polyvagal language is widely used in therapy and popular education, while
     strong anatomical and evolutionary claims remain debated.
 
@@ -479,19 +539,31 @@ it to justify simplifying tasks under high arousal.
 The guide uses connected/mobilized/shutdown language descriptively and does not
 present it as a complete diagnosis or settled mechanism.
 
-## Attachment theory
+## Attachment, mismatch, and repair
 
-60. **Bowlby J.** *Attachment and Loss* (1969).
+**Status: Bowlby and Ainsworth are historical foundations; the operational
+claim rests on interaction research.** Amber's "repair matters more than perfect
+attunement" was previously supported only by vague reference to "later
+rupture-and-repair research," which is not a citation.
 
-61. **Ainsworth MDS et al.** *Patterns of Attachment* (1978).
+60. **Bowlby J.** *Attachment and Loss* (1969). Historical foundation.
 
-62. Later rupture-and-repair and developmental research supports the practical
-    value of responsive care and repair.
+61. **Ainsworth MDS et al.** *Patterns of Attachment* (1978). Historical
+    foundation.
+
+62. **Müller M, Zietlow A-L, Klauser N, Woll C, Nonnenmacher N, Tronick E,
+    Reck C.** “From Early Micro-Temporal Interaction Patterns to Child Cortisol
+    Levels: Toward the Role of Interactive Reparation and Infant Attachment in a
+    Longitudinal Study.” *Frontiers in Psychology* 12 (2022): 807157.
+    https://doi.org/10.3389/fpsyg.2021.807157 — supports interactive reparation
+    as a real phenomenon worth naming. Amber's four-step repair script is a
+    practical synthesis, not a validated diagnostic protocol.
 
 ### Limit
 
-Attachment categories are not assigned from one incident, a quiz, or a bathroom
-conversation.
+Attachment categories are not assigned from one incident, a quiz, a single
+missed cue, or a bathroom conversation. Ordinary mismatch is not proof of
+relationship damage.
 
 ## Postpartum depression
 
@@ -521,14 +593,22 @@ conversation.
 
 ## Game theory and cooperation
 
+**Status: current optional explanatory background.** Demoted from Olive's
+mainline: collective-resilience research, not the Prisoner's Dilemma, carries
+the empirical burden for real emergencies.
+
 68. **Axelrod R.** *The Evolution of Cooperation* (1984) and repeated-game
     research provide background for visible rules, proportional response, and
     repair.
 
 ### Limit
 
-Game theory is explanatory. It does not reduce real people to fixed strategies
-or justify coercive resource control.
+Game theory is explanatory. It does not reduce real people to fixed strategies,
+predict one real neighbourhood from a toy payoff matrix, or justify coercive
+resource control.
+
+> **Game theory is not permission to call your neighbour "Player B" while
+> taking his batteries.**
 
 ## Thermoregulation
 
@@ -549,11 +629,19 @@ or justify coercive resource control.
 
 ## German crisis and support services
 
+**Status: current operational.** These carry service facts that expire; each
+needs a checked date wherever a local deployment copies it.
+
 73. **TelefonSeelsorge:** https://www.telefonseelsorge.de/
 
 74. **Violence against Women Helpline:** https://www.hilfetelefon.de/
 
-75. **Medical on-call service:** https://www.116117.de/
+75. **Medical on-call service — 116 117.** The patient service states it is
+    reachable around the clock, 24 hours a day and seven days a week, for urgent
+    medical problems that are **not** life-threatening and cannot wait for the
+    next regular practice opportunity. Life-threatening emergencies remain
+    **112**. This is the boundary Blue, Olive, and Grey now route against.
+    https://www.116117.de/de/aerztlicher-bereitschaftsdienst.php
 
 76. **Nummer gegen Kummer:** https://www.nummergegenkummer.de/
 
@@ -716,10 +804,12 @@ to outrank it.
 ## Safe-place, access, and freshness foundations
 
 96. **Behördennummer 115.** Nationwide public-administration information line.
-    Current service information states nationwide availability Monday to Friday,
-    08:00–18:00, and describes telephone, easy-language, and sign-language video
-    access. The guide uses 115 only to identify the responsible authority; it is
-    not an emergency number or a guarantee of accommodation.
+    The ordinary telephone service currently publishes Monday to Friday,
+    08:00–18:00. Note that this is the schedule for *one* access channel: see
+    source 102, whose published hours differ. The guide uses 115 only to
+    identify the responsible authority; it is not an emergency number, and not a
+    guarantee of accommodation, appointment, bed, or after-hours municipal
+    response.
     https://www.115.de/
 
 97. **Hilfetelefon “Gewalt gegen Frauen.”** Current service overview for
@@ -750,9 +840,11 @@ to outrank it.
      a confirmed bed or the protected refuge address.
      https://www.frauenhaus-suche.de/
 
-102. **115 sign-language service.** Current video route for sign-language access
-     to public-administration information; it requires internet and a suitable
-     camera-capable device.
+102. **115 sign-language service.** Current DGS video route to
+     public-administration information, requiring internet and a camera-capable
+     device. Its published hours are **not** the same as the ordinary 115
+     telephone hours in source 96, which is exactly why an access channel needs
+     its own recorded hours rather than inheriting the number's.
      https://www.115.de/gebaerdensprache
 
 103. **W3C.** *Web Content Accessibility Guidelines (WCAG) 2.2.* Used as the

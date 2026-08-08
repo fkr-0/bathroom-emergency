@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.14.0-alt.2",
+  "release": "4.14.0-alt.3",
   "status": "stable-public-reference-registry",
   "format": "[BEG:<owner>:<kind>:<sequence>]",
   "kind_legend": {
@@ -382,6 +382,7 @@
     "section:07a-templates:use-update-replace": "[BEG:T:S:007]",
     "section:07a-templates:who-fills-what": "[BEG:T:S:005]",
     "section:08-appendix:diagram-index": "[BEG:R:S:001]",
+    "section:08-appendix:eight-legacy-doors-inside-eleven-route-identities": "[BEG:R:S:088]",
     "section:08-appendix:evidence-labels": "[BEG:R:S:002]",
     "section:08-appendix:fillable-fields": "[BEG:R:S:003]",
     "section:08-appendix:flowchart-legend": "[BEG:R:S:004]",
@@ -395,6 +396,7 @@
     "section:08-appendix:offline-deployment-checklist": "[BEG:R:S:012]",
     "section:08-appendix:pocket-print-card": "[BEG:R:S:013]",
     "section:08-appendix:reference-and-appendix-the-useful-loose-ends": "[BEG:R:S:014]",
+    "section:08-appendix:reference-release-gate": "[BEG:R:S:089]",
     "section:08-appendix:stable-references-addresses-that-survive-editing": "[BEG:R:S:015]",
     "section:08-appendix:the-copper-book-reference-and-useful-loose-ends": "[BEG:R:S:085]",
     "section:08-appendix:the-eight-entry-points": "[BEG:R:S:016]",
@@ -409,6 +411,7 @@
     "section:09-version-history:4-13-1-2-august-2026": "[BEG:R:S:084]",
     "section:09-version-history:4-14-0-alt-1-6-august-2026": "[BEG:R:S:086]",
     "section:09-version-history:4-14-0-alt-2-6-august-2026": "[BEG:R:S:087]",
+    "section:09-version-history:4-14-0-alt-3-8-august-2026": "[BEG:R:S:092]",
     "section:09-version-history:4-2-0-22-july-2026": "[BEG:R:S:021]",
     "section:09-version-history:4-3-0-22-july-2026": "[BEG:R:S:022]",
     "section:09-version-history:4-3-1-22-july-2026": "[BEG:R:S:023]",
@@ -425,6 +428,7 @@
     "section:10-sources:affect-labelling-and-emotional-regulation": "[BEG:R:S:028]",
     "section:10-sources:anaphylaxis": "[BEG:R:S:029]",
     "section:10-sources:anxiety-assessment-gad-7": "[BEG:R:S:030]",
+    "section:10-sources:attachment-mismatch-and-repair": "[BEG:R:S:090]",
     "section:10-sources:attachment-theory": "[BEG:R:S:031]",
     "section:10-sources:bathroom-scale-body-and-perception-science": "[BEG:R:S:032]",
     "section:10-sources:burn-assessment": "[BEG:R:S:033]",
@@ -460,6 +464,7 @@
     "section:10-sources:routing-hazard-and-locale-foundations": "[BEG:R:S:063]",
     "section:10-sources:safe-place-access-and-freshness-foundations": "[BEG:R:S:064]",
     "section:10-sources:seneca-tao-and-stoic-philosophy": "[BEG:R:S:065]",
+    "section:10-sources:source-status-a-second-axis": "[BEG:R:S:091]",
     "section:10-sources:sources-and-evidence-notes": "[BEG:R:S:066]",
     "section:10-sources:stress-and-cortisol-research": "[BEG:R:S:067]",
     "section:10-sources:stroke-treatment": "[BEG:R:S:068]",
@@ -547,6 +552,8 @@
     "section:07-professional-support:professional-support-when-the-bathroom-is-too-small",
     "section:07a-templates:templates-the-blue-book",
     "section:08-appendix:reference-and-appendix-the-useful-loose-ends",
-    "section:09-version-history:4-5-0-23-july-2026-release-candidate"
+    "section:08-appendix:the-eight-entry-points",
+    "section:09-version-history:4-5-0-23-july-2026-release-candidate",
+    "section:10-sources:attachment-theory"
   ]
 }

@@ -1,8 +1,8 @@
 ---
 title: "The Teal Book — Calm Guide"
 chapter: 4
-revision: "4.14.0-alt.2"
-last_updated: "2026-08-06"
+revision: "4.14.0-alt.3"
+last_updated: "2026-08-08"
 dependencies:
   - build/diagrams/breathing_techniques.png
   - build/diagrams/breathwork_trial_map.png

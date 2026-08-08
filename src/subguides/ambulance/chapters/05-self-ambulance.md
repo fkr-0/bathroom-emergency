@@ -1,8 +1,8 @@
 ---
 title: "The Red Book — Self Ambulance"
 chapter: 5
-revision: "4.14.0-alt.2"
-last_updated: "2026-08-06"
+revision: "4.14.0-alt.3"
+last_updated: "2026-08-08"
 dependencies:
   - build/diagrams/triage_flow.png
   - build/diagrams/cpr_body_orientation.png

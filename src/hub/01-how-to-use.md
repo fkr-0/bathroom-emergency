@@ -1,8 +1,8 @@
 ---
 title: "How to Use the Eleven Books"
 chapter: 1
-revision: "4.14.0-alt.2"
-last_updated: "2026-08-06"
+revision: "4.14.0-alt.3"
+last_updated: "2026-08-08"
 dependencies:
   - build/diagrams/observatory_scan.png
   - build/diagrams/interoception_loop.png

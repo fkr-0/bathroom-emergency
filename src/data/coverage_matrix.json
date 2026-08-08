@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "4.14.0-alt.2",
+  "release": "4.14.0-alt.3",
   "status": "canonical-cross-guide-coverage-matrix",
   "standalone_candidate_rule": {
     "minimum_local_sources": 4,
@@ -9,7 +9,7 @@
   },
   "totals": {
     "nodes": 11,
-    "sections": 280,
+    "sections": 283,
     "sources": 96,
     "reader_visuals": 41,
     "standalone_nodes": 11
@@ -446,7 +446,7 @@
         "10-sources.md"
       ],
       "chapter_count": 3,
-      "section_count": 85,
+      "section_count": 88,
       "source_count": 0,
       "source_counts": {
         "operational": 0,

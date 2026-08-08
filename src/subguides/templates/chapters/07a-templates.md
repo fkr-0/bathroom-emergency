@@ -1,8 +1,8 @@
 ---
 title: "The Grey Book — Templates & Forms"
 chapter: "T"
-revision: "4.14.0-alt.2"
-last_updated: "2026-08-06"
+revision: "4.14.0-alt.3"
+last_updated: "2026-08-08"
 dependencies: []
 ---
 
@@ -88,6 +88,12 @@ The small related-reference line is navigation, not a second dashboard. Stable
 references make a copied page findable without adding another coloured box for
 every relationship.
 
+**Grey does not decide escalation.** A form records the route, backup,
+destination, or threshold owned by the relevant book, service, clinical plan,
+product instruction, or official warning. When that source changes, the
+installed form changes with it — the paper is a copy of the rule, never a
+second version of it.
+
 ## Use, update, replace
 
 1. **Use** only the fields relevant to the current action.
@@ -98,6 +104,13 @@ every relationship.
 
 The stable address travels with the page. Sensitive content does not become
 safe merely because the form has excellent typography.
+
+For a **local operational fact**, freshness travels with the fact. Where it
+applies, record the **source or authority, the date checked, a review-by date,
+and a backup source**. A number on its own is not the fact: scope, access
+channel, and hours are part of it, and they do not always match even for the
+same service. "We checked this recently" is provenance, not proof that a remote
+service is reachable this minute.
 
 ## Who fills what?
 
@@ -124,7 +137,7 @@ which copy this is, who maintains it, and when local facts expire.
 | Copy / site name | |
 | Exact placement | |
 | Deployer or maintainer | |
-| Guide version | 4.14.0-alt.2 |
+| Guide version | 4.14.0-alt.3 |
 | Local customization revision | |
 | Build commit | |
 | Built on | |
@@ -194,20 +207,20 @@ to.** The dispatcher may coach first aid while help is being sent.
 **Why:** “Find local help” is not a route. A usable entry has a verified name,
 number, scope, hours, access channel, and backup.
 
-| Need | First route | Hours / access | Backup / escalation | Checked |
+| Need | First route | Hours / access | Backup / escalation | Source · checked · review by |
 |---|---|---|---|---|
 | GP / regular practice | | | 116 117 / 112 as appropriate | |
 | Pharmacy / night service | | | | |
-| Emergency department | | | 112 | |
-| Regional poison centre | | | 112 for severe symptoms | |
-| Psychiatric crisis service | | | 116 117 / 112 | |
+| Emergency department | | | 112 for a life-threatening emergency | |
+| Regional poison centre | | | 112 for severe or life-threatening symptoms | |
+| Psychiatric crisis service | | | 116 117 / 112 according to urgency | |
 | Sozialpsychiatrischer Dienst | | | | |
-| Violence support / shelter | | safe-device notes: | 110 / 112 | |
+| Violence support / shelter | | safe-device notes: | 110 / 112 for immediate danger | |
 | Municipal emergency housing — day | | | | |
-| Municipal emergency housing — night | | | 110 / 112 if unsafe | |
-| Accessible / powered safe place | | barriers confirmed: | 112 if care bridge fails | |
-| Youth emergency service | | | 110 / 112 | |
-| Gas-network emergency service | | call from outside | 112 | |
+| Municipal emergency housing — night | | | 110 / 112 only for immediate danger or emergency | |
+| Accessible / powered safe place | | barriers confirmed: | 116 117 or clinical route when urgent but not life-threatening; 112 when essential care is failing with imminent serious harm | |
+| Youth emergency service | | | 110 / 112 for immediate danger; otherwise the local youth route | |
+| Gas-network emergency service | | call from outside | 112 for fire, explosion, severe symptoms, or danger to life | |
 | Building utility / caretaker | | | | |
 | Veterinary emergency service | | | | |
 | Other local route | | | | |
@@ -225,7 +238,7 @@ make useful ordinary things visible; do not turn them into a test.
 | charged light | ☐ | ☐ | |
 | drinking water | ☐ | ☐ | |
 | warm layer / blanket | ☐ | ☐ | |
-| cool cloth / fresh-air route | ☐ | ☐ | |
+| cool cloth / cleaner-air place or safe-air route | ☐ | ☐ | |
 | stable seat or support | ☐ | ☐ | |
 | familiar music / quiet | ☐ | ☐ | |
 | visual book / comic / simple game | ☐ | ☐ | |
@@ -294,19 +307,24 @@ few reversible options gives the exit somewhere to go.
 |---|---|---|---|
 | quiet | | | |
 | another person nearby | | | |
-| fresh air | | | |
+| cleaner air / safe-air route | | | |
 | warmth | | | |
 | low light | | | |
 | charger | | | |
 | simple food | | | |
 | safe exit | | | |
-| short walk / sit outside | | | |
+| short walk / sit in a confirmed safe place | | | |
 | drawing / folding / puzzle | | | |
 | familiar sound | | | |
 
 Optional public collection of low-demand activities: `artifacts.fkr.dev`.
 Check the destination before printing it as a promise; websites are not load-
 bearing walls.
+
+A "safe-air route" is incident-dependent. Smoke, an outdoor chemical release, or
+another official warning can make **staying inside, closing ventilation, or
+leaving by a named route** safer than simply going outdoors. Orange and the
+current warning authority own that decision, not this table.
 
 ## Safe-place and exit map
 
@@ -316,10 +334,10 @@ a safe place is a confirmed destination plus a backup—not the phrase “go som
 
 | Route | Confirmed destination | Transport / access | Contact | Backup | Escalation |
 |---|---|---|---|---|---|
-| person or active threat | | | | | 110 / 112 |
-| no weather-safe roof tonight | | | | | exposure / danger → 112 |
-| place fails mobility, power, medication, child, caregiver, or animal needs | | | | | care bridge fails → 112 |
-| physically safe but socially/internal crisis | | | | | acute self/other danger → 112 |
+| person or active threat | | | | | 110 for an active police matter; 112 when life, medical, or fire danger is present |
+| no weather-safe roof tonight | | | | | local accommodation route; 112 if exposure or another emergency becomes life-threatening |
+| place fails mobility, power, medication, child, caregiver, or animal needs | | | | | name the failing function; 116 117 or a clinician when urgent but not life-threatening; 112 when essential care is failing with imminent serious harm |
+| physically safe but socially/internal crisis | | | | | crisis or social route; 112 for acute self/other danger or inability to remain safe |
 
 Code word / check-in plan, only where safe to record: ________________________
 
@@ -412,6 +430,10 @@ test finding and handoff, not theatrical panic.
 Use invented or
 sanitized facts. Stop the drill immediately when someone becomes distressed or
 a real event interrupts it.
+
+The times below are **provisional interface targets, not reader performance
+standards**. A slow stage means "find the friction in the installation," never
+"this person failed the emergency guide."
 
 | Stage | Target | Observed time | Friction / wrong turn | Change before next drill |
 |---|---:|---:|---|---|

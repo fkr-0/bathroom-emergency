@@ -1,8 +1,8 @@
 ---
 title: "The Copper Book — Reference"
 chapter: 8
-revision: "4.14.0-alt.2"
-last_updated: "2026-08-06"
+revision: "4.14.0-alt.3"
+last_updated: "2026-08-08"
 dependencies:
   - build/diagrams/two_pass_route_map.png
   - build/diagrams/evidence_classes.png
@@ -65,16 +65,22 @@ view is `src/data/content_index.json`.
 
 | Starting problem | Owning book | Useful Grey Book resource | Professional handoff |
 |---|---|---|---|
-| red flag / life danger | **C — Body and First Aid** | emergency call; location and access | 112 / dispatcher |
-| caused harm / responsibility | **A — Responsibility and Care** | five-minute values; remarks and handoff | P medical/legal/social route as needed |
-| anxiety / panic / overload | **B — Alarm and Calm** | comfort inventory; observation log; nice-place map | 116 123 / 116 117 / local service |
-| pain / illness | **C — Body and First Aid** | observation log; emergency call | practice / 116 117 / 112 |
-| danger / coercion / nowhere safe | **D — Threat and Safe Place** | safe-place map; location and access; local contacts | 110 / 112 / specialist service |
-| unknown smell or environmental danger | **H — Air, Smell, and Environment** | emergency call; essential-care continuity | 112 / gas service / poison centre |
-| outage / disaster / failing household function | **Z — Outage and Continuity** | essential-care card; household board | BBK / local authority / 112 |
-| need a number, appointment, bed, document, or handoff | **P — Professional Support** | local contacts; emergency call; location and access | named service plus backup |
-| need a writable packet | **T — Templates** | choose by use mode and privacy class | receiving service named on the resource |
-| need a stable address, figure, formula, or source | **R — Reference** | feedback or review form when correcting | owning route remains primary |
+| red flag / life danger | **C — The Red Book — Self Ambulance** | emergency call; location and access | 112 / dispatcher |
+| body signal, faintness, ordinary inputs, medication context, or "what changed?" | **O — The Green Book — Body Owner's Manual** | observation log; comfort inventory | practice / pharmacy / 116 117 / Red as needed |
+| pain / illness / injury | **C — The Red Book — Self Ambulance** | observation log; emergency call | practice / 116 117 / 112 according to urgency |
+| caused harm / responsibility / dependency | **A — The Amber Book — Responsibility** | five-minute values; remarks and handoff | medical, legal, or social route via Indigo |
+| anxiety / panic / overload | **B — The Teal Book — Calm Guide** | comfort inventory; observation log; nice-place map | trusted person / 116 117 / crisis service as needed |
+| social absence, communication, boundary, re-entry, or graceful exit | **S — The Purple Book — Social Field Guide** | five-minute values; nice-place map; remarks | named social or professional route when needed |
+| danger / coercion / nowhere safe | **D — The Blue Book — Safety & No Place** | safe-place map; location and access; local contacts | 110 / 112 / specialist service |
+| smoke, gas, chemicals, electricity, unsafe air, smell, or a natural or technical hazard | **H — The Orange Book — Hazards & Disasters** | emergency call; location and access; care continuity | 112 / warning authority / gas service / poison centre |
+| outage or long disruption once immediate hazards are handled | **Z — The Olive Book — Zombie Guide** | care continuity; household board | BBK / local authority / clinician / 112 as appropriate |
+| need a number, appointment, bed, document, or handoff | **P — The Indigo Book — Professional Support** | local contacts; emergency call; location and access | named service plus backup |
+| need a writable packet | **T — The Grey Book — Templates & Forms** | choose by use mode and privacy class | receiving service named on the resource |
+| need a stable address, figure, formula, source, or audit trail | **R — The Copper Book — Reference** | feedback or review form when correcting | owning route remains primary |
+
+The titles above are the current public ones. Older route names survive as
+aliases so old links and archived text keep working; an alias is allowed to
+remain findable, and is not allowed to appear here as though it were current.
 
 
 ## Mathematical notation legend
@@ -91,22 +97,32 @@ view is `src/data/content_index.json`.
 | **Model** | calculation or thinking aid | communication channels in a group |
 | **Mnemonic** | memorable compression | observe, change, compare |
 
-## Eight situation doors inside ten route identities
+## Eight legacy doors inside eleven route identities
 
-| Door | Loudest problem | Owning route | Canonical names retained |
+| Door | Loudest problem | Current owning route | Legacy names retained |
 |---|---|---|---|
-| A | responsibility or harm | **A — Responsibility and Care** | Situation A, Ch.2 |
-| B | anxiety, panic, or unreality | **B — Alarm and Calm** | Situation B, Calm Guide, Ch.4 |
-| C | pain or physical illness | **C — Body and First Aid** | Situation C, First Aid, Ch.5 |
-| D | danger, coercion, or violence | **D — Threat and Safe Place** | Situation D |
-| E | overload and task congestion | **B — Alarm and Calm** | Situation E, Calm Guide |
-| F | bad or unknown smell | **H — Air, Smell, and Environment** | Situation F after the environmental gate |
-| G | no safe or workable place | **D — Threat and Safe Place** | Situation G |
-| H | smoke, gas, chemicals, electricity, or unsafe air | **H — Air, Smell, and Environment** | Situation H |
+| A | responsibility, dependency, or harm | **A — The Amber Book — Responsibility** | Situation A, Responsibility and Care, Ch.2 |
+| B | anxiety, panic, or unreality | **B — The Teal Book — Calm Guide** | Situation B, Alarm and Calm, Ch.4 |
+| C | pain or physical illness | **C — The Red Book — Self Ambulance** | Situation C, Body and First Aid, Ch.5 |
+| D | danger, coercion, or violence | **D — The Blue Book — Safety & No Place** | Situation D, Threat and Safe Place |
+| E | overload and task congestion | **B — The Teal Book — Calm Guide** | Situation E, Alarm and Calm |
+| F | bad or unknown smell | **H — The Orange Book — Hazards & Disasters** | Situation F after the environmental gate |
+| G | no safe or workable place | **D — The Blue Book — Safety & No Place** | Situation G |
+| H | smoke, gas, chemicals, electricity, or unsafe air | **H — The Orange Book — Hazards & Disasters** | Situation H, Air, Smell, and Environment |
 
-O, Z, P, T, and R are route identities rather than additional situation doors:
-they orient, preserve continuity, connect professional systems, carry writable
-facts, and make the whole graph inspectable.
+The maintained route identities are **O, A, B, C, D, H, Z, P, S, T, and R** —
+eleven of them. The A–H door scheme is a compatibility map kept for older links
+and printed copies; it is not the shelf.
+
+**O, Z, P, S, T, and R** are route identities rather than additional legacy
+doors: they orient bodily observation, preserve continuity, connect professional
+systems, handle social navigation, carry writable facts, and make the whole
+graph inspectable.
+
+**Release invariant.** The generated route index above must list exactly those
+eleven identities under their current public titles. If it ever says ten, omits
+Purple, or shows a legacy alias as the current title, the registry is wrong and
+this page must not be patched to agree with it.
 
 ## Guide topology
 
@@ -221,11 +237,16 @@ $$A_{k+1}=A_k-\delta_k+\varepsilon_k$$
 Small useful actions can reduce arousal while new events add load. This replaces
 the fictional universal cortisol-decay curve.
 
-### 8. Household emergency water — planning equation
+### 8. Household emergency water — planning convention
 
-$$W=2nd\;\text{litres}$$
+$$W_{plan}=2nd\;\text{litres}$$
 
-BBK planning value for $n$ people and $d$ days; individual needs vary.
+An **Olive planning convention**, not a BBK figure and not a medical
+prescription. BBK's current wording is at least **1.5 L of fluids per day** for
+an adult, plus about **0.5 L of water per day when cooking is planned**; the sum
+is what this equation carries for $n$ people over $d$ days. Individual needs and
+incident conditions vary, and an official water-quality instruction outranks the
+arithmetic.
 
 ### 9. Communication channels — graph theorem
 
@@ -312,6 +333,10 @@ toothbrushes appear.
 
 ## Master flowchart — complete text version
 
+This tree is maintained by hand against the eleven books, and it is the one page
+in Copper that can drift without a generator noticing. If it disagrees with an
+owning book, the book is right.
+
 ```text
 BATHROOM EMERGENCY GUIDE — MASTER FLOWCHART
 ============================================================
@@ -329,95 +354,147 @@ BATHROOM EMERGENCY GUIDE — MASTER FLOWCHART
    |
    +-- active crime or immediate violent threat?
    |       +-- YES --> safer place --> 110
-   |       |          injury/life danger --> 112
+   |       |          injury / life danger --> 112
    |       +-- NO --> continue
    |
-   +-- fire/smoke/CO/gas/chemical/electrical danger?
-           +-- YES / MAYBE --> leave or isolate safely
-           |                  Situation H
-           |                  112 / poison centre / gas service
-           +-- NO --> choose door
+   +-- fire / smoke / CO / gas / chemical / electrical danger,
+   |   or an official hazard warning?
+           +-- YES / MAYBE --> H — ORANGE
+           |                  leave, shelter, or isolate only as safely
+           |                  instructed; live official instructions win
+           |                  112 / poison centre / gas service / warning authority
+           +-- NO --> choose the loudest remaining problem
 
-A. I CAUSED TROUBLE / SOMEONE DEPENDS ON ME --> Ch.2
+A. RESPONSIBILITY / DEPENDENCY / HARM --> A — AMBER
    |
-   +-- live injury/birth/danger --> 112 / 110 / Ch.5
-   +-- pregnancy before birth --> medical + recognized counselling
-   +-- birth happening now --> 112, warmth, dispatcher
-   +-- hours/days after birth --> parent/baby care + mental-health check
-   +-- child/dependant --> safety, essentials, backup caregiver
-   +-- adult dependant/child --> requested help + boundaries
-   +-- ambiguous duty --> today / legal / long-term / handoff
-   +-- harm --> stop, stabilize, tell, repair, follow up
-   +-- silicon entity --> isolate, preserve logs, notify owner
+   +-- WHICH CLOCK?  live harm / continuing effects / repair / ongoing care
+   +-- live injury, birth, or immediate danger --> C — RED / 112 / 110
+   +-- WHAT KIND OF STAKE?   (substrate is metadata, not a verdict)
+   |      welfare       can it presently be harmed?
+   |      agency        can it choose, consent, refuse, act?
+   |      development   are important capacities still emerging?
+   |      dependency    what fails if care stops, and is that on me?
+   |      transfer      can a competent person or system take over?
+   |      reversibility can today's decision be undone?
+   |      hazard        can it harm other entities?
+   |      authority     what am I entitled or required to decide?
+   |         limit: uncertainty + irreversibility raise the burden of care
+   |                on MY actions; they never manufacture authority over
+   |                another person's body or decision
+   +-- then the domain module: pregnancy / birth / newborn / child /
+   |   adult / animal / technical system
+   +-- caused harm --> stop + stabilize + tell + repair + follow up
+   +-- technical system --> contain first (isolate, pause, preserve,
+   |                       snapshot, notify) -- every step reversible
+   |                       uncertain moral status is not zero moral status,
+   |                       and never a reason to leave a harmful system running
+   +-- unresolved duty --> today / legal / transfer / long-term care
 
-B. I FEEL ANXIOUS --> Ch.3B + Ch.4
+B. ANXIETY / PANIC / OVERLOAD --> B — TEAL
    |
-   +-- medical red flag/new severe symptoms --> 112
-   +-- no red flag --> feet, five objects, gentle exhale, one person
-   +-- recurring/impairing --> professional assessment
-   +-- acute self-harm danger --> 112
+   +-- bodily symptom new, severe, or unclear --> O — GREEN / C — RED
+   +-- otherwise --> orient outward + reduce one avoidable load
+   |                 + one safe action + one person
+   +-- recurring, or shrinking ordinary life --> P — INDIGO
+   +-- acute self / other danger --> 112
 
-C. I FEEL PAIN --> Ch.3C + Ch.5
+C. BODY SIGNAL / PAIN / ILLNESS / INJURY --> O — GREEN + C — RED
    |
-   +-- severe/sudden/chest/neuro/collapse/pregnancy red flag --> 112
-   +-- urgent non-life-threatening --> 116 117 / practice
-   +-- stable minor --> simple first aid + monitor
-   +-- describe with OPQRST and change over time
+   +-- describe what changed; OPQRST or the observation log when useful
+   +-- severe / sudden / chest / neuro / collapse / pregnancy red flag --> 112
+   +-- urgent but not life-threatening --> practice / 116 117
+   +-- stable minor problem --> appropriate first aid + reassess
+   +-- device readings inform the handoff; they never cancel a red flag
 
-D. I FEEL ENDANGERED --> Ch.3D + Ch.7
+D. DANGER / COERCION / NOWHERE SAFE --> D — BLUE
    |
-   +-- present threat --> exit/safer place --> 110 / 112
-   +-- expected/digital/coercive threat --> evidence + trusted person
-   +-- violence against women support --> 116 016
-   +-- after-effects --> Ch.4 + professional support
+   +-- FIRST MINUTE: 112 / 110 / Orange overrides
+   +-- G1 person or active threat --> exit or safer place --> 110
+   |      a lock is a barrier, not a plan: leave anyway for fire, smoke,
+   |      bad air, forced entry, or a responder's instruction
+   |      prepared non-voice route: nora, registered in advance
+   +-- G2 no weather-safe place tonight --> municipal accommodation route
+   |      child: danger --> 110/112; no safe adult --> Jugendamt;
+   |      someone to talk to --> 116 111 (counselling, not placement)
+   +-- G3 access or essential care fails --> name the failing function
+   |      and the remaining reserve
+   |      urgent but not life-threatening --> 116 117 / clinician
+   |      life-supporting failure or imminent serious harm --> 112
+   +-- G4 physically safe, cannot remain here for the next hour
+   |      --> one-hour container + hand off the primary problem
+   |      merely distressed but able to stay --> B — TEAL / S — PURPLE
+   +-- CONFIRM before travelling: destination, availability, access,
+   |   arrival, backup, escalation
+   +-- after-effects or service need --> P — INDIGO
 
-E. THINGS ARE CONGESTING --> Ch.3E + Ch.4
+E. OVERLOAD / TASK CONGESTION --> B — TEAL
    |
    +-- write: prevent harm / soon / can be ugly
    +-- choose one physical action under five minutes
-   +-- delegate or obtain care when essentials repeatedly fail
+   +-- delegate or hand off repeated essential failures
+   +-- if the real problem is social navigation --> S — PURPLE
 
-F. BAD SMELL --> Situation H gate, then Ch.3F
+F. BAD OR UNKNOWN SMELL --> H — ORANGE
    |
-   +-- fire/smoke/CO/gas/chemical/electrical/symptoms --> Situation H
-   +-- sewage/drain after negative hazard gate --> water trap + plumber
-   +-- damp/mould after negative hazard gate --> moisture repair
-   +-- ordinary smell --> ventilation and cleaning, no combustion
+   +-- fire / smoke / CO / gas / chemical / electrical / symptoms --> hazard route
+   +-- sewage or drain, only after a negative hazard gate --> repair route
+   +-- damp or mould, only after a negative hazard gate --> moisture repair
+   +-- do not assume outdoors is safer; current warning instructions decide
 
-G. NO SAFE PLACE --> Situation G + Ch.7
+G. NO SAFE OR WORKABLE PLACE --> D — BLUE + P — INDIGO
    |
-   +-- person/active threat --> safer place --> 110 / 112
-   |                          116 016 / men's helpline / specialist refuge
-   +-- no roof tonight --> municipal emergency accommodation
-   |                       115 identifies authority during service hours
-   +-- place fails access/care --> name barrier + runtime
-   |                              local accessible destination / 116 117 / 112
-   +-- social/internal crisis --> one safe hour + one ally
-                                  116 123 / 116 111 / 116 117 / 112
+   +-- see the D branch above; G is its legacy door
 
-H. THE ENVIRONMENT MAY BE UNSAFE --> Situation H
+H. ENVIRONMENT / HAZARD / DISASTER --> H — ORANGE
    |
-   +-- fire/smoke --> smoke-free exit; smoky route means close door + 112
-   +-- CO alarm/suspected combustion exposure --> fresh air + 112
-   +-- gas --> no flame/switch/bell/phone; knock, leave, call outside
-   +-- chemical --> stop exposure, rinse, keep label, poison centre / 112
-   +-- electrical --> do not touch live source; isolate only if safe; 112
-   +-- official outside warning --> shelter or evacuate exactly as instructed
+   +-- fire / smoke --> smoke-free exit; unsafe route --> close door + 112
+   +-- CO or combustion exposure --> leave the exposure when safe + 112
+   +-- gas --> no flame, switch, bell, or phone; knock, leave, call outside
+   +-- chemical --> stop exposure; rinse when appropriate; keep the label;
+   |               poison centre / 112
+   +-- electrical --> do not touch a live source; isolate only if safe; 112
+   +-- area-scale warning --> shelter, stop ventilation, or evacuate exactly
+                             as instructed
 
-OUTAGE / DISASTER --> Ch.6
+OUTAGE / LONG DISRUPTION --> Z — OLIVE
    |
-   +-- verify official warning
-   +-- shelter or evacuate as instructed
-   +-- air, medical needs, temperature, water, communication
-   +-- food, medication, hygiene, roles
-   +-- group scale --> logs, roles, meetings, accountability
+   +-- first: clear Orange's hazard overrides and verify the official warning
+   +-- THE CONTINUITY INVARIANT, per function:
+   |      status / reserve / owner / backup / next action / review /
+   |      failure route
+   +-- first minutes --> air + urgent medical + temperature + water
+   |                     + communication
+   +-- first days --> food + medication + sanitation + dependants + animals
+   +-- several households --> named roles + shared log + explicit handoffs
+   +-- longer shared-resource problem --> allocation, rotation, accountability
+                                          (and it never overrides an
+                                           evacuation order)
+
+SOCIAL NAVIGATION --> S — PURPLE
+   |
+   +-- am I safe?  no, or cannot tell --> D — BLUE / 110 / 112
+   +-- clinical crisis --> C — RED / P — INDIGO
+   +-- otherwise --> disclose at the level you choose (Level 0-4)
+                     + boundary + re-entry + graceful exit + one next move
+
+PROFESSIONAL ROUTE --> P — INDIGO
+   |
+   +-- name the problem
+   +-- choose the service able to change it
+   +-- prepare a usable handoff
+   +-- confirm outcome, backup, owner, review time
+       (contact is not handoff)
+
+WRITABLE FACTS --> T — GREY
+REFERENCE / SOURCE / STABLE ID --> R — COPPER
 
 EVERY NON-EMERGENCY ROUTE
    |
    +-- do one action
-   +-- check better / same / worse
-   +-- use backup
-   +-- escalate on worsening, uncertainty, or red flag
+   +-- check better / same / worse / different problem
+   +-- use the backup
+   +-- escalate on worsening, uncertainty, or a red flag
+   +-- end at a named destination
 ```
 
 ## Pocket print card
@@ -475,3 +552,40 @@ Every non-emergency route must provide:
 4. a named destination.
 
 A dead end in prose is still a dead end.
+
+## Reference release gate
+
+Before a print or public build is called current, check the compiled system, not
+only the chapter you happen to have edited.
+
+### Content gate
+
+- current public title and owning route agree with the generated route index;
+- the emergency override and escalation rule agree with the owning book, not
+  with an older copy of it;
+- models, estimates, mnemonics, and optional theory are visibly labelled;
+- legacy aliases remain searchable without being presented as current titles.
+
+### Service and freshness gate
+
+- operational numbers, hours, access modes, and scopes carry a checked date;
+- a review-by date or maximum review interval exists;
+- a backup or failure route exists wherever availability matters;
+- a directory entry is not described as a confirmed bed, appointment, responder,
+  or live destination unless that outcome was actually confirmed.
+
+### Render and accessibility gate
+
+- no orphan **FIELD NOTE** heading, and no identity band without its payload;
+- no accidental blank-page or severe whitespace regression;
+- monochrome and large-print routes remain usable;
+- image alternatives and adjacent text carry the complete action route;
+- detached Grey pages keep identity, privacy class, version, and review data.
+
+### Privacy gate
+
+- no password, PIN, private key, alarm code, hidden-key location, or protected
+  refuge address is exposed;
+- no private medical or identifying data is published without a lawful and
+  appropriate reason;
+- photographs of installations reveal no access or security detail.

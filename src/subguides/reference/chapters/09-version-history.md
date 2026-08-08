@@ -1,12 +1,149 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "4.14.0-alt.2"
-last_updated: "2026-08-06"
+revision: "4.14.0-alt.3"
+last_updated: "2026-08-08"
 dependencies: []
 ---
 
 # Version History
+
+## 4.14.0-alt.3 — 8 August 2026
+
+Six books were revised against reader critiques. The pattern across all of them
+was the same: a rule stated carefully in one place and carelessly in another,
+with nothing in the build noticing the disagreement.
+
+### Safety corrections
+
+- **Amber** had no carve-out for a shaken or head-injured baby: "After losing
+  your temper" ran straight to apologize. An urgent-medical override now
+  precedes the apology sequence.
+- **Blue** routed "a child without safe care" to 112 while its own children's
+  section, three pages later, had the correct tiering. That tiering now governs:
+  110/112 for danger or unsafe abandonment, Jugendamt or Jugendnotdienst when
+  there is no safe adult but no acute danger, 116 111 for counselling — which is
+  stated to be counselling, not dispatch and not placement.
+- **Blue** also treated any failure to maintain essential medication as a 112
+  criterion. It now requires that the interruption is causing or imminently
+  risks serious harm, with 116 117 for urgent but not life-threatening, and says
+  outright that a missed routine dose is not an ambulance criterion.
+- **Olive** told readers to warm a hypothermic person slowly. DRK describes two
+  stages, routes both to 112, and says of the second: no further warming
+  attempts. The section now splits the stages and keeps the one rule that never
+  changes — no rubbing, no direct heat.
+- **Olive**'s blanket ban on indoor combustion heaters was too broad, and its
+  ban on camping stoves contradicted BBK, which suggests a Campingkocher for
+  small meals while forbidding grills indoors. The test is now approval rather
+  than fuel: anything not specifically intended and installed for indoor use is
+  outdoor-only.
+- The **hub**'s threat section advised changing passwords from a trusted device.
+  Blue's own modifier already explained that a conspicuous account change can
+  itself be the thing that gets noticed. The hub now carries the careful
+  version, which also fixes it for the master guide.
+- **Purple**'s locked-bathroom instruction became conditional: keep the barrier
+  while it is the safer side, leave for fire, smoke, hazardous air, forced
+  entry, or a responder's instruction.
+
+### Fabricated precision removed
+
+- **Purple** replaced minute-keyed cover stories with a Level 0–4 disclosure
+  ladder, and dropped invented "acceptable absence" and "risk level" columns.
+- **Olive** dropped group-size thresholds that presented design intuitions as
+  consequences of $C(n)=n(n-1)/2$. The transitions are now qualitative.
+- **Grey**'s route-drill timings are labelled provisional interface targets, not
+  reader performance standards. A slow stage indicts the installation.
+- Household water: BBK publishes at least **1.5 L of fluids per day** plus about
+  **0.5 L for cooking**, never "2 litres". $W_{plan}=2nd$ is now labelled Olive's
+  own planning convention in Olive, Copper's formula index, and the source notes.
+
+### Architecture
+
+- **Amber** leads with an eight-question entity check — welfare, agency,
+  development, dependency, transfer, reversibility, hazard, authority — with
+  substrate demoted to metadata. The reversibility rule ships with its limit in
+  the same section: it constrains your own actions and never manufactures
+  authority over another person's body or decision.
+- **Olive** promotes the continuity invariant (status, reserve, owner, backup,
+  next action, review, failure route) to the front; Dunbar, the survival
+  function, the heat balance, Pareto, the pairwise-channel formula, and the
+  book-architecture audit move intact to optional reading.
+- **Blue** puts First minute ahead of the confirmed-destination model, pulls the
+  three threat clocks from the hub after G1 rather than before the routing
+  model, and gives G4 an admission criterion so it stops absorbing Teal.
+- Section letters A0–A9 are gone from Amber rather than renumbered; they
+  collided with the reader references printed beside them.
+- **nora** is named in Blue and Purple as a prepared, registered-in-advance
+  non-voice route to 110/112 — never an install task during an emergency.
+
+### Grey stops owning rules it should only record
+
+- Grey states explicitly that it does not decide escalation: a form copies the
+  route, backup, destination, or threshold owned by the relevant book, service,
+  clinical plan, product instruction, or official warning.
+- Local operational facts now carry source, checked date, review-by date, and
+  backup source. A number is not the fact; scope, access channel, and hours are
+  part of it, and they do not always match for the same service.
+- "Fresh-air route" becomes "cleaner-air place or safe-air route", because an
+  area-scale smoke or chemical warning can make staying inside correct.
+- The contacts table and safe-place map now carry Blue's revised escalation
+  wording instead of an older copy of it.
+
+### Copper catches up with the shelf it indexes
+
+- The architecture line said **ten** route identities while listing eleven, and
+  the sentence naming non-door identities omitted Purple. Both corrected, with a
+  release invariant stating that the generated index is authoritative and this
+  page must not be patched to agree with a wrong registry.
+- The master cross-reference used legacy names as though they were current
+  titles, and had no row for Green or Purple. Current public titles now appear;
+  aliases are labelled as aliases.
+- The master flowchart still routed artificial entities to "isolate, preserve
+  logs, notify owner" — the exact architecture Amber was recovered from — and
+  had no Purple, no Green, and no continuity invariant. Rewritten against the
+  current books, and marked as the one hand-maintained page in Copper.
+- Added a reference release gate covering content, service freshness, rendering
+  and accessibility, and privacy.
+
+### Evidence gains a status axis
+
+- Source status — current operational, current optional, contested or
+  approximate, historical, superseded — now sits alongside evidence class.
+  Evidence class asks what kind of claim this is; status asks what job it is
+  allowed to do.
+- Dunbar, Ostrom, Yerkes–Dodson, polyvagal language, the philosophical material,
+  and game theory carry explicit status lines.
+- Collective-resilience research replaces the Prisoner's Dilemma as Olive's main
+  cooperation frame, citing Drury, Cocking and Reicher (2009) and Ntontis et al.
+  (2021). The **"Player B"** battery warning stays in Olive's mainline, beside
+  the cooperation rules, because it is a rule about how to treat your neighbour.
+- Vague "later rupture-and-repair research" is replaced by a named interaction
+  study with a DOI; Bowlby and Ainsworth are relabelled historical foundations.
+  The same swap removed two trade paperbacks from Purple, where the Danger
+  Assessment now supports the danger list.
+- Purple, Blue, Olive, and Amber added sourced citations where the text
+  previously asserted. Cited sources went from 72 to 96 across the campaign.
+
+### Verification
+
+- New validator: retired guidance cannot reappear. Nine superseded phrases —
+  including the silicon-entity branch, "ten route identities", "care bridge
+  fails", and "fresh-air route" — now fail the build if they return to any
+  chapter except the version history and source notes, which exist to record
+  what older releases said. Verified against the pre-revision files.
+- Field Note headings orphaned their own kickers across the whole shelf.
+  `break-after: avoid-page` was set but not `break-inside`, and the "FIELD NOTE
+  nn" label is a block in `::before`, so Chromium parked the label at one page
+  foot and began the next page with an unlabelled heading.
+- `verify_layout` now matches markers across hyphenated line wraps: the A4/2
+  column breaks "powered-device" at its own hyphen, and collapsing whitespace
+  turned a present, legible heading into a missing marker.
+- `verify_sources` retries once on curl code 000. Several cited authorities
+  rate-limit, and a checker that reports a slow ministry as a dead link is one
+  nobody runs before a release.
+- Breadth and continuity markers in the validators were pinning headings when
+  their job is to guarantee subjects stay covered; they now say so, and hold no
+  apostrophes, since pandoc smart-quotes the output.
 
 ## 4.14.0-alt.2 — 6 August 2026
 
