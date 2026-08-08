@@ -5,6 +5,22 @@
   "generated_by": "bin/build_source_inventory.py",
   "footnote_sources": [
     {
+      "id": "01b-body-owner-manual--emergency-routing",
+      "chapter": "01b-body-owner-manual.md",
+      "footnote_key": "emergency-routing",
+      "kind": "explanatory",
+      "text": "gesund.bund.de, “Nummern für den Notfall”: https://gesund.bund.de/notfallnummern . Loss of consciousness, severe breathlessness, severe chest pain or pressure and stroke signs are listed emergency examples; when it is unclear whether a situation is life-threatening, the portal advises calling 112.",
+      "urls": [
+        "https://gesund.bund.de/notfallnummern"
+      ],
+      "used_at_lines": [
+        154
+      ],
+      "subguides": [
+        "O"
+      ]
+    },
+    {
       "id": "01b-body-owner-manual--gut-brain",
       "chapter": "01b-body-owner-manual.md",
       "footnote_key": "gut-brain",
@@ -15,6 +31,22 @@
       ],
       "used_at_lines": [
         55
+      ],
+      "subguides": [
+        "O"
+      ]
+    },
+    {
+      "id": "01b-body-owner-manual--iasp",
+      "chapter": "01b-body-owner-manual.md",
+      "footnote_key": "iasp",
+      "kind": "research",
+      "text": "International Association for the Study of Pain, “IASP Terminology — Pain”: https://www.iasp-pain.org/resources/terminology/ . Pain is a personal experience shaped by biological, psychological and social factors, and is not the same thing as nociception.",
+      "urls": [
+        "https://www.iasp-pain.org/resources/terminology/"
+      ],
+      "used_at_lines": [
+        83
       ],
       "subguides": [
         "O"
@@ -40,10 +72,10 @@
       "id": "01b-body-owner-manual--rome",
       "chapter": "01b-body-owner-manual.md",
       "footnote_key": "rome",
-      "kind": "research",
-      "text": "Lacy BE et al., “Bowel Disorders,” *Gastroenterology* 150 (2016): 1393–1407. Rome IV criteria describe clinical patterns over time; they are not a one-visit self-diagnosis. https://doi.org/10.1053/j.gastro.2016.02.031",
+      "kind": "explanatory",
+      "text": "The Rome Foundation, *Rome V: A Global Framework for Disorders of Gut–Brain Interaction*: https://theromefoundation.org/rome-iv/rome-v/ . Rome V separates clinical from research criteria and updates the IBS and other DGBI definitions. These describe clinical patterns over time; they are not a one-visit self-diagnosis.",
       "urls": [
-        "https://doi.org/10.1053/j.gastro.2016.02.031"
+        "https://theromefoundation.org/rome-iv/rome-v/"
       ],
       "used_at_lines": [
         78
@@ -62,7 +94,7 @@
         "https://doi.org/10.1093/eurheartj/ehy037"
       ],
       "used_at_lines": [
-        163
+        168
       ],
       "subguides": [
         "O"
@@ -1098,7 +1130,7 @@
         "https://doi.org/10.1177/1745691614568352"
       ],
       "used_at_lines": [
-        262
+        454
       ],
       "subguides": [
         "P"
@@ -1131,7 +1163,24 @@
         "https://service.justiz.de/prozesskostenhilfe"
       ],
       "used_at_lines": [
-        339
+        291,
+        296
+      ],
+      "subguides": [
+        "P"
+      ]
+    },
+    {
+      "id": "07-professional-support--nora",
+      "chapter": "07-professional-support.md",
+      "footnote_key": "nora",
+      "kind": "operational",
+      "text": "nora, the official emergency-call app of the German federal states — reaches control centres without a spoken call, transmits location, supports text chat, and offers a demo mode for preparation: https://www.nora-notruf.de/en-en/startpage",
+      "urls": [
+        "https://www.nora-notruf.de/en-en/startpage"
+      ],
+      "used_at_lines": [
+        104
       ],
       "subguides": [
         "P"
@@ -1947,6 +1996,7 @@
     {
       "url": "https://gesund.bund.de/notfallnummern",
       "source_ids": [
+        "01b-body-owner-manual--emergency-routing",
         "05-self-ambulance--emergency-numbers",
         "07-professional-support--numbers"
       ]

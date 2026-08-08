@@ -27,6 +27,12 @@ DEFINITION = re.compile(r"^\[\^([a-z0-9-]+)\]:(.*)$", re.MULTILINE)
 URL = re.compile(r"https?://[^\s)\]]+")
 AGENT = "Mozilla/5.0 (bathroom-emergency-guide source review)"
 
+# Hosts that refuse automated requests outright, including for their own front
+# page. A 403 from these says nothing about whether the cited page exists, so
+# they are reported for manual checking rather than counted as failures -- a
+# check that can never pass is a check people learn to ignore.
+BOT_BLOCKED = {"www.iasp-pain.org"}
+
 
 def cited_urls() -> dict[str, list[str]]:
     found: dict[str, list[str]] = defaultdict(list)
@@ -72,18 +78,27 @@ def main() -> int:
 
     urls = cited_urls()
     failures: list[tuple[str, str, list[str]]] = []
+    manual: list[tuple[str, str]] = []
     for url, uses in sorted(urls.items()):
         ok, detail = check_doi(url) if "doi.org/" in url else check_http(url)
-        if not ok:
+        host = urllib.parse.urlparse(url).netloc
+        if not ok and host in BOT_BLOCKED:
+            manual.append((url, detail))
+        elif not ok:
             failures.append((url, detail, uses))
         elif not args.quiet:
             print(f"  ok    {detail:<24} {url}")
+
+    for url, detail in manual:
+        print(f"  MANUAL {detail:<23} {url}")
+        print("        this host blocks automated requests; confirm by hand")
 
     for url, detail, uses in failures:
         print(f"  FAIL  {detail:<24} {url}")
         print(f"        cited by: {', '.join(sorted(set(uses)))}")
 
-    print(f"\n{len(urls) - len(failures)}/{len(urls)} cited sources resolve.")
+    print(f"\n{len(urls) - len(failures) - len(manual)}/{len(urls)} cited sources resolve"
+          f"{f', {len(manual)} need a manual check' if manual else ''}.")
     if failures:
         print("Check whether the authority moved the page or withdrew the guidance;")
         print("a moved page needs a new URL, withdrawn guidance needs a new claim.")

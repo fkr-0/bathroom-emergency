@@ -141,11 +141,11 @@
       "owner": "O"
     },
     {
-      "key": "01b-body-owner-manual:quick-reference",
+      "key": "01b-body-owner-manual:quick-reference-the-body-router",
       "chapter": "01b-body-owner-manual.md",
-      "line": 165,
+      "line": 170,
       "level": 2,
-      "heading": "Quick reference",
+      "heading": "Quick reference — the body router",
       "owner": "O"
     },
     {
@@ -1159,7 +1159,7 @@
     {
       "key": "07-professional-support:violence-and-coercion",
       "chapter": "07-professional-support.md",
-      "line": 271,
+      "line": 239,
       "level": 2,
       "heading": "Violence and coercion",
       "owner": "P"
@@ -1167,7 +1167,7 @@
     {
       "key": "07-professional-support:legal-support",
       "chapter": "07-professional-support.md",
-      "line": 298,
+      "line": 266,
       "level": 2,
       "heading": "Legal support",
       "owner": "P"
@@ -1175,7 +1175,7 @@
     {
       "key": "07-professional-support:medical-support",
       "chapter": "07-professional-support.md",
-      "line": 356,
+      "line": 313,
       "level": 2,
       "heading": "Medical support",
       "owner": "P"
@@ -1183,7 +1183,7 @@
     {
       "key": "07-professional-support:children-dependants-and-caregiving",
       "chapter": "07-professional-support.md",
-      "line": 392,
+      "line": 349,
       "level": 2,
       "heading": "Children, dependants, and caregiving",
       "owner": "P"
@@ -1191,15 +1191,23 @@
     {
       "key": "07-professional-support:housing-and-no-place-tonight",
       "chapter": "07-professional-support.md",
-      "line": 420,
+      "line": 377,
       "level": 2,
       "heading": "Housing and “no place tonight”",
       "owner": "P"
     },
     {
+      "key": "07-professional-support:optional-reading-explanations-are-not-prerequisites",
+      "chapter": "07-professional-support.md",
+      "line": 419,
+      "level": 2,
+      "heading": "Optional reading — explanations are not prerequisites",
+      "owner": "P"
+    },
+    {
       "key": "07-professional-support:quick-reference-card",
       "chapter": "07-professional-support.md",
-      "line": 462,
+      "line": 475,
       "level": 2,
       "heading": "Quick reference card",
       "owner": "P"
@@ -1207,7 +1215,7 @@
     {
       "key": "07-professional-support:pair-support-with-a-maintained-grey-book-resource",
       "chapter": "07-professional-support.md",
-      "line": 476,
+      "line": 489,
       "level": 2,
       "heading": "Pair support with a maintained Grey Book resource",
       "owner": "P"
@@ -1215,7 +1223,7 @@
     {
       "key": "07-professional-support:support-selection-matrix",
       "chapter": "07-professional-support.md",
-      "line": 490,
+      "line": 503,
       "level": 2,
       "heading": "Support-selection matrix",
       "owner": "P"

@@ -101,7 +101,7 @@ For emergencies in Germany, **nora** is the official emergency-call app of the
 federal states. It reaches police, fire and rescue control centres without a
 spoken call, transmits your location, and supports text chat once the call is
 placed. It is worth installing, registering and testing **before** you need it —
-there is a demo mode. Do not make installing an app a step inside an emergency.
+there is a demo mode. Do not make installing an app a step inside an emergency.[^nora]
 
 Useful instruction:
 
@@ -211,24 +211,6 @@ Possible routes:
 - self-help group as an addition, not a compulsory identity;
 - workplace, school, university, or social counselling.
 
-### Therapy evidence — what can honestly be said
-
-Psychotherapies such as cognitive behavioural, psychodynamic, trauma-focused,
-interpersonal, and other structured approaches can be effective for many
-conditions. Outcomes vary with diagnosis, severity, therapeutic relationship,
-access, method, and individual preference.
-
-A therapy response percentage detached from diagnosis, comparator, follow-up,
-and study population is decoration. Better questions are:
-
-- Is the method appropriate for the problem?
-- Is the professional qualified?
-- Are goals and risks discussed?
-- Is progress reviewed?
-- Can the person say when the fit is poor?
-
-Treatment is evidence-based when evidence guides a shared clinical decision,
-not when a number is pasted onto hope.
 
 ### Friends’ psychological-support guide
 
@@ -253,20 +235,6 @@ Useful sentence:
 > “I care about you. I can stay for the next hour and help call someone. I
 > cannot safely hold this alone.”
 
-### Social connection is not decorative trim
-
-{{visualization:vega-social-connection}}
-
-A 2015 meta-analysis of longitudinal observational studies reported adjusted
-mortality odds ratios of **1.29 for social isolation**, **1.26 for loneliness**,
-and **1.32 for living alone**.[^connection] These are associations across
-populations and follow-up periods—not proof that one feeling directly caused one
-death, and certainly not a personalized forecast.
-
-The finding is still useful at the correct scale: stable contact, practical
-mutual aid, and routes back into community belong alongside medical and
-psychological care. “Call one person” is not a magical treatment. It is a small
-way to stop a crisis from becoming a closed system with one frightened operator.
 
 ## Violence and coercion
 
@@ -308,17 +276,6 @@ problem:
 4. avoid public posting about an active dispute;
 5. obtain qualified advice before making strategic decisions.
 
-### Self-defence law — why this guide refuses a four-line verdict
-
-German self-defence law under §32 StGB depends on a present unlawful attack and
-on the defensive action being necessary and legally permissible in context.
-Specific facts matter, and adjacent rules may apply.
-
-The guide therefore does **not** state that one force level is automatically
-proportionate, that retreat is always required or never relevant, or that a
-reader should delay safety while performing legal analysis. Get safe, call
-police/rescue, preserve facts, and consult a criminal-law professional when
-needed.
 
 ### Finding legal help
 
@@ -331,7 +288,7 @@ needed.
 
 **Hamburg and Bremen are exceptions:** they run public legal-advice offices
 instead of ordinary Beratungshilfe. Prozesskostenhilfe remains separate and
-applies to court proceedings either way.
+applies to court proceedings either way.[^legal-aid]
 
 Official Justiz-Services explain that Beratungshilfe can cover legal advice and
 out-of-court representation for people who meet the financial and necessity
@@ -459,6 +416,62 @@ Keep copies of:
 
 Do not delay leaving immediate danger to obtain the perfect folder.
 
+## Optional reading — explanations are not prerequisites
+
+Some of the following could reasonably live in the Copper Book, a psychology
+methods lecture, or a small forest of legal footnotes. That objection is not
+obviously wrong. It stays here because it explains why several routes above are
+shaped the way they are.
+
+Do not finish an interesting study, framework, or doctrine before making a call
+that already needs making. **Action and handoff outrank explanation.**
+
+### Therapy evidence — what can honestly be said
+
+Psychotherapies such as cognitive behavioural, psychodynamic, trauma-focused,
+interpersonal, and other structured approaches can be effective for many
+conditions. Outcomes vary with diagnosis, severity, therapeutic relationship,
+access, method, and individual preference.
+
+A therapy response percentage detached from diagnosis, comparator, follow-up,
+and study population is decoration. Better questions are:
+
+- Is the method appropriate for the problem?
+- Is the professional qualified?
+- Are goals and risks discussed?
+- Is progress reviewed?
+- Can the person say when the fit is poor?
+
+Treatment is evidence-based when evidence guides a shared clinical decision,
+not when a number is pasted onto hope.
+
+### Social connection is not decorative trim
+
+{{visualization:vega-social-connection}}
+
+A 2015 meta-analysis of longitudinal observational studies reported adjusted
+mortality odds ratios of **1.29 for social isolation**, **1.26 for loneliness**,
+and **1.32 for living alone**.[^connection] These are associations across
+populations and follow-up periods—not proof that one feeling directly caused one
+death, and certainly not a personalized forecast.
+
+The finding is still useful at the correct scale: stable contact, practical
+mutual aid, and routes back into community belong alongside medical and
+psychological care. “Call one person” is not a magical treatment. It is a small
+way to stop a crisis from becoming a closed system with one frightened operator.
+
+### Self-defence law — why this guide refuses a four-line verdict
+
+German self-defence law under §32 StGB depends on a present unlawful attack and
+on the defensive action being necessary and legally permissible in context.
+Specific facts matter, and adjacent rules may apply.
+
+The guide therefore does **not** state that one force level is automatically
+proportionate, that retreat is always required or never relevant, or that a
+reader should delay safety while performing legal analysis. Get safe, call
+police/rescue, preserve facts, and consult a criminal-law professional when
+needed.
+
 ## Quick reference card
 
 <div class="safety-card">
@@ -517,3 +530,10 @@ ordinary sequence.
 [^legal-aid]: Official German Justiz-Services, Beratungshilfe and Prozesskostenhilfe: https://service.justiz.de/beratungshilfe and https://service.justiz.de/prozesskostenhilfe
 
 [^connection]: Holt-Lunstad J et al., “Loneliness and social isolation as risk factors for mortality: a meta-analytic review,” *Perspectives on Psychological Science* 10 (2015): 227–237. Adjusted observational associations were OR 1.29 for social isolation, 1.26 for loneliness, and 1.32 for living alone; baseline health and other factors influenced findings. https://doi.org/10.1177/1745691614568352
+
+[^115]: Behördennummer 115: https://www.115.de/ ; sign-language service: https://www.115.de/gebaerdensprache
+
+[^nora]: nora, the official emergency-call app of the German federal states — reaches control centres without a spoken call, transmits location, supports text chat, and offers a demo mode for preparation: https://www.nora-notruf.de/en-en/startpage
+
+
+[^116117]: 116117 patient service, reachable around the clock for urgent medical problems that are not life-threatening: https://www.116117.de/de/englisch.php

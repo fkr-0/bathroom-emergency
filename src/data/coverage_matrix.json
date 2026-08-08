@@ -9,8 +9,8 @@
   },
   "totals": {
     "nodes": 11,
-    "sections": 261,
-    "sources": 73,
+    "sections": 262,
+    "sources": 76,
     "reader_visuals": 41,
     "standalone_nodes": 11
   },
@@ -26,14 +26,16 @@
       ],
       "chapter_count": 3,
       "section_count": 18,
-      "source_count": 4,
+      "source_count": 6,
       "source_counts": {
         "operational": 0,
         "research": 4,
-        "explanatory": 0
+        "explanatory": 2
       },
       "source_ids": [
+        "01b-body-owner-manual--emergency-routing",
         "01b-body-owner-manual--gut-brain",
+        "01b-body-owner-manual--iasp",
         "01b-body-owner-manual--nrs",
         "01b-body-owner-manual--rome",
         "01b-body-owner-manual--syncope"
@@ -325,10 +327,10 @@
         "07-professional-support.md"
       ],
       "chapter_count": 1,
-      "section_count": 13,
-      "source_count": 5,
+      "section_count": 14,
+      "source_count": 6,
       "source_counts": {
-        "operational": 5,
+        "operational": 6,
         "research": 0,
         "explanatory": 0
       },
@@ -336,6 +338,7 @@
         "07-professional-support--connection",
         "07-professional-support--iasc",
         "07-professional-support--legal-aid",
+        "07-professional-support--nora",
         "07-professional-support--numbers",
         "07-professional-support--spd"
       ],

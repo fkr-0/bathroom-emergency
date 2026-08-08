@@ -21,14 +21,14 @@ should take over.
 Symptoms and your interpretation of them arrive together, but they are not the
 same department. Write down the first. Stay politely suspicious of the second.
 
-| Observe | Useful description | What changes the route |
-|---|---|---|
-| heartbeat | fast, irregular-feeling, pounding, gradual or sudden | chest pressure, collapse, severe breathlessness, or a new severe pattern |
-| breathing | comfortable, rapid, wheezing, painful, unable to finish a sentence | severe effort, blue/grey colour, swelling, choking, or rapidly worsening difficulty |
-| tingling or weakness | both sides or one; moving or fixed; linked to rapid breathing or position | one-sided weakness, facial droop, speech change, sudden severe headache |
-| dizziness | spinning, faint, unsteady, worse on standing | loss of consciousness, head injury, chest symptoms, neurological signs, repeated unexplained episodes |
-| abdominal symptoms | location, waves or constant, stool/vomiting, food and medication context | severe localized or worsening pain, blood, rigid abdomen, persistent vomiting, collapse |
-| mental state | anxious, detached, confused, unusually sleepy | dangerous confusion, loss of reality contact, inability to remain safe |
+| Observe | Useful description | What changes the route | Go where |
+|---|---|---|---|
+| heartbeat | fast, irregular-feeling, pounding, gradual or sudden | chest pressure, collapse, severe breathlessness, or a new severe pattern | **112** for severe signs; otherwise medical advice |
+| breathing | comfortable, rapid, wheezing, painful, unable to finish a sentence | severe effort, blue/grey colour, swelling, choking, or rapidly worsening difficulty | **112** |
+| tingling or weakness | both sides or one; moving or fixed; linked to rapid breathing or position | one-sided weakness, facial droop, speech change, sudden severe headache | **112** |
+| dizziness | spinning, faint, unsteady, worse on standing | loss of consciousness, head injury, chest symptoms, neurological signs, repeated unexplained episodes | **112** if consciousness was lost; otherwise prompt assessment |
+| abdominal symptoms | location, waves or constant, stool/vomiting, food and medication context | severe localized or worsening pain, blood, rigid abdomen, persistent vomiting, collapse | **112** for collapse or severe signs; otherwise urgent assessment |
+| mental state | anxious, detached, confused, unusually sleepy | dangerous confusion, loss of reality contact, inability to remain safe | **112** for immediate danger; otherwise Indigo |
 
 A familiar stress response can still deserve care. An unfamiliar symptom can
 still turn out to be benign. The useful distinction is not “real versus
@@ -80,7 +80,7 @@ history, not one dramatic afternoon.[^rome]
 ## Pain: communication, not a verdict
 
 A 0–10 number can help describe intensity, but it does not measure tissue damage
-or urgency by itself.[^nrs]
+or urgency by itself.[^iasp][^nrs]
 
 Use **OPQRST**:
 
@@ -124,7 +124,7 @@ Write down:
 | other substances | alcohol, caffeine, nicotine, cannabis, supplements, recreational substances |
 | symptoms | what began before and after each exposure |
 
-Do not double a missed dose, abruptly stop a prescribed medicine, restart after a
+Do not double a missed dose **unless the medicine's own instructions or a qualified professional tell you to**, and do not abruptly stop a prescribed medicine, restart after a
 long interruption, or “balance” one substance with another solely because a
 bathroom guide suggested confidence. Use the label, the written treatment plan,
 a pharmacist, prescriber, poison centre, or emergency service as appropriate.
@@ -146,10 +146,15 @@ Bathrooms are excellent at hygiene and terrible at catching people.
 4. Unlock the door or alert another person when safe.
 5. Stay down after symptoms ease, then sit and stand in stages.
 
-If a person becomes unresponsive but breathes normally, another person should
-place them in the recovery position and call for help. A person cannot reliably
-manage their own future recovery position while unconscious; biology has denied
-that feature request.
+If a person becomes **unresponsive but is breathing normally**, another person
+should **call 112**, put them in the recovery position, and keep checking that
+the breathing stays normal. If they are **not breathing normally**, that is a
+Red Book route: **112** and start CPR. Loss of consciousness is an emergency
+call in its own right — "call for help" here means the emergency number, not
+shouting for a flatmate.[^emergency-routing]
+
+A person cannot reliably manage their own future recovery position while
+unconscious; biology has denied that feature request.
 
 ### Seek urgent assessment for
 
@@ -162,24 +167,37 @@ that feature request.
 Vasovagal fainting is common and may follow heat, pain, straining, dehydration,
 or seeing blood, but unexplained syncope still deserves proper assessment.[^syncope]
 
-## Quick reference
+## Quick reference — the body router
 
-| Situation | First useful move |
-|---|---|
-| loud but familiar stress symptoms | sit safely; describe; change one ordinary variable; reassess |
-| new or worsening physical symptom | use the Red Book or obtain medical advice |
-| medication/substance uncertainty | list product, amount, time, symptoms; pharmacist/poison centre/clinician |
-| feeling faint | floor first, dignity later; alert someone |
-| recurring gut or pain pattern | document it and arrange assessment rather than re-solving it nightly |
-| severe red flag | stop reading and involve emergency help |
+::: {.safety-card}
+### Where does this go?
+
+| What it looks like | First useful move | Then |
+|---|---|---|
+| **familiar, stable, manageable** | sit safely; describe it; change one ordinary variable; compare once | stay in Green while it stays stable |
+| **new, or getting worse** | stop building a theory at home; note onset and direction | Red, **116 117**, or a clinician by severity |
+| **medication or substance uncertainty** | list product, amount, time, and what changed | pharmacist, poison centre, or prescriber |
+| **feeling faint** | floor first, dignity later; tell someone | assessment if unexplained or repeated |
+| **a pattern that keeps coming back** | write it down instead of re-solving it nightly | planned clinical assessment |
+| **unresponsive, breathing normally** | **112**, recovery position, keep watching the breathing | Red / emergency services |
+| **unresponsive, not breathing normally** | **112**, start CPR | Red / emergency services |
+| **severe red flag** | stop reading | **112** |
+
+**If someone is unresponsive, this is no longer a Green Book problem.**
+:::
 
 Your body is not your enemy. It is a reporting system with limited vocabulary
-and a talent for push notifications. Give it ordinary maintenance, record what
-remains, and hand the problem onward when it exceeds home support.
+and a talent for push notifications. Give it ordinary maintenance, write down
+what is left, and hand the problem on when it outgrows home support.
+
 
 [^gut-brain]: Carabotti M et al., “The gut-brain axis: interactions between enteric microbiota, central and enteric nervous systems,” *Annals of Gastroenterology* 28 (2015): 203–209. https://pmc.ncbi.nlm.nih.gov/articles/PMC4367209/
 
-[^rome]: Lacy BE et al., “Bowel Disorders,” *Gastroenterology* 150 (2016): 1393–1407. Rome IV criteria describe clinical patterns over time; they are not a one-visit self-diagnosis. https://doi.org/10.1053/j.gastro.2016.02.031
+[^rome]: The Rome Foundation, *Rome V: A Global Framework for Disorders of Gut–Brain Interaction*: https://theromefoundation.org/rome-iv/rome-v/ . Rome V separates clinical from research criteria and updates the IBS and other DGBI definitions. These describe clinical patterns over time; they are not a one-visit self-diagnosis.
+
+[^iasp]: International Association for the Study of Pain, “IASP Terminology — Pain”: https://www.iasp-pain.org/resources/terminology/ . Pain is a personal experience shaped by biological, psychological and social factors, and is not the same thing as nociception.
+
+[^emergency-routing]: gesund.bund.de, “Nummern für den Notfall”: https://gesund.bund.de/notfallnummern . Loss of consciousness, severe breathlessness, severe chest pain or pressure and stroke signs are listed emergency examples; when it is unclear whether a situation is life-threatening, the portal advises calling 112.
 
 [^nrs]: Hjermstad MJ et al., “Studies Comparing Numerical Rating Scales, Verbal Rating Scales, and Visual Analogue Scales for Assessment of Pain Intensity in Adults,” *Journal of Pain and Symptom Management* 41 (2011): 1073–1093. https://doi.org/10.1016/j.jpainsymman.2010.08.016
 
