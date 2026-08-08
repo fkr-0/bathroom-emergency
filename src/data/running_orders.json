@@ -1,12 +1,17 @@
 {
   "schema_version": 1,
-  "note": "Reading order for books whose material is spread across chapters. Books absent from this file are assembled whole-chapter in manifest order. Reader references follow this order, so reordering a book is an edit here and a rebuild, not a rewrite. Headings are named as they appear in source; retitling belongs in the source file so the reference registry and anchors stay in agreement.",
+  "note": "Reading order for books whose material is spread across chapters. Books absent from this file are assembled whole-chapter in manifest order. Reader references follow this order, so reordering a book is an edit here and a rebuild, not a rewrite. Headings are named as they appear in source; retitling belongs in the source file so the reference registry and anchors stay in agreement. Books are ordered so the usable instruction comes first and explanation last: nothing in the closing sections should change what a reader does in the next ten minutes.",
   "orders": {
     "B": [
       {
         "chapter": "04-calm-guide.md",
         "sections": [
-          ""
+          "",
+          "Right now",
+          "A pause needs no legal brief",
+          "The 90-second landing",
+          "Route the problem before solving it",
+          "Change one variable"
         ]
       },
       {
@@ -24,12 +29,6 @@
       {
         "chapter": "04-calm-guide.md",
         "sections": [
-          "A pause needs no legal brief",
-          "The 90-second landing",
-          "Breathing exercises",
-          "Stress does not obey a cinematic decay curve",
-          "Yerkes–Dodson",
-          "Polyvagal language",
           "The bathroom control panel",
           "Comfort inventory"
         ]
@@ -45,10 +44,19 @@
         "sections": [
           "Unhook from the thought",
           "The five-minute values bridge",
-          "Eventually: leaving the bathroom",
+          "Re-entry or exit",
           "Nice-place map",
           "When calm is not enough",
           "A calm plan for another person"
+        ]
+      },
+      {
+        "chapter": "04-calm-guide.md",
+        "sections": [
+          "More breathing patterns",
+          "Stress does not obey a cinematic decay curve",
+          "Yerkes–Dodson",
+          "Polyvagal language"
         ]
       }
     ],

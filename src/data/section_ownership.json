@@ -525,9 +525,33 @@
       "owner": "B"
     },
     {
-      "key": "04-calm-guide:a-pause-needs-no-legal-brief",
+      "key": "04-calm-guide:right-now",
       "chapter": "04-calm-guide.md",
       "line": 25,
+      "level": 2,
+      "heading": "Right now",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:route-the-problem-before-solving-it",
+      "chapter": "04-calm-guide.md",
+      "line": 42,
+      "level": 2,
+      "heading": "Route the problem before solving it",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:change-one-variable",
+      "chapter": "04-calm-guide.md",
+      "line": 57,
+      "level": 2,
+      "heading": "Change one variable",
+      "owner": "B"
+    },
+    {
+      "key": "04-calm-guide:a-pause-needs-no-legal-brief",
+      "chapter": "04-calm-guide.md",
+      "line": 72,
       "level": 2,
       "heading": "A pause needs no legal brief",
       "owner": "B"
@@ -535,7 +559,7 @@
     {
       "key": "04-calm-guide:the-90-second-landing",
       "chapter": "04-calm-guide.md",
-      "line": 42,
+      "line": 89,
       "level": 2,
       "heading": "The 90-second landing",
       "owner": "B"
@@ -543,23 +567,23 @@
     {
       "key": "04-calm-guide:stress-does-not-obey-a-cinematic-decay-curve",
       "chapter": "04-calm-guide.md",
-      "line": 86,
+      "line": 121,
       "level": 2,
       "heading": "Stress does not obey a cinematic decay curve",
       "owner": "B"
     },
     {
-      "key": "04-calm-guide:breathing-exercises",
+      "key": "04-calm-guide:more-breathing-patterns",
       "chapter": "04-calm-guide.md",
-      "line": 110,
+      "line": 145,
       "level": 2,
-      "heading": "Breathing exercises",
+      "heading": "More breathing patterns",
       "owner": "B"
     },
     {
       "key": "04-calm-guide:yerkes-dodson",
       "chapter": "04-calm-guide.md",
-      "line": 159,
+      "line": 212,
       "level": 2,
       "heading": "Yerkes–Dodson",
       "owner": "B"
@@ -567,7 +591,7 @@
     {
       "key": "04-calm-guide:polyvagal-language",
       "chapter": "04-calm-guide.md",
-      "line": 183,
+      "line": 236,
       "level": 2,
       "heading": "Polyvagal language",
       "owner": "B"
@@ -575,7 +599,7 @@
     {
       "key": "04-calm-guide:the-bathroom-control-panel",
       "chapter": "04-calm-guide.md",
-      "line": 200,
+      "line": 253,
       "level": 2,
       "heading": "The bathroom control panel",
       "owner": "B"
@@ -583,7 +607,7 @@
     {
       "key": "04-calm-guide:comfort-inventory",
       "chapter": "04-calm-guide.md",
-      "line": 216,
+      "line": 269,
       "level": 2,
       "heading": "Comfort inventory",
       "owner": "B"
@@ -591,7 +615,7 @@
     {
       "key": "04-calm-guide:unhook-from-the-thought",
       "chapter": "04-calm-guide.md",
-      "line": 245,
+      "line": 298,
       "level": 2,
       "heading": "Unhook from the thought",
       "owner": "B"
@@ -599,23 +623,23 @@
     {
       "key": "04-calm-guide:the-five-minute-values-bridge",
       "chapter": "04-calm-guide.md",
-      "line": 265,
+      "line": 318,
       "level": 2,
       "heading": "The five-minute values bridge",
       "owner": "B"
     },
     {
-      "key": "04-calm-guide:eventually-leaving-the-bathroom",
+      "key": "04-calm-guide:re-entry-or-exit",
       "chapter": "04-calm-guide.md",
-      "line": 275,
+      "line": 328,
       "level": 2,
-      "heading": "Eventually: leaving the bathroom",
+      "heading": "Re-entry or exit",
       "owner": "B"
     },
     {
       "key": "04-calm-guide:nice-place-map",
       "chapter": "04-calm-guide.md",
-      "line": 377,
+      "line": 430,
       "level": 2,
       "heading": "Nice-place map",
       "owner": "B"
@@ -623,7 +647,7 @@
     {
       "key": "04-calm-guide:when-calm-is-not-enough",
       "chapter": "04-calm-guide.md",
-      "line": 392,
+      "line": 445,
       "level": 2,
       "heading": "When calm is not enough",
       "owner": "B"
@@ -631,7 +655,7 @@
     {
       "key": "04-calm-guide:a-calm-plan-for-another-person",
       "chapter": "04-calm-guide.md",
-      "line": 410,
+      "line": 463,
       "level": 2,
       "heading": "A calm plan for another person",
       "owner": "B"

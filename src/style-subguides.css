@@ -175,6 +175,7 @@
 
 .subguide-position,
 .subguide-intro,
+.subguide-contents,
 .subguide-handoff,
 .sources-and-limits {
   position: relative;
@@ -189,6 +190,10 @@
 .subguide-position {
   background: color-mix(in srgb, var(--sg-soft) 52%, var(--surface));
 }
+
+/* Contents is its own object, not a tail on "what this book is for". */
+.subguide-contents { margin-top: 1rem; }
+.subguide-contents > h2:first-child { margin-top: 0; }
 
 .subguide-position::after,
 .subguide-handoff::after {

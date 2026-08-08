@@ -390,6 +390,10 @@ emergency services. In Germany, **112** is for life, medical, and fire danger;
 <section><strong>What it hands off</strong><p>{node["outside_scope"]}</p></section>
 </div>
 
+:::
+
+::: {{.subguide-contents}}
+
 ## Contents
 
 {contents or '- The book begins on the next page.'}

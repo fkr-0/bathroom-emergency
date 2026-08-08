@@ -22,6 +22,53 @@ next decision.
 Anxiety merges sensation, prediction, memory, and obligation into one enormous
 notification. Separate them. Change one variable. The blanket stays.
 
+## Right now
+
+If you only read one part of this book, read this one.
+
+1. **Put your body somewhere stable.** Sit or lean.
+2. **Look outward.** Notice three ordinary things in the room.
+3. **Breathe normally.** If it is comfortable, let the exhale run a little longer.
+4. **Reduce one variable.** Noise, light, tight clothing, heat, information,
+   audience, or one unfinished demand.
+5. **Choose one next action.** Not the whole solution. One visible action.
+
+You do not have to feel good before acting. The target is smaller than that:
+enough bandwidth for one safe choice.
+
+Anything below this line is here to help when that is not enough. None of it is
+required first.
+
+## Route the problem before solving it
+
+Different kinds of overload need different tools, and you do not have to read
+this book in order.
+
+| Right now it feels like… | Go to |
+|---|---|
+| I cannot think | The 90-second landing |
+| Everything became urgent at once | Traffic control |
+| One frightening thought is running the machine | Unhook from the thought |
+| I can think, but I cannot pick a next step | The bathroom control panel |
+| I am calmer and need a direction | The five-minute values bridge |
+| I am ready to move, return, or leave | Re-entry or exit |
+| I am getting worse, unsafe, or medically unsure | When calm is not enough |
+
+## Change one variable
+
+Pick **one**. This is not a wellness programme.
+
+| Area | One change |
+|---|---|
+| Body | sit; loosen tight clothing; drink normally if thirsty; eat something familiar |
+| Room | reduce one light; reduce one sound; cool or warm the room safely; look away from the mirror |
+| Social | tell one person; ask for ten quiet minutes; leave the audience |
+| Information | stop searching symptoms; silence notifications; write one task down |
+| Exit | decide where you go next |
+
+If it helps a little, that counts. If it does not, change a different variable
+rather than deciding the whole attempt failed.
+
 ## A pause needs no legal brief
 
 You're allowed to take a pause without first proving it is medically,
@@ -66,20 +113,8 @@ only has to give your alarm system something ordinary to chew on.[^who-stress]
 competition, no heroic breath-holding. Stop deliberate breathing if it makes
 you dizzy, tingly, or more frightened and return to normal breathing.
 
-That is the whole instruction. Everything after this line is optional detail.
-
-Here is the same sentence written the way a physiologist would write it, so the
-notation stops looking like a spell. Call your inhale time $t_i$ and your exhale
-time $t_e$. One full cycle takes
-
-$$T = t_i + t_e, \qquad f = \frac{60}{T}$$
-
-where $f$ is breaths per minute. **Which means:** breathe in for 3 seconds and
-out for 5, and one cycle is 8 seconds, so $f = 60/8 \approx 7.5$ breaths per
-minute. That is the entire equation. It is arithmetic in a lab coat.
-
-It describes a pattern; it does not prescribe the correct one. Comfort and the
-absence of dizziness outrank the number every time.
+That is the whole instruction. Anything more technical about breathing is
+optional reading at the back.
 
 ![Three optional breathing patterns](build/diagrams/breathing_techniques.png)
 
@@ -107,7 +142,25 @@ So: not physiology. A teaching model for one practical fact — several small
 reductions can add up, even when calm refuses to arrive in a single magnificent
 wave accompanied by tasteful strings.
 
-## Breathing exercises
+## More breathing patterns
+
+The default is still the one in the landing: **breathe normally**, and let the
+exhale run a little longer only if that is comfortable. Everything here is a
+menu, not an exam.
+
+Here is the pacing written the way a physiologist would write it, for anyone
+whose nervous system is improved by algebra. Call your inhale time $t_i$ and
+your exhale time $t_e$. One full cycle takes
+
+$$T = t_i + t_e, \qquad f = \frac{60}{T}$$
+
+where $f$ is breaths per minute. **Which means:** breathe in for 3 seconds and
+out for 5, and one cycle is 8 seconds, so $f = 60/8 \approx 7.5$ breaths per
+minute. That is the entire equation. It is arithmetic in a lab coat.
+
+It describes a pattern; it does not prescribe the correct one. Comfort and the
+absence of dizziness outrank the number every time.
+
 
 ### Technique 1 — longer exhale
 
@@ -272,7 +325,7 @@ When the immediate alarm has reduced slightly:
 
 Values are directions, not performance scores.
 
-## Eventually: leaving the bathroom
+## Re-entry or exit
 
 You cannot live in here indefinitely. The logistics deteriorate, and the towels
 begin to form opinions.

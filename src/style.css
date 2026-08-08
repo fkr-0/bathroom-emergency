@@ -69,7 +69,10 @@ h2::before {
  * note; the generated chart owns marks, scales, and labels.
  */
 .quantitative-figure {
-  max-width: 940px;
+  /* Never wider than the column. At 940px with auto margins this overflowed
+     the A4/2 page symmetrically, clipping the first letter of the heading on
+     one side and the figure reference on the other. */
+  max-width: min(940px, 100%);
   margin: 1.15rem auto 1.5rem;
   break-inside: avoid;
 }

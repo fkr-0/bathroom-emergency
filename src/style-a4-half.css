@@ -87,6 +87,11 @@
     line-height: 1.03;
   }
 
+  /* Contents is navigation, not a field note: it should neither carry the
+     label nor consume the first number. */
+  .subguide-contents h2 { counter-increment: none; }
+  .subguide-contents h2::before { content: none; }
+
   h2 {
     counter-increment: field-section;
     position: relative;
@@ -266,7 +271,10 @@
   img[alt*="flowgraph"] { max-height: 145mm; }
 
   .quantitative-figure {
-    margin: 7pt -3mm 9pt;
+    /* No horizontal bleed. Every block shares the one column now, and the
+       bleed pushed this card's heading outside its own overflow:hidden box,
+       which clipped the first letter of the title and the figure reference. */
+    margin: 7pt 0 9pt;
   }
 
   .quantitative-figure > figure {
