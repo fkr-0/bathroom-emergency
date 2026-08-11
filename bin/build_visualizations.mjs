@@ -12,28 +12,19 @@ if (!fontconfigRelative) throw new Error('visualization catalog lacks renderer.f
 const fontconfigPath = path.join(ROOT, fontconfigRelative);
 
 // Native text measurement is initialized while Vega's canvas dependencies are
-// imported. Set the deterministic project profile first so host desktop
-// Fontconfig fragments cannot leak warnings or font substitutions into builds.
-process.env.FONTCONFIG_FILE ??= fontconfigPath;
+// imported. Set the deterministic project profile and a private writable cache
+// first so host Fontconfig caches/fragments cannot leak warnings, stale UUID
+// state, or font substitutions into builds.
+const fontCacheHome = path.join(ROOT, 'build', '.fontconfig-cache');
+await fs.mkdir(fontCacheHome, { recursive: true });
+process.env.FONTCONFIG_FILE = fontconfigPath;
+process.env.XDG_CACHE_HOME = fontCacheHome;
 
 const vega = await import('vega');
 const { compile } = await import('vega-lite');
 
 async function readJson(file) {
   return JSON.parse(await fs.readFile(file, 'utf8'));
-}
-
-function stripKnownFontconfigNoise(stderr) {
-  // Some distro builds of libfontconfig remove legacy .uuid files while
-  // refreshing caches, then warn when they cannot restore the mtime of the
-  // root-owned system font directory. rsvg-convert still succeeds and emits a
-  // valid PNG. Keep stderr strict, but discard only that exact non-fatal family
-  // of messages; any other renderer warning/error remains visible and fails the
-  // warning-free smoke gate.
-  return stderr
-    .split(/(?<=\n)/)
-    .filter(line => !/^Unable to revert mtime: \/usr\/share\/fonts(?:\/.*)?\s*$/.test(line))
-    .join('');
 }
 
 function run(command, args) {
@@ -46,9 +37,8 @@ function run(command, args) {
     child.on('error', reject);
     child.on('close', code => {
       if (code === 0) {
-        const actionableStderr = stripKnownFontconfigNoise(stderr);
-        if (actionableStderr) process.stderr.write(actionableStderr);
-        resolve({ stdout, stderr: actionableStderr });
+        if (stderr) process.stderr.write(stderr);
+        resolve({ stdout, stderr });
       }
       else reject(new Error(`${command} exited ${code}: ${stderr || stdout}`));
     });
