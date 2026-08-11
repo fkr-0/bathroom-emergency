@@ -226,7 +226,10 @@ if HTML.exists():
     check("<math" in html, "built HTML has no native MathML")
     check("cdn.jsdelivr" not in html and not re.search(r"<script[^>]+mathjax", html, re.I), "remote math dependency remains")
     check('<main id="guide">' in html, "semantic guide wrapper missing")
-    check('class="chapter' in html, "chapter wrappers missing")
+    check(
+        html.count('class="standalone-subguide"') == 12,
+        "bound guide is not Shelf + eleven standalone-subguide wrappers",
+    )
     check('class="revision-footer"' in html, "revision footer missing")
     check(VERSION in html, "built HTML version drifted")
     for title in books:
@@ -301,7 +304,7 @@ required_scripts = (
     "bin/build_subguides.py", "bin/build_site.py", "bin/build_release_manifest.py",
     "bin/validate_migration.py", "bin/validate_reference_index.py",
     "bin/validate_coverage_matrix.py", "bin/validate_site.py",
-    "bin/validate_build_matrix.py", "bin/project_meta.py",
+    "bin/validate_build_matrix.py", "bin/validate_combined_print.py", "bin/project_meta.py",
     "bin/verify_accessibility.py", "bin/verify_density.py",
     "bin/verify_layout.py", "bin/verify_overflow.mjs",
 )

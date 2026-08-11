@@ -84,7 +84,7 @@ def _css_string(value: str) -> str:
 
 def revision_footer_css(
     *, title: str, layout: str, mode: str, glyph: str = "", accent: str = "#0d7355",
-    pattern: str = "solid"
+    pattern: str = "solid", page_name: str | None = None,
 ) -> str:
     """Return print furniture as ``@page`` margin boxes.
 
@@ -123,12 +123,13 @@ def revision_footer_css(
     # apart. verify_density normalizes this one token before comparing colour
     # and monochrome text, because it is meant to differ.
     edition = f"{layout_label} / {mode}"
+    page_selector = f"@page {page_name}" if page_name else "@page"
 
     return "\n".join(
         (
             "/* Generated running furniture. Literal strings only: Chromium",
             "   drops string() in paged media. */",
-            "@page {",
+            f"{page_selector} {{",
             # The identity band. Chromium honours border and background on a
             # margin box, so the rule and the pattern swatch live in the top
             # margin where they cannot collide with body text -- which is what

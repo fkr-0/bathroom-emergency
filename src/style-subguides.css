@@ -15,6 +15,14 @@
   min-width: 0;
 }
 
+[data-subguide="SHELF"] {
+  --sg-pattern-name: "solid";
+  --sg-accent: #344054;
+  --sg-soft: #eef1f4;
+  --sg-pattern: repeating-linear-gradient(0deg, transparent 0 8px, currentColor 9px 11px, transparent 12px 18px);
+  --sg-pattern-size: 100% 24px;
+}
+
 .hub-node-heading h2::before {
   content: none;
 }

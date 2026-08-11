@@ -74,6 +74,8 @@ if manifest_path.exists():
                 stem = "_".join(parts)
                 for suffix in ("md", "html", "pdf"):
                     need(f"build/subguides/{node_id}/{stem}.{suffix}")
+        need(f"build/booklet/subguides/{node_id}/{node['slug']}_a4half_booklet.pdf")
+        need(f"build/booklet/subguides/{node_id}/{node['slug']}_a4half_mono_booklet.pdf")
         need(f"build/subguides/{node_id}/manifest.json")
 
 release_path = BUILD / "release/manifest.json"
@@ -86,4 +88,4 @@ if release_path.exists():
 
 if errors:
     raise SystemExit("Build-matrix validation failed:\n- " + "\n- ".join(errors))
-print("Build-matrix validation passed: six master editions, editable formats, landing, release manifest, and 66 standalone eleven-book editions are present.")
+print("Build-matrix validation passed: six master editions, 22 per-subguide folded A4 booklet editions, editable formats, landing, release manifest, and 66 standalone eleven-book editions are present.")

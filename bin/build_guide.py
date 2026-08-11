@@ -241,16 +241,7 @@ def expand_subguide_source_macros(text: str, records: list[dict]) -> str:
     return expanded
 
 
-# The master cover is the only page no book owns: it names the shelf and the
-# reading order. Everything after it is a book, assembled exactly the way its
-# standalone edition assembles it.
-FRONT_MATTER = ("00-cover.md",)
-
-
 def assemble() -> Path:
-    visualizations = visualization_lookup()
-    source_records = source_inventory_records()
-    seen_figure_refs: set[str] = set()
     parts = [
         "---",
         'title: "Bathroom Emergency Guide"',
@@ -259,32 +250,13 @@ def assemble() -> Path:
         "---",
         "",
     ]
-    for index, filename in enumerate(FRONT_MATTER):
-        path = find_chapter(filename)
-        if path is None:
-            raise BuildError(f"Missing chapter: {filename}")
-        body = strip_frontmatter(path.read_text(encoding="utf-8"))
-        body = expand_visualization_macros(body, visualizations)
-        body = expand_subguide_source_macros(body, source_records)
-        body = expand_reference_macros(body)
-        body = inject_heading_ids(body, filename)
-        body = decorate_figure_references(body, seen_figure_refs).strip()
-        classes = "chapter document-cover" if index == 0 else "chapter"
-        parts.extend([
-            f'::: {{#{path.stem} .{classes.replace(" ", " .")} data-subguide="{CHAPTER_OWNERS[filename]}"}}',
-            "",
-            body,
-            "",
-            ":::",
-            "",
-        ])
-
-    # The master is the shelf in shelf order, not a pile of chapters. Each book
-    # arrives with its cover, "Book N of 11" positioning, promise, contents,
-    # handoffs, and its own sources -- so a reader who has the bound guide sees
-    # the same object as a reader holding the detached book.
+    # The master is the shelf in shelf order, not a pile of chapters. The shelf
+    # front matter is itself a book, then every shelf book arrives with its
+    # cover, positioning, promise, contents, handoffs, and local sources. The
+    # bound and detached render paths therefore start from identical markup.
     import build_subguides as SG
 
+    parts.extend([SG.assembled_shelf(), ""])
     shelf = json.loads(
         (ROOT / "src" / "data" / "subguides.json").read_text(encoding="utf-8")
     )["shelf_order"]
@@ -293,7 +265,7 @@ def assemble() -> Path:
 
     output = BUILD_MD / "guide.md"
     output.write_text("\n".join(parts).rstrip() + "\n", encoding="utf-8")
-    note(f"assembled {len(FRONT_MATTER)} front-matter pages + {len(shelf)} books "
+    note(f"assembled shelf front matter + {len(shelf)} books "
          f"→ {output.relative_to(ROOT)}")
     return output
 
@@ -316,11 +288,58 @@ def combined_css(monochrome: bool, *, layout: str = "a4") -> Path:
         content += "\n\n" + STYLE_LARGE_PRINT.read_text(encoding="utf-8")
     if monochrome:
         content += "\n\n" + STYLE_MONO.read_text(encoding="utf-8")
+
+    mode = "mono" if monochrome else "color"
+    # Fallback furniture is useful if any page ever escapes its book wrapper.
     content += "\n\n" + revision_footer_css(
         title="Bathroom Emergency Guide",
         layout=layout,
-        mode="mono" if monochrome else "color",
+        mode=mode,
     )
+
+    # A single Chromium document can still have literal per-book running
+    # furniture: named @page rules select one generated header per book. This
+    # avoids unsupported string-set/string() while preserving the exact header
+    # contract used by the standalone editions.
+    import build_subguides as SG
+
+    manifest = json.loads(
+        (ROOT / "src" / "data" / "subguides.json").read_text(encoding="utf-8")
+    )
+    page_nodes = [SG.SHELF_NODE, *manifest["nodes"]]
+    for node in page_nodes:
+        content += "\n\n" + revision_footer_css(
+            title=node["title"],
+            layout=layout,
+            mode=mode,
+            glyph=node["glyph"],
+            accent=node["colour"],
+            pattern=node["pattern"],
+            page_name=f'beg-{node["id"].lower()}',
+        )
+
+    cover_margin = {"a4": "10mm", "a4half": "7mm", "largeprint": "13mm"}[layout]
+    assignments = "\n".join(
+        f'  .standalone-subguide[data-subguide="{node["id"]}"] {{ page: beg-{node["id"].lower()}; }}'
+        for node in page_nodes
+    )
+    content += f'''\n\n/* Bound-guide page routing. Every cover uses the same furniture-free first-page
+   geometry as a detached book; the following pages inherit their book's named
+   page and therefore its literal running identity. */
+@page beg-cover {{
+  margin: {cover_margin};
+  @top-left {{ content: none; background-image: none; border-bottom: 0; padding: 0; }}
+  @top-right {{ content: none; border-bottom: 0; padding: 0; }}
+  @bottom-center {{ content: none; }}
+  @bottom-left {{ content: none; }}
+  @bottom-right {{ content: none; }}
+}}
+
+@media print {{
+{assignments}
+  .standalone-subguide > .subguide-cover {{ page: beg-cover; }}
+}}
+'''
     name = variant_stem(monochrome=monochrome, layout=layout).replace("_", "-") + ".css"
     output = BUILD_HTML / name
     output.write_text(content, encoding="utf-8")

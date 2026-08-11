@@ -407,6 +407,15 @@ emergency services. In Germany, **112** is for life, medical, and fire danger;
 
 :::
 '''
+    # SHELF is not one of the eleven graph nodes, so its local handoff visual is
+    # the already-generated whole-shelf overview rather than a nonexistent
+    # subguide_graph_SHELF.png. The old broken image rendered its alt text as a
+    # second caption in color PDF and disappeared differently in mono.
+    graph_path = (
+        "build/diagrams/subguide_graph_overview.png"
+        if node_id == "SHELF"
+        else f"build/diagrams/subguide_graph_{node_id}.png"
+    )
     connections = f'''::: {{.subguide-handoff data-subguide="{node_id}"}}
 
 # Where next?
@@ -416,7 +425,7 @@ primary problem; move when another title becomes more accurate.
 
 {handoffs}
 
-![Connections from {node_id} — {node["title"]}](build/diagrams/subguide_graph_{node_id}.png)
+![Connections from {node_id} — {node["title"]}]({graph_path})
 
 :::
 '''
@@ -748,8 +757,8 @@ SHELF_NODE = {
 }
 
 
-def build_shelf() -> dict:
-    node = dict(SHELF_NODE)
+def shelf_body(node: dict) -> tuple[str, list[dict]]:
+    """Expand the shelf's canonical cover chapter like any other book body."""
     inventory = json.loads(
         (DATA_DIR / "source_inventory.json").read_text(encoding="utf-8")
     )
@@ -769,6 +778,26 @@ def build_shelf() -> dict:
     content = drop_redundant_book_title(content, node)
     content = BG.expand_visualization_macros(content, BG.visualization_lookup())
     content = decorate_figure_references(content, set())
+    return content, ordered_sources
+
+
+def assembled_shelf() -> str:
+    """Return shelf front matter through the same assembly path as a book."""
+    node = dict(SHELF_NODE)
+    content, ordered_sources = shelf_body(node)
+    return build_markdown(
+        node,
+        content,
+        ordered_sources,
+        layout="a4",
+        contents=mini_toc(content),
+        resource_map="",
+    )
+
+
+def build_shelf() -> dict:
+    node = dict(SHELF_NODE)
+    content, ordered_sources = shelf_body(node)
     out_dir = BUILD / node["id"]
     render_editions(
         node, content, ordered_sources, mini_toc(content), "", out_dir

@@ -10,7 +10,7 @@
     "build:diagrams": "./bin/build_diagrams.sh",
     "build:a4half": "npm run build:diagrams && npm run build:inventories && ./bin/build_guide.sh a4half",
     "verify:layout": "python3 bin/verify_layout.py",
-    "test": "python3 bin/validate_routes.py && python3 bin/validate_continuity.py && python3 bin/validate_reference_index.py && python3 bin/validate_coverage_matrix.py && python3 bin/validate_subguides.py && python3 bin/validate_render_tooling.py && python3 bin/validate_visualizations.py && python3 bin/validate_illustrations.py && python3 bin/validate_superseded.py && python3 bin/validate_migration.py && python3 bin/validate_guide.py && python3 bin/verify_layout.py --quiet && python3 bin/verify_density.py && python3 bin/verify_accessibility.py && node bin/verify_overflow.mjs && python3 bin/validate_site.py && node bin/verify_site.mjs && python3 bin/validate_build_matrix.py",
+    "test": "python3 bin/validate_routes.py && python3 bin/validate_continuity.py && python3 bin/validate_reference_index.py && python3 bin/validate_coverage_matrix.py && python3 bin/validate_subguides.py && python3 bin/validate_render_tooling.py && python3 bin/validate_visualizations.py && python3 bin/validate_illustrations.py && python3 bin/validate_superseded.py && python3 bin/validate_migration.py && python3 bin/validate_guide.py && python3 bin/validate_combined_print.py && python3 bin/validate_booklet.py && python3 bin/verify_layout.py --quiet && python3 bin/verify_density.py && python3 bin/verify_accessibility.py && node bin/verify_overflow.mjs && python3 bin/validate_site.py && node bin/verify_site.mjs && python3 bin/validate_build_matrix.py",
     "validate:routes": "python3 bin/validate_routes.py",
     "build:largeprint": "npm run build:diagrams && npm run build:inventories && ./bin/build_guide.sh largeprint",
     "verify:accessibility": "python3 bin/verify_accessibility.py",
@@ -33,8 +33,11 @@
     "verify:site": "node bin/verify_site.mjs",
     "validate:matrix": "python3 bin/validate_build_matrix.py",
     "validate:migration": "python3 bin/validate_migration.py",
+    "validate:combined-print": "python3 bin/validate_combined_print.py",
     "validate:superseded": "python3 bin/validate_superseded.py",
-    "build:twoup": "python3 bin/impose_two_up.py"
+    "build:twoup": "python3 bin/impose_two_up.py",
+    "build:booklet": "python3 bin/impose_booklet.py",
+    "validate:booklet": "python3 bin/validate_booklet.py"
   },
   "devDependencies": {
     "playwright": "^1.54.0",
