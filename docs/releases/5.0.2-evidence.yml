@@ -1,0 +1,130 @@
+project: bathroom-emergency-guide
+version: 5.0.2
+release_date: 2026-08-11
+source_revision: 11213708c09b
+source_date_epoch: 1786485396
+implementation_commit: 1121370
+local_tag: v5.0.2
+tag_target: commit containing this evidence record
+push_performed: false
+publish_performed: false
+deployment_performed: false
+
+release_scope:
+  stable_line: 5.0.2
+  canonical_chapters: 17
+  active_stable_resources: 391
+  retired_stable_keys: 76
+  standalone_books: 11
+  standalone_pdf_editions: 66
+  shelf_intro_editions: 6
+  folded_booklet_editions: 24
+  combined_booklet_bundles: 2
+  release_manifest_artifacts: 820
+  changes:
+    - stable 5.x release metadata synchronized to 5.0.2
+    - stronger per-book running header identity using glyph, route code, and terse colour-book label
+    - canonical be.fkr.dev address retained in running furniture
+    - Shelf introduction added to the independent booklet matrix in colour and monochrome
+    - two twelve-signature combined booklet print runs with duplex-safe book boundaries
+    - tracked and generated long-edge duplex printing instructions
+    - CI and Pages toolchains updated for booklet imposition dependencies and booklet artifacts
+
+print_contract:
+  logical_page: A4/2, 105 x 297 mm
+  physical_sheet: portrait A4
+  scale: 100 percent / Actual Size
+  duplex: true
+  duplex_binding: flip on long edge
+  printer_driver_booklet_mode: false
+  signatures: 12
+  combined_color_sides: 114
+  combined_color_sheets: 57
+  combined_mono_sides: 114
+  combined_mono_sheets: 57
+
+verification:
+  precommit_fresh_build:
+    command: GUIDE_AS_OF=2026-08-11 npm run build
+    result: passed
+    notes:
+      - stale ignored build artifacts were detected before release and replaced by a full fresh build
+      - all build, booklet, print, layout, accessibility, site, and matrix gates passed
+  exact_revision_build:
+    command: GUIDE_AS_OF=2026-08-11 GUIDE_REVISION=11213708c09b SOURCE_DATE_EPOCH=1786485396 npm run build
+    result: passed
+    observed_gates:
+      - 391 stable active resources across six typed kinds
+      - 11 released standalone book identities and complete Shelf introduction
+      - 66 standalone PDF editions
+      - 24 independently imposed booklet editions
+      - two combined twelve-signature booklet bundles with duplex-safe boundaries
+      - six master HTML/PDF editions plus Markdown, DOCX, and LaTeX
+      - A4/2 geometry, blank-page, and edge-collision validation
+      - A4 density, blank-page, edge, and text-parity validation
+      - large-print accessibility and colour/mono parity
+      - six HTML editions with no clipped content
+      - responsive Pages package with no remote runtime requests
+      - complete build matrix and release manifest
+  independent_exact_test:
+    command: GUIDE_AS_OF=2026-08-11 GUIDE_REVISION=11213708c09b SOURCE_DATE_EPOCH=1786485396 npm test
+    result: passed
+  whitespace_check:
+    command: git diff --check
+    result: passed
+  ancestry_coauthor_audit:
+    result: passed
+    finding: no Claude, Anthropic, or Co-authored-by trailers in current v5-synthesis ancestry
+  implementation_commit_trailer_audit:
+    result: passed
+    finding: release implementation commit has no co-author trailer
+
+header_identity_evidence:
+  canonical_url: be.fkr.dev
+  compact_identity_format: glyph + route code + colour-book label
+  samples:
+    - {pdf: build/pdf/guide.pdf, identity: "O // GREEN BOOK", first_pages: [6, 7, 8, 9, 10, 11]}
+    - {pdf: build/pdf/guide.pdf, identity: "H // ORANGE BOOK", first_pages: [78, 79, 80, 81, 82, 83]}
+    - {pdf: build/pdf/guide.pdf, identity: "P // INDIGO BOOK", first_pages: [112, 113, 114, 115, 116, 117]}
+    - {pdf: build/pdf/guide_a4half_mono.pdf, identity: "P // INDIGO BOOK", first_pages: [101, 102, 103, 104, 105, 106]}
+  automated_visual_evidence:
+    - representative raster parity passed in combined-print validation
+    - A4/2 contact sheets generated and edge-collision validation passed
+    - A4 density contact sheets generated and density/edge validation passed
+    - large-print accessibility contact sheets generated and validation passed
+
+artifact_manifest:
+  path: build/release/manifest.json
+  embedded_release: 5.0.2
+  embedded_revision: 11213708c09b
+  artifacts: 820
+  bytes: 155141
+  sha256: 5f03f24539f479e313f365c42432f18199e520c0e6f71f7c7fe813887ee74cff
+
+artifact_samples:
+  - {path: build/pdf/guide.pdf, pages: 250, bytes: 15499362, sha256: 4df099341117d78216b0dbda8bcf994de1ef7743951f4ed58dfa6e60a59aab25}
+  - {path: build/pdf/guide_mono.pdf, pages: 250, bytes: 13267473, sha256: 9cd783d9f04532cd61fbd4db07856de5f275f70a11bc7c4b6418dacacaeb332c}
+  - {path: build/pdf/guide_a4half.pdf, pages: 216, bytes: 14781008, sha256: 8a812ac46114f12c6200c77afe66fec3fc62be2f91c830787b17adbf6b14fb6a}
+  - {path: build/pdf/guide_a4half_mono.pdf, pages: 216, bytes: 11496884, sha256: 5182aa7d338bbad2da8ae84c7450f5a6ede137b372ea6a35d2b01afd580d7c3c}
+  - {path: build/pdf/guide_largeprint.pdf, pages: 350, bytes: 15790443, sha256: 716a0a949d51385e687a99314c9d2582e47514a88594fd28130c9dd8059e778e}
+  - {path: build/pdf/guide_largeprint_mono.pdf, pages: 350, bytes: 16203916, sha256: 55d7573d880964142837db7e998ad252abecb874e333427afa2becf56fc1da3c}
+  - {path: build/booklet/all-subguides_booklet-print.pdf, pages: 114, bytes: 12476321, sha256: 665f80010d6e920ac04f3be7ca08f3201627e2d79551f3c0730a3512c6af1c24}
+  - {path: build/booklet/all-subguides_booklet-print_mono.pdf, pages: 114, bytes: 9097125, sha256: e950c04bc308a7872291a3c2278e7767733ed78d22817308bea0ce1c39b91364}
+
+toolchain:
+  python: 3.14.6
+  node: 24.18.0
+  npm: 11.16.0
+  pandoc: 3.1.3
+  poppler_pdfinfo: 26.07.0
+
+release_decisions:
+  - v5.0.2 is the stable release boundary for the accumulated first-stable 5.x booklet, Pages, and running-header work.
+  - The compact running header is intentionally shorter than the cover title so A4/2 editions keep one-line identity without trim-edge collisions.
+  - The combined print files concatenate already-imposed independent signatures; they are not re-imposed as one corpus.
+  - The release tag is created only after the exact implementation revision build and independent test pass.
+  - This evidence records the local pre-publication release state; remote push and Pages deployment are verified separately after publication.
+
+known_limits:
+  - Build evidence does not establish real-world emergency outcomes, clinical outcomes, local service availability, or deployment quality.
+  - Direct agent image viewing of the generated PDF contact sheets was unavailable across the bridge namespace; automated raster, geometry, density, accessibility, and browser checks passed.
