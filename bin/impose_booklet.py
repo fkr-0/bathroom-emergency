@@ -28,6 +28,7 @@ import math
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -94,6 +95,38 @@ def infer_node(pdf: Path) -> str:
     return parent if parent else "manual"
 
 
+def booklet_pairs(padded_pages: int) -> list[tuple[int, int]]:
+    """Return logical left/right page numbers for one folded signature."""
+    pairs: list[tuple[int, int]] = []
+    for sheet in range(padded_pages // 4):
+        pairs.append((padded_pages - 2 * sheet, 1 + 2 * sheet))
+        pairs.append((2 + 2 * sheet, padded_pages - 2 * sheet - 1))
+    return pairs
+
+
+def make_blank_half_page(path: Path) -> None:
+    """Create one truly blank A4/2 page for signature padding."""
+    html = path.with_suffix(".html")
+    html.write_text(
+        "<!doctype html><style>@page { size: 105mm 297mm; margin: 0 } "
+        "html, body { margin: 0; padding: 0 }</style>",
+        encoding="utf-8",
+    )
+    result = subprocess.run(
+        [require("weasyprint"), str(html), str(path)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode:
+        raise BookletError((result.stderr or result.stdout).strip())
+    width, height, pages = page_geometry(path)
+    if pages != 1 or abs(width * 2 - A4_W_PT) > TOLERANCE_PT or abs(height - A4_H_PT) > TOLERANCE_PT:
+        raise BookletError(
+            f"generated blank page has wrong geometry: {width:.2f}x{height:.2f}pt, {pages} pages"
+        )
+
+
 def impose(pdf: Path, out: Path) -> dict[str, int]:
     width, height, source_pages = page_geometry(pdf)
     if abs(width * 2 - A4_W_PT) > TOLERANCE_PT or abs(height - A4_H_PT) > TOLERANCE_PT:
@@ -108,26 +141,69 @@ def impose(pdf: Path, out: Path) -> dict[str, int]:
     physical_sheets = padded_pages // 4
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    result = subprocess.run(
-        [
-            require("pdfjam"),
-            "--signature", str(padded_pages),
-            "--nup", "2x1",
-            "--paper", "a4paper",
-            "--no-landscape",
-            "--scale", "1.0",
-            "--delta", "0 0",
-            "--offset", "0 0",
-            "--quiet",
-            "--outfile", str(out),
-            str(pdf),
-        ],
-        cwd=ROOT,
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode:
-        raise BookletError((result.stderr or result.stdout).strip())
+
+    # Do not use pdfjam's --signature implementation here. pdfjam 3.10 (the
+    # Ubuntu 24.04 package) and 4.2 disagree about how --signature composes with
+    # --nup 2x1: 3.10 can split one logical A4/2 page across both physical
+    # halves, which destroys the padded blank and the folding order. Compute the
+    # signature order ourselves, then ask pdfjam only to place already-ordered
+    # half-pages side by side. Plain --nup 2x1 is stable across both versions.
+    with tempfile.TemporaryDirectory(prefix="beg-booklet-impose-") as directory:
+        tmp = Path(directory)
+        page_pattern = tmp / "page-%d.pdf"
+        result = subprocess.run(
+            [require("pdfseparate"), str(pdf), str(page_pattern)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode:
+            raise BookletError((result.stderr or result.stdout).strip())
+
+        blank: Path | None = None
+        if padded_pages > source_pages:
+            blank = tmp / "blank.pdf"
+            make_blank_half_page(blank)
+
+        ordered_pages: list[Path] = []
+        for left, right in booklet_pairs(padded_pages):
+            for logical in (left, right):
+                if logical <= source_pages:
+                    ordered_pages.append(tmp / f"page-{logical}.pdf")
+                elif blank is not None:
+                    ordered_pages.append(blank)
+                else:
+                    raise BookletError(f"missing padding page {logical} for {pdf.name}")
+
+        ordered = tmp / "ordered.pdf"
+        result = subprocess.run(
+            [require("pdfunite"), *(str(page) for page in ordered_pages), str(ordered)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode:
+            raise BookletError((result.stderr or result.stdout).strip())
+
+        result = subprocess.run(
+            [
+                require("pdfjam"),
+                "--nup", "2x1",
+                "--paper", "a4paper",
+                "--no-landscape",
+                "--scale", "1.0",
+                "--delta", "0 0",
+                "--offset", "0 0",
+                "--quiet",
+                "--outfile", str(out),
+                str(ordered),
+            ],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode:
+            raise BookletError((result.stderr or result.stdout).strip())
 
     out_width, out_height, out_pages = page_geometry(out)
     if abs(out_width - A4_W_PT) > TOLERANCE_PT or abs(out_height - A4_H_PT) > TOLERANCE_PT:
