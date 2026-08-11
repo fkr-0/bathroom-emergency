@@ -11,10 +11,52 @@ const fontconfigRelative = catalog.renderer?.fontconfig;
 if (!fontconfigRelative) throw new Error('visualization catalog lacks renderer.fontconfig');
 const fontconfigPath = path.join(ROOT, fontconfigRelative);
 
+async function findDejaVuFonts(directory, found = []) {
+  let entries;
+  try {
+    entries = await fs.readdir(directory, { withFileTypes: true });
+  } catch (error) {
+    if (error?.code === 'ENOENT' || error?.code === 'EACCES') return found;
+    throw error;
+  }
+  for (const entry of entries) {
+    const candidate = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      await findDejaVuFonts(candidate, found);
+    } else if (entry.isFile() && /^DejaVu.*\.(?:ttf|otf)$/i.test(entry.name)) {
+      found.push(candidate);
+    }
+  }
+  return found;
+}
+
+async function prepareFontMirror() {
+  const mirror = path.join(ROOT, 'build', '.fontconfig-fonts');
+  await fs.rm(mirror, { recursive: true, force: true });
+  await fs.mkdir(mirror, { recursive: true });
+  const fonts = await findDejaVuFonts('/usr/share/fonts');
+  const required = new Set(['DejaVuSans.ttf', 'DejaVuSerif.ttf', 'DejaVuSansMono.ttf']);
+  for (const source of fonts) {
+    const name = path.basename(source);
+    required.delete(name);
+    const target = path.join(mirror, name);
+    try {
+      await fs.symlink(source, target);
+    } catch (error) {
+      if (error?.code !== 'EEXIST') throw error;
+    }
+  }
+  if (required.size) {
+    throw new Error(`required DejaVu fonts missing from /usr/share/fonts: ${[...required].join(', ')}`);
+  }
+  return mirror;
+}
+
 // Native text measurement is initialized while Vega's canvas dependencies are
-// imported. Set the deterministic project profile and a private writable cache
-// first so host Fontconfig caches/fragments cannot leak warnings, stale UUID
-// state, or font substitutions into builds.
+// imported. Mirror only the project font family into a user-owned directory,
+// then point Fontconfig at that directory and a private writable cache. This
+// avoids scanning/mutating host font-directory UUID state on CI and containers.
+await prepareFontMirror();
 const fontCacheHome = path.join(ROOT, 'build', '.fontconfig-cache');
 await fs.mkdir(fontCacheHome, { recursive: true });
 process.env.FONTCONFIG_FILE = fontconfigPath;

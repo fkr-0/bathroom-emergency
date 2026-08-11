@@ -39,7 +39,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            pandoc poppler-utils librsvg2-bin texlive-extra-utils texlive-latex-recommended
+            pandoc poppler-utils librsvg2-bin fonts-dejavu-core texlive-extra-utils texlive-latex-recommended
           python -m pip install --disable-pip-version-check matplotlib pillow weasyprint
 
       - name: Install locked dependencies and Chromium

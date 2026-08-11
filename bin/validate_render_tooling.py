@@ -34,6 +34,12 @@ if FONTCONFIG.exists():
         text = FONTCONFIG.read_text(encoding="utf-8")
         for family in ("DejaVu Sans", "DejaVu Serif", "DejaVu Sans Mono"):
             check(family in text, f"Fontconfig profile lacks {family} fallback")
+        check(
+            '<dir prefix="relative">../../build/.fontconfig-fonts</dir>' in text,
+            "Fontconfig profile does not use the project-owned DejaVu mirror",
+        )
+        check('<dir>/usr/share/fonts</dir>' not in text, "Fontconfig profile still scans the mutable host font tree")
+        check('<cachedir>/var/cache/fontconfig</cachedir>' not in text, "Fontconfig profile still writes to the system cache")
     except ET.ParseError as exc:
         errors.append(f"Fontconfig profile is not valid XML: {exc}")
 
