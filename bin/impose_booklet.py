@@ -9,8 +9,9 @@ Every subguide is a separate booklet/signature. Its logical page count is
 padded only to the next multiple of four, so short books do not acquire the
 extra blanks that a fixed 24-page signature would introduce.
 
-By default both color and monochrome A4/2 editions of every released standalone
-subguide are imposed under build/booklet/subguides/<node>/.
+By default both color and monochrome A4/2 editions of the Shelf introduction
+and every released standalone subguide are imposed under
+build/booklet/subguides/<node>/.
 
 Print the output duplex on portrait A4 with LONG-EDGE flipping, fold on the
 vertical centre, then staple/bind each guide separately.
@@ -74,7 +75,10 @@ def default_inputs() -> list[tuple[str, Path]]:
         raise BookletError(f"subguide manifest missing: {SUBGUIDE_MANIFEST}")
     manifest = json.loads(SUBGUIDE_MANIFEST.read_text(encoding="utf-8"))
     by_id = {item["id"]: item for item in manifest.get("nodes", [])}
-    inputs: list[tuple[str, Path]] = []
+    inputs: list[tuple[str, Path]] = [
+        ("SHELF", BUILD / "subguides" / "SHELF" / "shelf-how-to-use_a4half.pdf"),
+        ("SHELF", BUILD / "subguides" / "SHELF" / "shelf-how-to-use_a4half_mono.pdf"),
+    ]
     for node_id in manifest.get("standalone_nodes", []):
         node = by_id.get(node_id)
         if not node:
@@ -178,7 +182,7 @@ def main() -> int:
             f"{stats['physical_sides']} printable sides"
         )
 
-    print(f"\nBuilt {len(inputs)} standalone booklet editions.")
+    print(f"\nBuilt {len(inputs)} booklet editions: Shelf intro + eleven standalone books, color and mono.")
     print("Booklet imposition: 2 x A4/2 pages per A4 side at 1:1; one signature per guide.")
     print("Print duplex, portrait A4, flip on LONG edge; fold each guide on the vertical centre.")
     return 0

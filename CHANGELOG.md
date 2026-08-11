@@ -1,5 +1,82 @@
 # Changelog
 
+## 5.0.2 — 2026-08-11
+
+### Changed
+
+- redesigned the subguide running headers into a stronger field-manual identity:
+  each book now carries its glyph, routing code, terse colour-book label,
+  enlarged pattern tab, heavy typography, and a thicker accent rule;
+- kept the canonical `be.fkr.dev` address prominent in the running furniture;
+- made the new header treatment work in both colour and monochrome so adjacent
+  books remain recognizable even without colour cues;
+- preserved A4/2 trim safety after rejecting an initial outer-edge border
+  treatment that collided with the physical page edge.
+
+### Verification scope
+
+- the release remains content-compatible with 5.0.1; this patch changes
+  subguide identity/furniture and release metadata, not emergency routing;
+- the complete print, booklet, site, layout, accessibility, and build matrix is
+  rebuilt and validated before tagging.
+
+## 5.0.1 — 2026-08-11
+
+### Released
+
+- promoted the reviewed `5.0.0-rc.1` line to the first stable 5.x release;
+- added the missing **Shelf introduction** as its own folded A4 booklet in both
+  colour and monochrome, so the physical release is now an intro booklet plus
+  eleven independently foldable colour books;
+- changed the all-booklet print runs to concatenate **12 complete signatures**
+  at duplex-safe boundaries, keeping every booklet separable after one printer
+  job;
+- added downloadable combined booklet PDFs and printing instructions to the
+  GitHub Pages package;
+- put the canonical `be.fkr.dev` address into the running print header and
+  strengthened validation so the URL cannot silently disappear;
+- synchronized `package-lock.json` with the canonical SemVer and added a gate
+  that rejects future package/package-lock version drift;
+- repaired CI/Pages dependencies for booklet imposition and included booklet
+  artifacts in CI uploads.
+
+### Print contract
+
+- print the combined booklet PDF on **portrait A4**, **100% / Actual size**,
+  **duplex**, **flip on long edge**;
+- leave printer-driver booklet/reordering mode **off** because the PDFs are
+  already imposed;
+- the generated `build/booklet/PRINTING.md` records exact PDF-side and physical
+  sheet boundaries for the intro and all eleven books.
+
+## 5.0.0-rc.1 — 2026-08-08
+
+### Changed
+
+- completed the eleven-book synthesis as the 5.0 release-candidate line while
+  preserving active `[BEG:...]` references and the mature 4.x build contracts;
+- made the Shelf and every colour book use the same standalone/bound assembly
+  path so covers and per-book running furniture no longer depend on a second
+  master-only renderer;
+- added folded portrait-A4 booklet imposition for every colour and monochrome
+  A4/2 standalone book, with minimal blank padding and automated geometry/order
+  validation;
+- added colour and monochrome **all-subguide booklet print runs** that
+  concatenate the eleven already-imposed booklets without crossing duplex sheet
+  boundaries;
+- added generated build-specific sheet boundaries and tracked print instructions
+  for A4 portrait, 100% scale, duplex long-edge printing, folding, and separate
+  per-book binding;
+- added combined-master print regression checks for complete covers, named-page
+  running headers, tagged PDFs, and representative raster parity.
+
+### Release engineering
+
+- `package.json` is the canonical SemVer source for this candidate;
+- local build, test, commit, and tag operations do not publish or deploy the
+  guide;
+- release artifacts are hashed into `build/release/manifest.json`.
+
 ## 4.14.0-alt.2 — 2026-08-06
 
 ### Changed

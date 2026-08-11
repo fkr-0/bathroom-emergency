@@ -1,12 +1,42 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "5.0.0-rc.1"
-last_updated: "2026-08-08"
+revision: "5.0.2"
+last_updated: "2026-08-11"
 dependencies: []
 ---
 
 # Version History
+
+## 5.0.2 — 11 August 2026
+
+The first stable patch sharpens the visual identity of the eleven standalone
+books. Running headers now work like field-manual tabs rather than quiet page
+furniture: each book carries its glyph, route code, terse colour-book label,
+larger pattern marker, heavy type, and a stronger accent rule. The canonical
+`be.fkr.dev` address remains part of the header.
+
+The identity deliberately does not depend on colour alone, so monochrome
+printing preserves the same book-to-book recognition. The A4/2 treatment also
+keeps the stronger geometry inside the printable region; an experimental
+outer-edge border was rejected because it violated trim-safety checks.
+
+## 5.0.1 — 11 August 2026
+
+This is the first stable 5.x release. It promotes the reviewed 5.0 release
+candidate and closes the last physical-packaging gap: the Shelf introduction is
+now a booklet too, rather than a loose front-matter artifact.
+
+The complete booklet print run contains twelve independent signatures in shelf
+order: the Shelf intro followed by the eleven colour books. Colour and
+monochrome bundles are both already imposed for portrait A4 duplex printing at
+100%, flip on the long edge. Each booklet begins on its own physical sheet and
+is folded and bound separately after printing.
+
+Release engineering also synchronizes package and lockfile SemVer, exposes the
+combined booklet downloads and print instructions through the Pages package,
+puts `be.fkr.dev` into the running print header, and makes CI install and retain
+the booklet toolchain/artifacts.
 
 ## 5.0.0-rc.1 — 8 August 2026
 

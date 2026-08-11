@@ -111,6 +111,15 @@ def expected_pairs() -> list[tuple[str, Path, Path]]:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     by_id = {item["id"]: item for item in manifest.get("nodes", [])}
     pairs: list[tuple[str, Path, Path]] = []
+    for suffix in ("", "_mono"):
+        stem = f"shelf-how-to-use_a4half{suffix}"
+        pairs.append(
+            (
+                "SHELF",
+                BUILD / "subguides" / "SHELF" / f"{stem}.pdf",
+                BUILD / "booklet" / "subguides" / "SHELF" / f"{stem}_booklet.pdf",
+            )
+        )
     for node_id in manifest.get("standalone_nodes", []):
         node = by_id.get(node_id)
         if not node:
@@ -126,7 +135,7 @@ def expected_pairs() -> list[tuple[str, Path, Path]]:
 
 
 pairs_to_check = expected_pairs()
-check(len(pairs_to_check) == 22, f"expected 22 standalone booklet editions, found {len(pairs_to_check)} targets")
+check(len(pairs_to_check) == 24, f"expected 24 booklet editions, found {len(pairs_to_check)} targets")
 
 for node_id, source, output in pairs_to_check:
     if not source.exists():
@@ -185,7 +194,77 @@ for node_id, source, output in pairs_to_check:
         f"{source_pages} -> {padded} logical pages, {expected_sheets} A4 sheets / {output_sides} sides"
     )
 
+# The two convenience print runs must be exact concatenations of the already
+# imposed booklets. An even physical-side count per component is the key duplex
+# invariant: it guarantees that no A4 sheet can contain two different books.
+manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
+by_id = {item["id"]: item for item in manifest.get("nodes", [])}
+bundle_nodes = [
+    {"id": "SHELF", "slug": "shelf-how-to-use", "title": "Shelf Intro — How to Use the Eleven Books"}
+]
+bundle_nodes.extend(
+    by_id[node_id]
+    for node_id in manifest.get("shelf_order", [])
+    if node_id in manifest.get("standalone_nodes", []) and node_id in by_id
+)
+check(len(bundle_nodes) == 12, f"expected Shelf intro plus eleven bundle components, found {len(bundle_nodes)}")
+for mode in ("color", "mono"):
+    mode_suffix = "_mono" if mode == "mono" else ""
+    bundle = BUILD / "booklet" / f"all-subguides_booklet-print{mode_suffix}.pdf"
+    if not bundle.exists():
+        errors.append(f"combined {mode} booklet print run missing: {bundle.relative_to(ROOT)}")
+        continue
+
+    bundle_sides, bundle_w, bundle_h = geometry(bundle)
+    check(
+        abs(bundle_w - A4_W_PT) <= TOLERANCE_PT and abs(bundle_h - A4_H_PT) <= TOLERANCE_PT,
+        f"{bundle.name}: physical page is not portrait A4",
+    )
+
+    expected_total = 0
+    cursor = 1
+    for node in bundle_nodes:
+        node_id = node["id"]
+        component = (
+            BUILD
+            / "booklet"
+            / "subguides"
+            / node_id
+            / f"{node['slug']}_a4half{mode_suffix}_booklet.pdf"
+        )
+        if not component.exists():
+            errors.append(f"combined {mode}: component missing: {component.relative_to(ROOT)}")
+            continue
+        component_sides, _component_w, _component_h = geometry(component)
+        check(component_sides % 2 == 0, f"{component.name}: physical side count is not duplex-safe")
+        check(cursor % 2 == 1, f"{bundle.name}: {node_id} begins on an even PDF side")
+
+        component_first = probe_line(page_text(component, 1))
+        bundle_first = normalized(page_text(bundle, cursor))
+        if component_first:
+            check(
+                component_first in bundle_first,
+                f"{bundle.name}: {node_id} does not begin at expected side {cursor}",
+            )
+        expected_total += component_sides
+        cursor += component_sides
+
+    check(bundle_sides == expected_total, f"{bundle.name}: expected {expected_total} sides, got {bundle_sides}")
+    print(
+        f"Combined booklet verified [{mode}]: {bundle.relative_to(ROOT)} — "
+        f"{bundle_sides} sides / {bundle_sides // 2} A4 sheets, twelve duplex-safe booklet boundaries"
+    )
+
+printing = BUILD / "booklet" / "PRINTING.md"
+if printing.exists():
+    printing_text = printing.read_text(encoding="utf-8")
+    check("flip on long edge" in printing_text.lower(), "generated booklet instructions omit long-edge duplex setting")
+    check("all-subguides_booklet-print.pdf" in printing_text, "generated booklet instructions omit color bundle")
+    check("all-subguides_booklet-print_mono.pdf" in printing_text, "generated booklet instructions omit mono bundle")
+else:
+    errors.append("generated build/booklet/PRINTING.md is missing")
+
 if errors:
     raise SystemExit("Booklet validation failed:\n- " + "\n- ".join(errors))
 
-print("Folded booklet validation passed: 22 per-subguide editions, one minimally padded signature per guide, A4 geometry, order, and blank padding verified.")
+print("Folded booklet validation passed: 24 editions (Shelf intro + eleven books, color and mono) plus two twelve-signature print bundles, with minimal padding, A4 geometry, order, duplex-safe boundaries, blank padding, and print instructions verified.")

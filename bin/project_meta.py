@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION: str = PACKAGE["version"]
-RELEASE_DATE = "2026-08-08"
+RELEASE_DATE = "2026-08-11"
 SOURCE_REVIEW_DATE = "2026-08-06"
 
 
@@ -82,9 +82,29 @@ def _css_string(value: str) -> str:
     return f'"{escaped}"'
 
 
+def running_header_identity(*, title: str, glyph: str = "", code: str = "") -> str:
+    """Return the compact, high-recognition identity used in running headers.
+
+    Covers carry the full book title. Running furniture instead behaves like a
+    field-manual tab: glyph + routing code + colour/name. That makes adjacent
+    books visibly different even when the colour edition is printed in mono,
+    while keeping the A4/2 header short enough to stay on one line.
+    """
+    match = re.fullmatch(r"The\s+(.+?)\s+Book\s+—\s+(.+)", title)
+    if match:
+        identity = f"{match.group(1)} BOOK"
+    elif " — " in title:
+        identity = title.rsplit(" — ", 1)[-1]
+    else:
+        identity = title
+    identity = identity.upper()
+    lead = " ".join(part for part in (glyph, code) if part)
+    return f"{lead} // {identity}" if lead else identity
+
+
 def revision_footer_css(
     *, title: str, layout: str, mode: str, glyph: str = "", accent: str = "#0d7355",
-    pattern: str = "solid", page_name: str | None = None,
+    pattern: str = "solid", code: str = "", page_name: str | None = None,
 ) -> str:
     """Return print furniture as ``@page`` margin boxes.
 
@@ -108,8 +128,8 @@ def revision_footer_css(
     muted = "#111111" if mode == "mono" else "#52645e"
 
     narrow = layout == "a4half"
-    swatch_w, swatch_h = (8, 2.6) if narrow else (12, 3.2)
-    heading = f"{glyph}  {title}" if glyph else title
+    swatch_w, swatch_h = (11, 3.2) if narrow else (16, 3.8)
+    heading = running_header_identity(title=title, glyph=glyph, code=code)
     # The A4/2 page is 105mm wide and gives the running line about 91mm. The
     # full strings wrapped onto a second line there, including the page number.
     # That edition is the primary print target, so it gets compact furniture.
@@ -122,7 +142,11 @@ def revision_footer_css(
     # Always carry the mode so two printouts of the same book can be told
     # apart. verify_density normalizes this one token before comparing colour
     # and monochrome text, because it is meant to differ.
-    edition = f"{layout_label} / {mode}"
+    edition = (
+        f"{'C' if mode == 'color' else 'M'} · be.fkr.dev"
+        if narrow
+        else f"{layout_label} / {mode} · be.fkr.dev"
+    )
     page_selector = f"@page {page_name}" if page_name else "@page"
 
     return "\n".join(
@@ -138,26 +162,29 @@ def revision_footer_css(
             f"    content: {_css_string(heading)};",
             f"    color: {accent};",
             "    font-family: sans-serif;",
-            f"    font-size: {7 if narrow else 7.5}pt;",
-            "    letter-spacing: .06em;",
+            "    font-weight: 900;",
+            f"    font-size: {7.2 if narrow else 8}pt;",
+            "    letter-spacing: .035em;",
             "    vertical-align: bottom;",
-            f"    padding-left: {swatch_w + 3}mm;",
-            "    padding-bottom: 1.2mm;",
+            f"    padding-left: {swatch_w + 2.4}mm;",
+            "    padding-bottom: 1.1mm;",
             f"    background-image: {swatch_css(pattern, accent)};",
             "    background-repeat: no-repeat;",
-            "    background-position: left bottom 1.5mm;",
+            "    background-position: left 1.2mm bottom 1.25mm;",
             f"    background-size: {swatch_w}mm {swatch_h}mm;",
-            f"    border-bottom: 1.1pt solid {accent};",
+            f"    border-bottom: 2.6pt solid {accent};",
             "  }",
             "  @top-right {",
             f"    content: {_css_string(edition)};",
-            f"    color: {muted};",
+            f"    color: {accent};",
             "    font-family: sans-serif;",
+            "    font-weight: 800;",
             "    font-size: 7pt;",
-            "    letter-spacing: .08em;",
+            "    letter-spacing: .05em;",
             "    vertical-align: bottom;",
-            "    padding-bottom: 1.2mm;",
-            f"    border-bottom: 1.1pt solid {accent};",
+            "    padding-right: 1mm;",
+            "    padding-bottom: 1.1mm;",
+            f"    border-bottom: 2.6pt solid {accent};",
             "  }",
             "  @bottom-center {",
             "    content: counter(page) \" / \" counter(pages);",

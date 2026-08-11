@@ -1,7 +1,7 @@
 {
   "name": "bathroom-emergency-guide",
   "private": true,
-  "version": "5.0.0-rc.1",
+  "version": "5.0.2",
   "description": "A sourced, printable decision guide for bathroom-sized emergencies.",
   "type": "module",
   "scripts": {
@@ -36,7 +36,8 @@
     "validate:combined-print": "python3 bin/validate_combined_print.py",
     "validate:superseded": "python3 bin/validate_superseded.py",
     "build:twoup": "python3 bin/impose_two_up.py",
-    "build:booklet": "python3 bin/impose_booklet.py",
+    "build:booklet": "python3 bin/impose_booklet.py && python3 bin/combine_booklets.py",
+    "build:booklet-bundle": "python3 bin/combine_booklets.py",
     "validate:booklet": "python3 bin/validate_booklet.py"
   },
   "devDependencies": {

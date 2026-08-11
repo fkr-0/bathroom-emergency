@@ -16,6 +16,8 @@ from pathlib import Path
 
 from PIL import Image, ImageChops, ImageStat
 
+from project_meta import running_header_identity
+
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
 MANIFEST = json.loads((ROOT / "src" / "data" / "subguides.json").read_text(encoding="utf-8"))
@@ -25,8 +27,8 @@ errors: list[str] = []
 VARIANTS = (
     ("guide", "a4", "color", "A4 / color"),
     ("guide_mono", "a4", "mono", "A4 / mono"),
-    ("guide_a4half", "a4half", "color", "A4/2 / color"),
-    ("guide_a4half_mono", "a4half", "mono", "A4/2 / mono"),
+    ("guide_a4half", "a4half", "color", "C · be.fkr.dev"),
+    ("guide_a4half_mono", "a4half", "mono", "M · be.fkr.dev"),
     ("guide_largeprint", "largeprint", "color", "LARGE PRINT / color"),
     ("guide_largeprint_mono", "largeprint", "mono", "LARGE PRINT / mono"),
 )
@@ -168,13 +170,22 @@ for stem, layout, mode, edition in VARIANTS:
         if hits:
             check(edition not in pages[hits[0] - 1], f"{stem}: running furniture leaked onto {node_id} cover")
 
-        title = normalized(node["title"])
+        title = normalized(
+            running_header_identity(
+                title=node["title"], glyph=node["glyph"], code=node["id"]
+            )
+        )
         header_hits = [
             index
             for index, page in enumerate(pages, start=1)
-            if title in top_region(page) and edition in top_region(page)
+            if title in top_region(page)
+            and edition in top_region(page)
+            and "be.fkr.dev" in top_region(page)
         ]
-        check(bool(header_hits), f"{stem}: custom running header missing for {node_id} — {node['title']}")
+        check(
+            bool(header_hits),
+            f"{stem}: custom running header or canonical be.fkr.dev URL missing for {node_id} — {node['title']}",
+        )
 
 # Raster parity is intentionally limited to representative A4 colour covers;
 # the six-edition text/route checks above cover the matrix, while these catch

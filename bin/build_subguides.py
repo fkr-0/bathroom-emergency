@@ -191,13 +191,11 @@ def identity_css(node: dict, *, layout: str, monochrome: bool) -> str:
         parts.append((SRC / "style-mono.css").read_text(encoding="utf-8"))
     parts.append(
         revision_footer_css(
-            # The routing letter is gone from the band: the book's name and its
-            # pattern already say which book this is, and the letter cost the
-            # line the width it needed to stay on one line.
             title=node["title"],
             layout=layout,
             mode="mono" if monochrome else "color",
             glyph=node["glyph"],
+            code=node["id"],
             accent=node["colour"],
             pattern=node["pattern"],
         )

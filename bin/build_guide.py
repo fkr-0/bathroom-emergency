@@ -313,6 +313,7 @@ def combined_css(monochrome: bool, *, layout: str = "a4") -> Path:
             layout=layout,
             mode=mode,
             glyph=node["glyph"],
+            code=node["id"],
             accent=node["colour"],
             pattern=node["pattern"],
             page_name=f'beg-{node["id"].lower()}',

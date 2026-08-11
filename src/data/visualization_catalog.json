@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "5.0.0-rc.1",
+  "release": "5.0.2",
   "renderer": {
     "engine": "Vega-Lite",
     "version": "6.4.3",

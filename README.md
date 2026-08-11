@@ -278,6 +278,10 @@ credentials, private medical details, or violence-related safe locations.
 | S family | `build/subguides/S/` | six Purple Book social-field editions |
 | T family | `build/subguides/T/` | six Grey Book template editions |
 | R family | `build/subguides/R/` | six Copper Book reference editions |
+| folded A4 booklets | `build/booklet/subguides/<BOOK>/` | colour + mono, one saddle-stitched booklet per standalone book |
+| combined booklet print run | `build/booklet/all-subguides_booklet-print.pdf` | Shelf intro + all eleven colour booklets concatenated at duplex-safe boundaries |
+| combined mono print run | `build/booklet/all-subguides_booklet-print_mono.pdf` | Shelf intro + all eleven monochrome booklets concatenated at duplex-safe boundaries |
+| booklet print instructions | `PRINTING.md`, `build/booklet/PRINTING.md` | printer settings plus generated per-book sheet boundaries |
 | project landing page | `build/site/index.html` | modern project representation and route entry points |
 | deployment planner | `build/site/deploy/index.html` | local-only checklist, privacy, format, mounting, and operator guidance |
 | download catalogue | `build/site/downloads/index.html` | master and standalone release selection |
@@ -293,6 +297,9 @@ The validators enforce, among other things:
 - 17 canonical chapters at the package version and release date;
 - one-column print output despite the responsive screen navigation;
 - six master layout/mode editions and 66 standalone eleven-book editions;
+- 24 independently imposed folded-A4 booklet editions (Shelf intro + eleven
+  books, colour and mono) plus two all-booklet print bundles whose duplex sheets
+  never cross a booklet boundary;
 - valid A4, 105 × 297 mm A4/2, and large-print geometry;
 - tagged PDFs, semantic text parity, page-count parity, and no blank/colliding
   pages;
@@ -320,6 +327,11 @@ Run the complete gate with:
     npm run build
     npm test
     git diff --check
+
+For booklet printing, read `PRINTING.md`. The short version is: print the
+already-imposed PDF on portrait A4 at 100%, duplex with **long-edge** flipping,
+and leave the print dialog's own booklet mode off. The generated
+`build/booklet/PRINTING.md` lists the exact sheet range for each book.
 
 ## CI
 

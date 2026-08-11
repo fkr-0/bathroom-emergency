@@ -25,6 +25,10 @@ MASTER_FILES = (
     "guide_largeprint_mono.html",
 )
 MASTER_PDFS = tuple(name.replace(".html", ".pdf") for name in MASTER_FILES)
+BOOKLET_PDFS = (
+    "all-subguides_booklet-print.pdf",
+    "all-subguides_booklet-print_mono.pdf",
+)
 
 
 def esc(value: object) -> str:
@@ -331,6 +335,7 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
       <article><span class="matrix-label">A4</span><strong>General purpose</strong><p>Complete standard-width edition; page count, geometry, density, and colour/mono parity are validated at build time.</p><div class="download-buttons"><a class="button small primary" href="../files/guide.pdf">Colour PDF</a><a class="button small secondary" href="../files/guide_mono.pdf">Mono PDF</a><a class="button small ghost" href="../guide/">HTML</a></div></article>
       <article><span class="matrix-label">A4/2</span><strong>Narrow field strip</strong><p>105 × 297 mm for hanging, narrow folders, and constrained surfaces.</p><div class="download-buttons"><a class="button small primary" href="../files/guide_a4half.pdf">Colour PDF</a><a class="button small secondary" href="../files/guide_a4half_mono.pdf">Mono PDF</a><a class="button small ghost" href="../files/guide_a4half.html">HTML</a></div></article>
       <article><span class="matrix-label">Large</span><strong>Large print</strong><p>Materially larger typography with the same colour/mono semantic content.</p><div class="download-buttons"><a class="button small primary" href="../files/guide_largeprint.pdf">Colour PDF</a><a class="button small secondary" href="../files/guide_largeprint_mono.pdf">Mono PDF</a><a class="button small ghost" href="../files/guide_largeprint.html">HTML</a></div></article>
+      <article><span class="matrix-label">Booklet</span><strong>Intro + eleven folded books, one print run</strong><p>Already imposed on portrait A4 for duplex long-edge printing at 100%. The Shelf intro and every colour book start on their own physical-sheet boundary for separate folding and binding.</p><div class="download-buttons"><a class="button small primary" href="../files/all-subguides_booklet-print.pdf">Colour PDF</a><a class="button small secondary" href="../files/all-subguides_booklet-print_mono.pdf">Mono PDF</a><a class="button small ghost" href="../docs/PRINTING.md">Print instructions</a></div></article>
     </div>
   </section>
 
@@ -659,7 +664,9 @@ def build() -> Path:
         copy(BUILD / "html" / name, OUT / "files" / name)
     for name in MASTER_PDFS:
         copy(BUILD / "pdf" / name, OUT / "files" / name)
-    for name in ("README.md", "DEPLOYMENT.md", "CHANGELOG.md"):
+    for name in BOOKLET_PDFS:
+        copy(BUILD / "booklet" / name, OUT / "files" / name)
+    for name in ("README.md", "DEPLOYMENT.md", "PRINTING.md", "CHANGELOG.md"):
         copy(ROOT / name, OUT / "docs" / name)
 
     release_meta = {

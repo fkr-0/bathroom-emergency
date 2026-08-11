@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 50
     env:
-      GUIDE_AS_OF: "2026-08-06"
+      GUIDE_AS_OF: "2026-08-11"
       PAGES_CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN }}
     steps:
       - uses: actions/checkout@v4
@@ -38,7 +38,8 @@ jobs:
       - name: Install document toolchain
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends pandoc poppler-utils
+          sudo apt-get install -y --no-install-recommends \
+            pandoc poppler-utils texlive-extra-utils texlive-latex-recommended
           python -m pip install --disable-pip-version-check matplotlib pillow weasyprint
 
       - name: Install locked dependencies and Chromium

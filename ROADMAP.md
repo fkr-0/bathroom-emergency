@@ -6,12 +6,12 @@ quality** without turning the first minute into a literature review.
 
 ## Current release state
 
-The active experimental line is **5.0.0-rc.1**. It has eleven standalone
-colour books, 49 figures, 10 templates, 66 standalone PDF editions, and one
-shared stable-reference registry. The current release work is no longer about
-adding another top-level book. It is about reader review, field testing,
-documentation accuracy, and making local deployment evidence as inspectable as
-the build evidence.
+The current stable line is **5.0.2**. It has a Shelf introduction plus eleven
+standalone colour books, 49 figures, 10 templates, 66 standalone PDF editions,
+24 folded booklet editions, and one shared stable-reference registry. The
+current work is no longer about adding another top-level book. It is about
+reader review, field testing, documentation accuracy, and making local
+deployment evidence as inspectable as the build evidence.
 
 Immediate open work:
 

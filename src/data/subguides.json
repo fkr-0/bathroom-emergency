@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release": "5.0.0-rc.1",
-  "status": "experimental-eleven-book-synthesis",
+  "release": "5.0.2",
+  "status": "stable-eleven-book-release",
   "identity_frozen_on": "2026-08-06",
   "shelf_order": [
     "O",

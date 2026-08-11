@@ -35,8 +35,8 @@ if PATH.exists():
     ids = [item.get("id") for item in nodes]
     check(data.get("release") == VERSION, f"subguide release is not {VERSION}")
     check(
-        data.get("status") == "experimental-eleven-book-synthesis",
-        "experimental eleven-book status marker missing",
+        data.get("status") == "stable-eleven-book-release",
+        "stable eleven-book status marker missing",
     )
     check(data.get("identity_frozen_on") == "2026-08-06", "identity freeze date missing")
     check(

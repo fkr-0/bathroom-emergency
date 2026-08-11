@@ -1,8 +1,8 @@
 ---
 title: "The Green Book — Body Owner’s Manual"
 chapter: "1B"
-revision: "5.0.0-rc.1"
-last_updated: "2026-08-08"
+revision: "5.0.2"
+last_updated: "2026-08-11"
 dependencies: []
 ---
 

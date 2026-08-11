@@ -39,6 +39,11 @@ for path in (
     "build/latex/guide.tex",
     "build/subguides/index.html",
     "build/subguides/manifest.json",
+    "build/booklet/subguides/SHELF/shelf-how-to-use_a4half_booklet.pdf",
+    "build/booklet/subguides/SHELF/shelf-how-to-use_a4half_mono_booklet.pdf",
+    "build/booklet/all-subguides_booklet-print.pdf",
+    "build/booklet/all-subguides_booklet-print_mono.pdf",
+    "build/booklet/PRINTING.md",
     "build/site/index.html",
     "build/site/deploy/index.html",
     "build/site/downloads/index.html",
@@ -78,6 +83,17 @@ if manifest_path.exists():
         need(f"build/booklet/subguides/{node_id}/{node['slug']}_a4half_mono_booklet.pdf")
         need(f"build/subguides/{node_id}/manifest.json")
 
+package_lock_path = ROOT / "package-lock.json"
+if package_lock_path.exists():
+    package_lock = json.loads(package_lock_path.read_text(encoding="utf-8"))
+    check(package_lock.get("version") == VERSION, "package-lock top-level version drifted")
+    check(
+        package_lock.get("packages", {}).get("", {}).get("version") == VERSION,
+        "package-lock root package version drifted",
+    )
+else:
+    errors.append("package-lock.json missing")
+
 release_path = BUILD / "release/manifest.json"
 if release_path.exists():
     release = json.loads(release_path.read_text(encoding="utf-8"))
@@ -88,4 +104,4 @@ if release_path.exists():
 
 if errors:
     raise SystemExit("Build-matrix validation failed:\n- " + "\n- ".join(errors))
-print("Build-matrix validation passed: six master editions, 22 per-subguide folded A4 booklet editions, editable formats, landing, release manifest, and 66 standalone eleven-book editions are present.")
+print("Build-matrix validation passed: six master editions, 24 folded A4 booklet editions (Shelf intro + eleven books, color and mono), two combined booklet print runs with instructions, editable formats, landing, release manifest, and 66 standalone eleven-book editions are present.")
