@@ -23,6 +23,19 @@ async function readJson(file) {
   return JSON.parse(await fs.readFile(file, 'utf8'));
 }
 
+function stripKnownFontconfigNoise(stderr) {
+  // Some distro builds of libfontconfig remove legacy .uuid files while
+  // refreshing caches, then warn when they cannot restore the mtime of the
+  // root-owned system font directory. rsvg-convert still succeeds and emits a
+  // valid PNG. Keep stderr strict, but discard only that exact non-fatal family
+  // of messages; any other renderer warning/error remains visible and fails the
+  // warning-free smoke gate.
+  return stderr
+    .split(/(?<=\n)/)
+    .filter(line => !/^Unable to revert mtime: \/usr\/share\/fonts(?:\/.*)?\s*$/.test(line))
+    .join('');
+}
+
 function run(command, args) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, { stdio: ['ignore', 'pipe', 'pipe'] });
@@ -33,8 +46,9 @@ function run(command, args) {
     child.on('error', reject);
     child.on('close', code => {
       if (code === 0) {
-        if (stderr) process.stderr.write(stderr);
-        resolve({ stdout, stderr });
+        const actionableStderr = stripKnownFontconfigNoise(stderr);
+        if (actionableStderr) process.stderr.write(actionableStderr);
+        resolve({ stdout, stderr: actionableStderr });
       }
       else reject(new Error(`${command} exited ${code}: ${stderr || stdout}`));
     });
