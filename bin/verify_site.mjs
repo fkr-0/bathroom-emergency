@@ -87,7 +87,7 @@ async function inspect(name, path, viewport, targetSelectors = [], fullPage = tr
 }
 
 try {
-  const siteMobileTargets = ['.nav-toggle', '.theme-toggle', '.emergency-strip a'];
+  const siteMobileTargets = ['.nav-toggle', '.theme-toggle', '.emergency-strip a', '.button'];
   for (const [name, path] of [['landing', '/'], ['deployment', '/deploy/'], ['downloads', '/downloads/']]) {
     await inspect(`${name}-desktop`, path, { width: 1440, height: 1000 });
     await inspect(`${name}-mobile`, path, { width: 390, height: 844 }, siteMobileTargets);
@@ -111,10 +111,48 @@ try {
     const box = await mobileLinks.nth(index).boundingBox();
     if (!box || box.height < 43.5) failures.push(`landing-narrow: nav link ${index} is below 44px touch height`);
   }
+  await mobilePage.keyboard.press('Escape');
+  if (await mobilePage.locator('#site-nav').evaluate(node => node.classList.contains('open'))) {
+    failures.push('landing-narrow: Escape did not close the mobile navigation');
+  }
+  if (!(await mobilePage.locator('.nav-toggle').evaluate(node => node === document.activeElement))) {
+    failures.push('landing-narrow: closing mobile navigation did not restore focus to Menu');
+  }
   await mobileContext.close();
+
+  const readerContext = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const readerPage = await readerContext.newPage();
+  await readerPage.goto(`${origin}/guide/`, { waitUntil: 'networkidle' });
+  const guideCanonical = await readerPage.locator('link[rel="canonical"]').getAttribute('href');
+  if (guideCanonical !== 'https://be.fkr.dev/guide/') failures.push(`guide: unexpected canonical URL ${guideCanonical}`);
+  await readerPage.locator('#toc-toggle').click();
+  const readerLinks = readerPage.locator('.reader-links a');
+  if (await readerLinks.count() !== 2) failures.push(`guide-mobile: expected 2 online edition links, found ${await readerLinks.count()}`);
+  const expectedReaderLinks = ['https://be.fkr.dev/', 'https://be.fkr.dev/files/guide.pdf'];
+  for (let index = 0; index < Math.min(2, await readerLinks.count()); index += 1) {
+    const href = await readerLinks.nth(index).getAttribute('href');
+    if (href !== expectedReaderLinks[index]) failures.push(`guide-mobile: reader link ${index} is ${href}`);
+    const box = await readerLinks.nth(index).boundingBox();
+    if (!box || box.height < 43.5) failures.push(`guide-mobile: reader link ${index} is below 44px touch height`);
+  }
+  await readerPage.keyboard.press('Escape');
+  if (await readerPage.locator('body').evaluate(node => node.classList.contains('toc-open'))) failures.push('guide-mobile: Escape did not close Contents');
+  if (!(await readerPage.locator('#toc-toggle').evaluate(node => node === document.activeElement))) failures.push('guide-mobile: closing Contents did not restore focus');
+  await readerContext.close();
 
   const context = await browser.newContext({ viewport: { width: 1024, height: 900 } });
   const page = await context.newPage();
+  await page.goto(`${origin}/guide/`, { waitUntil: 'networkidle' });
+  if (await page.locator('#TOC a[aria-current="location"]').count() !== 1) {
+    failures.push('guide-desktop: scroll-aware TOC did not expose exactly one current location');
+  }
+
+  await page.goto(`${origin}/routes/O/green-book-body-owners-manual.html`, { waitUntil: 'networkidle' });
+  const routeCanonical = await page.locator('link[rel="canonical"]').getAttribute('href');
+  if (routeCanonical !== 'https://be.fkr.dev/routes/O/green-book-body-owners-manual.html') failures.push(`green-book: unexpected canonical URL ${routeCanonical}`);
+  const routePdf = await page.locator('.reader-links a').filter({ hasText: 'A4 PDF' }).getAttribute('href');
+  if (routePdf !== 'https://be.fkr.dev/routes/O/green-book-body-owners-manual.pdf') failures.push(`green-book: unexpected PDF link ${routePdf}`);
+
   await page.goto(`${origin}/deploy/`, { waitUntil: 'networkidle' });
   const beforeTheme = await page.locator('html').getAttribute('data-theme');
   await page.locator('[data-theme-toggle]').click();

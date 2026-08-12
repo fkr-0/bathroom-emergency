@@ -363,7 +363,8 @@ def build_markdown(
         f"- **{edge} — {titles[edge]}** — use it when that problem becomes primary."
         for edge in node["outgoing"]
     )
-    cover = f'''::: {{#top .standalone-subguide data-subguide="{node_id}" data-pattern="{node["pattern"]}"}}
+    book_anchor = f"book-{node_id.lower()}"
+    cover = f'''::: {{#{book_anchor} .standalone-subguide data-subguide="{node_id}" data-pattern="{node["pattern"]}"}}
 
 ::: {{.subguide-cover}}
 
@@ -690,7 +691,7 @@ def render_editions(node, canonical_content, ordered_sources, contents,
                     "--metadata",
                     f"print-layout={layout}",
                     "--metadata",
-                    "home-anchor=top",
+                    f'home-anchor=book-{node["id"].lower()}',
                     "--metadata",
                     f"build-revision={git_revision()}",
                     "--metadata",
@@ -698,17 +699,25 @@ def render_editions(node, canonical_content, ordered_sources, contents,
                     "--metadata",
                     f'subguide-title={node["id"]} — {node["title"]}',
                     "--metadata",
-                    "canonical-url=https://be.fkr.dev",
+                    f'canonical-url=https://be.fkr.dev/routes/{node["id"]}/{node["slug"]}.html',
+                    "--metadata",
+                    "site-url=https://be.fkr.dev/",
+                    "--metadata",
+                    f'pdf-url=https://be.fkr.dev/routes/{node["id"]}/{node["slug"]}.pdf',
+                    "--metadata",
+                    "pdf-label=A4 PDF",
                     "--output",
                     str(html_path),
                 ]
             )
             # Pandoc emits one note per reference, so a source cited twice
             # appears twice in the reference list under different numbers.
-            html_path.write_text(
-                merge_duplicate_footnotes(html_path.read_text(encoding="utf-8")),
-                encoding="utf-8",
+            rendered_html = merge_duplicate_footnotes(html_path.read_text(encoding="utf-8"))
+            rendered_html = BG.inject_canonical_link(
+                rendered_html,
+                f'https://be.fkr.dev/routes/{node["id"]}/{node["slug"]}.html',
             )
+            html_path.write_text(rendered_html, encoding="utf-8")
             pdf_path = out_dir / f"{stem}.pdf"
             run(
                 [
@@ -875,7 +884,7 @@ version: "{VERSION}"
 lang: "en"
 ---
 
-::: {{#top .standalone-subguide data-subguide="O" data-pattern="dot-field"}}
+::: {{#book-shelf .standalone-subguide data-subguide="SHELF" data-pattern="dot-field"}}
 
 ::: {{.subguide-cover}}
 
@@ -950,10 +959,25 @@ Every book is complete enough to start alone and honest enough to hand off.
             "--metadata",
             "print-layout=a4",
             "--metadata",
-            "home-anchor=top",
+            "home-anchor=book-shelf",
+            "--metadata",
+            "canonical-url=https://be.fkr.dev/routes/",
+            "--metadata",
+            "site-url=https://be.fkr.dev/",
+            "--metadata",
+            "pdf-url=https://be.fkr.dev/downloads/",
+            "--metadata",
+            "pdf-label=Downloads",
             "--output",
             str(html_path),
         ]
+    )
+    html_path.write_text(
+        BG.inject_canonical_link(
+            html_path.read_text(encoding="utf-8"),
+            "https://be.fkr.dev/routes/",
+        ),
+        encoding="utf-8",
     )
     hub_manifest = {
         "release": VERSION,

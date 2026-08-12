@@ -1,5 +1,29 @@
 # Changelog
 
+## Unreleased
+
+### Website
+
+- integrated the responsive HTML guide and standalone colour books more tightly
+  with the project site through explicit online-edition identity, project and
+  current-PDF links, page-specific canonical URLs, and a scroll-aware contents
+  panel that marks the reader's current section;
+- replaced the ineffective Pandoc sidebar with a reader-native hierarchy built
+  from the actual book boundaries: the Shelf plus all eleven colour books are
+  first-level groups and their stable `[BEG:...]` sections form the nested
+  navigation; each book now has a unique `book-*` top anchor instead of the
+  master HTML repeating `id="top"` twelve times;
+- moved canonical-link injection after Pandoc resource embedding: the former
+  template-level canonical link could be treated as an embeddable resource and
+  fetched into a `data:` URI, violating the no-network build model; validation
+  now rejects that failure mode explicitly;
+- promoted the online guide, latest A4 PDF, and eleven-book shelf as the three
+  primary landing-page actions and added canonical URLs to the landing,
+  deployment, and download pages;
+- hardened keyboard/mobile navigation: Escape closes both site navigation and
+  guide contents with focus restoration, touch targets remain at least 44 px,
+  and focus-visible treatment is explicit on interactive controls.
+
 ## 5.0.2 — 2026-08-11
 
 ### Changed

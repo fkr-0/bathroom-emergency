@@ -62,6 +62,23 @@ CHAPTERS = [
     "10-sources.md",
 ]
 
+def inject_canonical_link(document: str, canonical_url: str) -> str:
+    """Inject canonical metadata after Pandoc resource embedding.
+
+    Pandoc treats a template-level absolute ``<link>`` as an embeddable
+    resource under ``--embed-resources`` and may fetch it. Canonical URLs are
+    navigation metadata, not build inputs, so add them only after Pandoc has
+    completed its offline resource pass.
+    """
+    if 'rel="canonical"' in document:
+        raise BuildError("HTML already contains canonical metadata before post-processing")
+    marker = "</head>"
+    if marker not in document:
+        raise BuildError("HTML has no </head> marker for canonical metadata")
+    link = f'  <link rel="canonical" href="{canonical_url}">\n'
+    return document.replace(marker, link + marker, 1)
+
+
 CHAPTER_OWNERS = {
     "00-cover.md": "O",
     "01-how-to-use.md": "O",
@@ -373,13 +390,21 @@ def build_html(markdown: Path, *, monochrome: bool = False, layout: str = "a4") 
         "--metadata",
         f"print-layout={layout}",
         "--metadata",
+        "home-anchor=book-shelf",
+        "--metadata",
         f"build-revision={git_revision()}",
         "--metadata",
         f"build-date={build_date()}",
         "--metadata",
         "subguide-title=Complete guide",
         "--metadata",
-        "canonical-url=https://be.fkr.dev",
+        "canonical-url=https://be.fkr.dev/guide/",
+        "--metadata",
+        "site-url=https://be.fkr.dev/",
+        "--metadata",
+        "pdf-url=https://be.fkr.dev/files/guide.pdf",
+        "--metadata",
+        "pdf-label=Latest PDF",
         "--output",
         str(output),
     ]
@@ -387,10 +412,9 @@ def build_html(markdown: Path, *, monochrome: bool = False, layout: str = "a4") 
     html = output.read_text(encoding="utf-8")
     # Pandoc emits one note per reference, so a source cited twice appears twice
     # in the reference list under different numbers.
-    merged = merge_duplicate_footnotes(html)
-    if merged != html:
-        output.write_text(merged, encoding="utf-8")
-        html = merged
+    html = merge_duplicate_footnotes(html)
+    html = inject_canonical_link(html, "https://be.fkr.dev/guide/")
+    output.write_text(html, encoding="utf-8")
     if "cdn.jsdelivr" in html or re.search(r"<script[^>]+mathjax", html, re.IGNORECASE):
         raise BuildError("HTML unexpectedly contains a remote MathJax dependency")
     if "<math" not in html:

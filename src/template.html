@@ -7,28 +7,32 @@
   <meta name="guide-version" content="$guide-version$">
   <meta name="build-revision" content="$build-revision$">
   <meta name="build-date" content="$build-date$">
-  <link rel="canonical" href="$canonical-url$">
   <title>$title$</title>
   $for(css)$<link rel="stylesheet" href="$css$">$endfor$
 </head>
-<body class="$if(toc)$has-toc$else$no-toc$endif$">
+<body class="has-toc">
   <div class="reading-progress" aria-hidden="true"><span></span></div>
   <header class="app-bar">
-    <a class="brand" href="$if(home-anchor)$#$home-anchor$$else$#00-cover$endif$">BEG / $guide-version$</a>
+    <div class="reader-identity">
+      <a class="brand" href="$if(home-anchor)$#$home-anchor$$else$#00-cover$endif$">BEG / $guide-version$</a>
+      <span class="edition-chip">Online edition</span>
+    </div>
     <div class="app-actions">
       <button type="button" id="toc-toggle" aria-controls="TOC" aria-expanded="false">Contents</button>
       <button type="button" id="theme-toggle" aria-label="Toggle color scheme">Theme</button>
-      <button type="button" id="print-button">Print</button>
+      <button type="button" id="print-button" aria-label="Print this edition">Print</button>
     </div>
   </header>
   <div class="app-shell">
-    $if(toc)$
     <nav id="TOC" aria-label="Guide contents">
-      <p class="toc-kicker">Choose a route</p>
-      $toc$
+      <p class="toc-kicker">Choose a book / section</p>
+      <div class="reader-links" aria-label="Online edition links">
+        $if(site-url)$<a href="$site-url$">Project site</a>$endif$
+        $if(pdf-url)$<a href="$pdf-url$">$if(pdf-label)$$pdf-label$$else$PDF edition$endif$</a>$endif$
+      </div>
+      <ul class="reader-toc" data-reader-toc></ul>
       <p class="toc-help"><strong>Red flag?</strong><br>Call 112 before reading.</p>
     </nav>
-    $endif$
     <main id="guide">
       $body$
     </main>
@@ -45,23 +49,84 @@
     const themeButton = document.getElementById('theme-toggle');
     const progress = document.querySelector('.reading-progress span');
     const saved = localStorage.getItem('beg-theme');
-    if (saved) root.dataset.theme = saved;
+    if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+    const closeToc = (restoreFocus = false) => {
+      document.body.classList.remove('toc-open');
+      tocButton?.setAttribute('aria-expanded', 'false');
+      if (restoreFocus) tocButton?.focus();
+    };
     tocButton?.addEventListener('click', () => {
       const open = document.body.classList.toggle('toc-open');
       tocButton.setAttribute('aria-expanded', String(open));
+      if (open && matchMedia('(max-width: 900px)').matches) toc?.querySelector('a')?.focus();
     });
     toc?.addEventListener('click', (event) => {
-      if (event.target.closest('a')) {
-        document.body.classList.remove('toc-open');
-        tocButton?.setAttribute('aria-expanded', 'false');
-      }
+      if (event.target.closest('a')) closeToc();
+    });
+    addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && document.body.classList.contains('toc-open')) closeToc(true);
     });
     themeButton?.addEventListener('click', () => {
       const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
       root.dataset.theme = next;
       localStorage.setItem('beg-theme', next);
+      themeButton.setAttribute('aria-label', `Color scheme: ${next}. Activate to toggle.`);
     });
     document.getElementById('print-button')?.addEventListener('click', () => window.print());
+
+    const tocList = toc?.querySelector('[data-reader-toc]');
+    const books = [...document.querySelectorAll('main .standalone-subguide[id]')];
+    const tocTargets = [];
+    const appendLink = (list, target, label, className = '') => {
+      const item = document.createElement('li');
+      if (className) item.className = className;
+      const link = document.createElement('a');
+      link.href = `#${target.id}`;
+      link.textContent = label;
+      item.append(link);
+      list.append(item);
+      tocTargets.push({ link, target });
+      return item;
+    };
+    const headingLabel = heading => {
+      const copy = heading.cloneNode(true);
+      copy.querySelectorAll('.section-ref').forEach(node => node.remove());
+      return copy.textContent.replace(/\s+/g, ' ').trim();
+    };
+    books.forEach(book => {
+      const code = book.dataset.subguide || '';
+      const titleHeading = book.querySelector('.subguide-cover h1');
+      const title = titleHeading ? headingLabel(titleHeading) : (code || 'Book');
+      const bookItem = appendLink(tocList, book, code ? `${code} · ${title}` : title, 'reader-toc-book');
+      const sections = [...book.querySelectorAll('h2[id^="beg-"]')];
+      if (!sections.length) return;
+      const sectionList = document.createElement('ul');
+      sectionList.className = 'reader-toc-sections';
+      sections.forEach(section => appendLink(sectionList, section, headingLabel(section)));
+      bookItem.append(sectionList);
+    });
+
+    let activeLink = null;
+    const setActive = link => {
+      if (activeLink === link) return;
+      activeLink?.removeAttribute('aria-current');
+      activeLink = link;
+      activeLink?.setAttribute('aria-current', 'location');
+    };
+    if (tocTargets.length) {
+      const observer = new IntersectionObserver(entries => {
+        const visible = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length) {
+          const match = tocTargets.find(item => item.target === visible[0].target);
+          if (match) setActive(match.link);
+        }
+      }, { rootMargin: '-15% 0px -72% 0px', threshold: 0 });
+      tocTargets.forEach(item => observer.observe(item.target));
+      setActive(tocTargets[0].link);
+    }
+
     const update = () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       progress.style.width = (max > 0 ? Math.min(100, scrollY / max * 100) : 0) + '%';

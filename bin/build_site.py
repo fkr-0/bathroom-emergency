@@ -100,7 +100,8 @@ def emergency_strip() -> str:
 </aside>'''
 
 
-def page_head(title: str, description: str, prefix: str) -> str:
+def page_head(title: str, description: str, prefix: str, canonical_url: str | None = None) -> str:
+    canonical = f'  <link rel="canonical" href="{esc(canonical_url)}">\n' if canonical_url else ""
     return f'''<!doctype html>
 <html lang="en" data-theme="auto">
 <head>
@@ -109,7 +110,7 @@ def page_head(title: str, description: str, prefix: str) -> str:
   <meta name="description" content="{esc(description)}">
   <meta name="theme-color" content="#112923">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="{prefix}assets/mark.svg" type="image/svg+xml">
+{canonical}  <link rel="icon" href="{prefix}assets/mark.svg" type="image/svg+xml">
   <link rel="manifest" href="{prefix}site.webmanifest">
   <link rel="stylesheet" href="{prefix}assets/site.css">
   <script defer src="{prefix}assets/site.js"></script>
@@ -135,7 +136,7 @@ def footer(prefix: str, revision: str, date: str) -> str:
 
 
 def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision: str, date: str) -> str:
-    return f'''{page_head("Bathroom Emergency Guide — useful before heroic", "A sourced, printable, locally deployable decision guide for bathroom-sized emergencies.", "")}
+    return f'''{page_head("Bathroom Emergency Guide — useful before heroic", "A sourced, printable, locally deployable decision guide for bathroom-sized emergencies.", "", "https://be.fkr.dev/")}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {nav("", "home")}
@@ -147,10 +148,11 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
       <h1>Useful<br><em>before</em> heroic.</h1>
       <p class="lede">A calm, sourced field guide for moments when the room is small, attention is narrow, and the next useful action should not depend on remembering an entire course, website, or phone tree.</p>
       <div class="hero-actions">
-        <a class="button primary" href="guide/">Open the complete guide <span aria-hidden="true">→</span></a>
-        <a class="button secondary" href="deploy/">Plan a local installation</a>
+        <a class="button primary" href="guide/">Read online <span aria-hidden="true">→</span></a>
+        <a class="button secondary" href="files/guide.pdf">Latest A4 PDF</a>
+        <a class="button ghost" href="routes/">Browse the eleven books</a>
       </div>
-      <p class="microcopy">The online guide supports decisions; it never creates a reading queue before emergency help.</p>
+      <p class="microcopy">The online edition is responsive and the PDF is the canonical print layout. Neither creates a reading queue before emergency help.</p>
     </div>
     <div class="instrument" role="group" aria-label="Decision model preview">
       <div class="instrument-head"><span>Small-room observatory</span><span class="status-live">Ready</span></div>
@@ -239,7 +241,7 @@ def deployment_page(revision: str, date: str) -> str:
         f'''<label class="planner-item"><input type="checkbox" value="{key}"><span class="custom-check" aria-hidden="true"></span><span><strong>{title}</strong><small>{detail}</small></span></label>'''
         for key, title, detail in checklist
     )
-    return f'''{page_head("Deploy the Bathroom Emergency Guide", "Plan, install, test, maintain, and publish the Bathroom Emergency Guide safely.", "../")}
+    return f'''{page_head("Deploy the Bathroom Emergency Guide", "Plan, install, test, maintain, and publish the Bathroom Emergency Guide safely.", "../", "https://be.fkr.dev/deploy/")}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {nav("../", "deploy")}
@@ -320,7 +322,7 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
         route_downloads.append(
             f'''<article class="download-route" data-download-group="routes" style="--route:{esc(node['colour'])}"><span class="route-code">{esc(node['id'])}</span><div><strong>{esc(node['title'])}</strong><p>{esc(node['promise'])}</p><div class="card-links"><a href="../routes/{esc(node['id'])}/{esc(slug)}.html">HTML</a><a href="../routes/{esc(node['id'])}/{esc(slug)}.pdf">A4 PDF</a><a href="../routes/{esc(node['id'])}/{esc(slug)}_largeprint.pdf">Large print</a></div></div></article>'''
         )
-    return f'''{page_head("Downloads — Bathroom Emergency Guide", "Download the complete guide, individual colour books, printable figures and templates, and release documentation.", "../")}
+    return f'''{page_head("Downloads — Bathroom Emergency Guide", "Download the complete guide, individual colour books, printable figures and templates, and release documentation.", "../", "https://be.fkr.dev/downloads/")}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 {nav("../", "downloads")}
@@ -381,6 +383,7 @@ SITE_CSS = r'''
 html { scroll-behavior:smooth; }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--font-sans); line-height:1.55; text-rendering:optimizeLegibility; }
 a { color:inherit; text-decoration-thickness:.08em; text-underline-offset:.18em; }
+a:focus-visible,button:focus-visible,input:focus-visible { outline:3px solid color-mix(in srgb,var(--blue) 40%,transparent); outline-offset:3px; }
 button,input { font:inherit; }
 button,a { -webkit-tap-highlight-color:transparent; }
 img,svg { max-width:100%; }
@@ -547,19 +550,31 @@ SITE_JS = r'''
   const themeButton = document.querySelector('[data-theme-toggle]');
   const storedTheme = localStorage.getItem('beg-theme');
   if (storedTheme === 'light' || storedTheme === 'dark' || storedTheme === 'auto') root.dataset.theme = storedTheme;
+  const updateThemeLabel = () => themeButton?.setAttribute('aria-label', `Colour theme: ${root.dataset.theme || 'auto'}. Activate to change.`);
+  updateThemeLabel();
   themeButton?.addEventListener('click', () => {
     const order = ['auto', 'light', 'dark'];
     const next = order[(order.indexOf(root.dataset.theme || 'auto') + 1) % order.length];
     root.dataset.theme = next;
     localStorage.setItem('beg-theme', next);
-    themeButton.setAttribute('aria-label', `Colour theme: ${next}. Activate to change.`);
+    updateThemeLabel();
   });
 
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('#site-nav');
+  const closeNav = (restoreFocus = false) => {
+    nav?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) navToggle?.focus();
+  };
   navToggle?.addEventListener('click', () => {
     const open = nav?.classList.toggle('open') || false;
     navToggle.setAttribute('aria-expanded', String(open));
+    if (open) nav?.querySelector('a')?.focus();
+  });
+  nav?.addEventListener('click', event => { if (event.target.closest('a')) closeNav(); });
+  addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav?.classList.contains('open')) closeNav(true);
   });
 
   const planner = document.querySelector('[data-deployment-planner]');

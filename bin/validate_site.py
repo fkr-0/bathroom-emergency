@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -92,6 +93,8 @@ landing_markers = (
     "data-theme-toggle",
     "No tracking",
     "href=\"guide/\"",
+    "href=\"files/guide.pdf\"",
+    "Latest A4 PDF",
     "href=\"routes/\"",
     "href=\"downloads/\"",
     "href=\"deploy/\"",
@@ -148,6 +151,38 @@ for page, markers in (
     check("<main id=\"main\">" in text, f"{page.relative_to(ROOT)} lacks main landmark")
     check("class=\"skip-link\"" in text, f"{page.relative_to(ROOT)} lacks skip link")
     check("aria-label=\"Primary\"" in text, f"{page.relative_to(ROOT)} lacks primary navigation label")
+
+guide_page = SITE / "guide" / "index.html"
+if guide_page.exists():
+    guide_text = guide_page.read_text(encoding="utf-8")
+    for marker in (
+        '<link rel="canonical" href="https://be.fkr.dev/guide/">',
+        "Online edition",
+        'class="reader-links"',
+        'href="https://be.fkr.dev/"',
+        'href="https://be.fkr.dev/files/guide.pdf"',
+        "Latest PDF",
+        "aria-current",
+        'data-reader-toc',
+    ):
+        check(marker in guide_text, f"guide reader marker missing: {marker}")
+    book_ids = re.findall(r'id="(book-[a-z]+)" class="standalone-subguide"', guide_text)
+    check(len(book_ids) == 12, f"guide reader expected 12 top-level book anchors, found {len(book_ids)}")
+    check(len(set(book_ids)) == 12, "guide reader top-level book anchors are not unique")
+    check("book-shelf" in book_ids, "guide reader lacks the Shelf top-level anchor")
+
+route_page = SITE / "routes" / "O" / "green-book-body-owners-manual.html"
+if route_page.exists():
+    route_text = route_page.read_text(encoding="utf-8")
+    for marker in (
+        '<link rel="canonical" href="https://be.fkr.dev/routes/O/green-book-body-owners-manual.html">',
+        'href="https://be.fkr.dev/routes/O/green-book-body-owners-manual.pdf"',
+        "Online edition",
+    ):
+        check(marker in route_text, f"standalone reader marker missing: {marker}")
+    check('href="data:text/html' not in route_text, "standalone canonical metadata was embedded as a data URI")
+
+check('href="data:text/html' not in guide_text if guide_page.exists() else True, "guide canonical metadata was embedded as a data URI")
 
 # Core pages must be internally navigable without network assets.
 for label, page in core_pages.items():
@@ -209,7 +244,7 @@ css = SITE / "assets" / "site.css"
 js = SITE / "assets" / "site.js"
 if css.exists():
     text = css.read_text(encoding="utf-8")
-    for marker in ("prefers-reduced-motion", "prefers-color-scheme", "@media print", ".route-grid", ".planner-layout"):
+    for marker in ("prefers-reduced-motion", "prefers-color-scheme", "@media print", ".route-grid", ".planner-layout", ":focus-visible"):
         check(marker in text, f"site stylesheet marker missing: {marker}")
 if js.exists():
     text = js.read_text(encoding="utf-8")
