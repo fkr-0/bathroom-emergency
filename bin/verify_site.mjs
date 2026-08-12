@@ -47,7 +47,7 @@ const origin = `http://127.0.0.1:${port}`;
 const browser = await chromium.launch({ headless: true });
 const failures = [];
 
-async function inspect(name, path, viewport) {
+async function inspect(name, path, viewport, targetSelectors = [], fullPage = true) {
   const context = await browser.newContext({ viewport, colorScheme: 'light' });
   const page = await context.newPage();
   const consoleErrors = [];
@@ -56,7 +56,7 @@ async function inspect(name, path, viewport) {
   page.on('pageerror', error => consoleErrors.push(String(error)));
   page.on('request', request => {
     const url = new URL(request.url());
-    if (url.origin !== origin) externalRequests.push(request.url());
+    if (!['data:', 'blob:'].includes(url.protocol) && url.origin !== origin) externalRequests.push(request.url());
   });
   const response = await page.goto(`${origin}${path}`, { waitUntil: 'networkidle' });
   if (!response?.ok()) failures.push(`${name}: HTTP ${response?.status()}`);
@@ -69,17 +69,49 @@ async function inspect(name, path, viewport) {
   if (Math.max(overflow.body, overflow.root) > overflow.viewport + 1) {
     failures.push(`${name}: horizontal overflow ${JSON.stringify(overflow)}`);
   }
+  for (const selector of targetSelectors) {
+    const targets = page.locator(selector);
+    for (let index = 0; index < await targets.count(); index += 1) {
+      const target = targets.nth(index);
+      if (!(await target.isVisible())) continue;
+      const box = await target.boundingBox();
+      if (!box || box.width < 43.5 || box.height < 43.5) {
+        failures.push(`${name}: touch target ${selector}[${index}] is ${box ? `${box.width.toFixed(1)}x${box.height.toFixed(1)}` : 'unmeasurable'}`);
+      }
+    }
+  }
   if (consoleErrors.length) failures.push(`${name}: console errors: ${consoleErrors.join(' | ')}`);
   if (externalRequests.length) failures.push(`${name}: external runtime requests: ${externalRequests.join(', ')}`);
-  await page.screenshot({ path: join(QA, `${name}.png`), fullPage: true });
+  await page.screenshot({ path: join(QA, `${name}.png`), fullPage });
   await context.close();
 }
 
 try {
+  const siteMobileTargets = ['.nav-toggle', '.theme-toggle', '.emergency-strip a'];
   for (const [name, path] of [['landing', '/'], ['deployment', '/deploy/'], ['downloads', '/downloads/']]) {
     await inspect(`${name}-desktop`, path, { width: 1440, height: 1000 });
-    await inspect(`${name}-mobile`, path, { width: 390, height: 844 });
+    await inspect(`${name}-mobile`, path, { width: 390, height: 844 }, siteMobileTargets);
+    await inspect(`${name}-narrow`, path, { width: 320, height: 844 }, siteMobileTargets);
   }
+  await inspect('guide-mobile', '/guide/', { width: 390, height: 844 }, ['.app-bar .brand', '.app-bar button'], false);
+  await inspect('guide-narrow', '/guide/', { width: 320, height: 844 }, ['.app-bar .brand', '.app-bar button'], false);
+  await inspect('green-book-narrow', '/routes/O/green-book-body-owners-manual.html', { width: 320, height: 844 }, ['.app-bar .brand', '.app-bar button'], false);
+
+  const mobileContext = await browser.newContext({ viewport: { width: 320, height: 844 } });
+  const mobilePage = await mobileContext.newPage();
+  await mobilePage.goto(`${origin}/`, { waitUntil: 'networkidle' });
+  await mobilePage.locator('.nav-toggle').click();
+  const mobileMenu = await mobilePage.locator('#site-nav').boundingBox();
+  const mobileViewport = await mobilePage.evaluate(() => document.documentElement.clientWidth);
+  if (!mobileMenu || mobileMenu.x < 0 || mobileMenu.x + mobileMenu.width > mobileViewport + 1) {
+    failures.push(`landing-narrow: open mobile menu escapes viewport: ${JSON.stringify({ mobileMenu, mobileViewport })}`);
+  }
+  const mobileLinks = mobilePage.locator('#site-nav a');
+  for (let index = 0; index < await mobileLinks.count(); index += 1) {
+    const box = await mobileLinks.nth(index).boundingBox();
+    if (!box || box.height < 43.5) failures.push(`landing-narrow: nav link ${index} is below 44px touch height`);
+  }
+  await mobileContext.close();
 
   const context = await browser.newContext({ viewport: { width: 1024, height: 900 } });
   const page = await context.newPage();
@@ -118,4 +150,4 @@ if (failures.length) {
   console.error(`Site browser verification failed:\n- ${failures.join('\n- ')}`);
   process.exit(1);
 }
-console.log('Site browser verification passed: six responsive screenshots, no overflow or remote runtime requests, and working theme, planner persistence, and download filters.');
+console.log('Site browser verification passed: desktop, 390px, and 320px responsive coverage including the complete guide and a standalone book; no overflow or remote runtime requests; 44px mobile controls; and working navigation, theme, planner persistence, and download filters.');

@@ -64,6 +64,7 @@ for path in (
     SITE / "site.webmanifest",
     SITE / "robots.txt",
     SITE / "guide" / "index.html",
+    SITE / "guide" / "guide.css",
     SITE / "routes" / "index.html",
     SITE / "files" / "guide.pdf",
     SITE / "files" / "guide_mono.pdf",

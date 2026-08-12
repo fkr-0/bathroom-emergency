@@ -217,6 +217,7 @@ p, li, dd, td, th, .footnotes {
 }
 
 button {
+  min-height: 44px;
   font: inherit;
   font-size: .82rem;
   font-weight: 700;
@@ -263,6 +264,9 @@ button:hover, button:focus-visible {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--ink);
   font-family: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
   font-weight: 900;
