@@ -1,8 +1,8 @@
 ---
 title: "The Copper Book — Reference"
 chapter: 8
-revision: "5.0.2"
-last_updated: "2026-08-11"
+revision: "5.1.1"
+last_updated: "2026-08-12"
 dependencies:
   - build/diagrams/two_pass_route_map.png
   - build/diagrams/evidence_classes.png

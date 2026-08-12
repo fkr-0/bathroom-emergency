@@ -325,13 +325,16 @@ a:focus-visible {
 
 #TOC {
   position: sticky;
-  top: 5.5rem;
-  max-height: calc(100vh - 7rem);
+  top: 4.6rem;
+  align-self: start;
+  max-height: calc(100vh - 5.8rem);
   overflow: auto;
   padding: 1rem;
   background: color-mix(in srgb, var(--surface) 95%, transparent);
   border: 1px solid var(--line);
+  border-radius: .9rem;
   box-shadow: var(--shadow);
+  scrollbar-gutter: stable;
 }
 
 #TOC ul {
@@ -385,6 +388,12 @@ a:focus-visible {
   font-weight: 850;
 }
 
+.reader-toc-book.is-current-book > a {
+  color: var(--ink) !important;
+  background: color-mix(in srgb, var(--sg-accent, var(--green)) 12%, var(--tile));
+  box-shadow: inset 4px 0 var(--sg-accent, var(--green));
+}
+
 .reader-toc-sections {
   margin-top: .2rem !important;
   padding-left: .65rem !important;
@@ -409,7 +418,8 @@ a:focus-visible {
 }
 
 #TOC a[aria-current="location"] {
-  box-shadow: inset 3px 0 var(--sg-accent, var(--green));
+  box-shadow: inset 4px 0 var(--sg-accent, var(--green));
+  font-weight: 800;
 }
 
 .toc-kicker {

@@ -146,6 +146,28 @@ try {
   if (await page.locator('#TOC a[aria-current="location"]').count() !== 1) {
     failures.push('guide-desktop: scroll-aware TOC did not expose exactly one current location');
   }
+  const tocBefore = await page.locator('#TOC').boundingBox();
+  const guideBefore = await page.locator('#guide').boundingBox();
+  if (!tocBefore || !guideBefore || tocBefore.x + tocBefore.width >= guideBefore.x) {
+    failures.push(`guide-desktop: floating TOC is not positioned to the left of the reader: ${JSON.stringify({ tocBefore, guideBefore })}`);
+  }
+  await page.evaluate(() => window.scrollTo({ top: 900, behavior: 'instant' }));
+  await page.waitForTimeout(80);
+  const tocPinned = await page.locator('#TOC').boundingBox();
+  const copperSection = page.locator('main .standalone-subguide[data-subguide="R"] h2[id^="beg-"]').first();
+  await copperSection.evaluate(node => window.scrollTo({ top: node.getBoundingClientRect().top + window.scrollY - 90, behavior: 'instant' }));
+  await page.waitForTimeout(120);
+  const tocAfter = await page.locator('#TOC').boundingBox();
+  if (!tocPinned || !tocAfter || Math.abs(tocPinned.y - tocAfter.y) > 2) {
+    failures.push(`guide-desktop: floating TOC did not stay pinned while scrolling: ${JSON.stringify({ tocPinned, tocAfter })}`);
+  }
+  const currentBook = await page.locator('#TOC .reader-toc-book.is-current-book > a').textContent();
+  if (!currentBook?.trim().startsWith('R ·')) failures.push(`guide-desktop: expected Copper parent state after scroll, found ${currentBook}`);
+  const activeTocLink = page.locator('#TOC a[aria-current="location"]');
+  const activeTocBox = await activeTocLink.boundingBox();
+  if (!tocAfter || !activeTocBox || activeTocBox.top < tocAfter.top - 1 || activeTocBox.bottom > tocAfter.bottom + 1) {
+    failures.push(`guide-desktop: active TOC entry did not auto-follow into view: ${JSON.stringify({ tocAfter, activeTocBox })}`);
+  }
 
   await page.goto(`${origin}/routes/O/green-book-body-owners-manual.html`, { waitUntil: 'networkidle' });
   const routeCanonical = await page.locator('link[rel="canonical"]').getAttribute('href');

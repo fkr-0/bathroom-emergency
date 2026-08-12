@@ -1,12 +1,51 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "5.0.2"
-last_updated: "2026-08-11"
+revision: "5.1.1"
+last_updated: "2026-08-12"
 dependencies: []
 ---
 
 # Version History
+
+## 5.1.1 — 12 August 2026
+
+The web edition becomes a first-class reader rather than a generated document
+behind a project landing page. The complete guide again carries a persistent
+contents rail on the left at desktop widths. The Shelf and eleven colour books
+are its top-level groups; stable guide sections sit beneath them. Scroll state
+marks both the current section and its parent book and keeps the active entry in
+view during long reads. On narrow screens the same structure remains an
+Escape-closeable contents drawer.
+
+The public website and generic book covers are intentionally less prescriptive
+about emergency routing than the context-specific service pages. They now say
+to use the **local emergency number**, naming **112 only for the EU**, rather
+than placing Germany's 110 police shortcut on a general emergency surface. If a
+call itself is unsafe, the generic surface points first to a safer place or a
+trusted person who can call. Context-specific German service information can
+still appear where its purpose, scope, and limits travel with the number.
+
+The eleven-book overview also uses one identity language end to end. The former
+graph circles used generic hatch marks that did not match the strong pattern
+tiles below them. The graph now uses larger rounded rectangles carrying the
+same pulse, diamond, wave, cross, shield, zigzag, crosshatch, dot, speech,
+form-grid, and rule motifs as the book directory. Equal-axis rendering prevents
+the network from stretching those nodes, and the top title/subtitle no longer
+occupy the Green node's space. Local handoff graphs use the same treatment.
+
+Repository publication instructions are no longer displayed on the public
+deployment page. GitHub Pages remains an implementation detail documented in
+the repository rather than a task a guide deployer needs to see on the site.
+
+This release also records the next deployment target: a static, strictly
+client-side wizard that lets a deployer fill canonical local forms, review the
+privacy class and visibility of each value, and render a printable local packet
+without transmitting entered data. More generally, operational knowledge such
+as deployment instructions, maintenance rules, and changelog history should
+converge into the deployed guide — usually Grey or Copper, or a future dedicated
+deployment/maintenance book when the material becomes a coherent task of its
+own.
 
 ## 5.0.2 — 11 August 2026
 

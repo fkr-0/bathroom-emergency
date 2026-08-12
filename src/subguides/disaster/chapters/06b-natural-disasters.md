@@ -1,8 +1,8 @@
 ---
 title: "The Orange Book — Hazards & Disasters"
 chapter: "6B"
-revision: "5.0.2"
-last_updated: "2026-08-11"
+revision: "5.1.1"
+last_updated: "2026-08-12"
 dependencies: []
 ---
 

@@ -107,7 +107,6 @@ deployment_markers = (
     "data-deployment-planner",
     "Local-only by design",
     "Classify before you print.",
-    "GitHub Pages deployment is prepared, not presumed.",
     "data-copy-plan",
     "data-reset-plan",
     "../files/guide.pdf",
@@ -164,12 +163,23 @@ if guide_page.exists():
         "Latest PDF",
         "aria-current",
         'data-reader-toc',
+        'is-current-book',
+        'requestAnimationFrame(updateActiveToc)',
     ):
         check(marker in guide_text, f"guide reader marker missing: {marker}")
     book_ids = re.findall(r'id="(book-[a-z]+)" class="standalone-subguide"', guide_text)
     check(len(book_ids) == 12, f"guide reader expected 12 top-level book anchors, found {len(book_ids)}")
     check(len(set(book_ids)) == 12, "guide reader top-level book anchors are not unique")
     check("book-shelf" in book_ids, "guide reader lacks the Shelf top-level anchor")
+
+landing_text = core_pages["landing"].read_text(encoding="utf-8") if core_pages["landing"].exists() else ""
+check('href="tel:112"' in landing_text, "landing emergency strip lacks 112")
+check('href="tel:110"' not in landing_text, "landing emergency strip still exposes Germany-only 110")
+check("Use the local emergency number" in landing_text, "landing emergency strip lacks local-number-first wording")
+check("In the EU, call" in landing_text, "landing emergency strip lacks bounded 112 context")
+
+deployment_text = core_pages["deployment"].read_text(encoding="utf-8") if core_pages["deployment"].exists() else ""
+check("GitHub Pages deployment is prepared" not in deployment_text, "deployment page still exposes repository publication instructions")
 
 route_page = SITE / "routes" / "O" / "green-book-body-owners-manual.html"
 if route_page.exists():

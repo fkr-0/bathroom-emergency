@@ -63,9 +63,9 @@ ax.text(5, 13.55, "TWO PASSES, ONE NEXT ACTION", ha="center", color=INK, fontsiz
 ax.text(5, 13.12, "Pass 1 removes danger. Pass 2 identifies the need. Modifiers change logistics, not urgency.", ha="center", color=MUTED, fontsize=8.5)
 ax.text(.5, 12.45, "PASS 1 / OVERRIDES", color=RED, fontsize=10, fontweight="bold")
 groups = [
-    (0.5, 10.65, 2.75, 1.45, "LIFE / MEDICAL", "Possible death, abnormal breathing,\nsevere bleeding, collapse, lasting harm\n→ 112", RED),
-    (3.62, 10.65, 2.75, 1.45, "VIOLENCE / CRIME", "Move to safety; 110.\nMedical or life danger too → 112", PURPLE),
-    (6.75, 10.65, 2.75, 1.45, "ENVIRONMENT", "Fire · smoke · CO · gas\nchemicals · electricity\n→ Situation H / 112", AMBER),
+    (0.5, 10.65, 2.75, 1.45, "LIFE / MEDICAL", "Possible death, abnormal breathing,\nsevere bleeding, collapse, lasting harm\n→ local emergency number (EU: 112)", RED),
+    (3.62, 10.65, 2.75, 1.45, "VIOLENCE / CRIME", "Move to a safer place if possible.\nUse trusted or emergency help\nwhen it is safe and useful.", PURPLE),
+    (6.75, 10.65, 2.75, 1.45, "ENVIRONMENT", "Fire · smoke · CO · gas\nchemicals · electricity\n→ Situation H / emergency services", AMBER),
 ]
 for args in groups: card(ax, *args)
 for x in (1.875, 4.995, 8.125): arrow(ax, (x, 10.55), (x, 9.78), color=RED)

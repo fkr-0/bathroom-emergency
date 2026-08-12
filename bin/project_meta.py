@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE = json.loads((ROOT / "package.json").read_text(encoding="utf-8"))
 VERSION: str = PACKAGE["version"]
-RELEASE_DATE = "2026-08-11"
+RELEASE_DATE = "2026-08-12"
 SOURCE_REVIEW_DATE = "2026-08-06"
 
 

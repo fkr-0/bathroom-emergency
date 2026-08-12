@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "5.0.2",
+  "release": "5.1.1",
   "status": "stable-public-reference-registry",
   "format": "[BEG:<owner>:<kind>:<sequence>]",
   "kind_legend": {
@@ -429,6 +429,8 @@
     "section:09-version-history:5-0-0-rc-1-8-august-2026": "[BEG:R:S:093]",
     "section:09-version-history:5-0-1-11-august-2026": "[BEG:R:S:094]",
     "section:09-version-history:5-0-2-11-august-2026": "[BEG:R:S:095]",
+    "section:09-version-history:5-1-0-12-august-2026": "[BEG:R:S:096]",
+    "section:09-version-history:5-1-1-12-august-2026": "[BEG:R:S:097]",
     "section:09-version-history:earlier-versions": "[BEG:R:S:026]",
     "section:09-version-history:version-history": "[BEG:R:S:027]",
     "section:10-sources:affect-labelling-and-emotional-regulation": "[BEG:R:S:028]",
@@ -566,6 +568,7 @@
     "section:08-appendix:the-eight-entry-points",
     "section:09-version-history:4-14-0-alt-3-8-august-2026",
     "section:09-version-history:4-5-0-23-july-2026-release-candidate",
+    "section:09-version-history:5-1-0-12-august-2026",
     "section:10-sources:attachment-theory"
   ]
 }

@@ -1,8 +1,8 @@
 ---
 title: "The Blue Book — Safety & No Place"
 chapter: "3G"
-revision: "5.0.2"
-last_updated: "2026-08-11"
+revision: "5.1.1"
+last_updated: "2026-08-12"
 dependencies:
   - build/diagrams/safe_place_route_map.png
   - build/diagrams/communication_access_card.png

@@ -94,9 +94,9 @@ def nav(prefix: str, active: str) -> str:
 def emergency_strip() -> str:
     return '''<aside class="emergency-strip" aria-label="Emergency notice">
   <span class="pulse-dot" aria-hidden="true"></span>
-  <strong>Immediate danger in Germany?</strong>
-  <span>Call <a href="tel:112">112</a> for fire, rescue, or life danger; <a href="tel:110">110</a> for active crime or threat.</span>
-  <span class="emergency-limit">Do not read a website first.</span>
+  <strong>Immediate danger?</strong>
+  <span>Use the local emergency number. In the EU, call <a href="tel:112">112</a>.</span>
+  <span class="emergency-limit">If calling is unsafe, get to a safer place or ask a trusted person to call.</span>
 </aside>'''
 
 
@@ -293,14 +293,6 @@ def deployment_page(revision: str, date: str) -> str:
       <article><span>03</span><strong>Open folder or shallow box</strong><p>Separates master guide, Safety Book, local reference figures, private templates, and blanks.</p></article>
       <article><span>04</span><strong>Wall panel plus takeaways</strong><p>Keep shared-safe orientation visible and detachable private material protected.</p></article>
     </div>
-  </section>
-
-  <section class="shell section-block operator-section" aria-labelledby="pages-heading">
-    <div class="operator-copy"><span class="eyebrow">Website operator</span><h2 id="pages-heading">GitHub Pages deployment is prepared, not presumed.</h2><p>The repository includes a dedicated Pages workflow that builds the entire release, validates it, and publishes <code>build/site</code>. A push or workflow run is still an explicit deployment event.</p><ol><li>Enable GitHub Pages with <strong>GitHub Actions</strong> as the source.</li><li>Review repository variables and optional custom-domain DNS.</li><li>Push the workflow or run it manually.</li><li>Verify the deployed landing, guide, book shelf, PDFs, planner, and 404 page.</li></ol></div>
-    <div class="code-card"><div class="code-head"><span>Local preview</span><button type="button" data-copy-code>Copy</button></div><pre><code>npm ci
-npx playwright install chromium
-npm run build
-python -m http.server 8080 -d build/site</code></pre><p>Open <code>http://localhost:8080</code>. The site has no remote runtime dependency.</p></div>
   </section>
 
   <section class="shell maintenance-band">

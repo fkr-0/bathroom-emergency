@@ -1,8 +1,8 @@
 ---
 title: "Bathroom Emergency Guide"
 chapter: 0
-revision: "5.0.2"
-last_updated: "2026-08-11"
+revision: "5.1.1"
+last_updated: "2026-08-12"
 type: cover
 dependencies: []
 ---
@@ -19,9 +19,10 @@ future remains poorly supervised — zombie-adjacent events.
 
 <div class="emergency-gate">
   <strong>Actual emergency?</strong>
-  Stop reading. Get another person. Put the phone on speaker. Unlock or mark the
-  door if that is safe. Use <strong>112</strong> for life, medical, or fire danger
-  and <strong>110</strong> for an active police threat.
+  Stop reading. Get another person if that is safe. Put the phone on speaker.
+  Unlock or mark the door if that is safe. Use the local emergency number; in
+  the EU, call <strong>112</strong>. If calling is unsafe, get to a safer place or
+  ask a trusted person to call.
 </div>
 
 Otherwise, choose the book that matches the problem. You do not need to prove

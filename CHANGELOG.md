@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 5.1.1 — 2026-08-12
 
 ### Website
 
@@ -23,6 +23,55 @@
 - hardened keyboard/mobile navigation: Escape closes both site navigation and
   guide contents with focus restoration, touch targets remain at least 44 px,
   and focus-visible treatment is explicit on interactive controls.
+- restored the complete online guide's persistent left reader rail on desktop,
+  kept all twelve Shelf/book groups as top-level navigation, and strengthened
+  scroll tracking so both the current section and its parent book remain marked
+  while the rail automatically follows long reads;
+- made the generic website emergency strip **local-number first**: it names 112
+  only as the EU route, removes the Germany-specific 110 shortcut, and adds a
+  safer-place/trusted-caller fallback when making the call itself is unsafe;
+- removed the repository/GitHub Pages operator instructions from the public
+  deployment page; publication mechanics remain repository documentation rather
+  than reader-facing deployment content.
+
+### Book overview and emergency surfaces
+
+- rebuilt the eleven-book overview graph so its nodes use the same canonical
+  motifs as the directory cards — Green pulse/lifeline, Amber diamonds, Teal
+  waves, Red crosses, Blue shields, Orange zigzags, Olive crosshatch, Indigo
+  dots, Purple speech bubbles, Grey form grid, and Copper rules — instead of a
+  second generic Matplotlib-hatch vocabulary;
+- replaced the small graph circles with larger rounded patterned rectangles,
+  forced equal-axis geometry so the graph cannot stretch its nodes, and moved
+  the title/subtitle clear of the upper Green node;
+- applied the same patterned rounded-node treatment to the per-book local graphs
+  and the generated identity review sheet, so overview, local handoffs, and the
+  lower directory grid now share one visual identity grammar;
+- removed 110 from generic cover and override rectangles. Those surfaces now
+  say to use the local emergency number and bound 112 to the EU rather than
+  assuming police involvement or one national routing model is universally safe.
+
+### Roadmap
+
+- specified a static, strictly client-side deployment helper/wizard that fills
+  canonical deployer forms, preserves privacy classifications, previews visible
+  versus private packets, and renders printable PDF output without transmitting
+  entered values;
+- established repository-to-guide convergence as a development target: durable
+  changelog, deployment, maintenance, evidence, and operational documentation
+  should surface in Copper, Grey, or a future dedicated deployment/maintenance
+  book instead of remaining repository-only knowledge.
+
+### Verification scope
+
+- the full build/test matrix must pass before tagging, including all standalone
+  books, combined print, booklet imposition, density, accessibility, overflow,
+  Pages packaging, 320/390 px browser checks, and desktop reader-rail scroll
+  tracking;
+- this minor release changes website/navigation, overview graphics, generic
+  emergency surfaces, and release/deployment documentation. Context-specific
+  Germany service information remains where the guide has enough scope to state
+  what the service is and when it is useful.
 
 ## 5.0.2 — 2026-08-11
 

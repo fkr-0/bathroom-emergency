@@ -377,9 +377,9 @@ def build_markdown(
 
 ::: {{.emergency-gate}}
 
-**Actual emergency?** Stop reading, involve another person, and call local
-emergency services. In Germany, **112** is for life, medical, and fire danger;
-**110** is for an active police threat.
+**Actual emergency?** Stop reading and use the local emergency number. In the
+EU, call **112**. If calling is unsafe, get to a safer place or ask a trusted
+person to call.
 
 :::
 
@@ -899,9 +899,9 @@ lang: "en"
 
 ::: {{.emergency-gate}}
 
-**Actual emergency?** Use emergency services before choosing a book. In Germany,
-call **112** for life, medical, or fire danger and **110** for an active police
-threat.
+**Actual emergency?** Use the local emergency number before choosing a book. In
+the EU, call **112**. If calling is unsafe, get to a safer place or ask a trusted
+person to call.
 
 :::
 

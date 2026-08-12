@@ -77,7 +77,7 @@ ax.text(6, 8.08, "Secure the next safe hour. Then solve the larger problem.",
         ha="center", color=MUTED, fontsize=9, style="italic")
 ax.add_patch(FancyBboxPatch((2.4, 7.12), 7.2, .58, boxstyle="round,pad=.03",
                             facecolor=RED, edgecolor=RED))
-ax.text(6, 7.41, "OVERRIDE: 112 life/medical · 110 active threat · Situation H environment",
+ax.text(6, 7.41, "OVERRIDE: immediate danger → local emergency number · EU: 112 · Situation H environment",
         ha="center", va="center", color=WHITE, fontsize=8.2, fontweight="bold")
 
 routes = ROUTES["safe_place_routes"]

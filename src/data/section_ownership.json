@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release": "5.0.2",
+  "release": "5.1.1",
   "generated_by": "bin/build_inventories.py",
   "granularity": "all level-1 and level-2 headings",
   "sections": [
@@ -23,7 +23,7 @@
     {
       "key": "00-cover:how-to-use-the-eleven-books",
       "chapter": "00-cover.md",
-      "line": 35,
+      "line": 36,
       "level": 2,
       "heading": "How to use the eleven books",
       "owner": "O"
@@ -31,7 +31,7 @@
     {
       "key": "00-cover:the-shelf",
       "chapter": "00-cover.md",
-      "line": 41,
+      "line": 42,
       "level": 2,
       "heading": "The shelf",
       "owner": "O"
@@ -39,7 +39,7 @@
     {
       "key": "00-cover:reading-order-is-optional",
       "chapter": "00-cover.md",
-      "line": 57,
+      "line": 58,
       "level": 2,
       "heading": "Reading order is optional",
       "owner": "O"
@@ -1693,9 +1693,17 @@
       "owner": "R"
     },
     {
-      "key": "09-version-history:5-0-2-11-august-2026",
+      "key": "09-version-history:5-1-1-12-august-2026",
       "chapter": "09-version-history.md",
       "line": 11,
+      "level": 2,
+      "heading": "5.1.1 — 12 August 2026",
+      "owner": "R"
+    },
+    {
+      "key": "09-version-history:5-0-2-11-august-2026",
+      "chapter": "09-version-history.md",
+      "line": 50,
       "level": 2,
       "heading": "5.0.2 — 11 August 2026",
       "owner": "R"
@@ -1703,7 +1711,7 @@
     {
       "key": "09-version-history:5-0-1-11-august-2026",
       "chapter": "09-version-history.md",
-      "line": 24,
+      "line": 63,
       "level": 2,
       "heading": "5.0.1 — 11 August 2026",
       "owner": "R"
@@ -1711,7 +1719,7 @@
     {
       "key": "09-version-history:5-0-0-rc-1-8-august-2026",
       "chapter": "09-version-history.md",
-      "line": 41,
+      "line": 80,
       "level": 2,
       "heading": "5.0.0-rc.1 — 8 August 2026",
       "owner": "R"
@@ -1719,7 +1727,7 @@
     {
       "key": "09-version-history:4-14-0-alt-2-6-august-2026",
       "chapter": "09-version-history.md",
-      "line": 207,
+      "line": 246,
       "level": 2,
       "heading": "4.14.0-alt.2 — 6 August 2026",
       "owner": "R"
@@ -1727,7 +1735,7 @@
     {
       "key": "09-version-history:4-14-0-alt-1-6-august-2026",
       "chapter": "09-version-history.md",
-      "line": 242,
+      "line": 281,
       "level": 2,
       "heading": "4.14.0-alt.1 — 6 August 2026",
       "owner": "R"
@@ -1735,7 +1743,7 @@
     {
       "key": "09-version-history:4-13-1-2-august-2026",
       "chapter": "09-version-history.md",
-      "line": 251,
+      "line": 290,
       "level": 2,
       "heading": "4.13.1 — 2 August 2026",
       "owner": "R"
@@ -1743,7 +1751,7 @@
     {
       "key": "09-version-history:4-13-0-2-august-2026",
       "chapter": "09-version-history.md",
-      "line": 268,
+      "line": 307,
       "level": 2,
       "heading": "4.13.0 — 2 August 2026",
       "owner": "R"
@@ -1751,7 +1759,7 @@
     {
       "key": "09-version-history:4-12-0-2-august-2026",
       "chapter": "09-version-history.md",
-      "line": 293,
+      "line": 332,
       "level": 2,
       "heading": "4.12.0 — 2 August 2026",
       "owner": "R"
@@ -1759,7 +1767,7 @@
     {
       "key": "09-version-history:4-11-0-2-august-2026",
       "chapter": "09-version-history.md",
-      "line": 320,
+      "line": 359,
       "level": 2,
       "heading": "4.11.0 — 2 August 2026",
       "owner": "R"
@@ -1767,7 +1775,7 @@
     {
       "key": "09-version-history:4-10-0-1-august-2026",
       "chapter": "09-version-history.md",
-      "line": 343,
+      "line": 382,
       "level": 2,
       "heading": "4.10.0 — 1 August 2026",
       "owner": "R"
@@ -1775,7 +1783,7 @@
     {
       "key": "09-version-history:4-9-0-1-august-2026",
       "chapter": "09-version-history.md",
-      "line": 368,
+      "line": 407,
       "level": 2,
       "heading": "4.9.0 — 1 August 2026",
       "owner": "R"
@@ -1783,7 +1791,7 @@
     {
       "key": "09-version-history:4-8-0-27-july-2026",
       "chapter": "09-version-history.md",
-      "line": 395,
+      "line": 434,
       "level": 2,
       "heading": "4.8.0 — 27 July 2026",
       "owner": "R"
@@ -1791,7 +1799,7 @@
     {
       "key": "09-version-history:4-7-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 418,
+      "line": 457,
       "level": 2,
       "heading": "4.7.0 — 26 July 2026",
       "owner": "R"
@@ -1799,7 +1807,7 @@
     {
       "key": "09-version-history:4-6-1-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 440,
+      "line": 479,
       "level": 2,
       "heading": "4.6.1 — 26 July 2026",
       "owner": "R"
@@ -1807,7 +1815,7 @@
     {
       "key": "09-version-history:4-6-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 457,
+      "line": 496,
       "level": 2,
       "heading": "4.6.0 — 26 July 2026",
       "owner": "R"
@@ -1815,7 +1823,7 @@
     {
       "key": "09-version-history:4-5-0-26-july-2026",
       "chapter": "09-version-history.md",
-      "line": 498,
+      "line": 537,
       "level": 2,
       "heading": "4.5.0 — 26 July 2026",
       "owner": "R"
@@ -1823,7 +1831,7 @@
     {
       "key": "09-version-history:4-4-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 531,
+      "line": 570,
       "level": 2,
       "heading": "4.4.1 — 22 July 2026",
       "owner": "R"
@@ -1831,7 +1839,7 @@
     {
       "key": "09-version-history:4-3-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 546,
+      "line": 585,
       "level": 2,
       "heading": "4.3.1 — 22 July 2026",
       "owner": "R"
@@ -1839,7 +1847,7 @@
     {
       "key": "09-version-history:4-3-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 564,
+      "line": 603,
       "level": 2,
       "heading": "4.3.0 — 22 July 2026",
       "owner": "R"
@@ -1847,7 +1855,7 @@
     {
       "key": "09-version-history:4-2-0-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 594,
+      "line": 633,
       "level": 2,
       "heading": "4.2.0 — 22 July 2026",
       "owner": "R"
@@ -1855,7 +1863,7 @@
     {
       "key": "09-version-history:4-1-2-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 625,
+      "line": 664,
       "level": 2,
       "heading": "4.1.2 — 22 July 2026",
       "owner": "R"
@@ -1863,7 +1871,7 @@
     {
       "key": "09-version-history:4-1-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 649,
+      "line": 688,
       "level": 2,
       "heading": "4.1.1 — 22 July 2026",
       "owner": "R"
@@ -1871,7 +1879,7 @@
     {
       "key": "09-version-history:4-0-1-22-july-2026",
       "chapter": "09-version-history.md",
-      "line": 681,
+      "line": 720,
       "level": 2,
       "heading": "4.0.1 — 22 July 2026",
       "owner": "R"
@@ -1879,7 +1887,7 @@
     {
       "key": "09-version-history:4-0-0-17-july-2026",
       "chapter": "09-version-history.md",
-      "line": 735,
+      "line": 774,
       "level": 2,
       "heading": "4.0.0 — 17 July 2026",
       "owner": "R"
@@ -1887,7 +1895,7 @@
     {
       "key": "09-version-history:earlier-versions",
       "chapter": "09-version-history.md",
-      "line": 771,
+      "line": 810,
       "level": 2,
       "heading": "Earlier versions",
       "owner": "R"

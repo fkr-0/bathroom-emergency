@@ -70,23 +70,23 @@
       const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
       root.dataset.theme = next;
       localStorage.setItem('beg-theme', next);
-      themeButton.setAttribute('aria-label', `Color scheme: ${next}. Activate to toggle.`);
+      themeButton.setAttribute('aria-label', 'Color scheme: ' + next + '. Activate to toggle.');
     });
     document.getElementById('print-button')?.addEventListener('click', () => window.print());
 
     const tocList = toc?.querySelector('[data-reader-toc]');
     const books = [...document.querySelectorAll('main .standalone-subguide[id]')];
     const tocTargets = [];
+    const bookItems = [];
     const appendLink = (list, target, label, className = '') => {
       const item = document.createElement('li');
       if (className) item.className = className;
       const link = document.createElement('a');
-      link.href = `#${target.id}`;
+      link.href = '#' + target.id;
       link.textContent = label;
       item.append(link);
       list.append(item);
-      tocTargets.push({ link, target });
-      return item;
+      return { item, link, target, bookItem: null };
     };
     const headingLabel = heading => {
       const copy = heading.cloneNode(true);
@@ -97,41 +97,71 @@
       const code = book.dataset.subguide || '';
       const titleHeading = book.querySelector('.subguide-cover h1');
       const title = titleHeading ? headingLabel(titleHeading) : (code || 'Book');
-      const bookItem = appendLink(tocList, book, code ? `${code} · ${title}` : title, 'reader-toc-book');
+      const bookEntry = appendLink(tocList, book, code ? code + ' · ' + title : title, 'reader-toc-book');
+      bookEntry.bookItem = bookEntry.item;
+      bookItems.push(bookEntry.item);
+      tocTargets.push(bookEntry);
       const sections = [...book.querySelectorAll('h2[id^="beg-"]')];
       if (!sections.length) return;
       const sectionList = document.createElement('ul');
       sectionList.className = 'reader-toc-sections';
-      sections.forEach(section => appendLink(sectionList, section, headingLabel(section)));
-      bookItem.append(sectionList);
+      sections.forEach(section => {
+        const sectionEntry = appendLink(sectionList, section, headingLabel(section));
+        sectionEntry.bookItem = bookEntry.item;
+        tocTargets.push(sectionEntry);
+      });
+      bookEntry.item.append(sectionList);
     });
 
-    let activeLink = null;
-    const setActive = link => {
-      if (activeLink === link) return;
-      activeLink?.removeAttribute('aria-current');
-      activeLink = link;
-      activeLink?.setAttribute('aria-current', 'location');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let activeEntry = null;
+    const keepActiveTocEntryVisible = link => {
+      if (!toc || matchMedia('(max-width: 900px)').matches) return;
+      const tocBox = toc.getBoundingClientRect();
+      const linkBox = link.getBoundingClientRect();
+      const inset = 12;
+      if (linkBox.top >= tocBox.top + inset && linkBox.bottom <= tocBox.bottom - inset) return;
+      const nextTop = toc.scrollTop + (linkBox.top - tocBox.top) - toc.clientHeight * .38;
+      toc.scrollTo({ top: Math.max(0, nextTop), behavior: reducedMotion.matches ? 'auto' : 'smooth' });
     };
-    if (tocTargets.length) {
-      const observer = new IntersectionObserver(entries => {
-        const visible = entries
-          .filter(entry => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible.length) {
-          const match = tocTargets.find(item => item.target === visible[0].target);
-          if (match) setActive(match.link);
+    const setActive = entry => {
+      if (!entry || activeEntry === entry) return;
+      activeEntry?.link.removeAttribute('aria-current');
+      activeEntry = entry;
+      activeEntry.link.setAttribute('aria-current', 'location');
+      bookItems.forEach(item => item.classList.toggle('is-current-book', item === activeEntry.bookItem));
+      keepActiveTocEntryVisible(activeEntry.link);
+    };
+
+    let activeFrame = 0;
+    const updateActiveToc = () => {
+      activeFrame = 0;
+      if (!tocTargets.length) return;
+      const appBarHeight = document.querySelector('.app-bar')?.getBoundingClientRect().height || 0;
+      const activationLine = appBarHeight + 28;
+      let current = tocTargets[0];
+      let currentTop = Number.NEGATIVE_INFINITY;
+      for (const entry of tocTargets) {
+        const targetTop = entry.target.getBoundingClientRect().top;
+        if (targetTop <= activationLine && targetTop > currentTop) {
+          current = entry;
+          currentTop = targetTop;
         }
-      }, { rootMargin: '-15% 0px -72% 0px', threshold: 0 });
-      tocTargets.forEach(item => observer.observe(item.target));
-      setActive(tocTargets[0].link);
-    }
+      }
+      setActive(current);
+    };
+    const scheduleActiveTocUpdate = () => {
+      if (!activeFrame) activeFrame = requestAnimationFrame(updateActiveToc);
+    };
+    scheduleActiveTocUpdate();
 
     const update = () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       progress.style.width = (max > 0 ? Math.min(100, scrollY / max * 100) : 0) + '%';
+      scheduleActiveTocUpdate();
     };
     addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', scheduleActiveTocUpdate, { passive: true });
     update();
   })();
   </script>

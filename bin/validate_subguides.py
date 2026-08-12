@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PATH = ROOT / "src" / "data" / "subguides.json"
 SECTION_PATH = ROOT / "src" / "data" / "section_ownership.json"
 STYLE_PATH = ROOT / "src" / "style-subguides.css"
+GENERATOR_PATH = ROOT / "src" / "diagrams" / "generate_subguides.py"
 PATTERN_DIR = ROOT / "build" / "subguides" / "assets" / "patterns"
 DIAGRAM_DIR = ROOT / "build" / "diagrams"
 HUB_PATH = ROOT / "build" / "subguides" / "index.html"
@@ -27,6 +28,7 @@ def check(condition: bool, message: str) -> None:
 check(PATH.exists(), "subguide manifest missing")
 check(SECTION_PATH.exists(), "section ownership inventory missing")
 check(STYLE_PATH.exists(), "subguide identity stylesheet missing")
+check(GENERATOR_PATH.exists(), "subguide diagram generator missing")
 
 if PATH.exists():
     data = json.loads(PATH.read_text(encoding="utf-8"))
@@ -153,6 +155,13 @@ if PATH.exists():
             "figure-reference", "subguide-scope-grid", "edition-resource-map",
         ):
             check(marker in style, f"subguide CSS marker missing: {marker}")
+
+    if GENERATOR_PATH.exists():
+        generator = GENERATOR_PATH.read_text(encoding="utf-8")
+        check("draw_pattern_motif" in generator, "graph generator no longer shares the canonical motif vocabulary")
+        check("add_patterned_node" in generator, "graph generator lost patterned rounded-node rendering")
+        check("HATCHES =" not in generator, "graph generator regressed to a second generic hatch vocabulary")
+        check(generator.count('set_aspect("equal"') >= 2, "overview/local graph geometry is no longer equal-aspect")
 
     pattern_files = [
         PATTERN_DIR / f'{item["id"]}-{item["pattern"]}.svg' for item in nodes

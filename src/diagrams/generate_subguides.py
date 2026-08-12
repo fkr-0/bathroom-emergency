@@ -14,7 +14,8 @@ import textwrap
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle, FancyArrowPatch, Rectangle
+import numpy as np
+from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "build" / "diagrams"
@@ -33,21 +34,6 @@ RED = "#b42318"
 GREEN = "#0d7355"
 manifest = json.loads(DATA.read_text(encoding="utf-8"))
 nodes = {item["id"]: item for item in manifest["nodes"]}
-
-HATCHES = {
-    "pulse": "-.-",
-    "diamond": "xx",
-    "wave": "---",
-    "cross": "++",
-    "shield": "OO",
-    "zigzag": "///",
-    "crosshatch": "xx",
-    "dots": "..",
-    "speech": "oO",
-    "form-grid": "++",
-    "solid": "---",
-}
-
 
 def finish(fig: plt.Figure, name: str, *, qa: bool = False) -> None:
     target = QA_DIR if qa else OUT
@@ -75,6 +61,169 @@ def pattern_svg(pattern: str, title: str) -> str:
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title"><title id="title">{title}</title><rect width="96" height="96" fill="#fff"/>{shapes[pattern]}</svg>\n'''
 
 
+def draw_pattern_motif(
+    ax: plt.Axes,
+    pattern: str,
+    x0: float,
+    y0: float,
+    width: float,
+    height: float,
+    *,
+    color: str,
+    clip,
+    zorder: float,
+) -> None:
+    """Draw the same semantic pattern vocabulary used by ``pattern_svg``.
+
+    The graph originally used generic Matplotlib hatch codes. That made the
+    graph's Green node look like dashes while the directory card used the
+    canonical pulse/lifeline, and similarly weakened the other identities.
+    These motifs deliberately mirror the generated SVG assets so graph, cards,
+    print keys, and monochrome handoffs all speak one visual language.
+    """
+
+    def point(x: float, y: float) -> tuple[float, float]:
+        # SVG coordinates grow downward; preserve that authored orientation.
+        return x0 + width * x / 96.0, y0 + height * (1.0 - y / 96.0)
+
+    def plot(points, *, lw: float = 1.35) -> None:
+        artist, = ax.plot(
+            [point(x, y)[0] for x, y in points],
+            [point(x, y)[1] for x, y in points],
+            color=color,
+            linewidth=lw,
+            solid_capstyle="round",
+            solid_joinstyle="round",
+            zorder=zorder,
+        )
+        artist.set_clip_path(clip)
+
+    def polygon(points, *, lw: float = 1.25) -> None:
+        patch = Polygon(
+            [point(x, y) for x, y in points],
+            closed=True,
+            fill=False,
+            edgecolor=color,
+            linewidth=lw,
+            joinstyle="round",
+            zorder=zorder,
+        )
+        patch.set_clip_path(clip)
+        ax.add_patch(patch)
+
+    if pattern == "pulse":
+        plot([(0, 50), (18, 50), (27, 50), (34, 27), (43, 72), (52, 42), (61, 50), (96, 50)], lw=1.6)
+    elif pattern == "diamond":
+        for points in (
+            [(24, 4), (44, 24), (24, 44), (4, 24)],
+            [(72, 4), (92, 24), (72, 44), (52, 24)],
+            [(48, 52), (68, 72), (48, 92), (28, 72)],
+        ):
+            polygon(points)
+    elif pattern == "wave":
+        xs = np.linspace(0, 96, 160)
+        for center in (18, 48, 78):
+            ys = center - 10 * np.sin(2 * np.pi * xs / 48)
+            artist, = ax.plot(
+                x0 + width * xs / 96,
+                y0 + height * (1 - ys / 96),
+                color=color,
+                linewidth=1.3,
+                zorder=zorder,
+            )
+            artist.set_clip_path(clip)
+    elif pattern == "cross":
+        for dx, dy in ((0, 0), (48, 48)):
+            polygon(
+                [(16 + dx, 8 + dy), (32 + dx, 8 + dy), (32 + dx, 16 + dy),
+                 (40 + dx, 16 + dy), (40 + dx, 32 + dy), (32 + dx, 32 + dy),
+                 (32 + dx, 40 + dy), (16 + dx, 40 + dy), (16 + dx, 32 + dy),
+                 (8 + dx, 32 + dy), (8 + dx, 16 + dy), (16 + dx, 16 + dy)]
+            )
+    elif pattern == "shield":
+        for dx, dy in ((0, 0), (54, 8)):
+            polygon([(18 + dx, 10 + dy), (42 + dx, 18 + dy), (42 + dx, 44 + dy),
+                     (32 + dx, 64 + dy), (18 + dx, 78 + dy), (4 + dx, 64 + dy),
+                     (-6 + dx, 44 + dy), (-6 + dx, 18 + dy)])
+    elif pattern == "zigzag":
+        for y in (20, 58, 96):
+            plot([(0, y), (16, y - 16), (32, y), (48, y - 16), (64, y), (80, y - 16), (96, y)])
+    elif pattern == "crosshatch":
+        for offset in (-48, -24, 0, 24, 48, 72, 96):
+            plot([(offset, 0), (offset + 96, 96)], lw=1.05)
+            plot([(offset, 96), (offset + 96, 0)], lw=1.05)
+    elif pattern == "dots":
+        for x, y in ((12, 12), (36, 36), (60, 12), (84, 36), (12, 60), (36, 84), (60, 60), (84, 84)):
+            dot = Circle(point(x, y), min(width, height) * .028, facecolor=color, edgecolor="none", zorder=zorder)
+            dot.set_clip_path(clip)
+            ax.add_patch(dot)
+    elif pattern == "speech":
+        for x, y, w, h in ((6, 10, 56, 34), (36, 50, 54, 32)):
+            lower_left = point(x, y + h)
+            bubble = FancyBboxPatch(
+                lower_left,
+                width * w / 96,
+                height * h / 96,
+                boxstyle="round,pad=0.01,rounding_size=0.08",
+                fill=False,
+                edgecolor=color,
+                linewidth=1.2,
+                zorder=zorder,
+            )
+            bubble.set_clip_path(clip)
+            ax.add_patch(bubble)
+        plot([(20, 44), (14, 55), (34, 44)], lw=1.1)
+        plot([(74, 82), (82, 91), (60, 82)], lw=1.1)
+    elif pattern == "form-grid":
+        for value in (24, 48, 72):
+            plot([(0, value), (96, value)], lw=1.0)
+            plot([(value, 0), (value, 96)], lw=1.0)
+        for x, y in ((5, 5), (53, 53)):
+            polygon([(x, y), (x + 14, y), (x + 14, y + 14), (x, y + 14)], lw=1.0)
+    elif pattern == "solid":
+        for y in (18, 48, 78):
+            plot([(0, y), (96, y)], lw=1.4)
+    else:
+        raise ValueError(f"unknown identity pattern: {pattern}")
+
+
+def add_patterned_node(
+    ax: plt.Axes,
+    x: float,
+    y: float,
+    node: dict,
+    *,
+    width: float,
+    height: float,
+    linewidth: float = 2.0,
+    zorder: float = 3,
+) -> FancyBboxPatch:
+    """Add one rounded graph node with the canonical white-on-colour motif."""
+    patch = FancyBboxPatch(
+        (x - width / 2, y - height / 2),
+        width,
+        height,
+        boxstyle="round,pad=0.025,rounding_size=0.13",
+        facecolor=node["colour"],
+        edgecolor=INK,
+        linewidth=linewidth,
+        zorder=zorder,
+    )
+    ax.add_patch(patch)
+    draw_pattern_motif(
+        ax,
+        node["pattern"],
+        x - width / 2,
+        y - height / 2,
+        width,
+        height,
+        color="white",
+        clip=patch,
+        zorder=zorder + .1,
+    )
+    return patch
+
+
 for node in nodes.values():
     filename = f'{node["id"]}-{node["pattern"]}.svg'
     (PATTERN_DIR / filename).write_text(
@@ -83,7 +232,7 @@ for node in nodes.values():
     )
 
 
-# M1 contact sheet: color plus a monochrome-identical hatch channel.
+# M1 contact sheet: colour plus the same semantic motif used everywhere else.
 columns = 5
 rows = math.ceil(len(nodes) / columns)
 fig, axes = plt.subplots(rows, columns, figsize=(15.5, 3.0 * rows))
@@ -94,8 +243,9 @@ for ax, node in zip(flat_axes, nodes.values()):
     ax.set_ylim(0, 1)
     ax.axis("off")
     ax.add_patch(Rectangle((0.02, 0.02), .96, .96, facecolor="white", edgecolor=INK, linewidth=1.4))
-    ax.add_patch(Rectangle((0.02, .70), .96, .28, facecolor=node["colour"], edgecolor=INK, linewidth=0))
-    ax.add_patch(Rectangle((0.02, .70), .96, .28, facecolor="none", edgecolor="white", linewidth=1.3, hatch=HATCHES[node["pattern"]]))
+    band = Rectangle((0.02, .70), .96, .28, facecolor=node["colour"], edgecolor=INK, linewidth=0)
+    ax.add_patch(band)
+    draw_pattern_motif(ax, node["pattern"], .02, .70, .96, .28, color="white", clip=band, zorder=2.5)
     ax.text(.08, .82, node["id"], color="white", fontsize=24, fontweight="bold", ha="left", va="center")
     ax.text(.08, .57, textwrap.fill(node["title"], 25), color=INK, fontsize=10.5, fontweight="bold", ha="left", va="top")
     ax.text(.08, .13, node["pattern"].replace("-", " "), color=MUTED, fontsize=8, ha="left")
@@ -108,10 +258,10 @@ finish(fig, "subguide_identity_contact_sheet", qa=True)
 # Accessible overview projection. It shows the main routing spine; local pages
 # provide complete neighbour lists generated from the same manifest.
 overview_pos = {
-    "O": (0, 3.0),
-    "B": (-2.7, 1.55), "C": (0, 1.55), "H": (2.7, 1.55),
-    "A": (-3.8, -.15), "D": (-1.3, -.15), "S": (1.3, -.15), "Z": (3.8, -.15),
-    "P": (-2.3, -2.0), "T": (0, -2.0), "R": (2.3, -2.0),
+    "O": (0, 2.75),
+    "B": (-2.7, 1.25), "C": (0, 1.25), "H": (2.7, 1.25),
+    "A": (-3.8, -.45), "D": (-1.3, -.45), "S": (1.3, -.45), "Z": (3.8, -.45),
+    "P": (-2.3, -2.15), "T": (0, -2.15), "R": (2.3, -2.15),
 }
 primary_edges = [
     ("O", "B"), ("O", "C"), ("O", "H"), ("O", "S"), ("O", "A"),
@@ -124,29 +274,30 @@ for source, target in primary_edges:
     if target not in nodes[source]["outgoing"]:
         raise RuntimeError(f"overview edge {source}->{target} absent from manifest")
 
-fig, ax = plt.subplots(figsize=(10.5, 8.7))
-ax.set_xlim(-4.8, 4.8)
-ax.set_ylim(-3.1, 3.65)
+fig, ax = plt.subplots(figsize=(11.4, 8.3))
+ax.set_xlim(-4.9, 4.9)
+ax.set_ylim(-3.25, 4.0)
+ax.set_aspect("equal", adjustable="box")
 ax.axis("off")
-ax.set_title("The eleven-book shelf", fontsize=22, fontweight="bold", color=INK, pad=18)
-ax.text(0, 3.02, "Handoffs, not required reading order.", ha="center", va="center", color=MUTED, fontsize=9.5)
+ax.text(0, 3.82, "The eleven-book shelf", ha="center", va="center", fontsize=22, fontweight="bold", color=INK)
+ax.text(0, 3.47, "Handoffs, not required reading order.", ha="center", va="center", color=MUTED, fontsize=9.5)
 for source, target in primary_edges:
     x1, y1 = overview_pos[source]
     x2, y2 = overview_pos[target]
     ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=10, linewidth=1.1, color=LINE, shrinkA=24, shrinkB=24, zorder=1))
 for node_id, (x, y) in overview_pos.items():
     node = nodes[node_id]
-    ax.add_patch(Circle((x, y), .42, facecolor=node["colour"], edgecolor=INK, linewidth=2.1, hatch=HATCHES[node["pattern"]], zorder=3))
+    add_patterned_node(ax, x, y, node, width=1.08, height=.64, linewidth=2.1, zorder=3)
     ax.text(x, y, node_id, color="white", fontsize=17, fontweight="bold", ha="center", va="center", zorder=4)
     below = y > -1.4
     ax.text(
         x,
-        y - .58 if below else y + .58,
+        y - .50 if below else y + .50,
         textwrap.fill(node["title"], 18),
         color=INK, fontsize=8.3, fontweight="bold",
         ha="center", va="top" if below else "bottom",
     )
-ax.text(0, -2.85, "Choose the closest title; move when the problem changes.", ha="center", color=RED, fontsize=9, fontweight="bold")
+ax.text(0, -3.02, "Choose the closest title; move when the problem changes.", ha="center", color=RED, fontsize=9, fontweight="bold")
 finish(fig, "subguide_graph_overview")
 
 
@@ -157,6 +308,7 @@ for current_id, current in nodes.items():
     fig, ax = plt.subplots(figsize=(9.2, 6.8))
     ax.set_xlim(-3.3, 3.3)
     ax.set_ylim(-2.55, 2.75)
+    ax.set_aspect("equal", adjustable="box")
     ax.axis("off")
     ax.set_title(f'You are here: {current_id} — {current["title"]}', fontsize=18, fontweight="bold", color=INK, pad=14)
     radius = 2.05
@@ -167,20 +319,20 @@ for current_id, current in nodes.items():
     for neighbour_id, (x, y) in positions.items():
         ax.add_patch(FancyArrowPatch((0, 0), (x, y), arrowstyle="-|>", mutation_scale=10, linewidth=1.2, color=LINE, shrinkA=37, shrinkB=27))
         neighbour = nodes[neighbour_id]
-        ax.add_patch(Circle((x, y), .34, facecolor="white", edgecolor=neighbour["colour"], linewidth=2.1, hatch=HATCHES[neighbour["pattern"]]))
-        ax.text(x, y, neighbour_id, color=INK, fontsize=12, fontweight="bold", ha="center", va="center")
+        add_patterned_node(ax, x, y, neighbour, width=.88, height=.52, linewidth=2.0, zorder=3)
+        ax.text(x, y, neighbour_id, color="white", fontsize=12, fontweight="bold", ha="center", va="center", zorder=4)
         # A label normally hangs below its node. Nodes near the bottom of the
         # ring have no room there and used to print straight through the
         # caption, so their labels go above instead.
         below = y > -1.0
         ax.text(
             x,
-            y - .46 if below else y + .46,
+            y - .40 if below else y + .40,
             textwrap.fill(neighbour["title"], 18),
             color=INK, fontsize=7.4, fontweight="bold",
             ha="center", va="top" if below else "bottom",
         )
-    ax.add_patch(Circle((0, 0), .62, facecolor=current["colour"], edgecolor=INK, linewidth=3.0, hatch=HATCHES[current["pattern"]], zorder=4))
+    add_patterned_node(ax, 0, 0, current, width=1.45, height=.82, linewidth=3.0, zorder=4)
     ax.text(0, 0, current_id, color="white", fontsize=28, fontweight="bold", ha="center", va="center", zorder=5)
     ax.text(0, -2.42, "Complete route names follow as text. Immediate danger bypasses this map.", ha="center", color=MUTED, fontsize=8.5)
     finish(fig, f"subguide_graph_{current_id}")

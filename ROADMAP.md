@@ -6,12 +6,14 @@ quality** without turning the first minute into a literature review.
 
 ## Current release state
 
-The current stable line is **5.0.2**. It has a Shelf introduction plus eleven
+The current stable line is **5.1.1**. It has a Shelf introduction plus eleven
 standalone colour books, 49 figures, 10 templates, 66 standalone PDF editions,
 24 folded booklet editions, and one shared stable-reference registry. The
-current work is no longer about adding another top-level book. It is about
-reader review, field testing, documentation accuracy, and making local
-deployment evidence as inspectable as the build evidence.
+current work is no longer about adding another top-level book by default. It is
+about reader review, field testing, documentation accuracy, making local
+deployment evidence as inspectable as build evidence, and moving useful
+operator knowledge out of repository-only documentation into the deployed
+guide.
 
 Immediate open work:
 
@@ -20,6 +22,64 @@ Immediate open work:
 - test first-aid depictions with trained instructors and novice readers;
 - verify that the feedback mailbox and response workflow work operationally;
 - promote or retire the experimental `alt` line only after that evidence exists.
+
+## Deployment helper / wizard
+
+The next major deployment feature should be a **strictly client-side deployment
+wizard**. The current deployment page explains what a maintainer has to verify;
+the wizard should let that maintainer fill the canonical deployment forms,
+review what will become visible, and render a print-ready local deployment
+packet without sending entered values to any server.
+
+### Target contract
+
+- ship as a static, self-contained web application under the Pages package;
+- derive fields and form membership from `src/data/deployment_fields.json` and
+  `src/data/forms.json` rather than maintaining a second handwritten schema;
+- keep entered values in browser memory by default; persistence must be an
+  explicit local opt-in with a prominent **clear local data** action;
+- perform no analytics, telemetry, remote API calls, account login, or cloud
+  storage; all validation and rendering happens in the browser;
+- retain each field's privacy class (`shared-safe`, `context-sensitive`, or
+  `private`) and show a deployment-time warning before context-sensitive or
+  private values enter a visibly mounted printout;
+- permit a deployer to choose which forms belong in the visible copy, a private
+  packet, or neither;
+- render a faithful print preview before output and preserve the current A4,
+  A4/2, large-print, colour, and monochrome accessibility contracts where they
+  apply;
+- produce a printable PDF entirely client-side. The first implementation may
+  use browser print-to-PDF from deterministic print HTML; a later deterministic
+  renderer may fill/compose canonical PDF templates in-browser if that provides
+  materially better pagination or packet assembly without introducing a server.
+
+### Delivery phases
+
+1. **Schema consolidation.** Make every deployer-editable field carry type,
+   validation, privacy, required/optional status, form membership, help text,
+   and source/review metadata in the canonical registries.
+2. **Wizard shell.** Build an offline-capable multi-step UI for location,
+   access, emergency/service routes, safe places, dependants, supplies,
+   ownership, and review cadence. Include progress without forcing a linear
+   workflow.
+3. **Privacy-aware preview.** Show exactly which values will be printed on each
+   page and support visible/private packet separation before rendering.
+4. **Client-side print renderer.** Generate deterministic form pages and a
+   deployment cover from the entered state, then offer browser-local PDF/print
+   output. No entered value may cross the network boundary.
+5. **Local save/restore.** Add explicit JSON export/import for deployment state;
+   treat it as potentially sensitive, label it accordingly, and never persist
+   silently.
+6. **E2E and accessibility.** Verify 320 px through desktop, keyboard-only use,
+   screen-reader landmarks, no remote requests, privacy-state transitions,
+   deterministic output, print geometry, and a complete clear-data operation.
+7. **Guide integration.** Link the wizard from Grey deployment forms, Copper
+   deployment/reference material, the website deploy page, and the generated
+   PDF's deployment instructions.
+
+The wizard is a helper for preparing a local copy, not a new authority. It must
+never invent a service number, safe place, medical fact, credential, or local
+availability value merely to complete a form.
 
 ## Design invariants
 
@@ -38,6 +98,16 @@ Every extension must preserve these rules:
    regional hazards should be configurable rather than buried in prose.
 6. **Humour follows safety.** A joke may sit beside explanation, never between a
    danger sign and the action.
+7. **Repository knowledge converges into the guide.** Changelogs, deployment
+   instructions, maintenance rules, evidence notes, schemas, and other durable
+   operational resources should not remain repository-only by default. Their
+   reader- or deployer-relevant substance should eventually appear in the
+   deployed guide — normally in Copper for provenance/reference material, in
+   Grey for forms and deployer actions, or, if the material grows into a
+   coherent reader task of its own, in a future dedicated deployment/
+   maintenance subguide. The repository may keep deeper engineering detail;
+   the deployed copy should carry the knowledge required to understand,
+   install, inspect, and maintain itself.
 
 ## Review findings from 4.1.1–4.1.2
 
@@ -77,7 +147,7 @@ Keep the first pass short:
 ```text
 PASS 1 — OVERRIDE
   life/medical danger?              -> 112
-  active violence/crime?            -> safer place -> 110 / 112
+  active violence/crime?            -> safer place -> local emergency/help route
   fire/smoke/gas/chemical/electric? -> leave/isolate if safe -> 112/utility
 
 PASS 2 — NEED
