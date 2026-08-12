@@ -1,0 +1,155 @@
+project: bathroom-emergency-guide
+version: 5.1.1
+release_date: 2026-08-12
+source_revision: f855485b7597
+source_date_epoch: 1786537359
+implementation_commit: f855485b75973774f45eac3af929e63ab712ac9d
+local_tag: v5.1.1
+tag_target: commit containing this evidence record
+push_performed: false
+publish_performed: false
+deployment_performed: false
+
+release_scope:
+  stable_line: 5.1.1
+  canonical_chapters: 17
+  active_stable_resources: 392
+  standalone_books: 11
+  standalone_pdf_editions: 66
+  folded_booklet_editions: 24
+  combined_booklet_bundles: 2
+  release_manifest_artifacts: 869
+  changes:
+    - persistent desktop reader rail with Shelf/book hierarchy, section tracking, parent-book state, and TOC auto-follow
+    - canonical book motifs shared by directory cards, overview graph, identity review sheet, and local handoff graphs
+    - rounded equal-aspect graph nodes replacing generic hatched circles; title and subtitle moved clear of the Green node
+    - generic emergency surfaces changed to local-number-first wording with 112 bounded to the EU and no generic 110 shortcut
+    - public GitHub Pages/operator instructions removed from the deployment website
+    - client-only deployment-form wizard and repository-to-guide documentation convergence recorded in the roadmap and Copper history
+
+generic_emergency_surface_evidence:
+  website_primary_wording: Use the local emergency number. In the EU, call 112.
+  unsafe_call_fallback: get to a safer place or ask a trusted person to call
+  standalone_and_shelf_emergency_gates_with_110: 0
+  generic_source_110_audit:
+    paths:
+      - src/hub/00-cover.md
+      - bin/build_subguides.py
+      - src/diagrams/generate_routes.py
+      - src/diagrams/generate_accessibility.py
+      - bin/build_site.py
+    result: no 110 occurrence
+  scope_note: context-specific German service material may still name 110 where the service purpose and routing boundary travel with the number
+
+public_site_evidence:
+  github_pages_operator_section_present: false
+  github_pages_enablement_copy_present: false
+  desktop_reader_rail:
+    top_level_groups: 12
+    current_section_state: true
+    current_parent_book_state: true
+    sticky_scroll_position: verified
+    active_entry_auto_follow: verified
+  responsive_browser_widths_px: [320, 390, 1024, 1440]
+  remote_runtime_requests: 0
+
+graph_identity_evidence:
+  canonical_patterns:
+    O: pulse
+    A: diamond
+    B: wave
+    C: cross
+    D: shield
+    H: zigzag
+    Z: crosshatch
+    P: dots
+    S: speech
+    T: form-grid
+    R: solid
+  overview_png: build/diagrams/subguide_graph_overview.png
+  overview_png_dimensions_px: [1944, 1450]
+  overview_png_bytes: 336265
+  overview_png_sha256: 96f81027db4d0f3036f868519fc150492012f97352054d399df3108a225e0dbe
+  overview_svg: build/diagrams/subguide_graph_overview.svg
+  overview_svg_bytes: 119912
+  overview_svg_sha256: e14c7bdd66b54994ae3520357896db2e46b1862f3e383aaa4df56c414f6b3d01
+  node_geometry:
+    intended_shape: rounded rectangle
+    intended_width_height_ratio: 1.6875
+    measured_fill_bbox_ratio_range: 1.67-1.68
+    equal_axis_enforced: true
+    green_node_top_fraction_of_png: 0.139
+  regression_contract:
+    shared_motif_renderer: draw_pattern_motif
+    patterned_node_renderer: add_patterned_node
+    old_generic_hatches_allowed: false
+    overview_and_local_equal_aspect_required: true
+
+verification:
+  precommit_fresh_build:
+    command: GUIDE_AS_OF=2026-08-12 npm run build
+    result: passed
+  precommit_independent_test:
+    command: GUIDE_AS_OF=2026-08-12 npm test
+    result: passed
+  exact_revision_build:
+    command: GUIDE_AS_OF=2026-08-12 GUIDE_REVISION=f855485b7597 SOURCE_DATE_EPOCH=1786537359 npm run build
+    result: passed
+  exact_revision_independent_test:
+    command: GUIDE_AS_OF=2026-08-12 GUIDE_REVISION=f855485b7597 SOURCE_DATE_EPOCH=1786537359 npm test
+    result: passed
+  observed_gates:
+    - 392 stable active resources across six typed kinds
+    - 11 released standalone book identities plus the Shelf introduction
+    - 66 standalone PDF editions and 24 independently imposed booklet editions
+    - two combined twelve-signature booklet bundles with duplex-safe boundaries
+    - A4/2 geometry, blank-page, edge-collision, density, and text-parity checks
+    - large-print accessibility and colour/mono parity
+    - HTML overflow verification and responsive Pages browser verification
+    - persistent left reader rail, current-book/current-section scroll state, and active-entry auto-follow
+    - no remote runtime requests in browser verification
+    - complete build matrix and release manifest
+  whitespace_check:
+    command: git diff --check
+    result: passed
+  implementation_commit_trailer_audit:
+    result: passed
+    finding: implementation commit has no co-author trailer
+
+artifact_manifest:
+  path: build/release/manifest.json
+  embedded_release: 5.1.1
+  embedded_revision: f855485b7597
+  artifacts: 869
+  bytes: 163773
+  sha256: 99a6a123ae7434b3ae010aabd4dff807bf85848477b03ab9c9d6558d12b289e3
+
+artifact_samples:
+  - {path: build/pdf/guide.pdf, pages: 251, bytes: 15252895, sha256: f095a59a1d7d232063702079b596bd7a8f7d22bbd122e0aa22514006e3bdc0b2}
+  - {path: build/pdf/guide_mono.pdf, pages: 251, bytes: 13119922, sha256: 7252baab8ea9ca53c5d325843ee9a03a0173edef1a4f5a74b3705deede55a9ba}
+  - {path: build/pdf/guide_a4half.pdf, pages: 216, bytes: 14534490, sha256: ae7d5cd30098567461cc193e2c9cb3bb6dadea6659f855e971b2d2f359c19fad}
+  - {path: build/pdf/guide_a4half_mono.pdf, pages: 216, bytes: 11381733, sha256: 17f9d9bec0c977eb1555337c45e5726764340ed19c0e7eb6c3386fc4d2372dbd}
+  - {path: build/pdf/guide_largeprint.pdf, pages: 351, bytes: 15541550, sha256: 81cdb6de2dd0168db997f32f9ced3454b71f799a784297c43abb99e2e1e4b25f}
+  - {path: build/pdf/guide_largeprint_mono.pdf, pages: 351, bytes: 15906869, sha256: a806a1bebe676f8e2989855f2809fc76877bce72def8c096506c5fa9b56e09d6}
+  - {path: build/booklet/all-subguides_booklet-print.pdf, pages: 114, bytes: 28779916, sha256: fc92c2920787b4965ecce5400e285387e0c52574168dbd273bb9289f5520d2f5}
+  - {path: build/booklet/all-subguides_booklet-print_mono.pdf, pages: 114, bytes: 25558996, sha256: a2ff36295ed61221672a02650ca6dddfea9d2950ebfefde7878408f235c2fd42}
+
+toolchain:
+  python: 3.14.6
+  node: 24.18.0
+  npm: 11.16.0
+  pandoc: 3.1.3
+  poppler_pdfinfo: 26.07.0
+  weasyprint: 69.0
+
+release_decisions:
+  - The unpublished 5.1.0 implementation commit was amended into 5.1.1 before publication, so no public 5.1.0 tag or release boundary exists.
+  - Generic emergency surfaces intentionally avoid assuming police involvement; 112 is named only as the EU emergency number.
+  - Context-specific German service pages remain allowed to identify German numbers when their purpose and escalation boundary are stated locally.
+  - The graph and directory deliberately share one semantic pattern vocabulary so identity survives monochrome printing and cross-view navigation.
+  - Repository publication mechanics remain repository documentation rather than reader-facing deployment-site content.
+  - The release tag is created only after exact implementation revision build and independent test pass.
+
+known_limits:
+  - Build evidence does not establish real-world emergency outcomes, local service availability, clinical outcomes, or deployment quality.
+  - Browser and raster checks establish rendering and interaction behavior, not whether a particular emergency service is safe or appropriate in every jurisdiction or personal context.
