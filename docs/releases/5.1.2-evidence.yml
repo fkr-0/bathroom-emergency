@@ -1,0 +1,179 @@
+project: bathroom-emergency-guide
+version: 5.1.2
+release_date: 2026-08-14
+source_revision: b67ca87ad83f
+source_date_epoch: 1786740673
+implementation_commit: b67ca87ad83f13e515b1257c10f3c897d2a83156
+local_tag: v5.1.2
+tag_target: commit containing this evidence record
+push_performed: false
+publish_performed: false
+deployment_performed: false
+
+release_scope:
+  stable_line: 5.1.2
+  canonical_chapters: 17
+  active_stable_resources: 393
+  retired_resource_keys: 78
+  standalone_books: 11
+  standalone_pdf_editions: 66
+  folded_booklet_editions: 24
+  combined_booklet_bundles: 2
+  release_manifest_artifacts: 895
+  changes:
+    - visible online product identity changed from BEG to BE while the permanent BEG stable-reference namespace remains compatible
+    - all active stable references are literal canonical '#BEG:...' hardlinks with exhaustive rendered-link resolution checks
+    - eleven book-title stable references are attached to the visible book covers after redundant source H1 removal
+    - project site and online reader expose a dedicated high-contrast Repository header control linking directly to the GitHub source repository
+    - version, exact build commit, and build-date metadata remain permanently linked in the header provenance row
+    - dark-mode browser contrast is audited on reader chrome, contents, and book content; light-only quantitative surfaces were removed
+    - diagram QA detects text-on-text collisions across ten Matplotlib generator families and regression-tests the reported Orange WARN collision
+    - per-book booklet PDFs are retained in the Pages package and combined booklet PDFs must pass qpdf structural validation
+
+identity_and_reference_evidence:
+  visible_product_mark: BE
+  accessible_product_name: Bathroom Emergency Guide
+  stable_namespace: BEG
+  complete_reader_initial_identity: BE / Shelf
+  standalone_green_initial_identity: BE / O
+  scroll_address_updates: verified
+  active_resources: 393
+  canonical_fragment_shape: '#BEG:<owner>:<kind>:<sequence>'
+  legacy_lowercase_aliases_preserved: true
+  book_title_cover_targets: 11
+  exhaustive_pages_link_resolution: passed
+
+repository_header_evidence:
+  repository: https://github.com/fkr-0/bathroom-emergency
+  project_site_control:
+    selector: .site-header .repository-link
+    desktop_label: Repository
+    narrow_label: Repo
+    minimum_touch_height_px: 44
+    browser_verified: true
+  online_reader_control:
+    selector: .app-bar .repository-link
+    desktop_label: Repository
+    narrow_label: Repo
+    minimum_touch_height_px: 44
+    browser_verified: true
+  provenance_links:
+    - tagged release version
+    - exact build commit
+    - build-date release metadata
+
+diagram_evidence:
+  collision_detector: src/diagrams/textfit.py
+  independent_verifier: bin/verify_diagram_layout.py
+  audited_text_generator_families: 10
+  synthetic_collision_regression: passed
+  orange_independent_rerender: passed
+  reader_illustration_contact_sheets: 4
+  corrected_classes:
+    - Orange WARN/title collision
+    - Recovery Position footer overflow
+    - additional Blue, Indigo, and Amber label collisions
+
+booklet_evidence:
+  individual_folded_editions: 24
+  signatures_per_combined_bundle: 12
+  combined_sides: 114
+  combined_a4_sheets: 57
+  qpdf_check_required: true
+  pages_package_contains_individual_booklets: true
+
+verification:
+  precommit_full_build:
+    command: GUIDE_AS_OF=2026-08-14 npm run build
+    result: passed
+    duration_ms: 725846
+  precommit_independent_test:
+    command: GUIDE_AS_OF=2026-08-14 npm test
+    result: passed
+    duration_ms: 448175
+  exact_revision_build:
+    command: GUIDE_AS_OF=2026-08-14 GUIDE_REVISION=b67ca87ad83f SOURCE_DATE_EPOCH=1786740673 npm run build
+    result: passed
+    duration_ms: 697384
+  exact_revision_independent_test:
+    command: GUIDE_AS_OF=2026-08-14 GUIDE_REVISION=b67ca87ad83f SOURCE_DATE_EPOCH=1786740673 npm test
+    result: passed
+    duration_ms: 284598
+  focused_candidate_gate:
+    result: passed
+    observed:
+      - Python and JavaScript syntax checks
+      - git diff --check
+      - complete inventory regeneration
+      - all eleven standalone books plus Shelf
+      - 393-reference index validation
+      - exhaustive Pages stable-link validation
+      - BE/Shelf, BE/O, and section scroll identity tests
+      - prominent Repository control at 320 px and desktop widths
+      - reader dark-mode contrast audit
+  observed_release_gates:
+    - 393 stable active resources across six typed kinds
+    - 11 released standalone book identities plus the Shelf introduction
+    - 66 standalone PDF editions and 24 independently imposed booklet editions
+    - two combined twelve-signature booklet bundles with qpdf structural checks and duplex-safe boundaries
+    - collision-aware diagram verification across ten text-bearing generator families
+    - A4/2 geometry, blank-page, edge-collision, density, and text-parity checks
+    - large-print accessibility and colour/mono parity
+    - six-edition HTML overflow verification
+    - responsive Pages browser verification at 320, 390, 1024, and 1440 px
+    - no remote runtime requests in browser verification
+    - complete build matrix and release manifest
+  whitespace_check:
+    command: git diff --check
+    result: passed
+  implementation_commit_trailer_audit:
+    result: passed
+    finding: implementation commit has no co-author trailer
+
+recovered_preflight_issue:
+  first_full_build_attempt:
+    result: failed before tag gate
+    failure: bin/project_meta.py had accidentally lost its executable bit during an earlier metadata transaction
+    repair: restored the tracked executable mode and confirmed no remaining mode changes
+    subsequent_full_build: passed
+    exact_revision_build: passed
+
+artifact_manifest:
+  path: build/release/manifest.json
+  embedded_release: 5.1.2
+  embedded_revision: b67ca87ad83f
+  artifacts: 895
+  bytes: 169097
+  sha256: 0b6d50fc3c859f85848f4bd0b3c3659cae1c0b97fa2ebc318d2239ffcbb80cc1
+
+artifact_samples:
+  - {path: build/pdf/guide.pdf, pages: 255, bytes: 15671176, sha256: 673820607b69fc48406c77e8d720563e60012a3221fd5d7d2aba566eeae93332}
+  - {path: build/pdf/guide_mono.pdf, pages: 255, bytes: 13563024, sha256: e39fc63779cd3c0526de34447eda2cca40eb209d64acb765d2885dfcff6683c1}
+  - {path: build/pdf/guide_a4half.pdf, pages: 216, bytes: 14949205, sha256: bf9f538f91bd5788aba46cf1ecf9cf2e0dcf7a7ab10b31376b93b72021604ed3}
+  - {path: build/pdf/guide_a4half_mono.pdf, pages: 216, bytes: 11823435, sha256: 15e2d878bb789f4fff0a5b7776f90412ce37b17d31e3ace94b36e75bf6ad1625}
+  - {path: build/pdf/guide_largeprint.pdf, pages: 353, bytes: 15946898, sha256: 8a58f4aaeee4e7b4ed747a2940a249da218ef79d08ea5f8658464f7bbe78c788}
+  - {path: build/pdf/guide_largeprint_mono.pdf, pages: 353, bytes: 16319263, sha256: 916e3ee74ce48afc5e4d3da1a2051bd2f8afe4f89ab686f0e6da145c88b79f67}
+  - {path: build/booklet/all-subguides_booklet-print.pdf, pages: 114, bytes: 28773506, sha256: 5fe7c34f8acc39054426c289e1ea21b05a72e8c40c4434e79cf6fe3a03a29984}
+  - {path: build/booklet/all-subguides_booklet-print_mono.pdf, pages: 114, bytes: 25580850, sha256: ad066b887797288b832962ce26564cd966725eb81f1b323f7dbb3b23875453f3}
+
+toolchain:
+  python: 3.14.6
+  node: 24.18.0
+  npm: 11.16.0
+  pandoc: 3.1.3
+  poppler_pdfinfo: 26.07.0
+  weasyprint: 69.0
+  qpdf: 12.3.2
+
+release_decisions:
+  - BE is a presentation/product mark only; BEG remains the permanent public reference namespace so existing citations do not break.
+  - The GitHub repository is a primary header control on both web surfaces rather than only a footer or provenance-row link.
+  - Canonical stable fragments fail closed: every active reference must have exactly one target and rendered stable links must resolve within the Pages package.
+  - Book-title references terminate at the visible cover title because the redundant source H1 is intentionally removed during standalone assembly.
+  - Booklet artifacts that require PDF parser repair are rejected by qpdf before release.
+  - The release tag is created only after the exact implementation revision build and independent test pass.
+
+known_limits:
+  - Build evidence does not establish real-world emergency outcomes, local service availability, clinical outcomes, or deployment quality.
+  - Browser and raster checks establish rendering and interaction behavior, not whether a particular emergency service is safe or appropriate in every jurisdiction or personal context.
+  - The versioned evidence record is committed before the authorized push, so push_performed remains false here; remote push and Pages deployment are verified separately after tagging.
