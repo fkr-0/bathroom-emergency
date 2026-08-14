@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 from project_meta import VERSION, build_date, git_revision, revision_footer_css
-from build_reference_index import decorate_figure_references, inject_heading_ids
+from build_reference_index import dedupe_reference_anchors
 from footnotes import merge_duplicate_footnotes
 from src_layout import find_chapter
 
@@ -281,7 +281,8 @@ def assemble() -> Path:
         parts.extend([SG.assembled_book(node_id), ""])
 
     output = BUILD_MD / "guide.md"
-    output.write_text("\n".join(parts).rstrip() + "\n", encoding="utf-8")
+    assembled = dedupe_reference_anchors("\n".join(parts).rstrip() + "\n")
+    output.write_text(assembled, encoding="utf-8")
     note(f"assembled shelf front matter + {len(shelf)} books "
          f"→ {output.relative_to(ROOT)}")
     return output
@@ -391,6 +392,8 @@ def build_html(markdown: Path, *, monochrome: bool = False, layout: str = "a4") 
         f"print-layout={layout}",
         "--metadata",
         "home-anchor=book-shelf",
+        "--metadata",
+        "reader-address=Shelf",
         "--metadata",
         f"build-revision={git_revision()}",
         "--metadata",

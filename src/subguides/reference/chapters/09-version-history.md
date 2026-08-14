@@ -1,12 +1,56 @@
 ---
 title: "Version History"
 chapter: 9
-revision: "5.1.1"
-last_updated: "2026-08-12"
+revision: "5.1.2"
+last_updated: "2026-08-14"
 dependencies: []
 ---
 
 # Version History
+
+## 5.1.2 — 14 August 2026
+
+The online edition now distinguishes the **product mark** from the **stable
+reference namespace**. Reader chrome says **BE**, matching `be.fkr.dev`, and its
+accessible name continues to say “Bathroom Emergency Guide”. Existing
+`[BEG:...]` references are not renamed: they are public addresses and changing
+their prefix would make a cosmetic improvement by breaking citations.
+
+The visible address is live. The complete reader starts at `BE / Shelf`, a
+detached Green book at `BE / O`, and scrolling into a section changes the
+address to its compact reader code such as `BE / dis.5` or `BE / ref.12`. Browser
+tests exercise those transitions directly instead of merely checking that the
+right JavaScript exists.
+
+Stable references are now literal web hardlinks too. Every active reference has
+one canonical `#BEG:...` target in the complete online guide and at least one
+permalink to it; the Pages validator walks all rendered HTML reference links and
+proves that their target document and fragment exist. The older lowercase
+`#beg-*` IDs stay as compatibility aliases.
+
+The website and reader headers also carry permanent release provenance: a link
+to the tagged version, the exact build commit, and the build metadata/date. The
+GitHub repository is promoted beyond that quiet metadata row into its own
+high-contrast header control, so both “what am I reading?” and “where is the
+source?” are answerable without scrolling or opening developer tools.
+
+Dark mode receives its own browser contrast gate over reader chrome, contents,
+and book content. That pass removed remaining light-only quantitative-figure
+surfaces and now fails the release when normal text falls below the WCAG AA
+contrast threshold used by the verifier.
+
+Diagram QA became stricter at the same time. The text-fit audit now rejects
+independently positioned labels that overlap one another, not only labels that
+escape a drawn box. It caught the Orange `WARN` collision that motivated the
+pass, five Recovery Position footer overflows, and additional overview-label
+collisions. Ten text-bearing generator families run through the same audit, and
+an independent verifier proves the detector against an intentionally broken
+synthetic figure before rerendering the current diagrams.
+
+The physical release package is hardened too: qpdf checks the booklet PDF
+structure, CI keeps the full booklet matrix, and the individually imposed Shelf
+and eleven colour/mono booklets are published beside their books instead of
+being hidden behind only the combined print bundles.
 
 ## 5.1.1 — 12 August 2026
 

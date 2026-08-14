@@ -18,7 +18,12 @@ import shutil
 import subprocess
 from pathlib import Path
 
-from build_reference_index import decorate_figure_references, inject_heading_ids, mini_toc
+from build_reference_index import (
+    decorate_figure_references,
+    inject_heading_ids,
+    mini_toc,
+    reference_anchor,
+)
 from footnotes import merge_duplicate_footnotes
 from src_layout import chapter_path, find_chapter
 from project_meta import (
@@ -358,6 +363,30 @@ def build_markdown(
         if on_shelf
         else f"Bathroom Emergency Guide / Start here · {shelf_total} books"
     )
+    title_anchor = ""
+    if on_shelf:
+        # The source H1 is deliberately removed later because the cover already
+        # displays the book title. Its stable [BEG:*:S:*] address must therefore
+        # live on that visible cover title instead of disappearing with the
+        # redundant heading. Match the removed H1 by the same title stem used by
+        # drop_redundant_book_title and fail closed if ownership becomes
+        # ambiguous.
+        stem = node["title"].split("—")[-1].strip().lower()
+        index = json.loads((DATA_DIR / "content_index.json").read_text(encoding="utf-8"))
+        title_records = [
+            item
+            for item in index["records"]
+            if item.get("owner") == node_id
+            and item.get("kind") == "S"
+            and item.get("level") == 1
+            and stem in item.get("title", "").lower()
+        ]
+        if len(title_records) != 1:
+            refs = [item.get("public_ref") for item in title_records]
+            raise RuntimeError(
+                f"{node_id}: expected one stable book-title reference for {stem!r}, found {refs}"
+            )
+        title_anchor = reference_anchor(title_records[0])
     questions = "\n".join(f"- {question}" for question in node["questions"])
     handoffs = "\n".join(
         f"- **{edge} — {titles[edge]}** — use it when that problem becomes primary."
@@ -371,7 +400,7 @@ def build_markdown(
 <div class="subguide-family-mark">{family_mark}</div>
 <div class="subguide-code">{node["glyph"]}</div>
 
-# {node["title"]}
+# {title_anchor}{node["title"]}
 
 <div class="subguide-promise">{node["promise"]}</div>
 
@@ -609,7 +638,7 @@ def canonical_body(node_id: str, node: dict) -> tuple[str, list[dict]]:
     content_parts: list[str] = []
     for chapter, block in canonical_blocks(node_id):
         block = BG.expand_reference_macros(block)
-        block = inject_heading_ids(block, chapter)
+        block = inject_heading_ids(block, chapter, node_id)
         content_parts.append(
             replace_refs(
                 remove_footnote_definitions(block),
@@ -692,6 +721,8 @@ def render_editions(node, canonical_content, ordered_sources, contents,
                     f"print-layout={layout}",
                     "--metadata",
                     f'home-anchor=book-{node["id"].lower()}',
+                    "--metadata",
+                    f'reader-address={node["id"]}',
                     "--metadata",
                     f"build-revision={git_revision()}",
                     "--metadata",
@@ -778,7 +809,10 @@ def shelf_body(node: dict) -> tuple[str, list[dict]]:
     block = BG.expand_reference_macros(
         BG.strip_frontmatter(find_chapter(chapter).read_text(encoding="utf-8"))
     )
-    block = inject_heading_ids(block, chapter)
+    # The Shelf was historically filed under O before it became its own
+    # standalone front-matter booklet. Preserve those stable O references while
+    # rendering the visible Shelf headings.
+    block = inject_heading_ids(block, chapter, "O")
     content = replace_refs(
         remove_footnote_definitions(block), chapter, source_lookup, ordered_sources
     )
@@ -960,6 +994,14 @@ Every book is complete enough to start alone and honest enough to hand off.
             "print-layout=a4",
             "--metadata",
             "home-anchor=book-shelf",
+            "--metadata",
+            "reader-address=Shelf",
+            "--metadata",
+            f"build-revision={git_revision()}",
+            "--metadata",
+            f"build-date={build_date()}",
+            "--metadata",
+            "subguide-title=Eleven-book shelf",
             "--metadata",
             "canonical-url=https://be.fkr.dev/routes/",
             "--metadata",

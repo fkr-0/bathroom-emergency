@@ -6,7 +6,9 @@ import json
 import re
 import subprocess
 from collections import Counter
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from project_meta import VERSION
 
@@ -16,6 +18,20 @@ REGISTRY = DATA / "reference_ids.json"
 INDEX = DATA / "content_index.json"
 REF_RE = re.compile(r"^\[BEG:([OABCDHZPSTR]):([SFGCDW]):(\d{3})\]$")
 errors: list[str] = []
+
+
+class ReferenceHTMLParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.ids: list[str] = []
+        self.hrefs: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        values = dict(attrs)
+        if values.get("id"):
+            self.ids.append(values["id"] or "")
+        if values.get("href"):
+            self.hrefs.append(values["href"] or "")
 
 
 def check(condition: bool, message: str) -> None:
@@ -68,6 +84,34 @@ if REGISTRY.exists() and INDEX.exists():
         check(counts[kind] > 0, f"reference kind {kind} has no records")
     html_ids = [item.get("html_id") for item in records]
     check(len(html_ids) == len(set(html_ids)), "generated HTML reference anchors collide")
+    fragment_ids = [item.get("fragment_id") for item in records]
+    check(all(fragment_ids), "canonical reference fragment missing from content index")
+    check(len(fragment_ids) == len(set(fragment_ids)), "canonical reference fragments collide")
+    for item in records:
+        expected_fragment = item["public_ref"][1:-1]
+        check(
+            item.get("fragment_id") == expected_fragment,
+            f"{item['resource_key']}: canonical fragment is not the literal stable reference",
+        )
+
+    guide_html = ROOT / "build/html/guide.html"
+    if guide_html.exists():
+        parser = ReferenceHTMLParser()
+        parser.feed(guide_html.read_text(encoding="utf-8"))
+        rendered_ids = Counter(parser.ids)
+        linked_fragments = Counter(
+            urlsplit(href).fragment for href in parser.hrefs if urlsplit(href).fragment
+        )
+        for item in records:
+            fragment = item["fragment_id"]
+            check(
+                rendered_ids[fragment] == 1,
+                f"{item['public_ref']}: expected exactly one canonical #{fragment} target, found {rendered_ids[fragment]}",
+            )
+            check(
+                linked_fragments[fragment] >= 1,
+                f"{item['public_ref']}: no rendered stable link points to #{fragment}",
+            )
 
     route_ids = {
         item["id"]

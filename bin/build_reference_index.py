@@ -18,6 +18,10 @@ REGISTRY_PATH = DATA / "reference_ids.json"
 INDEX_PATH = DATA / "content_index.json"
 REF_RE = re.compile(r"^\[BEG:([A-Z]):([A-Z]):(\d{3})\]$")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)(?:\s+\{#[-a-z0-9]+\})?\s*$")
+CANONICAL_GUIDE_URL = "https://be.fkr.dev/guide/"
+CANONICAL_ANCHOR_RE = re.compile(
+    r'<span id="(BEG:[A-Z]:[A-Z]:\d{3})" class="reference-anchor" aria-hidden="true"></span>\n?'
+)
 
 # Public references name resources, not wording. When an existing section gets
 # a clearer heading, retain its original resource key so the stable address and
@@ -31,6 +35,14 @@ RESOURCE_KEY_MIGRATIONS = {
     "form:location-access": "figure:local-location-access",
     "form:nice-place-map": "figure:local-nice-place-map",
     "form:safe-place-map": "figure:local-safe-place-map",
+}
+
+# Source-level grouping headings can remain stable references even when the
+# book extraction deliberately removes the umbrella heading itself. Those IDs
+# resolve to their global-index record rather than pretending a hidden heading
+# exists in one of the child books.
+INDEX_ONLY_RESOURCE_KEYS = {
+    "section:03-situations-b-g:situations-b-f-five-different-kinds-of-too-much",
 }
 
 SECTION_RESOURCE_KEY_ALIASES = {
@@ -58,6 +70,59 @@ def slugify(value: str) -> str:
 
 def load_json(name: str) -> dict:
     return json.loads((DATA / name).read_text(encoding="utf-8"))
+
+
+def fragment_id(public_ref: str) -> str:
+    """Canonical URL fragment for one stable public reference.
+
+    Keep the reference syntax itself visible in the URL instead of inventing a
+    second spelling.  Existing ``beg-x-y-000`` IDs remain compatibility aliases.
+    """
+    if not REF_RE.match(public_ref):
+        raise ValueError(f"cannot derive fragment from malformed public reference: {public_ref}")
+    return public_ref[1:-1]
+
+
+def reference_href(item: dict, *, local: bool = False) -> str:
+    fragment = item["fragment_id"]
+    return f"#{fragment}" if local else f"{CANONICAL_GUIDE_URL}#{fragment}"
+
+
+def reference_anchor(item: dict) -> str:
+    return (
+        f'<span id="{html.escape(item["fragment_id"], quote=True)}" '
+        'class="reference-anchor" aria-hidden="true"></span>'
+    )
+
+
+def dedupe_reference_anchors(text: str) -> str:
+    """Keep the first canonical anchor when the complete shelf repeats a figure.
+
+    Standalone books are assembled independently and therefore each retain a
+    local anchor. The complete guide concatenates those books, so a cross-book
+    figure may otherwise create duplicate HTML IDs. The first occurrence is the
+    canonical in-guide destination; every occurrence remains a permalink.
+    """
+    seen: set[str] = set()
+
+    def replace(match: re.Match[str]) -> str:
+        fragment = match.group(1)
+        if fragment in seen:
+            return ""
+        seen.add(fragment)
+        return match.group(0)
+
+    return CANONICAL_ANCHOR_RE.sub(replace, text)
+
+
+def reference_link(item: dict, label: str | None = None, *, local: bool = False) -> str:
+    visible = label if label is not None else item["public_ref"]
+    return (
+        f'<a class="reference-link" href="{html.escape(reference_href(item, local=local), quote=True)}" '
+        f'data-reference="{html.escape(item["public_ref"], quote=True)}" '
+        f'title="Stable link {html.escape(item["public_ref"], quote=True)}">'
+        f'{html.escape(visible)}</a>'
+    )
 
 
 def resources() -> list[dict]:
@@ -326,6 +391,7 @@ def assign(records: list[dict]) -> tuple[dict, list[dict]]:
         item["public_ref"] = ids[record["resource_key"]]
         match = REF_RE.match(item["public_ref"])
         assert match
+        item["fragment_id"] = fragment_id(item["public_ref"])
         item["html_id"] = f"beg-{match.group(1).lower()}-{match.group(2).lower()}-{match.group(3)}"
         reader_ref = reader_refs.get(record["resource_key"])
         if reader_ref:
@@ -387,7 +453,7 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
         for figure_id in figure_ids:
             item = by_key.get(f"figure:{figure_id}")
             if item:
-                values.append(f"{item['public_ref']} {item['title']}")
+                values.append(f"{reference_link(item)} {html.escape(item['title'])}")
         return "<br>".join(values) or "—"
 
     def related_template_list(form_keys: list[str]) -> str:
@@ -395,7 +461,7 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
         for form_key in form_keys:
             item = by_key.get(f"form:{form_key}")
             if item:
-                values.append(f"{item['public_ref']} {item['title']}")
+                values.append(f"{reference_link(item)} {html.escape(item['title'])}")
         return "<br>".join(values) or "—"
 
     def related_support_list(support_keys: list[str]) -> str:
@@ -403,7 +469,7 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
         for support_key in support_keys:
             item = by_key.get(f"contact:service:{support_key}")
             if item:
-                values.append(f"{item['public_ref']} {item['title']}")
+                values.append(f"{reference_link(item)} {html.escape(item['title'])}")
         return "<br>".join(values) or "—"
 
     def interaction_label(item: dict) -> str:
@@ -414,11 +480,11 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
         for form_key in item.get("related_form_keys", []):
             related = by_key.get(f"form:{form_key}")
             if related:
-                values.append(f"{related['public_ref']} {related['title']}")
+                values.append(f"{reference_link(related)} {html.escape(related['title'])}")
         for figure_id in item.get("figure_ids", []):
             related = by_key.get(f"figure:{figure_id}")
             if related:
-                values.append(f"{related['public_ref']} {related['title']}")
+                values.append(f"{reference_link(related)} {html.escape(related['title'])}")
         return "<br>".join(values) or "—"
 
     def resource_catalog(items: list[dict]) -> str:
@@ -447,7 +513,7 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
                 f'data-interaction="{html.escape(item["interaction"])}">'
                 '<div class="resource-catalog-kicker">'
                 f'<strong>{html.escape(interaction_label(item))}</strong>'
-                f'<code>{html.escape(item["public_ref"])}</code></div>'
+                f'<code>{reference_link(item)}</code></div>'
                 f'<h3>{html.escape(item["title"])}</h3>'
                 f'<p class="resource-catalog-description">{html.escape(item["description"])}</p>'
                 + "".join(details)
@@ -456,7 +522,14 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
         return '<div class="resource-catalog">' + "".join(cards) + '</div>'
 
     content_rows = [
-        [item["public_ref"], item["kind"], item["owner"], item["title"], item.get("chapter", "—")]
+        [
+            (reference_anchor(item) if item["resource_key"] in INDEX_ONLY_RESOURCE_KEYS else "")
+            + reference_link(item, local=item["resource_key"] in INDEX_ONLY_RESOURCE_KEYS),
+            item["kind"],
+            item["owner"],
+            item["title"],
+            item.get("chapter", "—"),
+        ]
         for item in records
     ]
     figures = [item for item in records if item["kind"] == "G"]
@@ -484,14 +557,14 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
         + resource_catalog(figures) + "\n",
         "contact-index.md": "## Professional contact and service index\n\n" + table(
             ["Stable reference", "Service", "Number / local field", "Purpose", "Availability"],
-            [[i["public_ref"], i["title"], i.get("number", "—"), i.get("scope", "—"), i.get("availability", "—")] for i in contacts],
+            [[reference_anchor(i) + reference_link(i, local=True), i["title"], i.get("number", "—"), i.get("scope", "—"), i.get("availability", "—")] for i in contacts],
         ) + "\n",
         "deployment-index.md": "## Deployment customization index\n\n" + table(
             ["Stable reference", "Group", "Field", "Required", "Privacy", "Example"],
-            [[i["public_ref"], i.get("group", "—"), i["title"], "yes" if i.get("required") else "when relevant", i.get("privacy", "—"), i.get("example", "—")] for i in fields],
+            [[reference_anchor(i) + reference_link(i, local=True), i.get("group", "—"), i["title"], "yes" if i.get("required") else "when relevant", i.get("privacy", "—"), i.get("example", "—")] for i in fields],
         ) + "\n",
         "glossary-index.md": "## Glossary\n\n" + "\n\n".join(
-            f"### {i['title']} {{#{i['html_id']}}}\n\n**{i['public_ref']}** — {i['definition']}" for i in words
+            f"{reference_anchor(i)}\n### {i['title']} {{#{i['html_id']}}}\n\n**{reference_link(i, local=True)}** — {i['definition']}" for i in words
         ) + "\n",
         "form-index.md": template_catalog,
         "template-index.md": template_catalog,
@@ -514,7 +587,7 @@ def generated_fragments(records: list[dict]) -> dict[str, str]:
             ["Support or service", "Use this resource", "Related figures", "Book identities"],
             [[
                 related_support_list(item.get("support_keys", [])),
-                f"{item['public_ref']} {item['title']}",
+                f"{reference_link(item)} {html.escape(item['title'])}",
                 related_figure_list(item.get("figure_ids", [])),
                 route_list(item.get("routes", ["P", "T"])),
             ] for item in support_resources],
@@ -559,14 +632,16 @@ def load_index() -> dict:
     return json.loads(INDEX_PATH.read_text(encoding="utf-8"))
 
 
-def inject_heading_ids(text: str, chapter: str) -> str:
+def inject_heading_ids(text: str, chapter: str, owner: str | None = None) -> str:
     if not INDEX_PATH.exists():
         return text
     index_records = load_index()["records"]
     lookup = {
         item["title"]: item
         for item in index_records
-        if item.get("chapter") == chapter and item["kind"] in {"S", "F", "G"}
+        if item.get("chapter") == chapter
+        and item["kind"] in {"S", "F", "G"}
+        and (owner is None or item.get("owner") == owner)
     }
     by_resource = {item["resource_key"]: item for item in index_records}
     form_records = {
@@ -593,10 +668,10 @@ def inject_heading_ids(text: str, chapter: str) -> str:
             for support_key in item.get("support_keys", [])
         ]
         figure_text = ", ".join(
-            f"{figure['public_ref']} {figure['title']}" for figure in figures if figure
+            f"{reference_link(figure)} {html.escape(figure['title'])}" for figure in figures if figure
         ) or "none required"
         support_text = ", ".join(
-            f"{support['public_ref']} {support['title']}" for support in supports if support
+            f"{reference_link(support)} {html.escape(support['title'])}" for support in supports if support
         ) or "named local service when applicable"
         type_name = "Figure" if item["resource_type"] == "figure" else "Template"
         action = "Read only" if item["interaction"] == "read-only" else "Write"
@@ -618,13 +693,13 @@ def inject_heading_ids(text: str, chapter: str) -> str:
             f'data-books="{books}">',
             '<div class="resource-kicker">'
             f'<strong>{type_name}</strong><span>{action}</span>'
-            f'<code>{item["public_ref"]}</code></div>',
+            f'<code>{reference_link(item, local=True)}</code></div>',
             f'<p class="resource-description">{html.escape(item["description"])}</p>',
             preparation,
             '<p class="resource-privacy"><strong>Privacy:</strong> '
             f'{html.escape(item.get("privacy", "review locally"))}</p>',
             '<p class="resource-links"><strong>See also:</strong> '
-            f'figures {html.escape(figure_text)} · support {html.escape(support_text)}</p>',
+            f'figures {figure_text} · support {support_text}</p>',
             '</div>',
         ))
 
@@ -643,8 +718,20 @@ def inject_heading_ids(text: str, chapter: str) -> str:
             # extracted text -- breaking the layout markers and, more to the
             # point, the order a screen reader reads. Contiguous wording wins
             # over the reference sitting on the first line.
-            suffix = f" [{reader_ref}]{{.section-ref}}" if reader_ref else ""
-            line = f"{match.group(1)} {match.group(2)}{suffix} {{#{item['html_id']}}}"
+            suffix = (
+                " " + reference_link(item, f"[{reader_ref}]", local=True).replace(
+                    'class="reference-link"', 'class="section-ref reference-link"'
+                )
+                if reader_ref else ""
+            )
+            # Keep the canonical fragment inside the heading. A standalone raw
+            # HTML span immediately before ``##`` makes Pandoc treat the heading
+            # marker as paragraph text. Inline is zero-width, native-heading
+            # safe, and still gives the browser a literal #BEG:... target.
+            line = (
+                f"{match.group(1)} {reference_anchor(item)}"
+                f"{match.group(2)}{suffix} {{#{item['html_id']}}}"
+            )
         elif match and "{#" not in line:
             # A heading a book renamed for its own running order has no registry
             # entry under the new wording. It still needs an anchor, or it drops
@@ -652,6 +739,8 @@ def inject_heading_ids(text: str, chapter: str) -> str:
             line = f"{match.group(1)} {match.group(2)} {{#{slugify(match.group(2))}}}"
         lines.append(line)
         if form_item:
+            if not item or item.get("fragment_id") != form_item.get("fragment_id"):
+                lines.append(reference_anchor(form_item))
             lines.extend(("", resource_band(form_item), ""))
     return "\n".join(lines)
 
@@ -681,20 +770,30 @@ def decorate_figure_references(text: str, seen: set[str] | None = None) -> str:
         figure_id = item["resource_key"].split(":", 1)[1]
         paired = [form for form in forms if figure_id in form.get("figure_ids", [])]
         paired_text = " · ".join(
-            f"{form['public_ref']} {form['title']}" for form in paired
+            f"{reference_link(form)} {html.escape(form['title'])}" for form in paired
         ) or "no dedicated template"
         anchor = ""
         if item["public_ref"] not in seen:
+            canonical_anchor = reference_anchor(item)
+            legacy_anchors = "".join(
+                f'<span id="{legacy_id}" class="legacy-reference-anchor" aria-hidden="true"></span>'
+                for legacy_id in item.get("legacy_html_ids", [])
+            )
             anchor = f'#{item["html_id"]} '
             seen.add(item["public_ref"])
+        else:
+            canonical_anchor = ""
+            legacy_anchors = ""
         card = "\n".join((
             f'::: {{{anchor}.figure-reference .resource-card data-subguide="{item["owner"]}" '
             'data-resource-type="figure" data-interaction="read-only"}',
             '',
+            canonical_anchor + legacy_anchors,
+            '',
             '<div class="resource-heading">'
             f'<strong>{html.escape(item["title"])}</strong>'
             f'<span>{html.escape(item["description"])}</span>'
-            f'<code>{reader_ref_for(item)}</code></div>'
+            f'<code>{reference_link(item, f"[{reader_ref_for(item)}]", local=True)}</code></div>'
             '',
             match.group(0),
             '',
@@ -717,6 +816,16 @@ def mini_toc(text: str, max_level: int = 2) -> str:
         title = re.sub(r"\s+\{#[-a-z0-9]+\}\s*$", "", match.group(2))
         # The reader address is furniture on the heading, not part of its name.
         title = re.sub(r"\s*\[[a-z]+\.[0-9.a-z]+\]\{\.section-ref\}", "", title).strip()
+        title = re.sub(
+            r'\s*<a class="section-ref reference-link"[^>]*>.*?</a>',
+            "",
+            title,
+        ).strip()
+        title = re.sub(
+            r'<span id="BEG:[A-Z]:[A-Z]:\d{3}" class="reference-anchor" aria-hidden="true"></span>',
+            "",
+            title,
+        ).strip()
         indent = "  " * (len(match.group(1)) - 1)
         rows.append(f"{indent}- [{title}](#{id_match.group(1)})")
     return "\n".join(rows)

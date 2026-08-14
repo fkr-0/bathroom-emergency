@@ -26,9 +26,15 @@ class LinkParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.references: list[tuple[str, str]] = []
+        self.ids: list[str] = []
+        self.stable_links: list[tuple[str, str]] = []
 
     def handle_starttag(self, tag: str, attrs) -> None:
         values = dict(attrs)
+        if values.get("id"):
+            self.ids.append(values["id"])
+        if tag == "a" and values.get("data-reference") and values.get("href"):
+            self.stable_links.append((values["data-reference"], values["href"]))
         for attr in ("href", "src"):
             value = values.get(attr)
             if value:
@@ -46,6 +52,24 @@ def local_target(page: Path, reference: str) -> Path | None:
     if path.endswith("/"):
         target = target / "index.html"
     return target
+
+
+def packaged_target(page: Path, reference: str) -> tuple[Path, str] | None:
+    """Resolve local and canonical be.fkr.dev links into the Pages package."""
+    if reference.startswith(("mailto:", "tel:", "data:", "javascript:")):
+        return None
+    parsed = urlsplit(reference)
+    if parsed.scheme or parsed.netloc:
+        if parsed.scheme not in {"http", "https"} or parsed.netloc != "be.fkr.dev":
+            return None
+        target = (SITE / unquote(parsed.path).lstrip("/")).resolve()
+    elif parsed.path:
+        target = (page.parent / unquote(parsed.path)).resolve()
+    else:
+        target = page.resolve()
+    if parsed.path.endswith("/") or target.is_dir():
+        target = target / "index.html"
+    return target, unquote(parsed.fragment)
 
 
 core_pages = {
@@ -75,6 +99,8 @@ for path in (
     SITE / "files" / "guide_largeprint_mono.pdf",
     SITE / "files" / "all-subguides_booklet-print.pdf",
     SITE / "files" / "all-subguides_booklet-print_mono.pdf",
+    SITE / "routes" / "SHELF" / "shelf-how-to-use_a4half_booklet.pdf",
+    SITE / "routes" / "SHELF" / "shelf-how-to-use_a4half_mono_booklet.pdf",
     SITE / "docs" / "README.md",
     SITE / "docs" / "DEPLOYMENT.md",
     SITE / "docs" / "PRINTING.md",
@@ -121,6 +147,8 @@ download_markers = (
     "../files/guide.pdf",
     "../files/all-subguides_booklet-print.pdf",
     "../files/all-subguides_booklet-print_mono.pdf",
+    "../routes/SHELF/shelf-how-to-use_a4half_booklet.pdf",
+    "../routes/SHELF/shelf-how-to-use_a4half_mono_booklet.pdf",
     "../docs/PRINTING.md",
     "../routes/O/green-book-body-owners-manual.pdf",
     "../routes/A/amber-book-responsibility.pdf",
@@ -157,6 +185,9 @@ if guide_page.exists():
     for marker in (
         '<link rel="canonical" href="https://be.fkr.dev/guide/">',
         "Online edition",
+        '<span class="brand-guide">BE</span>',
+        'class="reader-provenance"',
+        'class="repository-link"',
         'class="reader-links"',
         'href="https://be.fkr.dev/"',
         'href="https://be.fkr.dev/files/guide.pdf"',
@@ -165,6 +196,9 @@ if guide_page.exists():
         'data-reader-toc',
         'is-current-book',
         'requestAnimationFrame(updateActiveToc)',
+        '<span class="brand-guide">BE</span>',
+        'class="reader-provenance"',
+        'https://github.com/fkr-0/bathroom-emergency',
     ):
         check(marker in guide_text, f"guide reader marker missing: {marker}")
     book_ids = re.findall(r'id="(book-[a-z]+)" class="standalone-subguide"', guide_text)
@@ -210,9 +244,59 @@ for label, page in core_pages.items():
         )
         check(target.exists(), f"{label} broken local {attr}: {reference}")
 
+# Stable hardlinks are a release contract, not a sample check. Every active
+# public reference must have exactly one canonical #BEG:... target in the
+# complete online guide, at least one permalink, and every rendered stable link
+# in every HTML edition must resolve either locally or into that canonical guide.
+content_index_path = ROOT / "src" / "data" / "content_index.json"
+if guide_page.exists() and content_index_path.exists():
+    records = json.loads(content_index_path.read_text(encoding="utf-8"))["records"]
+    guide_parser = LinkParser()
+    guide_parser.feed(guide_page.read_text(encoding="utf-8"))
+    guide_ids = {value: guide_parser.ids.count(value) for value in set(guide_parser.ids)}
+    linked_fragments = [urlsplit(href).fragment for _, href in guide_parser.stable_links]
+    for item in records:
+        fragment = item.get("fragment_id") or item["public_ref"][1:-1]
+        check(
+            guide_ids.get(fragment, 0) == 1,
+            f"{item['public_ref']}: Pages guide expected exactly one #{fragment} target, found {guide_ids.get(fragment, 0)}",
+        )
+        check(
+            fragment in linked_fragments,
+            f"{item['public_ref']}: Pages guide has no stable permalink to #{fragment}",
+        )
+
+    parsed_cache: dict[Path, set[str]] = {guide_page.resolve(): set(guide_parser.ids)}
+    for page in sorted(SITE.rglob("*.html")):
+        parser = LinkParser()
+        parser.feed(page.read_text(encoding="utf-8"))
+        parsed_cache[page.resolve()] = set(parser.ids)
+        for public_ref, href in parser.stable_links:
+            resolved = packaged_target(page, href)
+            check(resolved is not None, f"{page.relative_to(SITE)} {public_ref}: stable link escapes the canonical site: {href}")
+            if resolved is None:
+                continue
+            target, fragment = resolved
+            check(target.exists(), f"{page.relative_to(SITE)} {public_ref}: stable link target missing: {href}")
+            if not target.exists() or not fragment or target.suffix.lower() != ".html":
+                continue
+            if target.resolve() not in parsed_cache:
+                target_parser = LinkParser()
+                target_parser.feed(target.read_text(encoding="utf-8"))
+                parsed_cache[target.resolve()] = set(target_parser.ids)
+            check(
+                fragment in parsed_cache[target.resolve()],
+                f"{page.relative_to(SITE)} {public_ref}: fragment #{fragment} does not resolve in {target.relative_to(SITE)}",
+            )
+
 if SUBGUIDES.exists():
     subguides = json.loads(SUBGUIDES.read_text(encoding="utf-8"))
     by_id = {node["id"]: node for node in subguides["nodes"]}
+    downloads_text = (
+        core_pages["downloads"].read_text(encoding="utf-8")
+        if core_pages["downloads"].exists()
+        else ""
+    )
     for node_id in subguides["standalone_nodes"]:
         node = by_id[node_id]
         base = SITE / "routes" / node_id
@@ -220,6 +304,16 @@ if SUBGUIDES.exists():
             check(
                 (base / f'{node["slug"]}{suffix}').exists(),
                 f"Pages package missing {node_id} route artifact: {node['slug']}{suffix}",
+            )
+        for suffix in ("_a4half_booklet.pdf", "_a4half_mono_booklet.pdf"):
+            filename = f'{node["slug"]}{suffix}'
+            check(
+                (base / filename).exists(),
+                f"Pages package missing {node_id} booklet artifact: {filename}",
+            )
+            check(
+                f'../routes/{node_id}/{filename}' in downloads_text,
+                f"Downloads page missing {node_id} booklet link: {filename}",
             )
 
 meta_path = SITE / "meta" / "release.json"
@@ -244,6 +338,7 @@ if meta_path.exists():
     check(metrics.get("figures") == 49, "site public figure metric drifted")
     check(metrics.get("authored_visuals") == 41, "site authored-visual metric drifted")
     check(metrics.get("standalone_pdf_editions") == 66, "site standalone PDF metric drifted")
+    check(metrics.get("folded_booklet_editions") == 24, "site folded-booklet metric drifted")
 
 check(
     not list((SITE / "routes" / "T").glob("templates-blue-book*")),
@@ -256,6 +351,20 @@ if css.exists():
     text = css.read_text(encoding="utf-8")
     for marker in ("prefers-reduced-motion", "prefers-color-scheme", "@media print", ".route-grid", ".planner-layout", ":focus-visible"):
         check(marker in text, f"site stylesheet marker missing: {marker}")
+
+for label, page in core_pages.items():
+    if not page.exists():
+        continue
+    text = page.read_text(encoding="utf-8")
+    for marker in (
+        'class="site-provenance"',
+        'class="repository-link"',
+        f"/tree/v{VERSION}",
+        "/commit/",
+        "meta/release.json",
+        "https://github.com/fkr-0/bathroom-emergency",
+    ):
+        check(marker in text, f"{label} header provenance marker missing: {marker}")
 if js.exists():
     text = js.read_text(encoding="utf-8")
     for marker in ("localStorage", "data-deployment-planner", "data-download-filter", "navigator.clipboard"):

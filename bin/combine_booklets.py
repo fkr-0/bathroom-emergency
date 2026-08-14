@@ -135,14 +135,39 @@ def inspect_components(nodes: list[dict], mode: str) -> list[dict]:
 
 def combine(components: list[dict], output: Path) -> None:
     output.parent.mkdir(parents=True, exist_ok=True)
+
+    # qpdf owns the final cross-reference/object table. Poppler's pdfunite can
+    # successfully concatenate these valid booklet components while emitting a
+    # bundle whose trailer /Size is smaller than the highest object number.
+    # Tolerant PDF viewers recover, but CUPS/Gutenprint warns while ingesting
+    # that malformed structure and older print paths are exactly where we need
+    # deterministic input. Build the page sequence directly with qpdf instead.
+    page_args: list[str] = []
+    for item in components:
+        page_args.extend((str(item["path"]), "1-z"))
     result = subprocess.run(
-        [require("pdfunite"), *[str(item["path"]) for item in components], str(output)],
+        [require("qpdf"), "--empty", "--pages", *page_args, "--", str(output)],
         cwd=ROOT,
         capture_output=True,
         text=True,
     )
     if result.returncode:
         raise BundleError((result.stderr or result.stdout).strip())
+
+    # Treat even qpdf's warning exit status as a failed print artifact. A
+    # booklet bundle is allowed to be large; it is not allowed to depend on a
+    # downstream PDF parser repairing its object table before printing.
+    structural = subprocess.run(
+        [require("qpdf"), "--check", str(output)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    if structural.returncode:
+        raise BundleError(
+            f"{output.name}: structural PDF preflight failed: "
+            f"{(structural.stderr or structural.stdout).strip()}"
+        )
 
     width, height, sides = page_geometry(output)
     expected_sides = sum(item["sides"] for item in components)

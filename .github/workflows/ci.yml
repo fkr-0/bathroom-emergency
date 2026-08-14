@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     env:
-      GUIDE_AS_OF: "2026-08-11"
+      GUIDE_AS_OF: "2026-08-14"
     steps:
       - uses: actions/checkout@v4
 
@@ -32,7 +32,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            pandoc poppler-utils librsvg2-bin fonts-dejavu-core fonts-noto-core texlive-extra-utils texlive-latex-recommended
+            pandoc poppler-utils qpdf librsvg2-bin fonts-dejavu-core fonts-noto-core texlive-extra-utils texlive-latex-recommended
           python -m pip install --disable-pip-version-check matplotlib pillow weasyprint
           test "$(fc-match --format '%{family[0]}' 'Noto Sans')" = "Noto Sans"
 
@@ -78,5 +78,13 @@ jobs:
             build/booklet/
             build/site/
             build/release/
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload booklet print matrix
+        uses: actions/upload-artifact@v4
+        with:
+          name: bathroom-emergency-guide-booklets-${{ github.sha }}
+          path: build/booklet/
           if-no-files-found: error
           retention-days: 14

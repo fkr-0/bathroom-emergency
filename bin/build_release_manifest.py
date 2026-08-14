@@ -61,6 +61,7 @@ def build() -> Path:
             "pandoc": version_line("pandoc", "--version"),
             "weasyprint": version_line("weasyprint", "--version"),
             "pdfinfo": version_line("pdfinfo", "-v"),
+            "qpdf": version_line("qpdf", "--version"),
         },
         "artifacts": files,
     }

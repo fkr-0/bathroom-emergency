@@ -41,6 +41,8 @@ for path in (
     "build/subguides/manifest.json",
     "build/booklet/subguides/SHELF/shelf-how-to-use_a4half_booklet.pdf",
     "build/booklet/subguides/SHELF/shelf-how-to-use_a4half_mono_booklet.pdf",
+    "build/site/routes/SHELF/shelf-how-to-use_a4half_booklet.pdf",
+    "build/site/routes/SHELF/shelf-how-to-use_a4half_mono_booklet.pdf",
     "build/booklet/all-subguides_booklet-print.pdf",
     "build/booklet/all-subguides_booklet-print_mono.pdf",
     "build/booklet/PRINTING.md",
@@ -81,6 +83,8 @@ if manifest_path.exists():
                     need(f"build/subguides/{node_id}/{stem}.{suffix}")
         need(f"build/booklet/subguides/{node_id}/{node['slug']}_a4half_booklet.pdf")
         need(f"build/booklet/subguides/{node_id}/{node['slug']}_a4half_mono_booklet.pdf")
+        need(f"build/site/routes/{node_id}/{node['slug']}_a4half_booklet.pdf")
+        need(f"build/site/routes/{node_id}/{node['slug']}_a4half_mono_booklet.pdf")
         need(f"build/subguides/{node_id}/manifest.json")
 
 package_lock_path = ROOT / "package-lock.json"
@@ -104,4 +108,4 @@ if release_path.exists():
 
 if errors:
     raise SystemExit("Build-matrix validation failed:\n- " + "\n- ".join(errors))
-print("Build-matrix validation passed: six master editions, 24 folded A4 booklet editions (Shelf intro + eleven books, color and mono), two combined booklet print runs with instructions, editable formats, landing, release manifest, and 66 standalone eleven-book editions are present.")
+print("Build-matrix validation passed: six master editions, 24 folded A4 booklet editions (Shelf intro + eleven books, color and mono) in both release and Pages packages, two combined booklet print runs with instructions, editable formats, landing, release manifest, and 66 standalone eleven-book editions are present.")

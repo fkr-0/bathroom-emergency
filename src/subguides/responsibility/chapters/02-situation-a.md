@@ -1,8 +1,8 @@
 ---
 title: "The Amber Book — Responsibility"
 chapter: 2
-revision: "5.1.1"
-last_updated: "2026-08-12"
+revision: "5.1.2"
+last_updated: "2026-08-14"
 dependencies:
   - build/diagrams/vega_reproductive_denominators.png
   - build/diagrams/responsibility_clock_map.png

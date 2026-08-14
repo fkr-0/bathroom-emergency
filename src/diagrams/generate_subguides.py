@@ -17,6 +17,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "build" / "diagrams"
 DATA = ROOT / "src" / "data" / "subguides.json"
@@ -37,6 +40,8 @@ nodes = {item["id"]: item for item in manifest["nodes"]}
 
 def finish(fig: plt.Figure, name: str, *, qa: bool = False) -> None:
     target = QA_DIR if qa else OUT
+    fit_labels(fig)
+    audit_figure(fig, name)
     fig.savefig(target / f"{name}.png", dpi=220, bbox_inches="tight", facecolor=PAPER)
     if not qa:
         fig.savefig(target / f"{name}.svg", bbox_inches="tight", facecolor=PAPER)
@@ -263,6 +268,10 @@ overview_pos = {
     "A": (-3.8, -.45), "D": (-1.3, -.45), "S": (1.3, -.45), "Z": (3.8, -.45),
     "P": (-2.3, -2.15), "T": (0, -2.15), "R": (2.3, -2.15),
 }
+# Dense diagonal handoffs put the long Blue and Indigo titles into the same
+# whitespace if both labels stay perfectly centred under/over their nodes.
+# Small horizontal label offsets preserve the node geometry while keeping the
+# two independent text boxes disjoint.
 primary_edges = [
     ("O", "B"), ("O", "C"), ("O", "H"), ("O", "S"), ("O", "A"),
     ("B", "C"), ("B", "S"), ("B", "P"), ("C", "H"), ("C", "P"),
@@ -276,7 +285,7 @@ for source, target in primary_edges:
 
 fig, ax = plt.subplots(figsize=(11.4, 8.3))
 ax.set_xlim(-4.9, 4.9)
-ax.set_ylim(-3.25, 4.0)
+ax.set_ylim(-3.82, 4.0)
 ax.set_aspect("equal", adjustable="box")
 ax.axis("off")
 ax.text(0, 3.82, "The eleven-book shelf", ha="center", va="center", fontsize=22, fontweight="bold", color=INK)
@@ -289,15 +298,14 @@ for node_id, (x, y) in overview_pos.items():
     node = nodes[node_id]
     add_patterned_node(ax, x, y, node, width=1.08, height=.64, linewidth=2.1, zorder=3)
     ax.text(x, y, node_id, color="white", fontsize=17, fontweight="bold", ha="center", va="center", zorder=4)
-    below = y > -1.4
     ax.text(
         x,
-        y - .50 if below else y + .50,
+        y - .50,
         textwrap.fill(node["title"], 18),
         color=INK, fontsize=8.3, fontweight="bold",
-        ha="center", va="top" if below else "bottom",
+        ha="center", va="top",
     )
-ax.text(0, -3.02, "Choose the closest title; move when the problem changes.", ha="center", color=RED, fontsize=9, fontweight="bold")
+ax.text(0, -3.55, "Choose the closest title; move when the problem changes.", ha="center", color=RED, fontsize=9, fontweight="bold")
 finish(fig, "subguide_graph_overview")
 
 
@@ -447,9 +455,18 @@ for x, kicker, title, body, color, glyph in cards:
     ax.add_patch(Rectangle((x, .75), 3.15, 3.95, facecolor="white", edgecolor=color, linewidth=2.2))
     ax.add_patch(Rectangle((x, 3.86), 3.15, .84, facecolor=color, edgecolor=color))
     ax.text(x+.18, 4.28, kicker, color="white", fontsize=8.5, fontweight="bold", va="center")
-    ax.text(x+.26, 3.42, glyph, color=color, fontsize=21, fontweight="bold", va="center")
-    ax.text(x+.78, 3.43, textwrap.fill(title, 24), color=INK, fontsize=11.5, fontweight="bold", va="center")
-    ax.text(x+.26, 2.30, textwrap.fill(body, 35), color=MUTED, fontsize=9.2, va="top")
+    # Give the route glyph a real column.  The former free text positions put
+    # the four-letter WARN glyph directly under the title's first words; both
+    # were technically inside the card, so the old box-overflow audit could not
+    # see that they were printed on top of each other.
+    ax.add_patch(FancyBboxPatch(
+        (x+.22, 3.08), .72, .60,
+        boxstyle="round,pad=.03,rounding_size=.08",
+        facecolor="#fbfaf4", edgecolor=color, linewidth=1.4,
+    ))
+    ax.text(x+.58, 3.38, glyph, color=color, fontsize=11.2, fontweight="bold", ha="center", va="center")
+    ax.text(x+1.05, 3.42, textwrap.fill(title, 21), color=INK, fontsize=10.8, fontweight="bold", va="center")
+    ax.text(x+.26, 2.34, textwrap.fill(body, 35), color=MUTED, fontsize=9.2, va="top")
 ax.text(5.4, .25, "The diagram chooses no live instruction. NINA, warnung.bund.de, radio, police, and fire service own the event.", ha="center", color=MUTED, fontsize=8.6)
 finish(fig, "hazard_source_location_map")
 

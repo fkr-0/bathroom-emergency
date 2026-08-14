@@ -1,8 +1,8 @@
 ---
 title: "The Indigo Book — Professional Support"
 chapter: 7
-revision: "5.1.1"
-last_updated: "2026-08-12"
+revision: "5.1.2"
+last_updated: "2026-08-14"
 dependencies:
   - build/diagrams/vega_social_connection.png
   - build/diagrams/professional_call_packet.png

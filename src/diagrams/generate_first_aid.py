@@ -9,6 +9,9 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "build" / "diagrams"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -23,6 +26,8 @@ LINE = "#9baca5"
 
 
 def finish(fig: plt.Figure, name: str) -> None:
+    fit_labels(fig)
+    audit_figure(fig, name)
     fig.savefig(OUT / f"{name}.png", dpi=220, bbox_inches="tight", facecolor=PAPER)
     fig.savefig(OUT / f"{name}.svg", bbox_inches="tight", facecolor=PAPER)
     plt.close(fig)
@@ -102,8 +107,11 @@ for ax, (number, title, note) in zip(axes[:5], steps):
         ax.plot([.52,.73],[.48,.27],color=BLUE,linewidth=3)
         ax.plot([.52,.35],[.48,.26],color=BLUE,linewidth=3)
         ax.add_patch(FancyArrowPatch((.75,.66),(.60,.52),arrowstyle="-|>",mutation_scale=12,color=GREEN))
-    ax.text(.5,.18,title,ha="center",fontweight="bold",color=INK,fontsize=10)
-    ax.text(.5,.075,note,ha="center",va="top",color=MUTED,fontsize=7.8)
+    ax.text(.5,.25,title,ha="center",va="center",fontweight="bold",color=INK,fontsize=10)
+    # Keep the two-line note centred in the card footer.  The old y=.075,
+    # va="top" anchor put the note only .025 above the lower border and then
+    # drew both lines downward through it.
+    ax.text(.5,.115,note,ha="center",va="center",color=MUTED,fontsize=7.8)
 spare = axes[5]                   # the sixth cell carries the standing instruction
 spare.set_xlim(0, 1); spare.set_ylim(0, 1); spare.axis("off")
 spare.add_patch(FancyBboxPatch((.03,.05),.94,.88,boxstyle="round,pad=.02",

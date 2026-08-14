@@ -1,8 +1,8 @@
 ---
 title: "The Olive Book — Zombie Guide"
 chapter: 6
-revision: "5.1.1"
-last_updated: "2026-08-12"
+revision: "5.1.2"
+last_updated: "2026-08-14"
 dependencies:
   - build/diagrams/dependency_continuity_map.png
   - build/diagrams/survival_pyramid.png

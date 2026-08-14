@@ -20,6 +20,9 @@ import matplotlib.patches as patches
 import numpy as np
 from PIL import Image, ImageDraw
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from textfit import audit_figure, fit_labels
+
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "build" / "diagrams"
 OUT.mkdir(parents=True, exist_ok=True)
@@ -54,6 +57,8 @@ def evidence_footer(fig: plt.Figure, source: str, limit: str) -> None:
 
 def finish(fig: plt.Figure, filename: str) -> None:
     """Render a high-resolution PNG and add a restrained pixel frame."""
+    fit_labels(fig)
+    audit_figure(fig, filename)
     buffer = io.BytesIO()
     fig.savefig(buffer, format="png", dpi=190, bbox_inches="tight",
                 facecolor=BG, edgecolor="none")

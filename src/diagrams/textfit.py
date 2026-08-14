@@ -27,6 +27,12 @@ MIN_FONTSIZE = 6.5
 # Boxes are drawn with a stroke; a label touching the inside of its own border
 # reads as broken even when it technically fits.
 PAD_PX = 3.0
+# Two separately authored labels should never visibly occupy the same pixels.
+# A tiny amount of renderer antialias/bbox rounding is harmless, so require a
+# real intersection in both dimensions and a meaningful fraction of the
+# smaller label before calling it a collision.
+TEXT_COLLISION_PX = 2.0
+TEXT_COLLISION_FRACTION = 0.02
 
 
 class TextOverflow(RuntimeError):
@@ -75,6 +81,62 @@ def _violations(fig, renderer):
     return found
 
 
+def _text_artists(fig):
+    """Visible authored text whose layout is controlled by the figure code.
+
+    Axis tick labels are deliberately excluded: Matplotlib owns those through
+    its axis layout engine.  ``ax.text`` labels and titles are ours, which is
+    exactly the class where hand-positioned card labels can silently collide.
+    """
+    for ax in fig.axes:
+        seen: set[int] = set()
+        candidates = [
+            *ax.texts,
+            ax.title,
+            getattr(ax, "_left_title", None),
+            getattr(ax, "_right_title", None),
+        ]
+        for artist in candidates:
+            if not isinstance(artist, Text):
+                continue
+            if id(artist) in seen or not artist.get_visible() or not artist.get_text().strip():
+                continue
+            seen.add(id(artist))
+            yield ax, artist
+
+
+def _text_collisions(fig, renderer):
+    """Return independently positioned labels whose rendered bounds overlap."""
+    by_axes: dict[object, list[tuple[Text, object]]] = {}
+    for ax, artist in _text_artists(fig):
+        extent = artist.get_window_extent(renderer)
+        if extent.width <= 0.5 or extent.height <= 0.5:
+            continue
+        by_axes.setdefault(ax, []).append((artist, extent))
+
+    found = []
+    for artists in by_axes.values():
+        for index, (left, left_box) in enumerate(artists):
+            for right, right_box in artists[index + 1:]:
+                overlap_w = min(left_box.x1, right_box.x1) - max(left_box.x0, right_box.x0)
+                overlap_h = min(left_box.y1, right_box.y1) - max(left_box.y0, right_box.y0)
+                if overlap_w <= TEXT_COLLISION_PX or overlap_h <= TEXT_COLLISION_PX:
+                    continue
+                smaller_area = min(
+                    left_box.width * left_box.height,
+                    right_box.width * right_box.height,
+                )
+                if smaller_area <= 0:
+                    continue
+                overlap_fraction = (overlap_w * overlap_h) / smaller_area
+                if overlap_fraction < TEXT_COLLISION_FRACTION:
+                    continue
+                found.append(
+                    (left, right, overlap_w, overlap_h, overlap_fraction)
+                )
+    return found
+
+
 def fit_labels(fig) -> None:
     """Shrink overflowing labels until they fit, or until MIN_FONTSIZE."""
     fig.canvas.draw()
@@ -97,17 +159,36 @@ def fit_labels(fig) -> None:
 
 def audit_figure(fig, name: str) -> None:
     fig.canvas.draw()
-    remaining = _violations(fig, fig.canvas.get_renderer())
-    if not remaining:
+    renderer = fig.canvas.get_renderer()
+    remaining = _violations(fig, renderer)
+    collisions = _text_collisions(fig, renderer)
+    if not remaining and not collisions:
         return
-    lines = [f"{name}: {len(remaining)} label(s) overflow the box drawn around them"]
-    for artist, extent, box in remaining:
-        label = artist.get_text().replace("\n", " ")[:60]
+    lines = [
+        f"{name}: diagram text-layout audit failed "
+        f"({len(remaining)} box overflow(s), {len(collisions)} text collision(s))"
+    ]
+    if remaining:
+        lines.append("  Box overflows:")
+        for artist, extent, box in remaining:
+            label = artist.get_text().replace("\n", " ")[:60]
+            lines.append(
+                f"    {label!r} is {extent.width:.0f}px wide in a {box.width:.0f}px box"
+                f" at {artist.get_fontsize():.1f}pt"
+            )
         lines.append(
-            f"    {label!r} is {extent.width:.0f}px wide in a {box.width:.0f}px box"
-            f" at {artist.get_fontsize():.1f}pt"
+            "    widen the box or shorten the string; the label is already at the size floor"
         )
-    lines.append("    widen the box or shorten the string; the label is already at the size floor")
+    if collisions:
+        lines.append("  Text collisions:")
+        for left, right, overlap_w, overlap_h, fraction in collisions:
+            left_label = left.get_text().replace("\n", " ")[:52]
+            right_label = right.get_text().replace("\n", " ")[:52]
+            lines.append(
+                f"    {left_label!r} overlaps {right_label!r} by "
+                f"{overlap_w:.0f}×{overlap_h:.0f}px ({fraction:.0%} of the smaller label)"
+            )
+        lines.append("    move or reflow the labels; shrinking both is not a correctness fix")
     report = "\n".join(lines)
     if os.environ.get("DIAGRAM_TEXT_AUDIT") == "report":
         print("  [OVERFLOW] " + report)

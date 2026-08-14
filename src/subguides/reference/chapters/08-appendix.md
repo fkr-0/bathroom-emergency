@@ -1,8 +1,8 @@
 ---
 title: "The Copper Book — Reference"
 chapter: 8
-revision: "5.1.1"
-last_updated: "2026-08-12"
+revision: "5.1.2"
+last_updated: "2026-08-14"
 dependencies:
   - build/diagrams/two_pass_route_map.png
   - build/diagrams/evidence_classes.png
@@ -25,8 +25,11 @@ here when you need to find, compare, cite, or check something.
 Canonical references use the form **`[BEG:<guide>:<kind>:<sequence>]`**. For
 example, `[BEG:C:S:004]` names a Body and First Aid section,
 `[BEG:T:F:003]` names a detachable Grey Book template, and `[BEG:T:G:006]`
-names the deployer-completed Location and access figure. The corresponding HTML
-anchors are `#beg-c-s-004`, `#beg-t-f-003`, and `#beg-t-g-006`.
+names the deployer-completed Location and access figure. In the online guide the
+reference itself is also the permanent fragment: `#BEG:C:S:004`,
+`#BEG:T:F:003`, and `#BEG:T:G:006`. Every printed/readable reference is a link
+to that canonical fragment. The older lowercase anchors such as
+`#beg-c-s-004` remain compatibility aliases for links already in circulation.
 
 Page numbers and labels such as “calm 1.1.3” remain useful navigation aids, but
 they are not canonical addresses: inserting a section would silently rename

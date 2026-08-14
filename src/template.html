@@ -14,10 +14,18 @@
   <div class="reading-progress" aria-hidden="true"><span></span></div>
   <header class="app-bar">
     <div class="reader-identity">
-      <a class="brand" href="$if(home-anchor)$#$home-anchor$$else$#00-cover$endif$">BEG / $guide-version$</a>
-      <span class="edition-chip">Online edition</span>
+      <a class="brand" href="$if(home-anchor)$#$home-anchor$$else$#00-cover$endif$" aria-label="Bathroom Emergency Guide — $reader-address$">
+        <span class="brand-guide">BE</span><span class="brand-separator" aria-hidden="true">/</span><span class="brand-address" data-reader-address>$reader-address$</span>
+      </a>
+      <span class="edition-chip">Online · $guide-version$</span>
     </div>
+    <nav class="reader-provenance" aria-label="Build provenance">
+      <a href="https://github.com/fkr-0/bathroom-emergency/tree/v$guide-version$" title="Release $guide-version$">v$guide-version$</a>
+      <a href="https://github.com/fkr-0/bathroom-emergency/commit/$build-revision$" title="Build commit $build-revision$">$build-revision$</a>
+      <a href="$site-url$meta/release.json" title="Build metadata for $build-date$">$build-date$</a>
+    </nav>
     <div class="app-actions">
+      <a class="repository-link" href="https://github.com/fkr-0/bathroom-emergency" aria-label="Open the Bathroom Emergency Guide GitHub repository"><span class="repository-long">Repository</span><span class="repository-short">Repo</span><span aria-hidden="true">↗</span></a>
       <button type="button" id="toc-toggle" aria-controls="TOC" aria-expanded="false">Contents</button>
       <button type="button" id="theme-toggle" aria-label="Toggle color scheme">Theme</button>
       <button type="button" id="print-button" aria-label="Print this edition">Print</button>
@@ -48,6 +56,8 @@
     const tocButton = document.getElementById('toc-toggle');
     const themeButton = document.getElementById('theme-toggle');
     const progress = document.querySelector('.reading-progress span');
+    const readerBrand = document.querySelector('.reader-identity .brand');
+    const readerAddress = document.querySelector('[data-reader-address]');
     const saved = localStorage.getItem('beg-theme');
     if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
     const closeToc = (restoreFocus = false) => {
@@ -98,6 +108,8 @@
       const titleHeading = book.querySelector('.subguide-cover h1');
       const title = titleHeading ? headingLabel(titleHeading) : (code || 'Book');
       const bookEntry = appendLink(tocList, book, code ? code + ' · ' + title : title, 'reader-toc-book');
+      bookEntry.address = code === 'SHELF' ? 'Shelf' : (code || 'Shelf');
+      bookEntry.addressLabel = title;
       bookEntry.bookItem = bookEntry.item;
       bookItems.push(bookEntry.item);
       tocTargets.push(bookEntry);
@@ -107,6 +119,9 @@
       sectionList.className = 'reader-toc-sections';
       sections.forEach(section => {
         const sectionEntry = appendLink(sectionList, section, headingLabel(section));
+        const printedAddress = section.querySelector('.section-ref')?.textContent?.trim() || '';
+        sectionEntry.address = printedAddress.replace('[', '').replace(']', '') || code || 'Shelf';
+        sectionEntry.addressLabel = headingLabel(section);
         sectionEntry.bookItem = bookEntry.item;
         tocTargets.push(sectionEntry);
       });
@@ -130,6 +145,11 @@
       activeEntry = entry;
       activeEntry.link.setAttribute('aria-current', 'location');
       bookItems.forEach(item => item.classList.toggle('is-current-book', item === activeEntry.bookItem));
+      if (readerAddress) readerAddress.textContent = activeEntry.address || 'Shelf';
+      if (readerBrand) {
+        const context = activeEntry.addressLabel || activeEntry.address || 'Shelf';
+        readerBrand.setAttribute('aria-label', 'Bathroom Emergency Guide — ' + context);
+      }
       keepActiveTocEntryVisible(activeEntry.link);
     };
 

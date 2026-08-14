@@ -1,5 +1,67 @@
 # Changelog
 
+## 5.1.2 — 2026-08-14
+
+### Online reader and stable addresses
+
+- changed the visible online reader identity from the ambiguous `BEG` acronym
+  to **`BE`**, matching `be.fkr.dev`; the accessible name still expands to
+  “Bathroom Emergency Guide”, while the existing `[BEG:...]` namespace remains
+  unchanged as the permanent machine/public-reference compatibility contract;
+- made the top-left reader address live: the complete edition starts at
+  `BE / Shelf`, standalone books start at their book code such as `BE / O`, and
+  scrolling into a section updates the address to the reader-facing section
+  code such as `BE / dis.5` without changing the stable reference namespace;
+- promoted literal stable references into real hardlinks: every active
+  `[BEG:<owner>:<kind>:<sequence>]` now has the matching canonical fragment
+  `#BEG:<owner>:<kind>:<sequence>`, visible references are permalinks, and the
+  previous lowercase `#beg-*` anchors remain compatibility aliases;
+- added exhaustive release validation for all active stable references and all
+  rendered stable links across the Pages HTML package, rather than checking a
+  representative fragment only.
+
+### Website provenance and dark mode
+
+- added permanent build provenance to the header of both the project website
+  and online reader: release/version, build commit, build date metadata, and the
+  GitHub repository are always directly linked; the repository itself is a
+  dedicated high-contrast header control rather than a low-emphasis metadata
+  link;
+- added browser regression tests that prove `BE / ...` changes with Shelf,
+  book, and section scroll state while the accessible product name remains
+  “Bathroom Emergency Guide”;
+- added a rendered dark-mode contrast audit over the reader chrome, contents,
+  and book content and fixed light-only chart/card surfaces so quantitative
+  figures and notes inherit dark surfaces and readable foreground colours.
+
+### Diagram correctness
+
+- upgraded the diagram text-layout gate from box-overflow checking to explicit
+  text-on-text collision detection and applied it to all ten text-bearing
+  Matplotlib generator families;
+- fixed the reported Orange `WARN`/title collision, five Recovery Position
+  footer overflows, and additional Blue/Indigo/Amber label collisions found by
+  the stricter audit;
+- added an independent diagram verifier with a deliberately broken synthetic
+  `WARN` case, strict rerenders including Orange, and generated reader-facing
+  illustration contact sheets for visual review.
+
+### Booklet/release hardening
+
+- retained the independently imposed Shelf and eleven per-book colour/mono
+  booklets in the Pages/download package instead of publishing only the two
+  combined print runs;
+- added `qpdf --check` to booklet validation and CI/Pages dependencies so a PDF
+  that renders only after parser repair cannot pass the production print gate;
+- include qpdf provenance in the release manifest and upload the complete
+  booklet matrix from CI.
+
+### Compatibility
+
+- `[BEG:...]` and `#BEG:...` remain the canonical stable-reference namespace;
+  **BE is a presentation/product mark only** and therefore does not invalidate
+  existing citations or links.
+
 ## 5.1.1 — 2026-08-12
 
 ### Website

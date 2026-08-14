@@ -215,6 +215,13 @@ for mode in ("color", "mono"):
         errors.append(f"combined {mode} booklet print run missing: {bundle.relative_to(ROOT)}")
         continue
 
+    # Page count and text extraction are not enough for a production print PDF.
+    # A previously generated pdfunite bundle had a recoverable but malformed
+    # object table: browsers rendered it, while CUPS/Gutenprint warned during
+    # printing. qpdf returns non-zero for both structural errors and warnings,
+    # so this fails closed on artifacts that rely on parser repair.
+    run("qpdf", "--check", str(bundle))
+
     bundle_sides, bundle_w, bundle_h = geometry(bundle)
     check(
         abs(bundle_w - A4_W_PT) <= TOLERANCE_PT and abs(bundle_h - A4_H_PT) <= TOLERANCE_PT,

@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
 OUT = BUILD / "site"
 DATA = ROOT / "src" / "data"
+REPOSITORY_URL = "https://github.com/fkr-0/bathroom-emergency"
 
 MASTER_FILES = (
     "guide.html",
@@ -68,7 +69,7 @@ def route_cards(nodes: list[dict], released: set[str], prefix: str) -> str:
     return "\n".join(cards)
 
 
-def nav(prefix: str, active: str) -> str:
+def nav(prefix: str, active: str, revision: str, date: str) -> str:
     items = (
         ("home", "Project", f"{prefix}index.html"),
         ("guide", "Guide", f"{prefix}guide/"),
@@ -80,6 +81,8 @@ def nav(prefix: str, active: str) -> str:
         f'<a href="{href}"{(" aria-current=\"page\"" if key == active else "")}>{label}</a>'
         for key, label, href in items
     )
+    version_url = f"{REPOSITORY_URL}/tree/v{VERSION}"
+    revision_url = f"{REPOSITORY_URL}/commit/{revision}"
     return f'''<header class="site-header">
   <a class="brand" href="{prefix}index.html" aria-label="Bathroom Emergency Guide home">
     <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -87,7 +90,15 @@ def nav(prefix: str, active: str) -> str:
   </a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav id="site-nav" class="site-nav" aria-label="Primary">{links}</nav>
-  <button class="theme-toggle" type="button" data-theme-toggle aria-label="Change colour theme"><span aria-hidden="true">◐</span><span class="theme-label">Theme</span></button>
+  <div class="site-actions">
+    <a class="repository-link" href="{esc(REPOSITORY_URL)}" aria-label="Open the Bathroom Emergency Guide GitHub repository"><span class="repository-long">Repository</span><span class="repository-short">Repo</span><span aria-hidden="true">↗</span></a>
+    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Change colour theme"><span aria-hidden="true">◐</span><span class="theme-label">Theme</span></button>
+  </div>
+  <nav class="site-provenance" aria-label="Build provenance">
+    <a href="{esc(version_url)}" title="Release {esc(VERSION)}">v{esc(VERSION)}</a>
+    <a href="{esc(revision_url)}" title="Build commit {esc(revision)}">{esc(revision)}</a>
+    <a href="{prefix}meta/release.json" title="Build metadata for {esc(date)}">{esc(date)}</a>
+  </nav>
 </header>'''
 
 
@@ -139,7 +150,7 @@ def landing_page(nodes: list[dict], released: set[str], metrics: dict, revision:
     return f'''{page_head("Bathroom Emergency Guide — useful before heroic", "A sourced, printable, locally deployable decision guide for bathroom-sized emergencies.", "", "https://be.fkr.dev/")}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-{nav("", "home")}
+{nav("", "home", revision, date)}
 {emergency_strip()}
 <main id="main">
   <section class="hero shell">
@@ -244,7 +255,7 @@ def deployment_page(revision: str, date: str) -> str:
     return f'''{page_head("Deploy the Bathroom Emergency Guide", "Plan, install, test, maintain, and publish the Bathroom Emergency Guide safely.", "../", "https://be.fkr.dev/deploy/")}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-{nav("../", "deploy")}
+{nav("../", "deploy", revision, date)}
 {emergency_strip()}
 <main id="main">
   <section class="page-hero deploy-hero shell">
@@ -312,15 +323,15 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
             continue
         slug = node["slug"]
         route_downloads.append(
-            f'''<article class="download-route" data-download-group="routes" style="--route:{esc(node['colour'])}"><span class="route-code">{esc(node['id'])}</span><div><strong>{esc(node['title'])}</strong><p>{esc(node['promise'])}</p><div class="card-links"><a href="../routes/{esc(node['id'])}/{esc(slug)}.html">HTML</a><a href="../routes/{esc(node['id'])}/{esc(slug)}.pdf">A4 PDF</a><a href="../routes/{esc(node['id'])}/{esc(slug)}_largeprint.pdf">Large print</a></div></div></article>'''
+            f'''<article class="download-route" data-download-group="routes" style="--route:{esc(node['colour'])}"><span class="route-code">{esc(node['id'])}</span><div><strong>{esc(node['title'])}</strong><p>{esc(node['promise'])}</p><div class="card-links"><a href="../routes/{esc(node['id'])}/{esc(slug)}.html">HTML</a><a href="../routes/{esc(node['id'])}/{esc(slug)}.pdf">A4 PDF</a><a href="../routes/{esc(node['id'])}/{esc(slug)}_largeprint.pdf">Large print</a><a href="../routes/{esc(node['id'])}/{esc(slug)}_a4half_booklet.pdf">Booklet</a><a href="../routes/{esc(node['id'])}/{esc(slug)}_a4half_mono_booklet.pdf">Booklet mono</a></div></div></article>'''
         )
     return f'''{page_head("Downloads — Bathroom Emergency Guide", "Download the complete guide, individual colour books, printable figures and templates, and release documentation.", "../", "https://be.fkr.dev/downloads/")}
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-{nav("../", "downloads")}
+{nav("../", "downloads", revision, date)}
 {emergency_strip()}
 <main id="main">
-  <section class="page-hero download-hero shell"><div><span class="eyebrow">Release {esc(VERSION)} download catalogue</span><h1>Take the guide<br><em>into the room.</em></h1><p class="lede">Choose by reading need and physical context. Every PDF family ships in colour and monochrome with page-count and semantic parity checks.</p></div><div class="download-summary"><strong>{len(released) * 6}</strong><span>standalone PDF editions</span><strong>6</strong><span>master layout/mode editions</span></div></section>
+  <section class="page-hero download-hero shell"><div><span class="eyebrow">Release {esc(VERSION)} download catalogue</span><h1>Take the guide<br><em>into the room.</em></h1><p class="lede">Choose by reading need and physical context. Every PDF family ships in colour and monochrome with page-count and semantic parity checks.</p></div><div class="download-summary"><strong>{len(released) * 6}</strong><span>standalone PDF editions</span><strong>{(len(released) + 1) * 2}</strong><span>folded booklet editions</span><strong>6</strong><span>master layout/mode editions</span></div></section>
 
   <section class="shell download-controls" aria-label="Download filters"><button class="filter-chip active" type="button" data-download-filter="all">Everything</button><button class="filter-chip" type="button" data-download-filter="master">Complete guide</button><button class="filter-chip" type="button" data-download-filter="routes">Individual books</button><button class="filter-chip" type="button" data-download-filter="source">Source & evidence</button></section>
 
@@ -329,11 +340,11 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
       <article><span class="matrix-label">A4</span><strong>General purpose</strong><p>Complete standard-width edition; page count, geometry, density, and colour/mono parity are validated at build time.</p><div class="download-buttons"><a class="button small primary" href="../files/guide.pdf">Colour PDF</a><a class="button small secondary" href="../files/guide_mono.pdf">Mono PDF</a><a class="button small ghost" href="../guide/">HTML</a></div></article>
       <article><span class="matrix-label">A4/2</span><strong>Narrow field strip</strong><p>105 × 297 mm for hanging, narrow folders, and constrained surfaces.</p><div class="download-buttons"><a class="button small primary" href="../files/guide_a4half.pdf">Colour PDF</a><a class="button small secondary" href="../files/guide_a4half_mono.pdf">Mono PDF</a><a class="button small ghost" href="../files/guide_a4half.html">HTML</a></div></article>
       <article><span class="matrix-label">Large</span><strong>Large print</strong><p>Materially larger typography with the same colour/mono semantic content.</p><div class="download-buttons"><a class="button small primary" href="../files/guide_largeprint.pdf">Colour PDF</a><a class="button small secondary" href="../files/guide_largeprint_mono.pdf">Mono PDF</a><a class="button small ghost" href="../files/guide_largeprint.html">HTML</a></div></article>
-      <article><span class="matrix-label">Booklet</span><strong>Intro + eleven folded books, one print run</strong><p>Already imposed on portrait A4 for duplex long-edge printing at 100%. The Shelf intro and every colour book start on their own physical-sheet boundary for separate folding and binding.</p><div class="download-buttons"><a class="button small primary" href="../files/all-subguides_booklet-print.pdf">Colour PDF</a><a class="button small secondary" href="../files/all-subguides_booklet-print_mono.pdf">Mono PDF</a><a class="button small ghost" href="../docs/PRINTING.md">Print instructions</a></div></article>
+      <article><span class="matrix-label">Booklet</span><strong>Intro + eleven folded books, one print run</strong><p>Already imposed on portrait A4 for duplex long-edge printing at 100%. The Shelf intro and every colour book start on their own physical-sheet boundary for separate folding and binding. Individual booklet PDFs are also published below each book.</p><div class="download-buttons"><a class="button small primary" href="../files/all-subguides_booklet-print.pdf">Colour PDF</a><a class="button small secondary" href="../files/all-subguides_booklet-print_mono.pdf">Mono PDF</a><a class="button small ghost" href="../routes/SHELF/shelf-how-to-use_a4half_booklet.pdf">Shelf booklet</a><a class="button small ghost" href="../routes/SHELF/shelf-how-to-use_a4half_mono_booklet.pdf">Shelf mono</a><a class="button small ghost" href="../docs/PRINTING.md">Print instructions</a></div></article>
     </div>
   </section>
 
-  <section class="route-download-section download-section" data-download-group="routes" aria-labelledby="route-downloads"><div class="shell"><div class="section-heading inverse"><div><span class="eyebrow">Take only the book you need</span><h2 id="route-downloads">The eleven individual books</h2></div><p>Each book contains A4, A4/2, and large-print colour/monochrome editions plus its own source notes.</p></div><div class="download-route-grid">{''.join(route_downloads)}</div></div></section>
+  <section class="route-download-section download-section" data-download-group="routes" aria-labelledby="route-downloads"><div class="shell"><div class="section-heading inverse"><div><span class="eyebrow">Take only the book you need</span><h2 id="route-downloads">The eleven individual books</h2></div><p>Each book contains A4, A4/2, and large-print colour/monochrome editions plus an already-imposed folded A4 booklet in colour and mono.</p></div><div class="download-route-grid">{''.join(route_downloads)}</div></div></section>
 
   <section class="shell download-section" data-download-group="source" aria-labelledby="source-downloads"><div class="section-heading"><div><span class="eyebrow">Inspect and reproduce</span><h2 id="source-downloads">Source, evidence, and maintenance</h2></div><p>The build remains inspectable. Generated release metadata in this package records the version, revision, coverage, and available books.</p></div><div class="source-grid"><a href="../docs/README.md"><strong>README</strong><span>Architecture, build system, output matrix, and validation gates.</span></a><a href="../docs/DEPLOYMENT.md"><strong>Deployment manual</strong><span>Local fields, privacy, physical installation, maintenance, and domain contract.</span></a><a href="../routes/T/grey-book-templates-forms.html#beg-t-f-005"><strong>Feedback template</strong><span>Record a failed route, confusing figure, missing local fact, print defect, or useful adaptation.</span></a><a href="../docs/CHANGELOG.md"><strong>Changelog</strong><span>Release-by-release implementation and content history.</span></a><a href="../meta/release.json"><strong>Site release metadata</strong><span>Version, revision, metrics, book families, and build date.</span></a></div></section>
 </main>
@@ -346,7 +357,7 @@ def downloads_page(nodes: list[dict], released: set[str], revision: str, date: s
 def not_found_page(revision: str, date: str) -> str:
     return f'''{page_head("Page not found — Bathroom Emergency Guide", "The requested Bathroom Emergency Guide page was not found.", "")}
 <body class="not-found">
-{nav("", "")}
+{nav("", "", revision, date)}
 <main id="main" class="shell not-found-main"><span class="error-code">404</span><h1>This page fell off the shelf.</h1><p>The link may target an older build or a book that moved. Return to the project page, the eleven-book shelf, or the download catalogue.</p><div class="hero-actions"><a class="button primary" href="index.html">Project home</a><a class="button secondary" href="routes/">Book shelf</a><a class="button ghost" href="downloads/">Downloads</a></div></main>
 {footer("", revision, date)}
 </body>
@@ -397,8 +408,15 @@ code,pre { font-family:var(--font-mono); }
 .site-nav a { padding:.45rem .78rem; border-radius:999px; color:var(--ink-soft); font-size:.84rem; font-weight:650; text-decoration:none; }
 .site-nav a:hover,.site-nav a[aria-current="page"] { color:var(--ink); background:var(--surface-2); }
 .theme-toggle,.nav-toggle { min-width:44px; min-height:44px; border:1px solid var(--line); color:var(--ink); background:var(--surface); cursor:pointer; }
-.theme-toggle { justify-self:end; display:flex; gap:.4rem; align-items:center; padding:.48rem .72rem; border-radius:999px; font-size:.78rem; font-weight:700; }
+.site-actions { justify-self:end; display:flex; gap:.4rem; align-items:center; }
+.theme-toggle { display:flex; gap:.4rem; align-items:center; padding:.48rem .72rem; border-radius:999px; font-size:.78rem; font-weight:700; }
 .nav-toggle { display:none; padding:.45rem .75rem; border-radius:.55rem; }
+.repository-link { display:inline-flex; align-items:center; justify-content:center; gap:.32rem; min-height:44px; padding:.48rem .76rem; border:1px solid var(--ink); border-radius:999px; color:var(--paper); background:var(--ink); font-size:.78rem; font-weight:850; line-height:1; text-decoration:none; white-space:nowrap; }
+.repository-link:hover,.repository-link:focus-visible { color:var(--paper); background:color-mix(in srgb,var(--ink) 88%,var(--green)); border-color:var(--green); }
+.repository-short { display:none; }
+.site-provenance { grid-column:1/-1; justify-self:center; display:flex; flex-wrap:wrap; justify-content:center; gap:.15rem .75rem; margin-top:.35rem; color:var(--ink-soft); font-family:var(--font-mono); font-size:.64rem; }
+.site-provenance a { display:inline-flex; align-items:center; min-height:28px; color:inherit; text-decoration:none; }
+.site-provenance a:hover,.site-provenance a:focus-visible { color:var(--ink); text-decoration:underline; }
 .emergency-strip { display:flex; align-items:center; justify-content:center; gap:.65rem 1rem; min-height:42px; padding:.55rem 1rem; color:#fff; background:var(--forest-2); font-size:.78rem; }
 .emergency-strip a { display:inline-flex; align-items:center; justify-content:center; min-width:44px; min-height:44px; font-size:1rem; font-weight:900; }
 .pulse-dot { width:8px; height:8px; border-radius:50%; background:#ff675d; box-shadow:0 0 0 5px rgba(255,103,93,.14); }
@@ -513,8 +531,9 @@ h2 { margin:.35rem 0 .8rem; font-size:clamp(2.5rem,6vw,5.2rem); line-height:.93;
 .download-section { padding-block:4rem; }.download-section[hidden] { display:none; }.download-matrix { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }.download-matrix article { padding:1.2rem; border:1px solid var(--line); border-radius:1rem; background:var(--surface); }.matrix-label { display:inline-flex; padding:.3rem .55rem; border-radius:.4rem; color:white; background:var(--green-solid); font-family:var(--font-mono); font-size:.7rem; }.download-matrix strong { display:block; margin:1.8rem 0 .4rem; font-family:var(--font-serif); font-size:1.5rem; }.download-matrix p { color:var(--ink-soft); font-size:.84rem; }.download-route-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:.8rem; }.download-route { display:grid; grid-template-columns:auto 1fr; gap:1rem; padding:1rem; border:1px solid rgba(255,255,255,.2); border-left:5px solid var(--route); border-radius:.9rem; background:rgba(255,255,255,.06); }.download-route .route-code { margin:0; }.download-route strong { font-family:var(--font-serif); font-size:1.35rem; }.download-route p { color:#c9dbd5; font-size:.82rem; }.download-route a { color:#fff; }.source-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; }.source-grid a { min-height:170px; padding:1rem; border:1px solid var(--line); border-radius:.9rem; background:var(--surface); text-decoration:none; }.source-grid strong,.source-grid span { display:block; }.source-grid strong { margin-bottom:.7rem; font-family:var(--font-serif); font-size:1.25rem; }.source-grid span { color:var(--ink-soft); font-size:.82rem; }
 .not-found-main { min-height:65vh; padding-block:7rem; }.error-code { color:var(--green); font-family:var(--font-mono); font-size:1rem; }.not-found h1 { max-width:12ch; margin:.8rem 0; font-size:clamp(3.5rem,9vw,7rem); }.not-found p { max-width:55ch; color:var(--ink-soft); }
 @media (max-width:980px) {
-  .site-header { grid-template-columns:auto auto auto; }.site-nav { position:absolute; top:calc(100% + .4rem); right:1rem; left:1rem; display:none; justify-self:stretch; flex-direction:column; border-radius:.8rem; box-shadow:var(--shadow); }.site-nav.open { display:flex; }.site-nav a { display:flex; align-items:center; min-height:44px; }.nav-toggle { display:block; justify-self:end; }.theme-toggle { margin-left:.45rem; }.theme-label { display:none; }
+  .site-header { grid-template-columns:auto auto auto; }.site-nav { position:absolute; top:calc(100% + .4rem); right:1rem; left:1rem; display:none; justify-self:stretch; flex-direction:column; border-radius:.8rem; box-shadow:var(--shadow); }.site-nav.open { display:flex; }.site-nav a { display:flex; align-items:center; min-height:44px; }.nav-toggle { display:block; justify-self:end; }.theme-label { display:none; }
   .hero,.page-hero,.planner-layout,.operator-section,.proof-grid { grid-template-columns:1fr; }.hero { min-height:auto; }.instrument { max-width:620px; }.route-grid { grid-template-columns:repeat(2,1fr); }.format-grid,.privacy-grid { grid-template-columns:1fr; }.mount-grid { grid-template-columns:repeat(2,1fr); }.source-grid { grid-template-columns:repeat(2,1fr); }.site-footer { grid-template-columns:1fr 1fr; }.build-stamp { align-items:flex-start; }
+  .site-provenance { justify-self:stretch; justify-content:space-between; gap:.15rem .45rem; overflow-x:auto; flex-wrap:nowrap; scrollbar-width:none; }.site-provenance::-webkit-scrollbar { display:none; }.site-provenance a { min-height:36px; white-space:nowrap; }
 }
 @media (max-width:700px) {
   .emergency-strip { justify-content:flex-start; flex-wrap:wrap; }.emergency-limit { width:100%; padding-left:1.45rem; }
@@ -522,6 +541,8 @@ h2 { margin:.35rem 0 .8rem; font-size:clamp(2.5rem,6vw,5.2rem); line-height:.93;
   .metrics { grid-template-columns:repeat(2,1fr); }.metrics div:nth-child(2) { border-right:0; }.metrics div:nth-child(-n+2) { border-bottom:1px solid var(--line); }
   .section-heading,.split-section,.contact-band,.maintenance-band { grid-template-columns:1fr; }.action-grid,.proof-cards,.download-matrix,.download-route-grid { grid-template-columns:1fr; }.route-grid { grid-template-columns:1fr; }.route-card { min-height:210px; }.mount-grid,.source-grid { grid-template-columns:1fr; }.format-card { grid-template-columns:80px 1fr; }.site-footer { grid-template-columns:1fr; }.planner-head { align-items:center; }.planner-head h2 { font-size:2.5rem; }.progress-ring { width:76px; height:76px; }.progress-ring::before { width:60px; height:60px; }
   .button.small,.filter-chip,.card-links a,.footer-links a { min-height:44px; }.card-links a,.footer-links a { display:inline-flex; align-items:center; }
+  .site-provenance a { min-height:44px; }
+  .repository-long { display:none; }.repository-short { display:inline; }
 }
 @media (max-width:360px) {
   .site-header { grid-template-columns:minmax(0,1fr) auto auto; gap:.3rem; padding-inline:.75rem; }
@@ -529,7 +550,7 @@ h2 { margin:.35rem 0 .8rem; font-size:clamp(2.5rem,6vw,5.2rem); line-height:.93;
   .site-header .brand-mark { flex:0 0 32px; width:32px; height:32px; }
   .site-header .brand strong { overflow:hidden; font-size:.82rem; white-space:nowrap; text-overflow:ellipsis; }
   .site-header .brand small { display:none; }
-  .theme-toggle { margin-left:0; padding:.45rem; }
+  .site-actions { gap:.3rem; }.theme-toggle { padding:.45rem; }.repository-link { padding:.45rem .58rem; }
 }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } }
 @media print { .site-header,.emergency-strip,.theme-toggle,.nav-toggle,.site-footer,.planner-actions,.download-controls { display:none!important; } body { background:#fff; color:#000; } .shell { width:100%; } }
@@ -685,6 +706,16 @@ def build() -> Path:
         copy(BUILD / "pdf" / name, OUT / "files" / name)
     for name in BOOKLET_PDFS:
         copy(BUILD / "booklet" / name, OUT / "files" / name)
+
+    # Publish every independently imposed booklet beside its standalone book.
+    # GitHub CI has always built these under build/booklet/subguides; Pages used
+    # to publish only the two combined bundles, making the per-book print files
+    # inaccessible despite being part of the validated release matrix.
+    for node_id, slug in (("SHELF", "shelf-how-to-use"), *[(node["id"], node["slug"]) for node in nodes if node["id"] in released]):
+        for suffix in ("", "_mono"):
+            name = f"{slug}_a4half{suffix}_booklet.pdf"
+            copy(BUILD / "booklet" / "subguides" / node_id / name, OUT / "routes" / node_id / name)
+
     for name in ("README.md", "DEPLOYMENT.md", "PRINTING.md", "CHANGELOG.md"):
         copy(ROOT / name, OUT / "docs" / name)
 
@@ -700,6 +731,7 @@ def build() -> Path:
             "graph_nodes": coverage["totals"]["nodes"],
             "sources": coverage["totals"]["sources"],
             "standalone_pdf_editions": len(released) * 6,
+            "folded_booklet_editions": (len(released) + 1) * 2,
         },
         "standalone_nodes": sorted(released),
         "pages_entrypoint": "index.html",
